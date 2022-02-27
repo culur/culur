@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.vscode": true,
+        "**/build": true,
+        "**/node_modules": true,
+        "**/yarn-error.log": true
+    },
+    "files.watcherExclude": {
+        "**/build/**": true
+    },
+    "cSpell.userWords": [], // only use words from .cspell.json
+    "cSpell.enabled": true,
+    "editor.formatOnSave": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true
+}

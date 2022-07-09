@@ -12,6 +12,9 @@
   "homepage": "https://github.com/culur/culur#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/**"
+  ],
   "type": "module",
   "scripts": {
     "postinstall": "husky install",

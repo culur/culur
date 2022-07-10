@@ -16,7 +16,9 @@
   "scripts": {
     "postinstall": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "fix": "run-s 'fix:*'",
+    "test": "run-s 'test:*'"
   },
   "engines": {
     "node": ">=16"
@@ -31,6 +33,7 @@
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "husky": "^8.0.1",
+    "npm-run-all": "^4.1.5",
     "pinst": "^3.0.0"
   }
 }

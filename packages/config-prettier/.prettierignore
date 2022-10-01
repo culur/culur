@@ -1,0 +1,66 @@
+# Dependency directories
+bower_components
+node_modules
+jspm_packages
+
+# Build
+dist
+build
+
+# Coverage
+lib-cov
+coverage
+.nyc_output
+
+# Git
+.gitattributes
+.gitignore
+
+# LICENSE
+LICENSE
+
+# Env
+.env
+.env.build
+.env.test
+
+# Npm & Yarn
+.npm
+.npmrc
+.yarn
+.yarn-integrity
+.yarnclean
+*.tgz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Logs
+logs
+*.log
+
+# Linter
+.browserslistrc
+.editorconfig
+.eslintignore
+.markdownlintignore
+.prettierignore
+
+# Bash & XML
+*.sh
+*.xml
+
+# Fonts & Images
+*.svg
+*.ttf
+*.woff
+
+*.jpg
+*.png
+*.gif
+*.ico
+
+# Next & Nuxt
+.nuxt
+.next

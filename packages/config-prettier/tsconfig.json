@@ -1,0 +1,3 @@
+{
+  "extends": "@culur/config-typescript/tsconfig.lib.json"
+}

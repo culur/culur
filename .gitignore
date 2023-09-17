@@ -131,3 +131,7 @@ dist
 
 # turbo
 .turbo
+
+# project - initialze from cli
+/.prettierrc
+/.prettierignore

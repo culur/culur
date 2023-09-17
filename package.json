@@ -12,8 +12,14 @@
   "homepage": "https://github.com/culur/culur#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/**"
+  ],
   "type": "module",
   "scripts": {
+    "lint": "turbo run lint",
+    "build": "turbo run build",
+    "test": "turbo run test",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
     "postpack": "pinst --enable"
@@ -31,6 +37,7 @@
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "husky": "^8.0.3",
-    "pinst": "^3.0.0"
+    "pinst": "^3.0.0",
+    "turbo": "^1.11.2"
   }
 }

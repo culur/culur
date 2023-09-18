@@ -4,11 +4,11 @@ const sharedConfig: Options = {
   sourcemap: true,
   clean: true,
   dts: true,
+  entry: ["./src/index.ts"],
 };
 
 export const esm = defineConfig({
   ...sharedConfig,
-  entry: ["./src/index.ts"],
   format: ["esm"],
   splitting: true,
   treeshake: true,
@@ -16,6 +16,5 @@ export const esm = defineConfig({
 
 export const cjs = defineConfig({
   ...sharedConfig,
-  entry: ["./src/index.ts"],
   format: ["cjs"],
 });

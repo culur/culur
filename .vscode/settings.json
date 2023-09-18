@@ -12,5 +12,9 @@
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "files.readonlyInclude": {
+    "**/dist": true
+  },
+  "editor.minimap.autohide": false
 }

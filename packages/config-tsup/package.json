@@ -1,0 +1,47 @@
+{
+  "name": "@culur/config-tsup",
+  "version": "0.0.0",
+  "description": "Culur's tsup configuration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-tsup"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "typescript"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup ./src"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "tsup": "^8.0.2"
+  },
+  "devDependencies": {
+    "@culur/config-typescript": "*",
+    "@types/node": "^20.11.30",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
+  }
+}

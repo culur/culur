@@ -13,32 +13,39 @@
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
   "workspaces": [
-    "packages/**"
+    "packages/**",
+    "app/**"
   ],
   "type": "module",
   "scripts": {
     "lint": "turbo run lint",
+    "clean": "turbo run clean",
     "build": "turbo run build",
     "test": "turbo run test",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "fix:prettier": "prettier '**' --write",
+    "test:prettier": "prettier '**' --list-different"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "volta": {
-    "node": "16.16.0",
+    "node": "20.10.0",
     "yarn": "1.22.19"
   },
-  "packageManager": "yarn@3.6.4",
+  "packageManager": "yarn@3.8.1",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
-    "husky": "^8.0.3",
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "husky": "^9.0.11",
     "pinst": "^3.0.0",
-    "prettier": "^3.1.1",
-    "turbo": "^1.11.2"
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0",
+    "turbo": "^1.13.0",
+    "typescript": "^5.4.3",
+    "vitest": "^1.4.0"
   }
 }

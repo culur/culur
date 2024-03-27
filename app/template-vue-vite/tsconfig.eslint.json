@@ -1,0 +1,23 @@
+{
+  //? Files
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+
+    "scripts/**/*.ts",
+    ".*rc.js",
+    ".*rc.cjs",
+    "*.config.js",
+    "*.config.cjs",
+    "*.config.ts",
+    "*.config.mts"
+  ],
+  "exclude": ["node_modules"],
+
+  //? Configs
+  "extends": "@culur/config-typescript-vue/tsconfig.eslint.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

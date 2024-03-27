@@ -1,0 +1,22 @@
+{
+  //? Configs
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": true,
+
+    //! Modules
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+
+    "lib": [],
+    "types": [
+      "node",
+      "jsdom",
+      "vite/client",
+      "vite-plugin-pages/client",
+      "vite-plugin-vue-layouts/client"
+    ]
+  }
+}

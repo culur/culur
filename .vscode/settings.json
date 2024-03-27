@@ -1,16 +1,29 @@
 {
+  //! files
   "files.exclude": {
     "**/.git": true,
     "**/.vscode": true,
+
+    "**/.turbo": true,
+    "**/dist": true,
+
     "**/node_modules": true,
     "**/yarn-error.log": true
   },
   "files.watcherExclude": {
-    "**/build/**": true
+    "**/dist": true
+  },
+  "files.readonlyInclude": {
+    "**/dist": true
   },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
   },
-  "editor.formatOnSave": true
+
+  //! i18n ally
+  "i18n-ally.localesPaths": ["app/vue-template/locales"],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
+
+  //! TypeScript
 }

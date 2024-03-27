@@ -1,0 +1,57 @@
+{
+  "name": "@culur/config-vite",
+  "version": "0.0.0",
+  "description": "Culur's vitest configuration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-vitest"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "vitest"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup ./src"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "vite": "^5.2.2",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.4.0"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@types/node": "^20.11.30",
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.3"
+  },
+  "peerDependencies": {
+    "@vitest/coverage-v8": "^1.2.1",
+    "@vitest/ui": "^1.2.1",
+    "vite": "^5.2.6",
+    "vitest": "^1.4.0"
+  }
+}

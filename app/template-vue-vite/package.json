@@ -1,0 +1,76 @@
+{
+  "name": "@culur/template-vue-vite",
+  "version": "0.0.0",
+  "description": "Culur's prettier configuration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-prettier"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "prettier"
+  ],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist",
+    ".prettierignore",
+    ".prettierrc.js",
+    "!**/*.test.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "fix:prettier": "prettier '**' --write",
+    "test:prettier": "prettier '**' --list-different"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "pinia": "^2.1.7",
+    "vue": "^3.4.21",
+    "vue-i18n": "^9.10.2",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@culur/config-prettier": "workspace:^",
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-typescript-vue": "*",
+    "@culur/types": "*",
+    "@types/node": "^20.11.30",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-v8": "^1.4.0",
+    "@vitest/ui": "^1.4.0",
+    "autoprefixer": "^10.4.19",
+    "esbuild-plugin-polyfill-node": "^0.3.0",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.3",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "unplugin-vue-router": "^0.8.5",
+    "vite": "^5.2.6",
+    "vite-plugin-inspect": "^0.8.3",
+    "vite-plugin-node-polyfills": "^0.21.0",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vite-plugin-vue-markdown": "^0.23.8",
+    "vitest": "^1.4.0",
+    "vue-tsc": "^2.0.7"
+  }
+}

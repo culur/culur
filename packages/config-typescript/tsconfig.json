@@ -1,0 +1,9 @@
+{
+  //? Configs
+  "extends": "@tsconfig/recommended/tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true
+  }
+}

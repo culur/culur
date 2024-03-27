@@ -1,0 +1,15 @@
+{
+  //? Files
+  "include": [
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "playwright.config.*"
+  ],
+
+  //? Configs
+  "extends": "@culur/config-typescript-vue/tsconfig.config.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

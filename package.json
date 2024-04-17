@@ -1,0 +1,16 @@
+{
+  "name": "@culur/monorepo",
+  "version": "0.0.0",
+  "description": "Culur's Monorepo",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "type": "module"
+}

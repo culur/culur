@@ -12,8 +12,18 @@
   "homepage": "https://github.com/culur/culur#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/**",
+    "scripts/**",
+    "templates/**"
+  ],
   "type": "module",
   "scripts": {
+    "🚀----- TURBO -----🚀": "",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "build": "turbo run build",
+    "test": "turbo run test",
     "📦----- CHANGESET -----📦": "",
     "changeset": "changeset",
     "release": "changeset publish",
@@ -38,6 +48,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "husky": "^9.0.11",
-    "pinst": "^3.0.0"
+    "pinst": "^3.0.0",
+    "turbo": "^1.13.2"
   }
 }

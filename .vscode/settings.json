@@ -1,0 +1,19 @@
+{
+  //! files
+  "files.exclude": {
+    "**/.git": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/yarn-error.log": true
+  },
+  "files.watcherExclude": {
+    "**/dist": true
+  },
+  "files.readonlyInclude": {
+    "**/dist": true
+  },
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  }
+}

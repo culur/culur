@@ -87,7 +87,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/cli@npm:^2.27.1":
+"@changesets/cli@npm:2.27.1":
   version: 2.27.1
   resolution: "@changesets/cli@npm:2.27.1"
   dependencies:
@@ -278,7 +278,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^19.2.2":
+"@commitlint/cli@npm:19.2.2":
   version: 19.2.2
   resolution: "@commitlint/cli@npm:19.2.2"
   dependencies:
@@ -295,7 +295,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^19.2.2":
+"@commitlint/config-conventional@npm:19.2.2":
   version: 19.2.2
   resolution: "@commitlint/config-conventional@npm:19.2.2"
   dependencies:
@@ -460,7 +460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/types@npm:^19.0.3":
+"@commitlint/types@npm:19.0.3, @commitlint/types@npm:^19.0.3":
   version: 19.0.3
   resolution: "@commitlint/types@npm:19.0.3"
   dependencies:
@@ -474,13 +474,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@culur/monorepo@workspace:."
   dependencies:
-    "@changesets/cli": "npm:^2.27.1"
-    "@commitlint/cli": "npm:^19.2.2"
-    "@commitlint/config-conventional": "npm:^19.2.2"
-    "@commitlint/types": "npm:^19.0.3"
-    husky: "npm:^9.0.11"
-    pinst: "npm:^3.0.0"
-    turbo: "npm:^1.13.2"
+    "@changesets/cli": "npm:2.27.1"
+    "@commitlint/cli": "npm:19.2.2"
+    "@commitlint/config-conventional": "npm:19.2.2"
+    "@commitlint/types": "npm:19.0.3"
+    husky: "npm:9.0.11"
+    pinst: "npm:3.0.0"
+    turbo: "npm:1.13.2"
   languageName: unknown
   linkType: soft
 
@@ -1674,7 +1674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^9.0.11":
+"husky@npm:9.0.11":
   version: 9.0.11
   resolution: "husky@npm:9.0.11"
   bin:
@@ -2520,7 +2520,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pinst@npm:^3.0.0":
+"pinst@npm:3.0.0":
   version: 3.0.0
   resolution: "pinst@npm:3.0.0"
   bin:
@@ -3173,7 +3173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.13.2":
+"turbo@npm:1.13.2":
   version: 1.13.2
   resolution: "turbo@npm:1.13.2"
   dependencies:

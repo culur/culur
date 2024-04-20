@@ -43,12 +43,12 @@
   },
   "packageManager": "yarn@4.1.1",
   "devDependencies": {
-    "@changesets/cli": "^2.27.1",
-    "@commitlint/cli": "^19.2.2",
-    "@commitlint/config-conventional": "^19.2.2",
-    "@commitlint/types": "^19.0.3",
-    "husky": "^9.0.11",
-    "pinst": "^3.0.0",
-    "turbo": "^1.13.2"
+    "@changesets/cli": "2.27.1",
+    "@commitlint/cli": "19.2.2",
+    "@commitlint/config-conventional": "19.2.2",
+    "@commitlint/types": "19.0.3",
+    "husky": "9.0.11",
+    "pinst": "3.0.0",
+    "turbo": "1.13.2"
   }
 }

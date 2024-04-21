@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "configMigration": true,
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["*"],
+      "rangeStrategy": "auto",
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    }
+  ]
+}

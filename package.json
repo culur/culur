@@ -13,6 +13,12 @@
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "🦋 ----- CHANGESET ----- 🦋": "",
+    "changeset": "changeset",
+    "changeset:publish": "changeset publish",
+    "changeset:version": "changeset version && yarn --mode=\"update-lockfile\""
+  },
   "volta": {
     "node": "20.12.2",
     "yarn": "4.1.1"
@@ -21,5 +27,8 @@
     "node": ">=20",
     "yarn": "4.1.1"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1"
+  }
 }

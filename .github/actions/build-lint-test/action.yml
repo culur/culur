@@ -1,0 +1,20 @@
+name: 'Build lint test'
+description: 'Build lint test'
+
+runs:
+  using: 'composite'
+  steps:
+    #! Build
+    - name: Build
+      shell: bash
+      run: yarn build
+
+    #! Lint
+    - name: Lint
+      shell: bash
+      run: yarn lint
+
+    #! Test
+    - name: Test
+      shell: bash
+      run: yarn test

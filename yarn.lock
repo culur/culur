@@ -470,6 +470,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@culur/config-typescript@workspace:packages/config-typescript":
+  version: 0.0.0-use.local
+  resolution: "@culur/config-typescript@workspace:packages/config-typescript"
+  dependencies:
+    "@tsconfig/recommended": "npm:^1.0.6"
+    "@types/node": "npm:^20.12.7"
+    typescript: "npm:^5.4.5"
+  peerDependencies:
+    "@types/node": "*"
+    typescript: ">=5"
+  languageName: unknown
+  linkType: soft
+
 "@culur/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@culur/monorepo@workspace:."
@@ -636,6 +649,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/recommended@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tsconfig/recommended@npm:1.0.6"
+  checksum: 10/595f5253306be0c9b45edb8290dd53b4e5cf31c3d562b3e4705c2209e35a98efe43377757a2ae4d10617f4e7113eab58d3b49d9aa3ff4177155a868efc6ed7b9
+  languageName: node
+  linkType: hard
+
 "@types/conventional-commits-parser@npm:^5.0.0":
   version: 5.0.0
   resolution: "@types/conventional-commits-parser@npm:5.0.0"
@@ -665,6 +685,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 10/1f916a06fff02faadb09a16ed6e31820ce170798b202ef0b14fc244bfbd721938c54a3a99836e185e4414ca461fe96c5bb5c67c3d248f153555b7e6347f061dd
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.12.7":
+  version: 20.12.8
+  resolution: "@types/node@npm:20.12.8"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/1feab4c8cb08588eea10811ed4d02485a5cde47fdf92e7b3193fc9f8ee39ea556f6e3124dc6d5378354466ed5f7e5fbe5e20f625908de40ea37560368a50f72c
   languageName: node
   linkType: hard
 

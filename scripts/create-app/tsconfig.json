@@ -1,0 +1,11 @@
+{
+  //? Configs
+  "extends": "@culur/config-typescript/tsconfig.scripts.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "types": ["node"]
+  }
+}

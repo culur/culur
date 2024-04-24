@@ -470,6 +470,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@culur/config-typescript@workspace:packages/config-typescript":
+  version: 0.0.0-use.local
+  resolution: "@culur/config-typescript@workspace:packages/config-typescript"
+  dependencies:
+    "@tsconfig/recommended": "npm:^1.0.6"
+    "@types/node": "npm:^20.12.7"
+    typescript: "npm:^5.4.5"
+  peerDependencies:
+    "@types/node": "*"
+    typescript: ">=5"
+  languageName: unknown
+  linkType: soft
+
 "@culur/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@culur/monorepo@workspace:."
@@ -538,6 +551,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/recommended@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@tsconfig/recommended@npm:1.0.6"
+  checksum: 10/595f5253306be0c9b45edb8290dd53b4e5cf31c3d562b3e4705c2209e35a98efe43377757a2ae4d10617f4e7113eab58d3b49d9aa3ff4177155a868efc6ed7b9
+  languageName: node
+  linkType: hard
+
 "@types/conventional-commits-parser@npm:^5.0.0":
   version: 5.0.0
   resolution: "@types/conventional-commits-parser@npm:5.0.0"
@@ -554,7 +574,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^20.12.7":
   version: 20.12.7
   resolution: "@types/node@npm:20.12.7"
   dependencies:

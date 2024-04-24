@@ -1,0 +1,48 @@
+{
+  "name": "@culur/config-typescript",
+  "version": "0.0.0",
+  "description": "Culur's typescript configuration",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-typescript"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "typescript"
+  ],
+  "type": "module",
+  "files": [
+    "tsconfig*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {
+    "@tsconfig/recommended": "^1.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "@types/node": "*",
+    "typescript": ">=5"
+  }
+}

@@ -20,7 +20,7 @@
   "type": "module",
   "scripts": {
     "🚀 ----- TURBO ----- 🚀": "",
-    "lint": "turbo run lint",
+    "lint": "turbo run lint && yarn lint:prettier",
     "clean": "turbo run clean",
     "build": "turbo run build",
     "test": "turbo run test",
@@ -28,6 +28,9 @@
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
     "changeset:version": "changeset version && yarn --mode=\"update-lockfile\"",
+    "🧹 ------- FORMAT ------- 🧹": "",
+    "fix:prettier": "prettier '**' --write",
+    "lint:prettier": "prettier '**' --list-different",
     "🔃 ----- LIFE CYCLE ----- 🔃": "",
     "postinstall": "husky install",
     "prepack": "pinst --disable",
@@ -50,6 +53,8 @@
     "@commitlint/types": "^19.0.3",
     "husky": "^9.0.11",
     "pinst": "^3.0.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-embed": "^0.4.15",
     "turbo": "^1.13.3",
     "typescript": "^5.4.5"
   }

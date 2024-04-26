@@ -1,0 +1,27 @@
+import {
+  Packages,
+  updateDefaultPackages,
+  hasSass,
+  hasVue,
+} from '@culur/utils-packages';
+import type { Config } from 'stylelint';
+import { configCss } from './configs/css';
+import { configScss } from './configs/scss';
+import { configShared } from './configs/shared';
+import { configVue } from './configs/vue';
+import { mergeConfigs } from './utils';
+
+export const stylelintConfig = (
+  options?: Partial<Packages>,
+  config?: Config,
+): Config => {
+  updateDefaultPackages(options);
+
+  return mergeConfigs(
+    configShared,
+    configCss(),
+    hasSass() && configScss,
+    hasVue() && configVue,
+    config,
+  );
+};

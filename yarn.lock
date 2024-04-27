@@ -514,6 +514,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@culur/config-prettier@workspace:packages/config-prettier":
+  version: 0.0.0-use.local
+  resolution: "@culur/config-prettier@workspace:packages/config-prettier"
+  dependencies:
+    "@culur/config-tsup": "npm:*"
+    "@culur/config-typescript": "npm:*"
+    "@culur/config-vite": "npm:*"
+    "@culur/types": "npm:*"
+    "@culur/utils-packages": "npm:*"
+    "@types/node": "npm:^20.12.7"
+    "@vitest/coverage-v8": "npm:^1.5.0"
+    "@vitest/ui": "npm:^1.5.0"
+    prettier: "npm:^3.2.5"
+    rimraf: "npm:^5.0.5"
+    tsup: "npm:^8.0.2"
+    typescript: "npm:^5.4.5"
+    vite: "npm:^5.2.10"
+    vitest: "npm:^1.5.0"
+  peerDependencies:
+    prettier: ">=3.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@culur/config-tsup@npm:*, @culur/config-tsup@workspace:packages/config-tsup":
   version: 0.0.0-use.local
   resolution: "@culur/config-tsup@workspace:packages/config-tsup"
@@ -586,7 +609,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/types@workspace:packages/types":
+"@culur/types@npm:*, @culur/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@culur/types@workspace:packages/types"
   dependencies:
@@ -599,7 +622,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/utils-packages@workspace:packages/utils-packages":
+"@culur/utils-packages@npm:*, @culur/utils-packages@workspace:packages/utils-packages":
   version: 0.0.0-use.local
   resolution: "@culur/utils-packages@workspace:packages/utils-packages"
   dependencies:
@@ -4733,6 +4756,15 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 10/00cdb6ab0281f98306cd1847425c24cbaaa48a5ff03633945ab4c701901b8e96ad558eb0777364ffc312f437af9b5a07d0f45346266e8245beaf6247b9c62b24
+  languageName: node
+  linkType: hard
+
+"prettier@npm:^3.2.5":
+  version: 3.2.5
+  resolution: "prettier@npm:3.2.5"
+  bin:
+    prettier: bin/prettier.cjs
+  checksum: 10/d509f9da0b70e8cacc561a1911c0d99ec75117faed27b95cc8534cb2349667dee6351b0ca83fa9d5703f14127faa52b798de40f5705f02d843da133fc3aa416a
   languageName: node
   linkType: hard
 

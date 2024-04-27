@@ -31,6 +31,28 @@ jobs:
       - name: Test
         run: yarn test
 
+      #! Upload Coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./packages/config-prettier/coverage/coverage-final.json
+          flags: packages-config-prettier
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./packages/config-stylelint/coverage/coverage-final.json
+          flags: packages-config-stylelint
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./packages/utils-packages/coverage/coverage-final.json
+          flags: packages-utils-packages
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       #! Upload artifact
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -77,7 +99,7 @@ jobs:
   #! ----- ----- ----- Build with pnp ----- ----- ----- !#
   build_pnp:
     name: Build and test with yarn pnp
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/release' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/pnp' }}
     runs-on: ubuntu-latest
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}-pnp

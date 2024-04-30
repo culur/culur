@@ -1,0 +1,48 @@
+{
+  "name": "@culur/config-typescript-vue",
+  "version": "0.0.0",
+  "description": "Culur's vue typescript configuration",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-typescript-vue"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "typescript",
+    "vue"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "tsconfig*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {
+    "@vue/tsconfig": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/jsdom": "^21.1.6",
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5"
+  }
+}

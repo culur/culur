@@ -618,6 +618,8 @@ __metadata:
     husky: "npm:^9.0.11"
     nx: "npm:18.3.4"
     pinst: "npm:^3.0.0"
+    prettier: "npm:^3.2.5"
+    prettier-plugin-embed: "npm:^0.4.15"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
@@ -1354,7 +1356,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/estree@npm:1.0.5, @types/estree@npm:^1.0.0":
+"@types/estree@npm:1.0.5, @types/estree@npm:^1.0.0, @types/estree@npm:^1.0.5":
   version: 1.0.5
   resolution: "@types/estree@npm:1.0.5"
   checksum: 10/7de6d928dd4010b0e20c6919e1a6c27b61f8d4567befa89252055fad503d587ecb9a1e3eab1b1901f923964d7019796db810b7fd6430acb26c32866d126fd408
@@ -2372,6 +2374,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dedent@npm:^1.5.1":
+  version: 1.5.3
+  resolution: "dedent@npm:1.5.3"
+  peerDependencies:
+    babel-plugin-macros: ^3.1.0
+  peerDependenciesMeta:
+    babel-plugin-macros:
+      optional: true
+  checksum: 10/e5277f6268f288649503125b781a7b7a2c9b22d011139688c0b3619fe40121e600eb1f077c891938d4b2428bdb6326cc3c77a763e4b1cc681bd9666ab1bad2a1
+  languageName: node
+  linkType: hard
+
 "deep-eql@npm:^4.1.3":
   version: 4.1.3
   resolution: "deep-eql@npm:4.1.3"
@@ -2980,6 +2994,13 @@ __metadata:
   dependencies:
     to-regex-range: "npm:^5.0.1"
   checksum: 10/e260f7592fd196b4421504d3597cc76f4a1ca7a9488260d533b611fc3cefd61e9a9be1417cb82d3b01ad9f9c0ff2dbf258e1026d2445e26b0cf5148ff4250429
+  languageName: node
+  linkType: hard
+
+"find-up-simple@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "find-up-simple@npm:1.0.0"
+  checksum: 10/91c3d51c1111b5eb4e6e6d71d21438f6571a37a69dc288d4222b98996756e2f472fa5393a4dddb5e1a84929405d87e86f4bdce798ba84ee513b79854960ec140
   languageName: node
   linkType: hard
 
@@ -4398,6 +4419,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"micro-memoize@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "micro-memoize@npm:4.1.2"
+  checksum: 10/027e90c3147c97c07224440ea50ede27eb7d888149e4925820397b466d16efc525f5ec3981e4cadec3258a8d36dfd5e7e7c8e660879fbe2e47106785be9bc570
+  languageName: node
+  linkType: hard
+
 "micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
@@ -4998,6 +5026,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"package-up@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "package-up@npm:5.0.0"
+  dependencies:
+    find-up-simple: "npm:^1.0.0"
+  checksum: 10/0537566cf505f867f379be531fb3c9fac816dd31e8e21d8b2a419daf214ef035eab0e9f36bd2c9a92192f974f1e02e2090c41e66de5715d13aeca5474c0b203c
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -5203,6 +5240,20 @@ __metadata:
     path-exists: "npm:^4.0.0"
     which-pm: "npm:2.0.0"
   checksum: 10/3aa768985487c17d08936670b34939c21b5740e35186312d394c09f2c65fb1938fd4e074d0de5d80091c6a154f4adfa566b614fd4971caf43082c2a119e59d6b
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-embed@npm:^0.4.15":
+  version: 0.4.15
+  resolution: "prettier-plugin-embed@npm:0.4.15"
+  dependencies:
+    "@types/estree": "npm:^1.0.5"
+    dedent: "npm:^1.5.1"
+    micro-memoize: "npm:^4.1.2"
+    package-up: "npm:^5.0.0"
+    tiny-jsonc: "npm:^1.0.1"
+    type-fest: "npm:^4.10.3"
+  checksum: 10/952b163813e80c163ee079afc3454abcb02f317301a770fd0c8be1d3c8cc7a885ed278b3c16783bd8d5b83e7dc88990aff17c27ffe639d647ab2f0d9f6a36a8b
   languageName: node
   linkType: hard
 
@@ -6138,6 +6189,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-jsonc@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "tiny-jsonc@npm:1.0.1"
+  checksum: 10/e76dd3c42d0ccd15cfd09fc207f22807dc698fc6e175177158f9e3c56c417cda3d4c8f88497494660a8c2650814d39eeaef41cc282c26d9ab54c7e511c31993d
+  languageName: node
+  linkType: hard
+
 "tinybench@npm:^2.5.1":
   version: 2.8.0
   resolution: "tinybench@npm:2.8.0"
@@ -6343,6 +6401,13 @@ __metadata:
   version: 0.8.1
   resolution: "type-fest@npm:0.8.1"
   checksum: 10/fd4a91bfb706aeeb0d326ebd2e9a8ea5263979e5dec8d16c3e469a5bd3a946e014a062ef76c02e3086d3d1c7209a56a20a4caafd0e9f9a5c2ab975084ea3d388
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.10.3":
+  version: 4.18.1
+  resolution: "type-fest@npm:4.18.1"
+  checksum: 10/ff76e19cb969854161fea2de854073f346e159f5efff05906ece93cbde8a7161b9374121aca53782b44f754152cbacc70264c90ca1acc81ca917723acce5054f
   languageName: node
   linkType: hard
 

@@ -599,6 +599,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@culur/types@workspace:packages/types":
+  version: 0.0.0-use.local
+  resolution: "@culur/types@workspace:packages/types"
+  dependencies:
+    "@culur/config-tsup": "npm:*"
+    "@culur/config-typescript": "npm:*"
+    "@types/node": "npm:^20.12.7"
+    rimraf: "npm:^5.0.5"
+    tsup: "npm:^8.0.2"
+    typescript: "npm:^5.4.5"
+  languageName: unknown
+  linkType: soft
+
 "@culur/utils-packages@workspace:packages/utils-packages":
   version: 0.0.0-use.local
   resolution: "@culur/utils-packages@workspace:packages/utils-packages"

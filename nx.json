@@ -1,0 +1,22 @@
+{
+  "$schema": "https://unpkg.com/nx@18.3.4/schemas/nx-schema.json",
+  "targetDefaults": {
+    "clean": {},
+    "lint": {},
+    "test": {
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["{projectRoot}/**/*", "!{projectRoot}/**/*.md"],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+    "deploy": {
+      "dependsOn": ["test", "build"]
+    }
+  },
+  "defaultBase": "dev",
+  "cacheDirectory": ".nx/cache"
+}

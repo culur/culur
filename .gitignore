@@ -131,3 +131,6 @@ dist
 
 # yarn: globalFolder
 .yarn/berry
+
+# nx
+.nx/cache

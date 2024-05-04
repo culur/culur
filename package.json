@@ -12,5 +12,14 @@
   "homepage": "https://github.com/culur/culur#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "volta": {
+    "node": "20.12.2",
+    "yarn": "4.2.1"
+  },
+  "engines": {
+    "node": ">=20",
+    "yarn": "4.2.1"
+  },
+  "packageManager": "yarn@4.2.1"
 }

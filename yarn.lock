@@ -561,7 +561,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-vite@workspace:packages/config-vite":
+"@culur/config-vite@npm:*, @culur/config-vite@workspace:packages/config-vite":
   version: 0.0.0-use.local
   resolution: "@culur/config-vite@workspace:packages/config-vite"
   dependencies:
@@ -596,6 +596,25 @@ __metadata:
     nx: "npm:18.3.4"
     pinst: "npm:^3.0.0"
     typescript: "npm:^5.4.5"
+  languageName: unknown
+  linkType: soft
+
+"@culur/utils-packages@workspace:packages/utils-packages":
+  version: 0.0.0-use.local
+  resolution: "@culur/utils-packages@workspace:packages/utils-packages"
+  dependencies:
+    "@culur/config-tsup": "npm:*"
+    "@culur/config-typescript": "npm:*"
+    "@culur/config-vite": "npm:*"
+    "@types/node": "npm:^20.12.7"
+    "@vitest/coverage-v8": "npm:^1.5.3"
+    "@vitest/ui": "npm:^1.5.3"
+    local-pkg: "npm:^0.5.0"
+    rimraf: "npm:^5.0.5"
+    tsup: "npm:^8.0.2"
+    typescript: "npm:^5.4.5"
+    vite: "npm:^5.2.10"
+    vitest: "npm:^1.5.3"
   languageName: unknown
   linkType: soft
 

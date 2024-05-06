@@ -1,32 +1,26 @@
 name: Install dependencies
 description: Prepare node, yarn and all dependencies
 inputs:
-  node-linker:
-    description: pnp or pnpm
-    required: true
-    default: pnpm
+  before-install:
+    description: before install script
+    required: false
+    default: ''
 
 runs:
   using: composite
   steps:
-    #! Volta
-    - name: Use node & yarn from volta config
-      uses: volta-cli/action@v4
-
-    #! Yarn cache folder
-    - name: Get yarn cache directory path
-      id: yarn-cache-dir-path
+    #! Determine versions
+    - name: Determine versions
+      id: determine-versions
       shell: bash
-      run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+      run: |
+        echo "nodeVersion=$(jq -r .volta.node package.json)" >> $GITHUB_OUTPUT
 
-    - name: Cache yarn
-      uses: actions/cache@v4
-      id: yarn-cache
+    #! Node
+    - uses: actions/setup-node@v4
       with:
-        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ inputs.node-linker }}-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-${{ inputs.node-linker }}
+        node-version: ${{ steps.determine-versions.outputs.nodeVersion }}
+        cache: yarn
 
     #! Nx
     - name: Cache nx build setup
@@ -43,21 +37,13 @@ runs:
       with:
         size-in-mb: 10
 
-    #! Yarn config pnp
-    - name: Yarn config pnp
-      if: ${{ inputs.node-linker == 'pnp' }}
+    #! Before install
+    - name: Before install
+      if: ${{ inputs.before-install != '' }}
       shell: bash
-      run: |
-        yarn config set nodeLinker pnp
+      run: ${{ inputs.before-install }}
 
     #! Install
     - name: Install Dependencies
       shell: bash
       run: yarn
-
-    #! Yarn config sdks
-    - name: Yarn config pnp
-      if: ${{ inputs.node-linker == 'pnp' }}
-      shell: bash
-      run: |
-        yarn dlx @yarnpkg/sdks vscode

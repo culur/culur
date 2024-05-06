@@ -1,4 +1,4 @@
-name: 'Prepare `yarn-pnp` branch'
+name: Prepare `yarn-pnp` branch
 
 on: workflow_dispatch
 
@@ -26,7 +26,13 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/install-dependencies
         with:
-          node-linker: 'pnp'
+          before-install: yarn config set nodeLinker pnp
+
+      #! Yarn config sdks
+      - name: Yarn config pnp
+        shell: bash
+        run: |
+          yarn dlx @yarnpkg/sdks vscode
 
       #! Yarn pnp
       - name: Commit & push

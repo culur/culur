@@ -1,4 +1,4 @@
-name: 'Build and release'
+name: Build and release
 
 on: [push, pull_request]
 
@@ -84,8 +84,8 @@ jobs:
             packages/*/dist/
             scripts/*/dist/
 
-      #! Create release pull request
-      - name: Create release pull request
+      #! Create release pull request or publish to npm
+      - name: Create release pull request or publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
@@ -93,6 +93,7 @@ jobs:
           commit: 'chore: version packages'
           branch: main
           version: yarn changeset:version
+          publish: yarn changeset:publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-stylelint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Culur's stylelint configuration",
   "repository": {
     "type": "git",

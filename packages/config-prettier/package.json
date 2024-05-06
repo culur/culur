@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-prettier",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Culur's prettier configuration",
   "repository": {
     "type": "git",

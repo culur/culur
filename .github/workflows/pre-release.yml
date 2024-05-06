@@ -1,0 +1,48 @@
+name: Pre-release
+
+on: workflow_dispatch
+
+jobs:
+  #! ----- ----- ----- Pre release ----- ----- ----- !#
+  release:
+    name: Publish pre-release
+    if: ${{ github.ref == 'refs/heads/release' }}
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      #! Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      #! Install dependencies
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Build
+      - name: Build
+        run: yarn build
+
+      #! Lint
+      - name: Lint
+        run: yarn lint
+
+      #! Test
+      - name: Test
+        run: yarn test
+
+      #! Publish pre-release
+      - name: Publish pre-release
+        continue-on-error: true
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git reset --hard origin/release
+          yarn build
+          yarn changeset version --no-git-tag --snapshot dev
+          yarn changeset publish --no-git-tag --snapshot dev --tag dev

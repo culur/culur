@@ -1,0 +1,99 @@
+name: Build and release
+
+on: [push, pull_request]
+
+jobs:
+  #! ----- ----- ----- Build and test ----- ----- ----- !#
+  build:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      #! Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      #! Install dependencies
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Build
+      - name: Build
+        run: yarn build
+
+      #! Lint
+      - name: Lint
+        run: yarn lint
+
+      #! Test
+      - name: Test
+        run: yarn test
+
+      #! Find coverage files
+      - name: Find coverage files
+        id: coverage-files
+        run: echo "files=$(find . -path ./.nx -prune , -type f -name coverage-final.json | paste -sd,)" >> $GITHUB_OUTPUT
+
+      #! Upload Coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: ${{ steps.coverage-files.outputs.files }}
+          disable_search: true
+
+      #! Upload artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        if: ${{ github.ref == 'refs/heads/release' }}
+        with:
+          name: build-artifact
+          path: |
+            packages/*/dist/
+            scripts/*/dist/
+          if-no-files-found: error
+
+  #! ----- ----- ----- Prepare release ----- ----- ----- !#
+  release:
+    name: Prepare release pull request
+    needs: build
+    if: "${{ github.ref == 'refs/heads/release' || (github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore: version packages')) }}"
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
+      #! Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      #! Install dependencies
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Download artifact
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        if: ${{ github.ref == 'refs/heads/release' }}
+        with:
+          name: build-artifact
+          path: |
+            packages/*/dist/
+            scripts/*/dist/
+
+      #! Create release pull request or publish to npm
+      - name: Create release pull request or publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          title: 'chore: version packages'
+          commit: 'chore: version packages'
+          branch: main
+          version: yarn changeset:version
+          publish: yarn changeset:publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

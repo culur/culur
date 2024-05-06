@@ -1,0 +1,63 @@
+name: Install dependencies
+description: Prepare node, yarn and all dependencies
+inputs:
+  node-linker:
+    description: pnp or pnpm
+    required: true
+    default: pnpm
+
+runs:
+  using: composite
+  steps:
+    #! Volta
+    - name: Use node & yarn from volta config
+      uses: volta-cli/action@v4
+
+    #! Yarn cache folder
+    - name: Get yarn cache directory path
+      id: yarn-cache-dir-path
+      shell: bash
+      run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+    - name: Cache yarn
+      uses: actions/cache@v4
+      id: yarn-cache
+      with:
+        path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+        key: ${{ runner.os }}-yarn-${{ inputs.node-linker }}-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-${{ inputs.node-linker }}
+
+    #! Nx
+    - name: Cache nx build setup
+      uses: actions/cache@v4
+      with:
+        path: .nx/cache
+        key: ${{ runner.os }}-nx-${{ github.sha }}
+        restore-keys: |
+          ${{ runner.os }}-nx-
+
+    #! Clear old nx cache
+    - name: Clear old nx cache
+      uses: ./.github/actions/clear-old-nx-cache
+      with:
+        size-in-mb: 10
+
+    #! Yarn config pnp
+    - name: Yarn config pnp
+      if: ${{ inputs.node-linker == 'pnp' }}
+      shell: bash
+      run: |
+        yarn config set nodeLinker pnp
+
+    #! Install
+    - name: Install Dependencies
+      shell: bash
+      run: yarn
+
+    #! Yarn config sdks
+    - name: Yarn config pnp
+      if: ${{ inputs.node-linker == 'pnp' }}
+      shell: bash
+      run: |
+        yarn dlx @yarnpkg/sdks vscode

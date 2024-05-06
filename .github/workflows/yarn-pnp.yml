@@ -1,0 +1,50 @@
+name: 'Prepare `yarn-pnp` branch'
+
+on: workflow_dispatch
+
+jobs:
+  #! ----- ----- ----- Build with pnp ----- ----- ----- !#
+  build_pnp:
+    name: Build and test with yarn pnp
+    if: ${{ github.ref == 'refs/heads/dev' }}
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}-pnp
+      cancel-in-progress: true
+    steps:
+      #! Checkout
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      #! Prepare branch
+      - name: Prepare branch
+        run: |
+          git branch feat/yarn-pnp -f
+          git checkout feat/yarn-pnp
+
+      #! Install dependencies
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+        with:
+          node-linker: 'pnp'
+
+      #! Yarn pnp
+      - name: Commit & push
+        run: |
+          git config --global user.name 'culur'
+          git config --global user.email 'culur.net@gmail.com'
+          git add .
+          git commit -m "build(package): config yarn pnp"
+          git push --set-upstream origin feat/yarn-pnp -f
+
+      #! Build
+      - name: Build
+        run: yarn build
+
+      #! Lint
+      - name: Lint
+        run: yarn lint
+
+      #! Test
+      - name: Test
+        run: yarn test

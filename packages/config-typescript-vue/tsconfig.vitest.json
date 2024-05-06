@@ -1,0 +1,16 @@
+{
+  //? Configs
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "composite": true,
+
+    //! Modules
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+
+    "lib": [],
+    "types": ["node", "jsdom"]
+  }
+}

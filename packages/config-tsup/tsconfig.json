@@ -1,0 +1,7 @@
+{
+  //? Configs
+  "extends": "@culur/config-typescript/tsconfig.lib.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

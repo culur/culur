@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-prettier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Culur's prettier configuration",
   "publishConfig": {
     "access": "public"

@@ -29,7 +29,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=20.12.2"
   },
   "volta": {
     "extends": "../../package.json"
@@ -38,11 +38,11 @@
     "@tsconfig/recommended": "^1.0.6"
   },
   "devDependencies": {
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.9",
     "typescript": "^5.4.5"
   },
   "peerDependencies": {
     "@types/node": "*",
-    "typescript": ">=5"
+    "typescript": ">=5.4.5"
   }
 }

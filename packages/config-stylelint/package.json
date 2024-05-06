@@ -40,7 +40,7 @@
     "test": "vitest run --coverage"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.12.2"
   },
   "volta": {
     "extends": "../../package.json"
@@ -52,7 +52,7 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.2.1",
+    "stylelint-scss": "^6.3.0",
     "stylelint-selector-bem-pattern": "^4.0.0"
   },
   "devDependencies": {
@@ -61,22 +61,22 @@
     "@culur/config-vite": "*",
     "@culur/types": "*",
     "@culur/utils-packages": "*",
-    "@types/node": "^20.12.7",
-    "@vitest/coverage-v8": "^1.5.3",
-    "@vitest/ui": "^1.5.3",
+    "@types/node": "^20.12.9",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
     "dedent": "^1.5.3",
     "postcss": "^8.4.38",
     "postcss-html": "^1.6.0",
     "postcss-sass": "^0.5.0",
     "postcss-scss": "^4.0.9",
     "rimraf": "^5.0.5",
-    "stylelint": "^16.4.0",
+    "stylelint": "^16.5.0",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "vitest": "^1.5.3"
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "stylelint": ">=16.0.0"
+    "stylelint": ">=16.5.0"
   }
 }

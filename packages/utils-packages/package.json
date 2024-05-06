@@ -37,7 +37,7 @@
     "test": "vitest run --coverage"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.12.2"
   },
   "volta": {
     "extends": "../../package.json"
@@ -49,13 +49,13 @@
     "@culur/config-tsup": "*",
     "@culur/config-typescript": "*",
     "@culur/config-vite": "*",
-    "@types/node": "^20.12.7",
-    "@vitest/coverage-v8": "^1.5.3",
-    "@vitest/ui": "^1.5.3",
+    "@types/node": "^20.12.9",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
     "rimraf": "^5.0.5",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "vitest": "^1.5.3"
+    "vite": "^5.2.11",
+    "vitest": "^1.6.0"
   }
 }

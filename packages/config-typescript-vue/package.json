@@ -32,7 +32,7 @@
     "README.md"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=20.12.2"
   },
   "volta": {
     "extends": "../../package.json"
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.6",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.9",
     "typescript": "^5.4.5"
   }
 }

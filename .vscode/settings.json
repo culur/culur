@@ -3,6 +3,7 @@
   "files.exclude": {
     "**/.git": true,
     "**/.vscode": true,
+    "**/.nx": true,
     "**/node_modules": true,
     "**/yarn-error.log": true
   },

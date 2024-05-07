@@ -12,8 +12,18 @@
   "homepage": "https://github.com/culur/culur#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
+  "workspaces": [
+    "packages/**",
+    "scripts/**",
+    "templates/**"
+  ],
   "type": "module",
   "scripts": {
+    "🚀 ----- NX ----- 🚀": "",
+    "lint": "nx run-many -t lint",
+    "clean": "nx run-many -t clean",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
     "🦋 ----- CHANGESET ----- 🦋": "",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
@@ -40,6 +50,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "husky": "^9.0.11",
+    "nx": "19.0.0",
     "pinst": "^3.0.0"
   }
 }

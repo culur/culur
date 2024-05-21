@@ -1,0 +1,22 @@
+{
+  //? Files
+  "include": ["src/**/*.ts", "src/**/*.vue", "./typed-router.d.ts"],
+  "exclude": ["src/**/*.test.ts"],
+
+  //? Configs
+  "extends": "@culur/config-typescript-vue/tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "vite/client",
+      "unplugin-vue-router/client", //
+      "vite-plugin-vue-layouts/client"
+    ]
+  },
+  "vueCompilerOptions": {
+    "plugins": ["../volar"]
+  }
+}

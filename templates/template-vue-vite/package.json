@@ -1,0 +1,80 @@
+{
+  "name": "@culur/template-vue-vite",
+  "version": "0.0.0",
+  "description": "Culur's prettier configuration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-prettier"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "prettier"
+  ],
+  "type": "commonjs",
+  "files": [
+    "src",
+    "dist",
+    ".prettierignore",
+    ".prettierrc.js",
+    "!**/*.test.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "🟡------- FORMAT -------🟡": "",
+    "fix:prettier": "prettier '**' --write",
+    "test:prettier": "prettier '**' --list-different"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {
+    "@intlify/unplugin-vue-i18n": "^4.0.0",
+    "@unhead/vue": "^1.9.7",
+    "pinia": "^2.1.7",
+    "unplugin-vue-markdown": "^0.26.2",
+    "vue": "^3.4.24",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.2"
+  },
+  "devDependencies": {
+    "@culur/config-prettier": "*",
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-typescript-vue": "*",
+    "@culur/types": "*",
+    "@rollup/plugin-yaml": "^4.1.2",
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-v8": "^1.5.0",
+    "@vitest/ui": "^1.5.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "unplugin-vue-router": "^0.8.6",
+    "vite": "^5.2.10",
+    "vite-plugin-inspect": "^0.8.4",
+    "vite-plugin-node-polyfills": "^0.21.0",
+    "vite-plugin-vue-layouts": "^0.11.0",
+    "vitest": "^1.5.0",
+    "vue-tsc": "^2.0.14"
+  }
+}

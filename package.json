@@ -72,6 +72,7 @@
     "pinst": "^3.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-embed": "^0.4.15",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }

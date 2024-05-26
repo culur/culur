@@ -1,0 +1,100 @@
+{
+  "name": "@culur/config-stylelint",
+  "version": "0.0.0",
+  "description": "Culur's stylelint configuration",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-stylelint"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "stylelint"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./factory": {
+      "import": {
+        "types": "./dist/factory.d.ts",
+        "default": "./dist/factory.js"
+      },
+      "require": {
+        "types": "./dist/factory.d.cts",
+        "default": "./dist/factory.cjs"
+      }
+    }
+  },
+  "files": [
+    "!**/*.json",
+    "!**/*.test.*",
+    ".stylelintrc.js",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist coverage",
+    "build": "tsup",
+    "test": "tsc --noEmit && vitest run"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@culur/utils-packages": "*",
+    "stylelint-config-clean-order": "^5.4.2",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.3.0",
+    "stylelint-selector-bem-pattern": "^4.0.0"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-vite": "*",
+    "@types/node": "^20.12.12",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "dedent": "^1.5.3",
+    "postcss": "^8.4.38",
+    "postcss-html": "^1.7.0",
+    "postcss-sass": "^0.5.0",
+    "postcss-scss": "^4.0.9",
+    "rimraf": "^5.0.7",
+    "stylelint": "^16.6.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16.0.0"
+  }
+}

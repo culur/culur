@@ -19,6 +19,14 @@
     },
     {
       "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-eslint/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["eslint"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
       "matchFileNames": ["packages/config-prettier/package.json"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["peerDependencies"],

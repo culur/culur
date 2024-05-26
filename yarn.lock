@@ -625,6 +625,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@culur/utils-packages@workspace:packages/utils-packages":
+  version: 0.0.0-use.local
+  resolution: "@culur/utils-packages@workspace:packages/utils-packages"
+  dependencies:
+    "@culur/config-tsup": "npm:*"
+    "@culur/config-typescript": "npm:*"
+    "@culur/config-vite": "npm:*"
+    "@types/node": "npm:^20.12.12"
+    "@vitest/coverage-v8": "npm:^1.6.0"
+    "@vitest/ui": "npm:^1.6.0"
+    local-pkg: "npm:^0.5.0"
+    rimraf: "npm:^5.0.7"
+    tsup: "npm:^8.0.2"
+    typescript: "npm:^5.4.5"
+    vitest: "npm:^1.6.0"
+  languageName: unknown
+  linkType: soft
+
 "@esbuild/aix-ppc64@npm:0.19.12":
   version: 0.19.12
   resolution: "@esbuild/aix-ppc64@npm:0.19.12"

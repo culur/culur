@@ -1,0 +1,14 @@
+{
+  //? Configs
+  "compilerOptions": {
+    "moduleResolution": "Node"
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.config.json" },
+    { "path": "./tsconfig.vitest.json" }
+  ],
+
+  //? Files
+  "files": []
+}

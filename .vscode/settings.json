@@ -19,5 +19,13 @@
   },
   //! TypeScript
   "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  //! Eslint
+  "eslint.workingDirectories": [
+    { "pattern": "/apps/*/" },
+    { "pattern": "/packages/*/" },
+    { "pattern": "/scripts/*/" },
+    { "pattern": "/templates/*/" }
+  ]
 }

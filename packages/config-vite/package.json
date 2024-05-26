@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-vite",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Culur's vitest configuration",
   "publishConfig": {
     "access": "public"

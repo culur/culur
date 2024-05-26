@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    //? Modules
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+
+    //? Type Checking
+    "strict": true,
+
+    //? Interop Constraints
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    //? Completeness
+    "skipLibCheck": true
+  }
+}

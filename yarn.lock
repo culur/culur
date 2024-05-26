@@ -726,7 +726,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-prettier@workspace:packages/config-prettier":
+"@culur/config-prettier@npm:*, @culur/config-prettier@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@culur/config-prettier@workspace:packages/config-prettier"
   dependencies:
@@ -841,9 +841,12 @@ __metadata:
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@commitlint/types": "npm:^19.0.3"
+    "@culur/config-prettier": "npm:*"
     husky: "npm:^9.0.11"
     nx: "npm:19.1.0"
     pinst: "npm:^3.0.0"
+    prettier: "npm:^3.2.5"
+    prettier-plugin-embed: "npm:^0.4.15"
     typescript: "npm:^5.4.5"
   languageName: unknown
   linkType: soft
@@ -3165,7 +3168,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dedent@npm:^1.5.3":
+"dedent@npm:^1.5.1, dedent@npm:^1.5.3":
   version: 1.5.3
   resolution: "dedent@npm:1.5.3"
   peerDependencies:
@@ -4429,6 +4432,13 @@ __metadata:
   dependencies:
     to-regex-range: "npm:^5.0.1"
   checksum: 10/a7095cb39e5bc32fada2aa7c7249d3f6b01bd1ce461a61b0adabacccabd9198500c6fb1f68a7c851a657e273fce2233ba869638897f3d7ed2e87a2d89b4436ea
+  languageName: node
+  linkType: hard
+
+"find-up-simple@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "find-up-simple@npm:1.0.0"
+  checksum: 10/91c3d51c1111b5eb4e6e6d71d21438f6571a37a69dc288d4222b98996756e2f472fa5393a4dddb5e1a84929405d87e86f4bdce798ba84ee513b79854960ec140
   languageName: node
   linkType: hard
 
@@ -6176,6 +6186,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"micro-memoize@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "micro-memoize@npm:4.1.2"
+  checksum: 10/027e90c3147c97c07224440ea50ede27eb7d888149e4925820397b466d16efc525f5ec3981e4cadec3258a8d36dfd5e7e7c8e660879fbe2e47106785be9bc570
+  languageName: node
+  linkType: hard
+
 "micromark@npm:~2.11.0":
   version: 2.11.4
   resolution: "micromark@npm:2.11.4"
@@ -6860,6 +6877,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"package-up@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "package-up@npm:5.0.0"
+  dependencies:
+    find-up-simple: "npm:^1.0.0"
+  checksum: 10/0537566cf505f867f379be531fb3c9fac816dd31e8e21d8b2a419daf214ef035eab0e9f36bd2c9a92192f974f1e02e2090c41e66de5715d13aeca5474c0b203c
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -7206,6 +7232,20 @@ __metadata:
   version: 1.2.1
   resolution: "prelude-ls@npm:1.2.1"
   checksum: 10/0b9d2c76801ca652a7f64892dd37b7e3fab149a37d2424920099bf894acccc62abb4424af2155ab36dea8744843060a2d8ddc983518d0b1e22265a22324b72ed
+  languageName: node
+  linkType: hard
+
+"prettier-plugin-embed@npm:^0.4.15":
+  version: 0.4.15
+  resolution: "prettier-plugin-embed@npm:0.4.15"
+  dependencies:
+    "@types/estree": "npm:^1.0.5"
+    dedent: "npm:^1.5.1"
+    micro-memoize: "npm:^4.1.2"
+    package-up: "npm:^5.0.0"
+    tiny-jsonc: "npm:^1.0.1"
+    type-fest: "npm:^4.10.3"
+  checksum: 10/952b163813e80c163ee079afc3454abcb02f317301a770fd0c8be1d3c8cc7a885ed278b3c16783bd8d5b83e7dc88990aff17c27ffe639d647ab2f0d9f6a36a8b
   languageName: node
   linkType: hard
 
@@ -8494,6 +8534,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-jsonc@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "tiny-jsonc@npm:1.0.1"
+  checksum: 10/e76dd3c42d0ccd15cfd09fc207f22807dc698fc6e175177158f9e3c56c417cda3d4c8f88497494660a8c2650814d39eeaef41cc282c26d9ab54c7e511c31993d
+  languageName: node
+  linkType: hard
+
 "tinybench@npm:^2.5.1":
   version: 2.8.0
   resolution: "tinybench@npm:2.8.0"
@@ -8761,7 +8808,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.18.3":
+"type-fest@npm:^4.10.3, type-fest@npm:^4.18.3":
   version: 4.18.3
   resolution: "type-fest@npm:4.18.3"
   checksum: 10/eb750920d0ef3639177f581edd6489d972c5c5827abb602a9c9662889aad148a7d558257e36c563f1beb81a2e417faec52ecec9799b28531d8335856f91e6dff

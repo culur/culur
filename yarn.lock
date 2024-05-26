@@ -491,6 +491,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@culur/config-typescript@workspace:packages/config-typescript":
+  version: 0.0.0-use.local
+  resolution: "@culur/config-typescript@workspace:packages/config-typescript"
+  dependencies:
+    "@types/node": "npm:^20.12.12"
+    typescript: "npm:^5.4.5"
+  peerDependencies:
+    "@types/node": "*"
+    typescript: ">=5.1"
+  languageName: unknown
+  linkType: soft
+
 "@culur/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@culur/monorepo@workspace:."
@@ -687,6 +699,15 @@ __metadata:
   version: 12.20.55
   resolution: "@types/node@npm:12.20.55"
   checksum: 10/1f916a06fff02faadb09a16ed6e31820ce170798b202ef0b14fc244bfbd721938c54a3a99836e185e4414ca461fe96c5bb5c67c3d248f153555b7e6347f061dd
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.12.12":
+  version: 20.12.12
+  resolution: "@types/node@npm:20.12.12"
+  dependencies:
+    undici-types: "npm:~5.26.4"
+  checksum: 10/e3945da0a3017bdc1f88f15bdfb823f526b2a717bd58d4640082d6eb0bd2794b5c99bfb914b9e9324ec116dce36066990353ed1c777e8a7b0641f772575793c4
   languageName: node
   linkType: hard
 

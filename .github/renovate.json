@@ -19,6 +19,14 @@
     },
     {
       "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-prettier/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["prettier"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
       "matchFileNames": ["packages/config-typescript/package.json"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["peerDependencies"],

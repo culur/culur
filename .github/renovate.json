@@ -27,6 +27,14 @@
     },
     {
       "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-stylelint/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["stylelint"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
       "matchFileNames": ["packages/config-typescript/package.json"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["peerDependencies"],

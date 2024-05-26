@@ -16,6 +16,14 @@
       "matchDepTypes": ["engines"],
       "matchPackageNames": ["node"],
       "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-typescript/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["typescript"],
+      "enabled": false
     }
   ]
 }

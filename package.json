@@ -13,11 +13,31 @@
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "workspaces": [
+    "app/**",
+    "packages/**",
+    "scripts/**",
+    "templates/**"
+  ],
   "scripts": {
+    "🚀 ----- NX ----- 🚀": "",
+    "clean": "nx run-many -t clean",
+    "build": "nx run-many -t build",
+    "test": "nx run-many -t test",
+    "fix": "nx run-many -t fix && yarn fix:all",
+    "lint": "nx run-many -t lint && yarn lint:all",
     "🦋 ----- CHANGESET ----- 🦋": "",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version && yarn --mode=\"update-lockfile\""
+    "changeset:version": "changeset version && yarn --mode=\"update-lockfile\"",
+    "🧹 ------- FORMAT ------- 🧹": "",
+    "fix:all": "",
+    "lint:all": "",
+    "🔃 ----- LIFE CYCLE ----- 🔃": "",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "commitlint": "commitlint --edit"
   },
   "volta": {
     "node": "20.13.1",
@@ -30,6 +50,12 @@
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
     "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "^2.27.3"
+    "@changesets/cli": "^2.27.3",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/types": "^19.0.3",
+    "husky": "^9.0.11",
+    "nx": "19.1.0",
+    "pinst": "^3.0.0"
   }
 }

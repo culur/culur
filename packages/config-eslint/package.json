@@ -1,0 +1,78 @@
+{
+  "name": "@culur/config-eslint",
+  "version": "0.0.0",
+  "description": "Culur's eslint configuration",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/config-eslint"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "eslint"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    ".eslintignore",
+    ".eslintrc.cjs",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup",
+    "test": "tsc --noEmit && vitest run"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^2.18.1"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-vite": "*",
+    "@eslint/eslintrc": "^3.1.0",
+    "@types/eslint": "^8.56.10",
+    "@types/node": "^20.12.12",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "eslint": "^9.3.0",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.2",
+    "type-fest": "^4.18.3",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.2.0"
+  }
+}

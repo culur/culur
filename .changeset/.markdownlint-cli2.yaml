@@ -1,0 +1,4 @@
+$schema: https://unpkg.com/markdownlint-cli2@0.13.0/schema/markdownlint-cli2-config-schema.json
+
+config:
+  first-line-h1: false

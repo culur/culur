@@ -25,7 +25,7 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: yarn build
+        run: yarn build --skip-nx-cache
 
       #! Lint
       - name: 🧹 Lint
@@ -42,7 +42,8 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git reset --hard origin/release
-          yarn build
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
           yarn changeset version --no-git-tag --snapshot dev
           yarn changeset publish --no-git-tag --snapshot dev --tag dev

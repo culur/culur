@@ -29,7 +29,7 @@
     "🦋 ----- CHANGESET ----- 🦋": "",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version && yarn --mode=\"update-lockfile\"",
+    "changeset:version": "changeset version",
     "🧹 ------- FORMAT ------- 🧹": "",
     "fix:all": "yarn fix:es && yarn fix:md && yarn fix:prettier",
     "fix:es": "eslint --fix",

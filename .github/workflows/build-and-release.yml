@@ -79,5 +79,5 @@ jobs:
           publish: yarn changeset:publish
         env:
           # Only release on main branch
-          NPM_TOKEN: ${{ github.ref == 'refs/heads/main' && secrets.NPM_TOKEN || '' }}"
+          NPM_TOKEN: ${{ github.ref == 'refs/heads/main' && secrets.NPM_TOKEN || '' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

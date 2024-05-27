@@ -66,7 +66,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@culur/utils-packages": "*",
+    "@culur/utils-packages": "1.0.0",
     "stylelint-config-clean-order": "^5.4.2",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^36.0.0",
@@ -77,9 +77,9 @@
     "stylelint-selector-bem-pattern": "^4.0.0"
   },
   "devDependencies": {
-    "@culur/config-tsup": "*",
-    "@culur/config-typescript": "*",
-    "@culur/config-vite": "*",
+    "@culur/config-tsup": "1.0.0",
+    "@culur/config-typescript": "1.0.0",
+    "@culur/config-vite": "1.0.0",
     "@types/node": "^20.12.12",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",

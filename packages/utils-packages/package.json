@@ -56,9 +56,9 @@
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
-    "@culur/config-tsup": "*",
-    "@culur/config-typescript": "*",
-    "@culur/config-vite": "*",
+    "@culur/config-tsup": "1.0.0",
+    "@culur/config-typescript": "1.0.0",
+    "@culur/config-vite": "1.0.0",
     "@types/node": "^20.12.12",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",

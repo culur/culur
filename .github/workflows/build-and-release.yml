@@ -1,4 +1,4 @@
-name: Build and release
+name: 🛠️ Build and release
 
 on: [push, pull_request]
 

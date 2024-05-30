@@ -1,9 +1,6 @@
-name: Renovate changeset
+name: 🦋 Generate changesets for Renovate
 
 on:
-  push:
-    branches:
-      - feat/renovate
   pull_request_target:
     paths:
       - .github/workflows/renovate-changesets.yml
@@ -13,11 +10,14 @@ jobs:
   generate-changeset:
     name: Generate changesets
     runs-on: ubuntu-latest
-    if: github.actor == 'renovate[bot]' && github.repository == 'culur/culur'
+    # if: github.actor == 'renovate[bot]' && github.repository == 'culur/culur'
     steps:
       #! Checkout
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
 
       #! Install dependencies
       - name: 📥 Install dependencies

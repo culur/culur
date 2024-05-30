@@ -4,6 +4,8 @@ import exec from '@actions/exec';
 
 export async function checkBranch() {
   const branch = await exec.getExecOutput('git branch --show-current');
+  core.debug(`Current branch: ${branch.stdout}`);
+
   if (!branch.stdout.startsWith('renovate/')) {
     core.info('Not a renovate branch, skipping');
     process.exit(0);

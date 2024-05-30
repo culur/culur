@@ -9,7 +9,7 @@ import type { Input } from '~/input/get-input';
 
 export async function getChangedPackages({ baseBranch }: Input) {
   const diffOutput = await exec.getExecOutput(
-    `git diff --name-only ${baseBranch}`,
+    `git diff --name-only origin/${baseBranch} --`,
   );
   const diffFiles = diffOutput.stdout.split('\n');
   if (diffFiles.find(f => f.startsWith('.changeset'))) {
@@ -29,11 +29,9 @@ export async function getChangedPackages({ baseBranch }: Input) {
   const output = [];
   for (const file of packageJsonFiles) {
     const json: PackageJson = await fs.readJson(file);
-    const changedLines = await exec.getExecOutput('git', [
-      'diff',
-      baseBranch,
-      file,
-    ]);
+    const changedLines = await exec.getExecOutput(
+      `git diff origin/${baseBranch} -- ${file}`,
+    );
 
     const changedPackages: {
       [key in DependenciesType]?: Record<string, string>;

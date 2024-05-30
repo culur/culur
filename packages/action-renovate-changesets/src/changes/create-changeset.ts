@@ -42,8 +42,9 @@ export async function createChangeset(changedFiles: ChangedFiles) {
     ].join('\n');
 
     core.debug(dedent`
+      __________________________________________________
       ${fileName}
-      -----
+      _________________________
       ${body}
     `);
 

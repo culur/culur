@@ -1,4 +1,4 @@
 import type { Options } from 'tsup';
-import { defineObject } from '../../../types/src'; // external import
+import { defineObject } from '../../../types/src/define-object'; // external import
 
 export const defineConfig = defineObject<Options>();

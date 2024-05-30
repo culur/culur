@@ -57,7 +57,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.18.1"
+    "@antfu/eslint-config": "^2.19.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.0.0",
@@ -65,7 +65,7 @@
     "@culur/config-vite": "1.0.0",
     "@eslint/eslintrc": "^3.1.0",
     "@types/eslint": "^8.56.10",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.12.13",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "eslint": "^9.3.0",

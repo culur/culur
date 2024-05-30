@@ -65,7 +65,7 @@
     "@culur/config-vite": "1.0.0",
     "@culur/types": "1.0.0",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.12.13",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "rimraf": "^5.0.7",

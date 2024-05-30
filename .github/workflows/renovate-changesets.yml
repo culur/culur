@@ -1,0 +1,35 @@
+name: Renovate changeset
+
+on:
+  push:
+    branches:
+      - feat/renovate
+  pull_request_target:
+    paths:
+      - .github/workflows/renovate-changesets.yml
+      - '**/yarn.lock'
+
+jobs:
+  generate-changeset:
+    name: Generate changesets
+    runs-on: ubuntu-latest
+    if: github.actor == 'renovate[bot]' && github.repository == 'culur/culur'
+    steps:
+      #! Checkout
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+
+      #! Install dependencies
+      - name: 📥 Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Build
+      - name: 🛠️ Build
+        run: yarn build
+
+      #! Generate changsets
+      - name: 🦋 Generate changsets
+        id: test-action
+        uses: ./packages/action-renovate-changesets/
+        with:
+          base-branch: dev

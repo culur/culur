@@ -1,0 +1,17 @@
+name: Add a changeset for dependency updates
+description: Github Action to publish changesets to dependency update PR's
+branding:
+  icon: package
+  color: purple
+author: phamhongphuc
+
+# Define your inputs here.
+inputs:
+  base-branch:
+    description: Base branch for renovate
+    required: true
+    default: dev
+
+runs:
+  using: node20
+  main: dist/index.js

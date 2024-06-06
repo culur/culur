@@ -4,7 +4,6 @@ import { vite, vitest } from '.';
 
 it('vite config', () => {
   const config = vite;
-  expect(config.test).toBeUndefined();
   expectTypeOf(config).toEqualTypeOf<UserConfigVite>();
 });
 

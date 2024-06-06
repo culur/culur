@@ -63,7 +63,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/eslint-config@npm:^2.20.0":
+"@antfu/eslint-config@npm:^2.18.1, @antfu/eslint-config@npm:^2.20.0":
   version: 2.20.0
   resolution: "@antfu/eslint-config@npm:2.20.0"
   dependencies:
@@ -771,10 +771,10 @@ __metadata:
     "@actions/core": "npm:^1.10.1"
     "@actions/exec": "npm:^1.1.1"
     "@actions/github": "npm:^6.0.0"
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
-    "@culur/types": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
+    "@culur/types": "npm:1.0.1"
     "@octokit/webhooks-definitions": "npm:3.67.3"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/node": "npm:^20.14.2"
@@ -790,14 +790,25 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-eslint@npm:1.0.0, @culur/config-eslint@workspace:packages/config-eslint":
+"@culur/config-eslint@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@culur/config-eslint@npm:1.0.0"
+  dependencies:
+    "@antfu/eslint-config": "npm:^2.18.1"
+  peerDependencies:
+    eslint: ">=9.2.0"
+  checksum: 10/45553393462dda30e845f7af7e8106a5556bc029b22a2abd81fd1151199431be4f519e9636a30371e3add7314dacc1253d8989fa9212f916e7b9f34dcdaa5798
+  languageName: node
+  linkType: hard
+
+"@culur/config-eslint@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@culur/config-eslint@workspace:packages/config-eslint"
   dependencies:
     "@antfu/eslint-config": "npm:^2.20.0"
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^8.56.10"
     "@types/node": "npm:^20.14.2"
@@ -814,15 +825,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-prettier@npm:1.0.0, @culur/config-prettier@workspace:packages/config-prettier":
+"@culur/config-prettier@npm:1.0.0":
+  version: 1.0.0
+  resolution: "@culur/config-prettier@npm:1.0.0"
+  peerDependencies:
+    prettier: ">=3.0.0"
+  checksum: 10/d8b5ad8fe3e8314ecd9d1a7065070f5d8ac56cab310d009fbbf501edf09328f8370d868cd534d072085c66a3a4718c4a96107be25ac19eb4d4016d27e034cd54
+  languageName: node
+  linkType: hard
+
+"@culur/config-prettier@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@culur/config-prettier@workspace:packages/config-prettier"
   dependencies:
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
-    "@culur/types": "npm:1.0.0"
-    "@culur/utils-packages": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
+    "@culur/types": "npm:1.0.1"
+    "@culur/utils-packages": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -840,10 +860,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@culur/config-stylelint@workspace:packages/config-stylelint"
   dependencies:
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
-    "@culur/utils-packages": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
+    "@culur/utils-packages": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -870,11 +890,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-tsup@npm:1.0.0, @culur/config-tsup@workspace:packages/config-tsup":
+"@culur/config-tsup@npm:1.0.1, @culur/config-tsup@workspace:packages/config-tsup":
   version: 0.0.0-use.local
   resolution: "@culur/config-tsup@workspace:packages/config-tsup"
   dependencies:
-    "@culur/config-typescript": "npm:1.0.0"
+    "@culur/config-typescript": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -885,7 +905,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-typescript@npm:1.0.0, @culur/config-typescript@workspace:packages/config-typescript":
+"@culur/config-typescript@npm:1.0.1, @culur/config-typescript@workspace:packages/config-typescript":
   version: 0.0.0-use.local
   resolution: "@culur/config-typescript@workspace:packages/config-typescript"
   dependencies:
@@ -897,12 +917,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-vite@npm:1.0.0, @culur/config-vite@workspace:packages/config-vite":
+"@culur/config-vite@npm:1.0.1, @culur/config-vite@workspace:packages/config-vite":
   version: 0.0.0-use.local
   resolution: "@culur/config-vite@workspace:packages/config-vite"
   dependencies:
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -944,13 +964,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/types@npm:1.0.0, @culur/types@workspace:packages/types":
+"@culur/types@npm:1.0.1, @culur/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@culur/types@workspace:packages/types"
   dependencies:
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -962,13 +982,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/utils-packages@npm:1.0.0, @culur/utils-packages@workspace:packages/utils-packages":
+"@culur/utils-packages@npm:1.0.1, @culur/utils-packages@workspace:packages/utils-packages":
   version: 0.0.0-use.local
   resolution: "@culur/utils-packages@workspace:packages/utils-packages"
   dependencies:
-    "@culur/config-tsup": "npm:1.0.0"
-    "@culur/config-typescript": "npm:1.0.0"
-    "@culur/config-vite": "npm:1.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"

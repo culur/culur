@@ -1,9 +1,9 @@
-import type { UserConfig as UserConfigVitest } from 'vitest/config';
+import type { VitestInlineConfig } from '~/types';
 
 export const defineConfigTest = (
-  test: true | UserConfigVitest['test'],
-): UserConfigVitest['test'] => {
-  if (test === undefined) return undefined;
+  test: boolean | VitestInlineConfig | undefined,
+): VitestInlineConfig | undefined => {
+  if (test === undefined || test === false) return undefined;
   return {
     include: ['**/*\\.{test,test-d}.ts'],
     typecheck: {

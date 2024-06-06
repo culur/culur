@@ -1,4 +1,4 @@
-name: Prepare `yarn-pnp` branch
+name: 🧶 Prepare `yarn-pnp` branch
 
 on: workflow_dispatch
 

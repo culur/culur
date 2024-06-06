@@ -1,24 +1,23 @@
 import { assert, expectTypeOf } from 'vitest';
+import * as utilsPackages from '@culur/utils-packages';
 import {
   dollarVariablePatternRule,
   dollarVariablePatternSCSS,
 } from './dollar-variable-pattern';
-import { scss, testLintAndFix, testRuleValue } from '~/__tests__';
+import { describeLintAndFix, describeRule, scss } from '~/__tests__';
 
-testRuleValue(
-  () => dollarVariablePatternRule,
-  rule => {
-    assert(Array.isArray(rule));
-    assert(typeof rule[1] === 'object');
-    expectTypeOf(rule[1].message).toBeString();
-  },
-);
+describeRule(utilsPackages, dollarVariablePatternRule, rule => {
+  assert(Array.isArray(rule));
+  assert(typeof rule[1] === 'object');
+  expectTypeOf(rule[1].message).toBeString();
+});
 
-testLintAndFix(
+describeLintAndFix(
+  utilsPackages,
   {
     extends: ['stylelint-config-standard-scss'],
     rules: dollarVariablePatternSCSS,
-  }, //
+  },
   [
     { isError: false, code: scss`a { $kebab-case: 123; }` },
     { isError: true, code: scss`a { $snake_case: 123; }` },

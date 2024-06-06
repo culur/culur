@@ -1,12 +1,14 @@
+import * as utilsPackages from '@culur/utils-packages';
 import { assert, expect } from 'vitest';
 import {
   declarationBlockNoRedundantLonghandProperties,
   declarationBlockNoRedundantLonghandPropertiesRule,
 } from './declaration-block-no-redundant-longhand-properties';
-import { css, testLintAndFix, testRuleValue } from '~/__tests__';
+import { css, describeLintAndFix, describeRule } from '~/__tests__';
 
-testRuleValue(
-  declarationBlockNoRedundantLonghandPropertiesRule, //
+describeRule(
+  utilsPackages,
+  declarationBlockNoRedundantLonghandPropertiesRule,
   rule => {
     assert(Array.isArray(rule));
     assert(typeof rule[1] === 'object');
@@ -14,7 +16,8 @@ testRuleValue(
   },
 );
 
-testLintAndFix(
+describeLintAndFix(
+  utilsPackages,
   {
     rules: declarationBlockNoRedundantLonghandProperties,
   },

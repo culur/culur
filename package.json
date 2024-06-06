@@ -47,7 +47,7 @@
     "commitlint": "commitlint --edit"
   },
   "volta": {
-    "node": "20.13.1",
+    "node": "20.14.0",
     "yarn": "4.2.2"
   },
   "engines": {
@@ -57,20 +57,20 @@
   "packageManager": "yarn@4.2.2",
   "devDependencies": {
     "@changesets/changelog-github": "0.5.0",
-    "@changesets/cli": "^2.27.3",
+    "@changesets/cli": "^2.27.5",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
     "@culur/config-eslint": "1.0.0",
     "@culur/config-prettier": "1.0.0",
-    "@eslint/config-inspector": "^0.4.8",
-    "eslint": "^9.3.0",
+    "@eslint/config-inspector": "^0.4.10",
+    "eslint": "^9.4.0",
     "husky": "^9.0.11",
     "markdownlint": "^0.34.0",
     "markdownlint-cli2": "^0.13.0",
-    "nx": "19.1.0",
+    "nx": "19.2.0",
     "pinst": "^3.0.0",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.1",
     "prettier-plugin-embed": "^0.4.15",
     "typescript": "^5.4.5"
   }

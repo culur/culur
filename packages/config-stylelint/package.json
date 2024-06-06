@@ -73,14 +73,14 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.3.0",
+    "stylelint-scss": "^6.3.1",
     "stylelint-selector-bem-pattern": "^4.0.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.0.0",
     "@culur/config-typescript": "1.0.0",
     "@culur/config-vite": "1.0.0",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "dedent": "^1.5.3",
@@ -89,8 +89,8 @@
     "postcss-sass": "^0.5.0",
     "postcss-scss": "^4.0.9",
     "rimraf": "^5.0.7",
-    "stylelint": "^16.6.0",
-    "tsup": "^8.0.2",
+    "stylelint": "^16.6.1",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   },

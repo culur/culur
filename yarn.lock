@@ -63,7 +63,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@antfu/eslint-config@npm:^2.18.1, @antfu/eslint-config@npm:^2.20.0":
+"@antfu/eslint-config@npm:^2.20.0":
   version: 2.20.0
   resolution: "@antfu/eslint-config@npm:2.20.0"
   dependencies:
@@ -790,18 +790,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-eslint@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@culur/config-eslint@npm:1.0.0"
-  dependencies:
-    "@antfu/eslint-config": "npm:^2.18.1"
-  peerDependencies:
-    eslint: ">=9.2.0"
-  checksum: 10/45553393462dda30e845f7af7e8106a5556bc029b22a2abd81fd1151199431be4f519e9636a30371e3add7314dacc1253d8989fa9212f916e7b9f34dcdaa5798
-  languageName: node
-  linkType: hard
-
-"@culur/config-eslint@workspace:packages/config-eslint":
+"@culur/config-eslint@npm:*, @culur/config-eslint@workspace:packages/config-eslint":
   version: 0.0.0-use.local
   resolution: "@culur/config-eslint@workspace:packages/config-eslint"
   dependencies:
@@ -825,16 +814,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-prettier@npm:1.0.0":
-  version: 1.0.0
-  resolution: "@culur/config-prettier@npm:1.0.0"
-  peerDependencies:
-    prettier: ">=3.0.0"
-  checksum: 10/d8b5ad8fe3e8314ecd9d1a7065070f5d8ac56cab310d009fbbf501edf09328f8370d868cd534d072085c66a3a4718c4a96107be25ac19eb4d4016d27e034cd54
-  languageName: node
-  linkType: hard
-
-"@culur/config-prettier@workspace:packages/config-prettier":
+"@culur/config-prettier@npm:*, @culur/config-prettier@workspace:packages/config-prettier":
   version: 0.0.0-use.local
   resolution: "@culur/config-prettier@workspace:packages/config-prettier"
   dependencies:
@@ -949,8 +929,8 @@ __metadata:
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@commitlint/types": "npm:^19.0.3"
-    "@culur/config-eslint": "npm:1.0.0"
-    "@culur/config-prettier": "npm:1.0.0"
+    "@culur/config-eslint": "npm:*"
+    "@culur/config-prettier": "npm:*"
     "@eslint/config-inspector": "npm:^0.4.10"
     eslint: "npm:^9.4.0"
     husky: "npm:^9.0.11"

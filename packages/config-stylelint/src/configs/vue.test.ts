@@ -1,18 +1,19 @@
-import { assert, describe } from 'vitest';
+import { assert } from 'vitest';
+import * as utilsPackages from '@culur/utils-packages';
 import { configVue } from './vue';
-import { testConfigValue } from '~/__tests__';
+import { describeConfig } from '~/__tests__';
 
-describe('vue config', () => {
-  testConfigValue(
-    [{ hasSass: true }, { hasSass: false }],
-    configVue,
-    (config, options) => {
-      assert(Array.isArray(config.extends));
-      config.extends.includes(
-        options.hasSass
-          ? 'stylelint-config-standard-vue/scss'
-          : 'stylelint-config-standard-vue',
-      );
-    },
-  );
-});
+describeConfig(
+  utilsPackages,
+  configVue,
+  [{ hasSass: true }, { hasSass: false }],
+  (config, testCase) => {
+    assert(Array.isArray(config.extends));
+    assert(Array.isArray(config.extends));
+    config.extends.includes(
+      testCase.hasSass
+        ? 'stylelint-config-standard-vue/scss'
+        : 'stylelint-config-standard-vue',
+    );
+  },
+);

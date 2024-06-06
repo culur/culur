@@ -1,7 +1,7 @@
 import { hasSass, hasTailwind, hasVue } from '@culur/utils-packages';
 import { defineRule, defineRules } from '~/utils';
 
-export const functionNoUnknownRule = () => {
+export function functionNoUnknownRule() {
   const ignoreFunctions = [
     // https://tailwindcss.com/docs/functions-and-directives#functions
     ...(hasTailwind() //
@@ -27,7 +27,7 @@ export const functionNoUnknownRule = () => {
       ? { ignoreFunctions }
       : { ignoreFunctions: undefined },
   ]);
-};
+}
 
 export const functionNoUnknown = () =>
   defineRules({

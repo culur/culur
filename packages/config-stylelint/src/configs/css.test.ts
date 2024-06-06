@@ -1,10 +1,9 @@
-import { assert, describe } from 'vitest';
+import { assert } from 'vitest';
+import * as utilsPackages from '@culur/utils-packages';
 import { configCss } from './css';
-import { testConfigValue } from '~/__tests__';
+import { describeConfig } from '~/__tests__';
 
-describe('css config', () => {
-  testConfigValue(configCss, config => {
-    assert(Array.isArray(config.extends));
-    assert(Array.isArray(config.plugins));
-  });
+describeConfig(utilsPackages, configCss, config => {
+  assert(Array.isArray(config.extends));
+  assert(Array.isArray(config.plugins));
 });

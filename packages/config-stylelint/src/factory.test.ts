@@ -1,7 +1,8 @@
-import { css, testLintAndFix } from './__tests__';
+import * as utilsPackages from '@culur/utils-packages';
+import { css, describeLintAndFix } from './__tests__';
 import defineConfig from './factory';
 
-testLintAndFix(defineConfig, [
+describeLintAndFix(utilsPackages, defineConfig, [
   {
     code: css`
       a {

@@ -1,9 +1,8 @@
-import { assert, describe } from 'vitest';
+import { assert } from 'vitest';
+import * as utilsPackages from '@culur/utils-packages';
 import { configShared } from './shared';
-import { testConfigValue } from '~/__tests__';
+import { describeConfig } from '~/__tests__';
 
-describe('shared config', () => {
-  testConfigValue(configShared, config => {
-    assert(Array.isArray(config.extends));
-  });
+describeConfig(utilsPackages, configShared, config => {
+  assert(Array.isArray(config.extends));
 });

@@ -1,6 +1,6 @@
 {
   "name": "@culur/action-renovate-changesets",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Renovate changesets",
   "publishConfig": {
     "access": "public"
@@ -62,10 +62,10 @@
     "fs-extra": "^11.2.0"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.0.0",
-    "@culur/config-typescript": "1.0.0",
-    "@culur/config-vite": "1.0.0",
-    "@culur/types": "1.0.0",
+    "@culur/config-tsup": "1.0.1",
+    "@culur/config-typescript": "1.0.1",
+    "@culur/config-vite": "1.0.1",
+    "@culur/types": "1.0.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.6.0",

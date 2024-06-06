@@ -1,5 +1,20 @@
 # @culur/config-vite
 
+## 1.0.1
+
+### Patch Changes
+
+- [`598149c`](https://github.com/culur/culur/commit/598149c4ad511c663cc678d7c72d62a7a6c0ba32) Thanks [@phamhongphuc](https://github.com/phamhongphuc)! - Update types
+
+- [`74dbf2c`](https://github.com/culur/culur/commit/74dbf2c0050b30e9289aa7879c4cbb9ac103f4d3) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies from renovate:
+
+  - `devDependencies`:
+    - `@types/node` to `^20.14.2`
+    - `tsup` to `^8.1.0`
+    - `vite` to `^5.2.12`
+
+- [`7f4eeae`](https://github.com/culur/culur/commit/7f4eeae4fa2c2dbed218675e8ce2cc91ca0bc4c3) Thanks [@phamhongphuc](https://github.com/phamhongphuc)! - Update workspace dependencies to specific version
+
 ## 1.0.0
 
 ### Major Changes

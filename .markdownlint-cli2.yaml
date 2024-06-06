@@ -6,7 +6,9 @@ ignores:
   - '**/coverage'
   - '**/dist'
   - '**/node_modules'
+  - '**/.nx'
 
 config:
   extends: node_modules/markdownlint/style/prettier.json
   no-inline-html: false
+  no-duplicate-heading: false

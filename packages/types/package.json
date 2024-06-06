@@ -55,17 +55,17 @@
     "node": ">=20"
   },
   "dependencies": {
-    "type-fest": "^4.18.3"
+    "type-fest": "^4.19.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.0.0",
     "@culur/config-typescript": "1.0.0",
     "@culur/config-vite": "1.0.0",
-    "@types/node": "^20.12.12",
+    "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",
     "rimraf": "^5.0.7",
-    "tsup": "^8.0.2",
+    "tsup": "^8.1.0",
     "typescript": "^5.4.5",
     "vitest": "^1.6.0"
   }

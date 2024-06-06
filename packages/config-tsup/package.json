@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-tsup",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Culur's tsup configuration",
   "publishConfig": {
     "access": "public"
@@ -56,7 +56,7 @@
     "tsup": "^8.1.0"
   },
   "devDependencies": {
-    "@culur/config-typescript": "1.0.0",
+    "@culur/config-typescript": "1.0.1",
     "@types/node": "^20.14.2",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",

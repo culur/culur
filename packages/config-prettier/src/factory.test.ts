@@ -1,16 +1,16 @@
-import { describe, expect, it, vi } from 'vitest';
+import * as os from 'node:os';
 import prettier from 'prettier';
+import { describe, expect, it, vi } from 'vitest';
 import definePrettierConfig from './factory';
 
 describe('platform', () => {
-  vi.mock('os');
+  vi.mock('node:os');
 
   it.each([
     { platform: 'win32', endOfLine: 'crlf' },
     { platform: 'linux', endOfLine: 'lf' },
-  ])('platform is $platform', async ({ platform, endOfLine }) => {
-    const os = await import('node:os');
-    os.platform = vi.fn().mockReturnValue(platform);
+  ] as const)('platform is $platform', async ({ platform, endOfLine }) => {
+    vi.spyOn(os, 'platform').mockReturnValue(platform);
 
     const config = definePrettierConfig();
     expect(config.endOfLine).toBe(endOfLine);

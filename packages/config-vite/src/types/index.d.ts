@@ -9,9 +9,9 @@ export interface UserConfigVitest extends UserConfigVitest_ {
   __type?: 'vitestConfig';
 }
 
-export type TsconfigPathsOptions = Parameters<typeof viteTsconfigPaths>[0];
+export type VitestInlineConfig = NonNullable<UserConfigVitest['test']>;
 
-export type OptionsTest = boolean | UserConfigVitest['test'];
+export type TsconfigPathsOptions = Parameters<typeof viteTsconfigPaths>[0];
 
 export type Options = {
   pluginTsconfigPaths?: boolean | TsconfigPathsOptions;

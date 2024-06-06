@@ -1,0 +1,33 @@
+name: 🦋 Generate changesets for Renovate
+
+on: [pull_request]
+
+jobs:
+  generate-changeset:
+    name: Generate changesets
+    runs-on: ubuntu-latest
+    env:
+      NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+    if: startsWith(github.head_ref, 'renovate/') && github.base_ref == 'dev'
+    steps:
+      #! Checkout
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      #! Install dependencies
+      - name: 📥 Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Build
+      - name: 🛠️ Build
+        run: yarn build
+
+      #! Generate changsets
+      - name: 🦋 Generate changsets
+        id: test-action
+        uses: ./packages/action-renovate-changesets/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

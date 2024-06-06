@@ -69,3 +69,6 @@ logs
 # Husky
 .husky/*
 .gitkeep
+
+# nx
+.nx

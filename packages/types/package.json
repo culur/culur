@@ -55,7 +55,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "type-fest": "^4.19.0"
+    "type-fest": "^4.20.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.0.1",

@@ -773,8 +773,8 @@ __metadata:
     "@actions/github": "npm:^6.0.0"
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
-    "@culur/types": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
+    "@culur/types": "npm:1.0.2"
     "@octokit/webhooks-definitions": "npm:3.67.3"
     "@types/fs-extra": "npm:^11.0.4"
     "@types/node": "npm:^20.14.2"
@@ -798,7 +798,7 @@ __metadata:
     "@antfu/eslint-config": "npm:^2.21.1"
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^8.56.10"
     "@types/node": "npm:^20.14.2"
@@ -821,8 +821,8 @@ __metadata:
   dependencies:
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
-    "@culur/types": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
+    "@culur/types": "npm:1.0.2"
     "@culur/utils-packages": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
@@ -843,7 +843,7 @@ __metadata:
   dependencies:
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
     "@culur/utils-packages": "npm:1.0.1"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
@@ -898,7 +898,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/config-vite@npm:1.0.1, @culur/config-vite@workspace:packages/config-vite":
+"@culur/config-vite@npm:1.0.2, @culur/config-vite@workspace:packages/config-vite":
   version: 0.0.0-use.local
   resolution: "@culur/config-vite@workspace:packages/config-vite"
   dependencies:
@@ -945,13 +945,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@culur/types@npm:1.0.1, @culur/types@workspace:packages/types":
+"@culur/types@npm:1.0.2, @culur/types@workspace:packages/types":
   version: 0.0.0-use.local
   resolution: "@culur/types@workspace:packages/types"
   dependencies:
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"
@@ -969,7 +969,7 @@ __metadata:
   dependencies:
     "@culur/config-tsup": "npm:1.0.1"
     "@culur/config-typescript": "npm:1.0.1"
-    "@culur/config-vite": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
     "@types/node": "npm:^20.14.2"
     "@vitest/coverage-v8": "npm:^1.6.0"
     "@vitest/ui": "npm:^1.6.0"

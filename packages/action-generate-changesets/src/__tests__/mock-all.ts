@@ -1,15 +1,13 @@
-import { afterEach, beforeEach, describe, it, vi } from 'vitest';
+import core from '@actions/core';
 import dedent from 'dedent';
 import fs from 'fs-extra';
-import core from '@actions/core';
-import github from '@actions/github';
-import { mockExecOutput } from './__tests__/mock-exec';
-import { mockBaseBranchInput } from './setup/get-branches.test';
-import { mockPackageFile } from './changes/get-diff-packages.test';
-import { main } from './main';
+import { vi } from 'vitest';
+import { mockExecOutput } from './mock-exec';
+import { mockInput } from './mock-input';
+import { defineMockGithubEvent } from './mock-github-event';
+import { mockPackageFile } from './mock-package';
 
-// Shallow clone original @actions/github context
-const originalContext = { ...github.context };
+const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 
 export function mockAll() {
   const baseBranch = 'dev';
@@ -34,14 +32,24 @@ export function mockAll() {
     package.json
     packages/foo/package.json
   `;
-  const commitHash = '1234abcd';
+  const hash = '1234abcd';
 
+  mockInput({
+    baseBranchPattern: 'dev',
+    headBranchPattern: 'renovate/**',
+    userName: 'renovate[bot]',
+    userEmail: 'renovate[bot]@users.noreply.github.com',
+  });
   mockExecOutput({
     changedLines: { baseBranch, changedLines, packageFile },
     diffFiles: { baseBranch, diffFiles },
-    shortCommitHash: { commitHash },
+    commit: { hash },
   });
-  mockBaseBranchInput({ baseBranch, headBranch, eventName: 'pull_request' });
+  mockGithubEvent({
+    baseBranch,
+    headBranch,
+    eventName: 'pull_request',
+  });
   mockPackageFile(packageFile, {
     name: 'foo',
     version: '1.0.0',
@@ -53,19 +61,6 @@ export function mockAll() {
   vi.spyOn(fs, 'writeFile').mockImplementation(() => {});
 }
 
-describe('main', () => {
-  beforeEach(() => {
-    vi.spyOn(core, 'debug').mockImplementation(() => {});
-  });
-
-  afterEach(() => {
-    vi.restoreAllMocks();
-    Object.defineProperty(github, 'context', { value: originalContext });
-  });
-
-  it('main', async () => {
-    mockAll();
-
-    await main();
-  });
-});
+export function restoreAll() {
+  restoreGithubEvent();
+}

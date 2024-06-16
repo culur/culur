@@ -2,12 +2,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import core from '@actions/core';
 import dedent from 'dedent';
 import { getDiffPackageFiles } from './get-diff-package-files';
-import { mockExecOutput } from '~/__tests__/mock-exec';
+import { mockDiffFiles } from '~/__tests__/mock-exec';
 
-const mockDiffFiles = (baseBranch: string, diffFiles: string) =>
-  mockExecOutput({ diffFiles: { baseBranch, diffFiles } });
-
-describe('getDiffFiles', () => {
+describe('getDiffPackageFiles', () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });

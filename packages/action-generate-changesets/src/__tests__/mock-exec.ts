@@ -11,8 +11,8 @@ export function mockExecOutput(options: {
     packageFile: string;
     changedLines: string;
   };
-  shortCommitHash?: {
-    commitHash: string;
+  commit?: {
+    hash: string;
   };
 }) {
   vi.spyOn(exec, 'getExecOutput').mockImplementation(async command => {
@@ -34,13 +34,29 @@ export function mockExecOutput(options: {
       return { exitCode: 0, stdout: changedLines, stderr: '' };
     }
 
-    if (options.shortCommitHash && command === 'git rev-parse --short HEAD') {
-      const { commitHash } = options.shortCommitHash;
-      return { exitCode: 0, stdout: commitHash, stderr: '' };
+    if (options.commit && command === 'git rev-parse --short HEAD') {
+      const { hash } = options.commit;
+      return { exitCode: 0, stdout: hash, stderr: '' };
     }
 
     throw new Error('Not implemented');
   });
 
   vi.spyOn(exec, 'exec').mockImplementation(async () => 0);
+}
+
+export function mockChangedLines(
+  baseBranch: string,
+  packageFile: string,
+  changedLines: string,
+) {
+  mockExecOutput({ changedLines: { baseBranch, changedLines, packageFile } });
+}
+
+export function mockDiffFiles(baseBranch: string, diffFiles: string) {
+  return mockExecOutput({ diffFiles: { baseBranch, diffFiles } });
+}
+
+export function mockCommitHash(hash: string) {
+  return mockExecOutput({ commit: { hash } });
 }

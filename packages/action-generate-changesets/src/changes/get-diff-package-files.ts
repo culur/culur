@@ -1,7 +1,7 @@
 import process from 'node:process';
 import core from '@actions/core';
 import exec from '@actions/exec';
-import type { Branches } from '~/setup/get-branches';
+import type { Branches } from '~/input/get-branches';
 
 export async function getDiffPackageFiles({ baseBranch }: Branches) {
   const diffOutput = await exec.getExecOutput(

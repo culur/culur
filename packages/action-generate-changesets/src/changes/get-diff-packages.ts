@@ -1,14 +1,20 @@
 import exec from '@actions/exec';
 import fs from 'fs-extra';
 import type { PackageJson } from '@culur/types';
-import type { DependenciesType } from './get-dependencies-type';
 import { getDependenciesType } from './get-dependencies-type';
 import { getDiffPackageFiles } from './get-diff-package-files';
-import type { Branches } from '~/setup/get-branches';
+import type { DependenciesType } from './get-dependencies-type';
+import type { Branches } from '~/input/get-branches';
 
-export async function getDiffPackages({ baseBranch, headBranch }: Branches) {
-  const diffPackageFiles = //
-    await getDiffPackageFiles({ baseBranch, headBranch });
+export async function getDiffPackages({
+  branches: { baseBranch, headBranch },
+}: {
+  branches: Branches;
+}) {
+  const diffPackageFiles = await getDiffPackageFiles({
+    baseBranch,
+    headBranch,
+  });
 
   const diffPackages: {
     packageFile: string;

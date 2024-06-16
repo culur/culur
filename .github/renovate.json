@@ -3,6 +3,7 @@
   "configMigration": true,
   "extends": ["config:recommended"],
   "baseBranches": ["dev"],
+  "labels": ["dependencies"],
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],

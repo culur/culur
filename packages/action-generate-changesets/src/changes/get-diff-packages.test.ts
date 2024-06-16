@@ -1,37 +1,21 @@
 import { afterEach, assert, describe, expect, it, vi } from 'vitest';
-import type { PackageJson } from '@culur/types';
-import fs from 'fs-extra';
 import dedent from 'dedent';
 import { getDiffPackages } from './get-diff-packages';
-import * as module from './get-diff-package-files';
-import { mockExecOutput } from '~/__tests__/mock-exec';
-
-export function mockPackageFile(packageFile: string, json: PackageJson) {
-  vi.spyOn(fs, 'readJson') //
-    .mockImplementation(async command => (command === packageFile ? json : {}));
-}
-
-export function mockDiffPackageFiles(packageFile: string) {
-  vi.spyOn(module, 'getDiffPackageFiles') //
-    .mockImplementation(async () => [packageFile]);
-}
-
-const mockChangedLines = (
-  baseBranch: string,
-  packageFile: string,
-  changedLines: string,
-) =>
-  mockExecOutput({ changedLines: { baseBranch, changedLines, packageFile } });
+import {
+  mockDiffPackageFiles,
+  mockPackageFile,
+} from '~/__tests__/mock-package';
+import { mockChangedLines } from '~/__tests__/mock-exec';
 
 describe('getDiffPackages', () => {
   afterEach(() => {
     vi.restoreAllMocks();
   });
 
-  it('getDiffPackages', async () => {
+  it('valid', async () => {
     const baseBranch = 'dev';
-    const packageFile = 'packages/foo/package.json';
     const headBranch = 'renovate/all-minor-patch';
+    const packageFile = 'packages/foo/package.json';
 
     mockDiffPackageFiles(packageFile);
     mockPackageFile(packageFile, {
@@ -61,7 +45,9 @@ describe('getDiffPackages', () => {
       `,
     );
 
-    const diffPackages = await getDiffPackages({ baseBranch, headBranch });
+    const diffPackages = await getDiffPackages({
+      branches: { baseBranch, headBranch },
+    });
     expect(diffPackages).toHaveLength(1);
 
     const [{ changedPackages }] = diffPackages;

@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
-    if: startsWith(github.head_ref, 'renovate/') && github.base_ref == 'dev'
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'dependencies') &&
+      startsWith(github.event.pull_request.head.ref, 'renovate/') &&
+      github.event.pull_request.base.ref == 'dev'
     steps:
       #! Checkout
       - name: ⬇️ Checkout
@@ -16,6 +19,8 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          ref: ${{ github.event.pull_request.head.ref }}
 
       #! Install dependencies
       - name: 📥 Install dependencies
@@ -25,9 +30,13 @@ jobs:
       - name: 🛠️ Build
         run: yarn build
 
-      #! Generate changsets
-      - name: 🦋 Generate changsets
-        id: test-action
-        uses: ./packages/action-renovate-changesets/
+      #! Generate changesets
+      - name: 🦋 Generate changesets
+        uses: ./packages/action-generate-changesets/
+        with:
+          base-branch: dev
+          head-branch: renovate/**
+          user-name: renovate[bot]
+          user-email: renovate[bot]@users.noreply.github.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

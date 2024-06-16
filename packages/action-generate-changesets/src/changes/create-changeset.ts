@@ -2,17 +2,21 @@ import fs from 'fs-extra';
 import { entries } from '@culur/types';
 import core from '@actions/core';
 import type { DiffPackages } from './get-diff-packages';
-import { getShortCommitHash } from '~/git/get-short-commit-hash';
+import type { Commit } from '~/input/get-commit';
 
-export async function createChangeset(diffPackageFiles: DiffPackages) {
-  const shortCommitHash = await getShortCommitHash();
-
+export async function createChangeset({
+  diffPackageFiles,
+  commit,
+}: {
+  diffPackageFiles: DiffPackages;
+  commit: Commit;
+}) {
   for (const diffPackageFile of diffPackageFiles) {
     const packageName = diffPackageFile.json.name;
     const shortPackageName = diffPackageFile.json.name
       ?.replace(/^@/, '')
       .replace(/\//, '-');
-    const fileName = `.changeset/renovate-${shortCommitHash}-${shortPackageName}.md`;
+    const fileName = `.changeset/renovate-${commit.hash}-${shortPackageName}.md`;
 
     const dependencies = entries(diffPackageFile.changedPackages)
       .map(([dependenciesType, changes]) => {
@@ -33,7 +37,7 @@ export async function createChangeset(diffPackageFiles: DiffPackages) {
       `'${packageName}': patch`,
       '---',
       '',
-      'Update dependencies from renovate:',
+      'Update dependencies:',
       '',
       dependencies,
       '',

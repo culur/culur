@@ -1,14 +1,15 @@
 {
-  "name": "@culur/action-renovate-changesets",
+  "name": "@culur/action-generate-changesets",
   "version": "1.0.1",
-  "description": "Renovate changesets",
+  "description": "Generate changesets",
+  "private": true,
   "publishConfig": {
-    "access": "public"
+    "access": "restricted"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/culur/culur.git",
-    "directory": "actions/action-renovate-changesets"
+    "directory": "actions/action-generate-changesets"
   },
   "bugs": {
     "url": "https://github.com/culur/culur/issues"
@@ -59,7 +60,8 @@
     "@actions/github": "^6.0.0",
     "@octokit/webhooks-definitions": "3.67.3",
     "dedent": "^1.5.3",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.2.0",
+    "minimatch": "^9.0.4"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.0.1",

@@ -1,0 +1,25 @@
+name: Add a changeset for dependency updates
+description: Github Action to publish changesets to dependency update PR's
+author: phamhongphuc
+
+branding:
+  icon: package
+  color: purple
+
+inputs:
+  head-branch:
+    description: Head branch pattern
+    required: true
+  base-branch:
+    description: Base branch pattern
+    required: true
+  user-name:
+    description: User name for git commit
+    required: true
+  user-email:
+    description: User email for git commit
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js

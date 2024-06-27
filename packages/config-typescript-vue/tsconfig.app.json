@@ -1,0 +1,18 @@
+{
+  //? Configs
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    //? Project
+    "composite": true,
+
+    //? Modules
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+
+  //? Files
+  "include": ["src/**/*.ts", "src/**/*.vue"],
+  "exclude": ["src/**/*.test.ts"]
+}

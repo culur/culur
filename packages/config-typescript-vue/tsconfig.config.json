@@ -1,0 +1,23 @@
+{
+  //? Configs
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    //? Project
+    "composite": true,
+
+    //? Modules
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    },
+    "types": ["node"]
+  },
+
+  //? Files
+  "include": [
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "playwright.config.*"
+  ]
+}

@@ -20,15 +20,15 @@
   ],
   "type": "commonjs",
   "files": [
-    "src",
-    "dist",
+    "!**/*.json",
+    "!**/*.test.*",
     ".prettierignore",
     ".prettierrc.js",
-    "!**/*.test.*",
-    "!**/*.json",
     "CHANGELOG.md",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "dist",
+    "src"
   ],
   "scripts": {
     "dev": "vite",
@@ -36,11 +36,11 @@
     "fix:prettier": "prettier '**' --write",
     "test:prettier": "prettier '**' --list-different"
   },
-  "engines": {
-    "node": ">=20"
-  },
   "volta": {
     "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "dependencies": {
     "@intlify/unplugin-vue-i18n": "^4.0.0",

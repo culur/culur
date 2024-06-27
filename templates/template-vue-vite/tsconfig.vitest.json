@@ -1,0 +1,19 @@
+{
+  //? Files
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue",
+    "src/**/*.test.ts"
+    "./typed-router.d.ts",
+  ],
+  "exclude": [],
+
+  //? Configs
+  "extends": [
+    "./tsconfig.app.json",
+    "@culur/config-typescript-vue/tsconfig.vitest.json"
+  ],
+  "compilerOptions": {
+    "baseUrl": "."
+  }
+}

@@ -1,5 +1,15 @@
 # @culur/config-prettier
 
+## 1.0.3
+
+### Patch Changes
+
+- [`cc1752e`](https://github.com/culur/culur/commit/cc1752e7e5e87a6d9f4e2fb97470ef4737cff7db) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies:
+
+  - `devDependencies`:
+    - `@types/node` to `^20.14.9`
+    - `typescript` to `^5.5.3`
+
 ## 1.0.2
 
 ### Patch Changes

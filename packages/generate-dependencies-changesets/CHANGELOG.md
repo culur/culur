@@ -1,5 +1,22 @@
 # @culur/action-renovate-changesets
 
+## 1.2.0
+
+### Minor Changes
+
+- [`b416dfd`](https://github.com/culur/culur/commit/b416dfd2c17e98f55874c5d5d036347d703b74af) Thanks [@phamhongphuc](https://github.com/phamhongphuc)! - Rename to `generate-dependencies-changesets`
+
+### Patch Changes
+
+- [`cc1752e`](https://github.com/culur/culur/commit/cc1752e7e5e87a6d9f4e2fb97470ef4737cff7db) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies:
+
+  - `dependencies`:
+    - `minimatch` to `^9.0.5`
+  - `devDependencies`:
+    - `@types/node` to `^20.14.9`
+    - `type-fest` to `^4.21.0`
+    - `typescript` to `^5.5.3`
+
 ## 1.1.0
 
 ### Minor Changes

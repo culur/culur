@@ -1,6 +1,6 @@
 {
   "name": "@culur/generate-dependencies-changesets",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Generate changesets",
   "private": true,
   "publishConfig": {
@@ -64,10 +64,10 @@
     "minimatch": "^9.0.5"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.0.1",
-    "@culur/config-typescript": "1.0.1",
-    "@culur/config-vite": "1.0.2",
-    "@culur/types": "1.0.2",
+    "@culur/config-tsup": "1.1.0",
+    "@culur/config-typescript": "1.0.2",
+    "@culur/config-vite": "1.0.3",
+    "@culur/types": "1.0.3",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.9",
     "@vitest/coverage-v8": "^1.6.0",

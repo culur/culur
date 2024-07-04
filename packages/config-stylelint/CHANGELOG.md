@@ -1,5 +1,23 @@
 # @culur/config-stylelint
 
+## 1.0.2
+
+### Patch Changes
+
+- [`cc1752e`](https://github.com/culur/culur/commit/cc1752e7e5e87a6d9f4e2fb97470ef4737cff7db) Thanks [@renovate[bot]](https://github.com/renovate%5Bbot%5D)! - Update dependencies:
+
+  - `dependencies`:
+    - `stylelint-config-clean-order` to `^6.1.0`
+    - `stylelint-config-standard` to `^36.0.1`
+    - `stylelint-scss` to `^6.3.2`
+  - `devDependencies`:
+    - `@types/node` to `^20.14.9`
+    - `postcss` to `^8.4.39`
+    - `typescript` to `^5.5.3`
+
+- Updated dependencies [[`cc1752e`](https://github.com/culur/culur/commit/cc1752e7e5e87a6d9f4e2fb97470ef4737cff7db)]:
+  - @culur/utils-packages@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes

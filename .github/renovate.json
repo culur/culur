@@ -4,6 +4,7 @@
   "extends": ["config:recommended"],
   "baseBranches": ["dev"],
   "labels": ["dependencies"],
+  "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],

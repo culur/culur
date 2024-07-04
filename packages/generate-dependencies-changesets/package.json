@@ -1,5 +1,5 @@
 {
-  "name": "@culur/action-generate-changesets",
+  "name": "@culur/generate-dependencies-changesets",
   "version": "1.1.0",
   "description": "Generate changesets",
   "private": true,
@@ -9,7 +9,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/culur/culur.git",
-    "directory": "actions/action-generate-changesets"
+    "directory": "packages/generate-dependencies-changesets"
   },
   "bugs": {
     "url": "https://github.com/culur/culur/issues"

@@ -1,9 +1,9 @@
-name: 🦋 Generate changesets for Renovate
+name: 🦋 Generate dependencies changesets for Renovate
 
 on: [pull_request]
 
 jobs:
-  generate-changeset:
+  generate-dependencies-changesets:
     name: Generate changesets
     runs-on: ubuntu-latest
     env:
@@ -32,7 +32,7 @@ jobs:
 
       #! Generate changesets
       - name: 🦋 Generate changesets
-        uses: ./packages/action-generate-changesets/
+        uses: ./packages/generate-dependencies-changesets/
         with:
           base-branch: dev
           head-branch: renovate/**

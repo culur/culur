@@ -883,6 +883,8 @@ __metadata:
     tsup: "npm:^8.1.0"
     typescript: "npm:^5.4.5"
     vitest: "npm:^1.6.0"
+  peerDependencies:
+    tsup: ^8.1.0
   languageName: unknown
   linkType: soft
 

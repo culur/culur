@@ -10,6 +10,34 @@
 
 > Sharing [tsup](https://github.com/egoist/tsup) configurations.
 
+## ✨ Features
+
+The library includes several tsup configurations for reuse.
+
+### 1. Shared configuration
+
+```js
+const sharedConfig = {
+  sourcemap: true,
+  clean: true,
+  dts: true,
+  entry: [
+    'src/**/*.ts', //
+    '!src/**/*.test.ts',
+    '!src/**/*.spec.ts',
+  ],
+  treeshake: 'recommended',
+};
+```
+
+### 2. There are 3 complete configurations
+
+| Name      | Format       | Splitting |
+| --------- | ------------ | --------- |
+| `esm`     | `esm`        | `true`    |
+| `cjs`     | `cjs`        |           |
+| `esm_cjs` | `esm`, `cjs` | `true`    |
+
 ## 💿 Installation
 
 Add `@culur/config-tsup` dependency to your project.
@@ -24,7 +52,7 @@ yarn add @culur/config-tsup --dev
 
 Other packages:
 
-- Use need to install `tsup` and `typescript` packages in devDependencies.
+- You also need to install `tsup` and `typescript` packages in `devDependencies`.
 
 ## 📖 Usage
 
@@ -84,34 +112,6 @@ Some commonly used scripts in `package.json`.
   }
 }
 ```
-
-## ✨ Features
-
-The library includes several tsup configurations for reuse
-
-### 1. Shared configuration
-
-```js
-const sharedConfig = {
-  sourcemap: true,
-  clean: true,
-  dts: true,
-  entry: [
-    'src/**/*.ts', //
-    '!src/**/*.test.ts',
-    '!src/**/*.spec.ts',
-  ],
-  treeshake: 'recommended',
-};
-```
-
-### 2. There are 3 complete configurations
-
-| Name      | Format       | Splitting |
-| --------- | ------------ | --------- |
-| `esm`     | `esm`        | `true`    |
-| `cjs`     | `cjs`        |           |
-| `esm_cjs` | `esm`, `cjs` | `true`    |
 
 ## 🗃️ Changelog
 

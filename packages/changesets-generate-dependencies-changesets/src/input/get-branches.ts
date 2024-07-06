@@ -2,7 +2,7 @@ import process from 'node:process';
 import { minimatch } from 'minimatch';
 import core from '@actions/core';
 import github from '@actions/github';
-import type { PullRequestEvent } from '@octokit/webhooks-definitions/schema';
+import type { PullRequestEvent } from '@octokit/webhooks-types';
 import type { Input } from './get-input';
 
 export async function getBranches({ input }: { input: Input }) {

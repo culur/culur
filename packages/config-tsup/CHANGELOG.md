@@ -1,5 +1,22 @@
 # @culur/config-tsup
 
+## 1.1.0
+
+### Minor Changes
+
+- Move `tsup` to `peerDependencies` ([`0bda596`](https://github.com/culur/culur/commit/0bda596325c5ebd4ad114ce0f758bb07472bea4d)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- Update README.md ([`8a28a99`](https://github.com/culur/culur/commit/8a28a992597289d6f677a6ef35440a776803b744)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update dependencies ([`d93cb87`](https://github.com/culur/culur/commit/d93cb876849a7fecd690372b0fd801eabe75eb4a)) ([@renovate[bot]](https://github.com/renovate%5Bbot%5D)):
+
+  - `devDependencies`:
+    - `@types/node` to `^20.14.10`
+    - `rimraf` to `^5.0.8`
+    - `typescript` to `^5.5.3`
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @culur/config-vite
 
+## 1.0.3
+
+### Patch Changes
+
+- Add `lcov` ([`4931f74`](https://github.com/culur/culur/commit/4931f7415c02349b73477b7c48bcf20fe632a137)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update dependencies ([`d93cb87`](https://github.com/culur/culur/commit/d93cb876849a7fecd690372b0fd801eabe75eb4a)) ([@renovate[bot]](https://github.com/renovate%5Bbot%5D)):
+
+  - `devDependencies`:
+    - `@types/node` to `^20.14.10`
+    - `rimraf` to `^5.0.8`
+    - `typescript` to `^5.5.3`
+    - `vite` to `^5.3.3`
+
 ## 1.0.2
 
 ### Patch Changes

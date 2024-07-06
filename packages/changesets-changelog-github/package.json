@@ -1,0 +1,79 @@
+{
+  "name": "@culur/changesets-changelog-github",
+  "version": "1.0.0",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/changesets-changelog-github"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "changesets",
+    "changelog",
+    "github"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "!**/*.json",
+    "!**/*.test.*",
+    ".stylelintrc.js",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist coverage",
+    "build": "tsup",
+    "test": "tsc --noEmit && vitest run"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@changesets/get-github-info": "^0.6.0",
+    "@changesets/types": "^6.0.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@changesets/parse": "*",
+    "@culur/config-tsup": "1.0.1",
+    "@culur/config-typescript": "1.0.1",
+    "@culur/config-vite": "1.0.2",
+    "@culur/types": "1.0.2",
+    "@types/node": "^20.14.2",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "dedent": "^1.5.3",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  }
+}

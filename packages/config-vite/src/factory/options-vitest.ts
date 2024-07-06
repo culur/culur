@@ -12,7 +12,7 @@ export const defineConfigTest = (
     },
     coverage: {
       enabled: true,
-      reporter: ['text', 'html', 'json'],
+      reporter: ['text', 'html', 'json', 'lcov'],
     },
     ...(typeof test === 'object' ? test : {}),
   };

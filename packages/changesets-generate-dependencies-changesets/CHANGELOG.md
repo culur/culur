@@ -1,4 +1,4 @@
-# @culur/action-renovate-changesets
+# @culur/changesets-generate-dependencies-changesets
 
 ## 1.1.0
 

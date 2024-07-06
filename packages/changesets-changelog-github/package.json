@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-changelog-github",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "publishConfig": {
     "access": "public"
@@ -63,10 +63,10 @@
   },
   "devDependencies": {
     "@changesets/parse": "*",
-    "@culur/config-tsup": "1.0.1",
-    "@culur/config-typescript": "1.0.1",
-    "@culur/config-vite": "1.0.2",
-    "@culur/types": "1.0.2",
+    "@culur/config-tsup": "1.1.0",
+    "@culur/config-typescript": "1.0.2",
+    "@culur/config-vite": "1.0.3",
+    "@culur/types": "1.0.3",
     "@types/node": "^20.14.10",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",

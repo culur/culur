@@ -18,14 +18,23 @@
     "**/.pnp.*": true
   },
   //! TypeScript
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-
   //! Eslint
   "eslint.workingDirectories": [
-    { "pattern": "/apps/*/" },
-    { "pattern": "/packages/*/" },
-    { "pattern": "/scripts/*/" },
-    { "pattern": "/templates/*/" }
-  ]
+    {
+      "pattern": "/apps/*/"
+    },
+    {
+      "pattern": "/packages/*/"
+    },
+    {
+      "pattern": "/scripts/*/"
+    },
+    {
+      "pattern": "/templates/*/"
+    }
+  ],
+  "eslint.nodePath": ".yarn/sdks",
+  "prettier.prettierPath": ".yarn/sdks/prettier/index.cjs"
 }

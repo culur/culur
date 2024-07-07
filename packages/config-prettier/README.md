@@ -10,6 +10,15 @@
 
 > Sharing [Prettier](https://prettier.io) configurations.
 
+## ✨ Features
+
+The library is a shareable Prettier configuration. It has some key features as follows:
+
+- Auto detect operating system to determine `endOfLine` is `crlf` or `lf`.
+- Override `.*rc` & `*.code-workspace` files parser to `json`.
+- Override `*.md`, `*.yml`, `*.yaml`, `package*.json` files tab width to `2`.
+- Override `*.sh` files endOfLine to `lf`.
+
 ## 💿 Installation
 
 Add `@culur/config-prettier` dependency to your project.
@@ -94,15 +103,6 @@ Some commonly used scripts in `package.json`.
   }
 }
 ```
-
-## ✨ Features
-
-The library is a shareable Prettier configuration. It has some key features as follows:
-
-- Auto detect operating system to determine `endOfLine` is `crlf` or `lf`.
-- Override `.*rc` & `*.code-workspace` files parser to `json`.
-- Override `*.md`, `*.yml`, `*.yaml`, `package*.json` files tab width to `2`.
-- Override `*.sh` files endOfLine to `lf`.
 
 ## 🗃️ Changelog
 

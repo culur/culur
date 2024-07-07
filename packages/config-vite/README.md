@@ -10,6 +10,14 @@
 
 > Sharing [Vite](https://vitejs.dev/)/[Vitest](https://vitest.dev/) configurations.
 
+## ✨ Features
+
+The library is a shareable vite/vitest configuration. It has some key features as follows:
+
+- Include `vite-tsconfig-paths` plugin by default.
+- Include `vitest` config by default (with `typecheck`, `coverage`).
+- Customizable for more complex applications.
+
 ## 💿 Installation
 
 Add `@culur/config-vite` dependency to your project.
@@ -77,14 +85,6 @@ Some commonly used scripts in `package.json`.
   }
 }
 ```
-
-## ✨ Features
-
-The library is a shareable vite/vitest configuration. It has some key features as follows:
-
-- Include `vite-tsconfig-paths` plugin by default.
-- Include `vitest` config by default (with `typecheck`, `coverage`).
-- Customizable for more complex applications.
 
 ## 🗃️ Changelog
 

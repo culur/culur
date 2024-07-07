@@ -10,6 +10,15 @@
 
 > A collection of essential TypeScript types.
 
+## ✨ Features
+
+| Name           | Type       | Description                                                 |
+| -------------- | ---------- | ----------------------------------------------------------- |
+| `defineObject` | `function` | Define the actual object.                                   |
+| `entries`      | `function` | `Object.entries()` functions with types from `type-fest`.   |
+| `keys`         | `function` | `Object.keys()` function with types from `type-fest`.       |
+| `PackageJson`  | `type`     | `PackageJson` from `type-fest` and extends some custom type |
+
 ## 💿 Installation
 
 Add `@culur/types` dependency to your project.
@@ -37,15 +46,6 @@ const object = defineObject<{
 });
 // => { foo: string }
 ```
-
-## ✨ Features
-
-| Name           | Type       | Description                                                 |
-| -------------- | ---------- | ----------------------------------------------------------- |
-| `defineObject` | `function` | Define the actual object.                                   |
-| `entries`      | `function` | `Object.entries()` functions with types from `type-fest`.   |
-| `keys`         | `function` | `Object.keys()` function with types from `type-fest`.       |
-| `PackageJson`  | `type`     | `PackageJson` from `type-fest` and extends some custom type |
 
 ## 🗃️ Changelog
 

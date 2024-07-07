@@ -10,6 +10,16 @@
 
 > Check if environments are installed or not.
 
+## ✨ Features
+
+This library use `local-pkg` to check if the following environments are installed.
+
+| Function      | Packages                             |
+| ------------- | ------------------------------------ |
+| `hasTailwind` | `tailwindcss`                        |
+| `hasSass`     | `sass` or `dart-sass` or `node-sass` |
+| `hasVue`      | `vue` or `nuxt` or `vitepress`       |
+
 ## 💿 Installation
 
 Add `@culur/utils-packages` dependency to your project.
@@ -57,16 +67,6 @@ const {
   sass: false, // (override)
 });
 ```
-
-## ✨ Features
-
-This library use `local-pkg` to check if the following environments are installed.
-
-| Function      | Packages                             |
-| ------------- | ------------------------------------ |
-| `hasTailwind` | `tailwindcss`                        |
-| `hasSass`     | `sass` or `dart-sass` or `node-sass` |
-| `hasVue`      | `vue` or `nuxt` or `vitepress`       |
 
 ## 🗃️ Changelog
 

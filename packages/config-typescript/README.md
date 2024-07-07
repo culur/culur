@@ -10,6 +10,16 @@
 
 > Sharing [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html).
 
+## ✨ Features
+
+There are 3 configurations:
+
+| File                 | Alias  | Target   | Module   | Description                                                                                                             |
+| -------------------- | ------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `tsconfig.base.json` | `base` | -        | -        | Base configuration                                                                                                      |
+| `tsconfig.json`      | `.`    | `ES2021` | `ESNext` | Default configuration                                                                                                   |
+| `tsconfig.bun.json`  | `bun`  | `ESNext` | `ESNext` | Configuration specific to bun ([Suggested `compilerOptions`](https://bun.sh/docs/typescript#suggested-compileroptions)) |
+
 ## 💿 Installation
 
 Add `@culur/config-typescript` dependency to your project.
@@ -40,16 +50,6 @@ Add to your `tsconfig.json`:
   "extends": "@culur/config-typescript",
 }
 ```
-
-## ✨ Features
-
-There are 3 configurations:
-
-| File                 | Alias  | Target   | Module   | Description                                                                                                             |
-| -------------------- | ------ | -------- | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `tsconfig.base.json` | `base` | -        | -        | Base configuration                                                                                                      |
-| `tsconfig.json`      | `.`    | `ES2021` | `ESNext` | Default configuration                                                                                                   |
-| `tsconfig.bun.json`  | `bun`  | `ESNext` | `ESNext` | Configuration specific to bun ([Suggested `compilerOptions`](https://bun.sh/docs/typescript#suggested-compileroptions)) |
 
 ## 🗃️ Changelog
 

@@ -10,6 +10,14 @@
 
 > Sharing [Eslint](https://eslint.org/) configurations.
 
+## ✨ Features
+
+The library is a shareable Eslint configuration. It has some key features as follows:
+
+- Extends all config from [`@antfu/eslint-config`](https://github.com/antfu/eslint-config).
+- Override and add some rules according to personal opinion.
+- Full customizable (use the same functions as `@antfu/eslint-config`).
+
 ## 💿 Installation
 
 Add `@culur/config-eslint` dependency to your project.
@@ -58,14 +66,6 @@ Some commonly used scripts in `package.json`.
   }
 }
 ```
-
-## ✨ Features
-
-The library is a shareable Eslint configuration. It has some key features as follows:
-
-- Extends all config from [`@antfu/eslint-config`](https://github.com/antfu/eslint-config).
-- Override and add some rules according to personal opinion.
-- Full customizable (use the same functions as `@antfu/eslint-config`).
 
 ## 🗃️ Changelog
 

@@ -20,6 +20,21 @@ This action will generate markdown changeset files in each dependabot or renovat
 - Amend previous commit with generated files.
 - Force push to your repository.
 
+For example, if your `package.json` file has a few updated libraries, the generated changeset file will look like this:
+
+```text
+---
+'@culur/foo': patch
+---
+
+Update dependencies:
+
+- `dependencies`:
+  - `foo@1.0.2`
+- `devDependencies`:
+  - `bar@2.0.1`
+```
+
 ## 📖 Usage
 
 To be able to use this action you need to follow the following steps:

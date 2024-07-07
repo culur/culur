@@ -22,7 +22,7 @@ export async function createChangeset({
       .map(([dependenciesType, changes]) => {
         if (!changes) return null;
         const packages = entries(changes) //
-          .map(([name, version]) => `  - \`${name}\` to \`${version}\``);
+          .map(([name, version]) => `  - \`${name}@${version}\``);
 
         return [
           `- \`${dependenciesType}\`:`, //

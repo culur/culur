@@ -40,7 +40,7 @@ describe('createChangeset', () => {
       Update dependencies:
 
       - \`dependencies\`:
-        - \`bar\` to \`2.0.0\`
+        - \`bar@2.0.0\`
     `;
     expect(coreDebug).toBeCalledWith(`${debugMessage}\n`);
   });

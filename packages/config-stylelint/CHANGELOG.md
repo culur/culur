@@ -1,5 +1,26 @@
 # @culur/config-stylelint
 
+## 1.0.2
+
+### Patch Changes
+
+- Update `README.md` ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-config-clean-order@^6.1.0`
+    - `stylelint-config-standard@^36.0.1`
+    - `stylelint-scss@^6.3.2`
+  - `devDependencies`:
+    - `@types/node@^20.14.10`
+    - `postcss@^8.4.39`
+    - `rimraf@^5.0.8`
+    - `typescript@^5.5.3`
+
+- Updated dependencies ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c), [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419)):
+  - `@culur/utils-packages@1.0.2`
+
 ## 1.0.1
 
 ### Patch Changes

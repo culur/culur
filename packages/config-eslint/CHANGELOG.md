@@ -1,5 +1,22 @@
 # @culur/config-eslint
 
+## 1.0.3
+
+### Patch Changes
+
+- Update `README.md` ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^2.21.3`
+  - `devDependencies`:
+    - `@types/node@^20.14.10`
+    - `eslint@^9.6.0`
+    - `rimraf@^5.0.8`
+    - `type-fest@^4.21.0`
+    - `typescript@^5.5.3`
+
 ## 1.0.2
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.2.0
+
+### Minor Changes
+
+- Rename to `changesets-generate-dependencies-changesets` ([`d119068`](https://github.com/culur/culur/commit/d1190685753112900d74d7126520a58f0594b56f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- Package `@octokit/webhooks-definitions` has been deprecated, use `@octokit/webhooks-types` instead ([`e60a9e8`](https://github.com/culur/culur/commit/e60a9e846739d86ce13b6160eaf132e387abf5b9)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update changeset format ([`4b27f36`](https://github.com/culur/culur/commit/4b27f3676e387320b184ca2df17b4fa92bd10826)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `minimatch@^9.0.5`
+  - `devDependencies`:
+    - `@types/node@^20.14.10`
+    - `rimraf@^5.0.8`
+    - `type-fest@^4.21.0`
+    - `typescript@^5.5.3`
+
 ## 1.1.0
 
 ### Minor Changes

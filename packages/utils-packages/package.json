@@ -1,6 +1,6 @@
 {
   "name": "@culur/utils-packages",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Culur's packages exist",
   "publishConfig": {
     "access": "public"
@@ -56,9 +56,9 @@
     "local-pkg": "^0.5.0"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.0.1",
-    "@culur/config-typescript": "1.0.1",
-    "@culur/config-vite": "1.0.2",
+    "@culur/config-tsup": "1.1.0",
+    "@culur/config-typescript": "1.0.2",
+    "@culur/config-vite": "1.0.3",
     "@types/node": "^20.14.10",
     "@vitest/coverage-v8": "^1.6.0",
     "@vitest/ui": "^1.6.0",

@@ -1,6 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@latest/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "culur/culur" }],
+  "changelog": [
+    "@culur/changesets-changelog-github",
+    { "repo": "culur/culur" }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],

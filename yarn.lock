@@ -291,17 +291,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/changelog-github@npm:0.5.0":
-  version: 0.5.0
-  resolution: "@changesets/changelog-github@npm:0.5.0"
-  dependencies:
-    "@changesets/get-github-info": "npm:^0.6.0"
-    "@changesets/types": "npm:^6.0.0"
-    dotenv: "npm:^8.1.0"
-  checksum: 10/a9c01d918f67c3d5dd38a505da29261518bed932c67fe3eb85cc15a485d32c1d11549cd276f121b4e169f26fb20923b435e931e6a5e83e213623dd8c3733cde9
-  languageName: node
-  linkType: hard
-
 "@changesets/cli@npm:^2.27.5":
   version: 2.27.5
   resolution: "@changesets/cli@npm:2.27.5"
@@ -438,7 +427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@changesets/parse@npm:^0.4.0":
+"@changesets/parse@npm:*, @changesets/parse@npm:^0.4.0":
   version: 0.4.0
   resolution: "@changesets/parse@npm:0.4.0"
   dependencies:
@@ -764,6 +753,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@culur/changesets-changelog-github@npm:*, @culur/changesets-changelog-github@workspace:packages/changesets-changelog-github":
+  version: 0.0.0-use.local
+  resolution: "@culur/changesets-changelog-github@workspace:packages/changesets-changelog-github"
+  dependencies:
+    "@changesets/get-github-info": "npm:^0.6.0"
+    "@changesets/parse": "npm:*"
+    "@changesets/types": "npm:^6.0.0"
+    "@culur/config-tsup": "npm:1.0.1"
+    "@culur/config-typescript": "npm:1.0.1"
+    "@culur/config-vite": "npm:1.0.2"
+    "@culur/types": "npm:1.0.2"
+    "@types/node": "npm:^20.14.2"
+    "@vitest/coverage-v8": "npm:^1.6.0"
+    "@vitest/ui": "npm:^1.6.0"
+    dedent: "npm:^1.5.3"
+    dotenv: "npm:^16.4.5"
+    rimraf: "npm:^5.0.7"
+    tsup: "npm:^8.1.0"
+    typescript: "npm:^5.4.5"
+    vitest: "npm:^1.6.0"
+  languageName: unknown
+  linkType: soft
+
 "@culur/changesets-generate-dependencies-changesets@workspace:packages/changesets-generate-dependencies-changesets":
   version: 0.0.0-use.local
   resolution: "@culur/changesets-generate-dependencies-changesets@workspace:packages/changesets-generate-dependencies-changesets"
@@ -927,11 +939,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@culur/monorepo@workspace:."
   dependencies:
-    "@changesets/changelog-github": "npm:0.5.0"
     "@changesets/cli": "npm:^2.27.5"
     "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/config-conventional": "npm:^19.2.2"
     "@commitlint/types": "npm:^19.0.3"
+    "@culur/changesets-changelog-github": "npm:*"
     "@culur/config-eslint": "npm:*"
     "@culur/config-prettier": "npm:*"
     "@eslint/config-inspector": "npm:^0.4.11"
@@ -3944,10 +3956,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^8.1.0":
-  version: 8.6.0
-  resolution: "dotenv@npm:8.6.0"
-  checksum: 10/31d7b5c010cebb80046ba6853d703f9573369b00b15129536494f04b0af4ea0060ce8646e3af58b455af2f6f1237879dd261a5831656410ec92561ae1ea44508
+"dotenv@npm:^16.4.5":
+  version: 16.4.5
+  resolution: "dotenv@npm:16.4.5"
+  checksum: 10/55a3134601115194ae0f924e54473459ed0d9fc340ae610b676e248cca45aa7c680d86365318ea964e6da4e2ea80c4514c1adab5adb43d6867fb57ff068f95c8
   languageName: node
   linkType: hard
 

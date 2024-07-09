@@ -786,7 +786,7 @@ __metadata:
     "@vitest/ui": "npm:^1.6.0"
     dedent: "npm:^1.5.3"
     fs-extra: "npm:^11.2.0"
-    minimatch: "npm:^9.0.5"
+    minimatch: "npm:^10.0.1"
     rimraf: "npm:^6.0.0"
     tsup: "npm:^8.1.0"
     type-fest: "npm:^4.21.0"
@@ -6000,7 +6000,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.0.0":
+"minimatch@npm:^10.0.0, minimatch@npm:^10.0.1":
   version: 10.0.1
   resolution: "minimatch@npm:10.0.1"
   dependencies:

@@ -7,10 +7,27 @@
   "postUpdateOptions": ["yarnDedupeHighest"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
       "rangeStrategy": "bump",
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "labels": ["dependencies", "dependencies: all dependencies"],
+      "matchPackagePatterns": ["*"],
+      "groupName": "{{#if isMajor}}all major dependencies{{else}}all dependencies{{/if}}",
+      "groupSlug": "{{#if isMajor}}all-major-dependencies{{else}}all-dependencies{{/if}}"
+    },
+    {
+      "rangeStrategy": "bump",
+      "labels": ["dependencies", "dependencies: only dependencies"],
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["dependencies"],
+      "groupName": "{{#if isMajor}}only major dependencies{{else}}only dependencies{{/if}}",
+      "groupSlug": "{{#if isMajor}}only-major-dependencies{{else}}only-dependencies{{/if}}"
+    },
+    {
+      "rangeStrategy": "bump",
+      "labels": ["dependencies", "dependencies: only devDependencies"],
+      "matchPackagePatterns": ["*"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "{{#if isMajor}}only major dev dependencies{{else}}only dev dependencies{{/if}}",
+      "groupSlug": "{{#if isMajor}}only-major-dev-dependencies{{else}}only-dev-dependencies{{/if}}"
     },
     {
       "description": "Ignore nodejs",

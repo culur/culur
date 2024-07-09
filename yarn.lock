@@ -786,7 +786,7 @@ __metadata:
     "@vitest/ui": "npm:^1.6.0"
     dedent: "npm:^1.5.3"
     fs-extra: "npm:^11.2.0"
-    minimatch: "npm:^9.0.5"
+    minimatch: "npm:^10.0.1"
     rimraf: "npm:^5.0.8"
     tsup: "npm:^8.1.0"
     type-fest: "npm:^4.21.0"
@@ -5961,6 +5961,15 @@ __metadata:
   dependencies:
     brace-expansion: "npm:^2.0.1"
   checksum: 10/c81b47d28153e77521877649f4bab48348d10938df9e8147a58111fe00ef89559a2938de9f6632910c4f7bf7bb5cd81191a546167e58d357f0cfb1e18cecc1c5
+  languageName: node
+  linkType: hard
+
+"minimatch@npm:^10.0.1":
+  version: 10.0.1
+  resolution: "minimatch@npm:10.0.1"
+  dependencies:
+    brace-expansion: "npm:^2.0.1"
+  checksum: 10/082e7ccbc090d5f8c4e4e029255d5a1d1e3af37bda837da2b8b0085b1503a1210c91ac90d9ebfe741d8a5f286ece820a1abb4f61dc1f82ce602a055d461d93f3
   languageName: node
   linkType: hard
 

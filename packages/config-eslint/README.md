@@ -33,7 +33,7 @@ yarn add @culur/config-eslint --dev
 Other packages:
 
 - Use need to install `eslint` package in devDependencies.
-- For `inspector`, you can install `eslint-config-inspector` in devDependencies.
+- For `inspector`, you can install `@eslint/config-inspector` in devDependencies.
 
 ## 📖 Usage
 

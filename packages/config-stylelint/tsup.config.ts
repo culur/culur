@@ -1,5 +1,4 @@
-import { esm_cjs } from '@culur/config-tsup';
-import { defineConfig } from 'tsup';
+import { defineConfig, esm_cjs } from '@culur/config-tsup';
 
 export default defineConfig({
   ...esm_cjs,

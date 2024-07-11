@@ -1,5 +1,7 @@
 import { vi } from 'vitest';
 
+vi.mock('@culur/utils-packages');
+
 export type UtilsPackages = Partial<{
   hasTailwind: boolean;
   hasSass: boolean;
@@ -13,10 +15,6 @@ export const defineMockUtilsPackages = (testCases: UtilsPackages[]) => {
       typeof t.hasSass === 'boolean' ||
       typeof t.hasVue === 'boolean',
   );
-
-  if (shouldMockUtilsPackages) {
-    vi.mock('@culur/utils-packages');
-  }
 
   return async ({ hasTailwind, hasSass, hasVue }: UtilsPackages) => {
     if (shouldMockUtilsPackages) {

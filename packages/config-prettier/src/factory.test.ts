@@ -3,9 +3,9 @@ import prettier from 'prettier';
 import { describe, expect, it, vi } from 'vitest';
 import definePrettierConfig from './factory';
 
-describe('platform', () => {
-  vi.mock('node:os');
+vi.mock('node:os');
 
+describe('platform', () => {
   it.each([
     { platform: 'win32', endOfLine: 'crlf' },
     { platform: 'linux', endOfLine: 'lf' },

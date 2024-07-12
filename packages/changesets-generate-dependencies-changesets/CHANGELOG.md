@@ -1,5 +1,26 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.2.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `rimraf@^6.0.1`
+
+- 📦 Update dependencies ([`c9bb285`](https://github.com/culur/culur/commit/c9bb285546c046c0825a69f4136145cf57e79e94)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `minimatch@^10.0.1`
+
+- 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.2`
+    - `@vitest/ui@^2.0.2`
+    - `vitest@^2.0.2`
+
 ## 1.2.0
 
 ### Minor Changes

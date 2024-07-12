@@ -1,5 +1,21 @@
 # @culur/types
 
+## 1.0.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `rimraf@^6.0.1`
+
+- 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.2`
+    - `@vitest/ui@^2.0.2`
+    - `vitest@^2.0.2`
+
 ## 1.0.3
 
 ### Patch Changes

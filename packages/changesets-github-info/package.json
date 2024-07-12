@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-github-info",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get the GitHub username and PR number from a commit. Intended for use with changesets.",
   "publishConfig": {
     "access": "public"
@@ -57,16 +57,16 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@culur/types": "1.0.3",
+    "@culur/types": "1.0.4",
     "@octokit/graphql": "^8.1.1",
     "dataloader": "^2.2.2",
     "dedent": "^1.5.3",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.0",
+    "@culur/config-tsup": "1.1.1",
     "@culur/config-typescript": "1.0.2",
-    "@culur/config-vite": "1.0.3",
+    "@culur/config-vite": "1.0.4",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/typescript-operations": "4.2.3",
     "@octokit/graphql-schema": "^15.25.0",

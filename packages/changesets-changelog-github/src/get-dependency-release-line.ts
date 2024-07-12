@@ -1,5 +1,6 @@
-import { getInfo } from '@changesets/get-github-info';
+import { getCommitInfo } from '@culur/changesets-github-info';
 import type { GetDependencyReleaseLine } from '@changesets/types';
+import type { SetRequired } from 'type-fest';
 
 export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   changesets,
@@ -13,21 +14,19 @@ export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   }
   if (dependenciesUpdated.length === 0) return '';
 
-  const changesetLink = `- Updated dependencies (${(
-    await Promise.all(
-      changesets.map(async cs => {
-        if (cs.commit) {
-          const { links } = await getInfo({
-            repo: options.repo,
-            commit: cs.commit,
-          });
-          return links.commit;
-        }
-      }),
-    )
-  )
-    .filter(_ => _)
-    .join(', ')}):`;
+  const commits = changesets
+    .filter((cs): cs is SetRequired<typeof cs, 'commit'> => !!cs.commit)
+    .map(async cs => {
+      const commitInfo = await getCommitInfo({
+        repo: options.repo,
+        commitHash: cs.commit,
+      });
+      return commitInfo.commit.link;
+    });
+
+  const commitLinks = (await Promise.all(commits)).join(', ');
+
+  const changesetLink = `- 📦 Update workspace dependencies (${commitLinks}):`;
 
   const updatedDependenciesList = dependenciesUpdated.map(
     dependency => `  - \`${dependency.name}@${dependency.newVersion}\``,

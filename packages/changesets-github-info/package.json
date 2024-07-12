@@ -1,0 +1,83 @@
+{
+  "name": "@culur/changesets-github-info",
+  "version": "0.0.0",
+  "description": "Get the GitHub username and PR number from a commit. Intended for use with changesets.",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/changesets-changelog-github"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "changesets",
+    "changelog",
+    "github"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "!**/*.json",
+    "!**/*.test.*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist coverage types/schema.operations.generated.ts",
+    "build": "tsup",
+    "test": "tsc --noEmit && vitest run",
+    "gen": "graphql-codegen --config codegen.ts"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@culur/types": "1.0.3",
+    "@octokit/graphql": "^8.1.1",
+    "dataloader": "^2.2.2",
+    "dedent": "^1.5.3",
+    "lodash-es": "^4.17.21"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "1.1.0",
+    "@culur/config-typescript": "1.0.2",
+    "@culur/config-vite": "1.0.3",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/typescript-operations": "4.2.3",
+    "@octokit/graphql-schema": "^15.25.0",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.14.10",
+    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "graphql": "^16.9.0",
+    "rimraf": "^6.0.0",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
+}

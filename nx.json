@@ -9,11 +9,12 @@
     "clean": {},
     "lint": {},
     "test": {
+      "dependsOn": ["^build"],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
     },
     "build": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["gen", "^build"],
       "inputs": [
         "{workspaceRoot}/.gitignore",
         "{projectRoot}/**/*",

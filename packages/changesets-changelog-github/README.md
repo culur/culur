@@ -1,5 +1,9 @@
 # `@culur/changesets-changelog-github`
 
+[![NPM Version](https://img.shields.io/npm/v/@culur/changesets-changelog-github?logo=npm)](https://www.npmjs.com/package/@culur/changesets-changelog-github)
+[![NPM Download](https://img.shields.io/npm/dm/@culur/changesets-changelog-github?logo=npm)](https://www.npmjs.com/package/@culur/changesets-changelog-github)
+[![NPM License](https://img.shields.io/npm/l/@culur/changesets-changelog-github)](../../LICENSE)
+
 [![CodeFactor](https://www.codefactor.io/repository/github/culur/culur/badge)](https://www.codefactor.io/repository/github/culur/culur)
 [![Codecov](https://img.shields.io/codecov/c/github/culur/culur)](https://app.codecov.io/gh/culur/culur)
 [![Build and release](https://github.com/culur/culur/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/culur/culur/actions/workflows/build-and-release.yml)
@@ -9,7 +13,10 @@
 ## ✨ Features
 
 This is a changelog entry generator for Github used in Changesets.
-It's basically `@changesets/changelog-github`, but the format has been modified and has some more customization.
+It's basically `@changesets/changelog-github`, but the format has been modified and has some more customization:
+
+- Customize message format.
+- Add emoji based on conventional commit.
 
 Below are some examples:
 
@@ -28,6 +35,8 @@ Feat: add some features:
 - Feature B.
 ```
 
+Commit message: `feat(foo): add some feature`
+
 Generated changelog:
 
 ```md
@@ -37,14 +46,14 @@ Generated changelog:
 
 ### Patch Changes
 
-- Feat: add some features ([#123](https://github.com/culur/culur/pull/123) [`abcd123`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
+- ✨ Feat: add some features ([#123](https://github.com/culur/culur/pull/123) [`abcd123`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
   - Feature A.
   - Feature B.
 ```
 
 Preview:
 
-- Feat: add some features ([#123](https://github.com/culur/culur/pull/123) [`abcd123`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
+- ✨ Feat: add some features ([#123](https://github.com/culur/culur/pull/123) [`abcd123`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
   - Feature A.
   - Feature B.
 
@@ -61,13 +70,13 @@ Generated changelog:
 
 ### Patch Changes
 
-- Updated dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
+- 📦 Update workspace dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
   - [`@culur/bar@1.0.1`](https://github.com/culur/culur/packages/bar)
 ```
 
 Preview:
 
-- Updated dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
+- 📦 Update workspace dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
   - [`@culur/bar@1.0.1`](https://github.com/culur/culur/packages/bar)
 
 ## 💿 Installation

@@ -24,7 +24,7 @@ export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
       return commitInfo.commit.link;
     });
 
-  const commitLinks = (await Promise.all(commits)).join(', ');
+  const commitLinks = (await Promise.all(commits)).join(' ');
 
   const changesetLink = `- 📦 Update workspace dependencies (${commitLinks}):`;
 

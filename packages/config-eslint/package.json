@@ -57,7 +57,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.21.3"
+    "@antfu/eslint-config": "^2.22.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.1.0",

@@ -62,7 +62,7 @@
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "@changesets/parse": "*",
+    "@changesets/parse": "^0.4.0",
     "@culur/config-tsup": "1.1.0",
     "@culur/config-typescript": "1.0.2",
     "@culur/config-vite": "1.0.3",

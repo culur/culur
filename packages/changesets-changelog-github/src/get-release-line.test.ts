@@ -1,23 +1,32 @@
 import parse from '@changesets/parse';
 import dedent from 'dedent';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import type { CommitOrPullRecord } from './__tests__/mock-github-info';
-import {
-  defineCommitOrPullRecord,
-  mockGithubInfo,
-} from './__tests__/mock-github-info';
+import { mockGithubInfo } from './__tests__/mock-github-info';
+import type { MockRecord } from './__tests__/types';
+import { defineMockRecord } from './__tests__/types';
 import { getReleaseLine } from './get-release-line';
 
 function testGetReleaseLine(
   name: string,
-  record: CommitOrPullRecord,
-  summary: string,
-  expectReleaseLine: string,
-  options?: { only: boolean },
+  {
+    mockRecords,
+    commit: { repo, commitHash, summary },
+    expectReleaseLine,
+    only,
+  }: {
+    mockRecords: MockRecord[];
+    commit: {
+      repo: string;
+      commitHash?: string;
+      summary: string;
+    };
+    expectReleaseLine: string;
+    only?: boolean;
+  },
 ) {
   // eslint-disable-next-line test/no-only-tests
-  (options?.only ? it.only : it)(name, async () => {
-    mockGithubInfo(record);
+  (only ? it.only : it)(name, async () => {
+    mockGithubInfo(...mockRecords);
 
     const head = dedent`
       ---
@@ -30,22 +39,15 @@ function testGetReleaseLine(
       {
         ...parse(changeset),
         id: 'some-id',
-        commit: record.commit ?? undefined,
+        commit: commitHash ?? undefined,
       },
       'minor',
-      { repo: record.repo },
+      { repo },
     );
 
     expect(releaseLine).toEqual(`\n\n${expectReleaseLine}\n`);
   });
 }
-
-const githubInfo = defineCommitOrPullRecord({
-  repo: 'culur/culur',
-  user: 'culur',
-  commit: 'abcd123',
-  pull: 999,
-});
 
 afterEach(() => {
   vi.restoreAllMocks();
@@ -66,101 +68,140 @@ describe('invalid options', () => {
   });
 });
 
-testGetReleaseLine(
-  'default',
-  githubInfo,
-  dedent`
-    Feat: add some features
+testGetReleaseLine('default', {
+  mockRecords: [
+    {
+      repo: 'culur/culur',
+      user: 'culur',
+      commitHash: 'abcd123',
+      commitMessage: 'feat: add new feature',
+      pullRequestNumber: 999,
+      pullRequestTitle: 'feat: new feature',
+    },
+  ],
+  commit: {
+    repo: 'culur/culur',
+    commitHash: 'abcd123',
+    summary: dedent`
+      Feat: add new feature
+    `,
+  },
+  expectReleaseLine: dedent`
+    - ✨ Feat: add new feature ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
   `,
-  dedent`
-    - Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
-  `,
-);
+});
+
+const mockRecord = defineMockRecord({
+  repo: 'culur/culur',
+  user: 'culur',
+  commitHash: 'abcd123',
+  commitMessage: 'feat: new feature',
+  pullRequestNumber: 999,
+  pullRequestTitle: 'feat: new feature',
+});
 
 describe('override', () => {
   const expectReleaseLine = dedent`
-      - Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
-    `;
-  testGetReleaseLine(
-    'override pull',
-    githubInfo,
-    dedent`
-      Feat: add some features
-      pull: 999
-    `,
-    expectReleaseLine,
-  );
+    - ✨ Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
+  `;
 
-  testGetReleaseLine(
-    'override commit',
-    githubInfo,
-    dedent`
-      Feat: add some features
-      commit: abcd123
-    `,
-    expectReleaseLine,
-  );
-
-  testGetReleaseLine(
-    'override commit & pull',
-    githubInfo,
-    dedent`
-      Feat: add some features
-      pull: 999
-      commit: abcd123
-    `,
-    expectReleaseLine,
-  );
-
-  testGetReleaseLine(
-    'override multiple authors',
-    githubInfo,
-    dedent`
-      Feat: add some features
-      author: @other
-      author: @user
-    `,
-    dedent`
-        - Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@other](https://github.com/other), [@user](https://github.com/user)).
+  testGetReleaseLine('override pull', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      summary: dedent`
+        Feat: add some features
+        pull: 999
       `,
-  );
+    },
+    expectReleaseLine,
+  });
 
-  testGetReleaseLine(
-    'override commit & pull',
-    { ...githubInfo, commit: null },
-    dedent`
-      Feat: add some features
+  testGetReleaseLine('override commit', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      summary: dedent`
+        Feat: add some features
+        commit: abcd123
+      `,
+    },
+    expectReleaseLine,
+  });
+
+  testGetReleaseLine('override commit & pull', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      summary: dedent`
+        Feat: add some features
+        pull: 999
+        commit: abcd123
+      `,
+    },
+    expectReleaseLine,
+  });
+
+  testGetReleaseLine('override multiple authors', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      commitHash: 'abcd123',
+      summary: dedent`
+        Feat: add some features
+        author: @other
+        author: @user
+      `,
+    },
+    expectReleaseLine: dedent`
+      - ✨ Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@other](https://github.com/other) [@user](https://github.com/user)).
     `,
-    dedent`
-      - Feat: add some features.
+  });
+
+  testGetReleaseLine('no commit & pull', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      summary: dedent`
+        Feat: add some features
+      `,
+    },
+    expectReleaseLine: dedent`
+      - ❔ Feat: add some features.
     `,
-  );
+  });
 });
 
 describe('punctuation', () => {
-  testGetReleaseLine(
-    'single line',
-    githubInfo,
-    dedent`
-      Feat: add some features.
+  testGetReleaseLine('single line', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      commitHash: 'abcd123',
+      summary: dedent`
+        Feat: add some features.
+      `,
+    },
+    expectReleaseLine: dedent`
+      - ✨ Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
     `,
-    dedent`
-      - Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
-    `,
-  );
+  });
 
-  testGetReleaseLine(
-    'multiple line',
-    githubInfo,
-    dedent`
-      Feat: add some features:
-      - Feature 1
-      - Feature 2
-    `,
-    dedent`
-      - Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
+  testGetReleaseLine('multiple lines', {
+    mockRecords: [mockRecord],
+    commit: {
+      repo: 'culur/culur',
+      commitHash: 'abcd123',
+      summary: dedent`
+        Feat: add some features:
+        - Feature 1
+        - Feature 2
+      `,
+    },
+    expectReleaseLine: dedent`
+      - ✨ Feat: add some features ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)):
         - Feature 1
         - Feature 2
     `,
-  );
+  });
 });

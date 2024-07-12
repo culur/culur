@@ -2,33 +2,31 @@ import parse from '@changesets/parse';
 import type { ModCompWithPackage, VersionType } from '@changesets/types';
 import dedent from 'dedent';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import type { CommitOrPullRecord } from './__tests__/mock-github-info';
 import { mockGithubInfo } from './__tests__/mock-github-info';
 import { getDependencyReleaseLine } from './get-dependency-release-line';
+import type { MockRecord } from './__tests__/types';
 
 function testGetDependencyReleaseLine(
   name: string,
   {
-    commitOrPullRecords,
+    mockRecords,
+    pullRequest: { repo },
     dependenciesChangesets,
-    repo,
     expectReleaseLine,
   }: {
-    commitOrPullRecords: Omit<CommitOrPullRecord, 'repo'>[];
+    mockRecords: MockRecord[];
+    pullRequest: { repo: string };
     dependenciesChangesets: {
       packageName: string;
       versionType: VersionType;
       version: [string, string];
-      // oldVersion: string;
-      // newVersion: string;
       commit: string;
     }[];
-    repo: string;
     expectReleaseLine: string;
   },
 ) {
   it(name, async () => {
-    mockGithubInfo(...commitOrPullRecords.map(record => ({ ...record, repo })));
+    mockGithubInfo(...mockRecords);
 
     const changesets = dependenciesChangesets.map(c => ({
       ...parse(dedent`
@@ -77,16 +75,22 @@ describe('invalid options', () => {
 });
 
 testGetDependencyReleaseLine('empty', {
-  commitOrPullRecords: [],
+  mockRecords: [],
+  pullRequest: { repo: 'culur/culur' },
   dependenciesChangesets: [],
-  repo: 'culur/culur',
   expectReleaseLine: '',
 });
 
 testGetDependencyReleaseLine('default', {
-  commitOrPullRecords: [
-    { user: 'culur', commit: 'abcd123', pull: 456 }, //
+  mockRecords: [
+    {
+      repo: 'culur/culur',
+      user: 'culur',
+      commitHash: 'abcd123',
+      commitMessage: 'feat: new feature',
+    },
   ],
+  pullRequest: { repo: 'culur/culur' },
   dependenciesChangesets: [
     {
       packageName: 'foo',
@@ -95,9 +99,8 @@ testGetDependencyReleaseLine('default', {
       commit: 'abcd123',
     },
   ],
-  repo: 'culur/culur',
   expectReleaseLine: dedent`
-    - Updated dependencies ([\`abcd123\`](https://github.com/culur/culur/commit/abcd123)):
+    - 📦 Update workspace dependencies ([\`abcd123\`](https://github.com/culur/culur/commit/abcd123)):
       - \`foo@1.0.1\`
   `,
 });

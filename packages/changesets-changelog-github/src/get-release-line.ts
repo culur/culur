@@ -1,5 +1,9 @@
-import { getInfo, getInfoFromPullRequest } from '@changesets/get-github-info';
 import type { GetReleaseLine } from '@changesets/types';
+import {
+  getCommitInfo,
+  getPullRequestInfo,
+} from '@culur/changesets-github-info';
+import { getEmoji } from './get-emoji';
 
 export const getReleaseLine: GetReleaseLine = async (
   changeset,
@@ -12,14 +16,15 @@ export const getReleaseLine: GetReleaseLine = async (
     );
   }
 
-  let prFromSummary: number | undefined;
+  let pullRequestFromSummary: number | undefined;
   let commitFromSummary: string | undefined;
+  const commitFromChangeset = changeset.commit;
   const usersFromSummary: string[] = [];
 
   const replacedChangelog = changeset.summary
     .replace(/^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im, (_, pr) => {
       const num = Number(pr);
-      if (!Number.isNaN(num)) prFromSummary = num;
+      if (!Number.isNaN(num)) pullRequestFromSummary = num;
       return '';
     })
     .replace(/^\s*commit:\s*(\S+)/im, (_, commit) => {
@@ -37,33 +42,37 @@ export const getReleaseLine: GetReleaseLine = async (
     .map(l => l.trimEnd());
 
   const links = await (async () => {
-    if (prFromSummary !== undefined) {
-      let { links } = await getInfoFromPullRequest({
-        repo: options.repo,
-        pull: prFromSummary,
-      });
-      if (commitFromSummary) {
-        const shortCommitId = commitFromSummary.slice(0, 7);
-        links = {
-          ...links,
-          commit: `[\`${shortCommitId}\`](https://github.com/${options.repo}/commit/${commitFromSummary})`,
-        };
+    const pullRequestFromSummaryInfo = pullRequestFromSummary
+      ? await getPullRequestInfo({
+          repo: options.repo,
+          pullRequestNumber: pullRequestFromSummary,
+        })
+      : null;
+    const commitFromChangesetInfo = commitFromChangeset
+      ? await getCommitInfo({
+          repo: options.repo,
+          commitHash: commitFromChangeset,
+        })
+      : null;
+    const commitFromSummaryInfo = commitFromSummary
+      ? await getCommitInfo({
+          repo: options.repo,
+          commitHash: commitFromSummary,
+        })
+      : null;
+
+    if (pullRequestFromSummaryInfo) {
+      if (!commitFromSummaryInfo) return pullRequestFromSummaryInfo;
+      return commitFromSummaryInfo;
+    }
+    return (
+      commitFromSummaryInfo ??
+      commitFromChangesetInfo ?? {
+        user: null,
+        commit: null,
+        pullRequest: null,
       }
-      return links;
-    }
-    const commitToFetchFrom = commitFromSummary || changeset.commit;
-    if (commitToFetchFrom) {
-      const { links } = await getInfo({
-        repo: options.repo,
-        commit: commitToFetchFrom,
-      });
-      return links;
-    }
-    return {
-      commit: null,
-      pull: null,
-      user: null,
-    };
+    );
   })();
 
   const users = usersFromSummary.length
@@ -72,12 +81,14 @@ export const getReleaseLine: GetReleaseLine = async (
           userFromSummary =>
             `[@${userFromSummary}](https://github.com/${userFromSummary})`,
         )
-        .join(', ')
-    : links.user;
+        .join(' ')
+    : links.user?.link ?? null;
+
+  const prefix = getEmoji(links.pullRequest?.title ?? links.commit?.message);
 
   const suffix = [
-    links.pull !== null || links.commit !== null
-      ? `(${[links.pull, links.commit]
+    links.pullRequest !== null || links.commit !== null
+      ? `(${[links.pullRequest?.link, links.commit?.link]
           .filter((item): item is string => !!item)
           .join(' ')})`
       : null,
@@ -97,5 +108,5 @@ export const getReleaseLine: GetReleaseLine = async (
 
   const restLinesContent = ['', ...restLines.map(l => `  ${l}`)].join('\n');
 
-  return `\n\n- ${firstLineWithoutPunctuation}${suffix ? ` ${suffix}` : ''}${firstLinePunctuation ?? '.'}${restLinesContent}\n`;
+  return `\n\n- ${prefix} ${firstLineWithoutPunctuation}${suffix ? ` ${suffix}` : ''}${firstLinePunctuation ?? '.'}${restLinesContent}\n`;
 };

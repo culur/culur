@@ -36,7 +36,7 @@ jobs:
         with:
           base-branch: dev
           head-branch: renovate/**
-          user-name: renovate
+          user-name: renovate[bot]
           user-email: renovate[bot]@users.noreply.github.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

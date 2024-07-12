@@ -38,7 +38,6 @@
   "files": [
     "!**/*.json",
     "!**/*.test.*",
-    ".stylelintrc.js",
     "CHANGELOG.md",
     "LICENSE",
     "README.md",
@@ -57,9 +56,10 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@changesets/get-github-info": "^0.6.0",
     "@changesets/types": "^6.0.0",
-    "dotenv": "^16.4.5"
+    "@culur/changesets-github-info": "0.0.0",
+    "dotenv": "^16.4.5",
+    "type-fest": "^4.21.0"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.0",

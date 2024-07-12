@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/nx@latest/schemas/project-schema.json",
+  "targets": {
+    "gen": {
+      "dependsOn": [
+        "@culur/config-prettier:build",
+        "@culur/config-eslint:build"
+      ],
+      "executor": "nx:run-script",
+      "options": { "script": "gen" },
+      "outputs": ["{projectRoot}/src/types/schema.operations.generated.ts"],
+      "inputs": [
+        "{projectRoot}/src/batch-query/batch-query.fragments.ts",
+        "{projectRoot}/codegen.ts",
+        { "externalDependencies": ["@octokit/graphql-schema"] }
+      ],
+      "cache": true
+    }
+  }
+}

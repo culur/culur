@@ -22,6 +22,7 @@
   "scripts": {
     "🚀 ----- NX ----- 🚀": "",
     "clean": "nx run-many -t clean",
+    "gen": "nx run-many -t gen",
     "build": "nx run-many -t build",
     "test": "nx run-many -t test",
     "fix": "nx run-many -t fix && yarn fix:all",

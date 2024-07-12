@@ -1,5 +1,36 @@
 # @culur/config-stylelint
 
+## 1.0.3
+
+### Patch Changes
+
+- ✨ Update tsup config ([`571e742`](https://github.com/culur/culur/commit/571e742777500a4c30fcc433e84c5ed081db8cb8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#54](https://github.com/culur/culur/pull/54) [`788852c`](https://github.com/culur/culur/commit/788852c90fe4d79e249c371f5932eef9daa9429b)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `rimraf@^6.0.1`
+
+- 📦 Update dependencies ([#59](https://github.com/culur/culur/pull/59) [`a889fc7`](https://github.com/culur/culur/commit/a889fc744b1d5967573fd56bf71d681552e40183)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-scss@^6.4.1`
+
+- 📦 Update dependencies ([#58](https://github.com/culur/culur/pull/58) [`7021fa4`](https://github.com/culur/culur/commit/7021fa4b5519f8829949d128e5e04f689249fa30)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `stylelint@^16.7.0`
+
+- 📦 Update dependencies ([#50](https://github.com/culur/culur/pull/50) [`9f2f82c`](https://github.com/culur/culur/commit/9f2f82c65cfc2eb62cee85a71b59aa28cd7a4f2f)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.2`
+    - `@vitest/ui@^2.0.2`
+    - `vitest@^2.0.2`
+
+- 📦 Update workspace dependencies ([`788852c`](https://github.com/culur/culur/commit/788852c90fe4d79e249c371f5932eef9daa9429b) [`9f2f82c`](https://github.com/culur/culur/commit/9f2f82c65cfc2eb62cee85a71b59aa28cd7a4f2f) [`7353b5d`](https://github.com/culur/culur/commit/7353b5dcd35d81aa6c46a97eff3436e6e715a0f8)):
+  - `@culur/utils-packages@1.0.3`
+
 ## 1.0.2
 
 ### Patch Changes

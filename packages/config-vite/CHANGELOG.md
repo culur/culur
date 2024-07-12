@@ -1,5 +1,23 @@
 # @culur/config-vite
 
+## 1.0.4
+
+### Patch Changes
+
+- ✨ Update `test.coverage` ([`3a5d2b0`](https://github.com/culur/culur/commit/3a5d2b0830dd689b2c08315d22d356e6585cefee)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#54](https://github.com/culur/culur/pull/54) [`788852c`](https://github.com/culur/culur/commit/788852c90fe4d79e249c371f5932eef9daa9429b)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `rimraf@^6.0.1`
+
+- 📦 Update dependencies ([#50](https://github.com/culur/culur/pull/50) [`9f2f82c`](https://github.com/culur/culur/commit/9f2f82c65cfc2eb62cee85a71b59aa28cd7a4f2f)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.2`
+    - `@vitest/ui@^2.0.2`
+    - `vitest@^2.0.2`
+
 ## 1.0.3
 
 ### Patch Changes

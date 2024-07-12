@@ -1,5 +1,28 @@
 # @culur/config-eslint
 
+## 1.0.4
+
+### Patch Changes
+
+- 📝 Update `README.md` ([`3f052fc`](https://github.com/culur/culur/commit/3f052fcf60f7fda0af0d156266fb716b05dde1ff)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#56](https://github.com/culur/culur/pull/56) [`26a9c52`](https://github.com/culur/culur/commit/26a9c528fd3181522a80d626a4bd946e81c842b7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^2.22.0`
+
+- 📦 Update dependencies ([#54](https://github.com/culur/culur/pull/54) [`788852c`](https://github.com/culur/culur/commit/788852c90fe4d79e249c371f5932eef9daa9429b)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `rimraf@^6.0.1`
+
+- 📦 Update dependencies ([#50](https://github.com/culur/culur/pull/50) [`9f2f82c`](https://github.com/culur/culur/commit/9f2f82c65cfc2eb62cee85a71b59aa28cd7a4f2f)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.2`
+    - `@vitest/ui@^2.0.2`
+    - `vitest@^2.0.2`
+
 ## 1.0.3
 
 ### Patch Changes

@@ -1,6 +1,3 @@
-import { defineConfig, esm_cjs } from '@culur/config-tsup';
+import { esm_cjs } from '@culur/config-tsup';
 
-export default defineConfig({
-  ...esm_cjs,
-  entry: ['src/index.ts'],
-});
+export default esm_cjs;

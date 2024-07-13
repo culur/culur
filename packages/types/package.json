@@ -18,8 +18,7 @@
   "license": "MIT",
   "keywords": [
     "culur",
-    "config",
-    "stylelint"
+    "config"
   ],
   "type": "module",
   "exports": {

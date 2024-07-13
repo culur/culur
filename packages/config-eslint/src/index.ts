@@ -1,6 +1,6 @@
 import antfu from '@antfu/eslint-config';
 import { sortPackageJson } from './overrides/sort-package-json';
-import { unicornFilenameCase } from './rules/unicorn-filename-case';
+import { filenameRules } from './rules/filename';
 import { defineOverride } from './types';
 
 export default function defineConfig(
@@ -13,7 +13,7 @@ export default function defineConfig(
       formatters: false,
       ...options,
     },
-    unicornFilenameCase,
+    filenameRules,
     ...userConfigs,
   ).override(...defineOverride(sortPackageJson));
 }

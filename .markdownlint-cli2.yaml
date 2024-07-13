@@ -1,4 +1,4 @@
-$schema: https://unpkg.com/markdownlint-cli2@0.13.0/schema/markdownlint-cli2-config-schema.json
+$schema: https://unpkg.com/markdownlint-cli2@latest/schema/markdownlint-cli2-config-schema.json
 
 globs:
   - '**/*.{md,markdown}'

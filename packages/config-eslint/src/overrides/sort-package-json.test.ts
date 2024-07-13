@@ -1,25 +1,27 @@
 import { sortPackageJson as sortPackageJsonAntfuFunction } from '@antfu/eslint-config';
 import { assert, it } from 'vitest';
 import { sortPackageJson as sortPackageJsonLocalOverride } from './sort-package-json';
+import { defineOverride } from '~/types';
 
 it('should be valid rule', async () => {
-  const [sortPackageJsonAntfu] = await sortPackageJsonAntfuFunction();
+  const [configAntfu] = await sortPackageJsonAntfuFunction();
 
-  const sortPackageJsonLocal =
-    typeof sortPackageJsonLocalOverride.config === 'function'
-      ? await sortPackageJsonLocalOverride.config()
-      : sortPackageJsonLocalOverride.config;
+  const [name, config] = defineOverride(sortPackageJsonLocalOverride);
 
-  assert(sortPackageJsonLocal.rules);
-  assert(sortPackageJsonAntfu.rules);
+  assert(name === 'antfu/sort/package-json');
+  assert(typeof config === 'function');
+  const configLocal = await config();
+
+  assert(configLocal.rules);
+  assert(configAntfu.rules);
 
   assert.deepEqual(
-    sortPackageJsonLocal.rules['jsonc/sort-array-values'],
-    sortPackageJsonAntfu.rules['jsonc/sort-array-values'],
+    configLocal.rules['jsonc/sort-array-values'],
+    configAntfu.rules['jsonc/sort-array-values'],
   );
 
   assert.containsAllKeys(
-    sortPackageJsonLocal.rules,
-    Object.keys(sortPackageJsonAntfu.rules),
+    configLocal.rules, //
+    Object.keys(configAntfu.rules),
   );
 });

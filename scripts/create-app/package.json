@@ -1,0 +1,96 @@
+{
+  "name": "@culur/create-app",
+  "version": "0.0.0",
+  "description": "Culur's create-app script",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": "./dist/index.js",
+  "files": [
+    "!**/*.json",
+    "!**/*.test.*",
+    ".stylelintrc.js",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup ./src",
+    "n10": "tsx src/index ../../../temp/npm-10 --git -o remove -t lib --npm 10",
+    "p7": "tsx src/index ../../../temp/pnpm-7 --git -o remove -t lib --pnpm 7",
+    "p8": "tsx src/index ../../../temp/pnpm-8 --git -o remove -t lib --pnpm 8",
+    "y3": "tsx src/index ../../../temp/yarn-3 --git -o remove -t lib --yarn 3",
+    "y4": "tsx src/index ../../../temp/yarn-4 --git -o remove -t lib --yarn 4",
+    "dev": "tsx src/index ../../../temp/temp1 -fw vue -b vite --git",
+    "test": "vitest run --coverage"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "^12.1.0",
+    "@culur/types": "*",
+    "@culur/utils-prompts": "*",
+    "@inquirer/prompts": "^5.1.2",
+    "@inquirer/type": "^1.4.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "cross-spawn": "^7.0.3",
+    "dedent": "^1.5.3",
+    "execa": "^9.3.0",
+    "fast-glob": "^3.3.2",
+    "figures": "^6.1.0",
+    "fs-extra": "^11.2.0",
+    "hosted-git-info": "^7.0.2",
+    "joi": "^17.13.3",
+    "latest-version": "^9.0.0",
+    "lodash-es": "^4.17.21",
+    "normalize-path": "^3.0.0",
+    "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
+    "semver": "^7.6.2",
+    "simple-git": "^3.25.0",
+    "ts-morph": "^23.0.0",
+    "type-fest": "^4.21.0"
+  },
+  "devDependencies": {
+    "@culur/config-prettier": "*",
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-vite": "*",
+    "@types/cross-spawn": "^6.0.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/hosted-git-info": "^3.0.5",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.14.10",
+    "@types/semver": "^7.5.8",
+    "@vitest/coverage-v8": "^2.0.2",
+    "@vitest/ui": "^2.0.2",
+    "tsup": "^8.1.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "vitest": "^2.0.2"
+  }
+}

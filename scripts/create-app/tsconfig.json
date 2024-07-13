@@ -1,0 +1,10 @@
+{
+  //? Configs
+  "extends": "@culur/config-typescript",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
+}

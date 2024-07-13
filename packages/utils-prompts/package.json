@@ -1,0 +1,68 @@
+{
+  "name": "@culur/utils-prompts",
+  "version": "0.0.0",
+  "description": "Culur's packages exist",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/utils-prompts"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "config",
+    "detector"
+  ],
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsup ./src",
+    "test": "vitest run --coverage"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@inquirer/core": "^9.0.2"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "*",
+    "@culur/config-typescript": "*",
+    "@culur/config-vite": "*",
+    "@inquirer/prompts": "^5.1.2",
+    "@inquirer/type": "^1.4.0",
+    "@types/node": "^20.14.10",
+    "@vitest/coverage-v8": "^2.0.2",
+    "@vitest/ui": "^2.0.2",
+    "chalk": "^5.3.0",
+    "figures": "^6.1.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "vitest": "^2.0.2"
+  },
+  "peerDependencies": {
+    "@inquirer/prompts": "^5.0.1",
+    "@inquirer/type": "^1.2.1",
+    "chalk": "^5.3.0",
+    "figures": "^6.1.0"
+  }
+}

@@ -1432,6 +1432,7 @@ __metadata:
     "@culur/config-typescript": "npm:1.0.2"
     "@culur/config-vite": "npm:1.0.4"
     "@culur/utils-packages": "npm:1.0.3"
+    "@eslint/config-inspector": "npm:^0.5.1"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^8.56.10"
     "@types/node": "npm:^20.14.10"

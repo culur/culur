@@ -25,7 +25,7 @@ export const defineHasPackages = (defaultPackages_: Partial<Packages> = {}) => {
 
   const hasVue = () =>
     defaultPackages.vue ??
-    ['vue', 'nuxt', 'vitepress'] //
+    ['vue', 'nuxt', 'vitepress', '@slidev/cli'] //
       .some(pkg => isPackageExists(pkg));
 
   return {

@@ -1,10 +1,10 @@
 import assert from 'node:assert';
 import { sortPackageJson as sortPackageJsonAntfu } from '@antfu/eslint-config';
-import type { OverrideConfig } from './types';
+import type { OverrideConfig } from '~/types';
 
 export const sortPackageJson: OverrideConfig = {
   name: 'antfu/sort/package-json',
-  async config() {
+  async entireConfig() {
     const [configItem] = await sortPackageJsonAntfu();
     assert(typeof configItem.name === 'string');
     assert(typeof configItem.rules === 'object');

@@ -1,7 +1,7 @@
 import antfu from '@antfu/eslint-config';
 import { sortPackageJson } from './overrides/sort-package-json';
 import { unicornFilenameCase } from './rules/unicorn-filename-case';
-import { defineOverride } from './overrides/types';
+import { defineOverride } from './types';
 
 export default function defineConfig(
   ...[options = {}, ...userConfigs]: Parameters<typeof antfu>

@@ -27,5 +27,8 @@
     { "pattern": "/packages/*/" },
     { "pattern": "/scripts/*/" },
     { "pattern": "/templates/*/" }
-  ]
+  ],
+
+  //! i18n ally
+  "i18n-ally.localesPaths": ["templates/template-vue-vite/locales"]
 }

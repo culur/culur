@@ -1,5 +1,33 @@
 # @culur/changesets-changelog-github
 
+## 1.0.2
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📝 Update `README.md` ([`504f3c2`](https://github.com/culur/culur/commit/504f3c211a9eba014807b1a5dcbc9798896088a4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Remove commit links in dependency release line ([`f67c6a4`](https://github.com/culur/culur/commit/f67c6a404fce08e87b84d26b5dad983bbfb4567a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update emoji scope regex for update dependencies ([`2383030`](https://github.com/culur/culur/commit/2383030265f9bbf9f3cd30db93a578895cb5872d)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  **Example:**
+
+  Commit message: `feat(foo/deps): add package bar`.
+
+  Changeset: `Add package bar`.
+
+  - Old version: `✨ Add package bar.`
+  - New version: `📦 Add package bar.`
+
+- ✨ Add homepage link to dependency release line ([`f8a7383`](https://github.com/culur/culur/commit/f8a7383487b85d25aa721727368e5def701c06b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🚨 Add case `commit only` ([`1523f8c`](https://github.com/culur/culur/commit/1523f8cf2abf704e72855dcfdbfcdc6adc49cd87)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.0.1`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.0.1
 
 ### Patch Changes

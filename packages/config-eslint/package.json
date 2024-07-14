@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-eslint",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Culur's eslint configuration",
   "publishConfig": {
     "access": "public"
@@ -60,12 +60,12 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^2.22.2",
-    "@culur/utils-packages": "1.0.3"
+    "@culur/utils-packages": "1.0.4"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.1",
-    "@culur/config-typescript": "1.0.2",
-    "@culur/config-vite": "1.0.4",
+    "@culur/config-tsup": "1.1.2",
+    "@culur/config-typescript": "1.0.3",
+    "@culur/config-vite": "1.0.5",
     "@eslint/config-inspector": "^0.5.1",
     "@eslint/eslintrc": "^3.1.0",
     "@types/eslint": "^8.56.10",

@@ -1,5 +1,14 @@
 # @culur/config-stylelint
 
+## 1.0.4
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.4`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.3
 
 ### Patch Changes

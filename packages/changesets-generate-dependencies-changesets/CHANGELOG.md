@@ -1,5 +1,11 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.2.2
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.1
 
 ### Patch Changes

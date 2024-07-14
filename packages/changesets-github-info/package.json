@@ -8,12 +8,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/culur/culur.git",
-    "directory": "packages/changesets-changelog-github"
+    "directory": "packages/changesets-github-info"
   },
   "bugs": {
     "url": "https://github.com/culur/culur/issues"
   },
-  "homepage": "https://github.com/culur/culur#readme",
+  "homepage": "https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme",
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
   "keywords": [

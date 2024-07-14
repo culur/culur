@@ -1431,11 +1431,13 @@ __metadata:
     "@culur/config-tsup": "npm:1.1.1"
     "@culur/config-typescript": "npm:1.0.2"
     "@culur/config-vite": "npm:1.0.4"
+    "@culur/utils-packages": "npm:1.0.3"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^8.56.10"
     "@types/node": "npm:^20.14.10"
     "@vitest/coverage-v8": "npm:^2.0.2"
     "@vitest/ui": "npm:^2.0.2"
+    "@vue/compiler-sfc": "npm:^3.4.31"
     eslint: "npm:^9.6.0"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.1.0"
@@ -3761,6 +3763,63 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/compiler-core@npm:3.4.31":
+  version: 3.4.31
+  resolution: "@vue/compiler-core@npm:3.4.31"
+  dependencies:
+    "@babel/parser": "npm:^7.24.7"
+    "@vue/shared": "npm:3.4.31"
+    entities: "npm:^4.5.0"
+    estree-walker: "npm:^2.0.2"
+    source-map-js: "npm:^1.2.0"
+  checksum: 10/1d83dd8c995984a0e7d80faaaa68956bbaadf01bb7cc07f29c5ebcf6aa5eeb2fa88db9d1a4aeb47f8b0b78eda7cc49688108b7fb5ac581eb5584ab59115dc99c
+  languageName: node
+  linkType: hard
+
+"@vue/compiler-dom@npm:3.4.31":
+  version: 3.4.31
+  resolution: "@vue/compiler-dom@npm:3.4.31"
+  dependencies:
+    "@vue/compiler-core": "npm:3.4.31"
+    "@vue/shared": "npm:3.4.31"
+  checksum: 10/5f58557222a8fd9c043e7bf3e00a273691c6e070ac5c87874a628387ece0dec5ed950070d538852264cdb2ecc4d7fb9e7d79d37bf2db05e0474c44e2083c2fbe
+  languageName: node
+  linkType: hard
+
+"@vue/compiler-sfc@npm:*, @vue/compiler-sfc@npm:^3.4.31":
+  version: 3.4.31
+  resolution: "@vue/compiler-sfc@npm:3.4.31"
+  dependencies:
+    "@babel/parser": "npm:^7.24.7"
+    "@vue/compiler-core": "npm:3.4.31"
+    "@vue/compiler-dom": "npm:3.4.31"
+    "@vue/compiler-ssr": "npm:3.4.31"
+    "@vue/shared": "npm:3.4.31"
+    estree-walker: "npm:^2.0.2"
+    magic-string: "npm:^0.30.10"
+    postcss: "npm:^8.4.38"
+    source-map-js: "npm:^1.2.0"
+  checksum: 10/87dcddecfcfedb01603c08ee66286c7703a0ec76e89e5ba06b18c5309480ff7ffa7ff062585213de00527dd96995720a57f8fec8b6ea9b5851db1c72afa7baee
+  languageName: node
+  linkType: hard
+
+"@vue/compiler-ssr@npm:3.4.31":
+  version: 3.4.31
+  resolution: "@vue/compiler-ssr@npm:3.4.31"
+  dependencies:
+    "@vue/compiler-dom": "npm:3.4.31"
+    "@vue/shared": "npm:3.4.31"
+  checksum: 10/88470b9cc4b19a541f2c65946db5d60883507ba438dea4538906e7845abba4562ed7f1d277664cdbb5507d6c62fc138c17fd65e9dcfd7a68ce081c6e762df515
+  languageName: node
+  linkType: hard
+
+"@vue/shared@npm:3.4.31":
+  version: 3.4.31
+  resolution: "@vue/shared@npm:3.4.31"
+  checksum: 10/ec11ba892b6f6f078fd620e5a2c16d57935f69e7a3dbae20c18e79c70e1bc89fa6d463d5fcbb220f54e9e4122dbc0bb04024059afecd6acf6b182d3c071e3c3a
+  languageName: node
+  linkType: hard
+
 "@whatwg-node/events@npm:^0.0.3":
   version: 0.0.3
   resolution: "@whatwg-node/events@npm:0.0.3"
@@ -5276,7 +5335,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"entities@npm:^4.2.0, entities@npm:^4.4.0":
+"entities@npm:^4.2.0, entities@npm:^4.4.0, entities@npm:^4.5.0":
   version: 4.5.0
   resolution: "entities@npm:4.5.0"
   checksum: 10/ede2a35c9bce1aeccd055a1b445d41c75a14a2bb1cd22e242f20cf04d236cdcd7f9c859eb83f76885327bfae0c25bf03303665ee1ce3d47c5927b98b0e3e3d48
@@ -5937,6 +5996,13 @@ __metadata:
   version: 5.3.0
   resolution: "estraverse@npm:5.3.0"
   checksum: 10/37cbe6e9a68014d34dbdc039f90d0baf72436809d02edffcc06ba3c2a12eb298048f877511353b130153e532aac8d68ba78430c0dd2f44806ebc7c014b01585e
+  languageName: node
+  linkType: hard
+
+"estree-walker@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "estree-walker@npm:2.0.2"
+  checksum: 10/b02109c5d46bc2ed47de4990eef770f7457b1159a229f0999a09224d2b85ffeed2d7679cffcff90aeb4448e94b0168feb5265b209cdec29aad50a3d6e93d21e2
   languageName: node
   linkType: hard
 
@@ -9278,7 +9344,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.4.0, postcss@npm:^8.4.24, postcss@npm:^8.4.32, postcss@npm:^8.4.39":
+"postcss@npm:^8.2.14, postcss@npm:^8.4.0, postcss@npm:^8.4.24, postcss@npm:^8.4.32, postcss@npm:^8.4.38, postcss@npm:^8.4.39":
   version: 8.4.39
   resolution: "postcss@npm:8.4.39"
   dependencies:

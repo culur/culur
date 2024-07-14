@@ -36,7 +36,7 @@ export const getEmoji = (message?: string) => {
 
   if (
     /^feat|fix|build|chore$/.test(type) &&
-    /^packages?|deps(-dev)?$/.test(scope)
+    /^packages?|.*deps(-dev)?$/.test(scope)
   ) {
     return emojiDict.package;
   }

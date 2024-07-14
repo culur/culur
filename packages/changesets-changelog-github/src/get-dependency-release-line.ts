@@ -2,7 +2,7 @@ import type { GetDependencyReleaseLine } from '@changesets/types';
 import { emojiDict } from './get-emoji';
 
 export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
-  changesets,
+  _changesets,
   dependenciesUpdated,
   options,
 ) => {
@@ -16,7 +16,17 @@ export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   const changesetLink = `- ${emojiDict.package} Update workspace dependencies:`;
 
   const updatedDependenciesList = dependenciesUpdated.map(
-    dependency => `  - \`${dependency.name}@${dependency.newVersion}\``,
+    ({ packageJson, name, newVersion }) => {
+      const homepage =
+        'homepage' in packageJson && typeof packageJson.homepage === 'string'
+          ? packageJson.homepage
+          : null;
+      const packageNameAndVersion = `\`${name}@${newVersion}\``;
+
+      return homepage
+        ? `  - [${packageNameAndVersion}](${homepage})`
+        : `  - ${packageNameAndVersion}`;
+    },
   );
 
   return [changesetLink, ...updatedDependenciesList].join('\n');

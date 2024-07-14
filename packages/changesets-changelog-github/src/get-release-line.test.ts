@@ -68,27 +68,50 @@ describe('invalid options', () => {
   });
 });
 
-testGetReleaseLine('default', {
-  mockRecords: [
-    {
+describe('default', () => {
+  testGetReleaseLine('commit & pull request', {
+    mockRecords: [
+      {
+        repo: 'culur/culur',
+        user: 'culur',
+        commitHash: 'abcd123',
+        commitMessage: 'feat: add new feature',
+        pullRequestNumber: 999,
+        pullRequestTitle: 'feat: new feature',
+      },
+    ],
+    commit: {
       repo: 'culur/culur',
-      user: 'culur',
       commitHash: 'abcd123',
-      commitMessage: 'feat: add new feature',
-      pullRequestNumber: 999,
-      pullRequestTitle: 'feat: new feature',
+      summary: dedent`
+        Feat: add new feature
+      `,
     },
-  ],
-  commit: {
-    repo: 'culur/culur',
-    commitHash: 'abcd123',
-    summary: dedent`
-      Feat: add new feature
+    expectReleaseLine: dedent`
+      - ✨ Feat: add new feature ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
     `,
-  },
-  expectReleaseLine: dedent`
-    - ✨ Feat: add new feature ([#999](https://github.com/culur/culur/pull/999) [\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
-  `,
+  });
+
+  testGetReleaseLine('commit only', {
+    mockRecords: [
+      {
+        repo: 'culur/culur',
+        user: 'culur',
+        commitHash: 'abcd123',
+        commitMessage: 'feat: add new feature',
+      },
+    ],
+    commit: {
+      repo: 'culur/culur',
+      commitHash: 'abcd123',
+      summary: dedent`
+        Feat: add new feature
+      `,
+    },
+    expectReleaseLine: dedent`
+      - ✨ Feat: add new feature ([\`abcd123\`](https://github.com/culur/culur/commit/abcd123)) ([@culur](https://github.com/culur)).
+    `,
+  });
 });
 
 const mockRecord = defineMockRecord({

@@ -1,5 +1,13 @@
 # @culur/types
 
+## 1.0.5
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update keywords ([`122d5e6`](https://github.com/culur/culur/commit/122d5e69a98a821ede2c5c60db5169f45c6b3fc1)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @culur/changesets-github-info
 
+## 1.0.1
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.0.5`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.0.0
 
 ### Major Changes

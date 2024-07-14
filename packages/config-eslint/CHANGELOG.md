@@ -1,5 +1,32 @@
 # @culur/config-eslint
 
+## 1.0.5
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Rename to `culur/filename/rules` ([`f6cf51d`](https://github.com/culur/culur/commit/f6cf51da5d27bb40f7a53073f92662a7ebdc4e86)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update `OverrideConfig` types ([`c6b48aa`](https://github.com/culur/culur/commit/c6b48aa33c2d6f1fa60e8399cec87ffe5e4a5e4c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add `culur/yarnrc-yml/rules` ([`9ba54db`](https://github.com/culur/culur/commit/9ba54dba9a511365bedc6f7d3e10870e67cd250c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`1111cd6`](https://github.com/culur/culur/commit/1111cd65addb46f4707868b8485aadb550e40818)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^2.22.2`
+
+- 📦 Update dependencies ([`fdd8f85`](https://github.com/culur/culur/commit/fdd8f851eaa3282131d72bced4d864640edf74a7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `eslint@^9.7.0`
+
+- ✨ Override `antfu/vue/rules` ([`c5ce774`](https://github.com/culur/culur/commit/c5ce774cf1890b0d55a77e29cdfa0cfacfb2aa1e)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.4`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.4
 
 ### Patch Changes

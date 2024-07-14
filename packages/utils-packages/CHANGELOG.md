@@ -1,5 +1,13 @@
 # @culur/utils-packages
 
+## 1.0.4
+
+### Patch Changes
+
+- 📦 Update `packageJson.homepage` & `packageJson.repository.directory` ([`95ddadc`](https://github.com/culur/culur/commit/95ddadc3dc22af28bb67ff55d02b366176e8685f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add `@slidev/cli` to list Vue packages ([`57a2c79`](https://github.com/culur/culur/commit/57a2c790c563b522d9243e67e86bf710cdd208a1)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.0.3
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@culur/types",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Culur's stylelint configuration",
   "publishConfig": {
     "access": "public"
@@ -57,9 +57,9 @@
     "type-fest": "^4.21.0"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.1",
-    "@culur/config-typescript": "1.0.2",
-    "@culur/config-vite": "1.0.4",
+    "@culur/config-tsup": "1.1.2",
+    "@culur/config-typescript": "1.0.3",
+    "@culur/config-vite": "1.0.5",
     "@types/node": "^20.14.10",
     "@vitest/coverage-v8": "^2.0.2",
     "@vitest/ui": "^2.0.2",

@@ -100,7 +100,7 @@ testGetDependencyReleaseLine('default', {
     },
   ],
   expectReleaseLine: dedent`
-    - 📦 Update workspace dependencies ([\`abcd123\`](https://github.com/culur/culur/commit/abcd123)):
+    - 📦 Update workspace dependencies:
       - \`foo@1.0.1\`
   `,
 });

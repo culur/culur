@@ -1,6 +1,5 @@
-import { getCommitInfo } from '@culur/changesets-github-info';
 import type { GetDependencyReleaseLine } from '@changesets/types';
-import type { SetRequired } from 'type-fest';
+import { emojiDict } from './get-emoji';
 
 export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   changesets,
@@ -14,19 +13,7 @@ export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   }
   if (dependenciesUpdated.length === 0) return '';
 
-  const commits = changesets
-    .filter((cs): cs is SetRequired<typeof cs, 'commit'> => !!cs.commit)
-    .map(async cs => {
-      const commitInfo = await getCommitInfo({
-        repo: options.repo,
-        commitHash: cs.commit,
-      });
-      return commitInfo.commit.link;
-    });
-
-  const commitLinks = (await Promise.all(commits)).join(' ');
-
-  const changesetLink = `- 📦 Update workspace dependencies (${commitLinks}):`;
+  const changesetLink = `- ${emojiDict.package} Update workspace dependencies:`;
 
   const updatedDependenciesList = dependenciesUpdated.map(
     dependency => `  - \`${dependency.name}@${dependency.newVersion}\``,

@@ -1,5 +1,5 @@
 /* eslint-disable regexp/no-unused-capturing-group */
-const emojiDict = {
+export const emojiDict = {
   init: /******/ '🎉',
   feat: /******/ '✨',
   fix: /*******/ '🩹',

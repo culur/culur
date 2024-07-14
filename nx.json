@@ -9,7 +9,7 @@
     "clean": {},
     "lint": {},
     "test": {
-      "dependsOn": ["^build"],
+      "dependsOn": ["build", "^build"],
       "outputs": ["{projectRoot}/coverage"],
       "cache": true
     },

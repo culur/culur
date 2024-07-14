@@ -20,5 +20,5 @@
     - `@vitest/ui@^2.0.2`
     - `vitest@^2.0.2`
 
-- 📦 Update workspace dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19) [`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)):
-  - `@culur/types@1.0.4`
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.0.4`](https://github.com/culur/culur/tree/main/packages/types#readme)

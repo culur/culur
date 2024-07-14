@@ -25,8 +25,8 @@
 
 - 📝 Update `README.md` ([`ec7c702`](https://github.com/culur/culur/commit/ec7c702e4c51acd341c6ad81296bbdab7e4eb8df)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- 📦 Update workspace dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19) [`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf) [`ae34bdb`](https://github.com/culur/culur/commit/ae34bdbf4c1eccbb9c2772be200b8a46148eeea1)):
-  - `@culur/changesets-github-info@1.0.0`
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.0.0`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
 
 ## 1.0.0
 

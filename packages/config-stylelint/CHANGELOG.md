@@ -28,8 +28,8 @@
     - `@vitest/ui@^2.0.2`
     - `vitest@^2.0.2`
 
-- 📦 Update workspace dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19) [`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf) [`7353b5d`](https://github.com/culur/culur/commit/7353b5dcd35d81aa6c46a97eff3436e6e715a0f8)):
-  - `@culur/utils-packages@1.0.3`
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.3`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
 
 ## 1.0.2
 
@@ -49,8 +49,8 @@
     - `rimraf@^5.0.8`
     - `typescript@^5.5.3`
 
-- 📦 Update workspace dependencies ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419)):
-  - `@culur/utils-packages@1.0.2`
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.2`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
 
 ## 1.0.1
 
@@ -72,8 +72,8 @@
 
 - 📦 Update workspace dependencies to specific version ([`7f4eeae`](https://github.com/culur/culur/commit/7f4eeae4fa2c2dbed218675e8ce2cc91ca0bc4c3) [@phamhongphuc](https://github.com/phamhongphuc)).
 
-- 📦 Update workspace dependencies ([`74dbf2c`](https://github.com/culur/culur/commit/74dbf2c0050b30e9289aa7879c4cbb9ac103f4d3) [`7f4eeae`](https://github.com/culur/culur/commit/7f4eeae4fa2c2dbed218675e8ce2cc91ca0bc4c3)):
-  - `@culur/utils-packages@1.0.1`
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
 
 ## 1.0.0
 
@@ -83,5 +83,5 @@
 
 ### Patch Changes
 
-- 📦 Update workspace dependencies ([`e3492d2`](https://github.com/culur/culur/commit/e3492d20a29bee15bbabab0a60277ed36944cd7a)):
-  - `@culur/utils-packages@1.0.0`
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)

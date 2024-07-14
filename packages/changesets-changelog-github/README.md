@@ -70,13 +70,13 @@ Generated changelog:
 
 ### Patch Changes
 
-- 📦 Update workspace dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
+- 📦 Update workspace dependencies:
   - [`@culur/bar@1.0.1`](https://github.com/culur/culur/packages/bar)
 ```
 
 Preview:
 
-- 📦 Update workspace dependencies ([`abcd123`](https://github.com/culur/culur/commit/abcd123)):
+- 📦 Update workspace dependencies:
   - [`@culur/bar@1.0.1`](https://github.com/culur/culur/packages/bar)
 
 ## 💿 Installation

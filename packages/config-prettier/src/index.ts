@@ -1,3 +1,3 @@
-import definePrettierConfig from './factory';
+import defineConfig from './factory';
 
-export default definePrettierConfig();
+export default defineConfig();

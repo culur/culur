@@ -1,7 +1,7 @@
 import * as os from 'node:os';
 import prettier from 'prettier';
 import { describe, expect, it, vi } from 'vitest';
-import definePrettierConfig from './factory';
+import defineConfig from './factory';
 
 vi.mock('node:os');
 
@@ -12,14 +12,14 @@ describe('platform', () => {
   ] as const)('platform is $platform', async ({ platform, endOfLine }) => {
     vi.spyOn(os, 'platform').mockReturnValue(platform);
 
-    const config = definePrettierConfig();
+    const config = defineConfig();
     expect(config.endOfLine).toBe(endOfLine);
   });
 });
 
 describe('create config', () => {
   it('is valid config', async () => {
-    const config = definePrettierConfig();
+    const config = defineConfig();
     const code = 'const a = \n 123';
     const formattedCode = await prettier.format(code, {
       ...config,
@@ -29,7 +29,7 @@ describe('create config', () => {
   });
 
   it('can override config', () => {
-    const config = definePrettierConfig({
+    const config = defineConfig({
       tabWidth: 4,
       overrides: [
         {

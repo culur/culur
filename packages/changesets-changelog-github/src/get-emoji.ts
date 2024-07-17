@@ -1,4 +1,3 @@
-/* eslint-disable regexp/no-unused-capturing-group */
 export const emojiDict = {
   init: /******/ '🎉',
   feat: /******/ '✨',
@@ -16,7 +15,7 @@ export const emojiDict = {
   unknown: /***/ '❔',
 } as const;
 
-const messageRegex = /^(\w+)(\((.+)\))?: (.+)$/;
+const messageRegex = /^(\w+)(?:\((.+)\))?: (.+)$/;
 
 export const getEmoji = (message?: string) => {
   if (!message) return emojiDict.unknown;
@@ -26,8 +25,8 @@ export const getEmoji = (message?: string) => {
 
   const {
     1: type, //
-    3: scope,
-    4: content,
+    2: scope,
+    3: content,
   } = result;
 
   if (/^feat|build$/.test(type) && /^initial.*$/.test(content)) {
@@ -36,12 +35,12 @@ export const getEmoji = (message?: string) => {
 
   if (
     /^feat|fix|build|chore$/.test(type) &&
-    /^packages?|.*deps(-dev)?$/.test(scope)
+    /^packages?|.*deps(?:-dev)?$/.test(scope)
   ) {
     return emojiDict.package;
   }
 
-  if (/^update (dependency|dependencies).*$/.test(content)) {
+  if (/^update (?:dependency|dependencies).*$/.test(content)) {
     return emojiDict.package;
   }
 

@@ -8,6 +8,7 @@ describe('defineConfig', () => {
     const config = defineConfig();
     expectTypeOf(config).toEqualTypeOf<UserConfigVite>();
   });
+
   it('object', () => {
     const config = defineConfig({});
     expectTypeOf(config).toEqualTypeOf<UserConfigVite>();

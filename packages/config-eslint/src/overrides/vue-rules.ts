@@ -6,6 +6,12 @@ export const vueRules: OverrideConfig = {
     rules: {
       'vue/singleline-html-element-content-newline': 'off',
       'vue/multiline-html-element-content-newline': 'off',
+      'vue/padding-line-between-blocks': ['error', 'always'],
+      'vue/component-name-in-template-casing': [
+        'error',
+        'PascalCase',
+        { registeredComponentsOnly: false },
+      ],
     },
   },
 };

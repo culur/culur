@@ -3,15 +3,15 @@ import { defineConfigObject } from './define-config-object';
 import type { Options, OptionsExport, UserConfig } from '~/types';
 
 export function defineConfig<TOptions extends Options = { test: false }>(
-  config?: TOptions,
+  config?: Options | TOptions, // for auto-completion
 ): UserConfig<TOptions>;
 
 export function defineConfig<TOptions extends Options>(
-  config: Promise<TOptions>,
+  config: Promise<Options | TOptions>, // for auto-completion
 ): (env: ConfigEnv) => Promise<UserConfig<TOptions>>;
 
 export function defineConfig<TOptions extends Options>(
-  config: (env: ConfigEnv) => TOptions | Promise<TOptions>,
+  config: (env: ConfigEnv) => Options | TOptions | Promise<Options | TOptions>, // for auto-completion
 ): (env: ConfigEnv) => Promise<UserConfig<TOptions>>;
 
 export function defineConfig<TOptions extends Options>(

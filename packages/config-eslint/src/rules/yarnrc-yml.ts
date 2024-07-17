@@ -7,7 +7,25 @@ export const yamlYarnrcRules: TypedFlatConfigItem = {
     'yaml/sort-keys': [
       'error',
       {
-        pathPattern: '^packageExtensions$',
+        pathPattern: /^packageExtensions$/.source,
+        order: {
+          type: 'asc',
+          caseSensitive: false,
+          natural: true,
+        },
+      },
+      {
+        pathPattern: /^packageExtensions(?:\[".+"\]|\.[^.]+)$/.source,
+        order: [
+          'dependencies', //
+          'peerDependencies',
+          'peerDependenciesMeta',
+        ],
+      },
+      {
+        pathPattern:
+          /^packageExtensions(?:\[".+"\]|\.[^.]+)\.(?:dependencies|peerDependencies|peerDependenciesMeta)$/
+            .source,
         order: {
           type: 'asc',
           caseSensitive: false,

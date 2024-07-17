@@ -57,8 +57,11 @@ export function mockAll() {
       bar: '^2.0.0',
     },
   });
+
+  const writeFile = async () => {};
+  writeFile.__promisify__ = async () => {};
   vi.spyOn(core, 'debug').mockImplementation(() => {});
-  vi.spyOn(fs, 'writeFile').mockImplementation(() => {});
+  vi.spyOn(fs, 'writeFile').mockImplementation(writeFile);
 }
 
 export function restoreAll() {

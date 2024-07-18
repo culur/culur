@@ -42,10 +42,9 @@
     "lint:md": "markdownlint-cli2 .",
     "lint:prettier": "prettier '**' --list-different",
     "🔃 ----- LIFE CYCLE ----- 🔃": "",
-    "postinstall": "husky install",
+    "prepare": "husky",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable",
-    "commitlint": "commitlint --edit"
+    "postpack": "pinst --enable"
   },
   "volta": {
     "node": "20.15.1",

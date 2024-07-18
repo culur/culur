@@ -13,6 +13,9 @@ jobs:
       #! Checkout
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
+        with:
+          # This makes Actions fetch all Git history for validate commit
+          fetch-depth: 0
 
       #! Install dependencies
       - name: 📥 Install dependencies
@@ -29,6 +32,15 @@ jobs:
       #! Test
       - name: 🐛 Test
         run: yarn test
+
+      #! Validate commit
+      - name: 💬 Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push'
+        run: yarn commitlint --from origin/main --to HEAD --verbose
+
+      - name: 💬 Validate PR commits with commitlint
+        if: github.event_name == 'pull_request'
+        run: yarn commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       #! Find coverage files
       - name: 🔎 Find coverage files

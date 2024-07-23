@@ -1,8 +1,8 @@
-import { defineConfig } from './types';
+import { defineConfigPure } from './types';
 
 export { defineConfig } from './types';
 
-const sharedConfig = defineConfig({
+const sharedConfig = defineConfigPure({
   sourcemap: true,
   clean: true,
   dts: true,
@@ -14,18 +14,18 @@ const sharedConfig = defineConfig({
   treeshake: 'recommended',
 });
 
-export const esm = defineConfig({
+export const esm = defineConfigPure({
   ...sharedConfig,
   format: 'esm',
   splitting: true,
 });
 
-export const cjs = defineConfig({
+export const cjs = defineConfigPure({
   ...sharedConfig,
   format: 'cjs',
 });
 
-export const esm_cjs = defineConfig({
+export const esm_cjs = defineConfigPure({
   ...sharedConfig,
   format: ['esm', 'cjs'],
   splitting: true,

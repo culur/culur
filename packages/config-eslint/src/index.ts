@@ -1,10 +1,8 @@
 import antfu from '@antfu/eslint-config';
 import { defineHasPackages } from '@culur/utils-packages';
-import { sortPackageJson } from './overrides/sort-package-json';
-import { vueRules } from './overrides/vue-rules';
-import { filenameRules } from './rules/filename';
-import { yamlYarnrcRules } from './rules/yarnrc-yml';
+import { sortPackageJson, vueRules } from './overrides';
 import { defineOverride } from './types';
+import { filenameRules, yamlYarnrcRules } from './rules';
 
 export default function defineConfig(
   ...[options = {}, ...userConfigs]: Parameters<typeof antfu>

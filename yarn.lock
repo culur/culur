@@ -1363,7 +1363,7 @@ __metadata:
     dotenv: "npm:^16.4.5"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.1.0"
-    type-fest: "npm:^4.21.0"
+    type-fest: "npm:^4.24.0"
     typescript: "npm:^5.5.3"
     vitest: "npm:^2.0.2"
   languageName: unknown
@@ -1390,7 +1390,7 @@ __metadata:
     minimatch: "npm:^10.0.1"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.1.0"
-    type-fest: "npm:^4.21.0"
+    type-fest: "npm:^4.24.0"
     typescript: "npm:^5.5.3"
     vitest: "npm:^2.0.2"
   languageName: unknown
@@ -1442,7 +1442,7 @@ __metadata:
     eslint: "npm:^9.7.0"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.1.0"
-    type-fest: "npm:^4.21.0"
+    type-fest: "npm:^4.24.0"
     typescript: "npm:^5.5.3"
     vitest: "npm:^2.0.2"
   peerDependencies:
@@ -1596,7 +1596,7 @@ __metadata:
     "@vitest/ui": "npm:^2.0.2"
     rimraf: "npm:^6.0.1"
     tsup: "npm:^8.1.0"
-    type-fest: "npm:^4.21.0"
+    type-fest: "npm:^4.24.0"
     typescript: "npm:^5.5.3"
     vitest: "npm:^2.0.2"
   languageName: unknown
@@ -11043,10 +11043,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"type-fest@npm:^4.10.3, type-fest@npm:^4.21.0":
-  version: 4.21.0
-  resolution: "type-fest@npm:4.21.0"
-  checksum: 10/a4dc074b25239fff4062495c58554dcec15845622d753092d2bf24fc3b1c49f85805ed74f151976d666056ff122b3a5a988e85226575b7fbbc8e92d2db210137
+"type-fest@npm:^4.10.3, type-fest@npm:^4.24.0":
+  version: 4.24.0
+  resolution: "type-fest@npm:4.24.0"
+  checksum: 10/60efd6ec71f5113ef0a0fcabe61fc722bb2520ea082bc23e4b4dfb44204234dc691560a5e837f939160d7c18b410ed8fae32ddb752d57bed009248e0f61dce6b
   languageName: node
   linkType: hard
 

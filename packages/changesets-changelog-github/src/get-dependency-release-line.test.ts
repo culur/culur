@@ -18,6 +18,7 @@ function testGetDependencyReleaseLine(
     pullRequest: { repo: string };
     dependenciesChangesets: {
       packageName: string;
+      homepage?: string;
       versionType: VersionType;
       version: [string, string];
       commit: string;
@@ -45,7 +46,11 @@ function testGetDependencyReleaseLine(
         oldVersion: change.version[0],
         newVersion: change.version[1],
         changesets: ['changeset-id'],
-        packageJson: { name: 'packageName', version: '0.0.0' },
+        packageJson: {
+          name: 'packageName',
+          version: '0.0.0',
+          homepage: change.homepage,
+        },
         dir: '',
       }),
     );
@@ -102,5 +107,30 @@ testGetDependencyReleaseLine('default', {
   expectReleaseLine: dedent`
     - 📦 Update workspace dependencies:
       - \`foo@1.0.1\`
+  `,
+});
+
+testGetDependencyReleaseLine('default with homepage', {
+  mockRecords: [
+    {
+      repo: 'culur/culur',
+      user: 'culur',
+      commitHash: 'abcd123',
+      commitMessage: 'feat: new feature',
+    },
+  ],
+  pullRequest: { repo: 'culur/culur' },
+  dependenciesChangesets: [
+    {
+      packageName: 'foo',
+      version: ['1.0.0', '1.0.1'],
+      versionType: 'minor',
+      commit: 'abcd123',
+      homepage: 'https://github.com/culur/culur/',
+    },
+  ],
+  expectReleaseLine: dedent`
+    - 📦 Update workspace dependencies:
+      - [\`foo@1.0.1\`](https://github.com/culur/culur/)
   `,
 });

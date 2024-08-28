@@ -43,7 +43,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.16.2",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {

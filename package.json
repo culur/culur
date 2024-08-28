@@ -48,7 +48,7 @@
     "commitlint": "commitlint --edit"
   },
   "volta": {
-    "node": "20.15.1",
+    "node": "20.17.0",
     "yarn": "4.3.1"
   },
   "engines": {
@@ -65,7 +65,7 @@
     "@culur/config-eslint": "*",
     "@culur/config-prettier": "*",
     "@eslint/config-inspector": "^0.5.1",
-    "@types/node": "^20.14.10",
+    "@types/node": "^20.16.2",
     "dotenv": "^16.4.5",
     "eslint": "^9.7.0",
     "husky": "^9.0.11",

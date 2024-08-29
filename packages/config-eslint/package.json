@@ -69,26 +69,26 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.22.2",
+    "@antfu/eslint-config": "^2.27.3",
     "@culur/utils-packages": "1.0.4"
   },
   "devDependencies": {
     "@culur/config-tsup": "1.1.2",
     "@culur/config-typescript": "1.0.3",
     "@culur/config-vite": "1.0.5",
-    "@eslint/config-inspector": "^0.5.1",
+    "@eslint/config-inspector": "^0.5.4",
     "@eslint/eslintrc": "^3.1.0",
-    "@types/eslint": "^8.56.10",
-    "@types/node": "^20.14.10",
-    "@vitest/coverage-v8": "^2.0.2",
-    "@vitest/ui": "^2.0.2",
-    "@vue/compiler-sfc": "^3.4.31",
-    "eslint": "^9.7.0",
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^20.16.2",
+    "@vitest/coverage-v8": "^2.0.5",
+    "@vitest/ui": "^2.0.5",
+    "@vue/compiler-sfc": "^3.4.38",
+    "eslint": "^9.9.1",
     "rimraf": "^6.0.1",
-    "tsup": "^8.1.0",
-    "type-fest": "^4.21.0",
-    "typescript": "^5.5.3",
-    "vitest": "^2.0.2"
+    "tsup": "^8.2.4",
+    "type-fest": "^4.26.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
   },
   "peerDependencies": {
     "eslint": ">=9.2.0"

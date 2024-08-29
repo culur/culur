@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-vite",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Culur's vite configuration",
   "publishConfig": {
     "access": "public"
@@ -56,8 +56,8 @@
     "vite-tsconfig-paths": "5.0.1"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.2",
-    "@culur/config-typescript": "1.0.3",
+    "@culur/config-tsup": "1.1.3",
+    "@culur/config-typescript": "1.0.4",
     "@types/node": "^20.16.2",
     "@vitest/coverage-v8": "^2.0.5",
     "@vitest/ui": "^2.0.5",

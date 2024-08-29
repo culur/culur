@@ -1,5 +1,33 @@
 # @culur/config-tsup
 
+## 1.1.3
+
+### Patch Changes
+
+- ⚙️ `defineConfig`: support `AutoComplete` ([#75](https://github.com/culur/culur/pull/75) [`698d9d2`](https://github.com/culur/culur/commit/698d9d212cce46f0d47df9b831a3a58b728855fd)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Update dependencies ([#75](https://github.com/culur/culur/pull/75) [`2b2d382`](https://github.com/culur/culur/commit/2b2d382c1ece19ea9e431b1960388615e0ccbde2)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `typescript@^5.5.4`
+
+- 📦 Update dependencies ([#69](https://github.com/culur/culur/pull/69) [`102d72e`](https://github.com/culur/culur/commit/102d72e7da6846c63fb5cc128ea71443cca5cba5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+
+- 📦 Update dependencies ([#66](https://github.com/culur/culur/pull/66) [`39465f5`](https://github.com/culur/culur/commit/39465f5b3836ffebfe846b9b263094b1ae2625b7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `vitest@^2.0.5`
+
+- 📦 Update dependencies ([#70](https://github.com/culur/culur/pull/70) [`cbb1b6c`](https://github.com/culur/culur/commit/cbb1b6c18c83d1c5211f1448b21024a4203a0c66)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `tsup@^8.2.4`
+
 ## 1.1.2
 
 ### Patch Changes

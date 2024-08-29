@@ -1,5 +1,46 @@
 # @culur/config-prettier
 
+## 1.1.0
+
+### Minor Changes
+
+- ⚙️ Add `formatCode` function ([#75](https://github.com/culur/culur/pull/75) [`b5a4619`](https://github.com/culur/culur/commit/b5a461959703c8887f18725143c2daee0f3e3cb4)) ([@renovate](https://github.com/apps/renovate)).
+
+### Patch Changes
+
+- ⚙️ Refactor: rename factory function to `defineConfig` ([#75](https://github.com/culur/culur/pull/75) [`d5f56d6`](https://github.com/culur/culur/commit/d5f56d6ec9a7bf9549ee6bde2ae45a21338d5114)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update dependencies ([#63](https://github.com/culur/culur/pull/63) [`34d4773`](https://github.com/culur/culur/commit/34d477380ac31acfe86550cd9d33398520ec892a)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `prettier@^3.3.3`
+
+- ⚙️ Update dependencies ([#75](https://github.com/culur/culur/pull/75) [`2b2d382`](https://github.com/culur/culur/commit/2b2d382c1ece19ea9e431b1960388615e0ccbde2)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `typescript@^5.5.4`
+
+- 📦 Update dependencies ([#69](https://github.com/culur/culur/pull/69) [`102d72e`](https://github.com/culur/culur/commit/102d72e7da6846c63fb5cc128ea71443cca5cba5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+
+- 📦 Update dependencies ([#66](https://github.com/culur/culur/pull/66) [`39465f5`](https://github.com/culur/culur/commit/39465f5b3836ffebfe846b9b263094b1ae2625b7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `vitest@^2.0.5`
+
+- 📦 Update dependencies ([#70](https://github.com/culur/culur/pull/70) [`cbb1b6c`](https://github.com/culur/culur/commit/cbb1b6c18c83d1c5211f1448b21024a4203a0c66)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `tsup@^8.2.4`
+
+- ⚙️ Add Vue generated files to `.prettierignore` ([#75](https://github.com/culur/culur/pull/75) [`832f853`](https://github.com/culur/culur/commit/832f853114f7d5d410d9f7d8368c5b11bbc31422)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Add `.sass` to `.prettierignore` ([#75](https://github.com/culur/culur/pull/75) [`360f1cb`](https://github.com/culur/culur/commit/360f1cb21301155536de0d25b2cabe101ad80770)) ([@renovate](https://github.com/apps/renovate)).
+
 ## 1.0.5
 
 ### Patch Changes

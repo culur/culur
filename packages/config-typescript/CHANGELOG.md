@@ -1,5 +1,19 @@
 # @culur/config-typescript
 
+## 1.0.4
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#75](https://github.com/culur/culur/pull/75) [`2b2d382`](https://github.com/culur/culur/commit/2b2d382c1ece19ea9e431b1960388615e0ccbde2)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `typescript@^5.5.4`
+
+- 📦 Update dependencies ([#69](https://github.com/culur/culur/pull/69) [`102d72e`](https://github.com/culur/culur/commit/102d72e7da6846c63fb5cc128ea71443cca5cba5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+
 ## 1.0.3
 
 ### Patch Changes

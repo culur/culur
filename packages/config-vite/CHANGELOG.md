@@ -1,5 +1,45 @@
 # @culur/config-vite
 
+## 1.0.6
+
+### Patch Changes
+
+- ⚙️ Update `test.typecheck` ([#75](https://github.com/culur/culur/pull/75) [`ebb43b9`](https://github.com/culur/culur/commit/ebb43b989ff697440a397e865cac185770fae62a)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Update parameter type for auto-completion ([#75](https://github.com/culur/culur/pull/75) [`c8a4873`](https://github.com/culur/culur/commit/c8a48734df406ca816c1a043a5ae11703850e34e)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Update dependencies ([#75](https://github.com/culur/culur/pull/75) [`2b2d382`](https://github.com/culur/culur/commit/2b2d382c1ece19ea9e431b1960388615e0ccbde2)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `typescript@^5.5.4`
+
+- 📦 Update dependencies ([#83](https://github.com/culur/culur/pull/83) [`748924a`](https://github.com/culur/culur/commit/748924a47b5f124e0f89560b7b8b8dec5f42a7e3)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `vite-tsconfig-paths@5.0.1`
+
+- 📦 Update dependencies ([#68](https://github.com/culur/culur/pull/68) [`75b5017`](https://github.com/culur/culur/commit/75b5017cbacc7d010b9d3733802d72c259670897)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `vite@^5.4.2`
+
+- 📦 Update dependencies ([#69](https://github.com/culur/culur/pull/69) [`102d72e`](https://github.com/culur/culur/commit/102d72e7da6846c63fb5cc128ea71443cca5cba5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+
+- 📦 Update dependencies ([#66](https://github.com/culur/culur/pull/66) [`39465f5`](https://github.com/culur/culur/commit/39465f5b3836ffebfe846b9b263094b1ae2625b7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `vitest@^2.0.5`
+
+- 📦 Update dependencies ([#70](https://github.com/culur/culur/pull/70) [`cbb1b6c`](https://github.com/culur/culur/commit/cbb1b6c18c83d1c5211f1448b21024a4203a0c66)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `tsup@^8.2.4`
+
 ## 1.0.5
 
 ### Patch Changes

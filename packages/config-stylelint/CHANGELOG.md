@@ -1,5 +1,53 @@
 # @culur/config-stylelint
 
+## 1.0.5
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#75](https://github.com/culur/culur/pull/75) [`2b2d382`](https://github.com/culur/culur/commit/2b2d382c1ece19ea9e431b1960388615e0ccbde2)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `typescript@^5.5.4`
+
+- 📦 Update dependencies ([#84](https://github.com/culur/culur/pull/84) [`6a487b5`](https://github.com/culur/culur/commit/6a487b5521244e7bc1b6e35fc543b4266ceef350)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `stylelint@^16.9.0`
+
+- 📦 Update dependencies ([#76](https://github.com/culur/culur/pull/76) [`fc78559`](https://github.com/culur/culur/commit/fc78559cf3be98e18c959ebd8d70b331d263efdf)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `postcss@^8.4.41`
+
+- 📦 Update dependencies ([#69](https://github.com/culur/culur/pull/69) [`102d72e`](https://github.com/culur/culur/commit/102d72e7da6846c63fb5cc128ea71443cca5cba5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+
+- 📦 Update dependencies ([#81](https://github.com/culur/culur/pull/81) [`f79f26c`](https://github.com/culur/culur/commit/f79f26ce0d9271eda6f65ac0b6cdcca6791c9f62)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-scss@^6.5.1`
+
+- 📦 Update dependencies ([#66](https://github.com/culur/culur/pull/66) [`39465f5`](https://github.com/culur/culur/commit/39465f5b3836ffebfe846b9b263094b1ae2625b7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `vitest@^2.0.5`
+
+- 📦 Update dependencies ([#70](https://github.com/culur/culur/pull/70) [`cbb1b6c`](https://github.com/culur/culur/commit/cbb1b6c18c83d1c5211f1448b21024a4203a0c66)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `tsup@^8.2.4`
+
+- ⚙️ `ignoreFunctions` is `[]` (empty array) instead of `undefined` ([#75](https://github.com/culur/culur/pull/75) [`c50c593`](https://github.com/culur/culur/commit/c50c5936726d89ba25e05f4a3061e56563e916aa)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Add `factory` to entry point ([#75](https://github.com/culur/culur/pull/75) [`993ecf4`](https://github.com/culur/culur/commit/993ecf448d8db78f079c28446f6c57cce73ad544)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.5`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.4
 
 ### Patch Changes

@@ -42,6 +42,16 @@
         "types": "./dist/factory.d.cts",
         "default": "./dist/factory.cjs"
       }
+    },
+    "./format": {
+      "import": {
+        "types": "./dist/format.d.ts",
+        "default": "./dist/format.js"
+      },
+      "require": {
+        "types": "./dist/format.d.cts",
+        "default": "./dist/format.cjs"
+      }
     }
   },
   "files": [

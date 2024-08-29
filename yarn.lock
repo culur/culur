@@ -1580,7 +1580,7 @@ __metadata:
     pinst: "npm:^3.0.0"
     prettier: "npm:^3.3.3"
     prettier-plugin-embed: "npm:^0.4.15"
-    prettier-plugin-tailwindcss: "npm:^0.6.5"
+    prettier-plugin-tailwindcss: "npm:^0.6.6"
     typescript: "npm:^5.5.3"
   languageName: unknown
   linkType: soft
@@ -9643,7 +9643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier-plugin-tailwindcss@npm:^0.6.5":
+"prettier-plugin-tailwindcss@npm:^0.6.6":
   version: 0.6.6
   resolution: "prettier-plugin-tailwindcss@npm:0.6.6"
   peerDependencies:

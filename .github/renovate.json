@@ -8,20 +8,20 @@
   "packageRules": [
     {
       "rangeStrategy": "bump",
-      "matchPackagePatterns": ["*"],
-      "groupSlug": "all-dependencies"
+      "groupSlug": "all-dependencies",
+      "matchPackageNames": ["*"]
     },
     {
       "rangeStrategy": "bump",
-      "matchPackagePatterns": ["*"],
       "matchDepTypes": ["dependencies"],
-      "groupSlug": "only-dependencies"
+      "groupSlug": "only-dependencies",
+      "matchPackageNames": ["*"]
     },
     {
       "rangeStrategy": "bump",
-      "matchPackagePatterns": ["*"],
       "matchDepTypes": ["devDependencies", "peerDependencies"],
-      "groupSlug": "only-dev-and-peer-dependencies"
+      "groupSlug": "only-dev-and-peer-dependencies",
+      "matchPackageNames": ["*"]
     },
     {
       "description": "Ignore nodejs",

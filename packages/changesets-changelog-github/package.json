@@ -59,7 +59,7 @@
     "@changesets/types": "^6.0.0",
     "@culur/changesets-github-info": "1.0.1",
     "dotenv": "^16.4.5",
-    "type-fest": "^4.21.0"
+    "type-fest": "^4.26.0"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.0",

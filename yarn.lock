@@ -1432,7 +1432,7 @@ __metadata:
     "@culur/config-typescript": "npm:1.0.3"
     "@culur/config-vite": "npm:1.0.5"
     "@culur/utils-packages": "npm:1.0.4"
-    "@eslint/config-inspector": "npm:^0.5.1"
+    "@eslint/config-inspector": "npm:^0.5.4"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^8.56.10"
     "@types/node": "npm:^20.14.10"
@@ -1569,7 +1569,7 @@ __metadata:
     "@culur/changesets-changelog-github": "npm:*"
     "@culur/config-eslint": "npm:*"
     "@culur/config-prettier": "npm:*"
-    "@eslint/config-inspector": "npm:^0.5.1"
+    "@eslint/config-inspector": "npm:^0.5.4"
     "@types/node": "npm:^20.14.10"
     dotenv: "npm:^16.4.5"
     eslint: "npm:^9.7.0"
@@ -1832,22 +1832,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/config-array@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@eslint/config-array@npm:0.17.0"
+"@eslint/config-array@npm:^0.17.0, @eslint/config-array@npm:^0.17.1":
+  version: 0.17.1
+  resolution: "@eslint/config-array@npm:0.17.1"
   dependencies:
     "@eslint/object-schema": "npm:^2.1.4"
     debug: "npm:^4.3.1"
     minimatch: "npm:^3.1.2"
-  checksum: 10/4609b94519cd63ed1aba1429a53c0eb3cb5585056ffaa10184f0b7b91ceaed7ed5e625da3b5b4ffcc9b9093be8d6be7fc46111885936d6543890efb016aa303f
+  checksum: 10/d837852445d3cfc62da5e0d94ab036aa4393751cf2ee71676df61ec77bffabaa73f87207bfa200b8d0e7e95b556704f29f35f2f22d63d1ce2e285db4a325a2df
   languageName: node
   linkType: hard
 
-"@eslint/config-inspector@npm:^0.5.1":
-  version: 0.5.1
-  resolution: "@eslint/config-inspector@npm:0.5.1"
+"@eslint/config-inspector@npm:^0.5.4":
+  version: 0.5.4
+  resolution: "@eslint/config-inspector@npm:0.5.4"
   dependencies:
-    "@eslint/config-array": "npm:^0.17.0"
+    "@eslint/config-array": "npm:^0.17.1"
     "@voxpelli/config-array-find-files": "npm:^0.1.2"
     bundle-require: "npm:^5.0.0"
     cac: "npm:^6.7.14"
@@ -1862,13 +1862,13 @@ __metadata:
     mrmime: "npm:^2.0.0"
     open: "npm:^10.1.0"
     picocolors: "npm:^1.0.1"
-    ws: "npm:^8.17.1"
+    ws: "npm:^8.18.0"
   peerDependencies:
     eslint: ^8.50.0 || ^9.0.0
   bin:
     config-inspector: bin.mjs
     eslint-config-inspector: bin.mjs
-  checksum: 10/c03683b1cb4a3180a5156a6260785c235725f1f0dc0f31bb5f74026f2470af59d3b41005dcd69472b74c0b079af73e1f6b8991fb23e55507ea180745b897633c
+  checksum: 10/57fce4aad670d43d7e3d1684ae12c4f270a402221e9e691b0da897d42614e83889722bdf19cf9b45271b92ea1cb3b7a8eafb6bc7bbb91b470f57eb59813e3e85
   languageName: node
   linkType: hard
 
@@ -11679,7 +11679,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ws@npm:^8.12.0, ws@npm:^8.17.1":
+"ws@npm:^8.12.0, ws@npm:^8.17.1, ws@npm:^8.18.0":
   version: 8.18.0
   resolution: "ws@npm:8.18.0"
   peerDependencies:

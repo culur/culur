@@ -63,7 +63,7 @@
     "@culur/changesets-changelog-github": "*",
     "@culur/config-eslint": "*",
     "@culur/config-prettier": "*",
-    "@eslint/config-inspector": "^0.5.1",
+    "@eslint/config-inspector": "^0.5.4",
     "@types/node": "^20.14.10",
     "dotenv": "^16.4.5",
     "eslint": "^9.7.0",

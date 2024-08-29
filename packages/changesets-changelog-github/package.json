@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-changelog-github",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A changelog entry generator for GitHub that links to commits, PRs, and users.",
   "publishConfig": {
     "access": "public"
@@ -57,16 +57,16 @@
   },
   "dependencies": {
     "@changesets/types": "^6.0.0",
-    "@culur/changesets-github-info": "1.0.1",
+    "@culur/changesets-github-info": "1.0.2",
     "dotenv": "^16.4.5",
     "type-fest": "^4.26.0"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.0",
-    "@culur/config-tsup": "1.1.2",
-    "@culur/config-typescript": "1.0.3",
-    "@culur/config-vite": "1.0.5",
-    "@culur/types": "1.0.5",
+    "@culur/config-tsup": "1.1.3",
+    "@culur/config-typescript": "1.0.4",
+    "@culur/config-vite": "1.0.6",
+    "@culur/types": "1.0.6",
     "@types/node": "^20.16.2",
     "@vitest/coverage-v8": "^2.0.5",
     "@vitest/ui": "^2.0.5",

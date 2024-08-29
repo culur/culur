@@ -1,5 +1,24 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.2.3
+
+### Patch Changes
+
+- ⚙️ Update `tsup.config.ts` ([#87](https://github.com/culur/culur/pull/87) [`4580ca4`](https://github.com/culur/culur/commit/4580ca4f5932e43ee984aa516f0deb2c2fb02ada)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Test: update mock `fs.writeFile` ([#87](https://github.com/culur/culur/pull/87) [`e79bf44`](https://github.com/culur/culur/commit/e79bf44368a5799475c359637e032c099d98352f)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Update dependencies ([#87](https://github.com/culur/culur/pull/87) [`6368f27`](https://github.com/culur/culur/commit/6368f2758b4283821492477de3012d8936ac5021)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `tsup@^8.2.4`
+    - `type-fest@^4.26.0`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
 ## 1.2.2
 
 ### Patch Changes

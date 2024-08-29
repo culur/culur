@@ -1,5 +1,23 @@
 # @culur/types
 
+## 1.0.6
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#87](https://github.com/culur/culur/pull/87) [`6368f27`](https://github.com/culur/culur/commit/6368f2758b4283821492477de3012d8936ac5021)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `dependencies`:
+    - `type-fest@^4.26.0`
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- ⚙️ `defineObject`: add generic `AutoComplete` ([#87](https://github.com/culur/culur/pull/87) [`e830426`](https://github.com/culur/culur/commit/e8304266fb535e1f00bfe66c75e26d773d10100f)) ([@github-actions](https://github.com/apps/github-actions)).
+
 ## 1.0.5
 
 ### Patch Changes

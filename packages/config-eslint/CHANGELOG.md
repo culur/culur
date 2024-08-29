@@ -1,5 +1,42 @@
 # @culur/config-eslint
 
+## 1.0.6
+
+### Patch Changes
+
+- ⚙️ Update `culur/yarnrc-yml/rules` ([#87](https://github.com/culur/culur/pull/87) [`d73db0c`](https://github.com/culur/culur/commit/d73db0cb3ecdf17072227c44a0ee6ef721a0ae1c)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - Sort dependency name in `packageExtensions` alphabetically.
+  - Sort `packageExtensions` field by `dependencies`, `peerDependencies` & `peerDependenciesMeta`.
+  - Sort child dependency name alphabetically.
+
+- ⚙️ `antfu/vue/rules`: add 2 override rules ([#87](https://github.com/culur/culur/pull/87) [`670df31`](https://github.com/culur/culur/commit/670df31595e2ebdbf7b1252b2d2da3269e49a1d4)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `vue/padding-line-between-blocks`: always
+  - `vue/component-name-in-template-casing`: with `registeredComponentsOnly: false` for support components import by `unplugin-vue-components`
+
+- ⚙️ Update dependencies ([#87](https://github.com/culur/culur/pull/87) [`6368f27`](https://github.com/culur/culur/commit/6368f2758b4283821492477de3012d8936ac5021)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^2.27.3`
+  - `devDependencies`:
+    - `@eslint/config-inspector@^0.5.4`
+    - `@types/eslint@^9.6.1`
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `@vue/compiler-sfc@^3.4.38`
+    - `eslint@^9.9.1`
+    - `tsup@^8.2.4`
+    - `type-fest@^4.26.0`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- ⚙️ Refactor: create index export for `overrides` & `rules` folders ([#87](https://github.com/culur/culur/pull/87) [`ff62273`](https://github.com/culur/culur/commit/ff62273d6f872ceca3669486447c428ad068000d)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.5`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.5
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @culur/config-prettier
 
+## 1.1.0
+
+### Minor Changes
+
+- ⚙️ Add `formatCode` function ([#87](https://github.com/culur/culur/pull/87) [`5d405d0`](https://github.com/culur/culur/commit/5d405d07955a620a0788a4b939df8a1f4d799163)) ([@github-actions](https://github.com/apps/github-actions)).
+
+### Patch Changes
+
+- ⚙️ Refactor: rename factory function to `defineConfig` ([#87](https://github.com/culur/culur/pull/87) [`f682058`](https://github.com/culur/culur/commit/f682058e1ded2eca80122d14df49136d79b6cabf)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Update dependencies ([#87](https://github.com/culur/culur/pull/87) [`6368f27`](https://github.com/culur/culur/commit/6368f2758b4283821492477de3012d8936ac5021)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `prettier@^3.3.3`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- ⚙️ Add Vue generated files to `.prettierignore` ([#87](https://github.com/culur/culur/pull/87) [`0c7876a`](https://github.com/culur/culur/commit/0c7876a34a8f43e08abb4a19d82f0aa123d3a713)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Add `.sass` to `.prettierignore` ([#87](https://github.com/culur/culur/pull/87) [`3bf5f9e`](https://github.com/culur/culur/commit/3bf5f9ea2b00d11bc192c30aea29621078c225de)) ([@github-actions](https://github.com/apps/github-actions)).
+
 ## 1.0.5
 
 ### Patch Changes

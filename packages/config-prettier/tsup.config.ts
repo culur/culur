@@ -2,5 +2,5 @@ import { defineConfig, esm_cjs } from '@culur/config-tsup';
 
 export default defineConfig({
   ...esm_cjs,
-  entry: ['src/index.ts', 'src/factory.ts'],
+  entry: ['src/index.ts', 'src/factory.ts', 'src/format.ts'],
 });

@@ -72,7 +72,7 @@
     "markdownlint-cli2": "^0.13.0",
     "nx": "19.4.3",
     "pinst": "^3.0.0",
-    "prettier": "^3.3.2",
+    "prettier": "^3.3.3",
     "prettier-plugin-embed": "^0.4.15",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "typescript": "^5.5.3"

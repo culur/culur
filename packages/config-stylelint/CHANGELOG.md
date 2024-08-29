@@ -1,5 +1,30 @@
 # @culur/config-stylelint
 
+## 1.0.5
+
+### Patch Changes
+
+- 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `stylelint-scss@^6.5.1`
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `postcss@^8.4.41`
+    - `stylelint@^16.9.0`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- 🩹 `ignoreFunctions` is `[]` (empty array) instead of `undefined` ([`031cace`](https://github.com/culur/culur/commit/031cacea954b7574f349c28dd40c307095ee69cb)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add `factory` to entry point ([`1269ad5`](https://github.com/culur/culur/commit/1269ad5548345a4681eb67bf4f0a33079b256723)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.5`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.4
 
 ### Patch Changes

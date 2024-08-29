@@ -1,5 +1,42 @@
 # @culur/config-eslint
 
+## 1.0.6
+
+### Patch Changes
+
+- ✨ Update `culur/yarnrc-yml/rules` ([`faea13e`](https://github.com/culur/culur/commit/faea13e970d080a10b4ef7d002105043482c9feb)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - Sort dependency name in `packageExtensions` alphabetically.
+  - Sort `packageExtensions` field by `dependencies`, `peerDependencies` & `peerDependenciesMeta`.
+  - Sort child dependency name alphabetically.
+
+- ✨ `antfu/vue/rules`: add 2 override rules ([`f377173`](https://github.com/culur/culur/commit/f3771731171571552f058b19fb69ec5d2ccda49b)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `vue/padding-line-between-blocks`: always
+  - `vue/component-name-in-template-casing`: with `registeredComponentsOnly: false` for support components import by `unplugin-vue-components`
+
+- 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^2.27.3`
+  - `devDependencies`:
+    - `@eslint/config-inspector@^0.5.4`
+    - `@types/eslint@^9.6.1`
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `@vue/compiler-sfc@^3.4.38`
+    - `eslint@^9.9.1`
+    - `tsup@^8.2.4`
+    - `type-fest@^4.26.0`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- 🔨 Refactor: create index export for `overrides` & `rules` folders ([`e69f0cc`](https://github.com/culur/culur/commit/e69f0cc0e2b9c87015f5e444a9e642187e9927c8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.5`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.5
 
 ### Patch Changes

@@ -1,5 +1,26 @@
 # @culur/config-vite
 
+## 1.0.6
+
+### Patch Changes
+
+- ✨ Update `test.typecheck` ([`da5d97f`](https://github.com/culur/culur/commit/da5d97f89fc9ce563e77a009853ec988d644b7b8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update parameter type for auto-completion ([`fcf99e8`](https://github.com/culur/culur/commit/fcf99e86cef135872ef8cd2021a61a28c29ed2cc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `vite-tsconfig-paths@5.0.1`
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vite@^5.4.2`
+    - `vitest@^2.0.5`
+
 ## 1.0.5
 
 ### Patch Changes

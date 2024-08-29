@@ -76,7 +76,7 @@
     "@culur/config-tsup": "1.1.2",
     "@culur/config-typescript": "1.0.3",
     "@culur/config-vite": "1.0.5",
-    "@eslint/config-inspector": "^0.5.1",
+    "@eslint/config-inspector": "^0.5.4",
     "@eslint/eslintrc": "^3.1.0",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20.16.2",

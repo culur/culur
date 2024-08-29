@@ -1434,7 +1434,7 @@ __metadata:
     "@culur/utils-packages": "npm:1.0.4"
     "@eslint/config-inspector": "npm:^0.5.1"
     "@eslint/eslintrc": "npm:^3.1.0"
-    "@types/eslint": "npm:^8.56.10"
+    "@types/eslint": "npm:^8.56.12"
     "@types/node": "npm:^20.16.2"
     "@vitest/coverage-v8": "npm:^2.0.2"
     "@vitest/ui": "npm:^2.0.2"
@@ -3406,13 +3406,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/eslint@npm:^8.56.10, @types/eslint@npm:^8.56.5":
-  version: 8.56.10
-  resolution: "@types/eslint@npm:8.56.10"
+"@types/eslint@npm:^8.56.10, @types/eslint@npm:^8.56.12, @types/eslint@npm:^8.56.5":
+  version: 8.56.12
+  resolution: "@types/eslint@npm:8.56.12"
   dependencies:
     "@types/estree": "npm:*"
     "@types/json-schema": "npm:*"
-  checksum: 10/0cdd914b944ebba51c35827d3ef95bc3e16eb82b4c2741f6437fa57cdb00a4407c77f89c220afe9e4c9566982ec8a0fb9b97c956ac3bd4623a3b6af32eed8424
+  checksum: 10/bd998b5d3f98ac430ec8db6223f1cff1820774c1e72eabda05463256875d97065fd357fba7379dd25e6bfbeb73296f28faff6f4dcbc320f890bb49b09087644d
   languageName: node
   linkType: hard
 

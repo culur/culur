@@ -69,7 +69,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^2.27.3",
+    "@antfu/eslint-config": "^3.0.0",
     "@culur/utils-packages": "1.0.5"
   },
   "devDependencies": {

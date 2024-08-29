@@ -1,5 +1,21 @@
 # @culur/config-tsup
 
+## 1.1.3
+
+### Patch Changes
+
+- ✨ `defineConfig`: support `AutoComplete` ([`239fa7c`](https://github.com/culur/culur/commit/239fa7ca03d17cef82d58d75d09e2c2d426c3f3e)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
 ## 1.1.2
 
 ### Patch Changes

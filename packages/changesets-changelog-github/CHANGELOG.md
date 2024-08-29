@@ -1,5 +1,26 @@
 # @culur/changesets-changelog-github
 
+## 1.0.3
+
+### Patch Changes
+
+- 🔨 Emoji: use non-capturing group ([`e06d7df`](https://github.com/culur/culur/commit/e06d7dfb8abec2fd2ae6257078eae63a3994d445)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `type-fest@^4.26.0`
+  - `devDependencies`:
+    - `@types/node@^20.16.2`
+    - `@vitest/coverage-v8@^2.0.5`
+    - `@vitest/ui@^2.0.5`
+    - `tsup@^8.2.4`
+    - `typescript@^5.5.4`
+    - `vitest@^2.0.5`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.0.2`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.0.2
 
 ### Patch Changes

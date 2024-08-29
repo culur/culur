@@ -21,11 +21,11 @@ export function functionNoUnknownRule() {
       : []),
   ];
 
-  return defineRule<boolean, { ignoreFunctions?: (string | RegExp)[] }>([
+  return defineRule<boolean, { ignoreFunctions: (string | RegExp)[] }>([
     true,
-    ignoreFunctions.length > 0
+    ignoreFunctions.length > 0 //
       ? { ignoreFunctions }
-      : { ignoreFunctions: undefined },
+      : { ignoreFunctions: [] },
   ]);
 }
 

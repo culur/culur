@@ -82,7 +82,7 @@ export const getReleaseLine: GetReleaseLine = async (
             `[@${userFromSummary}](https://github.com/${userFromSummary})`,
         )
         .join(' ')
-    : links.user?.link ?? null;
+    : (links.user?.link ?? null);
 
   const prefix = getEmoji(links.pullRequest?.title ?? links.commit?.message);
 

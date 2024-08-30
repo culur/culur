@@ -9,6 +9,9 @@ import { mockPackageFile } from './mock-package';
 
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 
+async function mockWriteFile() {}
+mockWriteFile.__promisify__ = async () => {};
+
 export function mockAll() {
   const baseBranch = 'dev';
   const headBranch = 'renovate/all-minor-patch';
@@ -58,10 +61,8 @@ export function mockAll() {
     },
   });
 
-  const writeFile = async () => {};
-  writeFile.__promisify__ = async () => {};
   vi.spyOn(core, 'debug').mockImplementation(() => {});
-  vi.spyOn(fs, 'writeFile').mockImplementation(writeFile);
+  vi.spyOn(fs, 'writeFile').mockImplementation(mockWriteFile);
 }
 
 export function restoreAll() {

@@ -1,69 +1,60 @@
-import type { Awaitable } from 'vitest';
-import { afterEach, describe, it, vi } from 'vitest';
+import type { Packages } from '@culur/utils-packages';
 import type { Config, ConfigRuleSettings } from 'stylelint';
-import type { UtilsPackages } from './mock';
-import { hasValues, spyOnUtilsPackages } from './spy-on-utils-packages';
+import { describe, it } from 'vitest';
 import type {
   ConfigRulePrimaryOption,
   ConfigRuleSecondaryOptions,
 } from '~/utils';
 
 type Fn<
-  TTestCase extends UtilsPackages & object,
   TRuleOrConfig extends
     | ConfigRuleSettings<ConfigRulePrimaryOption, ConfigRuleSecondaryOptions>
     | Config,
-> = (
-  ruleOrConfig: TRuleOrConfig,
-  options: UtilsPackages & TTestCase,
-) => Promise<void> | void;
+  TTestCase extends Partial<Packages>,
+> = (rule: TRuleOrConfig, testCase: TTestCase) => Promise<void> | void;
 
-export function describeRuleOrConfigFactory<
+function describeRuleOrConfigFactory<
   TBaseRuleOrConfig extends
     | ConfigRuleSettings<ConfigRulePrimaryOption, ConfigRuleSecondaryOptions>
     | Config,
 >(describeName: string) {
-  function describeRuleOrConfig<
+  return function describeRuleOrConfig<
     TRuleOrConfig extends TBaseRuleOrConfig,
-    TTestCase extends UtilsPackages & object,
+    TTestCase extends Partial<Packages>,
   >(
-    utilsPackages: typeof import('@culur/utils-packages'),
-    getRuleOrConfig: (() => Awaitable<TRuleOrConfig>) | TRuleOrConfig,
+    getRuleOrConfig:
+      | TRuleOrConfig
+      | ((
+          packages: Partial<Packages>,
+        ) => Promise<TRuleOrConfig> | TRuleOrConfig),
     ...args:
-      | [testCases: TTestCase[], fn: Fn<TTestCase, TRuleOrConfig>]
-      | [fn: Fn<TTestCase, TRuleOrConfig>]
+      | [testCases: TTestCase[], fn: Fn<TRuleOrConfig, TTestCase>]
+      | [fn: Fn<TRuleOrConfig, TTestCase>]
   ) {
     const [testCases, fn] =
       args.length === 2 //
         ? [...args]
-        : [[{} as UtilsPackages & TTestCase], ...args];
+        : [[{} as TTestCase], ...args];
 
     const itName =
-      hasValues
+      (['tailwind', 'sass', 'vue'] as const)
         .filter(field => testCases.some(t => typeof t[field] === 'boolean'))
         .map(field => `${field} = $${field}`)
         .join(', ') || 'default';
 
     describe(describeName, () => {
-      afterEach(() => {
-        vi.restoreAllMocks();
-      });
-
       it.each(testCases)(itName, async testCase => {
-        spyOnUtilsPackages(utilsPackages, testCase);
-
         const ruleOrConfig =
           typeof getRuleOrConfig === 'function'
-            ? await getRuleOrConfig()
+            ? await getRuleOrConfig(testCase)
             : getRuleOrConfig;
 
         fn(ruleOrConfig, testCase);
       });
     });
-  }
-
-  return describeRuleOrConfig;
+  };
 }
+
 export const describeConfig = describeRuleOrConfigFactory<Config>('config');
 export const describeRule = describeRuleOrConfigFactory<
   ConfigRuleSettings<

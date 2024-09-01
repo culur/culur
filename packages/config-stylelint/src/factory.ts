@@ -1,5 +1,4 @@
 import type { Packages } from '@culur/utils-packages';
-import { hasSass, hasVue, updateDefaultPackages } from '@culur/utils-packages';
 import type { Config } from 'stylelint';
 import { configCss } from './configs/css';
 import { configScss } from './configs/scss';
@@ -8,16 +7,16 @@ import { configVue } from './configs/vue';
 import { mergeConfigs } from './utils';
 
 export default function defineConfig(
-  options?: Partial<Packages>,
+  packages?: Partial<Packages>,
   config?: Config,
 ): Config {
-  updateDefaultPackages(options);
+  const packages_ = packages ?? {};
 
   return mergeConfigs(
     configShared(),
-    configCss(),
-    hasSass() && configScss(),
-    hasVue() && configVue(),
+    configCss(packages_),
+    packages_.sass && configScss(packages_),
+    packages_.vue && configVue(packages_),
     config,
   );
 }

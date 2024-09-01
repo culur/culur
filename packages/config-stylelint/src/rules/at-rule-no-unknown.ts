@@ -1,4 +1,4 @@
-import { hasTailwind } from '@culur/utils-packages';
+import type { Packages } from '@culur/utils-packages';
 import { defineRule, defineRules } from '~/utils';
 
 // https://tailwindcss.com/docs/functions-and-directives
@@ -15,19 +15,19 @@ const directives = [
   'screen',
 ];
 
-export const atRuleNoUnknownRule = () =>
+export const atRuleNoUnknownRule = (packages: Partial<Packages>) =>
   defineRule<boolean, { ignoreAtRules: (string | RegExp)[] }>([
     true,
-    { ignoreAtRules: hasTailwind() ? directives : [] },
+    { ignoreAtRules: packages.tailwind ? directives : [] },
   ]);
 
-export const atRuleNoUnknownCSS = () =>
+export const atRuleNoUnknownCSS = (packages: Partial<Packages>) =>
   defineRules({
-    'at-rule-no-unknown': atRuleNoUnknownRule(),
+    'at-rule-no-unknown': atRuleNoUnknownRule(packages),
   });
 
-export const atRuleNoUnknownSCSS = () =>
+export const atRuleNoUnknownSCSS = (packages: Partial<Packages>) =>
   defineRules({
     'at-rule-no-unknown': null,
-    'scss/at-rule-no-unknown': atRuleNoUnknownRule(),
+    'scss/at-rule-no-unknown': atRuleNoUnknownRule(packages),
   });

@@ -1,16 +1,30 @@
-import * as utilsPackages from '@culur/utils-packages';
 import { css, describeLintAndFix } from './__tests__';
 import defineConfig from './factory';
 
-describeLintAndFix(utilsPackages, defineConfig, [
-  {
-    code: css`
-      a {
-        color: red;
-      }
-    `,
-    hasSass: true,
-    hasVue: true,
-    isError: false,
-  },
-]);
+describeLintAndFix(
+  () => defineConfig({ vue: true, sass: true }),
+  [
+    {
+      code: css`
+        a {
+          color: red;
+        }
+      `,
+      isError: false,
+    },
+  ],
+);
+
+describeLintAndFix(
+  () => defineConfig(),
+  [
+    {
+      code: css`
+        a {
+          color: red;
+        }
+      `,
+      isError: false,
+    },
+  ],
+);

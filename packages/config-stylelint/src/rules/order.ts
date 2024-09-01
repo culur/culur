@@ -1,4 +1,4 @@
-import { hasSass, hasTailwind } from '@culur/utils-packages';
+import type { Packages } from '@culur/utils-packages';
 import { defineRule, defineRules } from '~/utils';
 
 // https://github.com/hudochenkov/stylelint-order/blob/master/rules/order/README.md#options
@@ -84,14 +84,14 @@ const rules: PrimaryOption = [
   'rules',
 ];
 
-export const orderRule = () =>
+export const orderRule = (packages: Partial<Packages>) =>
   defineRule<PrimaryOption, SecondaryOptions>([
     [
-      ...(hasSass() ? atRuleScssImport : []),
-      ...(hasTailwind() ? atRuleTailwind : []),
+      ...(packages.sass ? atRuleScssImport : []),
+      ...(packages.tailwind ? atRuleTailwind : []),
       ...variables,
-      ...(hasSass() ? atRuleScss : []),
-      ...(hasTailwind() ? atRuleTailwindV2 : []),
+      ...(packages.sass ? atRuleScss : []),
+      ...(packages.tailwind ? atRuleTailwindV2 : []),
       'at-rules',
       'less-mixins',
       'declarations',
@@ -102,7 +102,7 @@ export const orderRule = () =>
     },
   ]);
 
-export const order = () =>
+export const order = (packages: Partial<Packages>) =>
   defineRules({
-    'order/order': orderRule(),
+    'order/order': orderRule(packages),
   });

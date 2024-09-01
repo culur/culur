@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.1.0
+
+### Minor Changes
+
+- ✨ Export pre-built configs to extends ([`10e640b`](https://github.com/culur/culur/commit/10e640b767aed4aaa5d859ddbf4aedfec6626bac)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.0.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-eslint",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Culur's eslint configuration",
   "publishConfig": {
     "access": "public"

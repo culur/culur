@@ -6,7 +6,7 @@ jobs:
   #! ----- ----- ----- Pre release ----- ----- ----- !#
   release:
     name: Publish pre-release
-    if: ${{ github.ref == 'refs/heads/release' }}
+    if: ${{ github.ref == 'refs/heads/release' || github.ref == 'refs/heads/dev' }}
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true

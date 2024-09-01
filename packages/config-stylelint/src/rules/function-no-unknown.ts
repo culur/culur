@@ -1,22 +1,22 @@
-import { hasSass, hasTailwind, hasVue } from '@culur/utils-packages';
+import type { Packages } from '@culur/utils-packages';
 import { defineRule, defineRules } from '~/utils';
 
-export function functionNoUnknownRule() {
+export function functionNoUnknownRule(packages: Partial<Packages>) {
   const ignoreFunctions = [
     // https://tailwindcss.com/docs/functions-and-directives#functions
-    ...(hasTailwind() //
+    ...(packages.tailwind //
       ? ['theme', 'screen']
       : []),
 
     // https://sass-lang.com/documentation/modules/list
     // https://sass-lang.com/documentation/modules/math
     // https://sass-lang.com/documentation/modules/color
-    ...(hasSass() //
+    ...(packages.sass //
       ? [/^(list|math|color)\..+/]
       : []),
 
     // https://vuejs.org/api/sfc-css-features.html#v-bind-in-css
-    ...(hasVue() //
+    ...(packages.vue //
       ? ['v-bind']
       : []),
   ];
@@ -29,7 +29,7 @@ export function functionNoUnknownRule() {
   ]);
 }
 
-export const functionNoUnknown = () =>
+export const functionNoUnknown = (packages: Partial<Packages>) =>
   defineRules({
-    'function-no-unknown': functionNoUnknownRule(),
+    'function-no-unknown': functionNoUnknownRule(packages),
   });

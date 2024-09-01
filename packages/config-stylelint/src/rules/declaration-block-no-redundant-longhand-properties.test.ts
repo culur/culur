@@ -1,4 +1,3 @@
-import * as utilsPackages from '@culur/utils-packages';
 import { assert, expect } from 'vitest';
 import {
   declarationBlockNoRedundantLonghandProperties,
@@ -7,8 +6,7 @@ import {
 import { css, describeLintAndFix, describeRule } from '~/__tests__';
 
 describeRule(
-  utilsPackages,
-  declarationBlockNoRedundantLonghandPropertiesRule,
+  declarationBlockNoRedundantLonghandPropertiesRule, //
   rule => {
     assert(Array.isArray(rule));
     assert(typeof rule[1] === 'object');
@@ -17,10 +15,7 @@ describeRule(
 );
 
 describeLintAndFix(
-  utilsPackages,
-  {
-    rules: declarationBlockNoRedundantLonghandProperties,
-  },
+  { rules: declarationBlockNoRedundantLonghandProperties }, //
   [
     {
       code: css`

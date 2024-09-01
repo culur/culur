@@ -1,4 +1,3 @@
-import * as utilsPackages from '@culur/utils-packages';
 import { assert, expect } from 'vitest';
 import {
   atRuleNoUnknownCSS,
@@ -8,11 +7,10 @@ import {
 import { describeLintAndFix, describeRule, syntaxScss } from '~/__tests__';
 
 describeRule(
-  utilsPackages,
   atRuleNoUnknownRule,
   [
-    { hasTailwind: false, length: 0 },
-    { hasTailwind: true, length: 7 },
+    { tailwind: false, length: 0 },
+    { tailwind: true, length: 7 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));
@@ -22,25 +20,23 @@ describeRule(
 );
 
 describeLintAndFix(
-  utilsPackages, //
-  () => ({ rules: atRuleNoUnknownCSS() }),
+  o => ({ rules: atRuleNoUnknownCSS(o) }),
   [
-    { hasTailwind: false, code: '@unknown {}', isError: true },
-    { hasTailwind: false, code: '@media {}', isError: false },
-    { hasTailwind: true, code: '@tailwind {}', isError: false },
+    { tailwind: false, code: '@unknown {}', isError: true },
+    { tailwind: false, code: '@media {}', isError: false },
+    { tailwind: true, code: '@tailwind {}', isError: false },
   ],
 );
 
 describeLintAndFix(
-  utilsPackages,
-  () => ({
+  o => ({
     plugins: ['stylelint-scss'],
-    rules: atRuleNoUnknownSCSS(),
+    rules: atRuleNoUnknownSCSS(o),
     overrides: [syntaxScss],
   }),
   [
-    { ext: 'scss', hasTailwind: false, code: '@unknown {}', isError: true },
-    { ext: 'scss', hasTailwind: false, code: '@media {}', isError: false },
-    { ext: 'scss', hasTailwind: true, code: '@tailwind {}', isError: false },
+    { ext: 'scss', tailwind: false, code: '@unknown {}', isError: true },
+    { ext: 'scss', tailwind: false, code: '@media {}', isError: false },
+    { ext: 'scss', tailwind: true, code: '@tailwind {}', isError: false },
   ],
 );

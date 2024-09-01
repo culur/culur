@@ -1,16 +1,14 @@
-import * as utilsPackages from '@culur/utils-packages';
 import { assert, expect } from 'vitest';
 import { order, orderRule } from './order';
 import { describeLintAndFix, describeRule, scss } from '~/__tests__';
 
 describeRule(
-  utilsPackages,
   orderRule,
   [
-    { hasTailwind: false, hasSass: false, length: 8 },
-    { hasTailwind: true, hasSass: false, length: 15 },
-    { hasTailwind: false, hasSass: true, length: 16 },
-    { hasTailwind: true, hasSass: true, length: 23 },
+    { tailwind: false, sass: false, length: 8 },
+    { tailwind: true, sass: false, length: 15 },
+    { tailwind: false, sass: true, length: 16 },
+    { tailwind: true, sass: true, length: 23 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));
@@ -24,15 +22,14 @@ describeRule(
 );
 
 describeLintAndFix(
-  utilsPackages,
-  async () => ({
+  o => ({
     plugins: ['stylelint-order'],
-    rules: order(),
+    rules: order(o),
   }),
   [
     {
-      hasTailwind: false,
-      hasSass: false,
+      tailwind: false,
+      sass: false,
       code: scss`
         a {
           $variable: 1px;

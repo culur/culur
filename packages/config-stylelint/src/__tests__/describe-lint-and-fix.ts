@@ -1,10 +1,8 @@
 import { resolve } from 'node:path';
-import type { Awaitable } from 'vitest';
-import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { Config } from 'stylelint';
+import type { Packages } from '@culur/utils-packages';
+import { describe, expect, it } from 'vitest';
 import stylelint from 'stylelint';
-import type { UtilsPackages } from './mock';
-import { spyOnUtilsPackages } from './spy-on-utils-packages';
 
 type LintAndFixCase = {
   code: string;
@@ -12,15 +10,14 @@ type LintAndFixCase = {
   isError?: boolean;
   ext?: 'css' | 'scss' | 'vue';
   debug?: boolean;
-} & UtilsPackages;
+} & Partial<Packages>;
 
-export function describeLintAndFix(
-  utilsPackages: typeof import('@culur/utils-packages'),
-  getConfig: Config | (() => Awaitable<Config>),
-  testCases: LintAndFixCase[],
+export function describeLintAndFix<TTestCase extends LintAndFixCase>(
+  getConfig: Config | ((testCase: TTestCase) => Promise<Config> | Config),
+  testCases: TTestCase[],
 ) {
   const itName = [
-    ...(['hasTailwind', 'hasSass', 'hasVue', 'isError'] as const) //
+    ...(['tailwind', 'sass', 'vue', 'isError'] as const) //
       .filter(field => testCases.some(t => typeof t[field] === 'boolean')),
     ...(['code', 'fixedCode'] as const) //
       .filter(field => testCases.some(t => typeof t[field] === 'string')),
@@ -29,15 +26,9 @@ export function describeLintAndFix(
     .join(', ');
 
   describe('test lint and fix', () => {
-    afterEach(() => {
-      vi.restoreAllMocks();
-    });
-
     it.each(testCases)(itName, async testCase => {
-      spyOnUtilsPackages(utilsPackages, testCase);
-
       const config =
-        typeof getConfig === 'function' ? await getConfig() : getConfig;
+        typeof getConfig === 'function' ? await getConfig(testCase) : getConfig;
 
       const result = await stylelint.lint({
         code: testCase.code,

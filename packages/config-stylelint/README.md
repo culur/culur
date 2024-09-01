@@ -68,6 +68,22 @@ Set your `.stylelintrc.json` to:
 }
 ```
 
+Below are also some pre-built configs to use.
+
+| Config                                      | Tailwind | Sass | Vue  |
+| ------------------------------------------- | -------- | ---- | ---- |
+| `@culur/config-stylelint`                   | auto     | auto | auto |
+| `@culur/config-stylelint/auto`              | auto     | auto | auto |
+| `@culur/config-stylelint/none`              |          |      |      |
+| `@culur/config-stylelint/sass-vue`          |          | true | true |
+| `@culur/config-stylelint/sass`              |          | true |      |
+| `@culur/config-stylelint/tailwind-sass-vue` | true     | true | true |
+| `@culur/config-stylelint/tailwind-sass`     | true     | true |      |
+| `@culur/config-stylelint/tailwind`          | true     |      |      |
+| `@culur/config-stylelint/vue`               |          |      | true |
+
+### 2. Define config
+
 You can also define which environments are enabled via the `defineConfig` function.
 
 ```js
@@ -87,6 +103,8 @@ export default defineConfig(
   },
 );
 ```
+
+_Note_: When using `defineConfig` function, you must install `stylelint-config-*` and plugins dependencies to your project.
 
 ### 2. Ignoring Code
 

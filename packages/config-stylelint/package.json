@@ -25,12 +25,22 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/shareable-configs/auto.d.ts",
+        "default": "./dist/shareable-configs/auto.js"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
+        "types": "./shareable-configs/auto.d.cts",
+        "default": "./dist/shareable-configs/auto.cjs"
+      }
+    },
+    "./*": {
+      "import": {
+        "types": "./dist/shareable-configs/*.d.ts",
+        "default": "./dist/shareable-configs/*.js"
+      },
+      "require": {
+        "types": "./shareable-configs/*.d.cts",
+        "default": "./dist/shareable-configs/*.cjs"
       }
     },
     "./factory": {

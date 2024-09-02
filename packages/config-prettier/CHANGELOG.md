@@ -1,5 +1,11 @@
 # @culur/config-prettier
 
+## 1.2.0
+
+### Minor Changes
+
+- ✨ `endOfLine` based on [`.gitattributes`](https://github.com/gitattributes/gitattributes/blob/master/Web.gitattributes) ([`cdd3549`](https://github.com/culur/culur/commit/cdd3549c8e7eac7f13e6e3c965d270c991f1ad52)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.1.0
 
 ### Minor Changes

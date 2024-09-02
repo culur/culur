@@ -40,12 +40,30 @@ export default function defineConfig(config: Config = {}): Config {
         ],
         options: { tabWidth: 2 },
       },
+
+      // `endOfLine` based on `.gitattributes`
+      // https://github.com/gitattributes/gitattributes/blob/master/Web.gitattributes
       {
         files: [
           // alphabetical order
+          '.husky/*',
+          '*.bash',
+          '*.ipynb',
           '*.sh',
+          'package.json',
+          'package.json',
+          'pnpm-lock.yaml',
         ],
         options: { endOfLine: 'lf' },
+      },
+      {
+        files: [
+          // alphabetical order
+          '*.bat',
+          '*.cmd',
+          '*.ps1',
+        ],
+        options: { endOfLine: 'crlf' },
       },
     ],
   });

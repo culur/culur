@@ -1357,7 +1357,7 @@ __metadata:
     "@culur/config-typescript": "npm:1.0.4"
     "@culur/config-vite": "npm:1.0.6"
     "@culur/types": "npm:1.0.6"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     dedent: "npm:^1.5.3"
@@ -1383,7 +1383,7 @@ __metadata:
     "@culur/types": "npm:1.0.6"
     "@octokit/webhooks-types": "npm:^7.5.1"
     "@types/fs-extra": "npm:^11.0.4"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     dedent: "npm:^1.5.3"
@@ -1410,7 +1410,7 @@ __metadata:
     "@octokit/graphql": "npm:^8.1.1"
     "@octokit/graphql-schema": "npm:^15.25.0"
     "@types/lodash-es": "npm:^4.17.12"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     dataloader: "npm:^2.2.2"
@@ -1436,7 +1436,7 @@ __metadata:
     "@eslint/config-inspector": "npm:^0.5.4"
     "@eslint/eslintrc": "npm:^3.1.0"
     "@types/eslint": "npm:^9.6.1"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     "@vue/compiler-sfc": "npm:^3.4.38"
@@ -1460,7 +1460,7 @@ __metadata:
     "@culur/config-vite": "npm:1.0.6"
     "@culur/types": "npm:1.0.6"
     "@culur/utils-packages": "npm:1.0.5"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     prettier: "npm:^3.3.3"
@@ -1481,7 +1481,7 @@ __metadata:
     "@culur/config-typescript": "npm:1.0.4"
     "@culur/config-vite": "npm:1.0.6"
     "@culur/utils-packages": "npm:1.0.5"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     dedent: "npm:^1.5.3"
@@ -1512,7 +1512,7 @@ __metadata:
   resolution: "@culur/config-tsup@workspace:packages/config-tsup"
   dependencies:
     "@culur/config-typescript": "npm:1.0.4"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     rimraf: "npm:^6.0.1"
@@ -1528,7 +1528,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@culur/config-typescript@workspace:packages/config-typescript"
   dependencies:
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     typescript: "npm:^5.5.4"
   peerDependencies:
     "@types/node": "*"
@@ -1542,7 +1542,7 @@ __metadata:
   dependencies:
     "@culur/config-tsup": "npm:1.1.3"
     "@culur/config-typescript": "npm:1.0.4"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     rimraf: "npm:^6.0.1"
@@ -1571,7 +1571,7 @@ __metadata:
     "@culur/config-eslint": "npm:*"
     "@culur/config-prettier": "npm:*"
     "@eslint/config-inspector": "npm:^0.5.4"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     dotenv: "npm:^16.4.5"
     eslint: "npm:^9.9.1"
     husky: "npm:^9.1.5"
@@ -1593,7 +1593,7 @@ __metadata:
     "@culur/config-tsup": "npm:1.1.3"
     "@culur/config-typescript": "npm:1.0.4"
     "@culur/config-vite": "npm:1.0.6"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     rimraf: "npm:^6.0.1"
@@ -1611,7 +1611,7 @@ __metadata:
     "@culur/config-tsup": "npm:1.1.3"
     "@culur/config-typescript": "npm:1.0.4"
     "@culur/config-vite": "npm:1.0.6"
-    "@types/node": "npm:^20.16.2"
+    "@types/node": "npm:^20.16.5"
     "@vitest/coverage-v8": "npm:^2.0.5"
     "@vitest/ui": "npm:^2.0.5"
     local-pkg: "npm:^0.5.0"
@@ -3552,12 +3552,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.16.2":
-  version: 20.16.2
-  resolution: "@types/node@npm:20.16.2"
+"@types/node@npm:*, @types/node@npm:^20.16.5":
+  version: 20.16.5
+  resolution: "@types/node@npm:20.16.5"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10/fcae2ffaa681c2947cd3dae67a6dcf83ef666fc0994281ad881b9e3bb542fec3a9206d9ce899c20e5cdddace2b96b42e32f247864de9baf95756c07b9eff15d7
+  checksum: 10/39a8457149dc17cdea57afc90d4da53182fdb8b958d5bb065a15d123d81d4efa6b51a0de92428d05ead2e63ce07195586f71083401b99cdbcd04662344fbf7a1
   languageName: node
   linkType: hard
 

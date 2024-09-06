@@ -69,7 +69,7 @@
     "eslint": "^9.9.1",
     "husky": "^9.1.5",
     "markdownlint": "^0.34.0",
-    "markdownlint-cli2": "^0.13.0",
+    "markdownlint-cli2": "^0.14.0",
     "nx": "19.6.4",
     "pinst": "^3.0.0",
     "prettier": "^3.3.3",

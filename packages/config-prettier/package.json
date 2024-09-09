@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-prettier",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Culur's prettier configuration",
   "publishConfig": {
     "access": "public"
@@ -77,11 +77,11 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.3",
-    "@culur/config-typescript": "1.0.4",
-    "@culur/config-vite": "1.0.6",
-    "@culur/types": "1.0.6",
-    "@culur/utils-packages": "1.0.5",
+    "@culur/config-tsup": "1.1.4",
+    "@culur/config-typescript": "1.0.5",
+    "@culur/config-vite": "1.0.7",
+    "@culur/types": "1.1.0",
+    "@culur/utils-packages": "1.0.6",
     "@types/node": "^22.5.4",
     "@vitest/coverage-v8": "^2.0.5",
     "@vitest/ui": "^2.0.5",

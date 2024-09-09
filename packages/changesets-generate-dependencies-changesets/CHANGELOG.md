@@ -1,5 +1,17 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.2.4
+
+### Patch Changes
+
+- 📦 Style: format code ([#105](https://github.com/culur/culur/pull/105) [`213063d`](https://github.com/culur/culur/commit/213063d024ef9f69ba41b8295676cff18cd7a4bf)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#105](https://github.com/culur/culur/pull/105) [`a2e4485`](https://github.com/culur/culur/commit/a2e4485dac49eeb00fe8f6894cd8e17cf037d0d1)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+    - `type-fest@^4.26.1`
+
 ## 1.2.3
 
 ### Patch Changes

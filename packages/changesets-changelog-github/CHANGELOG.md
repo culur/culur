@@ -1,5 +1,21 @@
 # @culur/changesets-changelog-github
 
+## 1.0.4
+
+### Patch Changes
+
+- 📦 Style: format code ([#105](https://github.com/culur/culur/pull/105) [`213063d`](https://github.com/culur/culur/commit/213063d024ef9f69ba41b8295676cff18cd7a4bf)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#105](https://github.com/culur/culur/pull/105) [`a2e4485`](https://github.com/culur/culur/commit/a2e4485dac49eeb00fe8f6894cd8e17cf037d0d1)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `type-fest@^4.26.1`
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.0.3`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.0.3
 
 ### Patch Changes

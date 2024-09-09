@@ -1,6 +1,6 @@
 import { assert, expect } from 'vitest';
-import { order, orderRule } from './order';
 import { describeLintAndFix, describeRule, scss } from '~/__tests__';
+import { order, orderRule } from './order';
 
 describeRule(
   orderRule,

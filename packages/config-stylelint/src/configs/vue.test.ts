@@ -1,6 +1,6 @@
 import { assert } from 'vitest';
-import { configVue } from './vue';
 import { describeConfig } from '~/__tests__';
+import { configVue } from './vue';
 
 describeConfig(
   configVue,

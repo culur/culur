@@ -3,8 +3,8 @@ import dedent from 'dedent';
 import fs from 'fs-extra';
 import { vi } from 'vitest';
 import { mockExecOutput } from './mock-exec';
-import { mockInput } from './mock-input';
 import { defineMockGithubEvent } from './mock-github-event';
+import { mockInput } from './mock-input';
 import { mockPackageFile } from './mock-package';
 
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();

@@ -1,6 +1,6 @@
 import { assert } from 'vitest';
-import { configCss } from './css';
 import { describeConfig } from '~/__tests__';
+import { configCss } from './css';
 
 describeConfig(configCss, config => {
   assert(Array.isArray(config.extends));

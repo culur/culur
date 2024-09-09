@@ -1,6 +1,6 @@
 import { assert } from 'vitest';
-import { configShared } from './shared';
 import { describeConfig } from '~/__tests__';
+import { configShared } from './shared';
 
 describeConfig(configShared, config => {
   assert(Array.isArray(config.extends));

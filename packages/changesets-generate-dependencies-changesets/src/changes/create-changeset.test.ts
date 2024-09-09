@@ -1,7 +1,7 @@
 import core from '@actions/core';
-import { afterEach, describe, expect, it, vi } from 'vitest';
-import fs from 'fs-extra';
 import dedent from 'dedent';
+import fs from 'fs-extra';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createChangeset } from './create-changeset';
 
 describe('createChangeset', () => {

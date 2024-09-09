@@ -1,9 +1,9 @@
 import { assert, expect } from 'vitest';
+import { css, describeLintAndFix, describeRule } from '~/__tests__';
 import {
   declarationBlockNoRedundantLonghandProperties,
   declarationBlockNoRedundantLonghandPropertiesRule,
 } from './declaration-block-no-redundant-longhand-properties';
-import { css, describeLintAndFix, describeRule } from '~/__tests__';
 
 describeRule(
   declarationBlockNoRedundantLonghandPropertiesRule, //

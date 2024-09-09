@@ -1,6 +1,6 @@
 import type { ConfigEnv } from 'vite';
-import { defineConfigObject } from './define-config-object';
 import type { Awaitable, Options, OptionsExport, UserConfig } from '~/types';
+import { defineConfigObject } from './define-config-object';
 
 export function defineConfig<TOptions extends Options = { test: false }>(
   config?: Options | TOptions, // for auto-completion

@@ -1,7 +1,7 @@
 import { describe, expectTypeOf, it } from 'vitest';
 import type { ConfigEnv } from 'vite';
-import { defineConfig } from './define-config';
 import type { UserConfigVite } from '~/types';
+import { defineConfig } from './define-config';
 
 describe('defineConfig', () => {
   it('default empty', () => {

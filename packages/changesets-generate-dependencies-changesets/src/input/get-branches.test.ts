@@ -1,7 +1,7 @@
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import core from '@actions/core';
-import { getBranches } from './get-branches';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { defineMockGithubEvent } from '~/__tests__/mock-github-event';
+import { getBranches } from './get-branches';
 
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 

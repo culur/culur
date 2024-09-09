@@ -1,6 +1,6 @@
 import { expect, expectTypeOf, it } from 'vitest';
-import type { UserConfigVite, UserConfigVitest } from './types';
 import { vite, vitest } from '.';
+import type { UserConfigVite, UserConfigVitest } from './types';
 
 it('vite config', () => {
   const config = vite;

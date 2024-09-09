@@ -1,7 +1,7 @@
-import { afterEach, beforeEach, describe, it, vi } from 'vitest';
 import core from '@actions/core';
-import { main } from './main';
+import { afterEach, beforeEach, describe, it, vi } from 'vitest';
 import { mockAll, restoreAll } from './__tests__/mock-all';
+import { main } from './main';
 
 describe('main', () => {
   beforeEach(() => {

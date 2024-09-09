@@ -1,9 +1,9 @@
 import process from 'node:process';
-import { afterEach, describe, expect, it, vi } from 'vitest';
 import core from '@actions/core';
-import dedent from 'dedent';
 import exec from '@actions/exec';
+import dedent from 'dedent';
 import fs from 'fs-extra';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { configGit } from './config-git';
 
 describe('configGit', () => {

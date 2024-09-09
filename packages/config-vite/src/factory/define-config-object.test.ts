@@ -1,6 +1,6 @@
 import { describe, expectTypeOf, it } from 'vitest';
-import { defineConfigObject } from './define-config-object';
 import type { UserConfigVite, UserConfigVitest } from '~/types';
+import { defineConfigObject } from './define-config-object';
 
 describe('defineConfigSync', () => {
   it('default', () => {

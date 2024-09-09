@@ -2,11 +2,11 @@ import { expectTypeOf, it } from 'vitest';
 import type { Config } from 'stylelint';
 import autoConfig from './auto';
 import noneConfig from './none';
-import sassVueConfig from './sass-vue';
 import sassConfig from './sass';
-import tailwindSassVueConfig from './tailwind-sass-vue';
-import tailwindSassConfig from './tailwind-sass';
+import sassVueConfig from './sass-vue';
 import tailwindConfig from './tailwind';
+import tailwindSassConfig from './tailwind-sass';
+import tailwindSassVueConfig from './tailwind-sass-vue';
 import vueConfig from './vue';
 
 it('shareable configs', () => {

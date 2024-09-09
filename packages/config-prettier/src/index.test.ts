@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import prettier from 'prettier';
+import { describe, expect, it } from 'vitest';
 import prettierConfig from '.';
 
 describe('create config', () => {

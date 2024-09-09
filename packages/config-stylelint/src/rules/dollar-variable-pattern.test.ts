@@ -1,9 +1,9 @@
 import { assert, expectTypeOf } from 'vitest';
+import { describeLintAndFix, describeRule, scss } from '~/__tests__';
 import {
   dollarVariablePatternRule,
   dollarVariablePatternSCSS,
 } from './dollar-variable-pattern';
-import { describeLintAndFix, describeRule, scss } from '~/__tests__';
 
 describeRule(
   dollarVariablePatternRule, //

@@ -39,11 +39,11 @@ GITHUB_TOKEN=token
 Then you can use it in your script like this.
 
 ```ts
-import { config } from 'dotenv';
 import {
   getCommitInfo,
   getPullRequestInfo,
 } from '@culur/changesets-github-info';
+import { config } from 'dotenv';
 
 config();
 

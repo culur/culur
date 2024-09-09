@@ -1,5 +1,20 @@
 # @culur/config-stylelint
 
+## 1.1.1
+
+### Patch Changes
+
+- 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+    - `postcss@^8.4.45`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.6`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.1.0
 
 ### Minor Changes

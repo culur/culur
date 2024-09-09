@@ -1,5 +1,14 @@
 # @culur/config-tsup
 
+## 1.1.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+
 ## 1.1.3
 
 ### Patch Changes

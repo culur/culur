@@ -1,5 +1,22 @@
 # @culur/types
 
+## 1.1.0
+
+### Minor Changes
+
+- ⚙️ Chore: update description ([`2b72bc3`](https://github.com/culur/culur/commit/2b72bc3549b77b20a88764b326cb277e0b3bc58f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🎨 Style: format code ([`1a04795`](https://github.com/culur/culur/commit/1a04795a4a53c72b490bd2718a82ef6309853ea0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ❔ Update dependencies ([`45a31a4`](https://github.com/culur/culur/commit/45a31a415a478865e278e72a59b1f221c7f7388e)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `type-fest@^4.26.1`
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+
 ## 1.0.6
 
 ### Patch Changes

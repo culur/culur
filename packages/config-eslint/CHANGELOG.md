@@ -1,5 +1,28 @@
 # @culur/config-eslint
 
+## 1.1.0
+
+### Minor Changes
+
+- 🩹 Fix: update return type of `defineConfig` ([`b490ed9`](https://github.com/culur/culur/commit/b490ed99b9887dee0b98763adbb2e4de525d50e6)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🎨 Style: format code ([`1a04795`](https://github.com/culur/culur/commit/1a04795a4a53c72b490bd2718a82ef6309853ea0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ❔ Update dependencies ([`45a31a4`](https://github.com/culur/culur/commit/45a31a415a478865e278e72a59b1f221c7f7388e)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^3.4.1`
+  - `devDependencies`:
+    - `@types/node@^22.5.4`
+    - `@vue/compiler-sfc@^3.5.3`
+    - `eslint@^9.10.0`
+    - `type-fest@^4.26.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.0.6`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.0.7
 
 ### Patch Changes

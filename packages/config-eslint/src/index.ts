@@ -6,7 +6,7 @@ import { filenameRules, yamlYarnrcRules } from './rules';
 
 export default function defineConfig(
   ...[options = {}, ...userConfigs]: Parameters<typeof antfu>
-) {
+): ReturnType<typeof antfu> {
   const { hasVue } = defineHasPackages({ vue: !!options.vue });
 
   const config = antfu(

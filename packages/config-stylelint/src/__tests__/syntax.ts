@@ -7,5 +7,5 @@ type OverrideSyntax = Config['overrides'] extends (infer T)[] | undefined
 
 export const syntaxScss: OverrideSyntax = {
   files: ['*.scss', '**/*.scss'],
-  customSyntax: postcssScss,
+  customSyntax: postcssScss as unknown as OverrideSyntax['customSyntax'],
 };

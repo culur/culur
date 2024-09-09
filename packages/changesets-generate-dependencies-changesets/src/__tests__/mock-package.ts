@@ -1,5 +1,5 @@
-import { vi } from 'vitest';
 import fs from 'fs-extra';
+import { vi } from 'vitest';
 import type { PackageJson } from '@culur/types';
 import * as module from '../changes/get-diff-package-files';
 

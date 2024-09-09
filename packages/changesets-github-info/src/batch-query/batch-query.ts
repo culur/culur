@@ -1,7 +1,7 @@
 import process from 'node:process';
 import { keys } from '@culur/types';
-import dedent from 'dedent';
 import DataLoader from 'dataloader';
+import dedent from 'dedent';
 import { commit, pullRequest } from './batch-query.fragments';
 import type {
   BatchGithubInfoResponse,

@@ -1,6 +1,6 @@
 import { extname } from 'node:path';
-import type { Options } from 'prettier';
 import prettier from 'prettier';
+import type { Options } from 'prettier';
 import definePrettierConfig from './factory';
 
 const parserMapper: {

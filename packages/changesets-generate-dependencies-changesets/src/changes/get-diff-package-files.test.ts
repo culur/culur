@@ -1,8 +1,8 @@
-import { afterEach, describe, expect, it, vi } from 'vitest';
 import core from '@actions/core';
 import dedent from 'dedent';
-import { getDiffPackageFiles } from './get-diff-package-files';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockDiffFiles } from '~/__tests__/mock-exec';
+import { getDiffPackageFiles } from './get-diff-package-files';
 
 describe('getDiffPackageFiles', () => {
   afterEach(() => {

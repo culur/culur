@@ -1,5 +1,5 @@
-import { vi } from 'vitest';
 import exec from '@actions/exec';
+import { vi } from 'vitest';
 
 export function mockExecOutput(options: {
   diffFiles?: {

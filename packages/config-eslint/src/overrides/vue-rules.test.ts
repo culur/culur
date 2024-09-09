@@ -1,6 +1,6 @@
 import { assert, it } from 'vitest';
-import { vueRules } from './vue-rules';
 import { defineOverride } from '~/types';
+import { vueRules } from './vue-rules';
 
 it('should be valid rule', async () => {
   assert('partialConfig' in vueRules);

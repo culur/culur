@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getInput } from './get-input';
 import { mockInput } from '~/__tests__/mock-input';
+import { getInput } from './get-input';
 
 describe('getInput', () => {
   afterEach(() => {

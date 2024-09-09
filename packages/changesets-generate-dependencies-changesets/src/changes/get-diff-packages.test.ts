@@ -1,11 +1,11 @@
-import { afterEach, assert, describe, expect, it, vi } from 'vitest';
 import dedent from 'dedent';
-import { getDiffPackages } from './get-diff-packages';
+import { afterEach, assert, describe, expect, it, vi } from 'vitest';
+import { mockChangedLines } from '~/__tests__/mock-exec';
 import {
   mockDiffPackageFiles,
   mockPackageFile,
 } from '~/__tests__/mock-package';
-import { mockChangedLines } from '~/__tests__/mock-exec';
+import { getDiffPackages } from './get-diff-packages';
 
 describe('getDiffPackages', () => {
   afterEach(() => {

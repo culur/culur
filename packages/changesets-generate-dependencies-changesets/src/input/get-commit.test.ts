@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { getCommit } from './get-commit';
 import { mockCommitHash } from '~/__tests__/mock-exec';
+import { getCommit } from './get-commit';
 
 describe('getCommit', () => {
   afterEach(() => {

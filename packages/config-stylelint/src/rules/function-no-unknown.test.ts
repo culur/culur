@@ -1,9 +1,9 @@
 import { assert, expect } from 'vitest';
+import { describeLintAndFix, describeRule } from '~/__tests__';
 import {
   functionNoUnknown,
   functionNoUnknownRule,
 } from './function-no-unknown';
-import { describeLintAndFix, describeRule } from '~/__tests__';
 
 describeRule(
   functionNoUnknownRule,

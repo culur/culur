@@ -1,5 +1,5 @@
-import type viteTsconfigPaths from 'vite-tsconfig-paths';
 import type { ConfigEnv, UserConfig as UserConfigVite_ } from 'vite';
+import type viteTsconfigPaths from 'vite-tsconfig-paths';
 import type { UserConfig as UserConfigVitest_ } from 'vitest/config';
 
 export type Awaitable<T> = T | PromiseLike<T>;

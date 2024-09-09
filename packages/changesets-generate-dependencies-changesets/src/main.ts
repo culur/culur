@@ -1,10 +1,10 @@
 import exec from '@actions/exec';
+import { createChangeset } from './changes/create-changeset';
+import { getDiffPackages } from './changes/get-diff-packages';
 import { configGit } from './input/config-git';
 import { getBranches } from './input/get-branches';
-import { getInput } from './input/get-input';
-import { getDiffPackages } from './changes/get-diff-packages';
 import { getCommit } from './input/get-commit';
-import { createChangeset } from './changes/create-changeset';
+import { getInput } from './input/get-input';
 
 export async function main() {
   const input = getInput();

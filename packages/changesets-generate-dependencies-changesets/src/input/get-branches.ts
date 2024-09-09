@@ -1,7 +1,7 @@
 import process from 'node:process';
-import { minimatch } from 'minimatch';
 import core from '@actions/core';
 import github from '@actions/github';
+import { minimatch } from 'minimatch';
 import type { PullRequestEvent } from '@octokit/webhooks-types';
 import type { Input } from './get-input';
 

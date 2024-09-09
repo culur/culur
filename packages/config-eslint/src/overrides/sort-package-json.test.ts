@@ -1,7 +1,7 @@
 import { sortPackageJson as sortPackageJsonAntfuFunction } from '@antfu/eslint-config';
 import { assert, it } from 'vitest';
-import { sortPackageJson as sortPackageJsonLocalOverride } from './sort-package-json';
 import { defineOverride } from '~/types';
+import { sortPackageJson as sortPackageJsonLocalOverride } from './sort-package-json';
 
 it('should be valid rule', async () => {
   const [configAntfu] = await sortPackageJsonAntfuFunction();

@@ -1,10 +1,10 @@
 import { assert, expect } from 'vitest';
+import { describeLintAndFix, describeRule, syntaxScss } from '~/__tests__';
 import {
   atRuleNoUnknownCSS,
   atRuleNoUnknownRule,
   atRuleNoUnknownSCSS,
 } from './at-rule-no-unknown';
-import { describeLintAndFix, describeRule, syntaxScss } from '~/__tests__';
 
 describeRule(
   atRuleNoUnknownRule,

@@ -67,7 +67,7 @@
     "@types/node": "^22.5.4",
     "dotenv": "^16.4.5",
     "eslint": "^9.10.0",
-    "husky": "^9.1.5",
+    "husky": "^9.1.6",
     "markdownlint": "^0.35.0",
     "markdownlint-cli2": "^0.14.0",
     "nx": "19.6.5",

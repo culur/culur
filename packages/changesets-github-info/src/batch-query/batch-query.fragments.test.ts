@@ -1,7 +1,7 @@
+import type { GithubInfoRequest } from './batch-query.type';
 import { validate } from '@octokit/graphql-schema';
 import { describe, expect, it } from 'vitest';
 import { getQuery } from './batch-query';
-import type { GithubInfoRequest } from './batch-query.type';
 
 describe('validate query', () => {
   it.each<{ name: string; requests: GithubInfoRequest[] }>([

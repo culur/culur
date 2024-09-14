@@ -1,6 +1,6 @@
-import { describe, it } from 'vitest';
 import type { Packages } from '@culur/utils-packages';
 import type { Config, ConfigRuleSettings } from 'stylelint';
+import { describe, it } from 'vitest';
 import type {
   ConfigRulePrimaryOption,
   ConfigRuleSecondaryOptions,

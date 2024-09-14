@@ -1,5 +1,5 @@
-import { expectTypeOf, it } from 'vitest';
 import type { Options } from 'tsup';
+import { expectTypeOf, it } from 'vitest';
 import { cjs, esm, esm_cjs } from '.';
 
 it('config esm', () => {

@@ -1,4 +1,4 @@
-import { OverrideConfig } from '~/types';
+import type { OverrideConfig } from '~/types';
 
 export const importsRules: OverrideConfig = {
   name: 'antfu/imports/rules',

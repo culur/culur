@@ -1,13 +1,13 @@
-import process from 'node:process';
-import { keys } from '@culur/types';
-import DataLoader from 'dataloader';
-import dedent from 'dedent';
-import { commit, pullRequest } from './batch-query.fragments';
 import type {
   BatchGithubInfoResponse,
   GithubInfoRequest,
   GithubInfoRequestByRepo,
 } from './batch-query.type';
+import process from 'node:process';
+import { keys } from '@culur/types';
+import DataLoader from 'dataloader';
+import dedent from 'dedent';
+import { commit, pullRequest } from './batch-query.fragments';
 
 const getCommitOrPrQuery = (request: GithubInfoRequest) =>
   'commitHash' in request

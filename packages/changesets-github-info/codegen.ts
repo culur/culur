@@ -1,5 +1,5 @@
-import path from 'node:path';
 import type { CodegenConfig } from '@graphql-codegen/cli';
+import path from 'node:path';
 
 const graphqlFile = 'src/types/schema.operations.generated.ts';
 

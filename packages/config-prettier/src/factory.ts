@@ -1,6 +1,6 @@
+import type { Config } from 'prettier';
 import { platform } from 'node:os';
 import { defineObject } from '@culur/types';
-import type { Config } from 'prettier';
 
 export default function defineConfig(config: Config = {}): Config {
   const isWin = platform() === 'win32';

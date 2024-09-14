@@ -1,7 +1,7 @@
+import type { MockRecord } from './types';
 import * as githubInfo from '@culur/changesets-github-info';
 import { assert, vi } from 'vitest';
 import { getCommit, getPull, getUser } from './mock-links';
-import type { MockRecord } from './types';
 
 export const mockGithubInfo = (...records: MockRecord[]) => {
   vi.spyOn(githubInfo, 'getCommitInfo').mockImplementation(

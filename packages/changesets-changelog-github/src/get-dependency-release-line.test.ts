@@ -1,10 +1,10 @@
+import type { ModCompWithPackage, VersionType } from '@changesets/types';
+import type { MockRecord } from './__tests__/types';
 import parse from '@changesets/parse';
 import dedent from 'dedent';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import type { ModCompWithPackage, VersionType } from '@changesets/types';
 import { mockGithubInfo } from './__tests__/mock-github-info';
 import { getDependencyReleaseLine } from './get-dependency-release-line';
-import type { MockRecord } from './__tests__/types';
 
 function testGetDependencyReleaseLine(
   name: string,

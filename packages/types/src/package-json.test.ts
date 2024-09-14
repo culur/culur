@@ -1,5 +1,5 @@
-import { describe, expectTypeOf, it } from 'vitest';
 import type { PackageJson } from './package-json';
+import { describe, expectTypeOf, it } from 'vitest';
 
 describe('packageJson', () => {
   it('should be valid type', () => {

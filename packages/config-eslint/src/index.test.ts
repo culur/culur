@@ -1,5 +1,5 @@
-import { assert, expectTypeOf, it } from 'vitest';
 import type antfu from '@antfu/eslint-config';
+import { assert, expectTypeOf, it } from 'vitest';
 import defineConfig from '.';
 
 it('default config', async () => {

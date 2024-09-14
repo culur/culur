@@ -1,8 +1,8 @@
+import type { Packages } from '@culur/utils-packages';
+import type { Config } from 'stylelint';
 import { resolve } from 'node:path';
 import stylelint from 'stylelint';
 import { describe, expect, it } from 'vitest';
-import type { Packages } from '@culur/utils-packages';
-import type { Config } from 'stylelint';
 
 type LintAndFixCase = {
   code: string;

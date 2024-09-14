@@ -1,7 +1,7 @@
-import { defineConfig as defineConfigVite } from 'vite';
-import { defineConfig as defineConfigVitest } from 'vitest/config';
 import type { UserConfig as UserConfigVite_ } from 'vite';
 import type { UserConfig as UserConfigVitest_ } from 'vitest/config';
+import { defineConfig as defineConfigVite } from 'vite';
+import { defineConfig as defineConfigVitest } from 'vitest/config';
 import type { Options, UserConfig } from '~/types';
 import { defineConfigPlugins } from './options-plugins';
 import { defineConfigTest } from './options-vitest';

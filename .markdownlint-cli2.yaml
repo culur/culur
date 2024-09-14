@@ -3,10 +3,15 @@ $schema: https://unpkg.com/markdownlint-cli2@latest/schema/markdownlint-cli2-con
 globs:
   - '**/*.{md,markdown}'
 ignores:
+  - '**/.nx'
   - '**/coverage'
   - '**/dist'
   - '**/node_modules'
-  - '**/.nx'
+  # ignore projects that have custom lint and test scripts
+  - apps
+  - packages
+  - scripts
+  - templates
 
 config:
   extends: node_modules/markdownlint/style/prettier.json

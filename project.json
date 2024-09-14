@@ -1,0 +1,48 @@
+{
+  "$schema": "https://unpkg.com/nx@latest/schemas/project-schema.json",
+  "targets": {
+    "lint:md": {
+      "inputs": [
+        "{workspaceRoot}/.markdownlint-cli2.yaml",
+        "{workspaceRoot}/**/*.md",
+        "!{workspaceRoot}/apps/**/*",
+        "!{workspaceRoot}/packages/**/*",
+        "!{workspaceRoot}/scripts/**/*",
+        "!{workspaceRoot}/templates/**/*"
+      ]
+    },
+    "lint:es": {
+      "inputs": [
+        "{workspaceRoot}/eslint.config.mjs",
+        "{workspaceRoot}/**/*",
+        "!{workspaceRoot}/apps/**/*",
+        "!{workspaceRoot}/packages/**/*",
+        "!{workspaceRoot}/scripts/**/*",
+        "!{workspaceRoot}/templates/**/*"
+      ]
+    },
+    "lint:css": {
+      "inputs": [
+        "{workspaceRoot}/.stylelintignore",
+        "{workspaceRoot}/.stylelintrc.mjs",
+        "{workspaceRoot}/**/*.(vue|css|scss)",
+        "!{workspaceRoot}/apps/**/*",
+        "!{workspaceRoot}/packages/**/*",
+        "!{workspaceRoot}/scripts/**/*",
+        "!{workspaceRoot}/templates/**/*"
+      ]
+    },
+    "lint:prettier": {
+      "inputs": [
+        "{workspaceRoot}/.prettierignore",
+        "{workspaceRoot}/.prettierignore.project",
+        "{workspaceRoot}/.prettierrc.mjs",
+        "{workspaceRoot}/**/*",
+        "!{workspaceRoot}/apps/**/*",
+        "!{workspaceRoot}/packages/**/*",
+        "!{workspaceRoot}/scripts/**/*",
+        "!{workspaceRoot}/templates/**/*"
+      ]
+    }
+  }
+}

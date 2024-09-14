@@ -23,6 +23,7 @@ export const defineConfigTest = (
       reporter: ['text', 'html', 'json', 'lcov'],
       ...coverageOptions,
     },
+    passWithNoTests: true,
     ...testObject,
   };
 };

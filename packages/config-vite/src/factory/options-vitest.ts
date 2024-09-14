@@ -1,4 +1,4 @@
-import type { BaseCoverageOptions, TypecheckConfig } from 'vitest';
+import type { BaseCoverageOptions, TypecheckConfig } from 'vitest/node';
 import type { VitestInlineConfig } from '~/types';
 
 export const defineConfigTest = (

@@ -9,41 +9,55 @@ inputs:
 runs:
   using: composite
   steps:
-    #! Determine versions
-    - name: Determine versions
-      id: determine-versions
+    #! Determine configs
+    - name: 🔍 Determine configs
+      id: determine
       shell: bash
       run: |
-        echo "nodeVersion=$(jq -r .volta.node package.json)" >> $GITHUB_OUTPUT
+        echo "NODE_VERSION=$(jq -r .volta.node package.json)" >> $GITHUB_ENV
+        echo "PNPM_VERSION=$(jq -r .volta.pnpm package.json)" >> $GITHUB_ENV
+        echo "NX_CACHE_DIR=$(jq -r .cacheDirectory nx.json)" >> $GITHUB_ENV
+
+    #! Pnpm
+    - uses: pnpm/action-setup@v4
+      name: 📦 Setup pnpm
+      with:
+        version: ${{ env.PNPM_VERSION }}
+        run_install: false
 
     #! Node
     - uses: actions/setup-node@v4
+      name: 📦 Setup node
       with:
-        node-version: ${{ steps.determine-versions.outputs.nodeVersion }}
+        node-version: ${{ env.NODE_VERSION }}
         cache: pnpm
 
     #! Nx
-    - name: Cache nx build setup
+    - name: 💾 Nx set SHAs
+      if: ${{ !inputs.skip-nx-cache }}
+      uses: nrwl/nx-set-shas@v4
+
+    #! Cache nx
+    - name: 💾 Nx cache
+      if: ${{ !inputs.skip-nx-cache }}
       uses: actions/cache@v4
       with:
-        path: .nx/cache
-        key: ${{ runner.os }}-nx-${{ github.sha }}
+        path: ${{ env.NX_CACHE_DIR }}
+        key: |
+          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-${{ env.NX_HEAD }}
         restore-keys: |
+          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-${{ env.NX_BASE }}
+          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-
+          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-
           ${{ runner.os }}-nx-
 
-    #! Clear old nx cache
-    - name: Clear old nx cache
-      uses: ./.github/actions/clear-old-nx-cache
-      with:
-        size-in-mb: 10
-
     #! Before install
-    - name: Before install
+    - name: 📜 Before install
       if: ${{ inputs.before-install != '' }}
       shell: bash
       run: ${{ inputs.before-install }}
 
     #! Install
-    - name: Install Dependencies
+    - name: 📦 Install Dependencies
       shell: bash
       run: pnpm i

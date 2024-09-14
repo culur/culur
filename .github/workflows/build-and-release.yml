@@ -33,6 +33,12 @@ jobs:
       - name: 🐛 Test
         run: pnpm test
 
+      #! Clear old nx cache
+      - name: 💾 Clear old nx cache
+        uses: ./.github/actions/clear-old-nx-cache
+        with:
+          size-in-mb: 50
+
       #! Validate commit
       - name: 💬 Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'

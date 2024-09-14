@@ -1,3 +1,4 @@
+import type { Packages } from './define-has-packages';
 import { describe, expect, it } from 'vitest';
 import {
   defineHasPackages,
@@ -6,7 +7,6 @@ import {
   hasVue,
   updateDefaultPackages,
 } from '.';
-import type { Packages } from './define-has-packages';
 
 describe.each([
   { name: 'updateDefaultPackages' },

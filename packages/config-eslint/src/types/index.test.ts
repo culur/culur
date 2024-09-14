@@ -1,7 +1,7 @@
-import { expect, expectTypeOf, it } from 'vitest';
 import type { Awaitable, TypedFlatConfigItem } from '@antfu/eslint-config';
-import { defineOverride } from '.';
 import type { OverrideConfig } from '.';
+import { expect, expectTypeOf, it } from 'vitest';
+import { defineOverride } from '.';
 
 it.each<OverrideConfig>([
   {

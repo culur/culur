@@ -1,4 +1,4 @@
-export interface PullRequestFragment {
+export type PullRequestFragment = {
   __typename: 'PullRequest';
   title: string;
   url: string;
@@ -15,9 +15,9 @@ export interface PullRequestFragment {
     message: string;
     commitUrl: string;
   } | null;
-}
+};
 
-export interface CommitFragment {
+export type CommitFragment = {
   __typename: 'Commit';
   oid: string;
   message: string;
@@ -43,4 +43,4 @@ export interface CommitFragment {
         | null;
     } | null> | null;
   } | null;
-}
+};

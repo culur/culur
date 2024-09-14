@@ -1,10 +1,10 @@
+import type { MockRecord } from './__tests__/types';
 import parse from '@changesets/parse';
 import dedent from 'dedent';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockGithubInfo } from './__tests__/mock-github-info';
 import { defineMockRecord } from './__tests__/types';
 import { getReleaseLine } from './get-release-line';
-import type { MockRecord } from './__tests__/types';
 
 function testGetReleaseLine(
   name: string,

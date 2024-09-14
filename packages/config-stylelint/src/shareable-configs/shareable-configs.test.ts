@@ -1,5 +1,5 @@
-import { expectTypeOf, it } from 'vitest';
 import type { Config } from 'stylelint';
+import { expectTypeOf, it } from 'vitest';
 import autoConfig from './auto';
 import noneConfig from './none';
 import sassConfig from './sass';

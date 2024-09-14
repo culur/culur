@@ -1,9 +1,9 @@
+import type { Input } from './get-input';
 import process from 'node:process';
 import core from '@actions/core';
 import exec from '@actions/exec';
 import dedent from 'dedent';
 import fs from 'fs-extra';
-import type { Input } from './get-input';
 
 export async function configGit({ input }: { input: Input }) {
   const githubToken = process.env.GITHUB_TOKEN;

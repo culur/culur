@@ -1,8 +1,8 @@
+import type { GetReleaseLine } from '@changesets/types';
 import {
   getCommitInfo,
   getPullRequestInfo,
 } from '@culur/changesets-github-info';
-import type { GetReleaseLine } from '@changesets/types';
 import { getEmoji } from './get-emoji';
 
 export const getReleaseLine: GetReleaseLine = async (

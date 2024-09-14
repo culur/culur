@@ -1,5 +1,5 @@
-import { describe, expectTypeOf, it } from 'vitest';
 import type { ConfigEnv } from 'vite';
+import { describe, expectTypeOf, it } from 'vitest';
 import type { UserConfigVite } from '~/types';
 import { defineConfig } from './define-config';
 

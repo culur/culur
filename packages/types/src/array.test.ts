@@ -1,5 +1,5 @@
-import { describe, expectTypeOf, it } from 'vitest';
 import type { ObjectEntries } from 'type-fest/source/entries';
+import { describe, expectTypeOf, it } from 'vitest';
 import { entries, keys } from './array';
 
 describe('entries', () => {

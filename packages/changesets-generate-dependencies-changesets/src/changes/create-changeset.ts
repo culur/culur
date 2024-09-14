@@ -1,8 +1,8 @@
+import type { DiffPackages } from './get-diff-packages';
 import core from '@actions/core';
 import { entries } from '@culur/types';
 import fs from 'fs-extra';
 import type { Commit } from '~/input/get-commit';
-import type { DiffPackages } from './get-diff-packages';
 
 export async function createChangeset({
   diffPackageFiles,

@@ -1,5 +1,5 @@
-import { config } from 'dotenv';
 import type { ChangelogFunctions } from '@changesets/types';
+import { config } from 'dotenv';
 import { getDependencyReleaseLine } from './get-dependency-release-line';
 import { getReleaseLine } from './get-release-line';
 

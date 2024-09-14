@@ -55,9 +55,8 @@
     }
   },
   "files": [
-    "!**/*.json",
     "!**/*.test.*",
-    ".stylelintrc.js",
+    ".stylelintignore",
     "CHANGELOG.md",
     "LICENSE",
     "README.md",
@@ -87,22 +86,14 @@
     "stylelint-selector-bem-pattern": "^4.0.1"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.4",
-    "@culur/config-typescript": "1.0.5",
-    "@culur/config-vite": "1.0.7",
-    "@types/node": "^22.5.5",
-    "@vitest/coverage-v8": "^2.1.1",
-    "@vitest/ui": "^2.1.1",
+    "@culur/config-tsup": "workspace:^",
+    "@culur/config-typescript": "workspace:^",
+    "@culur/config-vite": "workspace:^",
     "dedent": "^1.5.3",
     "postcss": "^8.4.45",
     "postcss-html": "^1.7.0",
     "postcss-sass": "^0.5.0",
-    "postcss-scss": "^4.0.9",
-    "rimraf": "^6.0.1",
-    "stylelint": "^16.9.0",
-    "tsup": "^8.2.4",
-    "typescript": "^5.6.2",
-    "vitest": "^2.1.1"
+    "postcss-scss": "^4.0.9"
   },
   "peerDependencies": {
     "stylelint": ">=16.0.0"

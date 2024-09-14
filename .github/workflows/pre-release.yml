@@ -25,15 +25,15 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: yarn build --skip-nx-cache
+        run: pnpm build --skip-nx-cache
 
       #! Lint
       - name: 🧹 Lint
-        run: yarn lint
+        run: pnpm lint
 
       #! Test
       - name: 🐛 Test
-        run: yarn test
+        run: pnpm test
 
       #! Publish pre-release
       - name: 🚀 Publish pre-release
@@ -45,5 +45,5 @@ jobs:
           cat << EOF > "$HOME/.npmrc"
             //registry.npmjs.org/:_authToken=$NPM_TOKEN
           EOF
-          yarn changeset version --no-git-tag --snapshot dev
-          yarn changeset publish --no-git-tag --snapshot dev --tag dev
+          pnpm changeset version --no-git-tag --snapshot dev
+          pnpm changeset publish --no-git-tag --snapshot dev --tag dev

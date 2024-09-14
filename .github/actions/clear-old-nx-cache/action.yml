@@ -1,5 +1,5 @@
 name: clear-old-nx-cache
-description: Prepare node, yarn and all dependencies
+description: Prepare node, pnpm and all dependencies
 
 inputs:
   size-in-mb:

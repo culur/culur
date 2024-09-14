@@ -13,34 +13,28 @@
   "author": "culur <culur.net@gmail.com>",
   "license": "MIT",
   "type": "module",
-  "workspaces": [
-    "app/**",
-    "packages/**",
-    "scripts/**",
-    "templates/**"
-  ],
   "scripts": {
     "🚀 ----- NX ----- 🚀": "",
     "clean": "nx run-many -t clean",
     "gen": "nx run-many -t gen",
     "build": "nx run-many -t build",
     "test": "nx run-many -t test",
-    "fix": "nx run-many -t fix && yarn fix:all",
-    "lint": "nx run-many -t lint && yarn lint:all",
+    "fix": "nx run-many -t fix && pnpm fix:all",
+    "lint": "nx run-many -t lint && pnpm lint:all",
     "🦋 ----- CHANGESET ----- 🦋": "",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version && yarn install --mode=update-lockfile",
+    "changeset:version": "changeset version && pnpm install --mode=update-lockfile",
     "🧹 ------- FORMAT ------- 🧹": "",
-    "fix:all": "yarn fix:es && yarn fix:md && yarn fix:prettier",
+    "fix:all": "pnpm fix:es && pnpm fix:md && pnpm fix:prettier",
     "fix:es": "eslint --fix",
     "fix:md": "markdownlint-cli2 . --fix",
-    "fix:prettier": "prettier '**' --write",
-    "lint:all": "yarn lint:es && yarn lint:md && yarn lint:prettier",
+    "fix:prettier": "prettier \"**\" --write",
+    "lint:all": "pnpm lint:es && pnpm lint:md && pnpm lint:prettier",
     "lint:es": "eslint",
     "lint:es-in": "eslint-config-inspector",
     "lint:md": "markdownlint-cli2 .",
-    "lint:prettier": "prettier '**' --list-different",
+    "lint:prettier": "prettier \"**\" --list-different",
     "🔃 ----- LIFE CYCLE ----- 🔃": "",
     "prepare": "husky",
     "prepack": "pinst --disable",
@@ -48,13 +42,13 @@
   },
   "volta": {
     "node": "20.17.0",
-    "yarn": "4.4.1"
+    "pnpm": "9.10.0"
   },
   "engines": {
     "node": ">=20",
-    "yarn": "4.4.1"
+    "pnpm": "9.10.0"
   },
-  "packageManager": "yarn@4.4.1",
+  "packageManager": "pnpm@9.10.0",
   "devDependencies": {
     "@changesets/cli": "^2.27.8",
     "@commitlint/cli": "^19.4.1",

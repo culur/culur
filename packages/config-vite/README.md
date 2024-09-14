@@ -26,6 +26,9 @@ Add `@culur/config-vite` dependency to your project.
 # Using npm
 npm install @culur/config-vite --save-dev
 
+# Using pnpm
+pnpm install @culur/config-vite --dev
+
 # Using yarn
 yarn add @culur/config-vite --dev
 ```

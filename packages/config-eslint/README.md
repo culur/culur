@@ -26,6 +26,9 @@ Add `@culur/config-eslint` dependency to your project.
 # Using npm
 npm install @culur/config-eslint --save-dev
 
+# Using pnpm
+pnpm install @culur/config-eslint --dev
+
 # Using yarn
 yarn add @culur/config-eslint --dev
 ```

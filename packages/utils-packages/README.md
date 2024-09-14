@@ -28,6 +28,9 @@ Add `@culur/utils-packages` dependency to your project.
 # Using npm
 npm install @culur/utils-packages --save-dev
 
+# Using pnpm
+pnpm install @culur/utils-packages --dev
+
 # Using yarn
 yarn add @culur/utils-packages --dev
 ```

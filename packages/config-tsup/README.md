@@ -46,6 +46,9 @@ Add `@culur/config-tsup` dependency to your project.
 # Using npm
 npm install @culur/config-tsup --save-dev
 
+# Using pnpm
+pnpm install @culur/config-tsup --dev
+
 # Using yarn
 yarn add @culur/config-tsup --dev
 ```

@@ -28,6 +28,9 @@ Add `@culur/config-typescript` dependency to your project.
 # Using npm
 npm install @culur/config-typescript --save-dev
 
+# Using pnpm
+pnpm install @culur/config-typescript --dev
+
 # Using yarn
 yarn add @culur/config-typescript --dev
 ```

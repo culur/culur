@@ -30,6 +30,10 @@ jobs:
       - name: 🛠️ Build
         run: pnpm build
 
+      #! Clear old nx cache
+      - name: 💾 Clear old nx cache
+        uses: ./.github/actions/clear-old-nx-cache
+
       #! Generate changesets
       - name: 🦋 Generate changesets
         uses: ./packages/changesets-generate-dependencies-changesets/

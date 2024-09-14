@@ -35,7 +35,6 @@
     }
   },
   "files": [
-    "!**/*.json",
     "!**/*.test.*",
     "CHANGELOG.md",
     "LICENSE",
@@ -64,18 +63,11 @@
     "minimatch": "^10.0.1"
   },
   "devDependencies": {
-    "@culur/config-tsup": "1.1.4",
-    "@culur/config-typescript": "1.0.5",
-    "@culur/config-vite": "1.0.7",
-    "@culur/types": "1.1.0",
+    "@culur/config-tsup": "workspace:*",
+    "@culur/config-typescript": "workspace:*",
+    "@culur/config-vite": "workspace:*",
+    "@culur/types": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^22.5.5",
-    "@vitest/coverage-v8": "^2.1.1",
-    "@vitest/ui": "^2.1.1",
-    "rimraf": "^6.0.1",
-    "tsup": "^8.2.4",
-    "type-fest": "^4.26.1",
-    "typescript": "^5.6.2",
-    "vitest": "^2.1.1"
+    "type-fest": "^4.26.1"
   }
 }

@@ -4,7 +4,7 @@
   "extends": ["config:recommended"],
   "baseBranches": ["dev"],
   "labels": ["dependencies"],
-  "postUpdateOptions": ["yarnDedupeHighest"],
+  "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
       "rangeStrategy": "bump",

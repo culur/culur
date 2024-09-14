@@ -1,0 +1,92 @@
+# Dependency directories
+bower_components
+node_modules
+jspm_packages
+
+# Build
+dist
+build
+
+# Coverage
+lib-cov
+coverage
+.nyc_output
+
+# Git
+.gitattributes
+.gitignore
+
+# LICENSE
+LICENSE
+
+# Env
+.env
+.env.build
+.env.test
+
+# Package manager: npm, pnpm & yarn
+.npm
+.npmrc
+.yarn
+.yarn-integrity
+.yarnclean
+*.tgz
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+
+# Linter
+.browserslistrc
+.editorconfig
+.eslintignore
+.markdownlintignore
+.prettierignore
+.stylelintignore
+
+# Bash & XML
+*.sh
+*.xml
+
+# Fonts & Images
+*.svg
+*.ttf
+*.woff
+
+*.jpg
+*.png
+*.gif
+*.ico
+
+# Next & Nuxt
+.nuxt
+.next
+
+# Husky
+.husky/*
+.gitkeep
+
+# nx
+.nx
+
+# style (ignore sass)
+*.sass
+
+# Vue Generated
+auto-imports.d.ts
+components.d.ts
+typed-router.d.ts
+
+# workspace
+.prettierignore.project
+
+# projects
+# ignore projects that have custom lint and test scripts
+apps/*/**
+packages/*/**
+scripts/*/**

@@ -21,6 +21,19 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
 
+  //! file associations
+  "files.associations": {
+    ".prettierignore.project": "ignore"
+  },
+  "vsicons.associations.files": [
+    {
+      "icon": "prettier",
+      "extensions": [".prettierignore.project"],
+      "filename": true,
+      "format": "svg"
+    }
+  ],
+
   //! Eslint
   "eslint.workingDirectories": [
     { "pattern": "/apps/*/" },

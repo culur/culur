@@ -6,8 +6,51 @@
     }
   },
   "targetDefaults": {
-    "clean": {},
-    "lint": {},
+    "lint:md": {
+      "inputs": [
+        "{workspaceRoot}/.markdownlint-cli2.yaml",
+        "{projectRoot}/.markdownlint-cli2.yaml",
+        "{projectRoot}/**/*.md",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
+    "lint:es": {
+      "inputs": [
+        "{workspaceRoot}/eslint.config.mjs",
+        "{projectRoot}/eslint.config.mjs",
+        "{projectRoot}/**/*",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
+    "lint:css": {
+      "inputs": [
+        "{workspaceRoot}/.stylelintignore",
+        "{workspaceRoot}/.stylelintrc.mjs",
+        "{projectRoot}/.stylelintignore",
+        "{projectRoot}/.stylelintrc.mjs",
+        "{projectRoot}/**/*.(vue|css|scss)",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
+    "lint:prettier": {
+      "inputs": [
+        "{workspaceRoot}/.prettierignore",
+        "{workspaceRoot}/.prettierignore.project",
+        "{workspaceRoot}/.prettierrc.mjs",
+        "{projectRoot}/.prettierignore",
+        "{projectRoot}/.prettierrc.mjs",
+        "{projectRoot}/**/*",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
     "test": {
       "dependsOn": ["build", "^build"],
       "outputs": ["{projectRoot}/coverage"],
@@ -29,5 +72,13 @@
     }
   },
   "defaultBase": "dev",
-  "cacheDirectory": ".nx/cache"
+  "cacheDirectory": ".nx/cache",
+  "plugins": [
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint:es"
+      }
+    }
+  ]
 }

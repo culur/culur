@@ -48,6 +48,9 @@ Add `@culur/config-stylelint` dependency to your project.
 # Using npm
 npm install @culur/config-stylelint --save-dev
 
+# Using pnpm
+pnpm install @culur/config-stylelint --dev
+
 # Using yarn
 yarn add @culur/config-stylelint --dev
 ```

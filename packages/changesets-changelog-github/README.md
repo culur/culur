@@ -87,6 +87,9 @@ Add `@culur/changesets-changelog-github` dependency to your project.
 # Using npm
 npm install @culur/changesets-changelog-github --save-dev
 
+# Using pnpm
+pnpm install @culur/changesets-changelog-github --dev
+
 # Using yarn
 yarn add @culur/changesets-changelog-github --dev
 ```

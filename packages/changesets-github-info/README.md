@@ -24,6 +24,9 @@ Add `@culur/changesets-github-info` dependency to your project.
 # Using npm
 npm install @culur/changesets-github-info
 
+# Using pnpm
+pnpm install @culur/changesets-github-info
+
 # Using yarn
 yarn add @culur/changesets-github-info
 ```

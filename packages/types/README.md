@@ -27,6 +27,9 @@ Add `@culur/types` dependency to your project.
 # Using npm
 npm install @culur/types
 
+# Using pnpm
+pnpm install @culur/types
+
 # Using yarn
 yarn add @culur/types
 ```

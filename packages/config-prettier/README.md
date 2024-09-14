@@ -27,6 +27,9 @@ Add `@culur/config-prettier` dependency to your project.
 # Using npm
 npm install @culur/config-prettier --save-dev
 
+# Using pnpm
+pnpm install @culur/config-prettier --dev
+
 # Using yarn
 yarn add @culur/config-prettier --dev
 ```

@@ -1,6 +1,6 @@
 import antfu from '@antfu/eslint-config';
 import { defineHasPackages } from '@culur/utils-packages';
-import { sortPackageJson, vueRules } from './overrides';
+import { importsRules, sortPackageJson, vueRules } from './overrides';
 import { filenameRules, yamlYarnrcRules } from './rules';
 import { defineOverride } from './types';
 
@@ -21,6 +21,7 @@ export default function defineConfig(
     ...userConfigs,
   );
 
+  config.override(...defineOverride(importsRules));
   config.override(...defineOverride(sortPackageJson));
 
   if (hasVue()) {

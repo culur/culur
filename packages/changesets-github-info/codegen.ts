@@ -21,9 +21,9 @@ const config: CodegenConfig = {
       hooks: {
         afterOneFileWrite: [
           [
-            `yarn --cwd ../.. prettier "${path.resolve(__dirname, graphqlFile)}/" --write`,
+            `pnpm --dir ../.. exec prettier "${path.resolve(__dirname, graphqlFile)}/" --write`,
             '&&',
-            `yarn --cwd ../.. eslint "${path.resolve(__dirname, graphqlFile)}" --fix`,
+            `pnpm --dir ../.. exec eslint "${path.resolve(__dirname, graphqlFile)}" --fix`,
             '&&',
             'echo',
           ].join(' '),

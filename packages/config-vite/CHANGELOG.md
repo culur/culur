@@ -1,5 +1,23 @@
 # @culur/config-vite
 
+## 1.1.0
+
+### Minor Changes
+
+- 🔨 Move some `devDependencies` to root `package.json` & update `files`, `scripts` ([`20be1dc`](https://github.com/culur/culur/commit/20be1dc915fd9369a848e8ada356099bfa942ea7)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🔨 Migrate to `pnpm` ([`83be594`](https://github.com/culur/culur/commit/83be59407b83f4d6e84406f19e1d14b4d7660c15)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update all dependencies ([`55bb525`](https://github.com/culur/culur/commit/55bb525f6974895b29cb3c9df967cb2cc90a8cd8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📝 Docs: add `pnpm` into the installation section ([`3ea3544`](https://github.com/culur/culur/commit/3ea3544f1c800f61b1f9aca4c74824f9337d0099)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🩹 Fix: import some types from `vitest/node` instead of `vitest` ([`ab75f24`](https://github.com/culur/culur/commit/ab75f244475156c335a170346ccb31a382a80e00)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Set `test.passWithNoTests = true` ([`723bac5`](https://github.com/culur/culur/commit/723bac5e565fd47299354375cd24e863f07d9a49)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.0.7
 
 ### Patch Changes

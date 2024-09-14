@@ -1,20 +1,16 @@
 import type { ModCompWithPackage, VersionType } from '@changesets/types';
-import type { MockRecord } from './__tests__/types';
 import parse from '@changesets/parse';
 import dedent from 'dedent';
-import { afterEach, describe, expect, it, vi } from 'vitest';
-import { mockGithubInfo } from './__tests__/mock-github-info';
+import { describe, expect, it } from 'vitest';
 import { getDependencyReleaseLine } from './get-dependency-release-line';
 
 function testGetDependencyReleaseLine(
   name: string,
   {
-    mockRecords,
     pullRequest: { repo },
     dependenciesChangesets,
     expectReleaseLine,
   }: {
-    mockRecords: MockRecord[];
     pullRequest: { repo: string };
     dependenciesChangesets: {
       packageName: string;
@@ -27,8 +23,6 @@ function testGetDependencyReleaseLine(
   },
 ) {
   it(name, async () => {
-    mockGithubInfo(...mockRecords);
-
     const changesets = dependenciesChangesets.map(c => ({
       ...parse(dedent`
         ---
@@ -65,10 +59,6 @@ function testGetDependencyReleaseLine(
   });
 }
 
-afterEach(() => {
-  vi.restoreAllMocks();
-});
-
 describe('invalid options', () => {
   it.each([null, {}])('options = %s', async options => {
     await expect(() => getDependencyReleaseLine([], [], options)).rejects
@@ -80,21 +70,12 @@ describe('invalid options', () => {
 });
 
 testGetDependencyReleaseLine('empty', {
-  mockRecords: [],
   pullRequest: { repo: 'culur/culur' },
   dependenciesChangesets: [],
   expectReleaseLine: '',
 });
 
 testGetDependencyReleaseLine('default', {
-  mockRecords: [
-    {
-      repo: 'culur/culur',
-      user: 'culur',
-      commitHash: 'abcd123',
-      commitMessage: 'feat: new feature',
-    },
-  ],
   pullRequest: { repo: 'culur/culur' },
   dependenciesChangesets: [
     {
@@ -111,14 +92,6 @@ testGetDependencyReleaseLine('default', {
 });
 
 testGetDependencyReleaseLine('default with homepage', {
-  mockRecords: [
-    {
-      repo: 'culur/culur',
-      user: 'culur',
-      commitHash: 'abcd123',
-      commitMessage: 'feat: new feature',
-    },
-  ],
   pullRequest: { repo: 'culur/culur' },
   dependenciesChangesets: [
     {

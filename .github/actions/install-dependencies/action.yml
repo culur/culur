@@ -1,5 +1,5 @@
 name: Install dependencies
-description: Prepare node, yarn and all dependencies
+description: Prepare node, pnpm and all dependencies
 inputs:
   before-install:
     description: before install script
@@ -20,7 +20,7 @@ runs:
     - uses: actions/setup-node@v4
       with:
         node-version: ${{ steps.determine-versions.outputs.nodeVersion }}
-        cache: yarn
+        cache: pnpm
 
     #! Nx
     - name: Cache nx build setup
@@ -46,4 +46,4 @@ runs:
     #! Install
     - name: Install Dependencies
       shell: bash
-      run: yarn
+      run: pnpm i

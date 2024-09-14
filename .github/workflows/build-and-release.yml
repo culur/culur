@@ -23,24 +23,24 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: yarn build
+        run: pnpm build
 
       #! Lint
       - name: 🧹 Lint
-        run: yarn lint
+        run: pnpm lint
 
       #! Test
       - name: 🐛 Test
-        run: yarn test
+        run: pnpm test
 
       #! Validate commit
       - name: 💬 Validate current commit (last commit) with commitlint
         if: github.event_name == 'push'
-        run: yarn commitlint --from origin/main --to HEAD --verbose
+        run: pnpm commitlint --from origin/main --to HEAD --verbose
 
       - name: 💬 Validate PR commits with commitlint
         if: github.event_name == 'pull_request'
-        run: yarn commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+        run: pnpm commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
 
       #! Find coverage files
       - name: 🔎 Find coverage files
@@ -81,7 +81,7 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: yarn build
+        run: pnpm build
 
       #! Create release pull request or publish to npm
       - name: 🚀 Create release pull request or publish to npm
@@ -91,8 +91,8 @@ jobs:
           title: 'chore: version packages'
           commit: 'chore: version packages'
           branch: main
-          version: yarn changeset:version
-          publish: yarn changeset:publish
+          version: pnpm changeset:version
+          publish: pnpm changeset:publish
         env:
           # Only release on main branch
           NPM_TOKEN: ${{ github.ref == 'refs/heads/main' && secrets.NPM_TOKEN || '' }}

@@ -28,7 +28,7 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: yarn build
+        run: pnpm build
 
       #! Generate changesets
       - name: 🦋 Generate changesets

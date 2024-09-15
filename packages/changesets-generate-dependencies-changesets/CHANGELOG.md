@@ -1,5 +1,15 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.0
+
+### Minor Changes
+
+- 🔨 Move some `devDependencies` to root `package.json` & update `files`, `scripts` ([`20be1dc`](https://github.com/culur/culur/commit/20be1dc915fd9369a848e8ada356099bfa942ea7)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🔨 Migrate to `pnpm` ([`83be594`](https://github.com/culur/culur/commit/83be59407b83f4d6e84406f19e1d14b4d7660c15)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update all dependencies ([`55bb525`](https://github.com/culur/culur/commit/55bb525f6974895b29cb3c9df967cb2cc90a8cd8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.4
 
 ### Patch Changes

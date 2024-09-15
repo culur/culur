@@ -1,5 +1,24 @@
 # @culur/config-stylelint
 
+## 1.2.0
+
+### Minor Changes
+
+- 🔨 Move some `devDependencies` to root `package.json` & update `files`, `scripts` ([`20be1dc`](https://github.com/culur/culur/commit/20be1dc915fd9369a848e8ada356099bfa942ea7)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🔨 Migrate to `pnpm` ([`83be594`](https://github.com/culur/culur/commit/83be59407b83f4d6e84406f19e1d14b4d7660c15)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update all dependencies ([`55bb525`](https://github.com/culur/culur/commit/55bb525f6974895b29cb3c9df967cb2cc90a8cd8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📝 Docs: add `pnpm` into the installation section ([`3ea3544`](https://github.com/culur/culur/commit/3ea3544f1c800f61b1f9aca4c74824f9337d0099)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Feat: update `.stylelintignore` ([`174f30b`](https://github.com/culur/culur/commit/174f30b061eb97c6dc8e114e24c9f7060008e311)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.1.1
 
 ### Patch Changes

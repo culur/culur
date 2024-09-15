@@ -1,5 +1,24 @@
 # @culur/changesets-changelog-github
 
+## 1.1.0
+
+### Minor Changes
+
+- 🔨 Move some `devDependencies` to root `package.json` & update `files`, `scripts` ([`20be1dc`](https://github.com/culur/culur/commit/20be1dc915fd9369a848e8ada356099bfa942ea7)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🔨 Migrate to `pnpm` ([`83be594`](https://github.com/culur/culur/commit/83be59407b83f4d6e84406f19e1d14b4d7660c15)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update all dependencies ([`55bb525`](https://github.com/culur/culur/commit/55bb525f6974895b29cb3c9df967cb2cc90a8cd8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📝 Docs: add `pnpm` into the installation section ([`3ea3544`](https://github.com/culur/culur/commit/3ea3544f1c800f61b1f9aca4c74824f9337d0099)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🚨 Test: update unit test ([`6e8c42f`](https://github.com/culur/culur/commit/6e8c42f4fcf2b890ad3f1e70d7d5c95c1e663fe5)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.0`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.0.4
 
 ### Patch Changes

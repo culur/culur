@@ -13,5 +13,6 @@ export const configCss = (packages: Partial<Packages>): Config => ({
     ...declarationBlockNoRedundantLonghandProperties,
     ...functionNoUnknown(packages),
     ...order(packages),
+    'declaration-empty-line-before': null,
   },
 });

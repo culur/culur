@@ -30,73 +30,51 @@ interface SecondaryOptions {
   unspecified?: 'top' | 'bottom' | 'ignore';
 }
 
-/**
- * https://sass-lang.com/documentation/at-rules
- */
-const atRuleScssImport: PrimaryOption = [
-  { type: 'at-rule', name: 'use' },
-  { type: 'at-rule', name: 'forward' },
-  { type: 'at-rule', name: 'import' },
-];
-const atRuleScss: PrimaryOption = [
-  { type: 'at-rule', name: 'function' },
-  { type: 'at-rule', name: 'mixin' },
-  { type: 'at-rule', name: 'extend' },
-  { type: 'at-rule', name: 'include' },
-  { type: 'at-rule', name: 'at-root' },
-];
-
-const variables: PrimaryOption = [
-  'dollar-variables', // $variable
-  'at-variables', // @variable
-  'custom-properties', // --property: 10px
-];
-
-/**
- * https://tailwindcss.com/docs/functions-and-directives
- */
-const atRuleTailwind: PrimaryOption = [
-  { type: 'at-rule', name: 'tailwind' },
-  { type: 'at-rule', name: 'layer' },
-  { type: 'at-rule', name: 'apply' },
-  { type: 'at-rule', name: 'config' },
-];
-
-/**
- * https://v2.tailwindcss.com/docs/functions-and-directives
- *
- * backwards compatible for v2
- */
-const atRuleTailwindV2: PrimaryOption = [
-  { type: 'at-rule', name: 'variants' },
-  { type: 'at-rule', name: 'responsive' },
-  { type: 'at-rule', name: 'screen' },
-];
-
-/**
- * Nested rules (e.g. a { span {} })
- */
-const rules: PrimaryOption = [
-  {
-    type: 'rule',
-    selector: /^&::[\w-]+/,
-  },
-  'rules',
-];
+const definePrimaryOption = (
+  ...options: (PrimaryOption[number] | false | undefined)[]
+) => options.filter((option): option is PrimaryOption[number] => !!option);
 
 export const orderRule = (packages: Partial<Packages>) =>
   defineRule<PrimaryOption, SecondaryOptions>([
-    [
-      ...(packages.sass ? atRuleScssImport : []),
-      ...(packages.tailwind ? atRuleTailwind : []),
-      ...variables,
-      ...(packages.sass ? atRuleScss : []),
-      ...(packages.tailwind ? atRuleTailwindV2 : []),
-      'at-rules',
-      'less-mixins',
-      'declarations',
-      ...rules,
-    ],
+    definePrimaryOption(
+      //! import
+      packages.sass && { type: 'at-rule', name: 'use' }, //            scss:        @use 'path/path';
+      packages.sass && { type: 'at-rule', name: 'forward' }, //        scss:        @forward 'path/path';
+      packages.sass && { type: 'at-rule', name: 'import' }, //         scss:        @import 'path/path';
+
+      //! root
+      packages.tailwind && { type: 'at-rule', name: 'config' }, //     tailwind v3: @config 'tailwind.custom.config.js'
+      packages.tailwind && { type: 'at-rule', name: 'tailwind' }, //   tailwind v3: @tailwind base;
+      packages.tailwind && { type: 'at-rule', name: 'layer' }, //      tailwind v3: @layer base {}
+
+      //! variables
+      'dollar-variables', //                                           css:         $variable: 10px;
+      'at-variables', //                                               css:         @variable: 10px;
+      { type: 'at-rule', hasBlock: false }, //                         css:         @variable: 10px;
+      'custom-properties', //                                          css:         --property: 10px;
+
+      //! functions, methods
+      packages.sass && { type: 'at-rule', name: 'function' }, //       scss:        @function sum() {}
+      packages.sass && { type: 'at-rule', name: 'mixin' }, //          scss:        @mixin mixin-name {}
+
+      //! declarations
+      packages.sass && { type: 'at-rule', name: 'extend' }, //         scss:        @extend .class-name;
+      packages.sass && { type: 'at-rule', name: 'include' }, //        scss:        @include mixin-name;
+      packages.tailwind && { type: 'at-rule', name: 'apply' }, //      tailwind v3: @apply p-3;
+      'less-mixins', //                                                less:        .mixin();
+      'declarations', //                                               css:         display: block;
+
+      //! block rules
+      { type: 'rule', selector: /^&::[\w-]+/ }, //                     css:         &::after {}
+      'rules', //                                                      css:         child-component {}
+
+      //! blocks nested
+      packages.sass && { type: 'at-rule', name: 'at-root' }, //        scss:        @at-root selector { /* content */ }
+      packages.tailwind && { type: 'at-rule', name: 'responsive' }, // tailwind v2: @responsive {}
+      packages.tailwind && { type: 'at-rule', name: 'variants' }, //   tailwind v2: @variants hover {}
+      packages.tailwind && { type: 'at-rule', name: 'screen' }, //     tailwind v2: @screen sm {}
+      { type: 'at-rule', hasBlock: true }, //                          css:         @media () {}
+    ),
     {
       unspecified: 'bottom',
     },

@@ -5,10 +5,10 @@ import { order, orderRule } from './order';
 describeRule(
   orderRule,
   [
-    { tailwind: false, sass: false, length: 8 },
-    { tailwind: true, sass: false, length: 15 },
-    { tailwind: false, sass: true, length: 16 },
-    { tailwind: true, sass: true, length: 23 },
+    { tailwind: false, sass: false, length: 9 },
+    { tailwind: true, sass: false, length: 16 },
+    { tailwind: false, sass: true, length: 17 },
+    { tailwind: true, sass: true, length: 24 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));
@@ -33,8 +33,8 @@ describeLintAndFix(
       code: scss`
         a {
           $variable: 1px;
-          --property: 3px;
           @variable: 2px;
+          --property: 3px;
           width: 4px;
         }
       `,

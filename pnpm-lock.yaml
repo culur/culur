@@ -97,7 +97,7 @@ importers:
         version: 16.9.0(typescript@5.6.2)
       tsup:
         specifier: ^8.3.0
-        version: 8.3.0(jiti@1.21.6)(postcss@8.4.45)(typescript@5.6.2)(yaml@2.5.1)
+        version: 8.3.0(jiti@1.21.6)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
       typescript:
         specifier: ^5.6.2
         version: 5.6.2
@@ -303,7 +303,7 @@ importers:
         version: 36.0.1(stylelint@16.9.0(typescript@5.6.2))
       stylelint-config-standard-scss:
         specifier: ^13.1.0
-        version: 13.1.0(postcss@8.4.45)(stylelint@16.9.0(typescript@5.6.2))
+        version: 13.1.0(postcss@8.4.47)(stylelint@16.9.0(typescript@5.6.2))
       stylelint-config-standard-vue:
         specifier: ^1.0.0
         version: 1.0.0(postcss-html@1.7.0)(stylelint@16.9.0(typescript@5.6.2))
@@ -330,8 +330,8 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3
       postcss:
-        specifier: ^8.4.45
-        version: 8.4.45
+        specifier: ^8.4.47
+        version: 8.4.47
       postcss-html:
         specifier: ^1.7.0
         version: 1.7.0
@@ -340,13 +340,13 @@ importers:
         version: 0.5.0
       postcss-scss:
         specifier: ^4.0.9
-        version: 4.0.9(postcss@8.4.45)
+        version: 4.0.9(postcss@8.4.47)
 
   packages/config-tsup:
     dependencies:
       tsup:
         specifier: ^8.3.0
-        version: 8.3.0(jiti@1.21.6)(postcss@8.4.45)(typescript@5.6.2)(yaml@2.5.1)
+        version: 8.3.0(jiti@1.21.6)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1)
     devDependencies:
       '@culur/config-typescript':
         specifier: workspace:*
@@ -4934,8 +4934,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.4.45:
-    resolution: {integrity: sha512-7KTLTdzdZZYscUc65XmjFiB73vBhBfbPztCYdUNvlaso9PrzjzcmjqBPR0lNGkcVlcO4BjiO5rK/qNz+XAen1Q==}
+  postcss@8.4.47:
+    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -8865,7 +8865,7 @@ snapshots:
       '@vue/shared': 3.5.5
       estree-walker: 2.0.2
       magic-string: 0.30.11
-      postcss: 8.4.45
+      postcss: 8.4.47
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.5':
@@ -11593,60 +11593,60 @@ snapshots:
 
   pluralize@8.0.0: {}
 
-  postcss-bem-linter@4.0.1(postcss@8.4.45):
+  postcss-bem-linter@4.0.1(postcss@8.4.47):
     dependencies:
       minimatch: 3.1.2
-      postcss: 8.4.45
+      postcss: 8.4.47
       postcss-resolve-nested-selector: 0.1.6
 
   postcss-html@1.7.0:
     dependencies:
       htmlparser2: 8.0.2
       js-tokens: 9.0.0
-      postcss: 8.4.45
-      postcss-safe-parser: 6.0.0(postcss@8.4.45)
+      postcss: 8.4.47
+      postcss-safe-parser: 6.0.0(postcss@8.4.47)
 
-  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.45)(yaml@2.5.1):
+  postcss-load-config@6.0.1(jiti@1.21.6)(postcss@8.4.47)(yaml@2.5.1):
     dependencies:
       lilconfig: 3.1.2
     optionalDependencies:
       jiti: 1.21.6
-      postcss: 8.4.45
+      postcss: 8.4.47
       yaml: 2.5.1
 
   postcss-media-query-parser@0.2.3: {}
 
   postcss-resolve-nested-selector@0.1.6: {}
 
-  postcss-safe-parser@6.0.0(postcss@8.4.45):
+  postcss-safe-parser@6.0.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
-  postcss-safe-parser@7.0.0(postcss@8.4.45):
+  postcss-safe-parser@7.0.0(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
   postcss-sass@0.5.0:
     dependencies:
       gonzales-pe: 4.3.0
-      postcss: 8.4.45
+      postcss: 8.4.47
 
-  postcss-scss@4.0.9(postcss@8.4.45):
+  postcss-scss@4.0.9(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
   postcss-selector-parser@6.1.2:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
 
-  postcss-sorting@8.0.2(postcss@8.4.45):
+  postcss-sorting@8.0.2(postcss@8.4.47):
     dependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.4.45:
+  postcss@8.4.47:
     dependencies:
       nanoid: 3.3.7
       picocolors: 1.1.0
@@ -12047,14 +12047,14 @@ snapshots:
       postcss-html: 1.7.0
       stylelint: 16.9.0(typescript@5.6.2)
 
-  stylelint-config-recommended-scss@14.1.0(postcss@8.4.45)(stylelint@16.9.0(typescript@5.6.2)):
+  stylelint-config-recommended-scss@14.1.0(postcss@8.4.47)(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
-      postcss-scss: 4.0.9(postcss@8.4.45)
+      postcss-scss: 4.0.9(postcss@8.4.47)
       stylelint: 16.9.0(typescript@5.6.2)
       stylelint-config-recommended: 14.0.1(stylelint@16.9.0(typescript@5.6.2))
       stylelint-scss: 6.7.0(stylelint@16.9.0(typescript@5.6.2))
     optionalDependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
   stylelint-config-recommended-vue@1.5.0(postcss-html@1.7.0)(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
@@ -12068,13 +12068,13 @@ snapshots:
     dependencies:
       stylelint: 16.9.0(typescript@5.6.2)
 
-  stylelint-config-standard-scss@13.1.0(postcss@8.4.45)(stylelint@16.9.0(typescript@5.6.2)):
+  stylelint-config-standard-scss@13.1.0(postcss@8.4.47)(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
       stylelint: 16.9.0(typescript@5.6.2)
-      stylelint-config-recommended-scss: 14.1.0(postcss@8.4.45)(stylelint@16.9.0(typescript@5.6.2))
+      stylelint-config-recommended-scss: 14.1.0(postcss@8.4.47)(stylelint@16.9.0(typescript@5.6.2))
       stylelint-config-standard: 36.0.1(stylelint@16.9.0(typescript@5.6.2))
     optionalDependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
 
   stylelint-config-standard-vue@1.0.0(postcss-html@1.7.0)(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
@@ -12091,8 +12091,8 @@ snapshots:
 
   stylelint-order@6.0.4(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
-      postcss: 8.4.45
-      postcss-sorting: 8.0.2(postcss@8.4.45)
+      postcss: 8.4.47
+      postcss-sorting: 8.0.2(postcss@8.4.47)
       stylelint: 16.9.0(typescript@5.6.2)
 
   stylelint-scss@6.7.0(stylelint@16.9.0(typescript@5.6.2)):
@@ -12109,8 +12109,8 @@ snapshots:
   stylelint-selector-bem-pattern@4.0.1(stylelint@16.9.0(typescript@5.6.2)):
     dependencies:
       lodash: 4.17.21
-      postcss: 8.4.45
-      postcss-bem-linter: 4.0.1(postcss@8.4.45)
+      postcss: 8.4.47
+      postcss-bem-linter: 4.0.1(postcss@8.4.47)
       stylelint: 16.9.0(typescript@5.6.2)
 
   stylelint@16.9.0(typescript@5.6.2):
@@ -12142,9 +12142,9 @@ snapshots:
       micromatch: 4.0.8
       normalize-path: 3.0.0
       picocolors: 1.1.0
-      postcss: 8.4.45
+      postcss: 8.4.47
       postcss-resolve-nested-selector: 0.1.6
-      postcss-safe-parser: 7.0.0(postcss@8.4.45)
+      postcss-safe-parser: 7.0.0(postcss@8.4.47)
       postcss-selector-parser: 6.1.2
       postcss-value-parser: 4.2.0
       resolve-from: 5.0.0
@@ -12332,7 +12332,7 @@ snapshots:
 
   tslib@2.7.0: {}
 
-  tsup@8.3.0(jiti@1.21.6)(postcss@8.4.45)(typescript@5.6.2)(yaml@2.5.1):
+  tsup@8.3.0(jiti@1.21.6)(postcss@8.4.47)(typescript@5.6.2)(yaml@2.5.1):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.1)
       cac: 6.7.14
@@ -12343,7 +12343,7 @@ snapshots:
       execa: 5.1.1
       joycon: 3.1.1
       picocolors: 1.1.0
-      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.45)(yaml@2.5.1)
+      postcss-load-config: 6.0.1(jiti@1.21.6)(postcss@8.4.47)(yaml@2.5.1)
       resolve-from: 5.0.0
       rollup: 4.21.3
       source-map: 0.8.0-beta.0
@@ -12351,7 +12351,7 @@ snapshots:
       tinyglobby: 0.2.6
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.4.45
+      postcss: 8.4.47
       typescript: 5.6.2
     transitivePeerDependencies:
       - jiti
@@ -12515,7 +12515,7 @@ snapshots:
   vite@5.4.7(@types/node@22.5.5):
     dependencies:
       esbuild: 0.21.5
-      postcss: 8.4.45
+      postcss: 8.4.47
       rollup: 4.21.3
     optionalDependencies:
       '@types/node': 22.5.5

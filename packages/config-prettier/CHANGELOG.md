@@ -1,5 +1,11 @@
 # @culur/config-prettier
 
+## 1.3.1
+
+### Patch Changes
+
+- ✨ Update `.prettierignore` based on [`github/gitignore`](https://github.com/github/gitignore) ([`8de069e`](https://github.com/culur/culur/commit/8de069e4240bfd47fa9a2006827134b6ff0192b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.0
 
 ### Minor Changes

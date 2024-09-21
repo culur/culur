@@ -1,5 +1,37 @@
 # @culur/config-stylelint
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ - Update `order/order` by groups ([`56b20f6`](https://github.com/culur/culur/commit/56b20f621e5ef0674733b8a0e919c33db483d607)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - Import: @use, @forward, @import
+  - Root: @config, @tailwind, @layer
+  - Variables: $variable, @variable, --property
+  - Functions: @function, @mixin
+  - Declarations: @extend, @include, @apply, .mixin(), display: block
+  - Block rules: &::after {}, child-component {}
+  - Blocks nested: @at-root, @responsive, @variants, @screen, @media
+
+### Patch Changes
+
+- 📦 Update dependencies ([`f2fd67d`](https://github.com/culur/culur/commit/f2fd67d82d2fafebd29fbe4cb7b1efb7076b8a70)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `postcss@^8.4.47`
+
+- 📦 Update dependencies ([`20aaced`](https://github.com/culur/culur/commit/20aaced1c061595b4caa464badc211439b9ce63e)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-scss@^6.7.0`
+
+- ✨ Disable `declaration-empty-line-before` ([`7d04f22`](https://github.com/culur/culur/commit/7d04f227023bb3fc7fe065e5e3d93089bf1271d6)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update `.stylelintignore` based on [`github/gitignore`](https://github.com/github/gitignore) ([`d0ddbd6`](https://github.com/culur/culur/commit/d0ddbd6a4d80898a5c3ca6739bbb7f7b157cf302)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.0
 
 ### Minor Changes

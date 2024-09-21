@@ -1,5 +1,14 @@
 # @culur/config-tsup
 
+## 1.2.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`dd613e6`](https://github.com/culur/culur/commit/dd613e6a96832a866ce288c3665c11d32da71177)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `peerDependencies`:
+    - `tsup@^8.3.0`
+
 ## 1.2.0
 
 ### Minor Changes

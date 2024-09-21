@@ -1,5 +1,24 @@
 # @culur/config-eslint
 
+## 1.2.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`dd0bb07`](https://github.com/culur/culur/commit/dd0bb0763fb5eba340703a0b79ef4c1f12c4fd5e)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.7`
+
+- 📦 Update dependencies ([`6a3282d`](https://github.com/culur/culur/commit/6a3282d0703fb04b32d64e6ffdc9c439438c6a6a)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^3.7.1`
+
+- ✨ Add `.jsx` & `.tsx` to `filename/rules` ([`19025b8`](https://github.com/culur/culur/commit/19025b86036340d0f3d237d9381335af0fe13651)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.0
 
 ### Minor Changes

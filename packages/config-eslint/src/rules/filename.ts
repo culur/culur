@@ -3,7 +3,7 @@ import type { TypedFlatConfigItem } from '@antfu/eslint-config';
 export const filenameRules: TypedFlatConfigItem = {
   name: 'culur/filename/rules',
   files: [
-    '**/*.?(c|m){js,ts}',
+    '**/*.?(c|m){js,ts}?(x)',
     '**/*.vue',
     '**/*.md?(x)',
     '**/*.json?(c)',

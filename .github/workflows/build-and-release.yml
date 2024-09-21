@@ -64,7 +64,7 @@ jobs:
 
   #! ----- ----- ----- Prepare release ----- ----- ----- !#
   release:
-    name: Prepare release pull request
+    name: Create pull request or publish to npm
     needs: build
     if: "${{ github.ref == 'refs/heads/release' || (github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore: version packages')) }}"
     concurrency:
@@ -89,8 +89,8 @@ jobs:
       - name: 🛠️ Build
         run: pnpm build
 
-      #! Create release pull request or publish to npm
-      - name: 🚀 Create release pull request or publish to npm
+      #! Create pull request or publish to npm
+      - name: 🚀 Create pull request or publish to npm
         id: changesets
         uses: changesets/action@v1
         with:

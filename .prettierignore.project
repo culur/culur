@@ -229,6 +229,7 @@ LICENSE
 *.svg
 *.ttf
 *.woff
+*.woff2
 
 *.jpg
 *.png

@@ -1,3 +1,4 @@
 {
-  "$schema": "https://unpkg.com/nx@latest/schemas/project-schema.json"
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "config-eslint"
 }

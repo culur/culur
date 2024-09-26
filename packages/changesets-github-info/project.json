@@ -1,11 +1,9 @@
 {
-  "$schema": "https://unpkg.com/nx@latest/schemas/project-schema.json",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "changesets-github-info",
   "targets": {
     "gen": {
-      "dependsOn": [
-        "@culur/config-prettier:build",
-        "@culur/config-eslint:build"
-      ],
+      "dependsOn": ["config-prettier:build", "config-eslint:build"],
       "executor": "nx:run-script",
       "options": { "script": "gen" },
       "outputs": ["{projectRoot}/src/types/schema.operations.generated.ts"],

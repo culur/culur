@@ -70,12 +70,5 @@
   },
   "defaultBase": "dev",
   "cacheDirectory": ".nx/cache",
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint:es"
-      }
-    }
-  ]
+  "plugins": []
 }

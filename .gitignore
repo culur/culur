@@ -206,6 +206,10 @@ Temporary Items
 
 #! ----- ----- ----- ----- ----- Custom ----- ----- ----- ----- ----- !#
 
+# vite / vitest
+vite.config.*.timestamp-*.*js
+vitest.config.*.timestamp-*.*js
+
 # nx
 .nx/cache
 .nx/workspace-data

@@ -70,5 +70,17 @@
   },
   "defaultBase": "dev",
   "cacheDirectory": ".nx/cache",
-  "plugins": []
+  "plugins": [
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "vite:build",
+        "testTargetName": "vite:test",
+        "serveTargetName": "vite:serve",
+        "previewTargetName": "vite:preview",
+        "serveStaticTargetName": "vite:serve-static",
+        "typecheckTargetName": "vite:typecheck"
+      }
+    }
+  ]
 }

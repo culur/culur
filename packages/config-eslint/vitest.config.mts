@@ -1,3 +1,5 @@
-import { vitest } from '@culur/config-vite';
+import { defineConfig } from '@culur/config-vite';
 
-export default vitest;
+export default defineConfig({
+  test: { testTimeout: 10000 },
+});

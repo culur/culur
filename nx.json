@@ -66,9 +66,6 @@
       ],
       "outputs": ["{projectRoot}/dist"],
       "cache": true
-    },
-    "deploy": {
-      "dependsOn": ["test", "build"]
     }
   },
   "defaultBase": "dev",

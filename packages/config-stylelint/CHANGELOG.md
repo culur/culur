@@ -1,5 +1,14 @@
 # @culur/config-stylelint
 
+## 1.3.1
+
+### Patch Changes
+
+- ✨ Add `*.woff2` into `.stylelintignore` ([`ebb5d51`](https://github.com/culur/culur/commit/ebb5d518879ee4b16b99ba3078acbad155ece54c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.3.0
 
 ### Minor Changes

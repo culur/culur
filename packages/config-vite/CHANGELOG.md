@@ -1,5 +1,14 @@
 # @culur/config-vite
 
+## 1.1.2
+
+### Patch Changes
+
+- 📦 Update dependencies ([#126](https://github.com/culur/culur/pull/126) [`c46e30e`](https://github.com/culur/culur/commit/c46e30efd213dbfa7d5fbeb3e1cf1485a515b69e)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `peerDependencies`:
+    - `vite@^5.4.8`
+
 ## 1.1.1
 
 ### Patch Changes

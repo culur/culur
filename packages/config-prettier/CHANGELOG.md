@@ -1,5 +1,11 @@
 # @culur/config-prettier
 
+## 1.3.2
+
+### Patch Changes
+
+- ✨ Add `*.woff2` into `.prettierignore` ([`79badc0`](https://github.com/culur/culur/commit/79badc0aebd2e9b02c5b0ac6bee95d118e93ce2e)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.1
 
 ### Patch Changes

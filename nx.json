@@ -51,10 +51,10 @@
       ],
       "cache": true
     },
-    "test": {
-      "dependsOn": ["build", "^build"],
-      "outputs": ["{projectRoot}/coverage"],
-      "cache": true
+    "vite:test": {
+      "options": {
+        "watch": false
+      }
     },
     "build": {
       "dependsOn": ["gen", "^build"],

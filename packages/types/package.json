@@ -44,7 +44,7 @@
   "scripts": {
     "clean": "rimraf dist coverage",
     "build": "tsup",
-    "test": "tsc --noEmit && vitest run"
+    "test": "nx vite:typecheck && nx vite:test"
   },
   "volta": {
     "extends": "../../package.json"

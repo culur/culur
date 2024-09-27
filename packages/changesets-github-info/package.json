@@ -46,7 +46,7 @@
   "scripts": {
     "clean": "rimraf dist coverage types/schema.operations.generated.ts",
     "build": "tsup",
-    "test": "tsc --noEmit && vitest run",
+    "test": "nx vite:typecheck && nx vite:test",
     "gen": "graphql-codegen --config codegen.ts"
   },
   "volta": {

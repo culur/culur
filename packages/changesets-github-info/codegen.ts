@@ -1,5 +1,4 @@
 import type { CodegenConfig } from '@graphql-codegen/cli';
-import path from 'node:path';
 
 const graphqlFile = 'src/types/schema.operations.generated.ts';
 
@@ -18,18 +17,13 @@ const config: CodegenConfig = {
           URI: 'string',
         },
       },
-      hooks: {
-        afterOneFileWrite: [
-          [
-            `pnpm --dir ../.. exec prettier "${path.resolve(__dirname, graphqlFile)}/" --write`,
-            '&&',
-            `pnpm --dir ../.. exec eslint "${path.resolve(__dirname, graphqlFile)}" --fix`,
-            '&&',
-            'echo',
-          ].join(' '),
-        ],
-      },
     },
+  },
+  hooks: {
+    afterAllFileWrite: [
+      'eslint --fix --config ../../eslint.config.mjs',
+      'prettier --write --config ../../.prettierrc.mjs',
+    ],
   },
 };
 

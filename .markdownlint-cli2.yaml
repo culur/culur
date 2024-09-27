@@ -9,8 +9,6 @@ ignores:
   - '**/node_modules'
   # ignore projects that have custom lint and test scripts
   - apps
-  - packages
-  - scripts
   - templates
 
 config:

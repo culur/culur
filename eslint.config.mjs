@@ -11,8 +11,6 @@ export default defineConfig(
     name: 'projects/ignore',
     ignores: [
       'apps/*/**', //
-      'packages/*/**',
-      'scripts/*/**',
       'templates/*/**',
     ],
   },

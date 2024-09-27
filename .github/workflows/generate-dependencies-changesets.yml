@@ -28,7 +28,10 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: pnpm build
+        run: |
+          pnpm --filter ./packages/config-tsup run build
+          pnpm --filter ./packages/config-vite run build
+          pnpm build
 
       #! Clear old nx cache
       - name: 💾 Clear old nx cache

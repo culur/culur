@@ -23,7 +23,10 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: pnpm build
+        run: |
+          pnpm --filter ./packages/config-tsup run build
+          pnpm --filter ./packages/config-vite run build
+          pnpm build
 
       #! Lint
       - name: 🧹 Lint
@@ -87,7 +90,10 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: pnpm build
+        run: |
+          pnpm --filter ./packages/config-tsup run build
+          pnpm --filter ./packages/config-vite run build
+          pnpm build
 
       #! Create pull request or publish to npm
       - name: 🚀 Create pull request or publish to npm

@@ -25,7 +25,10 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: pnpm build --skip-nx-cache
+        run: |
+          pnpm --filter ./packages/config-tsup run build
+          pnpm --filter ./packages/config-vite run build
+          pnpm build --skip-nx-cache
 
       #! Lint
       - name: 🧹 Lint

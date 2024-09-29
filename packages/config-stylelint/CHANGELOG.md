@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.3.2
+
+### Patch Changes
+
+- ✨ Add `selector-pseudo-class-no-unknown` for css module ([`969b5ab`](https://github.com/culur/culur/commit/969b5ab2f312e5239971fd7109f3b55fe9bf9052)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.1
 
 ### Patch Changes

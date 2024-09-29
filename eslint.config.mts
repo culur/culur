@@ -4,6 +4,7 @@ export default defineConfig(
   {
     vue: true,
     react: true,
+    markdown: true,
     typescript: true,
   },
   {

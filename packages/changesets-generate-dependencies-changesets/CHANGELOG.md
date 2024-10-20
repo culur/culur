@@ -1,5 +1,19 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([#156](https://github.com/culur/culur/pull/156) [`e00eff3`](https://github.com/culur/culur/commit/e00eff365032234f92cba8a5c29c61c43945eda4)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@actions/core@^1.11.1`
+
+- 📦 Update dependencies ([#157](https://github.com/culur/culur/pull/157) [`7750c48`](https://github.com/culur/culur/commit/7750c48a6f4b15782d5350e300e735ea2d1fb78e)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@octokit/webhooks-types@^7.6.1`
+
 ## 1.3.0
 
 ### Minor Changes

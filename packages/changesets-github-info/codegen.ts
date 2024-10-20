@@ -21,7 +21,7 @@ const config: CodegenConfig = {
   },
   hooks: {
     afterAllFileWrite: [
-      'eslint --fix --config ../../eslint.config.mjs',
+      'eslint --flag unstable_ts_config --config ../../eslint.config.mts --fix',
       'prettier --write --config ../../.prettierrc.mjs',
     ],
   },

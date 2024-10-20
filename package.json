@@ -61,7 +61,7 @@
     "@culur/config-stylelint": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@eslint-react/eslint-plugin": "^1.14.2",
-    "@eslint/config-inspector": "^0.5.4",
+    "@eslint/config-inspector": "^0.5.5",
     "@types/node": "^22.7.3",
     "@vitest/coverage-v8": "^2.1.1",
     "@vitest/ui": "^2.1.1",

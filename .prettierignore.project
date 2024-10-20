@@ -76,10 +76,13 @@ web_modules/
 
 # dotenv environment variable files
 .env
-.env.development.local
-.env.test.local
-.env.production.local
 .env.local
+.env.development
+.env.development.local
+.env.production
+.env.production.local
+.env.test
+.env.test.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -204,7 +207,7 @@ Temporary Items
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
-#! ----- ----- ----- ----- ----- Ignore ----- ----- ----- ----- ----- !#
+#! ----- ----- ----- ----- ----- Linter Ignore ----- ----- ----- ----- ----- !#
 
 # LICENSE
 LICENSE
@@ -235,13 +238,11 @@ LICENSE
 *.png
 *.gif
 *.ico
+*.webp
 
 # Husky
 .husky/*
 .gitkeep
-
-# style (ignore sass)
-*.sass
 
 # Package manager: npm, pnpm & yarn
 .npmrc
@@ -257,6 +258,11 @@ pnpm-lock.yaml
 auto-imports.d.ts
 components.d.ts
 typed-router.d.ts
+
+#! ----- ----- ----- ----- ----- Prettier Ignore ----- ----- ----- ----- ----- !#
+
+# style (ignore sass)
+*.sass
 
 #! ----- ----- ----- ----- ----- Workspace ----- ----- ----- ----- ----- !#
 # workspace

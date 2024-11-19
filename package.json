@@ -71,7 +71,7 @@
     "eslint-plugin-react-refresh": "^0.4.13",
     "husky": "^9.1.6",
     "jiti": "^2.3.3",
-    "markdownlint": "^0.35.0",
+    "markdownlint": "^0.36.1",
     "markdownlint-cli2": "^0.14.0",
     "nx": "20.0.3",
     "pinst": "^3.0.0",

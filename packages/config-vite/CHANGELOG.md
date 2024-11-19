@@ -1,5 +1,26 @@
 # @culur/config-vite
 
+## 1.1.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `vite-tsconfig-paths@5.1.2`
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `peerDependencies`:
+    - `@vitest/coverage-v8@^2.1.5`
+    - `@vitest/ui@^2.1.5`
+    - `vitest@^2.1.5`
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `peerDependencies`:
+    - `vite@^5.4.11`
+
 ## 1.1.3
 
 ### Patch Changes

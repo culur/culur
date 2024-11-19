@@ -1,5 +1,32 @@
 # @culur/config-eslint
 
+## 1.2.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.2.0`
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `type-fest@^4.27.0`
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^3.9.2`
+
+- 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.13`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.3
 
 ### Patch Changes

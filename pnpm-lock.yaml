@@ -330,7 +330,7 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3
       postcss:
-        specifier: ^8.4.47
+        specifier: ^8.4.49
         version: 8.4.49
       postcss-html:
         specifier: ^1.7.0

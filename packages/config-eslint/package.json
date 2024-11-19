@@ -66,17 +66,17 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^3.8.0",
+    "@antfu/eslint-config": "^3.9.2",
     "@culur/utils-packages": "workspace:*"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",
-    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/eslintrc": "^3.2.0",
     "@types/eslint": "^9.6.1",
-    "@vue/compiler-sfc": "^3.5.12",
-    "type-fest": "^4.26.1"
+    "@vue/compiler-sfc": "^3.5.13",
+    "type-fest": "^4.27.0"
   },
   "peerDependencies": {
     "eslint": ">=9.2.0"

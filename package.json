@@ -70,7 +70,7 @@
     "eslint-plugin-react-hooks": "beta",
     "eslint-plugin-react-refresh": "^0.4.14",
     "husky": "^9.1.6",
-    "jiti": "^2.3.3",
+    "jiti": "^2.4.0",
     "markdownlint": "^0.36.1",
     "markdownlint-cli2": "^0.15.0",
     "nx": "20.1.2",

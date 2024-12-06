@@ -54,7 +54,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "vite-tsconfig-paths": "5.1.2"
+    "vite-tsconfig-paths": "5.1.4"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

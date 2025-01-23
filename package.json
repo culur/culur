@@ -77,7 +77,7 @@
     "pinst": "^3.0.0",
     "prettier": "^3.3.3",
     "prettier-plugin-embed": "^0.4.15",
-    "prettier-plugin-tailwindcss": "^0.6.8",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "rimraf": "^6.0.1",
     "stylelint": "^16.10.0",
     "tsup": "^8.3.5",

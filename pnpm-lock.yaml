@@ -345,7 +345,7 @@ importers:
   packages/config-tsup:
     dependencies:
       tsup:
-        specifier: ^8.3.5
+        specifier: ^8.3.6
         version: 8.3.6(jiti@2.4.2)(postcss@8.5.2)(typescript@5.7.3)(yaml@2.7.0)
     devDependencies:
       '@culur/config-typescript':

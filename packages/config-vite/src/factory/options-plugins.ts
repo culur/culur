@@ -1,5 +1,5 @@
-import tsconfigPaths from 'vite-tsconfig-paths';
 import type { Options, UserConfig } from '~/types';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 const defineTsconfigPathsPlugin = (
   pluginTsconfigPaths: Options['pluginTsconfigPaths'] = true,

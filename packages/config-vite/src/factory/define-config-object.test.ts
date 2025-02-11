@@ -1,5 +1,5 @@
-import { describe, expectTypeOf, it } from 'vitest';
 import type { UserConfigVite, UserConfigVitest } from '~/types';
+import { describe, expectTypeOf, it } from 'vitest';
 import { defineConfigObject } from './define-config-object';
 
 describe('defineConfigSync', () => {

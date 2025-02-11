@@ -1,6 +1,6 @@
 import type { ConfigEnv } from 'vite';
-import { describe, expectTypeOf, it } from 'vitest';
 import type { UserConfigVite } from '~/types';
+import { describe, expectTypeOf, it } from 'vitest';
 import { defineConfig } from './define-config';
 
 describe('defineConfig', () => {

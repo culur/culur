@@ -1,6 +1,6 @@
+import type { OverrideConfig } from '~/types';
 import assert from 'node:assert';
 import { sortPackageJson as sortPackageJsonAntfu } from '@antfu/eslint-config';
-import type { OverrideConfig } from '~/types';
 
 export const sortPackageJson: OverrideConfig = {
   name: 'antfu/sort/package-json',

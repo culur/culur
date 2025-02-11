@@ -1,8 +1,8 @@
 import type { PackageJson } from '@culur/types';
 import type { DependenciesType } from './get-dependencies-type';
+import type { Branches } from '~/input/get-branches';
 import exec from '@actions/exec';
 import fs from 'fs-extra';
-import type { Branches } from '~/input/get-branches';
 import { getDependenciesType } from './get-dependencies-type';
 import { getDiffPackageFiles } from './get-diff-package-files';
 

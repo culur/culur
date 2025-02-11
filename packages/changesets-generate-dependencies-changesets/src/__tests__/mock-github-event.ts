@@ -1,5 +1,5 @@
-import github from '@actions/github';
 import type { Branches } from '~/input/get-branches';
+import github from '@actions/github';
 
 export function defineMockGithubEvent() {
   // Shallow clone original @actions/github context

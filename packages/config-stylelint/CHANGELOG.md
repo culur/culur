@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.3.6
+
+### Patch Changes
+
+- ✨ Add `at-rule-no-deprecated` ([`06e5241`](https://github.com/culur/culur/commit/06e52415f121bae6d6161cc2f7b00e80f5bad136)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.5
 
 ### Patch Changes

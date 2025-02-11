@@ -59,7 +59,7 @@
     "@actions/github": "^6.0.0",
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.5.3",
-    "fs-extra": "^11.2.0",
+    "fs-extra": "^11.3.0",
     "minimatch": "^10.0.1"
   },
   "devDependencies": {
@@ -68,6 +68,6 @@
     "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "type-fest": "^4.27.0"
+    "type-fest": "^4.34.1"
   }
 }

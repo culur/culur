@@ -96,6 +96,6 @@
     "postcss-scss": "^4.0.9"
   },
   "peerDependencies": {
-    "stylelint": ">=16.0.0"
+    "stylelint": ">=16.14.0"
   }
 }

@@ -54,7 +54,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "local-pkg": "^0.5.1"
+    "local-pkg": "^1.0.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

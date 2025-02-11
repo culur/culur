@@ -42,7 +42,7 @@
     "postpack": "pinst --enable"
   },
   "volta": {
-    "node": "22.11.0",
+    "node": "22.13.1",
     "pnpm": "10.3.0"
   },
   "engines": {

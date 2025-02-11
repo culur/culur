@@ -1,5 +1,14 @@
 # @culur/config-prettier
 
+## 1.3.3
+
+### Patch Changes
+
+- 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `peerDependencies`:
+    - `prettier@>=3.5.0`
+
 ## 1.3.2
 
 ### Patch Changes

@@ -12,7 +12,7 @@ export const configCss = (packages: Partial<Packages>): Config => ({
   plugins: ['stylelint-order', 'stylelint-selector-bem-pattern'],
   rules: {
     ...atRuleNoUnknownCSS(packages),
-    ...atRuleNoDeprecated(packages),
+    ...atRuleNoDeprecated(packages), // override this rule in `stylelint-config-standard`
     ...declarationBlockNoRedundantLonghandProperties,
     ...functionNoUnknown(packages),
     ...order(packages),

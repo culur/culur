@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.3.7
+
+### Patch Changes
+
+- ✨ Add `at-rule-no-deprecated` in `scss` & `vue` ([`db4f910`](https://github.com/culur/culur/commit/db4f9108bf60818fa4276f2ae977efe54b47f9d2)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.6
 
 ### Patch Changes

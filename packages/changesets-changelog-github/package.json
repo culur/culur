@@ -55,7 +55,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@changesets/types": "^6.0.0",
+    "@changesets/types": "^6.1.0",
     "@culur/changesets-github-info": "workspace:*",
     "dotenv": "^16.4.7",
     "type-fest": "^4.34.1"

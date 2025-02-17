@@ -61,7 +61,7 @@
     "type-fest": "^4.34.1"
   },
   "devDependencies": {
-    "@changesets/parse": "^0.4.0",
+    "@changesets/parse": "^0.4.1",
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",

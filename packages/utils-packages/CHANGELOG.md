@@ -1,5 +1,14 @@
 # @culur/utils-packages
 
+## 1.1.3
+
+### Patch Changes
+
+- 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `local-pkg@^1.1.1`
+
 ## 1.1.2
 
 ### Patch Changes

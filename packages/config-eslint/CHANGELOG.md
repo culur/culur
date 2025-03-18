@@ -1,5 +1,20 @@
 # @culur/config-eslint
 
+## 1.2.6
+
+### Patch Changes
+
+- 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^4.10.1`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.0`
+    - `type-fest@^4.37.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.3`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.5
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @culur/changesets-changelog-github
 
+## 1.1.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `@changesets/types@^6.1.0`
+    - `type-fest@^4.37.0`
+  - `devDependencies`:
+    - `@changesets/parse@^0.4.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.4`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.3
 
 ### Patch Changes

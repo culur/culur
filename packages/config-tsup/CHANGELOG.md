@@ -1,5 +1,14 @@
 # @culur/config-tsup
 
+## 1.2.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([#212](https://github.com/culur/culur/pull/212) [`e217309`](https://github.com/culur/culur/commit/e21730954ac24f70ee03086b0f1a6bf647d4258b)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `peerDependencies`:
+    - `tsup@^8.4.0`
+
 ## 1.2.3
 
 ### Patch Changes

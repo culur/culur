@@ -56,7 +56,23 @@
     },
     {
       "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-tsup/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["typescript"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
       "matchFileNames": ["packages/config-typescript/package.json"],
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchPackageNames": ["typescript"],
+      "enabled": false
+    },
+    {
+      "description": "Ignore peerDependencies",
+      "matchFileNames": ["packages/config-vite/package.json"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["peerDependencies"],
       "matchPackageNames": ["typescript"],

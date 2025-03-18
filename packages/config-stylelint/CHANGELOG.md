@@ -1,5 +1,19 @@
 # @culur/config-stylelint
 
+## 1.3.8
+
+### Patch Changes
+
+- 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - `dependencies`:
+    - `stylelint-scss@^6.11.1`
+  - `devDependencies`:
+    - `postcss@^8.5.3`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.1.3`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.3.7
 
 ### Patch Changes

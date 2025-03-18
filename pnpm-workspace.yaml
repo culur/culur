@@ -1,5 +1,8 @@
 packages:
-  - 'apps/*'
-  - 'packages/*'
-  - 'scripts/*'
-  - 'templates/*'
+  - apps/*
+  - packages/*
+  - scripts/*
+  - templates/*
+onlyBuiltDependencies:
+  - esbuild
+  - nx

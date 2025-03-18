@@ -364,10 +364,10 @@ importers:
   packages/config-vite:
     dependencies:
       '@vitest/coverage-v8':
-        specifier: ^3.0.5
+        specifier: ^3.0.9
         version: 3.0.9(vitest@3.0.9)
       '@vitest/ui':
-        specifier: ^3.0.5
+        specifier: ^3.0.9
         version: 3.0.9(vitest@3.0.9)
       vite:
         specifier: ^6.2.2
@@ -376,7 +376,7 @@ importers:
         specifier: 5.1.4
         version: 5.1.4(typescript@5.8.2)(vite@6.2.2(@types/node@22.13.10)(jiti@2.4.2)(yaml@2.7.0))
       vitest:
-        specifier: ^3.0.5
+        specifier: ^3.0.9
         version: 3.0.9(@types/debug@4.1.12)(@types/node@22.13.10)(@vitest/ui@3.0.9)(jiti@2.4.2)(yaml@2.7.0)
     devDependencies:
       '@culur/config-tsup':

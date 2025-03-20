@@ -407,6 +407,9 @@ importers:
       local-pkg:
         specifier: ^1.1.1
         version: 1.1.1
+      semver:
+        specifier: ^7.7.1
+        version: 7.7.1
     devDependencies:
       '@culur/config-tsup':
         specifier: workspace:*
@@ -417,6 +420,9 @@ importers:
       '@culur/config-vite':
         specifier: workspace:*
         version: link:../config-vite
+      '@types/semver':
+        specifier: ^7.5.8
+        version: 7.5.8
 
 packages:
 
@@ -1816,6 +1822,9 @@ packages:
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
+
+  '@types/semver@7.5.8':
+    resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -7073,6 +7082,8 @@ snapshots:
       undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
+
+  '@types/semver@7.5.8': {}
 
   '@types/unist@2.0.11': {}
 

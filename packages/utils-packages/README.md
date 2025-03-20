@@ -47,14 +47,15 @@ import {
 
 // detect automatically or override
 updateDefaultPackages({
-  sass: false,
-  tailwind: true,
   // vue: true,
+  sass: true,
+  tailwind: 3, // false or 3 or 4
 });
 
-hasSass(); // false (from override)
-hasTailwind(); // true (from override)
 hasVue(); // true or false (detect automatically)
+hasSass(); // true (from override)
+hasTailwind(); // true (from override)
+tailwindVersion(); // 3 (from override)
 ```
 
 ```ts
@@ -63,9 +64,10 @@ import { defineHasPackages } from '@culur/utils-packages';
 // initialize a new instance
 const {
   updateDefaultPackages, //
+  hasVue,
   hasSass,
   hasTailwind,
-  hasVue,
+  tailwindVersion,
 } = defineHasPackages({
   sass: false, // (override)
 });

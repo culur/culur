@@ -1,15 +1,15 @@
+import type {
+  Primary,
+  Secondary,
+} from 'node_modules/stylelint/types/stylelint';
 import type { Config, ConfigRuleSettings } from 'stylelint';
 
-export type ConfigRulePrimaryOption =
-  | boolean
-  | number
-  | string
-  | Array<boolean | number | string | object>;
-export type ConfigRuleSecondaryOptions = object;
+export type ConfigRulePrimaryOption = Primary;
+export type ConfigRuleSecondaryOptions = Secondary;
 
 export const defineRule = <
-  PrimaryOption extends ConfigRulePrimaryOption,
-  SecondaryOptions extends ConfigRuleSecondaryOptions,
+  PrimaryOption extends Primary,
+  SecondaryOptions extends Secondary = object,
 >(
   rule: ConfigRuleSettings<PrimaryOption, SecondaryOptions>,
 ) => rule;
@@ -42,3 +42,8 @@ export const mergeConfigs = (
     ),
   };
 };
+
+export const isInRange = (
+  version: false | number | undefined,
+  versions: number[],
+) => typeof version === 'number' && versions.includes(version);

@@ -1,5 +1,14 @@
 # @culur/utils-packages
 
+## 1.2.0
+
+### Minor Changes
+
+- ✨ Support `tailwindcss@4` ([`f49e891`](https://github.com/culur/culur/commit/f49e89178f3bc57234145db4ce1535e8865a596a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  - Add tailwind version in `DefaultPackages`.
+  - Add `tailwindVersion()` function.
+
 ## 1.1.3
 
 ### Patch Changes

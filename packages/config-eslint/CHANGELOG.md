@@ -1,5 +1,12 @@
 # @culur/config-eslint
 
+## 1.2.7
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.6
 
 ### Patch Changes

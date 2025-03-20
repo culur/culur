@@ -1,5 +1,11 @@
 # @culur/changesets-github-info
 
+## 1.1.5
+
+### Patch Changes
+
+- 🚨 Test: improve unit test ([`53629d6`](https://github.com/culur/culur/commit/53629d6e4d3940d7b8098a1203a7c88953955977)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.1.4
 
 ### Patch Changes

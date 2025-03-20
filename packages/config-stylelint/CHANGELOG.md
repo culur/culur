@@ -1,5 +1,30 @@
 # @culur/config-stylelint
 
+## 1.4.0
+
+### Minor Changes
+
+- ✨ Support `tailwindcss@4` ([`1d251f5`](https://github.com/culur/culur/commit/1d251f56b12ef18b7b92929650e8b100a3343783)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  - Remove pre-built configs:
+
+    - `@culur/config-stylelint/tailwind-sass-vue`
+    - `@culur/config-stylelint/tailwind-sass`
+    - `@culur/config-stylelint/tailwind`
+
+  - Add pre-built configs:
+
+    - `@culur/config-stylelint/tailwind3-sass-vue`
+    - `@culur/config-stylelint/tailwind3-sass`
+    - `@culur/config-stylelint/tailwind3`
+    - `@culur/config-stylelint/tailwind4-vue`
+    - `@culur/config-stylelint/tailwind4`
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.3.8
 
 ### Patch Changes

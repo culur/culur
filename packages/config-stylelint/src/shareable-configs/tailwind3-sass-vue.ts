@@ -1,7 +1,7 @@
 import defineConfig from '~/factory';
 
 export default defineConfig({
-  tailwind: true,
-  sass: false,
-  vue: false,
+  tailwind: 3,
+  sass: true,
+  vue: true,
 });

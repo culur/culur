@@ -4,7 +4,7 @@ import { getCommit } from './get-commit';
 
 describe('getCommit', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('valid commit', async () => {

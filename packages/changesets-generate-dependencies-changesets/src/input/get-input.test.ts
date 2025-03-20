@@ -2,9 +2,15 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockInput } from '~/__tests__/mock-input';
 import { getInput } from './get-input';
 
+vi.mock('@actions/core', () => ({
+  default: {
+    getInput: vi.fn(),
+  },
+}));
+
 describe('getInput', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('valid', async () => {

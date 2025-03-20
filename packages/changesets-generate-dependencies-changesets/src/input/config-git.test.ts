@@ -6,11 +6,17 @@ import fs from 'fs-extra';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { configGit } from './config-git';
 
+vi.mock('@actions/core', () => ({
+  default: {
+    setFailed: vi.fn(),
+    info: vi.fn(),
+  },
+}));
+
 describe('configGit', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
-
   it('valid', async () => {
     process.env.GITHUB_TOKEN = 'TOKEN';
     process.env.HOME = '~';
@@ -39,7 +45,6 @@ describe('configGit', () => {
 
   it('invalid', async () => {
     process.env.GITHUB_TOKEN = '';
-    const coreFailed = vi.spyOn(core, 'setFailed').mockImplementation(() => {});
 
     await configGit({
       input: {
@@ -50,7 +55,7 @@ describe('configGit', () => {
       },
     });
 
-    expect(coreFailed) //
+    expect(core.setFailed) //
       .toBeCalledWith('Please add the GITHUB_TOKEN to the changesets action');
   });
 });

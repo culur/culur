@@ -9,7 +9,7 @@ import { getDiffPackages } from './get-diff-packages';
 
 describe('getDiffPackages', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('valid', async () => {

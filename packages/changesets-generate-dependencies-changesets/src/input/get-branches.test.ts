@@ -1,17 +1,19 @@
 import core from '@actions/core';
-import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { defineMockGithubEvent } from '~/__tests__/mock-github-event';
 import { getBranches } from './get-branches';
 
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 
-describe('getBranches', async () => {
-  beforeEach(() => {
-    vi.spyOn(core, 'debug').mockImplementation(() => {});
-  });
+vi.mock('@actions/core', () => ({
+  default: {
+    info: vi.fn(),
+  },
+}));
 
+describe('getBranches', async () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
     restoreGithubEvent();
   });
 
@@ -35,7 +37,6 @@ describe('getBranches', async () => {
   });
 
   it('invalid event', async () => {
-    const coreInfo = vi.spyOn(core, 'info').mockImplementation(() => {});
     mockGithubEvent({
       eventName: 'push',
       baseBranch: 'dev',
@@ -52,11 +53,10 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(coreInfo).toBeCalledWith('Not pull request, skipping');
+    expect(core.info).toBeCalledWith('Not pull request, skipping');
   });
 
   it('invalid base branch', async () => {
-    const coreInfo = vi.spyOn(core, 'info').mockImplementation(() => {});
     mockGithubEvent({
       eventName: 'pull_request',
       baseBranch: '-',
@@ -73,12 +73,11 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(coreInfo).nthCalledWith(1, 'Base branch: "-"');
-    expect(coreInfo).nthCalledWith(2, 'Not valid base branch, skipping');
+    expect(core.info).nthCalledWith(1, 'Base branch: "-"');
+    expect(core.info).nthCalledWith(2, 'Not valid base branch, skipping');
   });
 
   it('invalid head branch', async () => {
-    const coreInfo = vi.spyOn(core, 'info').mockImplementation(() => {});
     mockGithubEvent({
       eventName: 'pull_request',
       baseBranch: 'dev',
@@ -95,8 +94,8 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(coreInfo).nthCalledWith(1, 'Base branch: "dev"');
-    expect(coreInfo).nthCalledWith(2, 'Head branch: "feat/foo"');
-    expect(coreInfo).nthCalledWith(3, 'Not valid head branch, skipping');
+    expect(core.info).nthCalledWith(1, 'Base branch: "dev"');
+    expect(core.info).nthCalledWith(2, 'Head branch: "feat/foo"');
+    expect(core.info).nthCalledWith(3, 'Not valid head branch, skipping');
   });
 });

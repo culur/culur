@@ -4,9 +4,15 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockDiffFiles } from '~/__tests__/mock-exec';
 import { getDiffPackageFiles } from './get-diff-package-files';
 
+vi.mock('@actions/core', () => ({
+  default: {
+    info: vi.fn(),
+  },
+}));
+
 describe('getDiffPackageFiles', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('valid diff package files', async () => {
@@ -31,8 +37,6 @@ describe('getDiffPackageFiles', () => {
     const baseBranch = 'dev';
     const headBranch = 'renovate/all-minor-patch';
 
-    const coreInfo = vi.spyOn(core, 'info');
-
     mockDiffFiles(
       baseBranch,
       dedent`
@@ -43,14 +47,12 @@ describe('getDiffPackageFiles', () => {
 
     await expect(() => getDiffPackageFiles({ baseBranch, headBranch })) //
       .rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(coreInfo).toBeCalledWith('Changeset already exists, skipping');
+    expect(core.info).toBeCalledWith('Changeset already exists, skipping');
   });
 
   it('no package.json', async () => {
     const baseBranch = 'dev';
     const headBranch = 'renovate/all-minor-patch';
-
-    const coreInfo = vi.spyOn(core, 'info');
 
     mockDiffFiles(
       baseBranch,
@@ -61,7 +63,7 @@ describe('getDiffPackageFiles', () => {
 
     await expect(() => getDiffPackageFiles({ baseBranch, headBranch })) //
       .rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(coreInfo).toBeCalledWith(
+    expect(core.info).toBeCalledWith(
       'No package.json changes to published packages, skipping',
     );
   });

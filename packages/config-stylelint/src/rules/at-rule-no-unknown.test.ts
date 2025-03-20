@@ -10,7 +10,11 @@ describeRule(
   atRuleNoUnknownRule,
   [
     { tailwind: false, length: 0 },
-    { tailwind: true, length: 7 },
+    { tailwind: 0, length: 5 },
+    { tailwind: 1, length: 6 },
+    { tailwind: 2, length: 6 },
+    { tailwind: 3, length: 4 },
+    { tailwind: 4, length: 10 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));
@@ -24,7 +28,8 @@ describeLintAndFix(
   [
     { tailwind: false, code: '@unknown {}', isError: true },
     { tailwind: false, code: '@media {}', isError: false },
-    { tailwind: true, code: '@tailwind {}', isError: false },
+    { tailwind: 3, code: '@tailwind {}', isError: false },
+    { tailwind: 4, code: '@tailwind {}', isError: true },
   ],
 );
 
@@ -37,6 +42,7 @@ describeLintAndFix(
   [
     { ext: 'scss', tailwind: false, code: '@unknown {}', isError: true },
     { ext: 'scss', tailwind: false, code: '@media {}', isError: false },
-    { ext: 'scss', tailwind: true, code: '@tailwind {}', isError: false },
+    { ext: 'scss', tailwind: 3, code: '@tailwind {}', isError: false },
+    { ext: 'scss', tailwind: 4, code: '@tailwind {}', isError: true },
   ],
 );

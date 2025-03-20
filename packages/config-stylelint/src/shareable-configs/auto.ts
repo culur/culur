@@ -1,10 +1,10 @@
 import { defineHasPackages } from '@culur/utils-packages';
 import defineConfig from '~/factory';
 
-const { hasTailwind, hasSass, hasVue } = defineHasPackages();
+const { tailwindVersion, hasSass, hasVue } = defineHasPackages();
 
 export default defineConfig({
-  tailwind: hasTailwind(),
+  tailwind: tailwindVersion(),
   sass: hasSass(),
   vue: hasVue(),
 });

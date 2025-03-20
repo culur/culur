@@ -1,24 +1,74 @@
 import type { Packages } from '@culur/utils-packages';
 import { defineRule, defineRules } from '~/utils';
 
-// https://tailwindcss.com/docs/functions-and-directives
-const directives = [
-  'tailwind',
-  'layer',
-  'apply',
-  'config',
+const getIgnoreAtRulesByTailwindVersion = (
+  tailwindVersion: false | number | undefined,
+) => {
+  switch (tailwindVersion) {
+    // https://tailwindcss-v0.netlify.app//docs/functions-and-directives
+    case 0:
+      return [
+        // Directives
+        'tailwind',
+        'apply',
 
-  // https://v2.tailwindcss.com/docs/functions-and-directives
-  // backwards compatible for v2
-  'variants',
-  'responsive',
-  'screen',
-];
+        'variants',
+        'responsive',
+        'screen',
+      ];
+
+    // https://v1.tailwindcss.com/docs/functions-and-directives
+    // https://v2.tailwindcss.com/docs/functions-and-directives
+    case 1:
+    case 2:
+      return [
+        // Directives
+        'tailwind',
+        'apply',
+        'layer', // new
+
+        'variants',
+        'responsive',
+        'screen',
+      ];
+
+    // https://v3.tailwindcss.com/docs/functions-and-directives
+    case 3:
+      return [
+        // Directives
+        'tailwind',
+        'layer',
+        'apply',
+        'config', // new
+      ];
+
+    // https://tailwindcss.com/docs/functions-and-directives
+    case 4:
+      return [
+        // Directives
+        'import',
+        'theme',
+        'source',
+        'utility',
+        'variant',
+        'custom-variant',
+        'apply',
+        'reference',
+
+        // Compatibility
+        'config',
+        'plugin',
+      ];
+
+    default:
+      return [];
+  }
+};
 
 export const atRuleNoUnknownRule = (packages: Partial<Packages>) =>
-  defineRule<boolean, { ignoreAtRules: (string | RegExp)[] }>([
+  defineRule<true, { ignoreAtRules: (string | RegExp)[] }>([
     true,
-    { ignoreAtRules: packages.tailwind ? directives : [] },
+    { ignoreAtRules: getIgnoreAtRulesByTailwindVersion(packages.tailwind) },
   ]);
 
 export const atRuleNoUnknownCSS = (packages: Partial<Packages>) =>

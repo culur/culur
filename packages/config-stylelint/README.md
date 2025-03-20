@@ -16,13 +16,13 @@
 
 ### Auto detect environment
 
-The config will check whether the following packages are installed or not to change plugins and rules.
+The configuration will check if the following packages are installed and their versions to change plugins and rules.
 
-| Environment | Packages                             |
-| ----------- | ------------------------------------ |
-| Tailwind    | `tailwindcss`                        |
-| SCSS        | `sass` or `dart-sass` or `node-sass` |
-| Vue         | `vue`                                |
+| Environment | Packages                             | Support versions |
+| ----------- | ------------------------------------ | ---------------- |
+| Tailwind    | `tailwindcss`                        | 0, 1, 2, 3, 4    |
+| SCSS        | `sass` or `dart-sass` or `node-sass` | -                |
+| Vue         | `vue`                                | -                |
 
 ### Extends
 
@@ -73,17 +73,19 @@ Set your `.stylelintrc.json` to:
 
 Below are also some pre-built configs to use.
 
-| Config                                      | Tailwind | Sass | Vue  |
-| ------------------------------------------- | -------- | ---- | ---- |
-| `@culur/config-stylelint`                   | auto     | auto | auto |
-| `@culur/config-stylelint/auto`              | auto     | auto | auto |
-| `@culur/config-stylelint/none`              |          |      |      |
-| `@culur/config-stylelint/sass-vue`          |          | true | true |
-| `@culur/config-stylelint/sass`              |          | true |      |
-| `@culur/config-stylelint/tailwind-sass-vue` | true     | true | true |
-| `@culur/config-stylelint/tailwind-sass`     | true     | true |      |
-| `@culur/config-stylelint/tailwind`          | true     |      |      |
-| `@culur/config-stylelint/vue`               |          |      | true |
+| Config                                       | Tailwind | Sass | Vue  |
+| -------------------------------------------- | -------- | ---- | ---- |
+| `@culur/config-stylelint`                    | auto     | auto | auto |
+| `@culur/config-stylelint/auto`               | auto     | auto | auto |
+| `@culur/config-stylelint/none`               |          |      |      |
+| `@culur/config-stylelint/sass-vue`           |          | true | true |
+| `@culur/config-stylelint/sass`               |          | true |      |
+| `@culur/config-stylelint/tailwind3-sass-vue` | 3        | true | true |
+| `@culur/config-stylelint/tailwind3-sass`     | 3        | true |      |
+| `@culur/config-stylelint/tailwind3`          | 3        |      |      |
+| `@culur/config-stylelint/tailwind4-vue`      | 4        |      | true |
+| `@culur/config-stylelint/tailwind4`          | 4        |      |      |
+| `@culur/config-stylelint/vue`                |          |      | true |
 
 ### 2. Define config
 
@@ -95,7 +97,7 @@ import { defineConfig } from '@culur/config-stylelint/factory';
 
 export default defineConfig(
   {
-    tailwind: true,
+    tailwind: 4,
     sass: false,
     vue: false,
   },

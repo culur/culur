@@ -8,7 +8,11 @@ import {
 describeRule(
   functionNoUnknownRule,
   [
-    { tailwind: true, sass: false, vue: false, length: 2 },
+    { tailwind: 0, sass: false, vue: false, length: 1 },
+    { tailwind: 1, sass: false, vue: false, length: 1 },
+    { tailwind: 2, sass: false, vue: false, length: 2 },
+    { tailwind: 3, sass: false, vue: false, length: 2 },
+    { tailwind: 4, sass: false, vue: false, length: 3 },
     { tailwind: false, sass: true, vue: false, length: 1 },
     { tailwind: false, sass: false, vue: true, length: 1 },
   ],
@@ -27,7 +31,7 @@ describeLintAndFix(
       code: 'a { color: unknown(1); }',
     },
     {
-      tailwind: true,
+      tailwind: 3,
       isError: false,
       code: 'a { color: theme(colors.blue.500); }',
     },

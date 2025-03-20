@@ -9,7 +9,7 @@ describeRule(
   atRuleNoDeprecatedRule,
   [
     { tailwind: false, length: 0 },
-    { tailwind: true, length: 1 },
+    { tailwind: 3, length: 1 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));
@@ -22,6 +22,6 @@ describeLintAndFix(
   o => ({ rules: atRuleNoDeprecated(o) }),
   [
     { tailwind: false, code: '@apply {}', isError: true },
-    { tailwind: true, code: '@apply {}', isError: false },
+    { tailwind: 3, code: '@apply {}', isError: false },
   ],
 );

@@ -5,10 +5,19 @@ import { order, orderRule } from './order';
 describeRule(
   orderRule,
   [
-    { tailwind: false, sass: false, length: 9 },
-    { tailwind: true, sass: false, length: 16 },
-    { tailwind: false, sass: true, length: 17 },
-    { tailwind: true, sass: true, length: 24 },
+    { sass: false, length: 9 },
+    { sass: true, length: 17 },
+
+    { tailwind: 0, length: 14 },
+    { tailwind: 1, length: 15 },
+    { tailwind: 2, length: 15 },
+    { tailwind: 3, length: 13 },
+    { tailwind: 4, length: 19 },
+
+    { tailwind: 0, sass: true, length: 22 },
+    { tailwind: 1, sass: true, length: 23 },
+    { tailwind: 2, sass: true, length: 23 },
+    { tailwind: 3, sass: true, length: 21 },
   ],
   (rule, testCase) => {
     assert(Array.isArray(rule));

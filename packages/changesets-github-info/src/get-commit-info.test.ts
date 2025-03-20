@@ -2,9 +2,9 @@ import * as octokitGraphql from '@octokit/graphql';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { getCommitInfo } from './get-commit-info';
 
-vi.mock('@octokit/graphql', async () => {
+vi.mock('@octokit/graphql', async importOriginal => {
   const octokitGraphql: typeof import('@octokit/graphql') =
-    await vi.importActual('@octokit/graphql');
+    await importOriginal();
   return {
     ...octokitGraphql,
     graphql: vi.fn(),

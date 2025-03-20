@@ -1,5 +1,11 @@
 # @culur/changesets-github-info
 
+## 1.1.5
+
+### Patch Changes
+
+- ❔ Improve unit test ([#218](https://github.com/culur/culur/pull/218) [`0567f18`](https://github.com/culur/culur/commit/0567f18b4af2cdf95502f3b66bdc80f394a15b87)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.1.4
 
 ### Patch Changes

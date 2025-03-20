@@ -1,4 +1,3 @@
-import core from '@actions/core';
 import dedent from 'dedent';
 import fs from 'fs-extra';
 import { vi } from 'vitest';
@@ -61,7 +60,6 @@ export function mockAll() {
     },
   });
 
-  vi.spyOn(core, 'debug').mockImplementation(() => {});
   vi.spyOn(fs, 'writeFile').mockImplementation(mockWriteFile);
 }
 

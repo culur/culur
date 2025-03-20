@@ -1,17 +1,21 @@
-import core from '@actions/core';
 import github from '@actions/github';
-import { afterEach, beforeEach, describe, it, vi } from 'vitest';
+import { afterEach, describe, it, vi } from 'vitest';
 import { mockAll } from './__tests__/mock-all';
+
+vi.mock('@actions/core', () => ({
+  default: {
+    setFailed: vi.fn(),
+    info: vi.fn(),
+    debug: vi.fn(),
+    getInput: vi.fn(),
+  },
+}));
 
 // Shallow clone original @actions/github context
 const originalContext = { ...github.context };
 describe('index', () => {
-  beforeEach(() => {
-    vi.spyOn(core, 'debug').mockImplementation(() => {});
-  });
-
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
     Object.defineProperty(github, 'context', { value: originalContext });
   });
 

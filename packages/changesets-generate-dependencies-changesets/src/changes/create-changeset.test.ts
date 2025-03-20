@@ -4,13 +4,18 @@ import fs from 'fs-extra';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createChangeset } from './create-changeset';
 
+vi.mock('@actions/core', () => ({
+  default: {
+    debug: vi.fn(),
+  },
+}));
+
 describe('createChangeset', () => {
   afterEach(() => {
-    vi.restoreAllMocks();
+    vi.resetAllMocks();
   });
 
   it('valid', async () => {
-    const coreDebug = vi.spyOn(core, 'debug').mockImplementation(() => {});
     vi.spyOn(fs, 'writeFile').mockImplementation(() => {});
 
     await createChangeset({
@@ -42,6 +47,6 @@ describe('createChangeset', () => {
       - \`dependencies\`:
         - \`bar@2.0.0\`
     `;
-    expect(coreDebug).toBeCalledWith(`${debugMessage}\n`);
+    expect(core.debug).toBeCalledWith(`${debugMessage}\n`);
   });
 });

@@ -54,11 +54,13 @@
     "node": ">=20"
   },
   "dependencies": {
-    "local-pkg": "^1.1.1"
+    "local-pkg": "^1.1.1",
+    "semver": "^7.7.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@culur/config-vite": "workspace:*"
+    "@culur/config-vite": "workspace:*",
+    "@types/semver": "^7.5.8"
   }
 }

@@ -53,7 +53,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "type-fest": "^4.37.0"
+    "type-fest": "^4.40.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

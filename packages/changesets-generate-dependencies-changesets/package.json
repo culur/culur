@@ -68,6 +68,6 @@
     "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "type-fest": "^4.37.0"
+    "type-fest": "^4.40.0"
   }
 }

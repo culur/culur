@@ -2,8 +2,8 @@ import defineConfig from '@culur/config-eslint';
 
 export default defineConfig(
   {
-    vue: true,
-    react: true,
+    vue: false,
+    react: false,
     markdown: true,
     typescript: true,
   },

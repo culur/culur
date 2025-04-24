@@ -12,10 +12,10 @@ export const defineConfigTest = (
   const coverageOptions: BaseCoverageOptions = coverage ?? {};
 
   return {
-    include: ['**/*\\.{test,test-d}.ts'],
+    include: ['**/*\\.{test,test-d}.?(c|m)[jt]s?(x)'],
     typecheck: {
       tsconfig: './tsconfig.json',
-      include: ['**/*.test-d.ts'],
+      include: ['**/*.test-d.?(c|m)[jt]s?(x)'],
       ...typecheckOptions,
     },
     coverage: {

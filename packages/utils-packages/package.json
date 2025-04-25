@@ -61,6 +61,6 @@
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",
-    "@types/semver": "^7.5.8"
+    "@types/semver": "^7.7.0"
   }
 }

@@ -1,27 +1,58 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "configMigration": true,
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", ":semanticCommits"],
   "baseBranches": ["dev"],
   "labels": ["dependencies"],
   "postUpdateOptions": ["pnpmDedupe"],
+  "dependencyDashboardApproval": true,
   "packageRules": [
     {
       "rangeStrategy": "bump",
+      "groupName": "all dependencies",
       "groupSlug": "all-dependencies",
       "matchPackageNames": ["*"]
     },
     {
       "rangeStrategy": "bump",
       "matchDepTypes": ["dependencies"],
+      "groupName": "dependencies",
       "groupSlug": "only-dependencies",
       "matchPackageNames": ["*"]
     },
     {
       "rangeStrategy": "bump",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "groupName": "dev and peer dependencies",
       "groupSlug": "only-dev-and-peer-dependencies",
       "matchPackageNames": ["*"]
+    },
+    {
+      "rangeStrategy": "bump",
+      "matchPackageNames": [
+        "/.*eslint.*/",
+        "/.*stylelint.*/",
+        "/.*markdownlint.*/",
+        "/.*prettier.*/"
+      ],
+      "matchFileNames": ["package.json"],
+      "semanticCommitScope": "root",
+      "groupName": "root Linter and Formatter",
+      "groupSlug": "root-linter-and-formatter"
+    },
+    {
+      "commitMessageTopic": "Node.js",
+      "matchDatasources": ["docker", "node-version"],
+      "matchPackageNames": [
+        "/(?:^|/)node$/",
+        "pnpm",
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!ghcr.io/devcontainers/features/node",
+        "!kindest/node"
+      ],
+      "groupName": "update node.js and pnpm versions",
+      "groupSlug": "node-pnpm"
     },
     {
       "description": "Ignore nodejs",

@@ -28,12 +28,12 @@
       "rangeStrategy": "bump",
       "matchPackageNames": [
         "*eslint*",
-        "*prettier*",
         "*stylelint*",
-        "*markdownlint*"
+        "*markdownlint*",
+        "*prettier*"
       ],
-      "matchPaths": ["package.json"],
-      "groupSlug": "root-linter-plugins"
+      "matchFileNames": ["package.json"],
+      "groupSlug": "root-linter-and-formatter"
     },
     {
       "rangeStrategy": "bump",

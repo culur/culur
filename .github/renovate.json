@@ -20,8 +20,35 @@
     {
       "rangeStrategy": "bump",
       "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "groupName": "only-dev-and-peer-dependencies",
       "groupSlug": "only-dev-and-peer-dependencies",
       "matchPackageNames": ["*"]
+    },
+    {
+      "rangeStrategy": "bump",
+      "matchPackageNames": [
+        "*eslint*",
+        "*stylelint*",
+        "*markdownlint*",
+        "*prettier*"
+      ],
+      "matchPaths": ["package.json"],
+      "groupSlug": "root-linter-and-formatter"
+    },
+    {
+      "rangeStrategy": "bump",
+      "matchDatasources": ["docker", "node-version"],
+      "matchDepTypes": ["volta", "engines"],
+      "matchPackageNames": [
+        "/(?:^|/)node$/",
+        "pnpm",
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!ghcr.io/devcontainers/features/node",
+        "!kindest/node"
+      ],
+      "groupName": "Update Node.js and pnpm versions",
+      "groupSlug": "update-node-pnpm"
     },
     {
       "description": "Ignore nodejs",

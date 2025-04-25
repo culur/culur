@@ -32,7 +32,7 @@
         "*markdownlint*",
         "*prettier*"
       ],
-      "matchPaths": ["package.json"],
+      "matchFileNames": ["package.json"],
       "groupName": "Root Linter and Formatter",
       "groupSlug": "root-linter-and-formatter"
     },

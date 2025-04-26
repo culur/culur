@@ -1,0 +1,22 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  packageRules: [
+    {
+      description: '{{arg0}}: bump',
+      groupName: "`{{arg0}}`'s dependencies",
+      groupSlug: '{{arg0}}',
+      semanticCommitType: 'chore',
+      semanticCommitScope: 'deps/{{arg0}}',
+      addLabels: ['{{arg0}}'],
+      matchFileNames: ['packages/{{arg0}}/package.json'],
+    },
+    {
+      description: '{{arg0}}: ignore peerDependencies',
+      enabled: false,
+      matchPackageNames: ['{{arg1}}'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['peerDependencies'],
+      matchFileNames: ['packages/{{arg0}}/package.json'],
+    },
+  ],
+}

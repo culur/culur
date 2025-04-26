@@ -1,0 +1,104 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: ['config:recommended', ':semanticCommits'],
+  baseBranches: ['dev'],
+  configMigration: true,
+  dependencyDashboardApproval: true,
+  labels: ['dependencies'],
+  postUpdateOptions: ['pnpmDedupe'],
+  packageRules: [
+    {
+      groupName: 'all dependencies',
+      groupSlug: 'all-dependencies',
+      addLabels: ['all-dependencies'],
+      rangeStrategy: 'bump',
+      matchPackageNames: ['*'],
+    },
+
+    //! Nodejs and pnpm
+    {
+      groupName: 'Update node.js and pnpm versions',
+      groupSlug: 'node-pnpm',
+      semanticCommitScope: 'deps/root',
+      addLabels: ['node-pnpm'],
+      matchPackageNames: [
+        '/(?:^|/)node$/',
+        '/.*pnpm.*/',
+        '!calico/node',
+        '!docker.io/calico/node',
+        '!ghcr.io/devcontainers/features/node',
+        '!kindest/node',
+      ],
+      matchDatasources: ['docker', 'node-version', 'npm'],
+    },
+    {
+      description: 'Ignore nodejs',
+      enabled: false,
+      matchPackageNames: ['node'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['engines'],
+    },
+
+    //! Root linter and formatter
+    {
+      groupName: 'Linter and Formatter',
+      groupSlug: 'root-linter-and-formatter',
+      semanticCommitScope: 'deps/root',
+      rangeStrategy: 'bump',
+      matchPackageNames: [
+        '/.*eslint.*/',
+        '/.*stylelint.*/',
+        '/.*markdownlint.*/',
+        '/.*prettier.*/',
+      ],
+      matchFileNames: ['package.json'],
+    },
+
+    //! Package / config-eslint
+    {
+      description: 'config-eslint: bump',
+      groupName: "config-eslint's dependency",
+      groupSlug: 'config-eslint',
+      addLabels: ['config-eslint'],
+      matchFileNames: ['packages/config-eslint/package.json'],
+    },
+    {
+      description: 'config-eslint: ignore peerDependencies',
+      enabled: false,
+      matchPackageNames: ['eslint'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['peerDependencies'],
+      matchFileNames: ['packages/config-eslint/package.json'],
+    },
+
+    //! Package / config-prettier
+    {
+      description: 'Ignore peerDependencies',
+      enabled: false,
+      matchPackageNames: ['prettier'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['peerDependencies'],
+      matchFileNames: ['packages/config-prettier/package.json'],
+    },
+
+    //! Package / config-stylelint
+    {
+      description: 'Ignore peerDependencies',
+      enabled: false,
+      matchPackageNames: ['stylelint'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['peerDependencies'],
+      matchFileNames: ['packages/config-stylelint/package.json'],
+    },
+
+    //! Package / config-typescript
+    {
+      description: 'Ignore peerDependencies',
+      enabled: false,
+      matchPackageNames: ['typescript'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['peerDependencies'],
+      matchFileNames: ['packages/config-typescript/package.json'],
+    },
+  ],
+}

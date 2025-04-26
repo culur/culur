@@ -1,0 +1,18 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  packageRules: [
+    {
+      groupName: 'Linter and Formatter',
+      groupSlug: 'workspace-linter-and-formatter',
+      semanticCommitScope: 'deps/workspace',
+      rangeStrategy: 'bump',
+      matchPackageNames: [
+        '/.*eslint.*/',
+        '/.*stylelint.*/',
+        '/.*markdownlint.*/',
+        '/.*prettier.*/',
+      ],
+      matchFileNames: ['package.json'],
+    },
+  ],
+}

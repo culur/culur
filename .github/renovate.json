@@ -1,66 +1,101 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "configMigration": true,
-  "extends": ["config:recommended"],
+  "extends": ["config:recommended", ":semanticCommits"],
   "baseBranches": ["dev"],
+  "configMigration": true,
+  "dependencyDashboardApproval": true,
   "labels": ["dependencies"],
   "postUpdateOptions": ["pnpmDedupe"],
   "packageRules": [
     {
-      "rangeStrategy": "bump",
+      "groupName": "all dependencies",
       "groupSlug": "all-dependencies",
+      "addLabels": ["all-dependencies"],
+      "rangeStrategy": "bump",
       "matchPackageNames": ["*"]
     },
     {
-      "rangeStrategy": "bump",
-      "matchDepTypes": ["dependencies"],
+      "groupName": "dependencies",
       "groupSlug": "only-dependencies",
-      "matchPackageNames": ["*"]
+      "addLabels": ["only-dependencies"],
+      "rangeStrategy": "bump",
+      "matchPackageNames": ["*"],
+      "matchDepTypes": ["dependencies"]
     },
     {
-      "rangeStrategy": "bump",
-      "matchDepTypes": ["devDependencies", "peerDependencies"],
+      "allowedVersions": "",
+      "groupName": "dev and peer dependencies",
       "groupSlug": "only-dev-and-peer-dependencies",
-      "matchPackageNames": ["*"]
+      "addLabels": ["only-dev-and-peer-dependencies"],
+      "rangeStrategy": "bump",
+      "matchPackageNames": ["*"],
+      "matchDepTypes": ["devDependencies", "peerDependencies"]
+    },
+    {
+      "groupName": "root Linter and Formatter",
+      "groupSlug": "root-linter-and-formatter",
+      "semanticCommitScope": "root",
+      "rangeStrategy": "bump",
+      "matchPackageNames": [
+        "/.*eslint.*/",
+        "/.*stylelint.*/",
+        "/.*markdownlint.*/",
+        "/.*prettier.*/"
+      ],
+      "matchFileNames": ["package.json"]
+    },
+    {
+      "groupName": "update node.js and pnpm versions",
+      "groupSlug": "node-pnpm",
+      "commitMessageTopic": "Node.js",
+      "matchPackageNames": [
+        "/(?:^|/)node$/",
+        "pnpm",
+        "!calico/node",
+        "!docker.io/calico/node",
+        "!ghcr.io/devcontainers/features/node",
+        "!kindest/node"
+      ],
+      "matchDatasources": ["docker", "node-version"]
     },
     {
       "description": "Ignore nodejs",
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["engines"],
+      "enabled": false,
       "matchPackageNames": ["node"],
-      "enabled": false
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"]
     },
     {
       "description": "Ignore peerDependencies",
-      "matchFileNames": ["packages/config-eslint/package.json"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["peerDependencies"],
+      "enabled": false,
       "matchPackageNames": ["eslint"],
-      "enabled": false
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchFileNames": ["packages/config-eslint/package.json"]
     },
     {
       "description": "Ignore peerDependencies",
-      "matchFileNames": ["packages/config-prettier/package.json"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["peerDependencies"],
+      "enabled": false,
       "matchPackageNames": ["prettier"],
-      "enabled": false
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchFileNames": ["packages/config-prettier/package.json"]
     },
     {
       "description": "Ignore peerDependencies",
-      "matchFileNames": ["packages/config-stylelint/package.json"],
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["peerDependencies"],
+      "enabled": false,
       "matchPackageNames": ["stylelint"],
-      "enabled": false
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["peerDependencies"],
+      "matchFileNames": ["packages/config-stylelint/package.json"]
     },
     {
       "description": "Ignore peerDependencies",
-      "matchFileNames": ["packages/config-typescript/package.json"],
+      "enabled": false,
+      "matchPackageNames": ["typescript"],
       "matchManagers": ["npm"],
       "matchDepTypes": ["peerDependencies"],
-      "matchPackageNames": ["typescript"],
-      "enabled": false
+      "matchFileNames": ["packages/config-typescript/package.json"]
     }
   ]
 }

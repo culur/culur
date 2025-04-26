@@ -1,175 +1,24 @@
 {
   $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['config:recommended', ':semanticCommits'],
+  extends: [
+    'config:recommended',
+    ':semanticCommits',
+    'local>culur/culur//packages/renovate/all-dependencies.json5',
+    'local>culur/culur//packages/renovate/node-and-package-manager.json5(pnpm)',
+    'local>culur/culur//packages/renovate/workspace.json5',
+    'local>culur/culur//packages/renovate/package.json5(changeset-*)',
+    'local>culur/culur//packages/renovate/package.json5(config-eslint,eslint)',
+    'local>culur/culur//packages/renovate/package.json5(config-prettier,prettier)',
+    'local>culur/culur//packages/renovate/package.json5(config-stylelint,stylelint)',
+    'local>culur/culur//packages/renovate/package.json5(config-tsup,tsup)',
+    'local>culur/culur//packages/renovate/package.json5(config-typescript,typescript)',
+    'local>culur/culur//packages/renovate/package.json5(config-vite,vite)',
+    'local>culur/culur//packages/renovate/package.json5(types)',
+    'local>culur/culur//packages/renovate/package.json5(utils-packages)',
+  ],
   baseBranches: ['dev'],
   configMigration: true,
   dependencyDashboardApproval: true,
   labels: ['dependencies'],
   postUpdateOptions: ['pnpmDedupe'],
-  packageRules: [
-    {
-      groupName: 'all dependencies',
-      groupSlug: 'all-dependencies',
-      rangeStrategy: 'bump',
-      matchPackageNames: ['*'],
-    },
-
-    //! Workspace: Nodejs and pnpm
-    {
-      groupName: 'Node.js and pnpm versions',
-      groupSlug: 'node-pnpm',
-      semanticCommitScope: 'deps/root',
-      addLabels: ['node-pnpm'],
-      matchPackageNames: [
-        '/(?:^|/)node$/',
-        '/.*pnpm.*/',
-        '!calico/node',
-        '!docker.io/calico/node',
-        '!ghcr.io/devcontainers/features/node',
-        '!kindest/node',
-      ],
-      matchDatasources: ['docker', 'node-version', 'npm'],
-    },
-    {
-      description: 'Ignore nodejs',
-      enabled: false,
-      matchPackageNames: ['node'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['engines'],
-    },
-
-    //! Workspace: Linter and formatter
-    {
-      groupName: 'Linter and Formatter',
-      groupSlug: 'root-linter-and-formatter',
-      semanticCommitScope: 'deps/root',
-      rangeStrategy: 'bump',
-      matchPackageNames: [
-        '/.*eslint.*/',
-        '/.*stylelint.*/',
-        '/.*markdownlint.*/',
-        '/.*prettier.*/',
-      ],
-      matchFileNames: ['package.json'],
-    },
-
-    //! Package / changesets-*
-    {
-      description: 'changesets-*: bump',
-      groupName: "`changesets-*`'s dependencies",
-      groupSlug: 'changesets-all',
-      semanticCommitScope: 'deps/changesets-*',
-      addLabels: ['changesets-all'],
-      matchFileNames: ['packages/changesets-*/package.json'],
-    },
-
-    //! Package / config-eslint
-    {
-      description: 'config-eslint: bump',
-      groupName: "`config-eslint`'s dependencies",
-      groupSlug: 'config-eslint',
-      semanticCommitScope: 'deps/config-eslint',
-      addLabels: ['config-eslint'],
-      matchFileNames: ['packages/config-eslint/package.json'],
-    },
-    {
-      description: 'config-eslint: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['eslint'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-eslint/package.json'],
-    },
-
-    //! Package / config-prettier
-    // no external dependencies or devDependencies
-    {
-      description: 'config-prettier: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['prettier'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-prettier/package.json'],
-    },
-
-    //! Package / config-stylelint
-    {
-      description: 'config-stylelint: bump',
-      groupName: "`config-stylelint`'s dependencies",
-      groupSlug: 'config-stylelint',
-      semanticCommitScope: 'deps/config-stylelint',
-      addLabels: ['config-stylelint'],
-      matchFileNames: ['packages/config-stylelint/package.json'],
-    },
-    {
-      description: 'config-stylelint: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['stylelint'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-stylelint/package.json'],
-    },
-
-    //! Package / config-tsup
-    // no external dependencies or devDependencies
-    {
-      description: 'config-tsup: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['tsup'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-tsup/package.json'],
-    },
-
-    //! Package / config-typescript
-    // no external dependencies or devDependencies
-    {
-      description: 'config-typescript: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['typescript'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-typescript/package.json'],
-    },
-
-    //! Package / config-vite
-    {
-      description: 'config-vite: bump',
-      groupName: "`config-vite`'s dependencies",
-      groupSlug: 'config-vite',
-      semanticCommitScope: 'deps/config-vite',
-      addLabels: ['config-vite'],
-      matchFileNames: ['packages/config-vite/package.json'],
-    },
-    {
-      description: 'config-vite: ignore peerDependencies',
-      enabled: false,
-      matchPackageNames: ['vite'],
-      matchManagers: ['npm'],
-      matchDepTypes: ['peerDependencies'],
-      matchFileNames: ['packages/config-vite/package.json'],
-    },
-
-    //! Package / types
-    {
-      description: 'types: bump',
-      groupName: "`types`'s dependencies",
-      groupSlug: 'types',
-      semanticCommitScope: 'deps/types',
-      addLabels: ['types'],
-      matchFileNames: ['packages/types/package.json'],
-    },
-    // no peerDependencies
-
-    //! Package / utils-packages
-    {
-      description: 'utils-packages: bump',
-      groupName: "`utils-packages`'s dependencies",
-      groupSlug: 'utils-packages',
-      semanticCommitScope: 'deps/utils-packages',
-      addLabels: ['utils-packages'],
-      matchFileNames: ['packages/utils-packages/package.json'],
-    },
-    // no peerDependencies
-  ],
 }

@@ -1,0 +1,28 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  packageRules: [
+    //! Workspace: Nodejs and pnpm
+    {
+      groupName: 'Node.js and {{arg0}} versions',
+      groupSlug: 'node-{{arg0}}',
+      semanticCommitScope: 'deps/root',
+      addLabels: ['node-{{arg0}}'],
+      matchPackageNames: [
+        '/(?:^|/)node$/',
+        '/.*{{arg0}}.*/',
+        '!calico/node',
+        '!docker.io/calico/node',
+        '!ghcr.io/devcontainers/features/node',
+        '!kindest/node',
+      ],
+      matchDatasources: ['docker', 'node-version', 'npm'],
+    },
+    {
+      description: 'Ignore nodejs',
+      enabled: false,
+      matchPackageNames: ['node'],
+      matchManagers: ['npm'],
+      matchDepTypes: ['engines'],
+    },
+  ],
+}

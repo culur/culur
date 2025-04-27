@@ -1,5 +1,20 @@
 # @culur/changesets-github-info
 
+## 1.1.6
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#274](https://github.com/culur/culur/pull/274) [`1f2d656`](https://github.com/culur/culur/commit/1f2d656c5591c5bf6b2f724e414bc26e996e7fb7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@octokit/graphql@^8.2.2`
+  - `devDependencies`:
+    - `@graphql-codegen/typescript-operations@4.6.0`
+    - `graphql@^16.11.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.2.4`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.5
 
 ### Patch Changes

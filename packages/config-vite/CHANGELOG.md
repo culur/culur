@@ -1,5 +1,14 @@
 # @culur/config-vite
 
+## 1.2.0
+
+### Minor Changes
+
+- ✨ Update `include` & `typecheck.include` extension ([`776425d`](https://github.com/culur/culur/commit/776425d82f1055db1ec310450f121fa19a89a4d5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - New extension in glob patterns: `.?(c|m)[jt]s?(x)`.
+  - Reference: [`defaultInclude`](https://github.com/vitest-dev/vitest/blob/v3.1.2/packages/vitest/src/defaults.ts#L12).
+
 ## 1.1.6
 
 ### Patch Changes

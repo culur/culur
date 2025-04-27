@@ -1,5 +1,14 @@
 # @culur/types
 
+## 1.2.4
+
+### Patch Changes
+
+- 📦 Update dependencies ([#265](https://github.com/culur/culur/pull/265) [`1f0c747`](https://github.com/culur/culur/commit/1f0c747b956dd9be64d73d8ea9349397624b558c)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `type-fest@^4.40.1`
+
 ## 1.2.3
 
 ### Patch Changes

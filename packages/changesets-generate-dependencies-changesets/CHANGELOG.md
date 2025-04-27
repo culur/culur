@@ -1,5 +1,20 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.5
+
+### Patch Changes
+
+- ✨ Use regex for better `package.json` filtering ([`2464bea`](https://github.com/culur/culur/commit/2464bead0f1520e7d3cedfba17b6eb3e5afe246f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  This ensures only standard `package.json` files in subdirectories are targeted, avoiding matches with files like `package.json5` or `custom-package.json`.
+
+- ⚙️ Update dependencies ([#274](https://github.com/culur/culur/pull/274) [`1f2d656`](https://github.com/culur/culur/commit/1f2d656c5591c5bf6b2f724e414bc26e996e7fb7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `type-fest@^4.40.1`
+
+- 🚨 Test: improve unit test ([`e1b0a51`](https://github.com/culur/culur/commit/e1b0a5111fffae20ed679e374dda7d728d662533)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.4
 
 ### Patch Changes

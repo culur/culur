@@ -15,7 +15,7 @@ export async function getDiffPackageFiles({ baseBranch }: Branches) {
 
   const diffPackageFiles = diffFiles
     .filter(file => file !== 'package.json') // skip root package.json
-    .filter(file => file.includes('package.json'));
+    .filter(file => /\/package.json$/.test(file));
 
   if (diffPackageFiles.length === 0) {
     core.info('No package.json changes to published packages, skipping');

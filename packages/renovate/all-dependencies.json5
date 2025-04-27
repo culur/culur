@@ -3,8 +3,10 @@
   packageRules: [
     {
       groupSlug: 'all-dependencies',
+      semanticCommitScope: 'deps',
       rangeStrategy: 'bump',
       matchPackageNames: ['*'],
+      matchFileNames: ['!(package.json)'],
     },
   ],
 }

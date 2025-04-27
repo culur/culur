@@ -78,10 +78,10 @@
     "@culur/utils-packages": "workspace:*",
     "stylelint-config-clean-order": "^7.0.0",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard": "^38.0.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
-    "stylelint-order": "^6.0.4",
+    "stylelint-order": "^7.0.0",
     "stylelint-scss": "^6.11.1",
     "stylelint-selector-bem-pattern": "^4.0.1"
   },

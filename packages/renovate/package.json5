@@ -6,7 +6,7 @@
       groupSlug: '{{arg0}}',
       semanticCommitType: 'chore',
       semanticCommitScope: 'deps/{{arg0}}',
-      addLabels: ['{{arg0}}'],
+      addLabels: ['package', '{{arg0}}'],
       matchFileNames: ['packages/{{arg1}}/package.json'],
     },
     {

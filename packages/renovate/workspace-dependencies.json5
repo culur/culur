@@ -4,6 +4,7 @@
     {
       groupSlug: 'workspace-dependencies',
       semanticCommitScope: 'deps/workspace',
+      addLabels: ['workspace-dependencies'],
       rangeStrategy: 'bump',
       matchPackageNames: ['*'],
       matchFileNames: ['package.json'],

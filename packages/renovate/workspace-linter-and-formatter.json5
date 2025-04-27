@@ -5,6 +5,7 @@
       groupName: 'Linter and Formatter',
       groupSlug: 'workspace-linter-and-formatter',
       semanticCommitScope: 'deps/workspace',
+      addLabels: ['workspace-linter-and-formatter'],
       rangeStrategy: 'bump',
       matchPackageNames: [
         '/.*eslint.*/',

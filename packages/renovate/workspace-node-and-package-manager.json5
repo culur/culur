@@ -5,7 +5,7 @@
       groupName: 'Node.js and {{arg0}} versions',
       groupSlug: 'workspace-node-{{arg0}}',
       semanticCommitScope: 'deps/workspace',
-      addLabels: ['node', '{{arg0}}'],
+      addLabels: ['workspace', 'node', '{{arg0}}'],
       matchPackageNames: [
         '/(?:^|/)node$/',
         '/.*{{arg0}}.*/',

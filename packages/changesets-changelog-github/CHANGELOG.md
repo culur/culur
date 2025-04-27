@@ -1,5 +1,18 @@
 # @culur/changesets-changelog-github
 
+## 1.1.6
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `dotenv@^16.5.0`
+    - `type-fest@^4.40.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.6`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.5
 
 ### Patch Changes

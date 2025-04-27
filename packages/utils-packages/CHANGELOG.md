@@ -1,5 +1,14 @@
 # @culur/utils-packages
 
+## 1.2.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`9c2556d`](https://github.com/culur/culur/commit/9c2556d37a8d80a4e583f6f37c86357e24c3a159)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@types/semver@^7.7.0`
+
 ## 1.2.0
 
 ### Minor Changes

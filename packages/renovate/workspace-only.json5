@@ -1,0 +1,14 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  packageRules: [
+    {
+      groupName: 'Workspace dependencies',
+      groupSlug: 'workspace',
+      semanticCommitScope: 'deps/workspace',
+      addLabels: ['workspace', 'workspace-only'],
+      rangeStrategy: 'bump',
+      matchPackageNames: ['*'],
+      matchFileNames: ['package.json'],
+    },
+  ],
+}

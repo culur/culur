@@ -23,4 +23,9 @@ export default defineConfig(
       'templates/*/**',
     ],
   },
-);
+).override('culur/renovate-json/rules', {
+  files: [
+    '.github/renovate.json5', //
+    'packages/renovate/*.json5',
+  ],
+});

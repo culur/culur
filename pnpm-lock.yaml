@@ -386,6 +386,8 @@ importers:
         specifier: workspace:*
         version: link:../config-typescript
 
+  packages/renovate: {}
+
   packages/types:
     dependencies:
       type-fest:

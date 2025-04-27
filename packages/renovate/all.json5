@@ -1,0 +1,12 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  packageRules: [
+    {
+      groupName: 'All dependencies',
+      groupSlug: 'all',
+      semanticCommitScope: 'deps',
+      rangeStrategy: 'bump',
+      matchPackageNames: ['*'],
+    },
+  ],
+}

@@ -4,7 +4,6 @@
     'config:recommended',
     ':semanticCommits',
     'local>culur/culur//packages/renovate/all-dependencies.json5',
-    'local>culur/culur//packages/renovate/workspace-dependencies.json5',
     'local>culur/culur//packages/renovate/workspace-node-and-package-manager.json5(pnpm)',
     'local>culur/culur//packages/renovate/workspace-linter-and-formatter.json5',
     'local>culur/culur//packages/renovate/package.json5(changesets-*,changesets-*)',

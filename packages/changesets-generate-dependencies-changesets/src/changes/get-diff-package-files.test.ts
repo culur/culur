@@ -25,6 +25,8 @@ describe('getDiffPackageFiles', () => {
         package.json
         packages/foo/package.json
         packages/bar/package.json
+        packages/renovate/package.json5
+        packages/custom-package.json5
       `,
     );
 

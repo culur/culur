@@ -391,7 +391,7 @@ importers:
   packages/types:
     dependencies:
       type-fest:
-        specifier: ^4.37.0
+        specifier: ^4.40.1
         version: 4.40.1
     devDependencies:
       '@culur/config-tsup':

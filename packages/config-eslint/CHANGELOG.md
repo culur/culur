@@ -1,5 +1,29 @@
 # @culur/config-eslint
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ Add `culur/renovate-json/rules` for **Renovate configurations** ([`5ba37f6`](https://github.com/culur/culur/commit/5ba37f611ea1240a75af798762bc88c2fef7f281)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - This new rule enforces consistent key sorting within Renovate configuration files
+  - Currently, it automatically sorts the keys in the following sections:
+    - The root-level configuration object.
+    - Each individual object within the `packageRules` array.
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`3e1bde7`](https://github.com/culur/culur/commit/3e1bde7c0641a97c5b48e44294bb856b1b1988b4)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^4.12.0`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.1`
+    - `type-fest@^4.40.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.2.7
 
 ### Patch Changes

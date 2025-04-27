@@ -1,5 +1,18 @@
 # @culur/config-stylelint
 
+## 1.4.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`c077512`](https://github.com/culur/culur/commit/c07751289b64cfbf00b628b6e4b54ab4bc05f5e8)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-config-standard@^38.0.0`
+    - `stylelint-order@^7.0.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.0
 
 ### Minor Changes

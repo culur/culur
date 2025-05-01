@@ -67,7 +67,8 @@
   },
   "dependencies": {
     "@antfu/eslint-config": "^4.12.0",
-    "@culur/utils-packages": "workspace:*"
+    "@culur/utils-packages": "workspace:*",
+    "@vitest/eslint-plugin": "^1.1.43"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

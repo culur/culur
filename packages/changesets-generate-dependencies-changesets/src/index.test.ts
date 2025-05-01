@@ -1,5 +1,5 @@
 import github from '@actions/github';
-import { afterEach, describe, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockAll } from './__tests__/mock-all';
 
 vi.mock('@actions/core', () => ({
@@ -22,7 +22,7 @@ describe('index', () => {
   it('index', async () => {
     mockAll();
 
-    await import('./index');
+    await expect(import('./index')).resolves.toBeTruthy();
     await new Promise(r => setTimeout(r, 100));
   });
 });

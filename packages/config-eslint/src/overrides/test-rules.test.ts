@@ -1,7 +1,7 @@
-import type { TypedFlatConfigItem } from '@antfu/eslint-config';
+import type { OverrideConfig } from '~/types';
 import { expectTypeOf, it } from 'vitest';
-import { vitestRules } from './test-rules';
+import { testRules } from './test-rules';
 
 it('should be valid rule', async () => {
-  expectTypeOf(vitestRules).toEqualTypeOf<TypedFlatConfigItem>();
+  expectTypeOf(testRules).toEqualTypeOf<OverrideConfig>();
 });

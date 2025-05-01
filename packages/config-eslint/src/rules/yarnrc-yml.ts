@@ -14,7 +14,7 @@ export const yamlOrder = {
   natural: true,
 } as const;
 
-export const yamlYarnrcSortKeys = {
+export const yarnrcYmlSortKeys = {
   packageExtensions: {
     packages: {
       pathPattern: /^packageExtensions$/.source,
@@ -33,15 +33,15 @@ export const yamlYarnrcSortKeys = {
   },
 } satisfies Record<string, Record<string, YamlSortKeysRecord>>;
 
-export const yamlYarnrcRules: TypedFlatConfigItem = {
+export const yarnrcYmlRules: TypedFlatConfigItem = {
   name: 'culur/yarnrc-yml/rules',
   files: ['.yarnrc.yml'],
   rules: {
     'yaml/sort-keys': [
       'error',
-      yamlYarnrcSortKeys.packageExtensions.packages,
-      yamlYarnrcSortKeys.packageExtensions.dependenciesTypes,
-      yamlYarnrcSortKeys.packageExtensions.childPackages,
+      yarnrcYmlSortKeys.packageExtensions.packages,
+      yarnrcYmlSortKeys.packageExtensions.dependenciesTypes,
+      yarnrcYmlSortKeys.packageExtensions.childPackages,
     ],
   },
 };

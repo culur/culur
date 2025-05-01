@@ -4,7 +4,7 @@ import type {
   ConfigRulePrimaryOption,
   ConfigRuleSecondaryOptions,
 } from '~/utils';
-import { describe, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 type Fn<
   TRuleOrConfig extends
@@ -49,7 +49,9 @@ function describeRuleOrConfigFactory<
             ? await getRuleOrConfig(testCase)
             : getRuleOrConfig;
 
-        fn(ruleOrConfig, testCase);
+        await expect((async () => fn(ruleOrConfig, testCase))())
+          .resolves //
+          .toEqual(undefined);
       });
     });
   };

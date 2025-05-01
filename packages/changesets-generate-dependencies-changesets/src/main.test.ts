@@ -1,4 +1,4 @@
-import { afterEach, describe, it, vi } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockAll, restoreAll } from './__tests__/mock-all';
 import { main } from './main';
 
@@ -20,6 +20,6 @@ describe('main', () => {
   it('main', async () => {
     mockAll();
 
-    await main();
+    await expect(main()).resolves.toEqual(undefined);
   });
 });

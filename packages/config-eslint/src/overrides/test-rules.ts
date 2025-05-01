@@ -27,6 +27,17 @@ export const testRules: OverrideConfig = {
     rules: {
       ...vitest.configs.recommended.rules,
       'test/valid-title': ['error', { allowArguments: true }],
+      'test/expect-expect': [
+        'error',
+        {
+          assertFunctionNames: [
+            'expect',
+            'expectTypeOf',
+            'assert',
+            'assertType',
+          ],
+        },
+      ],
     },
   },
 };

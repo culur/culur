@@ -1,33 +1,26 @@
-import type { ConfigEnv, UserConfig as UserConfigVite_ } from 'vite';
+import type { MergeDeep } from 'type-fest';
+import type { ConfigEnv, UserConfig } from 'vite';
 import type viteTsconfigPaths from 'vite-tsconfig-paths';
-import type { UserConfig as UserConfigVitest_ } from 'vitest/config';
 
-export type Awaitable<T> = T | PromiseLike<T>;
+//! VitestInlineConfig
+export type VitestInlineConfig = NonNullable<UserConfig['test']>;
+export type VitestInlineConfigCustom = MergeDeep<
+  VitestInlineConfig,
+  { coverage?: { excludeExtends?: string[] } }
+>;
 
-export interface UserConfigVite extends UserConfigVite_ {
-  __type?: 'viteConfig';
-}
-export interface UserConfigVitest extends UserConfigVitest_ {
-  __type?: 'vitestConfig';
-}
-
-export type VitestInlineConfig = NonNullable<UserConfigVitest['test']>;
-
-export type TsconfigPathsOptions = Parameters<typeof viteTsconfigPaths>[0];
-
-export type Options = {
+//! UserConfig
+export type UserConfigExtends = UserConfig & {
   pluginTsconfigPaths?: boolean | TsconfigPathsOptions;
 } & (
-  | (UserConfigVite & { test?: false })
-  | (UserConfigVitest & { test: true | UserConfigVitest['test'] })
-);
-export type UserConfig<TOptions extends Options> = TOptions extends {
-  test?: false;
-}
-  ? UserConfigVite
-  : UserConfigVitest;
+    | { test?: false } //
+    | { test: true | VitestInlineConfigCustom }
+  );
 
-export type OptionsExport<TOptions extends Options> =
-  | TOptions
-  | Promise<TOptions>
-  | ((env: ConfigEnv) => TOptions | Promise<TOptions>);
+export type UserConfigGetter<TUserConfigExtends extends UserConfigExtends> =
+  | TUserConfigExtends
+  | Promise<TUserConfigExtends>
+  | ((env: ConfigEnv) => TUserConfigExtends | Promise<TUserConfigExtends>);
+
+//! Plugins
+export type TsconfigPathsOptions = Parameters<typeof viteTsconfigPaths>[0];

@@ -1,8 +1,9 @@
-import type { Options, UserConfig } from '~/types';
+import type { UserConfig } from 'vite';
+import type { UserConfigExtends } from '~/types';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const defineTsconfigPathsPlugin = (
-  pluginTsconfigPaths: Options['pluginTsconfigPaths'] = true,
+  pluginTsconfigPaths: UserConfigExtends['pluginTsconfigPaths'] = true,
 ) =>
   pluginTsconfigPaths &&
   tsconfigPaths(
@@ -11,7 +12,7 @@ const defineTsconfigPathsPlugin = (
       : pluginTsconfigPaths,
   );
 
-export const defineConfigPlugins = <TOptions extends Options>(
+export const defineConfigPlugins = <TOptions extends UserConfigExtends>(
   options: TOptions,
 ) => {
   const tsconfigPathsPlugin = defineTsconfigPathsPlugin(
@@ -19,5 +20,5 @@ export const defineConfigPlugins = <TOptions extends Options>(
   );
   const plugins = options.plugins ?? [];
 
-  return [tsconfigPathsPlugin, ...plugins] as UserConfig<TOptions>['plugins'];
+  return [tsconfigPathsPlugin, ...plugins] as UserConfig['plugins'];
 };

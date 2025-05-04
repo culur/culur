@@ -1,33 +1,40 @@
-import type { ConfigEnv } from 'vite';
-import type { Awaitable, Options, OptionsExport, UserConfig } from '~/types';
+import type { ConfigEnv, UserConfig } from 'vite';
+import type { UserConfigExtends, UserConfigGetter } from '~/types';
 import { defineConfigObject } from './define-config-object';
 
-export function defineConfig<TOptions extends Options = { test: false }>(
-  config?: Options | TOptions, // for auto-completion
-): UserConfig<TOptions>;
+export function defineConfig<
+  TOptions extends UserConfigExtends = { test: false },
+>(
+  config?: UserConfigExtends | TOptions, // for auto-completion
+): UserConfig;
 
-export function defineConfig<TOptions extends Options>(
-  config: Promise<Options | TOptions>, // for auto-completion
-): (env: ConfigEnv) => Promise<UserConfig<TOptions>>;
+export function defineConfig<TUserConfig extends UserConfigExtends>(
+  config: Promise<UserConfigExtends | TUserConfig>, // for auto-completion
+): (env: ConfigEnv) => Promise<UserConfig>;
 
-export function defineConfig<TOptions extends Options>(
-  config: (env: ConfigEnv) => Awaitable<Options | TOptions>, // for auto-completion
-): (env: ConfigEnv) => Promise<UserConfig<TOptions>>;
+export function defineConfig<TUserConfig extends UserConfigExtends>(
+  config: (
+    env: ConfigEnv,
+  ) =>
+    | UserConfigExtends
+    | TUserConfig
+    | Promise<UserConfigExtends | TUserConfig>, // for auto-completion
+): (env: ConfigEnv) => Promise<UserConfig>;
 
-export function defineConfig<TOptions extends Options>(
-  configExport?: OptionsExport<TOptions>,
+export function defineConfig<TUserConfig extends UserConfigExtends>(
+  config?: UserConfigGetter<TUserConfig>,
 ) {
-  if (typeof configExport === 'function') {
+  if (typeof config === 'function') {
     return async (env: ConfigEnv) => {
-      const config = await configExport(env);
-      return defineConfigObject(config);
+      const configObject = await config(env);
+      return defineConfigObject(configObject);
     };
   }
-  if (typeof configExport === 'object' && 'then' in configExport) {
+  if (typeof config === 'object' && 'then' in config) {
     return async (_env: ConfigEnv) => {
-      const config = await configExport;
-      return defineConfigObject(config);
+      const configObject = await config;
+      return defineConfigObject(configObject);
     };
   }
-  return defineConfigObject(configExport);
+  return defineConfigObject(config);
 }

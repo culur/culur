@@ -272,3 +272,4 @@ typed-router.d.ts
 # ignore projects that have custom lint and test scripts
 apps/*/**
 templates/*/**
+packages/logger/**

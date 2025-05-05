@@ -1,5 +1,14 @@
 # @culur/config-stylelint
 
+## 1.4.2
+
+### Patch Changes
+
+- 🚨 Test: update unit tests for new ESLint setup ([`a59db17`](https://github.com/culur/culur/commit/a59db173a6ce8389beb04d11f2afcebcaf862b05)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.1
 
 ### Patch Changes

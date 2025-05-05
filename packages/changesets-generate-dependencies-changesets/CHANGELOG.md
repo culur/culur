@@ -1,5 +1,11 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.6
+
+### Patch Changes
+
+- 🚨 Test: update unit tests for new ESLint setup ([`a59db17`](https://github.com/culur/culur/commit/a59db173a6ce8389beb04d11f2afcebcaf862b05)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.5
 
 ### Patch Changes

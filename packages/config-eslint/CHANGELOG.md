@@ -1,5 +1,20 @@
 # @culur/config-eslint
 
+## 1.4.0
+
+### Minor Changes
+
+- ✨ Add `@vitest/eslint-plugin` ([`dee4cd3`](https://github.com/culur/culur/commit/dee4cd34d146a79867f6cc6b3f065f3e988732d0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🔨 Refactor: rename `yamlYarnrcRules` to `yarnrcYmlRules`, nothing changes in the bundle code ([`2d2c2b5`](https://github.com/culur/culur/commit/2d2c2b56805af2bba36fc52064145f1ebbd02029)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🚨 Test: update unit tests for new ESLint setup ([`a59db17`](https://github.com/culur/culur/commit/a59db173a6ce8389beb04d11f2afcebcaf862b05)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.3.0
 
 ### Minor Changes

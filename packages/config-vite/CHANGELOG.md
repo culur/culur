@@ -1,5 +1,11 @@
 # @culur/config-vite
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ Use `UserConfig` from `vite` only because `UserConfig` from `vitest/config` is deprecated ([`cc6c356`](https://github.com/culur/culur/commit/cc6c3566d91c71918eb0eee9a5e2dc3d72e1dc53)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.0
 
 ### Minor Changes

@@ -207,8 +207,9 @@ Temporary Items
 #! ----- ----- ----- ----- ----- Custom ----- ----- ----- ----- ----- !#
 
 # vite / vitest
-vite.config.*.timestamp-*.*js
-vitest.config.*.timestamp-*.*js
+**/vite.config.*.timestamp-*.*js
+**/vitest.config.*.timestamp-*.*js
+**/tsconfig.vitest-temp*.json
 
 # nx
 .nx/cache

@@ -4,5 +4,6 @@ packages:
   - scripts/*
   - templates/*
 onlyBuiltDependencies:
+  - electron
   - esbuild
   - nx

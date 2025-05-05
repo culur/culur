@@ -1,0 +1,8 @@
+{
+  "extends": "@culur/config-typescript",
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "baseUrl": "."
+  }
+}

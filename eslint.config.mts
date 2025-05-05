@@ -21,6 +21,7 @@ export default defineConfig(
     ignores: [
       'apps/*/**', //
       'templates/*/**',
+      'packages/logger/**',
     ],
   },
 ).override('culur/renovate-json/rules', {

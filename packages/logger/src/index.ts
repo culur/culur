@@ -1,6 +1,6 @@
 export {
-  BoxData,
   BoxIcon,
+  BoxSyntaxJS,
   Line,
   LineCol,
   LineCols,

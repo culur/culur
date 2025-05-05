@@ -12,7 +12,7 @@ describeComponentRender<{
 }>({
   name: 'text-timer',
   itName: '$text, $startTime, $endTime',
-  delay: 10,
+  delay: 20,
   hasWrapper: false,
   node: ({ startTime, endTime }) => (
     <TextTimer startTime={startTime} endTime={endTime} />

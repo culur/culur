@@ -37,20 +37,20 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
   expectTaskResponseFulfilled(tasks3Response[1], 2);
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Normal                                  0.00s
+    ┌─── Normal
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
+    │ └─── => Count = 2
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
+    │ └─── => Count = 2
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
-    └─── => Data = [3]
+    │ └─── => Count = 2
+    └─── => Count = 0
   `);
 });
 
@@ -83,20 +83,20 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
   expectTaskResponseFulfilled(tasks3Response[1], 2);
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Normal readonly                         0.00s
+    ┌─── Normal readonly
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
+    │ └─── => Count = 2
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
+    │ └─── => Count = 2
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [2]
-    └─── => Data = [3]
+    │ └─── => Count = 2
+    └─── => Count = 0
   `);
 });
 
@@ -105,16 +105,16 @@ describeLogger('.task()', 'Nested', async (root, lastFrame) => {
   tasks.tasks([() => 3.1, () => 3.2], { immediately: false });
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Nested                                Pending
+    ┌─── Nested
     ├─┬─── Tasks                               Pending
     │ ├─ ◌ Anonymous                           Pending
     │ ├─ ◌ Anonymous                           Pending
     │ ├─┬─── Tasks                             Pending
     │ │ ├─ ◌ Anonymous                         Pending
     │ │ ├─ ◌ Anonymous                         Pending
-    │ │ └─── => Data = [2]
-    │ └─── => Data = [3]
-    └─── => Data = [1]
+    │ │ └─── => Count = 2
+    │ └─── => Count = 2
+    └─── => Count = 0
   `);
 });
 
@@ -142,14 +142,14 @@ describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, la
   expect(tasks.isRunning).toStrictEqual(true);
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Wait pending, running tasks             0.00s
+    ┌─── Wait pending, running tasks
     ├─┬─── Tasks                                 0.00s
     │ ├─ ◌ spy                                 Pending
     │ ├─ ◌ spy                                 Pending
     │ ├─ ⠋ spy                                   0.00s
     │ ├─ ⠋ spy                                   0.00s
-    │ └─── => Data = [4]
-    └─── => Data = [1]
+    │ └─── => Count = 4
+    └─── => Count = 0
   `);
 
   await tasks.wait({ stopOnError: true, concurrency: 1 });
@@ -171,11 +171,11 @@ describeLogger('.tasks().wait()', 'Throw on pending tasks', async (root, lastFra
   const tasks = root.tasks([tasksCallback1], { immediately: false });
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Throw on pending tasks                Pending
+    ┌─── Throw on pending tasks
     ├─┬─── Tasks                               Pending
     │ ├─ ◌ throwErrorDelay                     Pending
-    │ └─── => Data = [1]
-    └─── => Data = [1]
+    │ └─── => Count = 1
+    └─── => Count = 0
   `);
 
   await expect(tasks.wait()).rejects.toThrowError('Task Error Object');
@@ -185,19 +185,41 @@ describeLogger('.tasks().wait()', 'Throw on pending tasks', async (root, lastFra
 describeLogger('.tasks().wait()', 'Throw on running tasks', async (root, lastFrame) => {
   const tasksCallback1 = vi.fn(throwErrorDelay);
   const tasks = root.tasks([], { immediately: false });
+
   // eslint-disable-next-line test/valid-expect
   const expectRejects = expect(tasks.task(tasksCallback1)).rejects.toThrowError('Task Error Object');
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Throw on running tasks                  0.00s
+    ┌─── Throw on running tasks
     ├─┬─── Tasks                                 0.00s
     │ ├─ ⠋ throwErrorDelay                       0.00s
-    │ └─── => Data = [1]
-    └─── => Data = [1]
+    │ └─── => Count = 1
+    └─── => Count = 0
   `);
 
   await expect(tasks.wait()).rejects.toThrowError('Task Error Object');
   await expectRejects;
+});
+
+//! Seal
+describeLogger('.task()', 'Seal', async (root, lastFrame) => {
+  const tasks = root.tasks([() => 1, () => 2], { immediately: false });
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Seal
+    ├─┬─── Tasks                               Pending
+    │ ├─ ◌ Anonymous                           Pending
+    │ ├─ ◌ Anonymous                           Pending
+    │ └─── => Count = 2
+    └─── => Count = 0
+  `);
+
+  await tasks.wait();
+
+  await expect(tasks.logData('Error')).rejects.toThrowError('Tasks is already sealed');
+  expect(() => tasks.log('Error')).toThrowError('Tasks is already sealed');
+  expect(() => tasks.task(() => 'Error')).toThrowError('Tasks is already sealed');
+  expect(() => tasks.tasks([() => 'Error'])).toThrowError('Tasks is already sealed');
 });
 
 //! Title
@@ -208,56 +230,55 @@ describeLogger('.tasks({ title })', 'Custom title', async (root, lastFrame) => {
   tasks.title = 'Set title after created';
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Custom title                            0.00s
+    ┌─── Custom title
     ├─┬─── The title string                      0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [1]
+    │ └─── => Count = 1
     ├─┬─── The title function                    0.00s
     │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [1]
+    │ └─── => Count = 1
     ├─┬─── Set title after created             Pending
-    │ └─── => Data = [0]
-    └─── => Data = [3]
+    │ └─── => Count = 0
+    └─── => Count = 0
   `);
 });
 
 //! Show
 describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
   const tasks = root.tasks([() => 1, () => 2], { immediately: false, isShowData: true });
-  await new Promise(resolve => setTimeout(resolve, 50));
+  await tasks.onChange();
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Show data and error                   Pending
+    ┌─── Show data and error
     ├─┬─── Tasks                               Pending
     │ ├─ ◌ Anonymous                           Pending
     │ ├─ ◌ Anonymous                           Pending
     │ └─── => Data = [null, null]
-    └─── => Data = [1]
+    └─── => Count = 0
   `);
 
-  await tasks.wait();
-  await new Promise(resolve => setTimeout(resolve, 50));
+  await tasks.wait({ seal: false });
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Show data and error                     0.00s
+    ┌─── Show data and error
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Data = [1, 2]
-    └─── => Data = [1]
+    └─── => Count = 0
   `);
 
   await tasks.task(() => 3, { isShowData: true });
-  await new Promise(resolve => setTimeout(resolve, 50));
+  await tasks.wait();
 
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Show data and error                     0.00s
+    ┌─── Show data and error
     ├─┬─── Tasks                                 0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ │    => Data = 3
     │ └─── => Data = [1, 2, 3]
-    └─── => Data = [1]
+    └─── => Count = 0
   `);
 });

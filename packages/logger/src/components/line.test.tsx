@@ -1,23 +1,27 @@
 import type { BoxProps } from 'ink';
-import type { SetOptional } from 'type-fest';
 import type { LineProps } from './line';
+import { uniqueId } from 'lodash-es';
 import { describeComponentRender } from '~/__tests__';
 import { Prefix } from '~/types';
 import { Line } from './line';
 
 const defineCases = (
-  groups: ({
-    lines: SetOptional<LineProps & BoxProps & { text: string }, 'level'>[];
-  } & Omit<LineProps & BoxProps, 'prefix'>)[],
+  groups: {
+    level: number;
+    lines: (Omit<LineProps, 'level' | 'key' | 'isStatic'> &
+      BoxProps & { text: string })[];
+  }[],
 ) =>
   groups.flatMap(group =>
     group.lines.map<{ text: string; props: LineProps & BoxProps }>(line => ({
       props: {
+        ...group,
+        ...line,
+        key: uniqueId(),
+        isStatic: true,
         colsLeft: [{ text: 'l1' }, { text: 'l2' }],
         colsRight: [{ text: 'r1' }, { text: 'r2' }],
         flexGrow: 1,
-        ...group,
-        ...line,
       },
       text: line.text,
     })),
@@ -28,7 +32,7 @@ describeComponentRender({
   itName: 'level $props.level, $text',
   hasWrapper: false,
   boxProps: { width: 24 },
-  node: ({ props }) => <Line {...props} />,
+  node: ({ props: { key, ...props } }) => <Line key={key} {...props} />,
   cases: [
     ...defineCases([
       {

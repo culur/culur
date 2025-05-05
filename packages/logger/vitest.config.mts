@@ -5,5 +5,8 @@ export default defineConfig({
     env: {
       NO_COLOR: 'true',
     },
+    coverage: {
+      excludeExtends: ['scripts/**'],
+    },
   },
 });

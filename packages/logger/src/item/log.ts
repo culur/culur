@@ -17,6 +17,8 @@ export class Log extends Base {
   toLines(): LineProps[] {
     return [
       {
+        key: this.key,
+        isStatic: true,
         level: this.level,
         prefix: Prefix.BlockMiddleLine,
         icon: this.#icon,

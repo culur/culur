@@ -38,4 +38,5 @@ export interface TasksOptions<TData extends readonly any[]> {
 export interface TasksOptionsExtra<TData extends readonly any[]>
   extends TasksOptions<TData> {
   concurrency?: number;
+  seal?: boolean;
 }

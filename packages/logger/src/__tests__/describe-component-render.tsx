@@ -25,18 +25,21 @@ export function describeComponentRender<
   cases: (TTestCase & BaseTestCase & { boxProps?: BoxProps })[];
   itName?: string;
 } & {
-  node: (data: TTestCase) => ReactElement;
+  node: (data: TTestCase) => ReactElement | Promise<ReactElement>;
   text?: (data: TTestCase & BaseTestCase) => string;
   hasWrapper?: boolean;
   boxProps?: BoxProps;
 }) {
-  const getNode = (testCase: TTestCase & { boxProps?: BoxProps }) => (
-    <Box {...boxProps} {...testCase.boxProps}>
-      {hasWrapper && <Text>Prefix|</Text>}
-      {node(testCase)}
-      {hasWrapper && <Text>|Suffix</Text>}
-    </Box>
-  );
+  const getBoxNode = async (testCase: TTestCase & { boxProps?: BoxProps }) => {
+    const childNode = await node(testCase);
+    return (
+      <Box {...boxProps} {...testCase.boxProps}>
+        {hasWrapper && <Text>Prefix|</Text>}
+        {childNode}
+        {hasWrapper && <Text>|Suffix</Text>}
+      </Box>
+    );
+  };
 
   const getText = (testCase: TTestCase & { text: string }) => {
     if (text) return text(testCase);
@@ -60,7 +63,8 @@ export function describeComponentRender<
   describe(name, () => {
     // eslint-disable-next-line test/expect-expect
     it.each(cases)(itName, async testCase => {
-      const { lastFrame, unmount } = render(getNode(testCase));
+      const boxNode = await getBoxNode(testCase);
+      const { lastFrame, unmount } = render(boxNode);
 
       if (delay) await new Promise(resolve => setTimeout(resolve, delay));
 

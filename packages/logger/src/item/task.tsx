@@ -2,9 +2,10 @@ import type { BaseRunnable } from './base';
 import type { LineProps } from '~/components';
 import type { TaskCallback, TaskOptions, TaskResponse, TaskTitle } from '~/types';
 import { hrtime } from 'node:process';
-import { BoxData, TextTimer, toLineCols } from '~/components';
+import { BoxSyntaxJS, TextTimer, toLineCols } from '~/components';
 import { TASK } from '~/configs';
 import { Icon, Prefix, Status } from '~/types';
+import { formatData } from '~/utils';
 import { Base } from './base';
 
 export class Task<TData>
@@ -26,7 +27,6 @@ export class Task<TData>
   }
   private set response(response: TaskResponse<TData>) {
     this.#response = response;
-    this.onChange();
   }
   get data() {
     return this.#response.status === Status.Fulfilled ? this.#response.data : null;
@@ -73,19 +73,32 @@ export class Task<TData>
   async wait(options: { stopOnError?: boolean } = {}): Promise<TData | TaskResponse<TData>> {
     const { stopOnError = true } = options;
 
+    if (this.response.status === Status.Fulfilled) {
+      if (stopOnError) return this.response.data;
+      return this.response;
+    }
+
     const startTime = hrtime.bigint();
     this.response = { status: Status.Running, startTime };
+    await this.onChange();
 
     try {
       const data = await this.#callback();
       const endTime = hrtime.bigint();
-      this.response = { status: Status.Fulfilled, startTime, endTime, data };
+      const dataCode = await formatData({ width: this.root.props?.width, level: this.level, data });
+
+      this.response = { status: Status.Fulfilled, startTime, endTime, data, dataCode };
+      await this.onChange();
+
       if (stopOnError) return data;
       return this.response;
     } catch (e) {
       const error = e instanceof Error ? e : new Error(String(e));
       const endTime = hrtime.bigint();
+
       this.response = { status: Status.Rejected, error, startTime, endTime };
+      await this.onChange();
+
       if (stopOnError) throw e;
       return this.response;
     }
@@ -105,6 +118,8 @@ export class Task<TData>
       case Status.Pending:
         return [
           {
+            key: `${this.key}-pending`,
+            isStatic: false,
             level: this.level,
             prefix: Prefix.BlockMiddleLine,
             icon: Icon.Pending,
@@ -115,6 +130,8 @@ export class Task<TData>
       case Status.Running:
         return [
           {
+            key: `${this.key}-running`,
+            isStatic: false,
             level: this.level,
             prefix: Prefix.BlockMiddleLine,
             icon: Icon.Running,
@@ -128,12 +145,14 @@ export class Task<TData>
           if (!this.#isShowData) return [];
           return [
             {
+              key: `${this.key}-fulfilled-data`,
+              isStatic: true,
               level: this.level,
               prefix: Prefix.BlockMiddleNone,
               icon: Icon.Space,
               colsLeft: [
                 { text: '=>', color: 'gray', width: 'no-wrap' },
-                { text: <BoxData data={result.data} /> }, //
+                { text: <BoxSyntaxJS code={result.dataCode} /> }, //
               ],
             },
           ];
@@ -141,6 +160,8 @@ export class Task<TData>
 
         return [
           {
+            key: `${this.key}-fulfilled`,
+            isStatic: true,
             level: this.level,
             prefix: Prefix.BlockMiddleLine,
             icon: Icon.Success,
@@ -158,15 +179,18 @@ export class Task<TData>
 
           return [
             {
+              key: `${this.key}-rejected-error`,
+              isStatic: true,
               level: this.level,
               prefix: Prefix.BlockMiddleNone,
               icon: Icon.Space,
               colsLeft: [
                 { text: '=>', color: 'gray', width: 'no-wrap' },
                 {
-                  text: this.#isShowErrorStack //
-                    ? (result.error.stack || `Error: ${result.error.message}`).replace(/^\s+at/gm, '  at')
-                    : String(result.error),
+                  text:
+                    this.#isShowErrorStack && result.error.stack //
+                      ? result.error.stack.replace(/^\s+at/gm, '  at')
+                      : String(result.error),
                   color: 'red',
                 },
               ],
@@ -176,6 +200,8 @@ export class Task<TData>
 
         return [
           {
+            key: `${this.key}-rejected`,
+            isStatic: true,
             level: this.level,
             prefix: Prefix.BlockMiddleLine,
             icon: Icon.Error,

@@ -1,3 +1,19 @@
+function stringifyString(str: string) {
+  const hasSingleQuote = str.includes("'");
+  const hasDoubleQuote = str.includes('"');
+  const hasBacktick = str.includes('`');
+
+  if (!hasSingleQuote) {
+    return `'${str}'`;
+  } else if (!hasDoubleQuote) {
+    return `"${str}"`;
+  } else if (!hasBacktick) {
+    return `\`${str}\``;
+  } else {
+    return `"${str.replace(/"/g, '\\"')}"`;
+  }
+}
+
 export function stringify(value: unknown): string {
   switch (typeof value) {
     case 'undefined':
@@ -6,7 +22,7 @@ export function stringify(value: unknown): string {
     case 'boolean':
       return String(value);
     case 'string':
-      return `"${value}"`;
+      return stringifyString(value);
     case 'bigint':
       return `${value}n`;
     case 'symbol':

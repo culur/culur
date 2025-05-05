@@ -1,5 +1,5 @@
 export {
-  BoxData,
+  BoxSyntaxJS as BoxData,
   BoxIcon,
   Line,
   LineCol,

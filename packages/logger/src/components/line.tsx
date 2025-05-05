@@ -9,16 +9,14 @@ import { DrawPattern } from './draw-pattern';
 import { LineCols } from './line-cols';
 
 export interface LineProps {
+  key: string;
   level: number;
   prefix: Prefix;
+  isStatic: boolean;
   icon?: Icon | string;
   iconWidth?: number;
   colsLeft?: LineColProps[];
   colsRight?: LineColProps[];
-}
-
-export interface LinePropsWithKey extends LineProps {
-  key: string;
 }
 
 const defaultCols: LineColProps[] = [];
@@ -32,12 +30,13 @@ export function Line({
   prefix,
   ...boxProps
 }: LineProps & BoxProps) {
-  if (level <= 0)
+  if (level <= 0) {
     return (
       <Box {...boxProps}>
         <Text color="red">[Invalid level]</Text>
       </Box>
     );
+  }
 
   return (
     <Box {...boxProps}>

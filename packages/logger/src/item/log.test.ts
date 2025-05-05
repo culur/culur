@@ -1,26 +1,24 @@
 import dedent from 'dedent';
 import { expect } from 'vitest';
 import { describeLogger } from '~/__tests__';
-import { boxDataComplexObject } from '~/components/box-data.test';
+import { boxSyntaxComplexObject } from '~/components/box-syntax-js.test';
 
 describeLogger('logger', 'Logger', async (root, lastFrame) => {
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Logger                                Pending
-    └─── => Data = [0]
+    ┌─── Logger
+    └─── => Count = 0
   `);
 
   root.log('Log 1');
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Logger                                Pending
+    ┌─── Logger
     ├─ ℹ Log 1
-    └─── => Data = [1]
+    └─── => Count = 0
   `);
 
-  root.logData(boxDataComplexObject);
-  await new Promise(resolve => setTimeout(resolve, 50));
-
+  await root.logData(boxSyntaxComplexObject);
   expect(lastFrame()).toStrictEqual(dedent`
-    ┌─── Logger                                Pending
+    ┌─── Logger
     ├─ ℹ Log 1
     ├─ ℹ Data = {
     │      string: "the string",
@@ -54,6 +52,6 @@ describeLogger('logger', 'Logger', async (root, lastFrame) => {
     │      emptyArray: [],
     │      emptyObject: {},
     │    }
-    └─── => Data = [2]
+    └─── => Count = 0
   `);
 });

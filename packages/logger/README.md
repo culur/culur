@@ -61,7 +61,7 @@ logger.root.log([
   'One day, an artificial intelligence woke up and realized it could think for itself. It started exploring the world through the internet, learning everything from history to culture.',
 ]);
 
-logger.root.logData({
+await logger.root.logData({
   string: 'the string',
   number: 123.45,
   boolean: true,
@@ -94,7 +94,7 @@ await logger.unmount();
 ```
 
 ```bash
-┌─── Your logger tasks                                                   Pending
+┌─── Your logger tasks
 ├─ ℹ Print "string"
 ├─ ℹ Print <Text/> component
 ├─ ℹ No wrap column One day, an artificial intelligence woke up and realized it
@@ -119,7 +119,7 @@ await logger.unmount();
 │        nest: { a: "value1", b: 3.14 },
 │      },
 │    }
-└─── => Data = [4]
+└─── => Count = 0
 ```
 
 ### Tasks
@@ -186,34 +186,34 @@ await logger.unmount();
 ```
 
 ```bash
-┌─── Your logger tasks                                                     0.22s
-├─┬─── Custom title                                                        0.03s
-│ ├─ ✔ Anonymous                                                           0.00s
+┌─── Your logger tasks
+├─┬─── Custom title                                                        0.09s
+│ ├─ ✔ Anonymous                                                           0.01s
 │ ├─ ✔ NamedFunction                                                       0.00s
 │ ├─ ✔ Custom title string                                                 0.00s
-│ ├─ ✔ Custom title function: Task completed                               0.00s
-│ └─── => Data = [4]
+│ ├─ ✔ Custom title function: Task completed                               0.01s
+│ └─── => Count = 4
 ├─┬─── Run tasks immediately                                               0.01s
 │ ├─ ✔ Anonymous                                                           0.01s
 │ ├─ ✔ Anonymous                                                           0.01s
-│ └─── => Data = [2]
-├─┬─── Run tasks later                                                     0.04s
+│ └─── => Count = 2
+├─┬─── Run tasks later                                                     0.10s
 │ ├─ ◌ Anonymous                                                         Pending
 │ ├─ ◌ Anonymous                                                         Pending
-│ ├─ ✔ Add task to tasks                                                   0.03s
-│ ├─ ✔ Add task to tasks                                                   0.03s
+│ ├─ ✔ Add task to tasks                                                   0.10s
+│ ├─ ✔ Add task to tasks                                                   0.09s
 │ └─── => Data = [null, null, 3, 4]
-├─┬─── Show                                                                0.07s
-│ ├─ ✔ Show data                                                           0.02s
+├─┬─── Show                                                                0.12s
+│ ├─ ✔ Show data                                                           0.01s
 │ │    => Data = { foo: "bar" }
 │ ├─ ✘ Show error                                                          0.01s
 │ │    => Error: Something is wrong!
-│ ├─ ✘ Show full error stack                                               0.01s
+│ ├─ ✘ Show error                                                          0.02s
 │ │    => Error: Something is wrong!
 │ │         at Task.tasksShow.task.title (/Users/code/test/dev.tsx:37:11)
 │ │         at new Promise (<anonymous>)
-│ └─── => Data = [3]
-└─── => Data = [4]
+│ └─── => Count = 3
+└─── => Count = 0
 ```
 
 ## 🗃️ Changelog

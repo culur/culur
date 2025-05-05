@@ -1,13 +1,17 @@
 import type { AsyncResultIteratorPromise } from 'async';
 import type { Arrayable } from 'type-fest';
-import type { TasksCallback, TasksOptions, TasksOptionsExtra, TasksParams, TasksResponse, TasksTitle } from '../types/tasks';
-import type { BaseRunnable, IBaseRoot } from './base';
+import type { TasksOptions, TasksParams, TasksResponse, TasksTitle } from '../types/tasks';
+import type { BaseRunnable, IRootObject } from './base';
 import type { LineColProps, LineProps } from '~/components';
 import type { TaskCallback, TaskOptions, TaskParams, TaskResponse } from '~/types';
 import { mapLimit, mapSeries } from 'async';
-import { BoxData, TextTimer, toLineCols } from '~/components';
+import chalk from 'chalk';
+import { Text } from 'ink';
+import { isEqual } from 'lodash-es';
+import { BoxSyntaxJS, TextTimer, toLineCols } from '~/components';
 import { TASKS } from '~/configs';
 import { Icon, Prefix, Status } from '~/types';
+import { formatData } from '~/utils';
 import { Base } from './base';
 import { Log } from './log';
 import { Task } from './task';
@@ -18,10 +22,28 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 {
   #tasks: Base[] = [];
   #title: TasksTitle<TTasksData>;
+  #childrenStatus: Status[] = [];
+  #dataCode: string | null = null;
   readonly #isShowData: boolean;
+  sealed: boolean = false;
 
   get #runnableTasks(): BaseRunnable[] {
     return this.#tasks.filter(task => task instanceof Task || task instanceof Tasks);
+  }
+
+  async onChange() {
+    if (this.#isShowData) {
+      const childrenStatus = this.#tasks //
+        .filter(task => task instanceof Task)
+        .map(task => task.status);
+      if (!isEqual(this.#childrenStatus, childrenStatus)) {
+        await this.parent.onChange();
+        this.#dataCode = null;
+        this.#dataCode = await formatData({ width: this.root.props?.width, level: this.level, data: this.data });
+      }
+    }
+
+    await this.parent.onChange();
   }
 
   //! Getter & setter
@@ -92,7 +114,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   }
 
   constructor(
-    parent: Base | IBaseRoot, //
+    parent: Base | IRootObject, //
     options: TasksOptions<TTasksData> = {},
   ) {
     super(parent);
@@ -102,14 +124,14 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
   //! ----- ----- ----- ----- ----- Run ----- ----- ----- ----- ----- !//
   //! Wait
-  async wait(options: { concurrency?: number; stopOnError: false }): Promise<TasksResponse<TTasksData>>;
-  async wait(options?: { concurrency?: number; stopOnError?: true }): Promise<TTasksData>;
+  async wait(options: { concurrency?: number; stopOnError: false; seal?: boolean }): Promise<TasksResponse<TTasksData>>;
+  async wait(options?: { concurrency?: number; stopOnError?: true; seal?: boolean }): Promise<TTasksData>;
 
-  async wait(options: { concurrency?: number; stopOnError?: boolean } = {}): Promise<
+  async wait(options: { concurrency?: number; stopOnError?: boolean; seal?: boolean } = {}): Promise<
     | TasksResponse<TTasksData> //
     | TTasksData
   > {
-    const { stopOnError = true, concurrency = TASKS.tasksConcurrency } = options;
+    const { stopOnError = true, concurrency = TASKS.tasksConcurrency, seal = true } = options;
 
     const pendingTasks = this.#runnableTasks.filter(task => task.status === Status.Pending);
     const runningTasks = this.#runnableTasks.filter(task => task.status === Status.Running);
@@ -143,7 +165,12 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       }, 50);
     });
 
-    await Promise.all([pendingPromise, runningPromise]);
+    try {
+      await Promise.all([pendingPromise, runningPromise]);
+    } finally {
+      await this.onChange(); // format data before seal
+      if (seal) this.sealed = true;
+    }
 
     if (stopOnError) {
       const firstRejectedTask = (this.response as TaskResponse<any>[]) //
@@ -159,13 +186,19 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   //! ----- ----- ----- ----- ----- Children ----- ----- ----- ----- ----- !//
   //! Log
   log(props: Arrayable<LineColProps['text'] | LineColProps>, icon = Icon.Info) {
+    if (this.sealed) throw new Error('Tasks is already sealed');
+
     this.#tasks.push(new Log(this, props, icon));
     this.onChange();
     return this;
   }
 
-  logData<TCData>(data: TCData, icon = Icon.Info) {
-    this.#tasks.push(new Log(this, <BoxData data={data} />, icon));
+  async logData<TCData>(data: TCData, icon = Icon.Info) {
+    if (this.sealed) throw new Error('Tasks is already sealed');
+
+    const { level } = this;
+    const code = await formatData({ width: this.root.props?.width, level, data });
+    this.#tasks.push(new Log(this, <BoxSyntaxJS code={code} />, icon));
     this.onChange();
     return this;
   }
@@ -186,6 +219,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       stopOnError?: boolean;
     } = {},
   ): Task<TCData> | Promise<TCData | TaskResponse<TCData>> {
+    if (this.sealed) throw new Error('Tasks is already sealed');
+
     const task = new Task(this, callback, options);
     this.#tasks.push(task);
     this.onChange();
@@ -209,17 +244,19 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   tasks<TCData extends any[] | readonly any[]>(..._: TasksParams<TCData, { immediately?: true; stopOnError?: true }, 'optional'>): Promise<TCData>;
 
   tasks<TCData extends any[]>(
-    callbacks: TasksCallback<TCData>,
-    {
-      immediately = true,
-      concurrency,
-      stopOnError = true,
-      ...options
-    }: TasksOptionsExtra<TCData> & {
-      immediately?: boolean;
-      stopOnError?: boolean;
-    } = {},
+    ...[
+      callbacks,
+      {
+        immediately = true, //
+        concurrency,
+        stopOnError = true,
+        seal = true,
+        ...options
+      } = {},
+    ]: TasksParams<TCData, { immediately?: boolean; stopOnError?: boolean }, 'optional'>
   ): Tasks<TCData> | Promise<TCData | TasksResponse<TCData>> {
+    if (this.sealed) throw new Error('Tasks is already sealed');
+
     const tasks = new Tasks<TCData>(this, options);
     this.#tasks.push(tasks);
     this.onChange();
@@ -231,9 +268,9 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     if (immediately) {
       return new Promise((resolve, reject) => {
         if (stopOnError) {
-          tasks.wait({ concurrency, stopOnError }).then(resolve).catch(reject);
+          tasks.wait({ concurrency, stopOnError, seal }).then(resolve).catch(reject);
         } else {
-          tasks.wait({ concurrency, stopOnError }).then(resolve);
+          tasks.wait({ concurrency, stopOnError, seal }).then(resolve);
         }
       });
     } else {
@@ -280,19 +317,27 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
     //? Result
     const colResult: LineColProps[] = [
-      { text: '=>', color: 'gray', width: 'no-wrap' }, //
-      { text: <BoxData data={this.#isShowData ? this.data : [this.#tasks.length]} /> },
+      { text: '=>', color: 'gray', width: 'no-wrap' },
+      this.#isShowData
+        ? this.#dataCode
+          ? { text: <BoxSyntaxJS code={this.#dataCode} /> }
+          : { text: <Text color="gray">...</Text> }
+        : { text: <Text color="gray">Count = {chalk.yellow(this.#tasks.filter(task => task instanceof Task).length)}</Text> },
     ];
 
     return [
       {
+        key: `${this.key}-start`,
+        isStatic: this.level === 0, // Root header is static
         level: this.level + 1,
         prefix: Prefix.BlockStart,
         colsLeft: this.titleCols,
-        colsRight: [colTimer],
+        colsRight: this.level === 0 ? [] : [colTimer], // Root header don't have timer
       },
       ...middleLines,
       {
+        key: `${this.key}-end`,
+        isStatic: this.sealed,
         level: this.level + 1,
         prefix: Prefix.BlockEnd,
         colsLeft: colResult,

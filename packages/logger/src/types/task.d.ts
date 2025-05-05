@@ -15,6 +15,7 @@ export type TaskResponse<TData> =
       startTime: bigint;
       endTime: bigint;
       data: TData;
+      dataCode: string;
     }
   | {
       status: Status.Rejected;

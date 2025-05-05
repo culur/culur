@@ -1,12 +1,5 @@
 import dedent from 'dedent';
 
-export function delayFn(ms = 50) {
-  return async () => {
-    await new Promise(resolve => setTimeout(resolve, ms));
-    return 'data';
-  };
-}
-
 export function throwError() {
   const error = new Error('Task Error Object');
   error.stack = dedent`
@@ -22,7 +15,7 @@ export function throwError() {
 }
 
 export async function throwErrorDelay() {
-  await new Promise(resolve => setTimeout(resolve, 50));
+  await new Promise(resolve => setTimeout(resolve, 10));
   throwError();
 }
 

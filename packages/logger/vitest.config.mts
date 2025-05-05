@@ -5,5 +5,11 @@ export default defineConfig({
     env: {
       NO_COLOR: 'true',
     },
+    typecheck: {
+      enabled: false,
+    },
+    coverage: {
+      excludeExtends: ['scripts/**'],
+    },
   },
 });

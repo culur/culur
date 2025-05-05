@@ -1,4 +1,4 @@
-import type { Tasks } from '~/item/tasks';
+import type { Tasks } from '~/item';
 import { render } from 'ink-testing-library';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { Logger } from '~/logger';

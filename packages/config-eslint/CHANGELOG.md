@@ -1,5 +1,14 @@
 # @culur/config-eslint
 
+## 1.4.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([#282](https://github.com/culur/culur/pull/282) [`2b7da03`](https://github.com/culur/culur/commit/2b7da03b35254fc27224366d9379e45c213197bd)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.1.44`
+
 ## 1.4.0
 
 ### Minor Changes

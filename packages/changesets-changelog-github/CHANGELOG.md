@@ -1,5 +1,17 @@
 # @culur/changesets-changelog-github
 
+## 1.1.7
+
+### Patch Changes
+
+- 📦 Update dependencies ([`36873f1`](https://github.com/culur/culur/commit/36873f1ae7048f89f51d0a70c0f53ad1b8e5b618)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `dedent@^1.6.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.7`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.6
 
 ### Patch Changes

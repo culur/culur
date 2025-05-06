@@ -1,5 +1,14 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.7
+
+### Patch Changes
+
+- 📦 Update dependencies ([`36873f1`](https://github.com/culur/culur/commit/36873f1ae7048f89f51d0a70c0f53ad1b8e5b618)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `dedent@^1.6.0`
+
 ## 1.3.6
 
 ### Patch Changes

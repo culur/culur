@@ -11,6 +11,8 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
+    env:
+      NX_KEY: ${{ secrets.NX_KEY }}
     steps:
       #! Checkout
       - name: ⬇️ Checkout

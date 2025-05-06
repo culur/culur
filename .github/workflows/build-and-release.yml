@@ -8,7 +8,7 @@ jobs:
     name: Build and test
     runs-on: ubuntu-latest
     env:
-      NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+      NX_KEY: ${{ secrets.NX_KEY }}
     steps:
       #! Checkout
       - name: ⬇️ Checkout
@@ -71,8 +71,6 @@ jobs:
       group: ${{ github.workflow }}-${{ github.ref }}
       cancel-in-progress: true
     runs-on: ubuntu-latest
-    env:
-      NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
     steps:
       #! Checkout
       - name: ⬇️ Checkout

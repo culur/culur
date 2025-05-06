@@ -7,7 +7,7 @@ jobs:
     name: Generate changesets
     runs-on: ubuntu-latest
     env:
-      NX_REJECT_UNKNOWN_LOCAL_CACHE: 0
+      NX_KEY: ${{ secrets.NX_KEY }}
     if: |
       contains(github.event.pull_request.labels.*.name, 'dependencies') &&
       startsWith(github.event.pull_request.head.ref, 'renovate/') &&

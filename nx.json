@@ -52,23 +52,34 @@
       "cache": true
     },
     "test": {
-      "dependsOn": ["build", "^build"],
-      "outputs": ["{projectRoot}/coverage"],
+      "dependsOn": [
+        "build",
+        "^build"
+      ],
+      "outputs": [
+        "{projectRoot}/coverage"
+      ],
       "cache": true
     },
     "build": {
-      "dependsOn": ["gen", "^build"],
+      "dependsOn": [
+        "gen",
+        "^build"
+      ],
       "inputs": [
         "{workspaceRoot}/.gitignore",
         "{projectRoot}/**/*",
         "!{projectRoot}/**/*.md",
         "!{projectRoot}/**/*.test.ts"
       ],
-      "outputs": ["{projectRoot}/dist"],
+      "outputs": [
+        "{projectRoot}/dist"
+      ],
       "cache": true
     }
   },
   "defaultBase": "dev",
   "cacheDirectory": ".nx/cache",
-  "plugins": []
+  "plugins": [],
+  "nxCloudId": "68196eae76e31b0ad5e98ed1"
 }

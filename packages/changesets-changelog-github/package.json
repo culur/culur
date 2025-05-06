@@ -66,6 +66,6 @@
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
-    "dedent": "^1.5.3"
+    "dedent": "^1.6.0"
   }
 }

@@ -139,7 +139,7 @@ importers:
         specifier: workspace:*
         version: link:../types
       dedent:
-        specifier: ^1.5.3
+        specifier: ^1.6.0
         version: 1.6.0
 
   packages/changesets-generate-dependencies-changesets:
@@ -157,7 +157,7 @@ importers:
         specifier: ^7.6.1
         version: 7.6.1
       dedent:
-        specifier: ^1.5.3
+        specifier: ^1.6.0
         version: 1.6.0
       fs-extra:
         specifier: ^11.3.0
@@ -197,7 +197,7 @@ importers:
         specifier: ^2.2.3
         version: 2.2.3
       dedent:
-        specifier: ^1.5.3
+        specifier: ^1.6.0
         version: 1.6.0
       lodash-es:
         specifier: ^4.17.21

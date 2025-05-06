@@ -59,7 +59,7 @@
     "@culur/types": "workspace:*",
     "@octokit/graphql": "^8.2.2",
     "dataloader": "^2.2.3",
-    "dedent": "^1.5.3",
+    "dedent": "^1.6.0",
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {

@@ -1,5 +1,14 @@
 # @culur/logger
 
+## 1.1.0
+
+### Minor Changes
+
+- ✨ Refactor & support `<Static>` to improve performance ([`ad7e5e6`](https://github.com/culur/culur/commit/ad7e5e6658dc86341e6c031721176feda0488822)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - Data will be formatted right inside `.task()` and `.tasks()` instead of using `useEffect` in component.
+  - Tasks will have a sealing mechanism to optimize performance
+
 ## 1.0.1
 
 ### Patch Changes

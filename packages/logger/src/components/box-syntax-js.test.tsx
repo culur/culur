@@ -61,12 +61,20 @@ describeComponentRender<{
   hasWrapper: false,
   cases: [
     {
-      name: 'multiline string',
+      name: 'long string',
       data: 'The quick brown fox jumps over the lazy dog',
       text: [
         'Data =',
         '  "The quick brown fox jumps',
         'over the lazy dog"',
+      ].join('\n'),
+    },
+    {
+      name: 'multiline string',
+      data: 'The quick brown fox\njumps over the lazy dog',
+      text: [
+        'Data = `The quick brown fox', //
+        'jumps over the lazy dog`',
       ].join('\n'),
     },
     { name: 'null', data: null, text: js`Data = null` },
@@ -107,7 +115,7 @@ describeComponentRender<{
     {
       name: 'string (escape double quotes)',
       data: `'single' "double" \`backtick\``,
-      text: js`Data = "'single' \"double\" \`backtick\`"`,
+      text: js`Data = \`'single' "double" ${'\\`'}backtick${'\\`'}\``,
       boxProps: { width: 60 },
     },
     {

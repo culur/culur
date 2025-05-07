@@ -1,16 +1,14 @@
 function stringifyString(str: string) {
   const hasSingleQuote = str.includes("'");
   const hasDoubleQuote = str.includes('"');
-  const hasBacktick = str.includes('`');
+  const hasNewLine = str.includes('\n');
 
-  if (!hasSingleQuote) {
-    return `'${str}'`;
-  } else if (!hasDoubleQuote) {
-    return `"${str}"`;
-  } else if (!hasBacktick) {
-    return `\`${str}\``;
-  } else {
+  if (!hasDoubleQuote && !hasNewLine) {
     return `"${str.replace(/"/g, '\\"')}"`;
+  } else if (!hasSingleQuote && !hasNewLine) {
+    return `'${str.replace(/'/g, "\\'")}'`;
+  } else {
+    return `\`${str.replace(/`/g, '\\`')}\``;
   }
 }
 

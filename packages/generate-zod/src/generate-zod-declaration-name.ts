@@ -1,0 +1,30 @@
+import type { GenerateZodSchemaProps } from 'ts-to-zod';
+import { camelCase } from 'lodash-es';
+import { generateZodSchemaVariableStatement } from 'ts-to-zod';
+import ts from 'typescript';
+import { findNode } from './find-node';
+
+export async function generateZodDeclarationName({
+  declarationName,
+  ...props
+}: {
+  declarationName: string;
+} & Pick<
+  GenerateZodSchemaProps,
+  | 'zodImportValue'
+  | 'sourceFile' //
+  | 'getDependencyName'
+  | 'skipParseJSDoc'
+  | 'customJSDocFormatTypes'
+>) {
+  const node = findNode(props.sourceFile, declarationName);
+  const varName = `${camelCase(declarationName)}Schema`;
+
+  const results = generateZodSchemaVariableStatement(
+    { varName, node, ...props }, //
+  );
+
+  return ts
+    .createPrinter({ newLine: ts.NewLineKind.LineFeed }) //
+    .printNode(ts.EmitHint.Unspecified, results.statement, props.sourceFile);
+}

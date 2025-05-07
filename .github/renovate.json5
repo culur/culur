@@ -14,6 +14,7 @@
     'local>culur/culur//packages/renovate/package.json5(config-tsup,packages/config-tsup,*)',
     'local>culur/culur//packages/renovate/package.json5(config-typescript,packages/config-typescript,*)',
     'local>culur/culur//packages/renovate/package.json5(config-vite,packages/config-vite,*)',
+    'local>culur/culur//packages/renovate/package.json5(generate-zod,packages/generate-zod,*)',
     'local>culur/culur//packages/renovate/package.json5(logger,packages/logger,*)',
     'local>culur/culur//packages/renovate/package.json5(types,packages/types,*)',
     'local>culur/culur//packages/renovate/package.json5(utils-packages,packages/utils-packages,*)',

@@ -1,0 +1,76 @@
+{
+  "name": "@culur/generate-zod",
+  "version": "0.0.0",
+  "description": "Culur's generate-zod",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/generate-zod"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur/tree/main/packages/logger#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "zod",
+    "generate"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "!**/*.test.*",
+    "!src/__tests__/**/*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "nx run-many -t clean:build clean:zod -p generate-zod",
+    "clean:build": "rimraf src/__tests__/samples/*.{snapshot,zod}.ts",
+    "clean:zod": "rimraf src/__tests__/samples/*.{snapshot,zod}.ts",
+    "build": "tsup",
+    "test": "tsc --noEmit && FORCE_COLOR=false vitest run"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dedent": "^1.6.0",
+    "lodash-es": "^4.17.21",
+    "ts-to-zod": "^3.15.0",
+    "zx": "^8.5.3"
+  },
+  "devDependencies": {
+    "@culur/config-tsup": "workspace:*",
+    "@culur/config-typescript": "workspace:*",
+    "@culur/config-vite": "workspace:*",
+    "@types/lodash-es": "^4.17.12",
+    "zod": "^3.24.4"
+  },
+  "peerDependencies": {
+    "@types/node": "*",
+    "typescript": ">=5.7"
+  }
+}

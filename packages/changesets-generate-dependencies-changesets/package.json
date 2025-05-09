@@ -56,7 +56,7 @@
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.0",
+    "@actions/github": "^6.0.1",
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.6.0",
     "fs-extra": "^11.3.0",
@@ -68,6 +68,6 @@
     "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
     "@types/fs-extra": "^11.0.4",
-    "type-fest": "^4.40.1"
+    "type-fest": "^4.41.0"
   }
 }

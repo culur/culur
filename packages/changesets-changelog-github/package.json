@@ -58,7 +58,7 @@
     "@changesets/types": "^6.1.0",
     "@culur/changesets-github-info": "workspace:*",
     "dotenv": "^16.5.0",
-    "type-fest": "^4.40.1"
+    "type-fest": "^4.41.0"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.1",

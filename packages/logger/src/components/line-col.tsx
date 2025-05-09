@@ -29,7 +29,7 @@ export function LineCol({
       {width === undefined && typeof props.text === 'object' ? (
         props.text
       ) : (
-        <Box minWidth={width}>
+        <Box minWidth={width} width={width}>
           {typeof props.text === 'object' && props.text}
           {typeof props.text === 'string' && (
             <Text {...props}>{props.text}</Text>

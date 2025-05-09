@@ -25,7 +25,7 @@ export class Logger<TTasksData extends any[] = []> {
     this.#instance = render(<Root ref={this.#ref} {...props} />);
     this.#root = new Tasks<TTasksData>(
       { onChange: () => this.#onChange(), level: -1, props },
-      { title },
+      { title, isShowTimer: false, isShowAllPending: true },
     );
     this.#root.onChange();
   }

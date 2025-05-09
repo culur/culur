@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import type { RootRef } from './root';
 import dedent from 'dedent';
 import { render } from 'ink-testing-library';
-import { describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { Prefix } from '~/types';
 import { Root } from './root';
 
@@ -82,6 +82,34 @@ describe('root', () => {
     // add \n at the end due to the <Static> component
     expect(lastFrame()).toStrictEqual(`${expectedFrame}\n`);
 
+    unmount();
+  });
+});
+
+describe('root input', () => {
+  beforeAll(() => {
+    vi.spyOn(process, 'exit').mockImplementation(_code => {
+      throw new Error('Custom exit');
+    });
+  });
+
+  afterAll(() => {
+    vi.restoreAllMocks();
+  });
+
+  it('render input', async () => {
+    const ref: RefObject<RootRef> = { current: null };
+
+    const { lastFrame, unmount, stdin } = render(<Root ref={ref} width={24} />);
+    expect(lastFrame()).toStrictEqual(``);
+
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    stdin.write('\x1B');
+    expect(lastFrame()).toStrictEqual('Press ESC again to exit.');
+    await new Promise(resolve => setTimeout(resolve));
+
+    expect(() => stdin.write('\x1B')).toThrowError('Custom exit');
     unmount();
   });
 });

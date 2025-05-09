@@ -10,7 +10,7 @@ export interface BaseRunnable {
   get endTime(): bigint | null;
   get status(): Status | null;
 
-  wait: (options: { stopOnError?: true }) => Promise<unknown>;
+  wait: (options: { isReturnOrThrow?: true }) => Promise<unknown>;
   get response(): TaskResponse<unknown> | TaskResponse<unknown>[] | readonly TaskResponse<unknown>[];
 }
 
@@ -37,5 +37,5 @@ export abstract class Base {
     await this.parent.onChange();
   }
 
-  abstract toLines(...args: unknown[]): LineProps[];
+  abstract toLines(): LineProps[];
 }

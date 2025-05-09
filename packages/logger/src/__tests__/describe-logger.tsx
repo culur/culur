@@ -34,6 +34,13 @@ function suiteFactory(
       return { ...ink, render };
     });
 
+    vi.mock('ink-spinner', async () => {
+      const { Text }: typeof import('ink') = await vi.importActual('ink');
+      return {
+        default: () => <Text>⠋ </Text>,
+      };
+    });
+
     vi.mock('~/components', async () => {
       const { Text }: typeof import('ink') = await vi.importActual('ink');
       const components: typeof import('~/components') =

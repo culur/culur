@@ -1,4 +1,5 @@
 import { Text } from 'ink';
+import { random, range } from 'lodash-es';
 import { Logger } from '~/logger';
 import { Status } from '~/types';
 
@@ -60,6 +61,7 @@ await tasksTitle.task(() => {}, {
     return 'Custom title function';
   },
 });
+await tasksTitle.wait({ isReturnOrThrow: true });
 
 //! Run
 await logger.root.tasks([() => 1, () => 2], { title: 'Run tasks immediately' });
@@ -71,8 +73,10 @@ const tasksRun = logger.root.tasks([() => 1, () => 2], {
 tasksRun.task(() => 3, { title: 'Add task to tasks' });
 tasksRun.task(() => 4, { title: 'Add task to tasks' });
 
+await tasksRun.wait({ isReturnOrThrow: false });
+
 //! Show
-const tasksShow = logger.root.tasks([], { title: 'Show', immediately: false });
+const tasksShow = logger.root.tasks([], { title: 'Show', immediately: false, isShowTimer: false });
 await tasksShow.task(() => ({ foo: 'bar' }), {
   title: 'Show data',
   isShowData: true,
@@ -81,7 +85,7 @@ await tasksShow.task(
   () => {
     throw new Error('Something is wrong!');
   },
-  { title: 'Show error', stopOnError: false, isShowError: true },
+  { title: 'Show error', isReturnOrThrow: false, isShowError: true },
 );
 await tasksShow.task(
   () => {
@@ -89,10 +93,32 @@ await tasksShow.task(
   },
   {
     title: 'Show error',
-    stopOnError: false,
+    isReturnOrThrow: false,
     isShowError: true,
     isShowErrorStack: true,
   },
 );
+
+await tasksShow.wait({ isReturnOrThrow: false });
+
+await logger.root.tasks(
+  range(0, 150).map(
+    index =>
+      async function () {
+        this.title = `Task ${index}`;
+        await new Promise(resolve => setTimeout(resolve, random(100, 800)));
+        return null;
+      },
+  ),
+  {
+    title: 'Run many tasks',
+    concurrency: 15,
+    isShowTimer: false,
+    isShowTaskAsGrid: true,
+    gridWidth: 30,
+  },
+);
+
+await logger.root.wait();
 
 await logger.unmount();

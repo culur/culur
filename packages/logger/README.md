@@ -168,7 +168,7 @@ await tasksShow.task(
   () => {
     throw new Error('Something is wrong!');
   },
-  { title: 'Show error', stopOnError: false, isShowError: true },
+  { title: 'Show error', isReturnOrThrow: false, isShowError: true },
 );
 await tasksShow.task(
   () => {
@@ -176,7 +176,7 @@ await tasksShow.task(
   },
   {
     title: 'Show error',
-    stopOnError: false,
+    isReturnOrThrow: false,
     isShowError: true,
     isShowErrorStack: true,
   },
@@ -187,23 +187,23 @@ await logger.unmount();
 
 ```bash
 ┌─── Your logger tasks
-├─┬─── Custom title                                                        0.09s
+├─┬─── Custom title
 │ ├─ ✔ Anonymous                                                           0.01s
 │ ├─ ✔ NamedFunction                                                       0.00s
 │ ├─ ✔ Custom title string                                                 0.00s
 │ ├─ ✔ Custom title function: Task completed                               0.01s
 │ └─── => Count = 4
-├─┬─── Run tasks immediately                                               0.01s
+├─┬─── Run tasks immediately
 │ ├─ ✔ Anonymous                                                           0.01s
 │ ├─ ✔ Anonymous                                                           0.01s
 │ └─── => Count = 2
-├─┬─── Run tasks later                                                     0.10s
+├─┬─── Run tasks later
 │ ├─ ◌ Anonymous                                                         Pending
 │ ├─ ◌ Anonymous                                                         Pending
 │ ├─ ✔ Add task to tasks                                                   0.10s
 │ ├─ ✔ Add task to tasks                                                   0.09s
 │ └─── => Data = [null, null, 3, 4]
-├─┬─── Show                                                                0.12s
+├─┬─── Show
 │ ├─ ✔ Show data                                                           0.01s
 │ │    => Data = { foo: "bar" }
 │ ├─ ✘ Show error                                                          0.01s

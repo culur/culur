@@ -29,21 +29,6 @@ export type TaskTitle<TData> =
   | LineColsProps //
   | ((response: TaskResponse<TData>) => LineColsProps);
 
-//! Options
-export type TaskParams<
-  TCData, //
-  TExtraOptions,
-  TRequired extends 'required' | 'optional' = 'required',
-> = TRequired extends 'required'
-  ? [
-      callback: TaskCallback<TCData>, //
-      options: TaskOptions<TCData> & TExtraOptions,
-    ]
-  : [
-      callback: TaskCallback<TCData>, //
-      options?: TaskOptions<TCData> & TExtraOptions,
-    ];
-
 export interface TaskOptions<TData> {
   title?: TaskTitle<TData>;
   isShowData?: boolean;

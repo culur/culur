@@ -26,6 +26,12 @@ const config = defineConfig({
         printWidth: 200,
       },
     },
+    {
+      files: ['./src/components/line.tsx'],
+      options: {
+        printWidth: 120,
+      },
+    },
   ],
 });
 

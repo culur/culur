@@ -54,7 +54,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "type-fest": "^4.40.1",
+    "type-fest": "^4.41.0",
     "vite-tsconfig-paths": "5.1.4"
   },
   "devDependencies": {

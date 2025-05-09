@@ -66,8 +66,8 @@
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",
-    "@graphql-codegen/cli": "5.0.5",
-    "@graphql-codegen/typescript-operations": "4.6.0",
+    "@graphql-codegen/cli": "5.0.6",
+    "@graphql-codegen/typescript-operations": "4.6.1",
     "@octokit/graphql-schema": "^15.26.0",
     "@types/lodash-es": "^4.17.12",
     "graphql": "^16.11.0"

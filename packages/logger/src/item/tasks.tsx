@@ -292,6 +292,25 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     }
   }
 
+  //! ----- ----- ----- ----- ----- Convenience functions ----- ----- ----- ----- ----- !//
+
+  /**
+   * Convenience functions for @see {Tasks.tasks}
+   */
+  group(title: TasksTitle<void[]>, options?: Omit<TasksOptionsExtra<void[]>, 'title'>) {
+    return this.tasks([], { immediately: false, title, ...options });
+  }
+
+  /**
+   * Seal tasks if there're no running children tasks
+   */
+  end() {
+    if (this.status !== Status.Fulfilled) {
+      throw new Error('Cannot seal tasks!');
+    }
+    this.isSealed = true;
+  }
+
   //! ----- ----- ----- ----- ----- Lines ----- ----- ----- ----- ----- !//
   private get titleCols() {
     return toLineCols(

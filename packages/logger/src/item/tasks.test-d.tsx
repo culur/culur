@@ -176,7 +176,7 @@ describeLogger('.task()', 'Not show all tasks', async (root, lastFrame) => {
 });
 
 describeLogger('.task()', 'Show task as grid', async (root, lastFrame) => {
-  const tasksGroup = root.tasks([], { immediately: false, isShowTaskAsGrid: true });
+  const tasksGroup = root.group('Tasks', { isShowTaskAsGrid: true });
   const tasks = range(0, 10).map(index => tasksGroup.task(() => index, { immediately: false }));
 
   expect(lastFrame()).toStrictEqual(dedent`
@@ -308,7 +308,9 @@ describeLogger('.task()', 'Seal', async (root, lastFrame) => {
     └─── => Count = 0
   `);
 
+  expect(() => tasks.end()).toThrowError('Cannot seal tasks!');
   await tasks.wait();
+  tasks.end();
 
   await expect(tasks.logData('Error')).rejects.toThrowError('Tasks is already sealed');
   expect(() => tasks.log('Error')).toThrowError('Tasks is already sealed');

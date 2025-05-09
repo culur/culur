@@ -1,7 +1,9 @@
+import type { Key } from 'ink';
 import type { ReactNode } from 'react';
 import type { LineProps } from './line';
 import type { IRootObject } from '~/item';
-import { Static } from 'ink';
+import process from 'node:process';
+import { Static, Text, useInput } from 'ink';
 import { forwardRef, useImperativeHandle, useMemo, useState } from 'react';
 import { Line } from './line';
 
@@ -36,15 +38,19 @@ export const Root: (
       return { linesStatic, linesDynamic };
     }, [lines]);
 
-    // // eslint-disable-next-line no-console
-    // console.log('🍓', {
-    //   title: lines[0]?.colsLeft?.[0]?.text,
-    //   lines: lines.map(l => l.key),
-    //   static: linesGroup.linesStatic.map(l => l.key),
-    //   dynamic: linesGroup.linesDynamic.map(l => l.key),
-    // });
-
     useImperativeHandle(ref, () => ({ setLines }));
+
+    const [previousInput, setPreviousInput] = useState<{
+      input: string;
+      key: Key;
+    } | null>(null);
+
+    useInput((input, key) => {
+      if (previousInput && previousInput.key.escape && key.escape) {
+        process.exit(0);
+      }
+      setPreviousInput({ input, key });
+    });
 
     return (
       <>
@@ -52,8 +58,11 @@ export const Root: (
           {line => <Line {...props} {...line} key={line.key} />}
         </Static>
         {linesGroup.linesDynamic.map(line => (
-          <Line {...props} {...line} key={line.key} />
+          <Line {...props} {...line} key={line.key} isStatic={false} />
         ))}
+        {previousInput && previousInput.key.escape && (
+          <Text color="yellow">Press ESC again to exit.</Text>
+        )}
       </>
     );
   },

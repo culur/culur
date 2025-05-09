@@ -1,5 +1,6 @@
 import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
+import { range } from 'lodash-es';
 import { expect, expectTypeOf, vi } from 'vitest';
 import { describeLogger, throwError, throwErrorDelay, throwString } from '~/__tests__';
 import { expectTaskResponseFulfilled } from './task.test-d';
@@ -16,21 +17,21 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
   expect(tasks1Data).toEqual([1, 2]);
 
   //! Return response
-  const tasks2Response = await root.tasks(callbacksNormal, { stopOnError: false });
+  const tasks2Response = await root.tasks(callbacksNormal, { isReturnOrThrow: false, isShowTimer: true });
   expectTypeOf(tasks2Response).toEqualTypeOf<TaskResponse<number>[]>();
   expect(tasks2Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks2Response[0], 1);
   expectTaskResponseFulfilled(tasks2Response[1], 2);
 
   //! Return task
-  const tasks3 = root.tasks(callbacksNormal, { immediately: false });
+  const tasks3 = root.tasks(callbacksNormal, { immediately: false, isShowTimer: true });
   expectTypeOf(tasks3).toEqualTypeOf<Tasks<number[]>>();
   expect(tasks3).instanceOf(Tasks);
 
   const tasks3Data = await tasks3.wait();
   expectTypeOf(tasks3Data).toEqualTypeOf<number[]>();
 
-  const tasks3Response = await tasks3.wait({ stopOnError: false });
+  const tasks3Response = await tasks3.wait({ isReturnOrThrow: false });
   expectTypeOf(tasks3Response).toEqualTypeOf<TaskResponse<number>[]>();
   expect(tasks3Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks3Response[0], 1);
@@ -38,7 +39,7 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Normal
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 2
@@ -62,7 +63,7 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
   expect(tasks1Data).toEqual([1, 2]);
 
   //! Return response
-  const tasks2Response = await root.tasks(callbacksReadonly, { stopOnError: false });
+  const tasks2Response = await root.tasks(callbacksReadonly, { isReturnOrThrow: false });
   expectTypeOf(tasks2Response).toEqualTypeOf<readonly [TaskResponse<number>, TaskResponse<number>]>();
   expect(tasks2Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks2Response[0], 1);
@@ -76,7 +77,7 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
   const tasks3Data = await tasks3.wait();
   expectTypeOf(tasks3Data).toEqualTypeOf<readonly [number, number]>();
 
-  const tasks3Response = await tasks3.wait({ stopOnError: false });
+  const tasks3Response = await tasks3.wait({ isReturnOrThrow: false });
   expectTypeOf(tasks3Response).toEqualTypeOf<readonly [TaskResponse<number>, TaskResponse<number>]>();
   expect(tasks3Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks3Response[0], 1);
@@ -84,15 +85,15 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Normal readonly
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 2
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 2
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 2
@@ -101,8 +102,8 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
 });
 
 describeLogger('.task()', 'Nested', async (root, lastFrame) => {
-  const tasks = root.tasks([() => 1, () => 2], { immediately: false });
-  tasks.tasks([() => 3.1, () => 3.2], { immediately: false });
+  const tasks = root.tasks([() => 1, () => 2], { immediately: false, isShowTimer: true });
+  tasks.tasks([() => 3.1, () => 3.2], { immediately: false, isShowTimer: true });
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Nested
@@ -114,6 +115,74 @@ describeLogger('.task()', 'Nested', async (root, lastFrame) => {
     │ │ ├─ ◌ Anonymous                         Pending
     │ │ └─── => Count = 2
     │ └─── => Count = 2
+    └─── => Count = 0
+  `);
+});
+
+//! Not show all tasks
+describeLogger('.task()', 'Not show all tasks', async (root, lastFrame) => {
+  const tasksGroup = root.group('Tasks', { isShowAllFulfilled: false, isShowAllPending: false });
+  const tasks = range(0, 10).map(index => tasksGroup.task(() => index, { immediately: false }));
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Not show all tasks
+    ├─┬─── Tasks
+    │ ├─ ◌ 10 pending tasks...                 Pending
+    │ └─── => Count = 10
+    └─── => Count = 0
+  `);
+
+  await Promise.all(tasks.slice(0, 3).map(task => task.wait()));
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Not show all tasks
+    ├─┬─── Tasks
+    │ ├─ ⠋ 3 completed tasks...
+    │ ├─ ◌ 7 pending tasks...                  Pending
+    │ └─── => Count = 10
+    └─── => Count = 0
+  `);
+
+  await tasksGroup.wait();
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Not show all tasks
+    ├─┬─── Tasks
+    │ ├─ ✔ 10 completed tasks!
+    │ └─── => Count = 10
+    └─── => Count = 0
+  `);
+});
+
+describeLogger('.task()', 'Show task as grid', async (root, lastFrame) => {
+  const tasksGroup = root.tasks([], { immediately: false, isShowTaskAsGrid: true });
+  const tasks = range(0, 10).map(index => tasksGroup.task(() => index, { immediately: false }));
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Show task as grid
+    ├─┬─── Tasks
+    │ ├─ ⠋ ░░░░░░░░░░
+    │ └─── => Count = 10
+    └─── => Count = 0
+  `);
+
+  await Promise.all(tasks.slice(0, 3).map(task => task.wait()));
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Show task as grid
+    ├─┬─── Tasks
+    │ ├─ ⠋ ███░░░░░░░
+    │ └─── => Count = 10
+    └─── => Count = 0
+  `);
+
+  await tasksGroup.wait();
+
+  expect(lastFrame()).toStrictEqual(dedent`
+    ┌─── Show task as grid
+    ├─┬─── Tasks
+    │ ├─ ✔ ██████████
+    │ └─── => Count = 10
     └─── => Count = 0
   `);
 });
@@ -133,17 +202,23 @@ describeLogger('.tasks()', 'Error string', async root => {
 describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, lastFrame) => {
   const tasksCallback1 = vi.fn();
   const tasksCallback2 = vi.fn();
-  const tasksCallback3 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 50)));
-  const tasksCallback4 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 50)));
-  const tasks = root.tasks([tasksCallback1, tasksCallback2], { immediately: false });
+  const tasksCallback3 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 10)));
+  const tasksCallback4 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 10)));
+
+  const tasks = root.tasks(
+    [tasksCallback1, tasksCallback2], //
+    { immediately: false },
+  );
   expect(tasks.isRunning).toStrictEqual(true);
   tasks.task(tasksCallback3);
   tasks.task(tasksCallback4);
   expect(tasks.isRunning).toStrictEqual(true);
 
+  await new Promise(resolve => setTimeout(resolve));
+
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Wait pending, running tasks
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ◌ spy                                 Pending
     │ ├─ ◌ spy                                 Pending
     │ ├─ ⠋ spy                                   0.00s
@@ -152,15 +227,15 @@ describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, la
     └─── => Count = 0
   `);
 
-  await tasks.wait({ stopOnError: true, concurrency: 1 });
+  await tasks.wait({ isReturnOrThrow: true, concurrency: 1 });
   expect(tasksCallback1).toBeCalledTimes(1);
   expect(tasksCallback2).toBeCalledTimes(1);
   expect(tasks.isRunning).toStrictEqual(false);
 
   // call wait again, fulfilled tasks will not be called 2 times
-  await tasks.wait({ stopOnError: true, concurrency: 2 });
-  await tasks.wait({ stopOnError: false, concurrency: 1 });
-  await tasks.wait({ stopOnError: false, concurrency: 2 });
+  await tasks.wait({ isReturnOrThrow: true, concurrency: 2 });
+  await tasks.wait({ isReturnOrThrow: false, concurrency: 1 });
+  await tasks.wait({ isReturnOrThrow: false, concurrency: 2 });
 
   expect(tasksCallback1).toBeCalledTimes(1);
   expect(tasksCallback2).toBeCalledTimes(1);
@@ -172,7 +247,7 @@ describeLogger('.tasks().wait()', 'Throw on pending tasks', async (root, lastFra
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Throw on pending tasks
-    ├─┬─── Tasks                               Pending
+    ├─┬─── Tasks
     │ ├─ ◌ throwErrorDelay                     Pending
     │ └─── => Count = 1
     └─── => Count = 0
@@ -189,9 +264,11 @@ describeLogger('.tasks().wait()', 'Throw on running tasks', async (root, lastFra
   // eslint-disable-next-line test/valid-expect
   const expectRejects = expect(tasks.task(tasksCallback1)).rejects.toThrowError('Task Error Object');
 
+  await new Promise(resolve => setTimeout(resolve));
+
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Throw on running tasks
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ⠋ throwErrorDelay                       0.00s
     │ └─── => Count = 1
     └─── => Count = 0
@@ -207,7 +284,7 @@ describeLogger('.task()', 'Seal', async (root, lastFrame) => {
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Seal
-    ├─┬─── Tasks                               Pending
+    ├─┬─── Tasks
     │ ├─ ◌ Anonymous                           Pending
     │ ├─ ◌ Anonymous                           Pending
     │ └─── => Count = 2
@@ -226,18 +303,29 @@ describeLogger('.task()', 'Seal', async (root, lastFrame) => {
 describeLogger('.tasks({ title })', 'Custom title', async (root, lastFrame) => {
   await root.tasks([() => 1], { title: 'The title string' });
   await root.tasks([() => 1], { title: () => 'The title function' });
-  const tasks = root.tasks([], { immediately: false });
-  tasks.title = 'Set title after created';
+
+  const tasks1 = root.tasks([], { immediately: false });
+  tasks1.title = 'Cannot set title after created';
+
+  const tasks2 = root.tasks([], { immediately: false, isShowTimer: true });
+  tasks2.title = 'Set title after created';
+
+  const tasks3 = root.tasks([], { immediately: false });
+  tasks3.title = 'Set title after created';
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Custom title
-    ├─┬─── The title string                      0.00s
+    ├─┬─── The title string
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 1
-    ├─┬─── The title function                    0.00s
+    ├─┬─── The title function
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Count = 1
+    ├─┬─── Tasks
+    │ └─── => Count = 0
     ├─┬─── Set title after created             Pending
+    │ └─── => Count = 0
+    ├─┬─── Set title after created
     │ └─── => Count = 0
     └─── => Count = 0
   `);
@@ -250,18 +338,18 @@ describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Show data and error
-    ├─┬─── Tasks                               Pending
+    ├─┬─── Tasks
     │ ├─ ◌ Anonymous                           Pending
     │ ├─ ◌ Anonymous                           Pending
     │ └─── => Data = [null, null]
     └─── => Count = 0
   `);
 
-  await tasks.wait({ seal: false });
+  await tasks.wait({ isSealing: false });
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Show data and error
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ └─── => Data = [1, 2]
@@ -273,7 +361,7 @@ describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Show data and error
-    ├─┬─── Tasks                                 0.00s
+    ├─┬─── Tasks
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s
     │ ├─ ✔ Anonymous                             0.00s

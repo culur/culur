@@ -43,7 +43,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist coverage",
-    "dev": "DEV=true tsx ./scripts/dev",
+    "dev": "tsx ./scripts/dev",
     "dev:watch": "tsx watch ./scripts/dev",
     "dev-tools": "react-devtools",
     "build": "tsup",

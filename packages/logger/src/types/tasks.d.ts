@@ -17,26 +17,20 @@ export type TasksTitle<TData extends readonly any[]> =
   | ((response: TasksResponse<TData>) => LineColsProps);
 
 //! Options
-export type TasksParams<
-  TData extends any[] | readonly any[], //
-  TExtraOptions,
-  TRequired extends 'required' | 'optional' = 'required',
-> = TRequired extends 'required'
-  ? [
-      callbacks: TasksCallback<TData>, //
-      options: TasksOptionsExtra<TData> & TExtraOptions,
-    ]
-  : [
-      callbacks: TasksCallback<TData>, //
-      options?: TasksOptionsExtra<TData> & TExtraOptions,
-    ];
-
 export interface TasksOptions<TData extends readonly any[]> {
   title?: TasksTitle<TData>;
+  isShowTimer?: boolean;
   isShowData?: boolean;
+
+  isShowAllFulfilled?: boolean;
+  isShowAllPending?: boolean;
+
+  isShowTaskAsGrid?: boolean;
+  gridWidth?: number;
 }
+
 export interface TasksOptionsExtra<TData extends readonly any[]>
   extends TasksOptions<TData> {
   concurrency?: number;
-  seal?: boolean;
+  isSealing?: boolean;
 }

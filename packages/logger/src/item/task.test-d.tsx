@@ -20,7 +20,7 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   expect(task1Data).toStrictEqual(1);
 
   //! Return response
-  const task2Response = await root.task(() => 2, { stopOnError: false, title: 'Return response' });
+  const task2Response = await root.task(() => 2, { isReturnOrThrow: false, title: 'Return response' });
   expectTypeOf(task2Response).toEqualTypeOf<TaskResponse<number>>();
   expectTaskResponseFulfilled(task2Response, 2);
 
@@ -34,7 +34,7 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   expectTypeOf(task3Data).toEqualTypeOf<number>();
   expect(task3Callback).toBeCalledTimes(1);
 
-  const task3Response = await task3.wait({ stopOnError: false });
+  const task3Response = await task3.wait({ isReturnOrThrow: false });
   expectTypeOf(task3Response).toEqualTypeOf<TaskResponse<number>>();
   expect(task3Callback).toBeCalledTimes(1); // Load previous data, don't call again
   expectTaskResponseFulfilled(task3Response, 3);
@@ -125,11 +125,11 @@ describeLogger('.task({ title })', 'Custom title', async (root, lastFrame) => {
 //! Show
 describeLogger('.task()', 'Show data and error', async (root, lastFrame) => {
   await root.task(() => 1, { isShowData: true });
-  await root.task(throwString, { stopOnError: false, isShowError: true });
-  await root.task(throwError, { stopOnError: false });
-  await root.task(throwError, { stopOnError: false, isShowError: true });
-  await root.task(throwError, { stopOnError: false, isShowError: true, isShowErrorStack: true });
-  await root.task(throwErrorWithoutStack, { stopOnError: false, isShowError: true, isShowErrorStack: true });
+  await root.task(throwString, { isReturnOrThrow: false, isShowError: true });
+  await root.task(throwError, { isReturnOrThrow: false });
+  await root.task(throwError, { isReturnOrThrow: false, isShowError: true });
+  await root.task(throwError, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
+  await root.task(throwErrorWithoutStack, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
 
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Show data and error

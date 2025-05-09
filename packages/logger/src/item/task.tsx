@@ -68,13 +68,13 @@ export class Task<TData>
 
   //! Wait
   async wait(): Promise<TData>;
-  async wait(options: { stopOnError: false }): Promise<TaskResponse<TData>>;
-  async wait(options: { stopOnError?: true }): Promise<TData>;
-  async wait(options: { stopOnError?: boolean } = {}): Promise<TData | TaskResponse<TData>> {
-    const { stopOnError = true } = options;
+  async wait(options: { isReturnOrThrow: false }): Promise<TaskResponse<TData>>;
+  async wait(options: { isReturnOrThrow?: true }): Promise<TData>;
+  async wait(options: { isReturnOrThrow?: boolean } = {}): Promise<TData | TaskResponse<TData>> {
+    const { isReturnOrThrow = true } = options;
 
     if (this.response.status === Status.Fulfilled) {
-      if (stopOnError) return this.response.data;
+      if (isReturnOrThrow) return this.response.data;
       return this.response;
     }
 
@@ -90,7 +90,7 @@ export class Task<TData>
       this.response = { status: Status.Fulfilled, startTime, endTime, data, dataCode };
       await this.onChange();
 
-      if (stopOnError) return data;
+      if (isReturnOrThrow) return data;
       return this.response;
     } catch (e) {
       const error = e instanceof Error ? e : new Error(String(e));
@@ -99,7 +99,7 @@ export class Task<TData>
       this.response = { status: Status.Rejected, error, startTime, endTime };
       await this.onChange();
 
-      if (stopOnError) throw e;
+      if (isReturnOrThrow) throw e;
       return this.response;
     }
   }

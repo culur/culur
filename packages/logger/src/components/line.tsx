@@ -1,4 +1,4 @@
-import type { BoxProps } from 'ink';
+import type { BoxProps, TextProps } from 'ink';
 import type { LineColProps } from './line-cols.types';
 import { Box, Spacer, Text } from 'ink';
 import { range } from 'lodash-es';
@@ -28,8 +28,12 @@ export function Line({
   colsRight = defaultCols,
   level,
   prefix,
+  isStatic,
   ...boxProps
 }: LineProps & BoxProps) {
+  const color: TextProps['color'] = isStatic ? 'cyan' : 'yellow';
+  const drawProps = { ...DRAW, color };
+
   if (level <= 0) {
     return (
       <Box {...boxProps}>
@@ -42,50 +46,50 @@ export function Line({
     <Box {...boxProps}>
       <Box height="100%" flexShrink={0}>
         {prefix === Prefix.BlockStart && level === 1 && (
-          <DrawPattern pattern="┌─" {...DRAW} />
+          <DrawPattern pattern="┌─" {...drawProps} /> //
         )}
         {prefix === Prefix.BlockStart && level > 1 && (
           <>
             {range(Math.max(0, level - 2)).map(value => (
-              <DrawPattern key={value} pattern="│ " height="100%" {...DRAW} />
+              <DrawPattern key={value} pattern="│ " height="100%" {...drawProps} />
             ))}
-            <DrawPattern pattern="├─" {...DRAW} />
-            <DrawPattern pattern="┬─" {...DRAW} />
-            {/* <DrawLine pattern="│ " {...DRAW} /> */}
-            {/* <DrawLine pattern="┌─" {...DRAW} /> */}
+            <DrawPattern pattern="├─" {...drawProps} />
+            <DrawPattern pattern="┬─" {...drawProps} />
+            {/* <DrawLine pattern="│ " {...props} /> */}
+            {/* <DrawLine pattern="┌─" {...props} /> */}
           </>
         )}
 
         {prefix === Prefix.BlockMiddleNone && (
           <>
             {range(Math.max(0, level)).map(value => (
-              <DrawPattern key={value} pattern="│ " height="100%" {...DRAW} />
+              <DrawPattern key={value} pattern="│ " height="100%" {...drawProps} />
             ))}
           </>
         )}
         {prefix === Prefix.BlockMiddleLine && (
           <>
             {range(Math.max(0, level - 1)).map(value => (
-              <DrawPattern key={value} pattern="│ " height="100%" {...DRAW} />
+              <DrawPattern key={value} pattern="│ " height="100%" {...drawProps} />
             ))}
-            {/* <DrawLine pattern="│ " {...DRAW} /> */}
-            <DrawPattern pattern="├─" {...DRAW} />
+            {/* <DrawLine pattern="│ " {...props} /> */}
+            <DrawPattern pattern="├─" {...drawProps} />
           </>
         )}
 
         {prefix === Prefix.BlockEnd && (
           <>
             {range(Math.max(0, level - 1)).map(value => (
-              <DrawPattern key={value} pattern="│ " height="100%" {...DRAW} />
+              <DrawPattern key={value} pattern="│ " height="100%" {...drawProps} />
             ))}
-            <DrawPattern pattern="└─" height={1} {...DRAW} />
+            <DrawPattern pattern="└─" height={1} {...drawProps} />
           </>
         )}
       </Box>
 
       <Box width={1} />
 
-      <BoxIcon icon={icon} {...DRAW} width={iconWidth} />
+      <BoxIcon icon={icon} {...drawProps} width={iconWidth} />
 
       <Box flexGrow={1}>
         <LineCols cols={colsLeft} />

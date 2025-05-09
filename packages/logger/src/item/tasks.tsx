@@ -1,13 +1,14 @@
 import type { AsyncResultIteratorPromise } from 'async';
 import type { Arrayable } from 'type-fest';
-import type { TasksOptions, TasksParams, TasksResponse, TasksTitle } from '../types/tasks';
 import type { BaseRunnable, IRootObject } from './base';
+import type { TaskGroup } from './tasks.group';
 import type { LineColProps, LineProps } from '~/components';
-import type { TaskCallback, TaskOptions, TaskParams, TaskResponse } from '~/types';
+import type { TaskCallback, TaskOptions, TaskResponse, TasksCallback, TasksOptions, TasksOptionsExtra, TasksResponse, TasksTitle } from '~/types';
 import { mapLimit, mapSeries } from 'async';
 import chalk from 'chalk';
+import figureSet from 'figures';
 import { Text } from 'ink';
-import { isEqual } from 'lodash-es';
+import { isEqual, uniqueId } from 'lodash-es';
 import { BoxSyntaxJS, TextTimer, toLineCols } from '~/components';
 import { TASKS } from '~/configs';
 import { Icon, Prefix, Status } from '~/types';
@@ -15,6 +16,7 @@ import { formatData } from '~/utils';
 import { Base } from './base';
 import { Log } from './log';
 import { Task } from './task';
+import { getGroupName } from './tasks.group';
 
 export class Tasks<TTasksData extends any[] | readonly any[]>
   extends Base //
@@ -24,8 +26,16 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   #title: TasksTitle<TTasksData>;
   #childrenStatus: Status[] = [];
   #dataCode: string | null = null;
+  readonly #isShowTimer: boolean;
   readonly #isShowData: boolean;
-  sealed: boolean = false;
+
+  readonly #isShowAllFulfilled: boolean;
+  readonly #isShowAllPending: boolean;
+
+  readonly #isShowTaskAsGrid: boolean;
+  readonly #gridWidth: number;
+
+  isSealed: boolean = false;
 
   get #runnableTasks(): BaseRunnable[] {
     return this.#tasks.filter(task => task instanceof Task || task instanceof Tasks);
@@ -119,28 +129,38 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   ) {
     super(parent);
     this.#title = options?.title ?? 'Tasks';
+
     this.#isShowData = options.isShowData ?? TASKS.isShowData;
+    this.#isShowTimer = options.isShowTimer ?? TASKS.isShowTimer;
+
+    this.#isShowAllFulfilled = options.isShowAllFulfilled ?? TASKS.isShowAllFulfilled;
+    this.#isShowAllPending = options.isShowAllPending ?? TASKS.isShowAllPending;
+
+    this.#isShowTaskAsGrid = options.isShowTaskAsGrid ?? TASKS.isShowTaskAsGrid;
+    this.#gridWidth = options.gridWidth ?? TASKS.gridWidth;
   }
 
   //! ----- ----- ----- ----- ----- Run ----- ----- ----- ----- ----- !//
   //! Wait
-  async wait(options: { concurrency?: number; stopOnError: false; seal?: boolean }): Promise<TasksResponse<TTasksData>>;
-  async wait(options?: { concurrency?: number; stopOnError?: true; seal?: boolean }): Promise<TTasksData>;
+  async wait(options: { concurrency?: number; isReturnOrThrow: false; isSealing?: boolean }): Promise<TasksResponse<TTasksData>>;
+  async wait(options?: { concurrency?: number; isReturnOrThrow?: true; isSealing?: boolean }): Promise<TTasksData>;
 
-  async wait(options: { concurrency?: number; stopOnError?: boolean; seal?: boolean } = {}): Promise<
+  async wait(options: { concurrency?: number; isReturnOrThrow?: boolean; isSealing?: boolean } = {}): Promise<
     | TasksResponse<TTasksData> //
     | TTasksData
   > {
-    const { stopOnError = true, concurrency = TASKS.tasksConcurrency, seal = true } = options;
+    const isReturnOrThrow = options.isReturnOrThrow ?? true;
+    const concurrency = options.concurrency ?? TASKS.concurrency;
+    const isSealing = options.isSealing ?? TASKS.isSealing;
 
     const pendingTasks = this.#runnableTasks.filter(task => task.status === Status.Pending);
     const runningTasks = this.#runnableTasks.filter(task => task.status === Status.Running);
 
     const pendingTasksIteratee: AsyncResultIteratorPromise<BaseRunnable, unknown> = async task => {
       try {
-        await task.wait({ stopOnError: true });
+        await task.wait({ isReturnOrThrow: true });
       } catch (e) {
-        if (stopOnError) throw e;
+        if (isReturnOrThrow) throw e;
       }
     };
     const pendingPromise =
@@ -150,7 +170,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
     const runningPromise = new Promise((resolve, reject) => {
       const intervalId = setInterval(() => {
-        if (stopOnError) {
+        if (isReturnOrThrow) {
           const firstRejectedTask = (runningTasks as TaskResponse<any>[]) //
             .find((task): task is Extract<typeof task, { status: Status.Rejected }> => task.status === Status.Rejected);
           if (firstRejectedTask) {
@@ -168,11 +188,11 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     try {
       await Promise.all([pendingPromise, runningPromise]);
     } finally {
-      await this.onChange(); // format data before seal
-      if (seal) this.sealed = true;
+      if (isSealing) this.isSealed = true;
+      await this.onChange(); // format data before sealing
     }
 
-    if (stopOnError) {
+    if (isReturnOrThrow) {
       const firstRejectedTask = (this.response as TaskResponse<any>[]) //
         .find((task): task is Extract<typeof task, { status: Status.Rejected }> => task.status === Status.Rejected);
       if (firstRejectedTask) {
@@ -186,7 +206,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   //! ----- ----- ----- ----- ----- Children ----- ----- ----- ----- ----- !//
   //! Log
   log(props: Arrayable<LineColProps['text'] | LineColProps>, icon = Icon.Info) {
-    if (this.sealed) throw new Error('Tasks is already sealed');
+    if (this.isSealed) throw new Error('Tasks is already sealed');
 
     this.#tasks.push(new Log(this, props, icon));
     this.onChange();
@@ -194,7 +214,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   }
 
   async logData<TCData>(data: TCData, icon = Icon.Info) {
-    if (this.sealed) throw new Error('Tasks is already sealed');
+    if (this.isSealed) throw new Error('Tasks is already sealed');
 
     const { level } = this;
     const code = await formatData({ width: this.root.props?.width, level, data });
@@ -204,76 +224,70 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   }
 
   //! Task
-  task<TCData>(..._: TaskParams<TCData, { immediately: false }>): Task<TCData>;
-  task<TCData>(..._: TaskParams<TCData, { immediately?: true; stopOnError: false }>): Promise<TaskResponse<TCData>>;
-  task<TCData>(..._: TaskParams<TCData, { immediately?: true; stopOnError?: true }, 'optional'>): Promise<TCData>;
+  task<TCData>(callback: TaskCallback<TCData>, options: TaskOptions<TCData> & { immediately: false }): Task<TCData>;
+  task<TCData>(callback: TaskCallback<TCData>, options: TaskOptions<TCData> & { immediately?: true; isReturnOrThrow: false }): Promise<TaskResponse<TCData>>;
+  task<TCData>(callback: TaskCallback<TCData>, options?: TaskOptions<TCData> & { immediately?: true; isReturnOrThrow?: true }): Promise<TCData>;
 
   task<TCData>(
-    callback: TaskCallback<TCData>,
-    {
-      immediately = true,
-      stopOnError = true,
-      ...options
-    }: TaskOptions<TCData> & {
-      immediately?: boolean;
-      stopOnError?: boolean;
-    } = {},
+    callback: TaskCallback<TCData>, //
+    options: TaskOptions<TCData> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
   ): Task<TCData> | Promise<TCData | TaskResponse<TCData>> {
-    if (this.sealed) throw new Error('Tasks is already sealed');
+    const immediately = options.immediately ?? true;
+    const isReturnOrThrow = options.isReturnOrThrow ?? true;
+
+    if (this.isSealed) throw new Error('Tasks is already sealed');
 
     const task = new Task(this, callback, options);
     this.#tasks.push(task);
-    this.onChange();
 
     if (immediately) {
-      return new Promise((resolve, reject) => {
-        if (stopOnError) {
-          task.wait({ stopOnError }).then(resolve).catch(reject);
+      return (async () => {
+        await this.onChange();
+        if (isReturnOrThrow) {
+          return task.wait({ isReturnOrThrow });
         } else {
-          task.wait({ stopOnError }).then(resolve);
+          return task.wait({ isReturnOrThrow });
         }
-      });
+      })();
     } else {
+      this.onChange();
       return task;
     }
   }
 
   //! Tasks
-  tasks<TCData extends any[] | readonly any[]>(..._: TasksParams<TCData, { immediately: false }>): Tasks<TCData>;
-  tasks<TCData extends any[] | readonly any[]>(..._: TasksParams<TCData, { immediately?: true; stopOnError: false }>): Promise<TasksResponse<TCData>>;
-  tasks<TCData extends any[] | readonly any[]>(..._: TasksParams<TCData, { immediately?: true; stopOnError?: true }, 'optional'>): Promise<TCData>;
+  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options: TasksOptionsExtra<TCData> & { immediately: false }): Tasks<TCData>;
+  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options: TasksOptionsExtra<TCData> & { immediately?: true; isReturnOrThrow: false }): Promise<TasksResponse<TCData>>;
+  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options?: TasksOptionsExtra<TCData> & { immediately?: true; isReturnOrThrow?: true }): Promise<TCData>;
 
   tasks<TCData extends any[]>(
-    ...[
-      callbacks,
-      {
-        immediately = true, //
-        concurrency,
-        stopOnError = true,
-        seal = true,
-        ...options
-      } = {},
-    ]: TasksParams<TCData, { immediately?: boolean; stopOnError?: boolean }, 'optional'>
+    callbacks: TasksCallback<TCData>,
+    options: TasksOptionsExtra<TCData> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
   ): Tasks<TCData> | Promise<TCData | TasksResponse<TCData>> {
-    if (this.sealed) throw new Error('Tasks is already sealed');
+    const immediately = options.immediately ?? true;
+    const concurrency = options.concurrency;
+    const isReturnOrThrow = options.isReturnOrThrow ?? true;
+    const isSealing = options.isSealing ?? true;
+
+    if (this.isSealed) throw new Error('Tasks is already sealed');
 
     const tasks = new Tasks<TCData>(this, options);
     this.#tasks.push(tasks);
-    this.onChange();
 
-    for (const callback of callbacks) {
-      tasks.task(callback, { immediately: false });
-    }
+    const tasksChildren = callbacks.map(callback => new Task(tasks, callback));
+    tasks.#tasks.push(...tasksChildren);
 
     if (immediately) {
-      return new Promise((resolve, reject) => {
-        if (stopOnError) {
-          tasks.wait({ concurrency, stopOnError, seal }).then(resolve).catch(reject);
+      return (async () => {
+        await this.onChange();
+        if (isReturnOrThrow) {
+          return await tasks.wait({ concurrency, isReturnOrThrow, isSealing });
         } else {
-          tasks.wait({ concurrency, stopOnError, seal }).then(resolve);
+          return await tasks.wait({ concurrency, isReturnOrThrow, isSealing });
         }
-      });
+      })();
     } else {
+      this.onChange();
       return tasks;
     }
   }
@@ -287,20 +301,81 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     );
   }
 
-  toLines(): LineProps[] {
-    const middleLines = this.#tasks.flatMap(task => {
-      if (task instanceof Log) {
-        return task.toLines();
-      }
-      if (task instanceof Task) {
-        return task.toLines();
-      }
-      if (task instanceof Tasks) {
-        return task.toLines();
-      } /* v8 ignore next */
-      return [];
-    });
+  get #middleLines(): LineProps[] {
+    const tasksGroups: TaskGroup[] = [];
+    let currentGroup: TaskGroup | null = null;
+    let currentGroupName: string | null = null;
 
+    for (const task of this.#tasks) {
+      const groupName = getGroupName({ task, isShowTaskAsGrid: this.#isShowTaskAsGrid });
+
+      if (currentGroup && isEqual(groupName, currentGroupName)) {
+        currentGroup.tasks.push(task);
+      } else {
+        if (currentGroup) tasksGroups.push(currentGroup);
+        currentGroup = { name: groupName, key: uniqueId(), tasks: [task] };
+        currentGroupName = groupName;
+      }
+    }
+
+    if (currentGroup) tasksGroups.push(currentGroup);
+
+    return tasksGroups.flatMap(tasksGroup => {
+      if (tasksGroup.name === 'task') {
+        const tasksGroupStatus = tasksGroup.tasks
+          .map(task => {
+            if (task instanceof Task) {
+              return {
+                [Status.Pending]: chalk.gray(figureSet.squareLightShade), // ░
+                [Status.Running]: chalk.white(figureSet.squareLightShade), // ░
+                [Status.Fulfilled]: chalk.green(figureSet.square), // █
+                [Status.Rejected]: chalk.red(figureSet.square), // █
+              }[task.status];
+            } /* v8 ignore next */
+            return '?';
+          })
+          .join('');
+
+        return {
+          key: `${this.key}-${tasksGroup.key}-grid`,
+          isStatic: this.isSealed,
+          level: this.level + 1,
+          prefix: Prefix.BlockMiddleLine,
+          icon: this.isSealed ? Icon.Success : Icon.Running,
+          colsLeft: [{ text: tasksGroupStatus, width: this.#gridWidth }],
+          colsRight: [{ text: '', width: 'wrap' }],
+        };
+      }
+      if (tasksGroup.name === `task-${Status.Fulfilled}` && !this.#isShowAllFulfilled) {
+        return {
+          key: `${this.key}-${tasksGroup.key}-fulfilled`,
+          isStatic: this.isSealed,
+          level: this.level + 1,
+          prefix: Prefix.BlockMiddleLine,
+          icon: this.isSealed ? Icon.Success : Icon.Running,
+          colsLeft: [
+            this.isSealed //
+              ? { text: `${tasksGroup.tasks.length} completed tasks!`, color: 'green' }
+              : { text: `${tasksGroup.tasks.length} completed tasks...`, color: 'yellow' },
+          ],
+        };
+      }
+      if (tasksGroup.name === `task-${Status.Pending}` && !this.#isShowAllPending) {
+        return {
+          key: `${this.key}-${tasksGroup.key}-pending`,
+          isStatic: this.isSealed,
+          level: this.level + 1,
+          prefix: Prefix.BlockMiddleLine,
+          icon: Icon.Pending,
+          colsLeft: [{ text: `${tasksGroup.tasks.length} pending tasks...`, color: 'gray' }],
+          colsRight: [{ text: 'Pending', color: 'gray', width: 'no-wrap' }],
+        };
+      }
+      return tasksGroup.tasks.flatMap(task => task.toLines());
+    });
+  }
+
+  toLines(): LineProps[] {
     //? Timer
     const { startTime, endTime } = this;
     const colTimer: LineColProps = startTime
@@ -328,16 +403,16 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     return [
       {
         key: `${this.key}-start`,
-        isStatic: this.level === 0, // Root header is static
+        isStatic: !this.#isShowTimer || this.isSealed,
         level: this.level + 1,
         prefix: Prefix.BlockStart,
         colsLeft: this.titleCols,
-        colsRight: this.level === 0 ? [] : [colTimer], // Root header don't have timer
+        colsRight: !this.#isShowTimer ? [] : [colTimer],
       },
-      ...middleLines,
+      ...this.#middleLines,
       {
         key: `${this.key}-end`,
-        isStatic: this.sealed,
+        isStatic: this.isSealed,
         level: this.level + 1,
         prefix: Prefix.BlockEnd,
         colsLeft: colResult,

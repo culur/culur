@@ -1,5 +1,11 @@
 # @culur/utils-packages
 
+## 1.2.2
+
+### Patch Changes
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.1
 
 ### Patch Changes

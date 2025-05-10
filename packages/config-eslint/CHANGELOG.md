@@ -1,5 +1,23 @@
 # @culur/config-eslint
 
+## 1.4.2
+
+### Patch Changes
+
+- 📦 Remove useless packages ([`520934f`](https://github.com/culur/culur/commit/520934f108d91d6b24145a3cef037de847caebb4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([#296](https://github.com/culur/culur/pull/296) [`ebf776e`](https://github.com/culur/culur/commit/ebf776e8ad796526cc9fba72a5c516b65f7f077f)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^4.13.0`
+  - `devDependencies`:
+    - `type-fest@^4.41.0`
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.2`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.1
 
 ### Patch Changes

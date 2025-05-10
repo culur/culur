@@ -1,5 +1,14 @@
 # @culur/config-vite
 
+## 1.3.1
+
+### Patch Changes
+
+- 📦 Use `@culur/types` instead of `type-fest` ([`2687dc5`](https://github.com/culur/culur/commit/2687dc5b6c789c89bd83cf3c0b86bba5e590918b)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.0`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.0
 
 ### Minor Changes

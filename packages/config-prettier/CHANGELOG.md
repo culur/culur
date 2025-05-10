@@ -1,5 +1,13 @@
 # @culur/config-prettier
 
+## 1.3.4
+
+### Patch Changes
+
+- 📦 Remove useless packages ([`520934f`](https://github.com/culur/culur/commit/520934f108d91d6b24145a3cef037de847caebb4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.3
 
 ### Patch Changes

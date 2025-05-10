@@ -1,5 +1,14 @@
 # @culur/config-stylelint
 
+## 1.4.4
+
+### Patch Changes
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.2`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.3
 
 ### Patch Changes

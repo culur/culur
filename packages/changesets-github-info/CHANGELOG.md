@@ -1,5 +1,22 @@
 # @culur/changesets-github-info
 
+## 1.1.8
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@graphql-codegen/cli@5.0.6`
+    - `@graphql-codegen/typescript-operations@4.6.1`
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Migrate from `lodash-es` to `es-toolkit` ([`0775112`](https://github.com/culur/culur/commit/07751126f036ad60fe5cc594c4a4474af04e2d00)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.0`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.7
 
 ### Patch Changes

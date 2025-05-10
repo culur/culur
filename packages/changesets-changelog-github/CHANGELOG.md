@@ -1,5 +1,21 @@
 # @culur/changesets-changelog-github
 
+## 1.1.8
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `type-fest@^4.41.0`
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Use `@culur/types` instead of `type-fest` ([`2687dc5`](https://github.com/culur/culur/commit/2687dc5b6c789c89bd83cf3c0b86bba5e590918b)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.8`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.7
 
 ### Patch Changes

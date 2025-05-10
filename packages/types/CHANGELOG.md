@@ -1,5 +1,22 @@
 # @culur/types
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ Export all types from `type-fest` ([`5a4c57f`](https://github.com/culur/culur/commit/5a4c57f6b069b55a75359de9c39fb9dadc8d37a9)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Rename `PackageJson` to `PackageJsonExtends` ([`b3ee1df`](https://github.com/culur/culur/commit/b3ee1dfbacf669b4bc4e95a2631ba18faaecfbff)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([#298](https://github.com/culur/culur/pull/298) [`2c8f412`](https://github.com/culur/culur/commit/2c8f412137415e144cab96d791808305bd2e2087)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `type-fest@^4.41.0`
+
+- 📦 Remove `@culur/config-vite` from `devDependencies` ([`0289747`](https://github.com/culur/culur/commit/02897471b2b06f5330428fc1247158afb7365cc4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.4
 
 ### Patch Changes

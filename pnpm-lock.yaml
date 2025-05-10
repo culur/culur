@@ -243,9 +243,6 @@ importers:
       '@vue/compiler-sfc':
         specifier: ^3.5.13
         version: 3.5.13
-      type-fest:
-        specifier: ^4.41.0
-        version: 4.41.0
 
   packages/config-prettier:
     dependencies:
@@ -259,9 +256,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/types':
-        specifier: workspace:*
-        version: link:../types
       '@culur/utils-packages':
         specifier: workspace:*
         version: link:../utils-packages

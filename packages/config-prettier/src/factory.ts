@@ -1,11 +1,10 @@
 import type { Config } from 'prettier';
 import { platform } from 'node:os';
-import { defineObject } from '@culur/types';
 
 export default function defineConfig(config: Config = {}): Config {
   const isWin = platform() === 'win32';
 
-  const defaultConfig = defineObject<Config>()({
+  const defaultConfig = {
     semi: true,
     singleQuote: true,
     tabWidth: 2,
@@ -66,7 +65,7 @@ export default function defineConfig(config: Config = {}): Config {
         options: { endOfLine: 'crlf' },
       },
     ],
-  });
+  } satisfies Config;
 
   const { overrides, ...options } = config;
   const { overrides: defaultOverrides, ...defaultOptions } = defaultConfig;

@@ -77,7 +77,6 @@
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@culur/types": "workspace:*",
     "@culur/utils-packages": "workspace:*"
   },
   "peerDependencies": {

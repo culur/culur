@@ -60,7 +60,7 @@
     "@octokit/graphql": "^8.2.2",
     "dataloader": "^2.2.3",
     "dedent": "^1.6.0",
-    "lodash-es": "^4.17.21"
+    "es-toolkit": "^1.37.2"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
@@ -69,7 +69,6 @@
     "@graphql-codegen/cli": "5.0.6",
     "@graphql-codegen/typescript-operations": "4.6.1",
     "@octokit/graphql-schema": "^15.26.0",
-    "@types/lodash-es": "^4.17.12",
     "graphql": "^16.11.0"
   }
 }

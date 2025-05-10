@@ -36,7 +36,7 @@ const getRepositoryQuery = (
 };
 
 export const getQuery = async (requests: readonly GithubInfoRequest[]) => {
-  const { groupBy } = await import('lodash-es');
+  const { groupBy } = await import('es-toolkit');
   const requestsByRepo: GithubInfoRequestByRepo = groupBy(
     requests,
     req => `${req.owner}/${req.name}`,

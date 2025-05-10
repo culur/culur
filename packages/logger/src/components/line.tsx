@@ -1,7 +1,7 @@
 import type { BoxProps, TextProps } from 'ink';
 import type { LineColProps } from './line-cols.types';
+import { range } from 'es-toolkit';
 import { Box, Spacer, Text } from 'ink';
-import { range } from 'lodash-es';
 import { DRAW } from '~/configs';
 import { Icon, Prefix } from '~/types';
 import { BoxIcon } from './box-icon';

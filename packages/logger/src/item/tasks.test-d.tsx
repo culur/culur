@@ -1,6 +1,6 @@
 import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
-import { range } from 'lodash-es';
+import { range } from 'es-toolkit';
 import { expect, expectTypeOf, vi } from 'vitest';
 import { describeLogger, throwError, throwErrorDelay, throwString } from '~/__tests__';
 import { expectTaskResponseFulfilled } from './task.test-d';

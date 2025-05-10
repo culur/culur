@@ -1,4 +1,4 @@
-import { camelCase } from 'lodash-es';
+import { camelCase } from 'es-toolkit';
 
 export function generateZodIsValidBySchema(declarationName: string) {
   const schemaName = `${camelCase(declarationName)}Schema`;

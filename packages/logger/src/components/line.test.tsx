@@ -1,6 +1,6 @@
 import type { BoxProps } from 'ink';
 import type { LineProps } from './line';
-import { uniqueId } from 'lodash-es';
+import { uniqueId } from 'es-toolkit/compat';
 import { describeComponentRender } from '~/__tests__';
 import { Prefix } from '~/types';
 import { Line } from './line';

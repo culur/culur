@@ -1,5 +1,5 @@
 import type { GenerateZodSchemaProps } from 'ts-to-zod';
-import { camelCase } from 'lodash-es';
+import { camelCase } from 'es-toolkit';
 import { generateZodSchemaVariableStatement } from 'ts-to-zod';
 import ts from 'typescript';
 import { findNode } from './find-node';

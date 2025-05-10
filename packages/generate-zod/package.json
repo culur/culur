@@ -58,7 +58,7 @@
   },
   "dependencies": {
     "dedent": "^1.6.0",
-    "lodash-es": "^4.17.21",
+    "es-toolkit": "^1.37.2",
     "ts-to-zod": "^3.15.0",
     "zx": "^8.5.3"
   },
@@ -66,7 +66,6 @@
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/config-vite": "workspace:*",
-    "@types/lodash-es": "^4.17.12",
     "zod": "^3.24.4"
   },
   "peerDependencies": {

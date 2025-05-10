@@ -1,5 +1,5 @@
+import { random, range } from 'es-toolkit';
 import { Text } from 'ink';
-import { random, range } from 'lodash-es';
 import { Logger } from '~/logger';
 import { Status } from '~/types';
 

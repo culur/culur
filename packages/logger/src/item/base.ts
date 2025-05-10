@@ -2,7 +2,7 @@ import type { BoxProps } from 'ink';
 import type { TaskResponse } from '../types/task';
 import type { LineProps } from '~/components/line';
 import type { Status } from '~/types';
-import { uniqueId } from 'lodash-es';
+import { uniqueId } from 'es-toolkit/compat';
 
 export interface BaseRunnable {
   get isRunning(): boolean;

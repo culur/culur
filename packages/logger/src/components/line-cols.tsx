@@ -1,5 +1,5 @@
 import type { LineColProps } from './line-cols.types';
-import { uniqueId } from 'lodash-es';
+import { uniqueId } from 'es-toolkit/compat';
 import { LineCol } from './line-col';
 
 export function LineCols({ cols }: { cols: LineColProps[] }) {

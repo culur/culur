@@ -1,4 +1,4 @@
-import type { PackageJson as PackageJsonTypeFest } from 'type-fest';
+import type { PackageJson } from 'type-fest';
 
 interface VoltaConfiguration {
   volta?: {
@@ -6,4 +6,4 @@ interface VoltaConfiguration {
   };
 }
 
-export type PackageJson = PackageJsonTypeFest & VoltaConfiguration;
+export type PackageJsonExtends = PackageJson & VoltaConfiguration;

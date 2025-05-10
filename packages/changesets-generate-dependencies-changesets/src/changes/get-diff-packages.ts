@@ -1,4 +1,4 @@
-import type { PackageJson } from '@culur/types';
+import type { PackageJsonExtends } from '@culur/types';
 import type { DependenciesType } from './get-dependencies-type';
 import type { Branches } from '~/input/get-branches';
 import exec from '@actions/exec';
@@ -18,12 +18,12 @@ export async function getDiffPackages({
 
   const diffPackages: {
     packageFile: string;
-    json: PackageJson;
+    json: PackageJsonExtends;
     changedPackages: { [key in DependenciesType]?: Record<string, string> };
   }[] = [];
 
   for (const packageFile of diffPackageFiles) {
-    const json: PackageJson = await fs.readJson(packageFile);
+    const json: PackageJsonExtends = await fs.readJson(packageFile);
     const changedLines = await exec.getExecOutput(
       `git diff origin/${baseBranch} -- ${packageFile}`,
     );

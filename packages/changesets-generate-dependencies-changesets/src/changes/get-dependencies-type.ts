@@ -1,4 +1,4 @@
-import type { PackageJson } from '@culur/types';
+import type { PackageJsonExtends } from '@culur/types';
 
 export const dependenciesTypes = [
   'dependencies',
@@ -12,7 +12,7 @@ export const dependenciesTypes = [
 export type DependenciesType = (typeof dependenciesTypes)[number];
 
 export function getDependenciesType(
-  packageJson: PackageJson,
+  packageJson: PackageJsonExtends,
   packageName: string,
   packageVersion: string,
 ) {

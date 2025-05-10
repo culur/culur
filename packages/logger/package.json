@@ -81,7 +81,6 @@
     "@culur/config-eslint": "workspace:*",
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@culur/config-vite": "workspace:*",
     "@types/async": "^3.2.24",
     "@types/react": "^18.3.21",
     "ink-testing-library": "^4.0.0",

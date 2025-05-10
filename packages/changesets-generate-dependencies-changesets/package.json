@@ -65,7 +65,6 @@
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
     "@types/fs-extra": "^11.0.4",
     "type-fest": "^4.41.0"

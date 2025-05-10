@@ -64,7 +64,6 @@
     "@changesets/parse": "^0.4.1",
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@culur/config-vite": "workspace:*",
     "@culur/types": "workspace:*",
     "dedent": "^1.6.0"
   }

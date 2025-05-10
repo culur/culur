@@ -135,9 +135,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@culur/types':
         specifier: workspace:*
         version: link:../types
@@ -175,9 +172,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@culur/types':
         specifier: workspace:*
         version: link:../types
@@ -212,9 +206,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@graphql-codegen/cli':
         specifier: 5.0.6
         version: 5.0.6(@types/node@22.15.17)(enquirer@2.4.1)(graphql-sock@1.0.1(graphql@16.11.0))(graphql@16.11.0)(typescript@5.8.3)
@@ -249,9 +240,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
@@ -277,9 +265,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@culur/types':
         specifier: workspace:*
         version: link:../types
@@ -326,9 +311,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       dedent:
         specifier: ^1.6.0
         version: 1.6.0
@@ -419,9 +401,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       zod:
         specifier: ^3.24.4
         version: 3.24.4
@@ -471,9 +450,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@types/async':
         specifier: ^3.2.24
         version: 3.2.24
@@ -510,9 +486,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
 
   packages/utils-packages:
     dependencies:
@@ -529,9 +502,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/config-vite':
-        specifier: workspace:*
-        version: link:../config-vite
       '@types/semver':
         specifier: ^7.7.0
         version: 7.7.0

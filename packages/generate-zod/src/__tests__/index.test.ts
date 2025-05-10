@@ -3,24 +3,31 @@ import { describe, expect, it } from 'vitest';
 import { fs } from 'zx';
 import { generateZod, ts } from '..';
 
-const sampleFolder = 'src/__tests__/samples';
+const sampleFolder = path.resolve(import.meta.dirname, 'samples');
 
+const outputProductEnumSnapshot = path.resolve(
+  sampleFolder,
+  'product-enum.zod.ts.snapshot.ts',
+);
 const outputProductEnum = path.resolve(sampleFolder, 'product-enum.zod.ts');
 const inputProductEnum = path.resolve(sampleFolder, 'product-enum.ts');
 
+const outputProductSnapshot = path.resolve(
+  sampleFolder,
+  'product.zod.ts.snapshot.ts',
+);
 const outputProduct = path.resolve(sampleFolder, 'product.zod.ts');
 const inputProduct = path.resolve(sampleFolder, 'product.ts');
 
+const outputUserSnapshot = path.resolve(
+  sampleFolder,
+  'user.zod.ts.snapshot.ts',
+);
 const outputUser = path.resolve(sampleFolder, 'user.zod.ts');
 const inputUser = path.resolve(sampleFolder, 'user.ts');
 
 describe('generate zod', async () => {
   it('generate product', async () => {
-    const outputProductEnumFile = //
-      await fs.readFile(outputProductEnum, { encoding: 'utf-8' });
-    const outputProductFile = //
-      await fs.readFile(outputProduct, { encoding: 'utf-8' });
-
     await generateZod(
       {
         [outputProductEnum]: {
@@ -58,10 +65,11 @@ describe('generate zod', async () => {
       },
     );
 
-    await expect(outputProductEnumFile) //
-      .toMatchFileSnapshot('./samples/product-enum.zod.ts.snapshot.ts');
-    await expect(outputProductFile) //
-      .toMatchFileSnapshot('./samples/product.zod.ts.snapshot.ts');
+    await expect(await fs.readFile(outputProductEnum, { encoding: 'utf-8' })) //
+      .toMatchFileSnapshot(outputProductEnumSnapshot);
+
+    await expect(await fs.readFile(outputProduct, { encoding: 'utf-8' })) //
+      .toMatchFileSnapshot(outputProductSnapshot);
   });
 
   it('generate', async () => {
@@ -78,11 +86,8 @@ describe('generate zod', async () => {
       },
     );
 
-    const outputUserFile = //
-      await fs.readFile(outputUser, { encoding: 'utf-8' });
-
-    await expect(outputUserFile) //
-      .toMatchFileSnapshot('./samples/user.zod.ts.snapshot.ts');
+    await expect(await fs.readFile(outputUser, { encoding: 'utf-8' })) //
+      .toMatchFileSnapshot(outputUserSnapshot);
   });
 
   it('generate failed', async () => {

@@ -81,12 +81,12 @@
     "@culur/config-eslint": "workspace:*",
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
+    "@culur/types": "workspace:*",
     "@types/async": "^3.2.24",
     "@types/react": "^18.3.21",
     "ink-testing-library": "^4.0.0",
     "prettier-plugin-embed": "^0.5.0",
     "react-devtools": "^5.3.2",
-    "react-devtools-core": "^5.3.2",
-    "type-fest": "^4.41.0"
+    "react-devtools-core": "^5.3.2"
   }
 }

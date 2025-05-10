@@ -1,5 +1,5 @@
+import type { Arrayable } from '@culur/types';
 import type { AsyncResultIteratorPromise } from 'async';
-import type { Arrayable } from 'type-fest';
 import type { BaseRunnable, IRootObject } from './base';
 import type { TaskGroup } from './tasks.group';
 import type { LineColProps, LineProps } from '~/components';

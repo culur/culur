@@ -1,6 +1,6 @@
+import type { Arrayable, LiteralUnion } from '@culur/types';
 import type { Text, TextProps } from 'ink';
 import type { ReactElement } from 'react';
-import type { Arrayable, LiteralUnion } from 'type-fest';
 import { isValidElement } from 'react';
 
 export type LineColProps =

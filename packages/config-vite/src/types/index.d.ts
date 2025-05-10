@@ -1,4 +1,4 @@
-import type { MergeDeep } from 'type-fest';
+import type { MergeDeep } from '@culur/types';
 import type { ConfigEnv, UserConfig } from 'vite';
 import type viteTsconfigPaths from 'vite-tsconfig-paths';
 

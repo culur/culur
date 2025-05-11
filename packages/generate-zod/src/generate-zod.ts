@@ -10,22 +10,24 @@ export async function generateZod(
       validateTypes?: string[];
     };
   },
-  {
+  options: {
+    zodImportValue?: GenerateZodSchemaProps['zodImportValue'];
+    skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
+    getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
+    customJSDocFormatTypes?: CustomJSDocFormatTypes;
+    importIsValid?: string;
+    postCommands?: (outputFile: string) => string[];
+  } = {},
+) {
+  const {
     customJSDocFormatTypes = {},
     postCommands = outputFile => [
       `eslint "${outputFile}" --fix`,
       `prettier "${outputFile}" --write`,
     ],
     ...globalOptions
-  }: Pick<
-    GenerateZodSchemaProps,
-    'zodImportValue' | 'getDependencyName' | 'skipParseJSDoc'
-  > & {
-    importIsValid?: string;
-    customJSDocFormatTypes?: CustomJSDocFormatTypes;
-    postCommands?: (outputFile: string) => string[];
-  } = {},
-) {
+  } = options;
+
   const promises = Object.entries(files) //
     .map(([outputFile, options]) =>
       generateZodFile({

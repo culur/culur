@@ -368,7 +368,7 @@ importers:
         specifier: '*'
         version: 22.15.17
       dedent:
-        specifier: ^1.6.0
+        specifier: '*'
         version: 1.6.0
       es-toolkit:
         specifier: ^1.37.2
@@ -379,9 +379,6 @@ importers:
       typescript:
         specifier: '>=5.7'
         version: 5.8.3
-      zx:
-        specifier: ^8.5.3
-        version: 8.5.3
     devDependencies:
       '@culur/config-tsup':
         specifier: workspace:*
@@ -392,6 +389,9 @@ importers:
       zod:
         specifier: ^3.24.4
         version: 3.24.4
+      zx:
+        specifier: ^8.5.3
+        version: 8.5.3
 
   packages/logger:
     dependencies:

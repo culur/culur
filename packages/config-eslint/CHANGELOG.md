@@ -1,5 +1,14 @@
 # @culur/config-eslint
 
+## 1.4.3
+
+### Patch Changes
+
+- 📦 Update `tsup` entry to improve size ([`725b41e`](https://github.com/culur/culur/commit/725b41ece53848a0135540d7cb4c5e617fabec89)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.3`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.2
 
 ### Patch Changes

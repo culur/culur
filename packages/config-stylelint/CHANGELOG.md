@@ -1,5 +1,12 @@
 # @culur/config-stylelint
 
+## 1.4.5
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.3`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.4
 
 ### Patch Changes

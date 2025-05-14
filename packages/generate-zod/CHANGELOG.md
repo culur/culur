@@ -1,5 +1,15 @@
 # @culur/generate-zod
 
+## 1.0.1
+
+### Patch Changes
+
+- 🔨 Refactor `isValidAgainstSchema()` ([`22ffb0b`](https://github.com/culur/culur/commit/22ffb0b6cb5d1d26d4638fa47e76c818f6ba9b14)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - Rename `isValidBySchema()` to `isValidAgainstSchema()`.
+  - Add entry `./is-valid-against-schema` and use it to improve tree-shaking. This will avoid importing "fs/promise" in the browser environment.
+  - Add `debug` parameter to improve debugging.
+
 ## 1.0.0
 
 ### Major Changes

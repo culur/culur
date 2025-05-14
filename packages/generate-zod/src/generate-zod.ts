@@ -15,7 +15,7 @@ export async function generateZod(
     skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
     getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
     customJSDocFormatTypes?: CustomJSDocFormatTypes;
-    importIsValid?: string;
+    importIsValidAgainstSchema?: string;
     postCommands?: (outputFile: string) => string[];
   } = {},
 ) {

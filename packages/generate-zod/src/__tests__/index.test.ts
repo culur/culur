@@ -59,8 +59,8 @@ describe('generate zod', async () => {
         },
       },
       {
-        importIsValid: ts`
-          import { isValidBySchema } from '~/is-valid-by-schema';
+        importIsValidAgainstSchema: ts`
+          import { isValidAgainstSchema } from '~/is-valid-against-schema';
         `,
       },
     );

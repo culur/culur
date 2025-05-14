@@ -32,6 +32,16 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
+    },
+    "./is-valid-against-schema": {
+      "import": {
+        "types": "./dist/is-valid-against-schema.d.ts",
+        "default": "./dist/is-valid-against-schema.js"
+      },
+      "require": {
+        "types": "./dist/is-valid-against-schema.d.cts",
+        "default": "./dist/is-valid-against-schema.cjs"
+      }
     }
   },
   "files": [

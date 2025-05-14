@@ -1,7 +1,7 @@
 import type { Contact } from './samples/user';
 import { assert, beforeAll, describe, expectTypeOf, it, vi } from 'vitest';
 import { z } from 'zod';
-import { isValidBySchema } from '~/is-valid-by-schema';
+import { isValidAgainstSchema } from '~/is-valid-against-schema';
 
 describe('is valid by schema', async () => {
   beforeAll(() => {
@@ -14,7 +14,7 @@ describe('is valid by schema', async () => {
       phoneNumber: z.string().optional(),
     });
 
-    const isContact = isValidBySchema<Contact>(contactSchema);
+    const isContact = isValidAgainstSchema<Contact>(contactSchema);
 
     const validContract: unknown = {
       email: 'abc@def.com',
@@ -26,6 +26,7 @@ describe('is valid by schema', async () => {
 
     const invalidContract: unknown = {};
     assert(!isContact(invalidContract));
+    assert(!isContact(invalidContract, true));
     expectTypeOf(invalidContract).not.toEqualTypeOf<Contact>();
   });
 });

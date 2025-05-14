@@ -5,13 +5,15 @@ import { promisify } from 'node:util';
 import typescript from 'typescript';
 import { ts } from '.';
 import { generateZodDeclarationName } from './generate-zod-declaration-name';
-import { generateZodIsValidBySchema } from './generate-zod-is-valid-by-schema';
+import { generateZodIsValidAgainstSchema } from './generate-zod-is-valid-against-schema';
 
 const execAsync = promisify(exec);
 
 export async function generateZodFile({
   importLines,
-  importIsValid = ts`import { isValidBySchema } from '@culur/generate-zod';`,
+  importIsValidAgainstSchema = ts`
+    import { isValidAgainstSchema } from '@culur/generate-zod/is-valid-against-schema';
+  `,
   inputFiles,
   outputFile,
   validateTypes = [],
@@ -19,7 +21,7 @@ export async function generateZodFile({
   ...props
 }: {
   importLines?: string;
-  importIsValid?: string;
+  importIsValidAgainstSchema?: string;
   inputFiles: { [filename: string]: string[] };
   outputFile: string;
   validateTypes?: string[];
@@ -34,7 +36,7 @@ export async function generateZodFile({
   let content =
     validateTypes.length > 0
       ? ts`
-          ${importIsValid};
+          ${importIsValidAgainstSchema};
           import { z } from 'zod';
         `
       : ts`import { z } from 'zod';`;
@@ -62,7 +64,7 @@ export async function generateZodFile({
 
       if (validateTypes.includes(declarationName)) {
         content += '\n\n';
-        content += generateZodIsValidBySchema(declarationName);
+        content += generateZodIsValidAgainstSchema(declarationName);
       }
       content += '\n\n';
     }

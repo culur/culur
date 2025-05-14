@@ -1,6 +1,6 @@
 import type { DetailedProduct } from './product';
 import { z } from 'zod';
-import { isValidBySchema } from '~/is-valid-by-schema';
+import { isValidAgainstSchema } from '~/is-valid-against-schema';
 import { permissionLevelSchema, statusSchema } from './product-enum.zod';
 
 const paymentMethodSchema = z.union([
@@ -33,7 +33,7 @@ export const detailedProductSchema = basicProductSchema.extend({
   acceptedPaymentMethods: z.array(paymentMethodSchema).optional(),
 });
 
-export const isDetailedProduct = isValidBySchema<DetailedProduct>(
+export const isDetailedProduct = isValidAgainstSchema<DetailedProduct>(
   detailedProductSchema,
 );
 

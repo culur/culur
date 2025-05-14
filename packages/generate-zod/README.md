@@ -32,7 +32,7 @@ declare function generateZod(
     skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
     getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
     customJSDocFormatTypes?: CustomJSDocFormatTypes;
-    importIsValid?: string;
+    importIsValidAgainstSchema?: string;
     postCommands?: (outputFile: string) => string[];
   },
 ): Promise<void>;
@@ -51,10 +51,10 @@ Key capabilities of the `generateZod` function include:
     - `skipParseJSDoc`
     - `getDependencyName`
     - `customJSDocFormatTypes`
-  - **`importIsValid` (string):**
-    - Specifies the import statement for the helper function (by default `isValidBySchema`) used within the auto-generated `isYourType` predicate functions.
-    - Defaults to: `import { isValidBySchema } from '@culur/generate-zod';`
-    - You can customize this to point to your own implementation if you have a custom `isValidBySchema` function.
+  - **`importIsValidAgainstSchema` (string):**
+    - Specifies the import statement for the helper function (by default `isValidAgainstSchema`) used within the auto-generated `isYourType` predicate functions.
+    - Defaults to: `import { isValidAgainstSchema } from '@culur/generate-zod';`
+    - You can customize this to point to your own implementation if you have a custom `isValidAgainstSchema` function.
   - **`postCommands` (function):**
     - A function that accepts the `outputFile` path (string) as an argument and should return an array of command strings.
     - These commands are executed sequentially after each TypeScript file is successfully generated.
@@ -203,7 +203,7 @@ After running the script, the specified output file will be created (or overwrit
 ```ts
 // src/types/credentials.zod.ts
 import type { Credentials } from './credentials'; // From your importLines
-import { isValidBySchema } from '@culur/generate-zod'; // Default import for predicate helper
+import { isValidAgainstSchema } from '@culur/generate-zod'; // Default import for predicate helper
 import { z } from 'zod'; // Default Zod import
 
 // Generated Zod schema for the Credentials interface
@@ -215,13 +215,14 @@ export const credentialsSchema = z.object({
 });
 
 // Generated type predicate function because 'Credentials' was in 'validateTypes'
-export const isCredentials = isValidBySchema<Credentials>(credentialsSchema);
+export const isCredentials =
+  isValidAgainstSchema<Credentials>(credentialsSchema);
 ```
 
 This generated file includes:
 
 - The `credentialsSchema` Zod object.
-- The `isCredentials` type predicate function, which uses the `isValidBySchema` helper (imported by default) and the `Credentials` type (imported via your `importLines`).
+- The `isCredentials` type predicate function, which uses the `isValidAgainstSchema` helper (imported by default) and the `Credentials` type (imported via your `importLines`).
 
 You can now import and use `credentialsSchema` and `isCredentials` in your application for runtime data validation.
 

@@ -5,6 +5,9 @@
       "analyzeSourceFiles": false
     }
   },
+  "tui": {
+    "enabled": false
+  },
   "targetDefaults": {
     "lint:md": {
       "inputs": [

@@ -1,11 +1,9 @@
 import type { ConfigEnv, UserConfig } from 'vite';
-import type { UserConfigExtends, UserConfigGetter } from '~/types';
+import type { UserConfigExtends } from '~/types';
 import { defineConfigObject } from './define-config-object';
 
-export function defineConfig<
-  TOptions extends UserConfigExtends = { test: false },
->(
-  config?: UserConfigExtends | TOptions, // for auto-completion
+export function defineConfig<TUserConfig extends UserConfigExtends>(
+  config?: UserConfigExtends | TUserConfig, // for auto-completion
 ): UserConfig;
 
 export function defineConfig<TUserConfig extends UserConfigExtends>(
@@ -22,8 +20,14 @@ export function defineConfig<TUserConfig extends UserConfigExtends>(
 ): (env: ConfigEnv) => Promise<UserConfig>;
 
 export function defineConfig<TUserConfig extends UserConfigExtends>(
-  config?: UserConfigGetter<TUserConfig>,
-) {
+  config?:
+    | TUserConfig
+    | Promise<TUserConfig>
+    | ((env: ConfigEnv) => TUserConfig | Promise<TUserConfig>),
+):
+  | UserConfig
+  | Promise<UserConfig>
+  | ((env: ConfigEnv) => Promise<UserConfig>) {
   if (typeof config === 'function') {
     return async (env: ConfigEnv) => {
       const configObject = await config(env);

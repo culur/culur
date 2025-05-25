@@ -36,6 +36,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   readonly #isShowTaskAsGrid: boolean;
   readonly #gridWidth: number;
 
+  #concurrency: number;
+
   isSealed: boolean = false;
 
   get #runnableTasks(): BaseRunnable[] {
@@ -139,6 +141,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
     this.#isShowTaskAsGrid = options.isShowTaskAsGrid ?? TASKS.isShowTaskAsGrid;
     this.#gridWidth = options.gridWidth ?? TASKS.gridWidth;
+
+    this.#concurrency = options.concurrency ?? TASKS.concurrency;
   }
 
   //! ----- ----- ----- ----- ----- Run ----- ----- ----- ----- ----- !//
@@ -150,8 +154,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     | TasksResponse<TTasksData> //
     | TTasksData
   > {
+    this.#concurrency = options.concurrency ?? this.#concurrency;
     const isReturnOrThrow = options.isReturnOrThrow ?? true;
-    const concurrency = options.concurrency ?? TASKS.concurrency;
     const isSealing = options.isSealing ?? TASKS.isSealing;
 
     const pendingTasks = this.#runnableTasks.filter(task => task.status === Status.Pending);
@@ -165,8 +169,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       }
     };
     const pendingPromise =
-      concurrency > 1 //
-        ? mapLimit<BaseRunnable, unknown>(pendingTasks, concurrency, pendingTasksIteratee)
+      this.#concurrency > 1 //
+        ? mapLimit<BaseRunnable, unknown>(pendingTasks, this.#concurrency, pendingTasksIteratee)
         : mapSeries<BaseRunnable, unknown>(pendingTasks, pendingTasksIteratee);
 
     const runningPromise = new Promise((resolve, reject) => {
@@ -266,7 +270,6 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
     options: TasksOptionsExtra<TCData> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
   ): Tasks<TCData> | Promise<TCData | TasksResponse<TCData>> {
     const immediately = options.immediately ?? true;
-    const concurrency = options.concurrency;
     const isReturnOrThrow = options.isReturnOrThrow ?? true;
     const isSealing = options.isSealing ?? true;
 
@@ -282,9 +285,9 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       return (async () => {
         await this.onChange();
         if (isReturnOrThrow) {
-          return await tasks.wait({ concurrency, isReturnOrThrow, isSealing });
+          return await tasks.wait({ isReturnOrThrow, isSealing });
         } else {
-          return await tasks.wait({ concurrency, isReturnOrThrow, isSealing });
+          return await tasks.wait({ isReturnOrThrow, isSealing });
         }
       })();
     } else {

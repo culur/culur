@@ -27,10 +27,10 @@ export interface TasksOptions<TData extends readonly any[]> {
 
   isShowTaskAsGrid?: boolean;
   gridWidth?: number;
+  concurrency?: number;
 }
 
 export interface TasksOptionsExtra<TData extends readonly any[]>
   extends TasksOptions<TData> {
-  concurrency?: number;
   isSealing?: boolean;
 }

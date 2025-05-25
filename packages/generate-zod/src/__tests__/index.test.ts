@@ -1,53 +1,43 @@
 import path from 'node:path';
-import { describe, expect, it } from 'vitest';
+import { render } from 'ink-testing-library';
+import { beforeAll, describe, expect, it, vi } from 'vitest';
 import { fs } from 'zx';
 import { generateZod, ts } from '..';
 
-const sampleFolder = path.resolve(import.meta.dirname, 'samples');
-
-const outputProductEnumSnapshot = path.resolve(
-  sampleFolder,
-  'product-enum.zod.ts.snapshot.ts',
-);
-const outputProductEnum = path.resolve(sampleFolder, 'product-enum.zod.ts');
-const inputProductEnum = path.resolve(sampleFolder, 'product-enum.ts');
-
-const outputProductSnapshot = path.resolve(
-  sampleFolder,
-  'product.zod.ts.snapshot.ts',
-);
-const outputProduct = path.resolve(sampleFolder, 'product.zod.ts');
-const inputProduct = path.resolve(sampleFolder, 'product.ts');
-
-const outputUserSnapshot = path.resolve(
-  sampleFolder,
-  'user.zod.ts.snapshot.ts',
-);
-const outputUser = path.resolve(sampleFolder, 'user.zod.ts');
-const inputUser = path.resolve(sampleFolder, 'user.ts');
+const cwd = path.resolve(import.meta.dirname, 'samples');
 
 describe('generate zod', async () => {
+  beforeAll(() => {
+    vi.mock('ink', async () => {
+      const ink: typeof import('ink') = await vi.importActual('ink');
+      return { ...ink, render };
+    });
+  });
+
   it('generate product', async () => {
     await generateZod(
       {
-        [outputProductEnum]: {
+        'product-enum.zod.ts': {
           inputFiles: {
-            [inputProductEnum]: ['Status', 'PermissionLevel'],
+            'product-enum.ts': ['Status', 'PermissionLevel'],
           },
-          importLines: ts`
+          customImport: ts`
+            import { z } from 'zod';
             import { PermissionLevel, Status } from './product-enum';
           `,
         },
-        [outputProduct]: {
-          importLines: ts`
+        'product.zod.ts': {
+          customImport: ts`
             import type { DetailedProduct } from './product';
+            import { z } from 'zod';
+            import { isValidAgainstSchema } from '~/is-valid-against-schema';
             import {
               permissionLevelSchema,
               statusSchema,
             } from './product-enum.zod';
           `,
           inputFiles: {
-            [inputProduct]: [
+            'product.ts': [
               'PaymentMethod',
               'BasicProduct',
               'DetailedProduct',
@@ -58,46 +48,46 @@ describe('generate zod', async () => {
           validateTypes: ['DetailedProduct'],
         },
       },
-      {
-        importIsValidAgainstSchema: ts`
-          import { isValidAgainstSchema } from '~/is-valid-against-schema';
-        `,
-      },
+      { cwd },
     );
 
-    await expect(await fs.readFile(outputProductEnum, { encoding: 'utf-8' })) //
-      .toMatchFileSnapshot(outputProductEnumSnapshot);
+    await expect(
+      await fs.readFile(path.resolve(cwd, 'product-enum.zod.ts'), 'utf-8'),
+    ).toMatchFileSnapshot(path.resolve(cwd, 'product-enum.zod.ts.snapshot.ts'));
 
-    await expect(await fs.readFile(outputProduct, { encoding: 'utf-8' })) //
-      .toMatchFileSnapshot(outputProductSnapshot);
+    await expect(
+      await fs.readFile(path.resolve(cwd, 'product.zod.ts'), 'utf-8'),
+    ).toMatchFileSnapshot(path.resolve(cwd, 'product.zod.ts.snapshot.ts'));
   });
 
   it('generate', async () => {
     await generateZod(
       {
-        [outputUser]: {
+        'user.zod.ts': {
           inputFiles: {
-            [inputUser]: ['Address', 'Contact', 'User'],
+            'user.ts': ['Address', 'Contact', 'User'],
           },
         },
       },
-      {
-        postCommands: outputFile => [`prettier "${outputFile}" --write`],
-      },
+      { cwd },
     );
 
-    await expect(await fs.readFile(outputUser, { encoding: 'utf-8' })) //
-      .toMatchFileSnapshot(outputUserSnapshot);
+    await expect(
+      await fs.readFile(path.resolve(cwd, 'user.zod.ts'), 'utf-8'),
+    ).toMatchFileSnapshot(path.resolve(cwd, 'user.zod.ts.snapshot.ts'));
   });
 
   it('generate failed', async () => {
-    const generatedZod = generateZod({
-      [outputUser]: {
-        inputFiles: {
-          [inputUser]: ['Unknown'],
+    const generatedZod = generateZod(
+      {
+        'user.zod.ts': {
+          inputFiles: {
+            'user.zod.ts.snapshot.ts': ['Unknown'],
+          },
         },
       },
-    });
+      { cwd },
+    );
 
     await expect(generatedZod).rejects.toThrowError(
       /^Can't find declaration \[Unknown\] in \[.+\]$/,

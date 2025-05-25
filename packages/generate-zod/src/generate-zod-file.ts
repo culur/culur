@@ -1,86 +1,126 @@
+import type { Task, Tasks } from '@culur/logger';
+import type { AsyncResultIteratorPromise } from 'async';
 import type { GenerateZodSchemaProps } from 'ts-to-zod';
 import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
+import { resolve } from 'node:path';
+import process from 'node:process';
 import { promisify } from 'node:util';
+import { mapLimit } from 'async';
 import typescript from 'typescript';
-import { ts } from '.';
 import { generateZodDeclarationName } from './generate-zod-declaration-name';
+import { generateZodFileImports } from './generate-zod-file-imports';
 import { generateZodIsValidAgainstSchema } from './generate-zod-is-valid-against-schema';
 
 const execAsync = promisify(exec);
 
-export async function generateZodFile({
-  importLines,
-  importIsValidAgainstSchema = ts`
-    import { isValidAgainstSchema } from '@culur/generate-zod/is-valid-against-schema';
-  `,
-  inputFiles,
-  outputFile,
-  validateTypes = [],
-  postCommands,
-  ...props
-}: {
-  importLines?: string;
-  importIsValidAgainstSchema?: string;
-  inputFiles: { [filename: string]: string[] };
-  outputFile: string;
-  validateTypes?: string[];
-  postCommands: (outputFile: string) => string[];
-} & Pick<
-  GenerateZodSchemaProps,
-  | 'zodImportValue'
-  | 'getDependencyName'
-  | 'skipParseJSDoc'
-  | 'customJSDocFormatTypes'
->) {
-  let content =
-    validateTypes.length > 0
-      ? ts`
-          ${importIsValidAgainstSchema};
-          import { z } from 'zod';
-        `
-      : ts`import { z } from 'zod';`;
+export async function generateZodFile(
+  tasks: Tasks<string[]>,
+  options: {
+    cwd?: string;
+    customImport?: string;
+    inputFiles: { [filename: string]: string[] };
+    outputFile: string;
+    validateTypes?: string[];
+    postCommands?: (outputFile: string) => string[];
+  } & Pick<
+    GenerateZodSchemaProps,
+    | 'zodImportValue'
+    | 'skipParseJSDoc'
+    | 'getDependencyName'
+    | 'customJSDocFormatTypes'
+  >,
+) {
+  const {
+    cwd = process.cwd(),
+    customImport,
+    inputFiles,
+    outputFile,
+    validateTypes = [],
+    postCommands = outputFile => [`prettier "${outputFile}" --write`],
+    ...props
+  } = options;
+  const absoluteOutputFile = resolve(cwd, outputFile);
 
-  if (importLines) {
-    content += `\n${importLines}`;
-  }
+  let content = '';
+  content += generateZodFileImports({ customImport });
 
-  content += '\n\n';
+  const inputTasks: Task<string>[] = [];
+  for (const inputFile in inputFiles) {
+    const inputTask = tasks.task(
+      async () => {
+        const absoluteInputFile = resolve(cwd, inputFile);
+        const sourceText = await fs.readFile(absoluteInputFile, {
+          encoding: 'utf-8',
+        });
+        const sourceFile = typescript.createSourceFile(
+          inputFile,
+          sourceText,
+          typescript.ScriptTarget.Latest,
+        );
 
-  for (const filename in inputFiles) {
-    const sourceText = await fs.readFile(filename, { encoding: 'utf-8' });
-    const sourceFile = typescript.createSourceFile(
-      filename,
-      sourceText,
-      typescript.ScriptTarget.Latest,
+        let fileContent = '';
+        for (const declarationName of inputFiles[inputFile]) {
+          fileContent += '\n\n';
+          fileContent += await generateZodDeclarationName({
+            sourceFile,
+            declarationName,
+            ...props,
+          });
+
+          if (validateTypes.includes(declarationName)) {
+            fileContent += '\n\n';
+            fileContent += generateZodIsValidAgainstSchema(declarationName);
+          }
+        }
+
+        return fileContent;
+      },
+      {
+        title: [
+          { text: 'Input:', width: 'no-wrap' },
+          { text: inputFile, color: 'green' },
+          { text: `${inputFiles[inputFile].join('\n')}`, color: 'cyan' },
+        ],
+        immediately: false,
+      },
     );
-
-    for (const declarationName of inputFiles[filename]) {
-      content += await generateZodDeclarationName({
-        sourceFile,
-        declarationName,
-        ...props,
-      });
-
-      if (validateTypes.includes(declarationName)) {
-        content += '\n\n';
-        content += generateZodIsValidAgainstSchema(declarationName);
-      }
-      content += '\n\n';
-    }
+    inputTasks.push(inputTask);
   }
 
-  await fs.writeFile(outputFile, content);
+  tasks.task(
+    async () => {
+      const fileContents = await mapLimit<Task<string>, string>(
+        inputTasks,
+        2,
+        (async task => {
+          return task.wait({ isReturnOrThrow: true });
+        }) satisfies AsyncResultIteratorPromise<Task<string>, string>,
+      );
 
-  const commands = postCommands(outputFile);
+      content += fileContents.join('\n\n');
+
+      return fs.writeFile(absoluteOutputFile, content);
+    },
+    {
+      title: [
+        { text: 'Write:', width: 'no-wrap' },
+        { text: outputFile, color: 'green' },
+      ],
+      immediately: false,
+    },
+  );
+
+  const commands = postCommands(absoluteOutputFile);
   for (const command of commands) {
-    try {
-      await execAsync(command);
-      /* v8 ignore next 3 */
-    } catch (e) {
-      console.error(e);
-    }
+    tasks.task(() => execAsync(command), {
+      title: [
+        { text: 'Run:', width: 'no-wrap' },
+        { text: command.replace(absoluteOutputFile, '[file]'), color: 'blue' },
+      ],
+      immediately: false,
+    });
   }
 
-  return content;
+  return null;
 }

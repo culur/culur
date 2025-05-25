@@ -20,7 +20,7 @@ The primary export is the `generateZod` function, designed for flexibility. Here
 declare function generateZod(
   files: {
     [outputFile: string]: {
-      importLines?: string;
+      customImport?: string;
       inputFiles: {
         [filename: string]: string[];
       };
@@ -28,11 +28,12 @@ declare function generateZod(
     };
   },
   options?: {
+    loggerProps?: IRootObject['props'];
+    cwd?: string;
     zodImportValue?: GenerateZodSchemaProps['zodImportValue'];
     skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
     getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
     customJSDocFormatTypes?: CustomJSDocFormatTypes;
-    importIsValidAgainstSchema?: string;
     postCommands?: (outputFile: string) => string[];
   },
 ): Promise<void>;
@@ -41,33 +42,45 @@ declare function generateZod(
 Key capabilities of the `generateZod` function include:
 
 - **Flexible File Organization (`files` object):**
+
   - Configure multiple `outputFile` destinations. Each output can be assembled from various `inputFiles`, allowing for granular control over your generated schema structure.
+
   - Precisely choose which interfaces, types, or enums from each `inputFile` (specified in `inputFiles: { [filename: string]: string[] }`) should be converted into Zod schemas. This is ideal for generating schemas only for specific parts of your codebase.
-- **Custom Import Management (`importLines` property):** Prepend your own `importLines` at the beginning of generated files. This gives you full control over dependencies, as the library intentionally bypasses `ts-to-zod`'s default import generation.
+
+- **Custom Import Management (`customImport` property):** Prepend your own `customImport` at the beginning of generated files. This gives you full control over dependencies, as the library intentionally bypasses `ts-to-zod`'s default import generation.
+
 - **Automatic Type Predicates (`validateTypes` property):** For a specified list of `validateTypes` (which must be among the types selected for generation), the library automatically generates `isYourType` type predicate functions, simplifying runtime data validation with ready-to-use type guards.
+
 - **Comprehensive Configuration via `options` Object:** The optional `options` object allows for fine-grained control over the generation process:
+
+  - **`cwd` (string):** a string used to specify the current working directory. You would usually use `__dirname` or `import.meta.dirname` here with the `path.resolve` function.
+
+  - **`loggerProps` (object):** This is the second parameter when you call `new Logger(title, props)` of the `@culur/logger` library. See the library for more details.
+
   - **`ts-to-zod` Passthrough Options:** The following properties are passed directly to the underlying `ts-to-zod` library, allowing you to leverage its full feature set:
+
     - `zodImportValue`
     - `skipParseJSDoc`
     - `getDependencyName`
     - `customJSDocFormatTypes`
-  - **`importIsValidAgainstSchema` (string):**
-    - Specifies the import statement for the helper function (by default `isValidAgainstSchema`) used within the auto-generated `isYourType` predicate functions.
-    - Defaults to: `import { isValidAgainstSchema } from '@culur/generate-zod';`
-    - You can customize this to point to your own implementation if you have a custom `isValidAgainstSchema` function.
+
   - **`postCommands` (function):**
+
     - A function that accepts the `outputFile` path (string) as an argument and should return an array of command strings.
     - These commands are executed sequentially after each TypeScript file is successfully generated.
     - Each command is run individually, and errors during a command's execution will not halt the processing of subsequent commands or files.
     - Defaults to a function that returns:
+
       ```ts
       (outputFile: string) => [
         `eslint "${outputFile}" --fix`,
         `prettier "${outputFile}" --write`,
       ];
       ```
+
     - This is extremely useful for automatically linting and formatting the generated Zod schema files.
-- **Convenient `ts` Helper:** Provides a `ts` template literal tag (an alias for `dedent`) to simplify the declaration of multi-line strings, especially useful for crafting `importLines`.
+
+- **Convenient `ts` Helper:** Provides a `ts` template literal tag (an alias for `dedent`) to simplify the declaration of multi-line strings, especially useful for crafting `customImport`.
 
 ## 💿 Installation
 
@@ -132,7 +145,7 @@ async function main() {
         validateTypes: ['Credentials'],
         // Optionally, add custom import lines at the top of the generated file
         // The `ts` helper is useful for multi-line strings.
-        importLines: ts` import type { Credentials } from './credentials'; `,
+        customImport: ts` import type { Credentials } from './credentials'; `,
       },
       // You can define more output files here
     } /*, {
@@ -154,8 +167,8 @@ main().catch(console.error); // Call the main function and catch errors
   - Keys are paths to your _input TypeScript files_ (e.g., `'src/types/credentials.ts'`).
   - Values are arrays of strings, specifying the _names of the interfaces, types, or enums_ you want to generate schemas for from that input file (e.g., `['Credentials']`).
 - **`validateTypes`**: An array of type names (which must be among those listed in `inputFiles`) for which you want to generate `isYourType` helper functions (e.g., `isCredentials`).
-- **`importLines`**: A string (often using the `ts` template literal for readability) to prepend custom import statements to the generated file. This is useful for importing the original TypeScript types if needed for type annotations in the generated `isYourType` functions or for other utility types.
-- The `ts` helper (an alias for `dedent`) is provided for conveniently writing multi-line strings, especially for `importLines`.
+- **`customImport`**: A string (often using the `ts` template literal for readability) to prepend custom import statements to the generated file. This is useful for importing the original TypeScript types if needed for type annotations in the generated `isYourType` functions or for other utility types.
+- The `ts` helper (an alias for `dedent`) is provided for conveniently writing multi-line strings, especially for `customImport`.
 
 ### 3. Run the Generation Script
 
@@ -202,7 +215,7 @@ After running the script, the specified output file will be created (or overwrit
 
 ```ts
 // src/types/credentials.zod.ts
-import type { Credentials } from './credentials'; // From your importLines
+import type { Credentials } from './credentials'; // From your customImport
 import { isValidAgainstSchema } from '@culur/generate-zod'; // Default import for predicate helper
 import { z } from 'zod'; // Default Zod import
 
@@ -222,7 +235,7 @@ export const isCredentials =
 This generated file includes:
 
 - The `credentialsSchema` Zod object.
-- The `isCredentials` type predicate function, which uses the `isValidAgainstSchema` helper (imported by default) and the `Credentials` type (imported via your `importLines`).
+- The `isCredentials` type predicate function, which uses the `isValidAgainstSchema` helper (imported by default) and the `Credentials` type (imported via your `customImport`).
 
 You can now import and use `credentialsSchema` and `isCredentials` in your application for runtime data validation.
 

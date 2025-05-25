@@ -57,8 +57,9 @@
     "clean": "nx run-many -t clean:build clean:zod -p generate-zod",
     "clean:build": "rimraf src/__tests__/samples/*.{snapshot,zod}.ts",
     "clean:zod": "rimraf src/__tests__/samples/*.{snapshot,zod}.ts",
+    "dev": "tsx ./scripts/dev",
     "build": "tsup",
-    "test": "tsc --noEmit && FORCE_COLOR=false vitest run"
+    "test": "tsc --noEmit && vitest run"
   },
   "volta": {
     "extends": "../../package.json"
@@ -67,16 +68,22 @@
     "node": ">=20"
   },
   "dependencies": {
+    "async": "^3.2.6",
     "es-toolkit": "^1.37.2",
     "ts-to-zod": "^3.15.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
+    "@culur/logger": "workspace:*",
+    "@types/async": "^3.2.24",
+    "ink": "^5.2.1",
+    "ink-testing-library": "^4.0.0",
     "zod": "^3.24.4",
     "zx": "^8.5.3"
   },
   "peerDependencies": {
+    "@culur/logger": ">=1.2.1",
     "@types/node": "*",
     "dedent": "*",
     "typescript": ">=5.7"

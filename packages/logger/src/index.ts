@@ -6,7 +6,7 @@ export {
   LineCols,
   TextTimer,
 } from './components';
-export { Base, Log, Task, Tasks } from './item';
+export { Base, BaseRunnable, IRootObject, Log, Task, Tasks } from './item';
 export { Logger as default } from './logger';
 export * from './types';
 export * from 'ink';

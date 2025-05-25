@@ -191,8 +191,8 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       es-toolkit:
-        specifier: ^1.37.2
-        version: 1.37.2
+        specifier: ^1.38.0
+        version: 1.38.0
     devDependencies:
       '@culur/config-tsup':
         specifier: workspace:*
@@ -375,7 +375,7 @@ importers:
         version: 1.6.0
       es-toolkit:
         specifier: ^1.37.2
-        version: 1.37.2
+        version: 1.38.0
       ts-to-zod:
         specifier: ^3.15.0
         version: 3.15.0
@@ -421,7 +421,7 @@ importers:
         version: 1.6.0
       es-toolkit:
         specifier: ^1.37.2
-        version: 1.37.2
+        version: 1.38.0
       figures:
         specifier: ^6.1.0
         version: 6.1.0
@@ -3076,8 +3076,8 @@ packages:
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
 
-  es-toolkit@1.37.2:
-    resolution: {integrity: sha512-ADDfk+pPFF0ofMpRAIc6on01p8heiuwuuJsYLzTP4UOjxVK9QsE2+0D1Q4J/zX2XBo6ac+27H5++YBIwmGAX/g==}
+  es-toolkit@1.38.0:
+    resolution: {integrity: sha512-OT3AxczYYd3W50bCj4V0hKoOAfqIy9tof0leNQYekEDxVKir3RTVTJOLij7VAe6fsCNsGhC0JqIkURpMXTCSEA==}
 
   es6-error@4.1.1:
     resolution: {integrity: sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==}
@@ -9418,7 +9418,7 @@ snapshots:
 
   es-module-lexer@1.7.0: {}
 
-  es-toolkit@1.37.2: {}
+  es-toolkit@1.38.0: {}
 
   es6-error@4.1.1:
     optional: true
@@ -10456,7 +10456,7 @@ snapshots:
       cli-cursor: 4.0.0
       cli-truncate: 4.0.0
       code-excerpt: 4.0.0
-      es-toolkit: 1.37.2
+      es-toolkit: 1.38.0
       indent-string: 5.0.0
       is-in-ci: 1.0.0
       patch-console: 2.0.0

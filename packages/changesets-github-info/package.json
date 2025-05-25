@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@culur/types": "workspace:*",
-    "@octokit/graphql": "^8.2.2",
+    "@octokit/graphql": "^9.0.1",
     "dataloader": "^2.2.3",
     "dedent": "^1.6.0",
     "es-toolkit": "^1.37.2"

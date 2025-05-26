@@ -1,5 +1,17 @@
 # @culur/config-stylelint
 
+## 1.4.6
+
+### Patch Changes
+
+- 📦 Update dependencies ([#309](https://github.com/culur/culur/pull/309) [`e28da29`](https://github.com/culur/culur/commit/e28da29b674baf1ad52a856662fed498b8d10473)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-config-standard-scss@^15.0.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.4`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.5
 
 ### Patch Changes

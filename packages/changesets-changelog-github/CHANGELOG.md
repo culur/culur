@@ -1,5 +1,12 @@
 # @culur/changesets-changelog-github
 
+## 1.1.10
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.10`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.9
 
 ### Patch Changes

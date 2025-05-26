@@ -1,5 +1,31 @@
 # @culur/generate-zod
 
+## 1.1.0
+
+### Minor Changes
+
+- 🔨 Refactor ([`d97f2d0`](https://github.com/culur/culur/commit/d97f2d0ca85ba106f145b9d3e1b521cf3ca401c4)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - Rename `importLines` to `customImport`.
+  - Remove `importIsValidAgainstSchema`, use `customImport` only.
+  - By default, `postCommands` has `prettier` command only.
+  - Add prop `cwd`.
+  - Add prop `loggerProps`.
+  - Add `@culur/logger` as `peerDependencies`.
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#311](https://github.com/culur/culur/pull/311) [`14640c2`](https://github.com/culur/culur/commit/14640c2b0b84e2f52ca7556c50043418d8dfcd45)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `es-toolkit@^1.38.0`
+  - `devDependencies`:
+    - `zod@^3.25.28`
+    - `zx@^8.5.4`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.2.2`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.0.1
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @culur/config-eslint
 
+## 1.4.4
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#308](https://github.com/culur/culur/pull/308) [`512c70a`](https://github.com/culur/culur/commit/512c70a8302b3d94af1dbd76ef7b05a3b49f411a)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^4.13.2`
+    - `@vitest/eslint-plugin@^1.2.1`
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.14`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.4`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.3
 
 ### Patch Changes

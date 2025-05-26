@@ -1,5 +1,19 @@
 # @culur/changesets-github-info
 
+## 1.1.10
+
+### Patch Changes
+
+- 📦 Update dependencies ([#303](https://github.com/culur/culur/pull/303) [`7993ec6`](https://github.com/culur/culur/commit/7993ec6acc9073e3de67b9c26d1b061cbce2e34d)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `es-toolkit@^1.38.0`
+
+- 📦 Update dependencies ([#305](https://github.com/culur/culur/pull/305) [`96ffc90`](https://github.com/culur/culur/commit/96ffc9001166b199e0a4dfe7ff8f695f02de89fe)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@octokit/graphql@^9.0.1`
+
 ## 1.1.9
 
 ### Patch Changes

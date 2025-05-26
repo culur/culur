@@ -1,5 +1,20 @@
 # @culur/logger
 
+## 1.2.2
+
+### Patch Changes
+
+- ✨ Move `concurrency` into `Tasks` property ([`0d762de`](https://github.com/culur/culur/commit/0d762dee29960b0977be376d0ec26de253612910)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([#310](https://github.com/culur/culur/pull/310) [`d42acdc`](https://github.com/culur/culur/commit/d42acdcf95b3238cdabe79d81d2af93726f312ce)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `es-toolkit@^1.38.0`
+  - `devDependencies`:
+    - `@types/react@^18.3.22`
+
+- ✨ Export types `BaseRunnable` and `IRootObject` ([`843687b`](https://github.com/culur/culur/commit/843687b43a3ed96293b09a4b8cb55ba8d39f87bf)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.1
 
 ### Patch Changes

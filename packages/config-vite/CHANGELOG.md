@@ -1,5 +1,11 @@
 # @culur/config-vite
 
+## 1.3.3
+
+### Patch Changes
+
+- ✨ Update `defineConfig` generic type & remove `UserConfigGetter` ([`13cbca9`](https://github.com/culur/culur/commit/13cbca9ae5ec5f54cc50a04e9d07b34152c6f240)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.2
 
 ### Patch Changes

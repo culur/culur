@@ -4,7 +4,6 @@ import type { GenerateZodSchemaProps } from 'ts-to-zod';
 import { exec } from 'node:child_process';
 import fs from 'node:fs/promises';
 import { resolve } from 'node:path';
-import process from 'node:process';
 import { promisify } from 'node:util';
 import { mapLimit } from 'async';
 import typescript from 'typescript';
@@ -17,7 +16,7 @@ const execAsync = promisify(exec);
 export async function generateZodFile(
   tasks: Tasks<string[]>,
   options: {
-    cwd?: string;
+    cwd: string;
     customImport?: string;
     inputFiles: { [filename: string]: string[] };
     outputFile: string;
@@ -32,7 +31,7 @@ export async function generateZodFile(
   >,
 ) {
   const {
-    cwd = process.cwd(),
+    cwd,
     customImport,
     inputFiles,
     outputFile,

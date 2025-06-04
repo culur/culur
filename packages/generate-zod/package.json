@@ -77,7 +77,7 @@
     "@culur/config-typescript": "workspace:*",
     "@culur/logger": "workspace:*",
     "@types/async": "^3.2.24",
-    "ink": "^5.2.1",
+    "ink": "^6.0.0",
     "ink-testing-library": "^4.0.0",
     "zod": "^3.25.28",
     "zx": "^8.5.4"

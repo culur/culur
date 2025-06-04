@@ -1,3 +1,4 @@
+import type { DeeplyAllowMatchers } from 'vitest';
 import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
 import { assert, expect, expectTypeOf, vi } from 'vitest';
@@ -5,7 +6,7 @@ import { describeLogger, throwError, throwErrorWithoutStack, throwString } from 
 import { Status } from '~/types';
 import { Task } from './task';
 
-export function expectTaskResponseFulfilled<T>(taskResponse: TaskResponse<T>, data: T) {
+export function expectTaskResponseFulfilled<T>(taskResponse: TaskResponse<T>, data: DeeplyAllowMatchers<T>) {
   assert(taskResponse.status === Status.Fulfilled);
   expect(taskResponse.data).toStrictEqual(data);
   expect(taskResponse.startTime).toBeTypeOf('bigint');

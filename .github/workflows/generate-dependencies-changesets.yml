@@ -28,7 +28,7 @@ jobs:
 
       #! Build
       - name: 🛠️ Build
-        run: pnpm build
+        run: pnpm nx run changesets-generate-dependencies-changesets:build
 
       #! Clear old nx cache
       - name: 💾 Clear old nx cache

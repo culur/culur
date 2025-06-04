@@ -9,7 +9,7 @@ import { Root } from './components/root';
 import { Tasks } from './item/tasks';
 
 export class Logger<TTasksData extends any[] = []> {
-  readonly #ref: RefObject<RootRef> = { current: null };
+  readonly #ref: RefObject<RootRef | null> = { current: null };
   readonly #instance: Instance;
   readonly #root: Tasks<TTasksData>;
 

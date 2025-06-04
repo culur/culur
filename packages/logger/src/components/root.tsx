@@ -12,7 +12,9 @@ export interface RootRef {
 }
 
 export const Root: (
-  props: NonNullable<IRootObject['props']> & { ref: React.RefObject<RootRef> },
+  props: NonNullable<IRootObject['props']> & {
+    ref: React.RefObject<RootRef | null>;
+  },
 ) => ReactNode = forwardRef<RootRef, NonNullable<IRootObject['props']>>(
   (props, ref) => {
     const [lines, setLines] = useState<LineProps[]>([]);

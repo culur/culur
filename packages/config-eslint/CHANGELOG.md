@@ -1,5 +1,14 @@
 # @culur/config-eslint
 
+## 1.4.5
+
+### Patch Changes
+
+- 📦 Update dependencies ([#318](https://github.com/culur/culur/pull/318) [`3cf65c2`](https://github.com/culur/culur/commit/3cf65c2f11f80e39278bf08878cefb4e4e76ac8d)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.16`
+
 ## 1.4.4
 
 ### Patch Changes

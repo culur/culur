@@ -1,5 +1,14 @@
 # @culur/config-stylelint
 
+## 1.4.7
+
+### Patch Changes
+
+- 📦 Update dependencies ([#320](https://github.com/culur/culur/pull/320) [`2eea873`](https://github.com/culur/culur/commit/2eea87354c016fed497d69c0962ec84570d01bc3)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `postcss@^8.5.4`
+
 ## 1.4.6
 
 ### Patch Changes

@@ -1,5 +1,23 @@
 # @culur/logger
 
+## 1.2.3
+
+### Patch Changes
+
+- 🚨 Test: update unit test ([`67dcb78`](https://github.com/culur/culur/commit/67dcb78afb7542d6914e69aa5ef200761c49ba75)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update types ([`82a3eb4`](https://github.com/culur/culur/commit/82a3eb4c7ae8b59754d0159dffd9824082041c90)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`fc8de0b`](https://github.com/culur/culur/commit/fc8de0b198a632694d0fe7546881faeb7082f49d)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `ink@^6.0.0`
+    - `react@^19.1.0`
+  - `devDependencies`:
+    - `@types/react@^19.1.6`
+    - `react-devtools@^6.1.2`
+    - `react-devtools-core@^6.1.2`
+
 ## 1.2.2
 
 ### Patch Changes

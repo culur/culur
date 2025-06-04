@@ -1,9 +1,10 @@
 import type { MergeDeep } from '@culur/types';
 import type { UserConfig } from 'vite';
 import type viteTsconfigPaths from 'vite-tsconfig-paths';
+import type { InlineConfig as VitestInlineConfig } from 'vitest/node';
 
 //! VitestInlineConfig
-export type VitestInlineConfig = NonNullable<UserConfig['test']>;
+export type { VitestInlineConfig };
 export type VitestInlineConfigCustom = MergeDeep<
   VitestInlineConfig,
   { coverage?: { excludeExtends?: string[] } }

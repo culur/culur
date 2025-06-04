@@ -24,7 +24,7 @@ export async function generateZod(
   } = {},
 ) {
   const {
-    cwd,
+    cwd = process.cwd(),
     loggerProps = { width: process.stdout.columns },
     customJSDocFormatTypes = {},
     postCommands,

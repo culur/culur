@@ -7,7 +7,7 @@ type DescribeLoggerParams = [
   rootName: string,
   callback: (
     root: Tasks<[]>,
-    lastFrame: () => string | undefined,
+    lastFrame: (delay: number) => Promise<string | undefined>,
   ) => Promise<void>,
   options?: { width?: number },
 ];
@@ -65,7 +65,12 @@ function suiteFactory(
     // @ts-expect-error
     const { lastFrame } = logger.instance as ReturnType<typeof render>;
 
-    await expect((() => callback(root, lastFrame))())
+    const asyncLastFrame = async (delay: number) => {
+      await new Promise(resolve => setTimeout(resolve, delay));
+      return lastFrame();
+    };
+
+    await expect((() => callback(root, asyncLastFrame))())
       .resolves //
       .toEqual(undefined);
 

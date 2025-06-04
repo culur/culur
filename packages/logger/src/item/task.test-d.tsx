@@ -1,3 +1,4 @@
+import type { DeeplyAllowMatchers } from 'vitest';
 import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
 import { assert, expect, expectTypeOf, vi } from 'vitest';
@@ -5,7 +6,7 @@ import { describeLogger, throwError, throwErrorWithoutStack, throwString } from 
 import { Status } from '~/types';
 import { Task } from './task';
 
-export function expectTaskResponseFulfilled<T>(taskResponse: TaskResponse<T>, data: T) {
+export function expectTaskResponseFulfilled<T>(taskResponse: TaskResponse<T>, data: DeeplyAllowMatchers<T>) {
   assert(taskResponse.status === Status.Fulfilled);
   expect(taskResponse.data).toStrictEqual(data);
   expect(taskResponse.startTime).toBeTypeOf('bigint');
@@ -43,7 +44,7 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   expectTypeOf(task3DataAgain).toEqualTypeOf<number>();
   expect(task3Callback).toBeCalledTimes(1); // Load previous data, don't call again
 
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Normal
     ├─ ✔ Return data                             0.00s
     ├─ ✔ Return response                         0.00s
@@ -67,14 +68,14 @@ describeLogger('.task()', 'Error string', async root => {
 describeLogger('.task().wait()', 'Normal', async (root, lastFrame) => {
   const task = root.task(
     async () => {
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise(resolve => setTimeout(resolve, 200));
       return null;
     },
     { immediately: false },
   );
   expect(task.response.status).toStrictEqual(Status.Pending);
   expect(task.isRunning).toStrictEqual(true);
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Normal
     ├─ ◌ Anonymous                             Pending
     └─── => Count = 1
@@ -83,7 +84,7 @@ describeLogger('.task().wait()', 'Normal', async (root, lastFrame) => {
   task.wait();
   expect(task.response.status).toStrictEqual(Status.Running);
   expect(task.isRunning).toStrictEqual(true);
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Normal
     ├─ ⠋ Anonymous                               0.00s
     └─── => Count = 1
@@ -92,7 +93,7 @@ describeLogger('.task().wait()', 'Normal', async (root, lastFrame) => {
   await task.wait();
   expect(task.response.status).toStrictEqual(Status.Fulfilled);
   expect(task.isRunning).toStrictEqual(false);
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Normal
     ├─ ✔ Anonymous                               0.00s
     └─── => Count = 1
@@ -112,7 +113,7 @@ describeLogger('.task({ title })', 'Custom title', async (root, lastFrame) => {
     return 'Title function';
   });
 
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(100)).toStrictEqual(dedent`
     ┌─── Custom title
     ├─ ✔ The title string                        0.00s
     ├─ ✔ The title function                      0.00s
@@ -131,7 +132,7 @@ describeLogger('.task()', 'Show data and error', async (root, lastFrame) => {
   await root.task(throwError, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
   await root.task(throwErrorWithoutStack, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
 
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Show data and error
     ├─ ✔ Anonymous                               0.00s
     │    => Data = 1

@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import type { RootRef } from './root';
 import dedent from 'dedent';
 import { render } from 'ink-testing-library';
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+import { afterAll, assert, beforeAll, describe, expect, it, vi } from 'vitest';
 import { Prefix } from '~/types';
 import { Root } from './root';
 
@@ -13,12 +13,14 @@ const cols = {
 };
 
 describe('root', () => {
-  it('render root', () => {
-    const ref: RefObject<RootRef> = { current: null };
+  it('render root', async () => {
+    const ref: RefObject<RootRef | null> = { current: null };
 
     const { lastFrame, unmount } = render(<Root ref={ref} width={24} />);
 
-    ref.current?.setLines([
+    assert(ref.current, "ref.current shouldn't be null");
+
+    ref.current.setLines([
       { key: '1.1', level: 1, ...cols, prefix: Prefix.BlockStart },
       { key: '1.2', level: 1, ...cols, prefix: Prefix.BlockMiddleLine },
       { key: '1.3', level: 1, ...cols, prefix: Prefix.BlockMiddleNone },
@@ -48,14 +50,15 @@ describe('root', () => {
       │ │ └─── l1 l2     r1 r2
     `;
 
+    await new Promise(resolve => setTimeout(resolve, 50));
     // add \n at the end due to the <Static> component
     expect(lastFrame()).toStrictEqual(`${expectedFrame}\n`);
 
     unmount();
   });
 
-  it('render root full width', () => {
-    const ref: RefObject<RootRef> = { current: null };
+  it('render root full width', async () => {
+    const ref: RefObject<RootRef | null> = { current: null };
 
     const { lastFrame, unmount } = render(<Root ref={ref} />);
 
@@ -79,6 +82,7 @@ describe('root', () => {
       │  123456789 123456789 123456789
     `;
 
+    await new Promise(resolve => setTimeout(resolve, 50));
     // add \n at the end due to the <Static> component
     expect(lastFrame()).toStrictEqual(`${expectedFrame}\n`);
 
@@ -86,7 +90,7 @@ describe('root', () => {
   });
 });
 
-describe('root input', () => {
+describe('root input', async () => {
   beforeAll(() => {
     vi.spyOn(process, 'exit').mockImplementation(_code => {
       throw new Error('Custom exit');
@@ -98,17 +102,18 @@ describe('root input', () => {
   });
 
   it('render input', async () => {
-    const ref: RefObject<RootRef> = { current: null };
+    const ref: RefObject<RootRef | null> = { current: null };
 
     const { lastFrame, unmount, stdin } = render(<Root ref={ref} width={24} />);
     expect(lastFrame()).toStrictEqual(``);
 
     await new Promise(resolve => setTimeout(resolve, 1000));
-
     stdin.write('\x1B');
-    expect(lastFrame()).toStrictEqual('Press ESC again to exit.');
-    await new Promise(resolve => setTimeout(resolve));
 
+    await new Promise(resolve => setTimeout(resolve, 50));
+    expect(lastFrame()).toStrictEqual('Press ESC again to exit.');
+
+    await new Promise(resolve => setTimeout(resolve, 50));
     expect(() => stdin.write('\x1B')).toThrowError('Custom exit');
     unmount();
   });

@@ -4,20 +4,20 @@ import { describeLogger } from '~/__tests__';
 import { boxSyntaxComplexObject } from '~/components/box-syntax-js.test';
 
 describeLogger('logger', 'Logger', async (root, lastFrame) => {
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Logger
     └─── => Count = 0
   `);
 
   root.log('Log 1');
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Logger
     ├─ ℹ Log 1
     └─── => Count = 0
   `);
 
   await root.logData(boxSyntaxComplexObject);
-  expect(lastFrame()).toStrictEqual(dedent`
+  expect(await lastFrame(50)).toStrictEqual(dedent`
     ┌─── Logger
     ├─ ℹ Log 1
     ├─ ℹ Data = {

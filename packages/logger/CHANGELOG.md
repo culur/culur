@@ -1,5 +1,11 @@
 # @culur/logger
 
+## 1.3.1
+
+### Patch Changes
+
+- 🩹 Fix: Unmount both instances in `Logger.unmount()` ([`fa94b0f`](https://github.com/culur/culur/commit/fa94b0f355b26fb151ffad0a3d2b7b1fa2ee1a23)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.0
 
 ### Minor Changes

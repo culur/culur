@@ -1,5 +1,15 @@
 # @culur/logger
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ Replaced Ink's `<Static>` with a custom static lines implementation ([`c7607cc`](https://github.com/culur/culur/commit/c7607cc7fbcefc8335abc44c5c4908ef57717f44)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+
+  - Removed **Ink's** `<Static>` component because it was causing problems (often missing lines).
+  - Disabled **Ink's** `patchConsole` feature because it was buggy. **Consequently, console.log can no longer be used.** Instead, please use `logger.root.log("data")`.
+  - Adjusted unit tests to fit the updated code.
+
 ## 1.2.3
 
 ### Patch Changes

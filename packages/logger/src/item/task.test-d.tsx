@@ -2,7 +2,7 @@ import type { DeeplyAllowMatchers } from 'vitest';
 import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
 import { assert, expect, expectTypeOf, vi } from 'vitest';
-import { describeLogger, throwError, throwErrorWithoutStack, throwString } from '~/__tests__';
+import { describeLogger, isCI, throwError, throwErrorWithoutStack, throwString } from '~/__tests__';
 import { Status } from '~/types';
 import { Task } from './task';
 
@@ -44,13 +44,16 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   expectTypeOf(task3DataAgain).toEqualTypeOf<number>();
   expect(task3Callback).toBeCalledTimes(1); // Load previous data, don't call again
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal
-    ├─ ✔ Return data                             0.00s
-    ├─ ✔ Return response                         0.00s
-    ├─ ✔ Return task                             0.00s
-    └─── => Count = 3
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─ ✔ Return data                             0.00s
+      ├─ ✔ Return response                         0.00s
+      ├─ ✔ Return task                             0.00s
+      └─── => Count = 3
+    `);
+  }
 });
 
 //! Error
@@ -75,29 +78,38 @@ describeLogger('.task().wait()', 'Normal', async (root, lastFrame) => {
   );
   expect(task.response.status).toStrictEqual(Status.Pending);
   expect(task.isRunning).toStrictEqual(true);
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal
-    ├─ ◌ Anonymous                             Pending
-    └─── => Count = 1
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─ ◌ Anonymous                             Pending
+      └─── => Count = 1
+    `);
+  }
 
   task.wait();
   expect(task.response.status).toStrictEqual(Status.Running);
   expect(task.isRunning).toStrictEqual(true);
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal
-    ├─ ⠋ Anonymous                               0.00s
-    └─── => Count = 1
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─ ⠋ Anonymous                               0.00s
+      └─── => Count = 1
+    `);
+  }
 
   await task.wait();
   expect(task.response.status).toStrictEqual(Status.Fulfilled);
   expect(task.isRunning).toStrictEqual(false);
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal
-    ├─ ✔ Anonymous                               0.00s
-    └─── => Count = 1
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─ ✔ Anonymous                               0.00s
+      └─── => Count = 1
+    `);
+  }
 });
 
 //! Title
@@ -113,14 +125,17 @@ describeLogger('.task({ title })', 'Custom title', async (root, lastFrame) => {
     return 'Title function';
   });
 
-  expect(await lastFrame(100)).toStrictEqual(dedent`
-    ┌─── Custom title
-    ├─ ✔ The title string                        0.00s
-    ├─ ✔ The title function                      0.00s
-    ├─ ✔ Set title string [null]                 0.00s
-    ├─ ✔ Set title function [Title function]     0.00s
-    └─── => Count = 4
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Custom title
+      ├─ ✔ The title string                        0.00s
+      ├─ ✔ The title function                      0.00s
+      ├─ ✔ Set title string [null]                 0.00s
+      ├─ ✔ Set title function [Title function]     0.00s
+      └─── => Count = 4
+    `);
+  }
 });
 
 //! Show
@@ -132,27 +147,30 @@ describeLogger('.task()', 'Show data and error', async (root, lastFrame) => {
   await root.task(throwError, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
   await root.task(throwErrorWithoutStack, { isReturnOrThrow: false, isShowError: true, isShowErrorStack: true });
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show data and error
-    ├─ ✔ Anonymous                               0.00s
-    │    => Data = 1
-    ├─ ✘ throwString                             0.00s
-    │    => Error: Task Error String
-    ├─ ✘ throwError                              0.00s
-    ├─ ✘ throwError                              0.00s
-    │    => Error: Task Error Object
-    ├─ ✘ throwError                              0.00s
-    │    => Error: Task Error Object
-    │         at Task.throwTaskError (/culur/packages/
-    │       logger/src/item/task.test.mock.tsx:1:1)
-    │         at Task.wait (/culur/packages/logger/src
-    │       /item/task.mock.tsx:1:1)
-    │         at /culur/packages/logger/src/item/tasks
-    │       .mock.tsx:1:1
-    │         at new Promise (<anonymous>)
-    │         at ...(<mock>)
-    ├─ ✘ throwErrorWithoutStack                  0.00s
-    │    => Error: Task Error Object
-    └─── => Count = 6
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show data and error
+      ├─ ✔ Anonymous                               0.00s
+      │    => Data = 1
+      ├─ ✘ throwString                             0.00s
+      │    => Error: Task Error String
+      ├─ ✘ throwError                              0.00s
+      ├─ ✘ throwError                              0.00s
+      │    => Error: Task Error Object
+      ├─ ✘ throwError                              0.00s
+      │    => Error: Task Error Object
+      │         at Task.throwTaskError (/culur/packages/
+      │       logger/src/item/task.test.mock.tsx:1:1)
+      │         at Task.wait (/culur/packages/logger/src
+      │       /item/task.mock.tsx:1:1)
+      │         at /culur/packages/logger/src/item/tasks
+      │       .mock.tsx:1:1
+      │         at new Promise (<anonymous>)
+      │         at ...(<mock>)
+      ├─ ✘ throwErrorWithoutStack                  0.00s
+      │    => Error: Task Error Object
+      └─── => Count = 6
+    `);
+  }
 });

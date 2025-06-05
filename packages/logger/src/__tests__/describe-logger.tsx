@@ -1,13 +1,13 @@
 import type { Tasks } from '~/item';
 import { render } from 'ink-testing-library';
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
-import { Logger } from '~/logger';
+import { Logger } from '~/logger/logger';
 
 type DescribeLoggerParams = [
   rootName: string,
   callback: (
     root: Tasks<[]>,
-    lastFrame: (delay: number) => Promise<string | undefined>,
+    lastFrame: () => string | undefined,
   ) => Promise<void>,
   options?: { width?: number },
 ];
@@ -61,16 +61,20 @@ function suiteFactory(
     const logger = new Logger(rootName, { width });
     const { root } = logger;
 
-    // eslint-disable-next-line ts/ban-ts-comment
-    // @ts-expect-error
-    const { lastFrame } = logger.instance as ReturnType<typeof render>;
+    const staticLines =
+      // @ts-expect-error read private field for testing
+      logger.staticLineInstance as ReturnType<typeof render>;
+    const dynamicLines =
+      // @ts-expect-error read private field for testing
+      logger.dynamicLineInstance as ReturnType<typeof render>;
 
-    const asyncLastFrame = async (delay: number) => {
-      await new Promise(resolve => setTimeout(resolve, delay));
-      return lastFrame();
+    const lastFrame = () => {
+      const staticFrame = staticLines.lastFrame();
+      const dynamicFrame = dynamicLines.lastFrame();
+      return `${staticFrame}\n${dynamicFrame}`;
     };
 
-    await expect((() => callback(root, asyncLastFrame))())
+    await expect((() => callback(root, lastFrame))())
       .resolves //
       .toEqual(undefined);
 

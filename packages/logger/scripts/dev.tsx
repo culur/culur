@@ -1,6 +1,6 @@
 import { random, range } from 'es-toolkit';
 import { Text } from 'ink';
-import { Logger } from '~/logger';
+import { Logger } from '~/logger/logger';
 import { Status } from '~/types';
 
 const logger = new Logger('Your logger tasks', { width: 80 });

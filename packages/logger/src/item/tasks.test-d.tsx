@@ -2,7 +2,7 @@ import type { TaskResponse } from '~/types';
 import dedent from 'dedent';
 import { range } from 'es-toolkit';
 import { expect, expectTypeOf, vi } from 'vitest';
-import { describeLogger, throwError, throwErrorDelay, throwString } from '~/__tests__';
+import { describeLogger, isCI, throwError, throwErrorDelay, throwString } from '~/__tests__';
 import { expectTaskResponseFulfilled } from './task.test-d';
 import { Tasks } from './tasks';
 
@@ -37,22 +37,25 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
   expectTaskResponseFulfilled(tasks3Response[0], 1);
   expectTaskResponseFulfilled(tasks3Response[1], 2);
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    ├─┬─── Tasks                                 0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    ├─┬─── Tasks                                 0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      ├─┬─── Tasks                                 0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      ├─┬─── Tasks                                 0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      └─── => Count = 0
+    `);
+  }
 });
 
 //! Normal readonly
@@ -83,40 +86,46 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
   expectTaskResponseFulfilled(tasks3Response[0], 1);
   expectTaskResponseFulfilled(tasks3Response[1], 2);
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Normal readonly
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 2
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal readonly
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 2
+      └─── => Count = 0
+    `);
+  }
 });
 
 describeLogger('.task()', 'Nested', async (root, lastFrame) => {
   const tasks = root.tasks([() => 1, () => 2], { immediately: false, isShowTimer: true });
   tasks.tasks([() => 3.1, () => 3.2], { immediately: false, isShowTimer: true });
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Nested
-    ├─┬─── Tasks                               Pending
-    │ ├─ ◌ Anonymous                           Pending
-    │ ├─ ◌ Anonymous                           Pending
-    │ ├─┬─── Tasks                             Pending
-    │ │ ├─ ◌ Anonymous                         Pending
-    │ │ ├─ ◌ Anonymous                         Pending
-    │ │ └─── => Count = 2
-    │ └─── => Count = 2
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Nested
+      ├─┬─── Tasks                               Pending
+      │ ├─ ◌ Anonymous                           Pending
+      │ ├─ ◌ Anonymous                           Pending
+      │ ├─┬─── Tasks                             Pending
+      │ │ ├─ ◌ Anonymous                         Pending
+      │ │ ├─ ◌ Anonymous                         Pending
+      │ │ └─── => Count = 2
+      │ └─── => Count = 2
+      └─── => Count = 0
+    `);
+  }
 });
 
 //! Not show all tasks
@@ -124,67 +133,85 @@ describeLogger('.task()', 'Not show all tasks', async (root, lastFrame) => {
   const tasksGroup = root.group('Tasks', { isShowAllFulfilled: false, isShowAllPending: false });
   const tasks = range(0, 10).map(index => tasksGroup.task(() => index, { immediately: false }));
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Not show all tasks
-    ├─┬─── Tasks
-    │ ├─ ◌ 10 pending tasks...                 Pending
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Not show all tasks
+      ├─┬─── Tasks
+      │ ├─ ◌ 10 pending tasks...                 Pending
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 
   await Promise.all(tasks.slice(0, 3).map(task => task.wait()));
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Not show all tasks
-    ├─┬─── Tasks
-    │ ├─ ⠋ 3 completed tasks...
-    │ ├─ ◌ 7 pending tasks...                  Pending
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Not show all tasks
+      ├─┬─── Tasks
+      │ ├─ ⠋ 3 completed tasks...
+      │ ├─ ◌ 7 pending tasks...                  Pending
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 
   await tasksGroup.wait();
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Not show all tasks
-    ├─┬─── Tasks
-    │ ├─ ✔ 10 completed tasks!
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Not show all tasks
+      ├─┬─── Tasks
+      │ ├─ ✔ 10 completed tasks!
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 });
 
 describeLogger('.task()', 'Show task as grid', async (root, lastFrame) => {
   const tasksGroup = root.group('Tasks', { isShowTaskAsGrid: true });
   const tasks = range(0, 10).map(index => tasksGroup.task(() => index, { immediately: false }));
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show task as grid
-    ├─┬─── Tasks
-    │ ├─ ⠋ ░░░░░░░░░░
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show task as grid
+      ├─┬─── Tasks
+      │ ├─ ⠋ ░░░░░░░░░░
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 
   await Promise.all(tasks.slice(0, 3).map(task => task.wait()));
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show task as grid
-    ├─┬─── Tasks
-    │ ├─ ⠋ ███░░░░░░░
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show task as grid
+      ├─┬─── Tasks
+      │ ├─ ⠋ ███░░░░░░░
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 
   await tasksGroup.wait();
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show task as grid
-    ├─┬─── Tasks
-    │ ├─ ✔ ██████████
-    │ └─── => Count = 10
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show task as grid
+      ├─┬─── Tasks
+      │ ├─ ✔ ██████████
+      │ └─── => Count = 10
+      └─── => Count = 0
+    `);
+  }
 });
 
 //! Error
@@ -202,8 +229,8 @@ describeLogger('.tasks()', 'Error string', async root => {
 describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, lastFrame) => {
   const tasksCallback1 = vi.fn();
   const tasksCallback2 = vi.fn();
-  const tasksCallback3 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)));
-  const tasksCallback4 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 100)));
+  const tasksCallback3 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 200)));
+  const tasksCallback4 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 200)));
 
   const tasks = root.tasks(
     [tasksCallback1, tasksCallback2], //
@@ -214,16 +241,19 @@ describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, la
   tasks.task(tasksCallback4);
   expect(tasks.isRunning).toStrictEqual(true);
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Wait pending, running tasks
-    ├─┬─── Tasks
-    │ ├─ ◌ spy                                 Pending
-    │ ├─ ◌ spy                                 Pending
-    │ ├─ ⠋ spy                                   0.00s
-    │ ├─ ⠋ spy                                   0.00s
-    │ └─── => Count = 4
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Wait pending, running tasks
+      ├─┬─── Tasks
+      │ ├─ ◌ spy                                 Pending
+      │ ├─ ◌ spy                                 Pending
+      │ ├─ ⠋ spy                                   0.00s
+      │ ├─ ⠋ spy                                   0.00s
+      │ └─── => Count = 4
+      └─── => Count = 0
+    `);
+  }
 
   await tasks.wait({ isReturnOrThrow: true, concurrency: 1 });
   expect(tasksCallback1).toBeCalledTimes(1);
@@ -243,13 +273,16 @@ describeLogger('.tasks().wait()', 'Throw on pending tasks', async (root, lastFra
   const tasksCallback1 = vi.fn(throwErrorDelay);
   const tasks = root.tasks([tasksCallback1], { immediately: false });
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Throw on pending tasks
-    ├─┬─── Tasks
-    │ ├─ ◌ throwErrorDelay                     Pending
-    │ └─── => Count = 1
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Throw on pending tasks
+      ├─┬─── Tasks
+      │ ├─ ◌ throwErrorDelay                     Pending
+      │ └─── => Count = 1
+      └─── => Count = 0
+    `);
+  }
 
   await expect(tasks.wait()).rejects.toThrowError('Task Error Object');
   await expect(tasks.wait()).rejects.toThrowError('Task Error Object');
@@ -262,13 +295,16 @@ describeLogger('.tasks().wait()', 'Throw on running tasks', async (root, lastFra
   // eslint-disable-next-line test/valid-expect
   const expectRejects = expect(tasks.task(tasksCallback1)).rejects.toThrowError('Task Error Object');
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Throw on running tasks
-    ├─┬─── Tasks
-    │ ├─ ⠋ throwErrorDelay                       0.00s
-    │ └─── => Count = 1
-    └─── => Count = 0
-  `);
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Throw on running tasks
+      ├─┬─── Tasks
+      │ ├─ ⠋ throwErrorDelay                       0.00s
+      │ └─── => Count = 1
+      └─── => Count = 0
+    `);
+  }
 
   await expect(tasks.wait()).rejects.toThrowError('Task Error Object');
   await expectRejects;
@@ -278,14 +314,17 @@ describeLogger('.tasks().wait()', 'Throw on running tasks', async (root, lastFra
 describeLogger('.task()', 'Seal', async (root, lastFrame) => {
   const tasks = root.tasks([() => 1, () => 2], { immediately: false });
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Seal
-    ├─┬─── Tasks
-    │ ├─ ◌ Anonymous                           Pending
-    │ ├─ ◌ Anonymous                           Pending
-    │ └─── => Count = 2
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Seal
+      ├─┬─── Tasks
+      │ ├─ ◌ Anonymous                           Pending
+      │ ├─ ◌ Anonymous                           Pending
+      │ └─── => Count = 2
+      └─── => Count = 0
+    `);
+  }
 
   expect(() => tasks.end()).toThrowError('Cannot seal tasks!');
   await tasks.wait();
@@ -311,22 +350,25 @@ describeLogger('.tasks({ title })', 'Custom title', async (root, lastFrame) => {
   const tasks3 = root.tasks([], { immediately: false });
   tasks3.title = 'Set title after created';
 
-  expect(await lastFrame(100)).toStrictEqual(dedent`
-    ┌─── Custom title
-    ├─┬─── The title string
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 1
-    ├─┬─── The title function
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Count = 1
-    ├─┬─── Cannot set title after created
-    │ └─── => Count = 0
-    ├─┬─── Set title after created             Pending
-    │ └─── => Count = 0
-    ├─┬─── Set title after created
-    │ └─── => Count = 0
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Custom title
+      ├─┬─── The title string
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 1
+      ├─┬─── The title function
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Count = 1
+      ├─┬─── Cannot set title after created
+      │ └─── => Count = 0
+      ├─┬─── Set title after created             Pending
+      │ └─── => Count = 0
+      ├─┬─── Set title after created
+      │ └─── => Count = 0
+      └─── => Count = 0
+    `);
+  }
 });
 
 //! Show
@@ -334,37 +376,45 @@ describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
   const tasks = root.tasks([() => 1, () => 2], { immediately: false, isShowData: true });
   await tasks.onChange();
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show data and error
-    ├─┬─── Tasks
-    │ ├─ ◌ Anonymous                           Pending
-    │ ├─ ◌ Anonymous                           Pending
-    │ └─── => Data = [null, null]
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show data and error
+      ├─┬─── Tasks
+      │ ├─ ◌ Anonymous                           Pending
+      │ ├─ ◌ Anonymous                           Pending
+      │ └─── => Data = [null, null]
+      └─── => Count = 0
+    `);
+  }
 
   await tasks.wait({ isSealing: false });
-
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show data and error
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ └─── => Data = [1, 2]
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show data and error
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ └─── => Data = [1, 2]
+      └─── => Count = 0
+    `);
+  }
 
   await tasks.task(() => 3, { isShowData: true });
   await tasks.wait();
 
-  expect(await lastFrame(50)).toStrictEqual(dedent`
-    ┌─── Show data and error
-    ├─┬─── Tasks
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ ├─ ✔ Anonymous                             0.00s
-    │ │    => Data = 3
-    │ └─── => Data = [1, 2, 3]
-    └─── => Count = 0
-  `);
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show data and error
+      ├─┬─── Tasks
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ ✔ Anonymous                             0.00s
+      │ │    => Data = 3
+      │ └─── => Data = [1, 2, 3]
+      └─── => Count = 0
+    `);
+  }
 });

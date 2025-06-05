@@ -1,10 +1,10 @@
 import type { RefObject } from 'react';
-import type { RootRef } from './root';
+import type { StaticLinesRef } from './static-lines';
 import dedent from 'dedent';
 import { render } from 'ink-testing-library';
-import { afterAll, assert, beforeAll, describe, expect, it, vi } from 'vitest';
+import { assert, describe, expect, it } from 'vitest';
 import { Prefix } from '~/types';
-import { Root } from './root';
+import { StaticLines } from './static-lines';
 
 const cols = {
   isStatic: true,
@@ -12,11 +12,11 @@ const cols = {
   colsRight: [{ text: 'r1' }, { text: 'r2' }],
 };
 
-describe('root', () => {
-  it('render root', async () => {
-    const ref: RefObject<RootRef | null> = { current: null };
+describe('static lines', () => {
+  it('render static lines', async () => {
+    const ref: RefObject<StaticLinesRef | null> = { current: null };
 
-    const { lastFrame, unmount } = render(<Root ref={ref} width={24} />);
+    const { lastFrame, unmount } = render(<StaticLines ref={ref} width={24} />);
 
     assert(ref.current, "ref.current shouldn't be null");
 
@@ -51,16 +51,16 @@ describe('root', () => {
     `;
 
     await new Promise(resolve => setTimeout(resolve, 50));
-    // add \n at the end due to the <Static> component
-    expect(lastFrame()).toStrictEqual(`${expectedFrame}\n`);
+
+    expect(lastFrame()).toStrictEqual(expectedFrame);
 
     unmount();
   });
 
-  it('render root full width', async () => {
-    const ref: RefObject<RootRef | null> = { current: null };
+  it('render static lines full width', async () => {
+    const ref: RefObject<StaticLinesRef | null> = { current: null };
 
-    const { lastFrame, unmount } = render(<Root ref={ref} />);
+    const { lastFrame, unmount } = render(<StaticLines ref={ref} />);
 
     ref.current?.setLines([
       { key: '1.1', level: 1, ...cols, prefix: Prefix.BlockStart },
@@ -75,46 +75,17 @@ describe('root', () => {
       },
     ]);
 
+    // default width in `ink-testing-library` is 100
     const expectedFrame = dedent`
-      ┌─── l1 l2                 r1 r2
-      ├─ l1 l2                   r1 r2
-      │  l1 l2                   r1 r2
+      ┌─── l1 l2                                                                                     r1 r2
+      ├─ l1 l2                                                                                       r1 r2
+      │  l1 l2                                                                                       r1 r2
       │  123456789 123456789 123456789
     `;
 
     await new Promise(resolve => setTimeout(resolve, 50));
-    // add \n at the end due to the <Static> component
-    expect(lastFrame()).toStrictEqual(`${expectedFrame}\n`);
+    expect(lastFrame()).toStrictEqual(expectedFrame);
 
-    unmount();
-  });
-});
-
-describe('root input', async () => {
-  beforeAll(() => {
-    vi.spyOn(process, 'exit').mockImplementation(_code => {
-      throw new Error('Custom exit');
-    });
-  });
-
-  afterAll(() => {
-    vi.restoreAllMocks();
-  });
-
-  it('render input', async () => {
-    const ref: RefObject<RootRef | null> = { current: null };
-
-    const { lastFrame, unmount, stdin } = render(<Root ref={ref} width={24} />);
-    expect(lastFrame()).toStrictEqual(``);
-
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    stdin.write('\x1B');
-
-    await new Promise(resolve => setTimeout(resolve, 50));
-    expect(lastFrame()).toStrictEqual('Press ESC again to exit.');
-
-    await new Promise(resolve => setTimeout(resolve, 50));
-    expect(() => stdin.write('\x1B')).toThrowError('Custom exit');
     unmount();
   });
 });

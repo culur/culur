@@ -93,6 +93,7 @@ export class Logger<TTasksData extends any[] = []> {
 
   async unmount(delay = 10) {
     if (delay > 0) await new Promise(resolve => setTimeout(resolve, delay));
+    this.staticLineInstance.unmount();
     this.dynamicLineInstance.unmount();
   }
 }

@@ -1,5 +1,16 @@
 # @culur/generate-zod
 
+## 1.2.0
+
+### Minor Changes
+
+- ✨ Move default cwd to `generateZod` function ([`0b5b751`](https://github.com/culur/culur/commit/0b5b751ef7a580d7e82dee96d5478d9f5697f298)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.3.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.1.1
 
 ### Patch Changes

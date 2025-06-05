@@ -1,5 +1,11 @@
 # @culur/config-vite
 
+## 1.3.4
+
+### Patch Changes
+
+- ✨ Update types: import `InlineConfig` from `vitest/node` ([`1de73f0`](https://github.com/culur/culur/commit/1de73f0f9dda9432be18169de95aaf0e16f80941)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.3
 
 ### Patch Changes

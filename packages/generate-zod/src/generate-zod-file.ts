@@ -21,6 +21,7 @@ export async function generateZodFile(
     inputFiles: { [filename: string]: string[] };
     outputFile: string;
     validateTypes?: string[];
+    loggerFileWidth?: number;
     postCommands?: (outputFile: string) => string[];
   } & Pick<
     GenerateZodSchemaProps,
@@ -36,6 +37,7 @@ export async function generateZodFile(
     inputFiles,
     outputFile,
     validateTypes = [],
+    loggerFileWidth,
     postCommands = outputFile => [`prettier "${outputFile}" --write`],
     ...props
   } = options;
@@ -77,8 +79,8 @@ export async function generateZodFile(
       },
       {
         title: [
-          { text: 'Input:', width: 'no-wrap' },
-          { text: inputFile, color: 'green' },
+          { text: 'Input:', width: 7 },
+          { text: inputFile, width: loggerFileWidth, color: 'green' },
           { text: `${inputFiles[inputFile].join('\n')}`, color: 'cyan' },
         ],
         immediately: false,
@@ -103,8 +105,8 @@ export async function generateZodFile(
     },
     {
       title: [
-        { text: 'Write:', width: 'no-wrap' },
-        { text: outputFile, color: 'green' },
+        { text: 'Write:', width: 7 },
+        { text: outputFile, width: loggerFileWidth, color: 'green' },
       ],
       immediately: false,
     },
@@ -114,11 +116,12 @@ export async function generateZodFile(
   for (const command of commands) {
     tasks.task(() => execAsync(command), {
       title: [
-        { text: 'Run:', width: 'no-wrap' },
+        { text: 'Run:', width: 7 },
         {
           text: command
             .replace(/\\\$/g, '$')
             .replace(absoluteOutputFile, '[file]'),
+          width: loggerFileWidth,
           color: 'blue',
         },
       ],

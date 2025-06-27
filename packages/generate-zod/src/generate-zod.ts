@@ -1,4 +1,4 @@
-import type { IRootObject } from '@culur/logger';
+import type { TasksTitle } from '@culur/logger';
 import type { GenerateZodSchemaProps } from 'ts-to-zod';
 import type { CustomJSDocFormatTypes } from 'ts-to-zod/lib/config';
 import process from 'node:process';
@@ -14,8 +14,10 @@ export async function generateZod(
     };
   },
   options: {
+    title?: TasksTitle<void[]>;
     cwd?: string;
-    loggerProps?: IRootObject['props'];
+    loggerWidth?: number;
+    loggerFileWidth?: number;
     zodImportValue?: GenerateZodSchemaProps['zodImportValue'];
     skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
     getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
@@ -25,22 +27,23 @@ export async function generateZod(
 ) {
   const {
     cwd = process.cwd(),
-    loggerProps = { width: process.stdout.columns },
+    loggerWidth = process.stdout.columns,
+    loggerFileWidth,
     customJSDocFormatTypes = {},
     postCommands,
     ...globalOptions
   } = options;
 
   const logger = new Logger(
-    { text: 'Generate zod', color: 'cyan' },
-    loggerProps,
+    options.title ?? { text: 'Generate zod', color: 'cyan' },
+    { width: loggerWidth },
   );
 
   for (const outputFile in files) {
     const tasks = logger.root.tasks<string[]>([], {
       title: [
-        { text: 'Output:', width: 'no-wrap' },
-        { text: outputFile, color: 'green' },
+        { text: 'Output:', width: 7 },
+        { text: outputFile, width: loggerFileWidth, color: 'green' },
       ],
       immediately: false,
       concurrency: 1,
@@ -50,6 +53,7 @@ export async function generateZod(
       cwd,
       outputFile,
       customJSDocFormatTypes,
+      loggerFileWidth,
       postCommands,
       ...files[outputFile],
       ...globalOptions,

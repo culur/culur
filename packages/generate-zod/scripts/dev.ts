@@ -20,6 +20,6 @@ await generateZod(
   {
     cwd: import.meta.dirname,
     postCommands: outputFile => [`prettier "${outputFile}" --write`],
-    loggerProps: { width: 80 },
+    loggerWidth: 80,
   },
 );

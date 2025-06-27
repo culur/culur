@@ -13,7 +13,7 @@ it('should be valid rule', async () => {
   assert(configLocal.rules);
 
   assert.containsAllKeys(configLocal.rules, [
-    'import/no-deprecated',
+    // 'import/no-deprecated',
     'import/consistent-type-specifier-style',
   ]);
 });

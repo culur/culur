@@ -13,7 +13,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `peerDependencies`:
     - `prettier@>=3.5.0`
 
@@ -52,7 +51,6 @@
 - 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^22.5.4`
 
@@ -73,7 +71,6 @@
 - 🔨 Refactor: rename factory function to `defineConfig` ([`a655f36`](https://github.com/culur/culur/commit/a655f363226a2679610efdfdb5b6d8bc14c82c0e)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^20.16.2`
     - `@vitest/coverage-v8@^2.0.5`
@@ -98,12 +95,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `rimraf@^6.0.1`
 
 - 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@vitest/coverage-v8@^2.0.2`
     - `@vitest/ui@^2.0.2`
@@ -116,7 +111,6 @@
 - 📝 Update `README.md` ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c) [@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/node@^20.14.10`
     - `rimraf@^5.0.8`
@@ -127,7 +121,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies: ([#26](https://github.com/culur/culur/pull/26) [`29627d9`](https://github.com/culur/culur/commit/29627d9f3d8966a6010e89fb79c61efd9aa3ba69) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `prettier@^3.3.2`
 
@@ -138,7 +131,6 @@
 - ✨ Add `.nx` to `.prettierignore` ([`90e6dff`](https://github.com/culur/culur/commit/90e6dff291e431398b4f50296c88fc81ce5a8217) [@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`74dbf2c`](https://github.com/culur/culur/commit/74dbf2c0050b30e9289aa7879c4cbb9ac103f4d3) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/node@^20.14.2`
     - `prettier@^3.3.1`

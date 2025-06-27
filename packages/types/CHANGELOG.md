@@ -17,7 +17,6 @@
 - ✨ Rename `PackageJson` to `PackageJsonExtends` ([`b3ee1df`](https://github.com/culur/culur/commit/b3ee1dfbacf669b4bc4e95a2631ba18faaecfbff)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#298](https://github.com/culur/culur/pull/298) [`2c8f412`](https://github.com/culur/culur/commit/2c8f412137415e144cab96d791808305bd2e2087)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.41.0`
 
@@ -28,7 +27,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`411b0a8`](https://github.com/culur/culur/commit/411b0a8b61a18be6d22c74b098e7a0e519fa289d)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.40.1`
 
@@ -37,7 +35,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.37.0`
 
@@ -46,7 +43,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.34.1`
 
@@ -55,7 +51,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.27.0`
 
@@ -84,7 +79,6 @@
 - 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.26.1`
   - `devDependencies`:
@@ -95,7 +89,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.26.0`
   - `devDependencies`:
@@ -121,12 +114,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `rimraf@^6.0.1`
 
 - 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@vitest/coverage-v8@^2.0.2`
     - `@vitest/ui@^2.0.2`
@@ -139,7 +130,6 @@
 - 📝 Update `README.md` ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c) [@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419) [@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.21.0`
   - `devDependencies`:
@@ -152,7 +142,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#26](https://github.com/culur/culur/pull/26) [`29627d9`](https://github.com/culur/culur/commit/29627d9f3d8966a6010e89fb79c61efd9aa3ba69) [@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.20.1`
 
@@ -161,7 +150,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`74dbf2c`](https://github.com/culur/culur/commit/74dbf2c0050b30e9289aa7879c4cbb9ac103f4d3) [@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.19.0`
   - `devDependencies`:

@@ -16,12 +16,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#319](https://github.com/culur/culur/pull/319) [`6413d53`](https://github.com/culur/culur/commit/6413d5311acb30779eb52a25baed0f19f10998dc)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `zod@^3.25.50`
 
 - 📦 Update dependencies ([`56cc332`](https://github.com/culur/culur/commit/56cc332f48ef070cefeef0a670aa06f0fe3b5103)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `ink@^6.0.0`
 
@@ -33,7 +31,6 @@
 ### Minor Changes
 
 - 🔨 Refactor ([`d97f2d0`](https://github.com/culur/culur/commit/d97f2d0ca85ba106f145b9d3e1b521cf3ca401c4)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Rename `importLines` to `customImport`.
   - Remove `importIsValidAgainstSchema`, use `customImport` only.
   - By default, `postCommands` has `prettier` command only.
@@ -44,7 +41,6 @@
 ### Patch Changes
 
 - ⚙️ Update dependencies ([#311](https://github.com/culur/culur/pull/311) [`14640c2`](https://github.com/culur/culur/commit/14640c2b0b84e2f52ca7556c50043418d8dfcd45)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `es-toolkit@^1.38.0`
   - `devDependencies`:
@@ -59,7 +55,6 @@
 ### Patch Changes
 
 - 🔨 Refactor `isValidAgainstSchema()` ([`22ffb0b`](https://github.com/culur/culur/commit/22ffb0b6cb5d1d26d4638fa47e76c818f6ba9b14)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Rename `isValidBySchema()` to `isValidAgainstSchema()`.
   - Add entry `./is-valid-against-schema` and use it to improve tree-shaking. This will avoid importing "fs/promise" in the browser environment.
   - Add `debug` parameter to improve debugging.
@@ -69,7 +64,6 @@
 ### Major Changes
 
 - 📦 Update dependencies ([`50b8b0f`](https://github.com/culur/culur/commit/50b8b0f7972c921c86c88a8b2b7a3d291bfb0a4a)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Move `dedent` to `peerDependencies`.
   - Move `zx` to `devDependencies` and upgrade.
 

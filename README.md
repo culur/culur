@@ -11,13 +11,11 @@ While primarily intended for my own use, you are welcome to utilize these packag
 Beyond its direct utility, this repository serves as a practical demonstration of:
 
 - **Monorepo Architecture & Core Workflow:**
-
   - Setting up a robust monorepo with **pnpm** and **Nx**.
   - Fine-tuning **Renovate** for intelligent dependency grouping and optimized updates within a monorepo.
   - Customizing **Changesets** for rich, emoji-enhanced changelogs with clear structure (aided by self-developed `@culur/changesets-*` packages).
 
 - **CI/CD and Automation with GitHub Actions:**
-
   - Building reusable GitHub Actions, particularly for consistent environment setup across workflows.
   - Leveraging **Volta** to enforce pinned Node.js and pnpm versions.
   - Optimizing **Nx** build and task execution by utilizing GitHub Cache (as an effective alternative to Nx Cloud).
@@ -25,7 +23,6 @@ Beyond its direct utility, this repository serves as a practical demonstration o
   - Orchestrating a seamless **NPM** package release pipeline.
 
 - **Reusable Tooling Configurations (via `@culur/config-*` packages and best practices):**
-
   - Establishing comprehensive linting with **ESLint**, **Prettier**, **Stylelint**, and **Markdown Lint**, tailored for monorepos with potential nested configurations and optimized for Nx's caching and task running.
   - Implementing shareable and minimally-adjusted configurations for **tsup** (bundling), **tsconfig** (TypeScript), **Vite**, and **Vitest** (testing) across different packages.
 

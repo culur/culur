@@ -5,7 +5,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#312](https://github.com/culur/culur/pull/312) [`f9a19cc`](https://github.com/culur/culur/commit/f9a19ccb986417505544c8bf9281ad5c71eb0940)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `semver@^7.7.2`
 
@@ -26,7 +25,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`9c2556d`](https://github.com/culur/culur/commit/9c2556d37a8d80a4e583f6f37c86357e24c3a159)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/semver@^7.7.0`
 
@@ -35,7 +33,6 @@
 ### Minor Changes
 
 - ✨ Support `tailwindcss@4` ([`f49e891`](https://github.com/culur/culur/commit/f49e89178f3bc57234145db4ce1535e8865a596a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
-
   - Add tailwind version in `DefaultPackages`.
   - Add `tailwindVersion()` function.
 
@@ -44,7 +41,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `local-pkg@^1.1.1`
 
@@ -53,7 +49,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `local-pkg@^1.0.0`
 
@@ -62,7 +57,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `local-pkg@^0.5.1`
 
@@ -87,7 +81,6 @@
 - 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^22.5.4`
 
@@ -96,7 +89,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^20.16.2`
     - `@vitest/coverage-v8@^2.0.5`
@@ -118,12 +110,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `rimraf@^6.0.1`
 
 - 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@vitest/coverage-v8@^2.0.2`
     - `@vitest/ui@^2.0.2`
@@ -138,7 +128,6 @@
 - ✨ Update `README.md` ([`2a74486`](https://github.com/culur/culur/commit/2a744863a5ba8378906547713fde5033ea85939c) [@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/node@^20.14.10`
     - `rimraf@^5.0.8`
@@ -149,7 +138,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`74dbf2c`](https://github.com/culur/culur/commit/74dbf2c0050b30e9289aa7879c4cbb9ac103f4d3) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/node@^20.14.2`
     - `tsup@^8.1.0`

@@ -21,7 +21,6 @@
 ### Patch Changes
 
 - ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `type-fest@^4.41.0`
 
@@ -37,7 +36,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`36873f1`](https://github.com/culur/culur/commit/36873f1ae7048f89f51d0a70c0f53ad1b8e5b618)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `dedent@^1.6.0`
 
@@ -49,7 +47,6 @@
 ### Patch Changes
 
 - ⚙️ Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `dotenv@^16.5.0`
     - `type-fest@^4.40.1`
@@ -69,7 +66,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `@changesets/types@^6.1.0`
     - `type-fest@^4.37.0`
@@ -84,7 +80,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `dotenv@^16.4.7`
     - `type-fest@^4.34.1`
@@ -97,7 +92,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.27.0`
 
@@ -137,7 +131,6 @@
 - 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.26.1`
   - `devDependencies`:
@@ -153,7 +146,6 @@
 - 🔨 Emoji: use non-capturing group ([`e06d7df`](https://github.com/culur/culur/commit/e06d7dfb8abec2fd2ae6257078eae63a3994d445)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `type-fest@^4.26.0`
   - `devDependencies`:
@@ -184,7 +176,6 @@
   Commit message: `feat(foo/deps): add package bar`.
 
   Changeset: `Add package bar`.
-
   - Old version: `✨ Add package bar.`
   - New version: `📦 Add package bar.`
 
@@ -200,19 +191,16 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `rimraf@^6.0.1`
 
 - 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@vitest/coverage-v8@^2.0.2`
     - `@vitest/ui@^2.0.2`
     - `vitest@^2.0.2`
 
 - 📦 Update dependencies ([`34cb19d`](https://github.com/culur/culur/commit/34cb19d7da7813824f3d6b3eb3fefc34650e5616)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@changesets/parse@^0.4.0`
 
@@ -232,7 +220,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#35](https://github.com/culur/culur/pull/35) [`9a595fa`](https://github.com/culur/culur/commit/9a595fae5f9505e9afdc872a2f670c08bb53d419) [@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/node@^20.14.10`
     - `rimraf@^5.0.8`

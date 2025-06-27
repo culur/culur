@@ -5,12 +5,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#303](https://github.com/culur/culur/pull/303) [`7993ec6`](https://github.com/culur/culur/commit/7993ec6acc9073e3de67b9c26d1b061cbce2e34d)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `es-toolkit@^1.38.0`
 
 - 📦 Update dependencies ([#305](https://github.com/culur/culur/pull/305) [`96ffc90`](https://github.com/culur/culur/commit/96ffc9001166b199e0a4dfe7ff8f695f02de89fe)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `@octokit/graphql@^9.0.1`
 
@@ -26,7 +24,6 @@
 ### Patch Changes
 
 - ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@graphql-codegen/cli@5.0.6`
     - `@graphql-codegen/typescript-operations@4.6.1`
@@ -43,7 +40,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`36873f1`](https://github.com/culur/culur/commit/36873f1ae7048f89f51d0a70c0f53ad1b8e5b618)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `dedent@^1.6.0`
 
@@ -52,7 +48,6 @@
 ### Patch Changes
 
 - ⚙️ Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `@octokit/graphql@^8.2.2`
   - `devDependencies`:
@@ -73,7 +68,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`8477bb1`](https://github.com/culur/culur/commit/8477bb1ab445164fa92108bda30c56cde5daf549)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `@octokit/graphql@^8.2.1`
   - `devDependencies`:
@@ -89,7 +83,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#197](https://github.com/culur/culur/pull/197) [`c538a63`](https://github.com/culur/culur/commit/c538a635ce3170e3adbb189f3d913137cd56b0a5)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `dependencies`:
     - `@octokit/graphql@^8.2.0`
     - `dataloader@^2.2.3`
@@ -106,7 +99,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`dc71536`](https://github.com/culur/culur/commit/dc71536bf73e88a65f3f1794e9b0882977715ca0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@graphql-codegen/typescript-operations@4.3.1`
 
@@ -118,7 +110,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#130](https://github.com/culur/culur/pull/130) [`fbc896f`](https://github.com/culur/culur/commit/fbc896fe9b49c8dd0500e1b42d7c15a2d39878c2)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@graphql-codegen/cli@5.0.3`
     - `@graphql-codegen/typescript-operations@4.3.0`
@@ -152,7 +143,6 @@
 - 🎨 Style: format code ([`7106ef6`](https://github.com/culur/culur/commit/7106ef687bd13fe3e695a241a95bb2168ef67d25)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - 📦 Update dependencies ([`f0a03a3`](https://github.com/culur/culur/commit/f0a03a33fbca1233f3d4fecb2e47d6adde48ae6f)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^22.5.4`
 
@@ -164,7 +154,6 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([#88](https://github.com/culur/culur/pull/88) [`931ffd2`](https://github.com/culur/culur/commit/931ffd24457c410ee28a3a38fef93a97527a85d6)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `devDependencies`:
     - `@types/node@^20.16.2`
     - `@vitest/coverage-v8@^2.0.5`
@@ -194,12 +183,10 @@
 ### Patch Changes
 
 - 📦 Update dependencies ([`48415cd`](https://github.com/culur/culur/commit/48415cd678f229f7de42a24141ebf6ab76aa2d19)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `rimraf@^6.0.1`
 
 - 📦 Update dependencies ([`8674db9`](https://github.com/culur/culur/commit/8674db941572a49cc16a9c53e981fed32e8aebcf)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@vitest/coverage-v8@^2.0.2`
     - `@vitest/ui@^2.0.2`

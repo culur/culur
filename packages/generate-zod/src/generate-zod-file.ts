@@ -115,7 +115,12 @@ export async function generateZodFile(
     tasks.task(() => execAsync(command), {
       title: [
         { text: 'Run:', width: 'no-wrap' },
-        { text: command.replace(absoluteOutputFile, '[file]'), color: 'blue' },
+        {
+          text: command
+            .replace(/\\\$/g, '$')
+            .replace(absoluteOutputFile, '[file]'),
+          color: 'blue',
+        },
       ],
       immediately: false,
     });

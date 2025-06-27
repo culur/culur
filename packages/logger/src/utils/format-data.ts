@@ -22,20 +22,19 @@ export async function formatData({
   width: number | undefined | null;
   data: unknown;
 }) {
-  const codeRaw = `Data = ${stringify(data)}`;
-  const printWidth = getPrintWidth(level, width);
+  let codeString = `Data = ${stringify(data)}`;
+  try {
+    codeString = await prettier //
+      .format(codeString, {
+        parser: 'babel',
+        semi: false,
+        endOfLine: 'lf',
+        singleQuote: false,
+        printWidth: getPrintWidth(level, width),
+      });
+  } catch {}
 
-  const codePrettier = await prettier //
-    .format(codeRaw, {
-      parser: 'babel',
-      semi: false,
-      endOfLine: 'lf',
-      singleQuote: false,
-      printWidth,
-    });
-  const codeFormatted = codePrettier
+  return codeString //
     .replace(/^Data =/, chalk.gray('Data ='))
     .replace(/\n$/, '');
-
-  return codeFormatted;
 }

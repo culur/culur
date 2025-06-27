@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-typescript",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Culur's typescript configuration",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,27 @@
 # @culur/logger
 
+## 1.4.0
+
+### Minor Changes
+
+- ✨ Add Ink's `<Static>` again ([`fb740f1`](https://github.com/culur/culur/commit/fb740f1c1c65127dbcc4752f7a30b8b6158c3c35)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - Add **Ink's** `<Static>` component again
+  - Adjusted unit tests to fit the updated code.
+
+### Patch Changes
+
+- ✨ Add try catch to `formatData` ([`6a17fe6`](https://github.com/culur/culur/commit/6a17fe64b2a1dffe74cac33ddb01bba6463878e8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([#335](https://github.com/culur/culur/pull/335) [`572415e`](https://github.com/culur/culur/commit/572415eeba78abaa0283a9d7e5546f6d49a21c9c)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.5`
+    - `ink@^6.0.1`
+    - `prettier@^3.6.2`
+  - `devDependencies`:
+    - `@types/react@^19.1.8`
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
 ## 1.3.1
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @culur/changesets-changelog-github
 
+## 1.1.11
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dotenv@^16.6.0`
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.11`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.10
 
 ### Patch Changes

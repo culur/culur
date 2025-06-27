@@ -1,5 +1,20 @@
 # @culur/changesets-github-info
 
+## 1.1.11
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.5`
+  - `devDependencies`:
+    - `@graphql-codegen/cli@5.0.7`
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.2`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.10
 
 ### Patch Changes

@@ -1,5 +1,30 @@
 # @culur/generate-zod
 
+## 1.3.0
+
+### Minor Changes
+
+- ✨ Add `title`, `loggerWidth`, `loggerFileWidth` & remove `loggerProps` ([`5cea7bf`](https://github.com/culur/culur/commit/5cea7bf935817d82820f22a5ed8459e6578dba92)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Replace `\$` with `$` in command ([`d28ca3e`](https://github.com/culur/culur/commit/d28ca3e28eb3f4f0c396469385ac66dbf52185c0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add `GenerateZodOptions` ([`79f2833`](https://github.com/culur/culur/commit/79f28335f99f4d836d9cb0eb77bb1754e9272dec)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([#334](https://github.com/culur/culur/pull/334) [`ec70423`](https://github.com/culur/culur/commit/ec704234132a6ac121780f8cfd4c0201eda90729)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.5`
+  - `devDependencies`:
+    - `ink@^6.0.1`
+    - `zod@^3.25.67`
+    - `zx@^8.6.0`
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.4.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.2.0
 
 ### Minor Changes

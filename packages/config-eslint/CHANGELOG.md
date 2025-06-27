@@ -1,5 +1,23 @@
 # @culur/config-eslint
 
+## 1.4.6
+
+### Patch Changes
+
+- ⚙️ Remove `import/no-deprecated` since `@antfu/eslint-config` removed `eslint-plugin-import-x` ([#333](https://github.com/culur/culur/pull/333) [`4c52e79`](https://github.com/culur/culur/commit/4c52e79211d67cae5da504e3b3020078f5bb5585)) ([@renovate](https://github.com/apps/renovate)).
+
+- ⚙️ Update dependencies ([#333](https://github.com/culur/culur/pull/333) [`0311ae7`](https://github.com/culur/culur/commit/0311ae7ddfdf83bb62705639d38943e965376ef2)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@antfu/eslint-config@^4.16.1`
+    - `@vitest/eslint-plugin@^1.3.3`
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.17`
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.5`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.5
 
 ### Patch Changes

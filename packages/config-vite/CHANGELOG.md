@@ -1,5 +1,16 @@
 # @culur/config-vite
 
+## 1.3.5
+
+### Patch Changes
+
+- ✨ Update types ([`e2739fa`](https://github.com/culur/culur/commit/e2739fa7b4f73c94bfa6416321faf5e0f51377c8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Format `README.md` & `CHANGELOG.md` ([#332](https://github.com/culur/culur/pull/332) [`f80ca19`](https://github.com/culur/culur/commit/f80ca193496caa19abf584454b7740070c7ad7dc)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.2`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.4
 
 ### Patch Changes

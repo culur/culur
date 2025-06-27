@@ -1,4 +1,4 @@
-import type { UserConfig } from 'vite';
+import type { ViteUserConfig } from 'vitest/config';
 import type { UserConfigExtends } from '~/types';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
@@ -20,5 +20,5 @@ export const defineConfigPlugins = <TOptions extends UserConfigExtends>(
   );
   const plugins = options.plugins ?? [];
 
-  return [tsconfigPathsPlugin, ...plugins] as UserConfig['plugins'];
+  return [tsconfigPathsPlugin, ...plugins] as ViteUserConfig['plugins'];
 };

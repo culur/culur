@@ -1,6 +1,6 @@
 import type { MergeDeep } from '@culur/types';
-import type { UserConfig } from 'vite';
 import type viteTsconfigPaths from 'vite-tsconfig-paths';
+import type { ViteUserConfig } from 'vitest/config';
 import type { InlineConfig as VitestInlineConfig } from 'vitest/node';
 
 //! VitestInlineConfig
@@ -11,7 +11,7 @@ export type VitestInlineConfigCustom = MergeDeep<
 >;
 
 //! UserConfig
-export type UserConfigExtends = UserConfig & {
+export type UserConfigExtends = ViteUserConfig & {
   pluginTsconfigPaths?: boolean | TsconfigPathsOptions;
 } & (
     | { test?: false } //

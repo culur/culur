@@ -11,7 +11,6 @@
 ### Minor Changes
 
 - ✨ Replaced Ink's `<Static>` with a custom static lines implementation ([`08b21f5`](https://github.com/culur/culur/commit/08b21f5dd4db8dc76830cfaeb7d5fdf96337ab37)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Removed **Ink's** `<Static>` component because it was causing problems (often missing lines).
   - Disabled **Ink's** `patchConsole` feature because it was buggy. **Consequently, console.log can no longer be used.** Instead, please use `logger.root.log("data")`.
   - Adjusted unit tests to fit the updated code.
@@ -25,7 +24,6 @@
 - ✨ Update types ([`82a3eb4`](https://github.com/culur/culur/commit/82a3eb4c7ae8b59754d0159dffd9824082041c90)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - ⚙️ Update dependencies ([`fc8de0b`](https://github.com/culur/culur/commit/fc8de0b198a632694d0fe7546881faeb7082f49d)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `ink@^6.0.0`
     - `react@^19.1.0`
@@ -41,7 +39,6 @@
 - ✨ Move `concurrency` into `Tasks` property ([`0d762de`](https://github.com/culur/culur/commit/0d762dee29960b0977be376d0ec26de253612910)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - ⚙️ Update dependencies ([#310](https://github.com/culur/culur/pull/310) [`d42acdc`](https://github.com/culur/culur/commit/d42acdcf95b3238cdabe79d81d2af93726f312ce)) ([@renovate](https://github.com/apps/renovate)):
-
   - `dependencies`:
     - `es-toolkit@^1.38.0`
   - `devDependencies`:
@@ -60,7 +57,6 @@
 ### Minor Changes
 
 - ✨ Update `TasksOptions` ([`addbb36`](https://github.com/culur/culur/commit/addbb3641e15e4d8049ef8fac87b1d7f7e4c0edc)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Add prop `isShowTimer`
   - Add prop `isShowAllFulfilled`
   - Add prop `isShowAllPending`
@@ -71,7 +67,6 @@
 - 🩹 Fix `stringifyString` to support multiline ([`0c501b7`](https://github.com/culur/culur/commit/0c501b74ec86112e638b35940f7a096beae3c1bb)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - ✨ Update sealing ([`addbb36`](https://github.com/culur/culur/commit/addbb3641e15e4d8049ef8fac87b1d7f7e4c0edc)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Rename `seal` to `isSealing`.
   - Rename `sealed` to `isSealed`.
   - First line of `Tasks` will be static if it's sealed.
@@ -79,7 +74,6 @@
 - ✨ Rename `stopOnError` to `isReturnOrThrow` ([`addbb36`](https://github.com/culur/culur/commit/addbb3641e15e4d8049ef8fac87b1d7f7e4c0edc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - ⚙️ Update dependencies ([#295](https://github.com/culur/culur/pull/295) [`1707b12`](https://github.com/culur/culur/commit/1707b12cca15a9d694238cb8264f1b0c423455ee)) ([@renovate](https://github.com/apps/renovate)):
-
   - `devDependencies`:
     - `@types/react@^18.3.21`
     - `type-fest@^4.41.0`
@@ -93,7 +87,6 @@
 - ✨ Remove `TaskParams` & `TasksParams` to make it easier to read ([`addbb36`](https://github.com/culur/culur/commit/addbb3641e15e4d8049ef8fac87b1d7f7e4c0edc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
 - ✨ Add convenience functions ([`ee1dfe3`](https://github.com/culur/culur/commit/ee1dfe338d03d16e37c648c91ede2c7e26ccea74)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - `Tasks.group(title, options)`: Convenience functions for `Tasks.tasks(...)`
   - `Tasks.end()`: Seal tasks if there're no running children tasks
 
@@ -102,7 +95,6 @@
 ### Minor Changes
 
 - ✨ Refactor & support `<Static>` to improve performance ([`0822905`](https://github.com/culur/culur/commit/0822905b0f4a15c9eb607ad211e0c831a2570cd2)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Data will be formatted right inside `.task()` and `.tasks()` instead of using `useEffect` in component.
   - Tasks will have a sealing mechanism to optimize performance
 
@@ -111,7 +103,6 @@
 ### Patch Changes
 
 - ✨ Export these missing items in addition to `Logger` ([`cd5f9a7`](https://github.com/culur/culur/commit/cd5f9a784807afd8d03ba3025b86e5e914e56cc0)) ([@phamhongphuc](https://github.com/phamhongphuc)):
-
   - Export all components (`BoxData, BoxIcon, Line, LineCol, LineCols, TextTimer`)
   - Export all items (`Task, Tasks, Log, Base`)
   - Export all types & enum (`Icon, Prefix, Status...`)

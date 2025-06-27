@@ -42,7 +42,6 @@ declare function generateZod(
 Key capabilities of the `generateZod` function include:
 
 - **Flexible File Organization (`files` object):**
-
   - Configure multiple `outputFile` destinations. Each output can be assembled from various `inputFiles`, allowing for granular control over your generated schema structure.
 
   - Precisely choose which interfaces, types, or enums from each `inputFile` (specified in `inputFiles: { [filename: string]: string[] }`) should be converted into Zod schemas. This is ideal for generating schemas only for specific parts of your codebase.
@@ -52,20 +51,17 @@ Key capabilities of the `generateZod` function include:
 - **Automatic Type Predicates (`validateTypes` property):** For a specified list of `validateTypes` (which must be among the types selected for generation), the library automatically generates `isYourType` type predicate functions, simplifying runtime data validation with ready-to-use type guards.
 
 - **Comprehensive Configuration via `options` Object:** The optional `options` object allows for fine-grained control over the generation process:
-
   - **`cwd` (string):** a string used to specify the current working directory. You would usually use `__dirname` or `import.meta.dirname` here with the `path.resolve` function.
 
   - **`loggerProps` (object):** This is the second parameter when you call `new Logger(title, props)` of the `@culur/logger` library. See the library for more details.
 
   - **`ts-to-zod` Passthrough Options:** The following properties are passed directly to the underlying `ts-to-zod` library, allowing you to leverage its full feature set:
-
     - `zodImportValue`
     - `skipParseJSDoc`
     - `getDependencyName`
     - `customJSDocFormatTypes`
 
   - **`postCommands` (function):**
-
     - A function that accepts the `outputFile` path (string) as an argument and should return an array of command strings.
     - These commands are executed sequentially after each TypeScript file is successfully generated.
     - Each command is run individually, and errors during a command's execution will not halt the processing of subsequent commands or files.

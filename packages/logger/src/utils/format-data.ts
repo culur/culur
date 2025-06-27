@@ -32,6 +32,7 @@ export async function formatData({
         singleQuote: false,
         printWidth: getPrintWidth(level, width),
       });
+    /* v8 ignore next */
   } catch {}
 
   return codeString //

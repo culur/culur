@@ -61,18 +61,9 @@ function suiteFactory(
     const logger = new Logger(rootName, { width });
     const { root } = logger;
 
-    const staticLines =
-      // @ts-expect-error read private field for testing
-      logger.staticLineInstance as ReturnType<typeof render>;
-    const dynamicLines =
-      // @ts-expect-error read private field for testing
-      logger.dynamicLineInstance as ReturnType<typeof render>;
-
-    const lastFrame = () => {
-      const staticFrame = staticLines.lastFrame();
-      const dynamicFrame = dynamicLines.lastFrame();
-      return `${staticFrame}\n${dynamicFrame}`;
-    };
+    // eslint-disable-next-line ts/ban-ts-comment
+    // @ts-expect-error
+    const { lastFrame } = logger.linesInstance as ReturnType<typeof render>;
 
     await expect((() => callback(root, lastFrame))())
       .resolves //

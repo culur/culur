@@ -1,22 +1,31 @@
 import type { Key } from 'ink';
-import type { LineProps } from '../components/line';
+import type { LineProps } from '~/components';
 import type { IRootObject } from '~/item';
 import process from 'node:process';
-import { Text, useInput } from 'ink';
+import { Static, Text, useInput } from 'ink';
 import { useImperativeHandle, useState } from 'react';
-import { Line } from '../components/line';
+import { Line } from '~/components';
 
-export interface DynamicLinesRef {
-  setLines: React.Dispatch<LineProps[]>;
+export interface LinesRef {
+  setLines: React.Dispatch<{
+    staticLines: LineProps[];
+    dynamicLines: LineProps[];
+  }>;
 }
 
-export const DynamicLines = ({
+export const Lines = ({
   ref,
   ...props
 }: NonNullable<IRootObject['props']> & {
-  ref: React.RefObject<DynamicLinesRef | null>;
+  ref: React.RefObject<LinesRef | null>;
 }) => {
-  const [lines, setLines] = useState<LineProps[]>([]);
+  const [lines, setLines] = useState<{
+    staticLines: LineProps[];
+    dynamicLines: LineProps[];
+  }>({
+    staticLines: [],
+    dynamicLines: [],
+  });
 
   useImperativeHandle(ref, () => ({ setLines }));
 
@@ -34,10 +43,12 @@ export const DynamicLines = ({
 
   return (
     <>
-      {lines.map(line => (
+      <Static items={lines.staticLines}>
+        {line => <Line {...props} {...line} key={line.key} />}
+      </Static>
+      {lines.dynamicLines.map(line => (
         <Line {...props} {...line} key={line.key} isStatic={false} />
       ))}
-
       {previousInput && previousInput.key.escape && (
         <Text color="yellow">Press ESC again to exit.</Text>
       )}

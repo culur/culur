@@ -57,7 +57,7 @@
   "dependencies": {
     "@changesets/types": "^6.1.0",
     "@culur/changesets-github-info": "workspace:*",
-    "dotenv": "^16.5.0"
+    "dotenv": "^16.6.0"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.1",

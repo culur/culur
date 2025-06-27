@@ -5,6 +5,18 @@ import process from 'node:process';
 import Logger from '@culur/logger';
 import { generateZodFile } from './generate-zod-file';
 
+export interface GenerateZodOptions {
+  title?: TasksTitle<void[]>;
+  cwd?: string;
+  loggerWidth?: number;
+  loggerFileWidth?: number;
+  zodImportValue?: GenerateZodSchemaProps['zodImportValue'];
+  skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
+  getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
+  customJSDocFormatTypes?: CustomJSDocFormatTypes;
+  postCommands?: (outputFile: string) => string[];
+}
+
 export async function generateZod(
   files: {
     [outputFile: string]: {
@@ -13,17 +25,7 @@ export async function generateZod(
       validateTypes?: string[];
     };
   },
-  options: {
-    title?: TasksTitle<void[]>;
-    cwd?: string;
-    loggerWidth?: number;
-    loggerFileWidth?: number;
-    zodImportValue?: GenerateZodSchemaProps['zodImportValue'];
-    skipParseJSDoc?: GenerateZodSchemaProps['skipParseJSDoc'];
-    getDependencyName?: GenerateZodSchemaProps['getDependencyName'];
-    customJSDocFormatTypes?: CustomJSDocFormatTypes;
-    postCommands?: (outputFile: string) => string[];
-  } = {},
+  options: GenerateZodOptions = {},
 ) {
   const {
     cwd = process.cwd(),

@@ -4,7 +4,7 @@ await generateZod(
   {
     './generated/product.zod.ts': {
       inputFiles: {
-        './generated/product.ts': ['Status', 'PermissionLevel'],
+        './generated/product.ts': [['Status', 'StatusRaw'], 'PermissionLevel'],
       },
       validateTypes: ['Status'],
       customImport: ts`

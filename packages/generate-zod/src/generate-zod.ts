@@ -21,7 +21,12 @@ export async function generateZod(
   files: {
     [outputFile: string]: {
       customImport?: string;
-      inputFiles: { [filename: string]: string[] };
+      inputFiles: {
+        [filename: string]: (
+          | string
+          | [declarationName: string, declarationOutputName: string]
+        )[];
+      };
       validateTypes?: string[];
     };
   },

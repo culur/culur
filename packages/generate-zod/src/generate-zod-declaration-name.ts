@@ -6,9 +6,11 @@ import { findNode } from './find-node';
 
 export async function generateZodDeclarationName({
   declarationName,
+  declarationOutputName,
   ...props
 }: {
   declarationName: string;
+  declarationOutputName: string;
 } & Pick<
   GenerateZodSchemaProps,
   | 'zodImportValue'
@@ -18,7 +20,7 @@ export async function generateZodDeclarationName({
   | 'customJSDocFormatTypes'
 >) {
   const node = findNode(props.sourceFile, declarationName);
-  const varName = `${camelCase(declarationName)}Schema`;
+  const varName = `${camelCase(declarationOutputName)}Schema`;
 
   const results = generateZodSchemaVariableStatement(
     { varName, node, ...props }, //

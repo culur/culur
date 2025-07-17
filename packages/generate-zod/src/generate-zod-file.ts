@@ -18,7 +18,12 @@ export async function generateZodFile(
   options: {
     cwd: string;
     customImport?: string;
-    inputFiles: { [filename: string]: string[] };
+    inputFiles: {
+      [filename: string]: (
+        | string //
+        | [declarationName: string, declarationOutputName: string]
+      )[];
+    };
     outputFile: string;
     validateTypes?: string[];
     loggerFileWidth?: number;
@@ -61,17 +66,26 @@ export async function generateZodFile(
         );
 
         let fileContent = '';
-        for (const declarationName of inputFiles[inputFile]) {
+        for (const inputRecord of inputFiles[inputFile]) {
+          const [declarationName, declarationOutputName] =
+            typeof inputRecord === 'string'
+              ? [inputRecord, inputRecord]
+              : inputRecord;
+
           fileContent += '\n\n';
           fileContent += await generateZodDeclarationName({
             sourceFile,
             declarationName,
+            declarationOutputName,
             ...props,
           });
 
           if (validateTypes.includes(declarationName)) {
             fileContent += '\n\n';
-            fileContent += generateZodIsValidAgainstSchema(declarationName);
+            fileContent += generateZodIsValidAgainstSchema(
+              declarationName,
+              declarationOutputName,
+            );
           }
         }
 

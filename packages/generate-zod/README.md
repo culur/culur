@@ -22,7 +22,10 @@ declare function generateZod(
     [outputFile: string]: {
       customImport?: string;
       inputFiles: {
-        [filename: string]: string[];
+        [filename: string]: (
+          | string
+          | [declarationName: string, declarationOutputName: string]
+        )[];
       };
       validateTypes?: string[];
     };

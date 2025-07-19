@@ -191,7 +191,7 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       es-toolkit:
-        specifier: ^1.39.5
+        specifier: ^1.39.7
         version: 1.39.7
     devDependencies:
       '@culur/config-tsup':

@@ -96,8 +96,8 @@ importers:
         specifier: ^6.0.1
         version: 6.0.1
       stylelint:
-        specifier: ^16.21.1
-        version: 16.21.1(typescript@5.8.3)
+        specifier: ^16.22.0
+        version: 16.22.0(typescript@5.8.3)
       tsup:
         specifier: ^8.5.0
         version: 8.5.0(jiti@2.4.2)(postcss@8.5.6)(typescript@5.8.3)(yaml@2.7.0)
@@ -267,31 +267,31 @@ importers:
         version: link:../utils-packages
       stylelint:
         specifier: '>=16.14.1'
-        version: 16.21.1(typescript@5.8.3)
+        version: 16.22.0(typescript@5.8.3)
       stylelint-config-clean-order:
         specifier: ^7.0.0
-        version: 7.0.0(stylelint@16.21.1(typescript@5.8.3))
+        version: 7.0.0(stylelint@16.22.0(typescript@5.8.3))
       stylelint-config-html:
         specifier: ^1.1.0
-        version: 1.1.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3))
+        version: 1.1.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3))
       stylelint-config-standard:
         specifier: ^38.0.0
-        version: 38.0.0(stylelint@16.21.1(typescript@5.8.3))
+        version: 38.0.0(stylelint@16.22.0(typescript@5.8.3))
       stylelint-config-standard-scss:
         specifier: ^15.0.1
-        version: 15.0.1(postcss@8.5.6)(stylelint@16.21.1(typescript@5.8.3))
+        version: 15.0.1(postcss@8.5.6)(stylelint@16.22.0(typescript@5.8.3))
       stylelint-config-standard-vue:
         specifier: ^1.0.0
-        version: 1.0.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3))
+        version: 1.0.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3))
       stylelint-order:
         specifier: ^7.0.0
-        version: 7.0.0(stylelint@16.21.1(typescript@5.8.3))
+        version: 7.0.0(stylelint@16.22.0(typescript@5.8.3))
       stylelint-scss:
         specifier: ^6.12.1
-        version: 6.12.1(stylelint@16.21.1(typescript@5.8.3))
+        version: 6.12.1(stylelint@16.22.0(typescript@5.8.3))
       stylelint-selector-bem-pattern:
         specifier: ^4.0.1
-        version: 4.0.1(stylelint@16.21.1(typescript@5.8.3))
+        version: 4.0.1(stylelint@16.22.0(typescript@5.8.3))
     devDependencies:
       '@culur/config-tsup':
         specifier: workspace:*
@@ -5689,8 +5689,8 @@ packages:
     peerDependencies:
       stylelint: ^16.2.1
 
-  stylelint@16.21.1:
-    resolution: {integrity: sha512-WCXdXnYK2tpCbebgMF0Bme3YZH/Rh/UXerj75twYo4uLULlcrLwFVdZTvTEF8idFnAcW21YUDJFyKOfaf6xJRw==}
+  stylelint@16.22.0:
+    resolution: {integrity: sha512-SVEMTdjKNV4ollUrIY9ordZ36zHv2/PHzPjfPMau370MlL2VYXeLgSNMMiEbLGRO8RmD2R8/BVUeF2DfnfkC0w==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -12301,71 +12301,71 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  stylelint-config-clean-order@7.0.0(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-clean-order@7.0.0(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-order: 6.0.4(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-order: 6.0.4(stylelint@16.22.0(typescript@5.8.3))
 
-  stylelint-config-html@1.1.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-html@1.1.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss-html: 1.8.0
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint-config-recommended-scss@15.0.1(postcss@8.5.6)(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-recommended-scss@15.0.1(postcss@8.5.6)(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss-scss: 4.0.9(postcss@8.5.6)
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-config-recommended: 16.0.0(stylelint@16.21.1(typescript@5.8.3))
-      stylelint-scss: 6.12.1(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-config-recommended: 16.0.0(stylelint@16.22.0(typescript@5.8.3))
+      stylelint-scss: 6.12.1(stylelint@16.22.0(typescript@5.8.3))
     optionalDependencies:
       postcss: 8.5.6
 
-  stylelint-config-recommended-vue@1.5.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-recommended-vue@1.5.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss-html: 1.8.0
       semver: 7.7.2
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3))
-      stylelint-config-recommended: 16.0.0(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3))
+      stylelint-config-recommended: 16.0.0(stylelint@16.22.0(typescript@5.8.3))
 
-  stylelint-config-recommended@16.0.0(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-recommended@16.0.0(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint-config-standard-scss@15.0.1(postcss@8.5.6)(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-standard-scss@15.0.1(postcss@8.5.6)(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-config-recommended-scss: 15.0.1(postcss@8.5.6)(stylelint@16.21.1(typescript@5.8.3))
-      stylelint-config-standard: 38.0.0(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-config-recommended-scss: 15.0.1(postcss@8.5.6)(stylelint@16.22.0(typescript@5.8.3))
+      stylelint-config-standard: 38.0.0(stylelint@16.22.0(typescript@5.8.3))
     optionalDependencies:
       postcss: 8.5.6
 
-  stylelint-config-standard-vue@1.0.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-standard-vue@1.0.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss-html: 1.8.0
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3))
-      stylelint-config-recommended-vue: 1.5.0(postcss-html@1.8.0)(stylelint@16.21.1(typescript@5.8.3))
-      stylelint-config-standard: 38.0.0(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3))
+      stylelint-config-recommended-vue: 1.5.0(postcss-html@1.8.0)(stylelint@16.22.0(typescript@5.8.3))
+      stylelint-config-standard: 38.0.0(stylelint@16.22.0(typescript@5.8.3))
 
-  stylelint-config-standard@38.0.0(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-config-standard@38.0.0(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
-      stylelint: 16.21.1(typescript@5.8.3)
-      stylelint-config-recommended: 16.0.0(stylelint@16.21.1(typescript@5.8.3))
+      stylelint: 16.22.0(typescript@5.8.3)
+      stylelint-config-recommended: 16.0.0(stylelint@16.22.0(typescript@5.8.3))
 
-  stylelint-order@6.0.4(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-order@6.0.4(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss: 8.5.6
       postcss-sorting: 8.0.2(postcss@8.5.6)
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint-order@7.0.0(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-order@7.0.0(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       postcss: 8.5.6
       postcss-sorting: 9.1.0(postcss@8.5.6)
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint-scss@6.12.1(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-scss@6.12.1(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       css-tree: 3.1.0
       is-plain-object: 5.0.0
@@ -12375,16 +12375,16 @@ snapshots:
       postcss-resolve-nested-selector: 0.1.6
       postcss-selector-parser: 7.1.0
       postcss-value-parser: 4.2.0
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint-selector-bem-pattern@4.0.1(stylelint@16.21.1(typescript@5.8.3)):
+  stylelint-selector-bem-pattern@4.0.1(stylelint@16.22.0(typescript@5.8.3)):
     dependencies:
       lodash: 4.17.21
       postcss: 8.5.6
       postcss-bem-linter: 4.0.1(postcss@8.5.6)
-      stylelint: 16.21.1(typescript@5.8.3)
+      stylelint: 16.22.0(typescript@5.8.3)
 
-  stylelint@16.21.1(typescript@5.8.3):
+  stylelint@16.22.0(typescript@5.8.3):
     dependencies:
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4

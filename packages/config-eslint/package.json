@@ -66,9 +66,9 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^4.16.1",
+    "@antfu/eslint-config": "^4.17.0",
     "@culur/utils-packages": "workspace:*",
-    "@vitest/eslint-plugin": "^1.3.3"
+    "@vitest/eslint-plugin": "^1.3.4"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

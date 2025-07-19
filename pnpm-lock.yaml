@@ -397,7 +397,7 @@ importers:
         version: 3.2.24
       ink:
         specifier: ^6.0.1
-        version: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0)
+        version: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0)
       ink-testing-library:
         specifier: ^4.0.0
         version: 4.0.0(@types/react@19.1.8)
@@ -420,20 +420,20 @@ importers:
         specifier: ^1.6.0
         version: 1.6.0
       es-toolkit:
-        specifier: ^1.39.5
+        specifier: ^1.39.7
         version: 1.39.7
       figures:
         specifier: ^6.1.0
         version: 6.1.0
       ink:
         specifier: ^6.0.1
-        version: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0)
+        version: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0)
       ink-spinner:
         specifier: ^5.0.0
-        version: 5.0.0(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0))(react@19.1.0)
+        version: 5.0.0(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0))(react@19.1.0)
       ink-syntax-highlight:
         specifier: ^2.0.2
-        version: 2.0.2(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0))(react@19.1.0)
+        version: 2.0.2(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0))(react@19.1.0)
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -469,11 +469,11 @@ importers:
         specifier: ^0.5.0
         version: 0.5.0
       react-devtools:
-        specifier: ^6.1.2
-        version: 6.1.2
+        specifier: ^6.1.5
+        version: 6.1.5
       react-devtools-core:
-        specifier: ^6.1.2
-        version: 6.1.2
+        specifier: ^6.1.5
+        version: 6.1.5
 
   packages/renovate: {}
 
@@ -5225,11 +5225,11 @@ packages:
     resolution: {integrity: sha512-y3bGgqKj3QBdxLbLkomlohkvsA8gdAiUQlSBJnBhfn+BPxg4bc62d8TcBW15wavDfgexCgccckhcZvywyQYPOw==}
     hasBin: true
 
-  react-devtools-core@6.1.2:
-    resolution: {integrity: sha512-ldFwzufLletzCikNJVYaxlxMLu7swJ3T2VrGfzXlMsVhZhPDKXA38DEROidaYZVgMAmQnIjymrmqto5pyfrwPA==}
+  react-devtools-core@6.1.5:
+    resolution: {integrity: sha512-ePrwPfxAnB+7hgnEr8vpKxL9cmnp7F322t8oqcPshbIQQhDKgFDW4tjhF2wjVbdXF9O/nyuy3sQWd9JGpiLPvA==}
 
-  react-devtools@6.1.2:
-    resolution: {integrity: sha512-7HiulH8kuMLD9zwHKO0j+TrEgx9/MtK8+cG5jMYq6B1dSztO+154h0FBWD67n45FJ1pZ9FmJh92lmX4EwzGPew==}
+  react-devtools@6.1.5:
+    resolution: {integrity: sha512-yp7kADDET5neqMMBtwRIPqJ1tcVXWP88RsSCdOrwYsxGGL/pS5Za4jOCYekiZb0m7nzTbSH158ugGyNnBaDJvQ==}
     hasBin: true
 
   react-is@18.3.1:
@@ -10451,23 +10451,23 @@ snapshots:
 
   ini@4.1.1: {}
 
-  ink-spinner@5.0.0(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0))(react@19.1.0):
+  ink-spinner@5.0.0(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0))(react@19.1.0):
     dependencies:
       cli-spinners: 2.9.2
-      ink: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0)
+      ink: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0)
       react: 19.1.0
 
-  ink-syntax-highlight@2.0.2(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0))(react@19.1.0):
+  ink-syntax-highlight@2.0.2(ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0))(react@19.1.0):
     dependencies:
       cli-highlight: 2.1.11
-      ink: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0)
+      ink: 6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0)
       react: 19.1.0
 
   ink-testing-library@4.0.0(@types/react@19.1.8):
     optionalDependencies:
       '@types/react': 19.1.8
 
-  ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.2)(react@19.1.0):
+  ink@6.0.1(@types/react@19.1.8)(react-devtools-core@6.1.5)(react@19.1.0):
     dependencies:
       '@alcalzone/ansi-tokenize': 0.1.3
       ansi-escapes: 7.0.0
@@ -10496,7 +10496,7 @@ snapshots:
       yoga-layout: 3.2.1
     optionalDependencies:
       '@types/react': 19.1.8
-      react-devtools-core: 6.1.2
+      react-devtools-core: 6.1.5
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -11912,7 +11912,7 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-devtools-core@6.1.2:
+  react-devtools-core@6.1.5:
     dependencies:
       shell-quote: 1.8.1
       ws: 7.5.10
@@ -11920,13 +11920,13 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  react-devtools@6.1.2:
+  react-devtools@6.1.5:
     dependencies:
       cross-spawn: 5.1.0
       electron: 23.3.13
       internal-ip: 6.2.0
       minimist: 1.2.8
-      react-devtools-core: 6.1.2
+      react-devtools-core: 6.1.5
       update-notifier: 2.5.0
     transitivePeerDependencies:
       - bufferutil

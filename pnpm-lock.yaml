@@ -192,7 +192,7 @@ importers:
         version: 1.6.0
       es-toolkit:
         specifier: ^1.39.5
-        version: 1.39.5
+        version: 1.39.7
     devDependencies:
       '@culur/config-tsup':
         specifier: workspace:*
@@ -374,8 +374,8 @@ importers:
         specifier: '*'
         version: 1.6.0
       es-toolkit:
-        specifier: ^1.39.5
-        version: 1.39.5
+        specifier: ^1.39.7
+        version: 1.39.7
       ts-to-zod:
         specifier: ^3.15.0
         version: 3.15.0
@@ -402,11 +402,11 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(@types/react@19.1.8)
       zod:
-        specifier: ^3.25.67
-        version: 3.25.67
+        specifier: ^3.25.76
+        version: 3.25.76
       zx:
-        specifier: ^8.6.0
-        version: 8.6.0
+        specifier: ^8.7.1
+        version: 8.7.1
 
   packages/logger:
     dependencies:
@@ -421,7 +421,7 @@ importers:
         version: 1.6.0
       es-toolkit:
         specifier: ^1.39.5
-        version: 1.39.5
+        version: 1.39.7
       figures:
         specifier: ^6.1.0
         version: 6.1.0
@@ -3063,8 +3063,8 @@ packages:
   es-module-lexer@1.7.0:
     resolution: {integrity: sha512-jEQoCwk8hyb2AZziIOLhDqpm5+2ww5uIE6lkO/6jcOCusfk6LhMHpXXfBLXTZ7Ydyt0j4VoUQv6uGNYbdW+kBA==}
 
-  es-toolkit@1.39.5:
-    resolution: {integrity: sha512-z9V0qU4lx1TBXDNFWfAASWk6RNU6c6+TJBKE+FLIg8u0XJ6Yw58Hi0yX8ftEouj6p1QARRlXLFfHbIli93BdQQ==}
+  es-toolkit@1.39.7:
+    resolution: {integrity: sha512-ek/wWryKouBrZIjkwW2BFf91CWOIMvoy2AE5YYgUrfWsJQM2Su1LoLtrw8uusEpN9RfqLlV/0FVNjT0WMv8Bxw==}
 
   es6-error@4.1.1:
     resolution: {integrity: sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg==}
@@ -6340,8 +6340,8 @@ packages:
   yoga-layout@3.2.1:
     resolution: {integrity: sha512-0LPOt3AxKqMdFBZA3HBAt/t/8vIKq7VaQYbuA8WxCgung+p9TVyKRYdpvCb80HcdTN2NkbIKbhNwKUfm3tQywQ==}
 
-  zod@3.25.67:
-    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
   zod@4.0.5:
     resolution: {integrity: sha512-/5UuuRPStvHXu7RS+gmvRf4NXrNxpSllGwDnCBcJZtQsKrviYXm54yDGV2KYNLT5kq0lHGcl7lqWJLgSaG+tgA==}
@@ -6349,8 +6349,8 @@ packages:
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  zx@8.6.0:
-    resolution: {integrity: sha512-CpOskNj7nNW19z5DkOTHX24Yh1qnnx1oANn8EnD3QbCUBnZpuennJaYkb4zea5GJCxT6/IdxeiA5nweQ1S2YtA==}
+  zx@8.7.1:
+    resolution: {integrity: sha512-28u1w2LlIfvyvJvYe6pmCipesk8oL5AFMVp+P/U445LcaPgzrU5lNDtAPd6nJvWmoCNyXZz37R/xKOGokccjsw==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -9457,7 +9457,7 @@ snapshots:
 
   es-module-lexer@1.7.0: {}
 
-  es-toolkit@1.39.5: {}
+  es-toolkit@1.39.7: {}
 
   es6-error@4.1.1:
     optional: true
@@ -10478,7 +10478,7 @@ snapshots:
       cli-cursor: 4.0.0
       cli-truncate: 4.0.0
       code-excerpt: 4.0.0
-      es-toolkit: 1.39.5
+      es-toolkit: 1.39.7
       indent-string: 5.0.0
       is-in-ci: 1.0.0
       patch-console: 2.0.0
@@ -12610,7 +12610,7 @@ snapshots:
       tslib: 2.8.1
       tsutils: 3.21.0(typescript@5.8.3)
       typescript: 5.8.3
-      zod: 3.25.67
+      zod: 3.25.76
     transitivePeerDependencies:
       - supports-color
 
@@ -13060,10 +13060,10 @@ snapshots:
 
   yoga-layout@3.2.1: {}
 
-  zod@3.25.67: {}
+  zod@3.25.76: {}
 
   zod@4.0.5: {}
 
   zwitch@2.0.4: {}
 
-  zx@8.6.0: {}
+  zx@8.7.1: {}

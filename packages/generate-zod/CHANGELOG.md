@@ -1,5 +1,23 @@
 # @culur/generate-zod
 
+## 1.4.0
+
+### Minor Changes
+
+- ✨ Add `declarationName` & `declarationOutputName` ([`1ac31be`](https://github.com/culur/culur/commit/1ac31bebb0def4e428a3fa4a3341353af938f058)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#342](https://github.com/culur/culur/pull/342) [`e718994`](https://github.com/culur/culur/commit/e7189942f190e948ac0353d2d0f58da14a5867fe)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.7`
+  - `devDependencies`:
+    - `zod@^3.25.76`
+    - `zx@^8.7.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.4.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.3.0
 
 ### Minor Changes

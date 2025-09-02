@@ -188,27 +188,27 @@ await logger.unmount();
 ```bash
 ┌─── Your logger tasks
 ├─┬─── Custom title
-│ ├─ ✔ Anonymous                                                           0.01s
-│ ├─ ✔ NamedFunction                                                       0.00s
-│ ├─ ✔ Custom title string                                                 0.00s
-│ ├─ ✔ Custom title function: Task completed                               0.01s
+│ ├─ √ Anonymous                                                           0.01s
+│ ├─ √ NamedFunction                                                       0.00s
+│ ├─ √ Custom title string                                                 0.00s
+│ ├─ √ Custom title function: Task completed                               0.01s
 │ └─── => Count = 4
 ├─┬─── Run tasks immediately
-│ ├─ ✔ Anonymous                                                           0.01s
-│ ├─ ✔ Anonymous                                                           0.01s
+│ ├─ √ Anonymous                                                           0.01s
+│ ├─ √ Anonymous                                                           0.01s
 │ └─── => Count = 2
 ├─┬─── Run tasks later
 │ ├─ ◌ Anonymous                                                         Pending
 │ ├─ ◌ Anonymous                                                         Pending
-│ ├─ ✔ Add task to tasks                                                   0.10s
-│ ├─ ✔ Add task to tasks                                                   0.09s
+│ ├─ √ Add task to tasks                                                   0.10s
+│ ├─ √ Add task to tasks                                                   0.09s
 │ └─── => Data = [null, null, 3, 4]
 ├─┬─── Show
-│ ├─ ✔ Show data                                                           0.01s
+│ ├─ √ Show data                                                           0.01s
 │ │    => Data = { foo: "bar" }
-│ ├─ ✘ Show error                                                          0.01s
+│ ├─ × Show error                                                          0.01s
 │ │    => Error: Something is wrong!
-│ ├─ ✘ Show error                                                          0.02s
+│ ├─ × Show error                                                          0.02s
 │ │    => Error: Something is wrong!
 │ │         at Task.tasksShow.task.title (/Users/code/test/dev.tsx:37:11)
 │ │         at new Promise (<anonymous>)

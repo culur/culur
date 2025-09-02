@@ -4,6 +4,6 @@ export enum Icon {
   Info, // ℹ
   Pending, // ◌
   Running, // ⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏
-  Success, // ✔
-  Error, // ✘
+  Success, // √
+  Error, // ×
 }

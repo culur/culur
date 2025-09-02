@@ -42,16 +42,16 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Normal
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       ├─┬─── Tasks                                 0.00s
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       ├─┬─── Tasks                                 0.00s
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       └─── => Count = 0
     `);
@@ -91,16 +91,16 @@ describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Normal readonly
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 2
       └─── => Count = 0
     `);
@@ -165,7 +165,7 @@ describeLogger('.task()', 'Not show all tasks', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Not show all tasks
       ├─┬─── Tasks
-      │ ├─ ✔ 10 completed tasks!
+      │ ├─ √ 10 completed tasks!
       │ └─── => Count = 10
       └─── => Count = 0
     `);
@@ -207,7 +207,7 @@ describeLogger('.task()', 'Show task as grid', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Show task as grid
       ├─┬─── Tasks
-      │ ├─ ✔ ██████████
+      │ ├─ √ ██████████
       │ └─── => Count = 10
       └─── => Count = 0
     `);
@@ -355,10 +355,10 @@ describeLogger('.tasks({ title })', 'Custom title', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Custom title
       ├─┬─── The title string
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 1
       ├─┬─── The title function
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Count = 1
       ├─┬─── Cannot set title after created
       │ └─── => Count = 0
@@ -394,8 +394,8 @@ describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Show data and error
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ └─── => Data = [1, 2]
       └─── => Count = 0
     `);
@@ -409,9 +409,9 @@ describeLogger('.tasks()', 'Show data and error', async (root, lastFrame) => {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Show data and error
       ├─┬─── Tasks
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
-      │ ├─ ✔ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
+      │ ├─ √ Anonymous                             0.00s
       │ │    => Data = 3
       │ └─── => Data = [1, 2, 3]
       └─── => Count = 0

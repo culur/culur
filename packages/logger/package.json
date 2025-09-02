@@ -48,7 +48,7 @@
     "dev:watch": "tsx watch ./scripts/dev",
     "dev-tools": "react-devtools",
     "build": "tsup",
-    "test": "tsc --noEmit && FORCE_COLOR=false vitest run",
+    "test": "tsc --noEmit && vitest run",
     "🧹 ----- LINT ----- 🧹": "",
     "es-config": "eslint-config-inspector",
     "lint": "nx run-many -t lint:es lint:prettier -p logger",

@@ -54,7 +54,7 @@
     "node": ">=20"
   },
   "dependencies": {
-    "local-pkg": "^1.1.1",
+    "local-pkg": "^1.1.2",
     "semver": "^7.7.2"
   },
   "devDependencies": {

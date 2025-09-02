@@ -2,7 +2,7 @@ import type { BoxProps } from 'ink';
 import type { LineProps } from './line';
 import { uniqueId } from 'es-toolkit/compat';
 import { describeComponentRender } from '~/__tests__';
-import { Prefix } from '~/types';
+import { Icon, Prefix } from '~/types';
 import { Line } from './line';
 
 const defineCases = (
@@ -38,6 +38,16 @@ describeComponentRender({
       {
         level: 0,
         lines: [{ prefix: Prefix.BlockStart, text: '[Invalid level]' }],
+      },
+      {
+        level: 1,
+        lines: [
+          {
+            icon: Icon.Success,
+            prefix: Prefix.BlockMiddleLine,
+            text: '├─ √ l1 l2         r1 r2',
+          },
+        ],
       },
       {
         level: 1,

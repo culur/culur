@@ -14,16 +14,17 @@ describeLogger('logger', 'Logger', async (root, lastFrame) => {
   await new Promise(resolve => setTimeout(resolve, 100));
   expect(lastFrame()).toStrictEqual(dedent`
     ┌─── Logger
-    ├─ ℹ Log 1
+    ├─ i Log 1
     └─── => Count = 0
   `);
 
   await root.logData(boxSyntaxComplexObject);
   await new Promise(resolve => setTimeout(resolve, 100));
-  expect(lastFrame()).toStrictEqual(dedent`
+  const text = lastFrame();
+  expect(text).toStrictEqual(dedent`
     ┌─── Logger
-    ├─ ℹ Log 1
-    ├─ ℹ Data = {
+    ├─ i Log 1
+    ├─ i Data = {
     │      string: "the string",
     │      number: 123.45,
     │      integer: 67,

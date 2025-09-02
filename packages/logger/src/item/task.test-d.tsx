@@ -48,9 +48,9 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   if (!isCI()) {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Normal
-      ├─ ✔ Return data                             0.00s
-      ├─ ✔ Return response                         0.00s
-      ├─ ✔ Return task                             0.00s
+      ├─ √ Return data                             0.00s
+      ├─ √ Return response                         0.00s
+      ├─ √ Return task                             0.00s
       └─── => Count = 3
     `);
   }
@@ -106,7 +106,7 @@ describeLogger('.task().wait()', 'Normal', async (root, lastFrame) => {
   if (!isCI()) {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Normal
-      ├─ ✔ Anonymous                               0.00s
+      ├─ √ Anonymous                               0.00s
       └─── => Count = 1
     `);
   }
@@ -129,10 +129,10 @@ describeLogger('.task({ title })', 'Custom title', async (root, lastFrame) => {
   if (!isCI()) {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Custom title
-      ├─ ✔ The title string                        0.00s
-      ├─ ✔ The title function                      0.00s
-      ├─ ✔ Set title string [null]                 0.00s
-      ├─ ✔ Set title function [Title function]     0.00s
+      ├─ √ The title string                        0.00s
+      ├─ √ The title function                      0.00s
+      ├─ √ Set title string [null]                 0.00s
+      ├─ √ Set title function [Title function]     0.00s
       └─── => Count = 4
     `);
   }
@@ -151,14 +151,14 @@ describeLogger('.task()', 'Show data and error', async (root, lastFrame) => {
   if (!isCI()) {
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Show data and error
-      ├─ ✔ Anonymous                               0.00s
+      ├─ √ Anonymous                               0.00s
       │    => Data = 1
-      ├─ ✘ throwString                             0.00s
+      ├─ × throwString                             0.00s
       │    => Error: Task Error String
-      ├─ ✘ throwError                              0.00s
-      ├─ ✘ throwError                              0.00s
+      ├─ × throwError                              0.00s
+      ├─ × throwError                              0.00s
       │    => Error: Task Error Object
-      ├─ ✘ throwError                              0.00s
+      ├─ × throwError                              0.00s
       │    => Error: Task Error Object
       │         at Task.throwTaskError (/culur/packages/
       │       logger/src/item/task.test.mock.tsx:1:1)
@@ -168,7 +168,7 @@ describeLogger('.task()', 'Show data and error', async (root, lastFrame) => {
       │       .mock.tsx:1:1
       │         at new Promise (<anonymous>)
       │         at ...(<mock>)
-      ├─ ✘ throwErrorWithoutStack                  0.00s
+      ├─ × throwErrorWithoutStack                  0.00s
       │    => Error: Task Error Object
       └─── => Count = 6
     `);

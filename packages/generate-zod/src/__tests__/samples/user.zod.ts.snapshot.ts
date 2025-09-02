@@ -14,7 +14,7 @@ export const contactSchema = z.object({
 });
 
 // Union of different object interfaces using & for intersection
-export const userSchema = z
+export const userUnionSchema = z
   .object({
     fullName: z.string(),
   })

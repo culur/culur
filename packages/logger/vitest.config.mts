@@ -9,5 +9,6 @@ export default defineConfig({
     coverage: {
       excludeExtends: ['scripts/**'],
     },
+    setupFiles: ['./vitest.setup.ts'],
   },
 });

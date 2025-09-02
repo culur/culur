@@ -65,7 +65,7 @@ describe('generate zod', async () => {
       {
         'user.zod.ts': {
           inputFiles: {
-            'user.ts': ['Address', 'Contact', 'User'],
+            'user.ts': ['Address', 'Contact', ['User', 'UserUnion']],
           },
         },
       },

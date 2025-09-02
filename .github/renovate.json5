@@ -19,7 +19,7 @@
     'local>culur/culur//packages/renovate/package.json5(types,packages/types,*)',
     'local>culur/culur//packages/renovate/package.json5(utils-packages,packages/utils-packages,*)',
   ],
-  baseBranches: ['dev'],
+  baseBranchPatterns: ['dev'],
   configMigration: true,
   dependencyDashboardApproval: true,
   labels: ['dependencies'],

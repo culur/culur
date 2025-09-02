@@ -374,7 +374,7 @@ importers:
         specifier: '*'
         version: 1.6.0
       es-toolkit:
-        specifier: ^1.39.7
+        specifier: ^1.39.10
         version: 1.39.10
       ts-to-zod:
         specifier: ^3.15.0
@@ -393,10 +393,10 @@ importers:
         specifier: workspace:*
         version: link:../logger
       '@types/async':
-        specifier: ^3.2.24
+        specifier: ^3.2.25
         version: 3.2.25
       ink:
-        specifier: ^6.0.1
+        specifier: ^6.2.3
         version: 6.2.3(@types/react@19.1.12)(react-devtools-core@6.1.5)(react@19.1.1)
       ink-testing-library:
         specifier: ^4.0.0
@@ -405,8 +405,8 @@ importers:
         specifier: ^3.25.76
         version: 3.25.76
       zx:
-        specifier: ^8.7.1
-        version: 8.7.1
+        specifier: ^8.8.1
+        version: 8.8.1
 
   packages/logger:
     dependencies:
@@ -6311,8 +6311,8 @@ packages:
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  zx@8.7.1:
-    resolution: {integrity: sha512-28u1w2LlIfvyvJvYe6pmCipesk8oL5AFMVp+P/U445LcaPgzrU5lNDtAPd6nJvWmoCNyXZz37R/xKOGokccjsw==}
+  zx@8.8.1:
+    resolution: {integrity: sha512-qvsKBnvWHstHKCluKPlEgI/D3+mdiQyMoSSeFR8IX/aXzWIas5A297KxKgPJhuPXdrR6ma0Jzx43+GQ/8sqbrw==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -12964,4 +12964,4 @@ snapshots:
 
   zwitch@2.0.4: {}
 
-  zx@8.7.1: {}
+  zx@8.8.1: {}

@@ -1,8 +1,9 @@
 import type { TextProps } from 'ink';
-import figureSet from 'figures';
+import figureSet, { fallbackSymbols } from 'figures';
 import { Box, Text } from 'ink';
 import Spinner from 'ink-spinner';
 import { useMemo } from 'react';
+import { DRAW } from '~/configs';
 import { Icon } from '~/types';
 
 export interface BoxIconProps {
@@ -11,7 +12,11 @@ export interface BoxIconProps {
   color?: TextProps['color'];
 }
 
-export const BoxIcon = ({ icon, width, color }: BoxIconProps) => {
+export const BoxIcon = ({
+  icon,
+  width = DRAW.iconWidth,
+  color,
+}: BoxIconProps) => {
   const boxProps = useMemo(
     () => ({
       width,
@@ -29,7 +34,7 @@ export const BoxIcon = ({ icon, width, color }: BoxIconProps) => {
     case Icon.Info:
       return (
         <Box {...boxProps}>
-          <Text color={color ?? 'blue'}>{figureSet.info}</Text>
+          <Text color={color ?? 'blue'}>{fallbackSymbols.info}</Text>
         </Box>
       );
     case Icon.Pending:
@@ -49,19 +54,19 @@ export const BoxIcon = ({ icon, width, color }: BoxIconProps) => {
     case Icon.Success:
       return (
         <Box {...boxProps}>
-          <Text color={color ?? 'green'}>{figureSet.tick}</Text>
+          <Text color={color ?? 'green'}>{fallbackSymbols.tick}</Text>
         </Box>
       );
     case Icon.Error:
       return (
         <Box {...boxProps}>
-          <Text color={color ?? 'red'}>{figureSet.cross}</Text>
+          <Text color={color ?? 'red'}>{fallbackSymbols.cross}</Text>
         </Box>
       );
     default:
       return (
         <Box {...boxProps} height={1}>
-          <Text color={color}>{icon}</Text>
+          <Text color={color}>{icon.slice(0, width)}</Text>
         </Box>
       );
   }

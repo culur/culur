@@ -12,9 +12,9 @@
 
 ## ✨ Features
 
-This library if a fork of [`@changesets/get-github-info`](https://www.npmjs.com/package/@changesets/get-github-info). The main purpose of this library is to customize the returned results to suit the needs of use in `@culur/changesets-changelog-github`.
+This library is a fork of [`@changesets/get-github-info`](https://www.npmjs.com/package/@changesets/get-github-info). The main purpose of this library is to customize the returned results to suit the needs of `@culur/changesets-changelog-github`.
 
-It uses `@octokit/graphql` and `dataloader` to query data. It also takes advantage of the dataloader's caching and batching features to optimize queries.
+It uses `@octokit/graphql` and `dataloader` to query data. It also takes advantage of dataloader's caching and batching features to optimize queries.
 
 ## 💿 Installation
 

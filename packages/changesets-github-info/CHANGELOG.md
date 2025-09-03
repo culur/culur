@@ -1,5 +1,13 @@
 # @culur/changesets-github-info
 
+## 1.1.13
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`c29123d`](https://github.com/culur/culur/commit/c29123d1251df75f399ec2933d5d4d52770ef8f2)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.10`
+
 ## 1.1.12
 
 ### Patch Changes

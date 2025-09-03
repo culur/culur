@@ -1,5 +1,20 @@
 # @culur/config-stylelint
 
+## 1.5.0
+
+### Minor Changes
+
+- ✨ Removed `at-rule-no-deprecated` rule because `apply` is no longer considered a deprecated at-keyword in `stylelint@16.22.0` ([`1e046aa`](https://github.com/culur/culur/commit/1e046aac47a0ca970c2e63654532376b17c233ee)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`35cc9e0`](https://github.com/culur/culur/commit/35cc9e023aa88e56389bad53078a22f2fc935b4d)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `stylelint-config-standard@^39.0.0`
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.6`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.4.8
 
 ### Patch Changes

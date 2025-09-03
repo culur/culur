@@ -1,5 +1,26 @@
 # @culur/generate-zod
 
+## 1.5.0
+
+### Minor Changes
+
+- 🚨 Add unit tests for `declarationName` and `declarationOutputName` options ([`f0cb355`](https://github.com/culur/culur/commit/f0cb355e7ffd287f70f48d91bc064576a5bab469)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`0a46398`](https://github.com/culur/culur/commit/0a463980038fd746a94bc89628340a858ff12174)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.39.10`
+  - `devDependencies`:
+    - `@types/async@^3.2.25`
+    - `ink@^6.2.3`
+    - `zx@^8.8.1`
+
+### Patch Changes
+
+- ⚙️ Fix `rimraf` command on Windows by adding `--glob` flag ([`d5c7476`](https://github.com/culur/culur/commit/d5c7476e65e7c96f2f74788b5a284ae7661ccb5b)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.5.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.4.0
 
 ### Minor Changes

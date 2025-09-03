@@ -1,5 +1,13 @@
 # @culur/utils-packages
 
+## 1.2.6
+
+### Patch Changes
+
+- 📦 Update dependencies ([`a429aec`](https://github.com/culur/culur/commit/a429aec5f45c0ea5306a6fc425f06bb503b3d8f1)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `local-pkg@^1.1.2`
+
 ## 1.2.5
 
 ### Patch Changes

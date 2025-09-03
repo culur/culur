@@ -1,6 +1,6 @@
 {
   "name": "@culur/generate-zod",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Culur's generate-zod",
   "publishConfig": {
     "access": "public"
@@ -83,7 +83,7 @@
     "zx": "^8.8.1"
   },
   "peerDependencies": {
-    "@culur/logger": ">=1.4.0",
+    "@culur/logger": ">=1.5.0",
     "@types/node": "*",
     "dedent": "*",
     "typescript": ">=5.7"

@@ -1,5 +1,26 @@
 # @culur/logger
 
+## 1.5.0
+
+### Minor Changes
+
+- ✨ Use `fallbackSymbols` from `figures` instead of `figureSet` to prevent rendering issues caused by `ink`'s updated `Box` component size calculation ([`85911d1`](https://github.com/culur/culur/commit/85911d1cdb8ecea1e66d5805134961b0ec116f68)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`a0f2890`](https://github.com/culur/culur/commit/a0f2890aeadfbb65e115b7e891cb47d9dc0c586e)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `chalk@^5.6.0`
+    - `es-toolkit@^1.39.10`
+    - `ink@^6.2.3`
+    - `react@^19.1.1`
+    - `string-width@^8.1.0`
+  - `devDependencies`:
+    - `@types/async@^3.2.25`
+    - `@types/react@^19.1.12`
+
+### Patch Changes
+
+- ⚙️ Move `FORCE_COLOR` and `NO_COLOR` to vitest setup to ensure consistent color output in tests ([`7c901b3`](https://github.com/culur/culur/commit/7c901b3ad15cfe8eed7ad0b60c3bd90b40500c81)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.4.0
 
 ### Minor Changes

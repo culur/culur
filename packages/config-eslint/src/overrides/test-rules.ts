@@ -2,8 +2,8 @@ import type { Linter } from 'eslint';
 import type { OverrideConfig } from '~/types';
 import vitest from '@vitest/eslint-plugin';
 
-declare module '@antfu/eslint-config' {
-  export interface Rules {
+declare module '~/types' {
+  export interface ExtraRules {
     // https://github.com/vitest-dev/eslint-plugin-vitest/blob/main/docs/rules/valid-title.md
     'test/valid-title': Linter.RuleEntry<
       [

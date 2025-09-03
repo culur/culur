@@ -18,7 +18,7 @@ it.each<OverrideConfig>([
   const [name, config] = overrideParameter;
 
   expect(typeof name).toEqual('string');
-  expectTypeOf(config).toMatchTypeOf<
+  expectTypeOf(config).toEqualTypeOf<
     TypedFlatConfigItem | (() => Awaitable<TypedFlatConfigItem>)
   >();
 });

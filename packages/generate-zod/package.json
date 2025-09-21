@@ -70,17 +70,17 @@
   "dependencies": {
     "async": "^3.2.6",
     "es-toolkit": "^1.39.10",
-    "ts-to-zod": "^4.0.0"
+    "ts-to-zod": "^4.0.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/logger": "workspace:*",
     "@types/async": "^3.2.25",
-    "ink": "^6.2.3",
+    "ink": "^6.3.1",
     "ink-testing-library": "^4.0.0",
     "zod": "^4.1.11",
-    "zx": "^8.8.1"
+    "zx": "^8.8.2"
   },
   "peerDependencies": {
     "@culur/logger": ">=1.5.0",

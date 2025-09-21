@@ -60,6 +60,6 @@
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@types/semver": "^7.7.0"
+    "@types/semver": "^7.7.1"
   }
 }

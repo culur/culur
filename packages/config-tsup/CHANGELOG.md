@@ -1,5 +1,11 @@
 # @culur/config-tsup
 
+## 1.2.6
+
+### Patch Changes
+
+- ✨ Replaced usage of `toMatchTypeOf` with `toEqualTypeOf` or `toExtend` in unit tests to align with updated Vitest API ([`e4788d2`](https://github.com/culur/culur/commit/e4788d27317ba99a4a4cbc645566d9b5289ee3b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.5
 
 ### Patch Changes

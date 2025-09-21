@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-tsup",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Culur's tsup configuration",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,25 @@
 # @culur/changesets-github-info
 
+## 1.1.14
+
+### Patch Changes
+
+- ✨ Replaced usage of `toMatchTypeOf` with `toEqualTypeOf` or `toExtend` in unit tests to align with updated Vitest API ([`e4788d2`](https://github.com/culur/culur/commit/e4788d27317ba99a4a4cbc645566d9b5289ee3b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.0`
+
+- ⚙️ Update dependencies ([`1f81ff2`](https://github.com/culur/culur/commit/1f81ff2a4c3a78bc61281e5fb40865c14409f5b7)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `@graphql-codegen/cli@6.0.0`
+    - `@graphql-codegen/typescript-operations@5.0.0`
+
+- 📝 Update README.md ([`154cb47`](https://github.com/culur/culur/commit/154cb47964c277810cb20a7b02503f03c7cb8995)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.3`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.13
 
 ### Patch Changes

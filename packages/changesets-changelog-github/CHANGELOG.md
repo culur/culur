@@ -1,5 +1,18 @@
 # @culur/changesets-changelog-github
 
+## 1.1.14
+
+### Patch Changes
+
+- ✨ Replaced usage of `toMatchTypeOf` with `toEqualTypeOf` or `toExtend` in unit tests to align with updated Vitest API ([`e4788d2`](https://github.com/culur/culur/commit/e4788d27317ba99a4a4cbc645566d9b5289ee3b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `dedent@^1.7.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.14`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.13
 
 ### Patch Changes

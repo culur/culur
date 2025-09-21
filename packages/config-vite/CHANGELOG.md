@@ -1,5 +1,12 @@
 # @culur/config-vite
 
+## 1.3.6
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.3`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.5
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @culur/logger
 
+## 1.6.0
+
+### Minor Changes
+
+- ✨ Transform `export *` statements into explicit exports ([`1ddc1f5`](https://github.com/culur/culur/commit/1ddc1f55bd22aad17c12806ad4e5192e53294ce8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`2df0eaf`](https://github.com/culur/culur/commit/2df0eafe23a94f6eb32652bab48dfd3e37c4116e)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `chalk@^5.6.2`
+    - `dedent@^1.7.0`
+    - `ink@^6.3.1`
+  - `devDependencies`:
+    - `@types/react@^19.1.13`
+
 ## 1.5.0
 
 ### Minor Changes

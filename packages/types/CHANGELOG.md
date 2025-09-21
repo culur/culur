@@ -1,5 +1,19 @@
 # @culur/types
 
+## 1.3.3
+
+### Patch Changes
+
+- ✨ Replaced usage of `toMatchTypeOf` with `toEqualTypeOf` or `toExtend` in unit tests to align with updated Vitest API ([`e4788d2`](https://github.com/culur/culur/commit/e4788d27317ba99a4a4cbc645566d9b5289ee3b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Update `entries` types ([`f27e3ee`](https://github.com/culur/culur/commit/f27e3ee9f139603a6c0891fe2e43ea20957d197b)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`f8a0a65`](https://github.com/culur/culur/commit/f8a0a656db67132417312e3b27e59e8c1c3f0ef8)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `type-fest@^5.0.1`
+
+- ✨ Transform export \* statements into explicit exports ([`9c9b417`](https://github.com/culur/culur/commit/9c9b417d7fa88a4038e4c97468d0002d7680dbe1)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.2
 
 ### Patch Changes

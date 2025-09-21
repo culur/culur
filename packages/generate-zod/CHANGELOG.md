@@ -1,5 +1,29 @@
 # @culur/generate-zod
 
+## 2.0.0
+
+### Minor Changes
+
+- ⚙️ Update dependencies ([`5f3cb88`](https://github.com/culur/culur/commit/5f3cb88533af313d7ad3b69e9e2b60d496297d88)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `ts-to-zod@^4.0.0`
+  - `devDependencies`:
+    - `zod@^4.1.11`
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`9a0e884`](https://github.com/culur/culur/commit/9a0e8845ca8728eb96bf90d35197cab472763f24)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `ts-to-zod@^4.0.1`
+  - `devDependencies`:
+    - `ink@^6.3.1`
+    - `zx@^8.8.2`
+
+- 🚨 Updated unit tests for Zod v4 compatibility (e.g. replaced `nativeEnum` with `enum`) ([`c7c1c68`](https://github.com/culur/culur/commit/c7c1c689a844a1b23af8c373c610ecf9feeb5366)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.6.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 1.5.0
 
 ### Minor Changes

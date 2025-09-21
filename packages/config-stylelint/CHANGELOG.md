@@ -1,5 +1,20 @@
 # @culur/config-stylelint
 
+## 1.6.0
+
+### Minor Changes
+
+- ✨ Transform `export *` statements into explicit exports ([`da5f70c`](https://github.com/culur/culur/commit/da5f70cfad8dc733fe2ab4f4a429faeae973e5be)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📦 Update dependencies ([`f7d6c3a`](https://github.com/culur/culur/commit/f7d6c3a7bf1df096381de6bca78c80e83d3e8d68)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `stylelint-config-standard-scss@^16.0.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.7`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.5.0
 
 ### Minor Changes

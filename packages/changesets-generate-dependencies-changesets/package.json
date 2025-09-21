@@ -59,8 +59,8 @@
     "@actions/github": "^6.0.1",
     "@culur/types": "workspace:*",
     "@octokit/webhooks-types": "^7.6.1",
-    "dedent": "^1.6.0",
-    "fs-extra": "^11.3.1",
+    "dedent": "^1.7.0",
+    "fs-extra": "^11.3.2",
     "minimatch": "^10.0.3"
   },
   "devDependencies": {

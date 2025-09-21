@@ -1,4 +1,4 @@
-import type { ObjectEntries } from 'type-fest/source/entries';
+import type { Entries } from 'type-fest';
 import { describe, expectTypeOf, it } from 'vitest';
 import { entries, keys } from './array';
 
@@ -7,14 +7,14 @@ describe('entries', () => {
     const object = { foo: 1, bar: 2 };
     const entriesArray = entries(object);
 
-    expectTypeOf(entriesArray).toMatchTypeOf<ObjectEntries<typeof object>>();
+    expectTypeOf(entriesArray).toMatchTypeOf<Entries<typeof object>>();
   });
 
   it('should be valid type with array', () => {
     const array = ['foo', 'bar'] as const;
     const entriesArray = entries(array);
 
-    expectTypeOf(entriesArray).toMatchTypeOf<ObjectEntries<typeof array>>();
+    expectTypeOf(entriesArray).toMatchTypeOf<Entries<typeof array>>();
   });
 });
 

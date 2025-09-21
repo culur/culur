@@ -65,8 +65,8 @@
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@graphql-codegen/cli": "5.0.7",
-    "@graphql-codegen/typescript-operations": "4.6.1",
+    "@graphql-codegen/cli": "6.0.0",
+    "@graphql-codegen/typescript-operations": "5.0.0",
     "@octokit/graphql-schema": "^15.26.0",
     "graphql": "^16.11.0"
   }

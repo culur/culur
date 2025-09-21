@@ -12,7 +12,7 @@ type DescribeLoggerParams = [
   options?: { width?: number },
 ];
 
-function describeLogger(name: string, ...args: DescribeLoggerParams) {
+export function describeLogger(name: string, ...args: DescribeLoggerParams) {
   describe(name, () => {
     suiteFactory(...args);
   });
@@ -72,5 +72,3 @@ function suiteFactory(
     logger.unmount();
   });
 }
-
-export { describeLogger };

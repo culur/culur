@@ -1,7 +1,10 @@
-export * from './box-icon';
-export * from './box-syntax-js';
-export * from './line';
-export * from './line-col';
-export * from './line-cols';
-export * from './line-cols.types';
-export * from './text-timer';
+export type { BoxIconProps } from './box-icon';
+export { BoxIcon } from './box-icon';
+export { BoxSyntaxJS } from './box-syntax-js';
+export type { LineProps } from './line';
+export { Line } from './line';
+export { LineCol } from './line-col';
+export { LineCols } from './line-cols';
+export type { LineColProps, LineColsProps } from './line-cols.types';
+export { toLineCols } from './line-cols.types';
+export { TextTimer } from './text-timer';

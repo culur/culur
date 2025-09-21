@@ -1,4 +1,4 @@
-export * from './dedent';
-export * from './describe-lint-and-fix';
-export * from './describe-rule-or-config';
-export * from './syntax';
+export { css, html, scss } from './dedent';
+export { describeLintAndFix } from './describe-lint-and-fix';
+export { describeConfig, describeRule } from './describe-rule-or-config';
+export { syntaxScss } from './syntax';

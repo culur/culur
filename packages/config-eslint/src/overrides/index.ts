@@ -1,4 +1,4 @@
-export * from './imports-rules';
-export * from './sort-package-json';
-export * from './test-rules';
-export * from './vue-rules';
+export { importsRules } from './imports-rules';
+export { sortPackageJson } from './sort-package-json';
+export { testRules } from './test-rules';
+export { vueRules } from './vue-rules';

@@ -10,7 +10,7 @@ describe('defineObject', () => {
       foo: 'foo',
     });
 
-    expectTypeOf(object).toMatchTypeOf<{
+    expectTypeOf(object).toEqualTypeOf<{
       foo: string;
     }>();
   });
@@ -26,7 +26,7 @@ describe('defineObject', () => {
       foo: 'foo',
     });
 
-    expectTypeOf(object).toMatchTypeOf<
+    expectTypeOf(object).toEqualTypeOf<
       | { foo?: string | number; bar?: boolean } //
       | { foo: string }
     >();

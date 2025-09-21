@@ -7,14 +7,14 @@ describe('entries', () => {
     const object = { foo: 1, bar: 2 };
     const entriesArray = entries(object);
 
-    expectTypeOf(entriesArray).toMatchTypeOf<Entries<typeof object>>();
+    expectTypeOf(entriesArray).toEqualTypeOf<Entries<typeof object>>();
   });
 
   it('should be valid type with array', () => {
     const array = ['foo', 'bar'] as const;
     const entriesArray = entries(array);
 
-    expectTypeOf(entriesArray).toMatchTypeOf<Entries<typeof array>>();
+    expectTypeOf(entriesArray).toEqualTypeOf<Entries<typeof array>>();
   });
 });
 
@@ -23,6 +23,6 @@ describe('keys', () => {
     const object = { foo: 1, bar: 2 };
     const keysArray = keys(object);
 
-    expectTypeOf(keysArray).toMatchTypeOf<('foo' | 'bar')[]>();
+    expectTypeOf(keysArray).toEqualTypeOf<('foo' | 'bar')[]>();
   });
 });

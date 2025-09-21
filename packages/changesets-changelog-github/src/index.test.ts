@@ -3,5 +3,5 @@ import { expectTypeOf, it } from 'vitest';
 import changelogFunctions from '.';
 
 it('index', () => {
-  expectTypeOf(changelogFunctions).toMatchTypeOf<ChangelogFunctions>();
+  expectTypeOf(changelogFunctions).toEqualTypeOf<ChangelogFunctions>();
 });

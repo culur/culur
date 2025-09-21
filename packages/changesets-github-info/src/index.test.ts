@@ -17,7 +17,7 @@ it('config esm', () => {
     link: string;
   }
 
-  expectTypeOf(getInfo).toMatchTypeOf<{
+  expectTypeOf(getInfo).toEqualTypeOf<{
     getCommitInfo: (props: {
       repo: `${string}/${string}`;
       commitHash: string;

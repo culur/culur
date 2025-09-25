@@ -1,5 +1,16 @@
 # @culur/config-vite
 
+## 1.3.7
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`7fbdba2`](https://github.com/culur/culur/commit/7fbdba2c5ce57b11d3dc63d57113d899ea387c1d)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `peerDependencies`:
+    - `@vitest/coverage-v8@^3.2.4`,
+    - `@vitest/ui@^3.2.4`,
+    - `vite@^7.1.6`,
+    - `vitest@^3.2.4`
+
 ## 1.3.6
 
 ### Patch Changes

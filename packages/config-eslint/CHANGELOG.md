@@ -1,5 +1,13 @@
 # @culur/config-eslint
 
+## 1.6.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`b3ebc54`](https://github.com/culur/culur/commit/b3ebc54a4619ada7880620dd9950d2aac85e0623)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.22`
+
 ## 1.6.0
 
 ### Minor Changes

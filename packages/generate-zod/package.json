@@ -80,7 +80,7 @@
     "ink": "^6.3.1",
     "ink-testing-library": "^4.0.0",
     "zod": "^4.1.11",
-    "zx": "^8.8.2"
+    "zx": "^8.8.3"
   },
   "peerDependencies": {
     "@culur/logger": ">=1.6.0",

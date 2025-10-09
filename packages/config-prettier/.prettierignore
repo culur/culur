@@ -263,3 +263,10 @@ typed-router.d.ts
 
 # style (ignore sass)
 *.sass
+
+# cert/pem
+*.crt
+*.pem
+
+# PowerShell
+*.ps1

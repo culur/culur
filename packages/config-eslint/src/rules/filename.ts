@@ -16,7 +16,13 @@ export const filenameRules: TypedFlatConfigItem = {
       'error',
       {
         case: 'kebabCase',
-        ignore: ['README.md', 'CHANGELOG.md'],
+        ignore: [
+          '^ADR-\\w+\\.md',
+          '^ARCHITECTURE\\.md',
+          '^CHANGELOG\\.md',
+          '^CONTRIBUTING\\.md',
+          '^README\\.md',
+        ],
       },
     ],
   },

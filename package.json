@@ -52,9 +52,9 @@
   "packageManager": "pnpm@10.17.1",
   "devDependencies": {
     "@changesets/cli": "^2.29.7",
-    "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
-    "@commitlint/types": "^19.8.1",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/types": "^20.0.0",
     "@culur/changesets-changelog-github": "workspace:*",
     "@culur/config-eslint": "workspace:*",
     "@culur/config-prettier": "workspace:*",

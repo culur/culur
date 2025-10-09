@@ -20,6 +20,7 @@ export default function defineConfig(config: Config = {}): Config {
           // alphabetical order
           '.babelrc', // (alias for .babelrc.json) https://babeljs.io/docs/config-files#supported-file-extensions
           '.czrc', // https://github.com/commitizen/cz-cli
+          '.dclintrc', // https://github.com/zavoloklom/docker-compose-linter?tab=readme-ov-file#configuration
           '.eslintrc', // https://eslint.org/docs/latest/use/configure/configuration-files-deprecated
           '.gqlconfig', // https://marketplace.visualstudio.com/items?itemName=kumar-harsh.graphql-for-vscode
           '.ncurc', // https://github.com/raineorshine/npm-check-updates?tab=readme-ov-file#config-file

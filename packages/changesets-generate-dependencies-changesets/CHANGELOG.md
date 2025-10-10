@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `dedent@^1.7.0`
     - `fs-extra@^11.3.2`
@@ -16,7 +16,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`c29123d`](https://github.com/culur/culur/commit/c29123d1251df75f399ec2933d5d4d52770ef8f2)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`c29123d`](https://github.com/culur/culur/commit/c29123d1251df75f399ec2933d5d4d52770ef8f2)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `fs-extra@^11.3.1`
 
@@ -24,7 +24,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `minimatch@^10.0.3`
 
@@ -46,7 +46,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@actions/github@^6.0.1`
   - `devDependencies`:
@@ -81,7 +81,7 @@
 
   This ensures only standard `package.json` files in subdirectories are targeted, avoiding matches with files like `package.json5` or `custom-package.json`.
 
-- ⚙️ Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
   - `devDependencies`:
     - `type-fest@^4.40.1`
 

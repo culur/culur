@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`246ad8f`](https://github.com/culur/culur/commit/246ad8f82c3afc55c334de001a5ea0cdf30b3e46)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`246ad8f`](https://github.com/culur/culur/commit/246ad8f82c3afc55c334de001a5ea0cdf30b3e46)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.40.0`
   - `devDependencies`:
@@ -29,7 +29,7 @@
 
 ### Minor Changes
 
-- ⚙️ Update dependencies ([`5f3cb88`](https://github.com/culur/culur/commit/5f3cb88533af313d7ad3b69e9e2b60d496297d88)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`5f3cb88`](https://github.com/culur/culur/commit/5f3cb88533af313d7ad3b69e9e2b60d496297d88)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `ts-to-zod@^4.0.0`
   - `devDependencies`:
@@ -37,7 +37,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`9a0e884`](https://github.com/culur/culur/commit/9a0e8845ca8728eb96bf90d35197cab472763f24)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`9a0e884`](https://github.com/culur/culur/commit/9a0e8845ca8728eb96bf90d35197cab472763f24)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `ts-to-zod@^4.0.1`
   - `devDependencies`:
@@ -55,7 +55,7 @@
 
 - 🚨 Add unit tests for `declarationName` and `declarationOutputName` options ([`f0cb355`](https://github.com/culur/culur/commit/f0cb355e7ffd287f70f48d91bc064576a5bab469)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([`0a46398`](https://github.com/culur/culur/commit/0a463980038fd746a94bc89628340a858ff12174)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`0a46398`](https://github.com/culur/culur/commit/0a463980038fd746a94bc89628340a858ff12174)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.39.10`
   - `devDependencies`:
@@ -78,7 +78,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#342](https://github.com/culur/culur/pull/342) [`e718994`](https://github.com/culur/culur/commit/e7189942f190e948ac0353d2d0f58da14a5867fe)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#342](https://github.com/culur/culur/pull/342) [`e718994`](https://github.com/culur/culur/commit/e7189942f190e948ac0353d2d0f58da14a5867fe)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.39.7`
   - `devDependencies`:
@@ -100,7 +100,7 @@
 
 - ✨ Add `GenerateZodOptions` ([`79f2833`](https://github.com/culur/culur/commit/79f28335f99f4d836d9cb0eb77bb1754e9272dec)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([#334](https://github.com/culur/culur/pull/334) [`ec70423`](https://github.com/culur/culur/commit/ec704234132a6ac121780f8cfd4c0201eda90729)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#334](https://github.com/culur/culur/pull/334) [`ec70423`](https://github.com/culur/culur/commit/ec704234132a6ac121780f8cfd4c0201eda90729)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.39.5`
   - `devDependencies`:
@@ -153,7 +153,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#311](https://github.com/culur/culur/pull/311) [`14640c2`](https://github.com/culur/culur/commit/14640c2b0b84e2f52ca7556c50043418d8dfcd45)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#311](https://github.com/culur/culur/pull/311) [`14640c2`](https://github.com/culur/culur/commit/14640c2b0b84e2f52ca7556c50043418d8dfcd45)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.38.0`
   - `devDependencies`:

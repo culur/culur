@@ -45,7 +45,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#331](https://github.com/culur/culur/pull/331) [`248cf1c`](https://github.com/culur/culur/commit/248cf1c092e974cdb1de34f7686b56425b93d33d)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#331](https://github.com/culur/culur/pull/331) [`248cf1c`](https://github.com/culur/culur/commit/248cf1c092e974cdb1de34f7686b56425b93d33d)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `stylelint-scss@^6.12.1`
   - `devDependencies`:
@@ -95,7 +95,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#283](https://github.com/culur/culur/pull/283) [`5b99af5`](https://github.com/culur/culur/commit/5b99af56f161dbe39de56a8f6f4cd1b1830c3f75)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#283](https://github.com/culur/culur/pull/283) [`5b99af5`](https://github.com/culur/culur/commit/5b99af56f161dbe39de56a8f6f4cd1b1830c3f75)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `stylelint-scss@^6.12.0`
   - `devDependencies`:
@@ -114,7 +114,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`c077512`](https://github.com/culur/culur/commit/c07751289b64cfbf00b628b6e4b54ab4bc05f5e8)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`c077512`](https://github.com/culur/culur/commit/c07751289b64cfbf00b628b6e4b54ab4bc05f5e8)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `stylelint-config-standard@^38.0.0`
     - `stylelint-order@^7.0.0`

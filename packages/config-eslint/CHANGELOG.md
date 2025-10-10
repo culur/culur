@@ -1,5 +1,24 @@
 # @culur/config-eslint
 
+## 1.6.2
+
+### Patch Changes
+
+- ✨ Expand `filename` rule ignore list for docs ([`d845a2b`](https://github.com/culur/culur/commit/d845a2babc49fb24d26d8e1c02d2089c06fd7f0c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Allow ADR, architecture, changelog, contributing, and README files without renaming when linting.
+
+- 🔨 Split the YarnRC YAML rule into dedicated modules to clean up helper exports ([`3a3d801`](https://github.com/culur/culur/commit/3a3d801f602cea575ce7099cfb3e807392bb5b21)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Separated the shared `yamlOrder` helper and renamed the rule file so the exports align with the new module layout.
+
+- 📦 Update dependencies ([`2670963`](https://github.com/culur/culur/commit/26709635734e303dce119bd613d2a167ccee0879)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.3.16`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.8`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.6.1
 
 ### Patch Changes

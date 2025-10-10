@@ -1,5 +1,16 @@
 # @culur/logger
 
+## 1.6.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`a0f76cb`](https://github.com/culur/culur/commit/a0f76cb3624afa049489ac4fe6c6f189cd9f541a)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.40.0`
+    - `react@^19.2.0`
+  - `devDependencies`:
+    - `@types/react@^19.2.2`
+
 ## 1.6.0
 
 ### Minor Changes

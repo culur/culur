@@ -1,5 +1,19 @@
 # @culur/generate-zod
 
+## 2.0.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`246ad8f`](https://github.com/culur/culur/commit/246ad8f82c3afc55c334de001a5ea0cdf30b3e46)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.40.0`
+  - `devDependencies`:
+    - `zod@^4.1.12`
+    - `zx@^8.8.4`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.6.1`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 2.0.1
 
 ### Patch Changes

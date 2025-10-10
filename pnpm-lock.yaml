@@ -374,7 +374,7 @@ importers:
         specifier: '*'
         version: 1.7.0
       es-toolkit:
-        specifier: ^1.39.10
+        specifier: ^1.40.0
         version: 1.40.0
       ts-to-zod:
         specifier: ^4.0.1
@@ -402,11 +402,11 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0(@types/react@19.1.13)
       zod:
-        specifier: ^4.1.11
-        version: 4.1.11
+        specifier: ^4.1.12
+        version: 4.1.12
       zx:
-        specifier: ^8.8.3
-        version: 8.8.3
+        specifier: ^8.8.4
+        version: 8.8.4
 
   packages/logger:
     dependencies:
@@ -6595,14 +6595,14 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.1.11:
-    resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
+  zod@4.1.12:
+    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  zx@8.8.3:
-    resolution: {integrity: sha512-8GWaBTVU6wzTdqO0v5qwGMUFLCYduW7UUxaliRD+FXGRfYM8KLDGL93idbdGFLomHDi18ZxCfhAJqYZB8rJNvw==}
+  zx@8.8.4:
+    resolution: {integrity: sha512-44GcD+ZlM/v1OQtbwnSxLPcoE1ZEUICmR+RSbJZLAqfIixNLuMjLyh0DcS75OyfJ/sWYAwCWDmDvJ4hdnANAPQ==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -7598,7 +7598,7 @@ snapshots:
       '@eslint-react/eff': 1.53.1
       '@typescript-eslint/utils': 8.46.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       ts-pattern: 5.8.0
-      zod: 4.1.11
+      zod: 4.1.12
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -7620,7 +7620,7 @@ snapshots:
       '@eslint-react/kit': 1.53.1(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/utils': 8.46.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       ts-pattern: 5.8.0
-      zod: 4.1.11
+      zod: 4.1.12
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -7633,7 +7633,7 @@ snapshots:
       '@eslint-react/kit': 2.0.6(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/utils': 8.46.0(eslint@9.37.0(jiti@2.6.1))(typescript@5.9.3)
       ts-pattern: 5.8.0
-      zod: 4.1.11
+      zod: 4.1.12
     transitivePeerDependencies:
       - eslint
       - supports-color
@@ -8925,7 +8925,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.2
+      semver: 7.7.3
       ts-api-utils: 2.1.0(typescript@5.9.3)
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -10219,8 +10219,8 @@ snapshots:
       '@babel/parser': 7.28.4
       eslint: 9.37.0(jiti@2.6.1)
       hermes-parser: 0.25.1
-      zod: 4.1.11
-      zod-validation-error: 4.0.2(zod@4.1.11)
+      zod: 4.1.12
+      zod-validation-error: 4.0.2(zod@4.1.12)
     transitivePeerDependencies:
       - supports-color
 
@@ -13240,7 +13240,7 @@ snapshots:
       tslib: 2.8.1
       tsutils: 3.21.0(typescript@5.9.3)
       typescript: 5.9.3
-      zod: 4.1.11
+      zod: 4.1.12
     transitivePeerDependencies:
       - supports-color
 
@@ -13685,12 +13685,12 @@ snapshots:
 
   yoga-layout@3.2.1: {}
 
-  zod-validation-error@4.0.2(zod@4.1.11):
+  zod-validation-error@4.0.2(zod@4.1.12):
     dependencies:
-      zod: 4.1.11
+      zod: 4.1.12
 
-  zod@4.1.11: {}
+  zod@4.1.12: {}
 
   zwitch@2.0.4: {}
 
-  zx@8.8.3: {}
+  zx@8.8.4: {}

@@ -1,12 +1,23 @@
 # @culur/changesets-changelog-github
 
+## 1.1.15
+
+### Patch Changes
+
+- 📦 Update dependencies ([`1fb1628`](https://github.com/culur/culur/commit/1fb16288053bb5d3aed441286a87bc6e7b40495d)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dotenv@^17.2.3`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.15`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.14
 
 ### Patch Changes
 
 - ✨ Replaced usage of `toMatchTypeOf` with `toEqualTypeOf` or `toExtend` in unit tests to align with updated Vitest API ([`e4788d2`](https://github.com/culur/culur/commit/e4788d27317ba99a4a4cbc645566d9b5289ee3b4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`ede8599`](https://github.com/culur/culur/commit/ede859932f8536485c91433a29a2942f88c1db17)) ([@renovate](https://github.com/apps/renovate)):
   - `devDependencies`:
     - `dedent@^1.7.0`
 
@@ -17,7 +28,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`c29123d`](https://github.com/culur/culur/commit/c29123d1251df75f399ec2933d5d4d52770ef8f2)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`c29123d`](https://github.com/culur/culur/commit/c29123d1251df75f399ec2933d5d4d52770ef8f2)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `dotenv@^17.2.2`
 
@@ -39,7 +50,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#330](https://github.com/culur/culur/pull/330) [`27e30e3`](https://github.com/culur/culur/commit/27e30e304717fd19fd785dcf3b6ce87b5a2bca71)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `dotenv@^16.6.0`
 
@@ -68,7 +79,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#294](https://github.com/culur/culur/pull/294) [`dd0019c`](https://github.com/culur/culur/commit/dd0019c471807e696b1bbc6f03be969d5d519dc5)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `type-fest@^4.41.0`
 
@@ -94,7 +105,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`e6c1c88`](https://github.com/culur/culur/commit/e6c1c888fc2d1337eae8001fec5caf7d6724b268)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `dotenv@^16.5.0`
     - `type-fest@^4.40.1`

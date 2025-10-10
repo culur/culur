@@ -1,6 +1,6 @@
 {
   "name": "@culur/utils-packages",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "Culur's packages exist",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,24 @@
 # @culur/config-eslint
 
+## 1.6.2
+
+### Patch Changes
+
+- ✨ Expand `filename` rule ignore list for docs ([`d845a2b`](https://github.com/culur/culur/commit/d845a2babc49fb24d26d8e1c02d2089c06fd7f0c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Allow ADR, architecture, changelog, contributing, and README files without renaming when linting.
+
+- 🔨 Split the YarnRC YAML rule into dedicated modules to clean up helper exports ([`3a3d801`](https://github.com/culur/culur/commit/3a3d801f602cea575ce7099cfb3e807392bb5b21)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Separated the shared `yamlOrder` helper and renamed the rule file so the exports align with the new module layout.
+
+- 📦 Update dependencies ([`2670963`](https://github.com/culur/culur/commit/26709635734e303dce119bd613d2a167ccee0879)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.3.16`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.2.8`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.6.1
 
 ### Patch Changes
@@ -29,7 +48,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`052e599`](https://github.com/culur/culur/commit/052e599f60812e1ca272a555dcce5dc56a72e002)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`052e599`](https://github.com/culur/culur/commit/052e599f60812e1ca272a555dcce5dc56a72e002)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.19.0`
     - `@vitest/eslint-plugin@^1.3.6`
@@ -45,7 +64,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#343](https://github.com/culur/culur/pull/343) [`57e1f33`](https://github.com/culur/culur/commit/57e1f339f1cb34062b2aa54d1efa05b7b40c1736)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#343](https://github.com/culur/culur/pull/343) [`57e1f33`](https://github.com/culur/culur/commit/57e1f339f1cb34062b2aa54d1efa05b7b40c1736)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.17.0`
     - `@vitest/eslint-plugin@^1.3.4`
@@ -56,7 +75,7 @@
 
 - ⚙️ Remove `import/no-deprecated` since `@antfu/eslint-config` removed `eslint-plugin-import-x` ([#333](https://github.com/culur/culur/pull/333) [`4c52e79`](https://github.com/culur/culur/commit/4c52e79211d67cae5da504e3b3020078f5bb5585)) ([@renovate](https://github.com/apps/renovate)).
 
-- ⚙️ Update dependencies ([#333](https://github.com/culur/culur/pull/333) [`0311ae7`](https://github.com/culur/culur/commit/0311ae7ddfdf83bb62705639d38943e965376ef2)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#333](https://github.com/culur/culur/pull/333) [`0311ae7`](https://github.com/culur/culur/commit/0311ae7ddfdf83bb62705639d38943e965376ef2)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.16.1`
     - `@vitest/eslint-plugin@^1.3.3`
@@ -80,7 +99,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([#308](https://github.com/culur/culur/pull/308) [`512c70a`](https://github.com/culur/culur/commit/512c70a8302b3d94af1dbd76ef7b05a3b49f411a)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#308](https://github.com/culur/culur/pull/308) [`512c70a`](https://github.com/culur/culur/commit/512c70a8302b3d94af1dbd76ef7b05a3b49f411a)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.13.2`
     - `@vitest/eslint-plugin@^1.2.1`
@@ -105,7 +124,7 @@
 
 - 📦 Remove useless packages ([`520934f`](https://github.com/culur/culur/commit/520934f108d91d6b24145a3cef037de847caebb4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([#296](https://github.com/culur/culur/pull/296) [`ebf776e`](https://github.com/culur/culur/commit/ebf776e8ad796526cc9fba72a5c516b65f7f077f)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#296](https://github.com/culur/culur/pull/296) [`ebf776e`](https://github.com/culur/culur/commit/ebf776e8ad796526cc9fba72a5c516b65f7f077f)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.13.0`
   - `devDependencies`:
@@ -151,7 +170,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`3e1bde7`](https://github.com/culur/culur/commit/3e1bde7c0641a97c5b48e44294bb856b1b1988b4)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`3e1bde7`](https://github.com/culur/culur/commit/3e1bde7c0641a97c5b48e44294bb856b1b1988b4)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `@antfu/eslint-config@^4.12.0`
   - `devDependencies`:

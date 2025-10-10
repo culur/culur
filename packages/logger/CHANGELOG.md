@@ -1,5 +1,16 @@
 # @culur/logger
 
+## 1.6.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`a0f76cb`](https://github.com/culur/culur/commit/a0f76cb3624afa049489ac4fe6c6f189cd9f541a)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.40.0`
+    - `react@^19.2.0`
+  - `devDependencies`:
+    - `@types/react@^19.2.2`
+
 ## 1.6.0
 
 ### Minor Changes
@@ -8,7 +19,7 @@
 
 ### Patch Changes
 
-- ⚙️ Update dependencies ([`2df0eaf`](https://github.com/culur/culur/commit/2df0eafe23a94f6eb32652bab48dfd3e37c4116e)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`2df0eaf`](https://github.com/culur/culur/commit/2df0eafe23a94f6eb32652bab48dfd3e37c4116e)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `chalk@^5.6.2`
     - `dedent@^1.7.0`
@@ -22,7 +33,7 @@
 
 - ✨ Use `fallbackSymbols` from `figures` instead of `figureSet` to prevent rendering issues caused by `ink`'s updated `Box` component size calculation ([`85911d1`](https://github.com/culur/culur/commit/85911d1cdb8ecea1e66d5805134961b0ec116f68)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([`a0f2890`](https://github.com/culur/culur/commit/a0f2890aeadfbb65e115b7e891cb47d9dc0c586e)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`a0f2890`](https://github.com/culur/culur/commit/a0f2890aeadfbb65e115b7e891cb47d9dc0c586e)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `chalk@^5.6.0`
     - `es-toolkit@^1.39.10`
@@ -49,7 +60,7 @@
 
 - ✨ Add try catch to `formatData` ([`6a17fe6`](https://github.com/culur/culur/commit/6a17fe64b2a1dffe74cac33ddb01bba6463878e8)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([#335](https://github.com/culur/culur/pull/335) [`572415e`](https://github.com/culur/culur/commit/572415eeba78abaa0283a9d7e5546f6d49a21c9c)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#335](https://github.com/culur/culur/pull/335) [`572415e`](https://github.com/culur/culur/commit/572415eeba78abaa0283a9d7e5546f6d49a21c9c)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.39.5`
     - `ink@^6.0.1`
@@ -82,7 +93,7 @@
 
 - ✨ Update types ([`82a3eb4`](https://github.com/culur/culur/commit/82a3eb4c7ae8b59754d0159dffd9824082041c90)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([`fc8de0b`](https://github.com/culur/culur/commit/fc8de0b198a632694d0fe7546881faeb7082f49d)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([`fc8de0b`](https://github.com/culur/culur/commit/fc8de0b198a632694d0fe7546881faeb7082f49d)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `ink@^6.0.0`
     - `react@^19.1.0`
@@ -97,7 +108,7 @@
 
 - ✨ Move `concurrency` into `Tasks` property ([`0d762de`](https://github.com/culur/culur/commit/0d762dee29960b0977be376d0ec26de253612910)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([#310](https://github.com/culur/culur/pull/310) [`d42acdc`](https://github.com/culur/culur/commit/d42acdcf95b3238cdabe79d81d2af93726f312ce)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#310](https://github.com/culur/culur/pull/310) [`d42acdc`](https://github.com/culur/culur/commit/d42acdcf95b3238cdabe79d81d2af93726f312ce)) ([@renovate](https://github.com/apps/renovate)):
   - `dependencies`:
     - `es-toolkit@^1.38.0`
   - `devDependencies`:
@@ -132,7 +143,7 @@
 
 - ✨ Rename `stopOnError` to `isReturnOrThrow` ([`addbb36`](https://github.com/culur/culur/commit/addbb3641e15e4d8049ef8fac87b1d7f7e4c0edc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
 
-- ⚙️ Update dependencies ([#295](https://github.com/culur/culur/pull/295) [`1707b12`](https://github.com/culur/culur/commit/1707b12cca15a9d694238cb8264f1b0c423455ee)) ([@renovate](https://github.com/apps/renovate)):
+- 📦 Update dependencies ([#295](https://github.com/culur/culur/pull/295) [`1707b12`](https://github.com/culur/culur/commit/1707b12cca15a9d694238cb8264f1b0c423455ee)) ([@renovate](https://github.com/apps/renovate)):
   - `devDependencies`:
     - `@types/react@^18.3.21`
     - `type-fest@^4.41.0`

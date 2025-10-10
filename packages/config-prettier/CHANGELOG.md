@@ -1,5 +1,17 @@
 # @culur/config-prettier
 
+## 1.3.6
+
+### Patch Changes
+
+- ✨ Ignore generated certificate and PowerShell files in Prettier formatting ([`c394022`](https://github.com/culur/culur/commit/c394022c75d9e91c7cc85ac4d5ad1790fca2c33e)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Prevent Prettier from touching certificate artifacts and PowerShell scripts that should stay unformatted.
+
+- ✨ Include `.dclintrc` in the default ignore list ([`8cf3489`](https://github.com/culur/culur/commit/8cf3489c1666d59d2e1b22f62447b91dc858de7b)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Ensures Docker Compose Linter config files are treated like other tool configs when generating Prettier overrides.
+
 ## 1.3.5
 
 ### Patch Changes

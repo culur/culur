@@ -29,7 +29,7 @@
         "default": "./dist/shareable-configs/auto.js"
       },
       "require": {
-        "types": "./shareable-configs/auto.d.cts",
+        "types": "./dist/shareable-configs/auto.d.cts",
         "default": "./dist/shareable-configs/auto.cjs"
       }
     },
@@ -39,7 +39,7 @@
         "default": "./dist/shareable-configs/*.js"
       },
       "require": {
-        "types": "./shareable-configs/*.d.cts",
+        "types": "./dist/shareable-configs/*.d.cts",
         "default": "./dist/shareable-configs/*.cjs"
       }
     },

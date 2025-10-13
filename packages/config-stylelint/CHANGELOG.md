@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.6.2
+
+### Patch Changes
+
+- ✨ Align package exports with dist outputs ([`08032ac`](https://github.com/culur/culur/commit/08032ac5e20775ff1be2b5af84355b4c278f72f6)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.6.1
 
 ### Patch Changes

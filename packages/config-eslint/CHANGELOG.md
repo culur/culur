@@ -1,5 +1,17 @@
 # @culur/config-eslint
 
+## 1.7.0
+
+### Minor Changes
+
+- ✨ Remove redundant exports ([`6afa288`](https://github.com/culur/culur/commit/6afa288e05f5f1bc94bb9425c7efd77ba346c7cd)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📦 Update dependencies ([#398](https://github.com/culur/culur/pull/398) [`71aeeba`](https://github.com/culur/culur/commit/71aeeba8eed3a9a4ec4f04490c57345e42f1d1c1)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.3.17`
+
 ## 1.6.2
 
 ### Patch Changes

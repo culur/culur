@@ -1,5 +1,11 @@
 # @culur/logger
 
+## 1.6.2
+
+### Patch Changes
+
+- ✨ Configure tsup build for dual CJS/ESM output ([`0120279`](https://github.com/culur/culur/commit/012027950e666ddb8b6b2fba12276f26444f2c28)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.6.1
 
 ### Patch Changes

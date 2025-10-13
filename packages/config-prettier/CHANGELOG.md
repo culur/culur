@@ -1,5 +1,11 @@
 # @culur/config-prettier
 
+## 1.3.7
+
+### Patch Changes
+
+- ✨ Ignore `.env.example` in prettier ([`ca1a336`](https://github.com/culur/culur/commit/ca1a33656149a319d322a607ed4e4882f388641f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.6
 
 ### Patch Changes

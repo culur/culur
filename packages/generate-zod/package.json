@@ -70,7 +70,7 @@
   "dependencies": {
     "async": "^3.2.6",
     "es-toolkit": "^1.40.0",
-    "ts-to-zod": "^4.0.1"
+    "ts-to-zod": "^5.0.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

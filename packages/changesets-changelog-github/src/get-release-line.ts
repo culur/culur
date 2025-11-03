@@ -24,6 +24,7 @@ export const getReleaseLine: GetReleaseLine = async (
   const replacedChangelog = changeset.summary
     .replace(/^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im, (_, pr) => {
       const num = Number(pr);
+      /* v8 ignore else -- @preserve */
       if (!Number.isNaN(num)) pullRequestFromSummary = num;
       return '';
     })

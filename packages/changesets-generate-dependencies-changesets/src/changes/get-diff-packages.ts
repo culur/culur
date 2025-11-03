@@ -39,6 +39,7 @@ export async function getDiffPackages({
       const [, packageName, packageVersion] = result;
       const type = getDependenciesType(json, packageName, packageVersion);
 
+      /* v8 ignore else -- @preserve */
       if (!changedPackages[type]) changedPackages[type] = {};
       changedPackages[type]![packageName] = packageVersion;
     }

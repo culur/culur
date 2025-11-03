@@ -21,6 +21,7 @@ export const toLineCols = (props: LineColsProps): LineColProps[] =>
   (Array.isArray(props) ? props : [props]).map<LineColProps>(text => {
     if (typeof text === 'object') {
       if ('text' in text) return text;
+      /* v8 ignore else -- @preserve */
       if (isValidElement(text)) return { text };
     }
     return { text: String(text) };

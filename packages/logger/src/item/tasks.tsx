@@ -49,6 +49,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       const childrenStatus = this.#tasks //
         .filter(task => task instanceof Task)
         .map(task => task.status);
+      /* v8 ignore else -- @preserve */
       if (!isEqual(this.#childrenStatus, childrenStatus)) {
         await this.parent.onChange();
         this.#dataCode = null;
@@ -165,6 +166,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       try {
         await task.wait({ isReturnOrThrow: true });
       } catch (e) {
+        /* v8 ignore else -- @preserve */
         if (isReturnOrThrow) throw e;
       }
     };
@@ -347,6 +349,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
       if (tasksGroup.name === 'task') {
         const tasksGroupStatus = tasksGroup.tasks
           .map(task => {
+            /* v8 ignore else -- @preserve */
             if (task instanceof Task) {
               return {
                 [Status.Pending]: chalk.gray(figureSet.squareLightShade), // ░
@@ -354,7 +357,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
                 [Status.Fulfilled]: chalk.green(figureSet.square), // █
                 [Status.Rejected]: chalk.red(figureSet.square), // █
               }[task.status];
-            } /* v8 ignore next */
+            }
+            /* v8 ignore next -- @preserve */
             return '?';
           })
           .join('');

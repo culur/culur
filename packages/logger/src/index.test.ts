@@ -1,7 +1,9 @@
-import { describe, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import LoggerIndex from '.';
 import { Logger } from './logger/logger';
 
 describe('index', () => {
-  expect(LoggerIndex).toStrictEqual(Logger);
+  it('index', () => {
+    expect(LoggerIndex).toStrictEqual(Logger);
+  });
 });

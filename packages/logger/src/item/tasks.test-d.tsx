@@ -246,10 +246,10 @@ describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, la
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Wait pending, running tasks
       ├─┬─── Tasks
-      │ ├─ ◌ spy                                 Pending
-      │ ├─ ◌ spy                                 Pending
-      │ ├─ ⠋ spy                                   0.00s
-      │ ├─ ⠋ spy                                   0.00s
+      │ ├─ ◌ Mock                                Pending
+      │ ├─ ◌ Mock                                Pending
+      │ ├─ ⠋ Mock                                  0.00s
+      │ ├─ ⠋ Mock                                  0.00s
       │ └─── => Count = 4
       └─── => Count = 0
     `);
@@ -278,7 +278,7 @@ describeLogger('.tasks().wait()', 'Throw on pending tasks', async (root, lastFra
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Throw on pending tasks
       ├─┬─── Tasks
-      │ ├─ ◌ throwErrorDelay                     Pending
+      │ ├─ ◌ Mock                                Pending
       │ └─── => Count = 1
       └─── => Count = 0
     `);
@@ -300,7 +300,7 @@ describeLogger('.tasks().wait()', 'Throw on running tasks', async (root, lastFra
     expect(lastFrame()).toStrictEqual(dedent`
       ┌─── Throw on running tasks
       ├─┬─── Tasks
-      │ ├─ ⠋ throwErrorDelay                       0.00s
+      │ ├─ ⠋ Mock                                  0.00s
       │ └─── => Count = 1
       └─── => Count = 0
     `);

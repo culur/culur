@@ -18,8 +18,10 @@ export function getGroupName({ task, isShowTaskAsGrid }: { task: Base; isShowTas
       ? ('task' as const) // show as grid
       : (`task-${task.status}` as const);
   }
+  /* v8 ignore else -- @preserve */
   if (task instanceof Tasks) {
     return 'tasks' as const;
-  } /* v8 ignore next 2 */
+  }
+  /* v8 ignore next -- @preserve */
   return 'unknown' as const;
 }

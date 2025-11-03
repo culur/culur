@@ -374,7 +374,7 @@ importers:
         specifier: '*'
         version: 1.7.0
       es-toolkit:
-        specifier: ^1.40.0
+        specifier: ^1.41.0
         version: 1.41.0
       ts-to-zod:
         specifier: ^5.0.1
@@ -396,7 +396,7 @@ importers:
         specifier: ^3.2.25
         version: 3.2.25
       ink:
-        specifier: ^6.3.1
+        specifier: ^6.4.0
         version: 6.4.0(@types/react@19.2.2)(react-devtools-core@6.1.5)(react@19.2.0)
       ink-testing-library:
         specifier: ^4.0.0
@@ -405,8 +405,8 @@ importers:
         specifier: ^4.1.12
         version: 4.1.12
       zx:
-        specifier: ^8.8.4
-        version: 8.8.4
+        specifier: ^8.8.5
+        version: 8.8.5
 
   packages/logger:
     dependencies:
@@ -6512,8 +6512,8 @@ packages:
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  zx@8.8.4:
-    resolution: {integrity: sha512-44GcD+ZlM/v1OQtbwnSxLPcoE1ZEUICmR+RSbJZLAqfIixNLuMjLyh0DcS75OyfJ/sWYAwCWDmDvJ4hdnANAPQ==}
+  zx@8.8.5:
+    resolution: {integrity: sha512-SNgDF5L0gfN7FwVOdEFguY3orU5AkfFZm9B5YSHog/UDHv+lvmd82ZAsOenOkQixigwH2+yyH198AwNdKhj+RA==}
     engines: {node: '>= 12.17.0'}
     hasBin: true
 
@@ -13438,4 +13438,4 @@ snapshots:
 
   zwitch@2.0.4: {}
 
-  zx@8.8.4: {}
+  zx@8.8.5: {}

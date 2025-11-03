@@ -1,5 +1,20 @@
 # @culur/logger
 
+## 1.6.3
+
+### Patch Changes
+
+- ⚙️ Test: update unit test ([#411](https://github.com/culur/culur/pull/411) [`b56dacf`](https://github.com/culur/culur/commit/b56dacf90d244dba4f89125e8635b0ea21cb83a0)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Ignore `set-state-in-effect` in component `TextTimer` ([#411](https://github.com/culur/culur/pull/411) [`eb60271`](https://github.com/culur/culur/commit/eb6027137cbfb343474af14b50e6b1c43d6eae43)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Update dependencies ([#409](https://github.com/culur/culur/pull/409) [`e0b1a94`](https://github.com/culur/culur/commit/e0b1a94da28ad39aa177bf8939781589607924ff)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.41.0`
+    - `ink@^6.4.0`
+
+- ⚙️ Update vitest config ([#411](https://github.com/culur/culur/pull/411) [`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@github-actions](https://github.com/apps/github-actions)).
+
 ## 1.6.2
 
 ### Patch Changes

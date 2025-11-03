@@ -1,5 +1,11 @@
 # @culur/config-stylelint
 
+## 1.6.3
+
+### Patch Changes
+
+- ⚙️ Update vitest config ([#411](https://github.com/culur/culur/pull/411) [`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@github-actions](https://github.com/apps/github-actions)).
+
 ## 1.6.2
 
 ### Patch Changes

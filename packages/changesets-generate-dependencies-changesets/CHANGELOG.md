@@ -1,5 +1,20 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.13
+
+### Patch Changes
+
+- ⚙️ Test: update unit test ([#411](https://github.com/culur/culur/pull/411) [`b56dacf`](https://github.com/culur/culur/commit/b56dacf90d244dba4f89125e8635b0ea21cb83a0)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Update dependencies ([#406](https://github.com/culur/culur/pull/406) [`637fedf`](https://github.com/culur/culur/commit/637fedff1bbb2562c06594313b956bdeb5d471c4)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `minimatch@^10.1.1`
+
+- ⚙️ Update vitest config ([#411](https://github.com/culur/culur/pull/411) [`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.4`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.12
 
 ### Patch Changes

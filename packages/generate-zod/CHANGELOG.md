@@ -1,5 +1,21 @@
 # @culur/generate-zod
 
+## 2.0.4
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#408](https://github.com/culur/culur/pull/408) [`c893bba`](https://github.com/culur/culur/commit/c893bba4a380f66582cbbeebd606630dcf951d3d)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.41.0`
+  - `devDependencies`:
+    - `ink@^6.4.0`
+    - `zx@^8.8.5`
+
+- ⚙️ Update vitest config ([#411](https://github.com/culur/culur/pull/411) [`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.6.3`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 2.0.3
 
 ### Patch Changes

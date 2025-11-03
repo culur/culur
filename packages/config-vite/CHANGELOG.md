@@ -1,5 +1,22 @@
 # @culur/config-vite
 
+## 1.4.0
+
+### Minor Changes
+
+- ⚙️ Add `**/dist/**` to `test.exclude` ([#411](https://github.com/culur/culur/pull/411) [`a9fa4c6`](https://github.com/culur/culur/commit/a9fa4c6745ae86c6849f73d22ca0687e72950eeb)) ([@github-actions](https://github.com/apps/github-actions)).
+
+- ⚙️ Update dependencies ([#411](https://github.com/culur/culur/pull/411) [`903d499`](https://github.com/culur/culur/commit/903d499d818c4412553eb4d1d4a2e29960343dc4)) ([@github-actions](https://github.com/apps/github-actions)):
+  - `peerDependencies`:
+    - `@vitest/coverage-v8@^4.0.6`,
+    - `@vitest/ui@^4.0.6`,
+    - `vitest@^4.0.6`
+
+### Patch Changes
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.4`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.7
 
 ### Patch Changes

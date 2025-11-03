@@ -1,6 +1,6 @@
 {
   "name": "@culur/types",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "A collection of essential TypeScript types",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,22 @@
 # @culur/changesets-github-info
 
+## 1.1.16
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#406](https://github.com/culur/culur/pull/406) [`637fedf`](https://github.com/culur/culur/commit/637fedff1bbb2562c06594313b956bdeb5d471c4)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@octokit/graphql@^9.0.3`
+    - `es-toolkit@^1.41.0`
+  - `devDependencies`:
+    - `@graphql-codegen/cli@6.0.1`
+    - `graphql@^16.12.0`
+
+- ⚙️ Update vitest config ([`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.4`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.15
 
 ### Patch Changes

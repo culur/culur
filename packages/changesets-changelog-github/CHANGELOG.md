@@ -1,5 +1,16 @@
 # @culur/changesets-changelog-github
 
+## 1.1.16
+
+### Patch Changes
+
+- 🚨 Test: update unit test ([`b56dacf`](https://github.com/culur/culur/commit/b56dacf90d244dba4f89125e8635b0ea21cb83a0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update vitest config ([`76d407d`](https://github.com/culur/culur/commit/76d407d752a4bd7564b407e3c0e760ebfa1a2bc2)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.1.16`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.15
 
 ### Patch Changes

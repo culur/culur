@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-changelog-github",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "description": "A changelog entry generator for GitHub that links to commits, PRs, and users.",
   "publishConfig": {
     "access": "public"

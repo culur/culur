@@ -61,7 +61,7 @@
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.7.0",
     "fs-extra": "^11.3.2",
-    "minimatch": "^10.0.3"
+    "minimatch": "^10.1.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

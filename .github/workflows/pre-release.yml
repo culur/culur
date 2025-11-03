@@ -47,11 +47,7 @@ jobs:
       - name: 🚀 Publish pre-release
         continue-on-error: true
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
           pnpm changeset version --no-git-tag --snapshot dev
           pnpm changeset publish --no-git-tag --snapshot dev --tag dev

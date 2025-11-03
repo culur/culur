@@ -1,6 +1,6 @@
 import type { BaseCoverageOptions } from 'vitest/node';
 import type { VitestInlineConfig, VitestInlineConfigCustom } from '~/types';
-import { coverageConfigDefaults } from 'vitest/config';
+import { configDefaults, coverageConfigDefaults } from 'vitest/config';
 
 export const defineConfigTest = (
   test: boolean | VitestInlineConfigCustom | undefined,
@@ -14,6 +14,7 @@ export const defineConfigTest = (
 
   return {
     include: ['**/*.{test,test-d}.?(c|m)[jt]s?(x)'],
+    exclude: [...configDefaults.exclude, '**/dist/**'],
     typecheck: {
       enabled: true,
       tsconfig: './tsconfig.json',

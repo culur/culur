@@ -2,5 +2,10 @@
 import { defineConfig } from '../config-vite/dist'; // external import
 
 export default defineConfig({
-  test: { testTimeout: 10000 },
+  test: {
+    testTimeout: 10000,
+    coverage: {
+      excludeExtends: ['src/__tests__/**'],
+    },
+  },
 });

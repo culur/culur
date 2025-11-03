@@ -7,7 +7,7 @@ export default defineConfig({
       NO_COLOR: 'true',
     },
     coverage: {
-      excludeExtends: ['scripts/**'],
+      excludeExtends: ['src/__tests__/**', 'scripts/**'],
     },
     setupFiles: ['./vitest.setup.ts'],
   },

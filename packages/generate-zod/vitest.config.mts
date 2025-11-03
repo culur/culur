@@ -5,7 +5,7 @@ export default defineConfig({
   test: {
     testTimeout: 20000,
     coverage: {
-      excludeExtends: ['scripts/**'],
+      excludeExtends: ['src/__tests__/**', 'scripts/**'],
     },
   },
 });

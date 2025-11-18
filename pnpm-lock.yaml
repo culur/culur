@@ -374,7 +374,7 @@ importers:
         specifier: '*'
         version: 1.7.0
       es-toolkit:
-        specifier: ^1.41.0
+        specifier: ^1.42.0
         version: 1.42.0
       ts-to-zod:
         specifier: ^5.0.1
@@ -396,7 +396,7 @@ importers:
         specifier: ^3.2.25
         version: 3.2.25
       ink:
-        specifier: ^6.4.0
+        specifier: ^6.5.0
         version: 6.5.0(@types/react@19.2.6)(react-devtools-core@6.1.5)(react@19.2.0)
       ink-testing-library:
         specifier: ^4.0.0

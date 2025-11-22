@@ -60,13 +60,13 @@
     "@octokit/graphql": "^9.0.3",
     "dataloader": "^2.2.3",
     "dedent": "^1.7.0",
-    "es-toolkit": "^1.41.0"
+    "es-toolkit": "^1.42.0"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@graphql-codegen/cli": "6.0.1",
-    "@graphql-codegen/typescript-operations": "5.0.2",
+    "@graphql-codegen/cli": "6.1.0",
+    "@graphql-codegen/typescript-operations": "5.0.5",
     "@octokit/graphql-schema": "^15.26.0",
     "graphql": "^16.12.0"
   }

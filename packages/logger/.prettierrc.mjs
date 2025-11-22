@@ -23,7 +23,7 @@ const config = defineConfig({
     {
       files: ['./src/item/**/*', './scripts/**/*'],
       options: {
-        printWidth: 200,
+        printWidth: 300,
       },
     },
     {

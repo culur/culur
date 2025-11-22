@@ -30,6 +30,7 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
   const task3 = root.task(task3Callback, { immediately: false, title: 'Return task' });
   expectTypeOf(task3).toEqualTypeOf<Task<number>>();
   expect(task3).instanceOf(Task);
+  expect(task3.error).toBeNull();
 
   const task3Data = await task3.wait();
   expectTypeOf(task3Data).toEqualTypeOf<number>();

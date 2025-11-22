@@ -8,4 +8,9 @@ export type {
   TaskTitle,
 } from './task.d';
 export type { TasksItem } from './tasks-items.d';
+export type {
+  TasksSimpleOptions,
+  TasksSimpleResponse,
+  TasksSimpleTitle,
+} from './tasks-simple.d';
 export type { TasksOptions, TasksResponse, TasksTitle } from './tasks.d';

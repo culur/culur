@@ -354,7 +354,6 @@ export class Tasks<TItems extends any[]>
   }
 
   //! ----- ----- ----- ----- ----- Convenience functions ----- ----- ----- ----- ----- !//
-
   /**
    * Convenience functions for @see {Tasks.tasks}
    */
@@ -476,7 +475,7 @@ export class Tasks<TItems extends any[]>
     const colResult: LineColProps[] = [
       { text: '=>', color: 'gray', width: 'no-wrap' },
       this.#isShowData
-        ? this.#dataCode
+        ? this.#dataCode //
           ? { text: <BoxSyntaxJS code={this.#dataCode} /> }
           : { text: <Text color="gray">...</Text> }
         : { text: <Text color="gray">Count = {chalk.yellow(this.#tasks.filter(task => task instanceof Task).length)}</Text> },

@@ -47,7 +47,7 @@ export async function generateZod(
   );
 
   for (const outputFile in files) {
-    const tasks = logger.root.tasks<string[]>([], {
+    const tasks = logger.root.tasks<(() => string)[]>([], {
       title: [
         { text: 'Output:', width: 7 },
         { text: outputFile, width: loggerFileWidth, color: 'green' },

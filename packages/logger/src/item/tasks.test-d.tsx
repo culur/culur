@@ -1,4 +1,4 @@
-import type { TaskResponse } from '~/types';
+import type { TaskResponse, TasksResponse } from '~/types';
 import dedent from 'dedent';
 import { range } from 'es-toolkit';
 import { expect, expectTypeOf, vi } from 'vitest';
@@ -18,6 +18,7 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
 
   //! Return response
   const tasks2Response = await root.tasks(callbacksNormal, { isReturnOrThrow: false, isShowTimer: true });
+  expectTypeOf(tasks2Response).toEqualTypeOf<TasksResponse<number[]>>();
   expectTypeOf(tasks2Response).toEqualTypeOf<TaskResponse<number>[]>();
   expect(tasks2Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks2Response[0], 1);
@@ -32,6 +33,7 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
   expectTypeOf(tasks3Data).toEqualTypeOf<number[]>();
 
   const tasks3Response = await tasks3.wait({ isReturnOrThrow: false });
+  expectTypeOf(tasks3Response).toEqualTypeOf<TasksResponse<number[]>>();
   expectTypeOf(tasks3Response).toEqualTypeOf<TaskResponse<number>[]>();
   expect(tasks3Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks3Response[0], 1);
@@ -62,26 +64,26 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
 describeLogger('.tasks()', 'Normal readonly', async (root, lastFrame) => {
   //! Return data
   const tasks1Data = await root.tasks(callbacksReadonly);
-  expectTypeOf(tasks1Data).toEqualTypeOf<readonly [number, number]>();
+  expectTypeOf(tasks1Data).toEqualTypeOf<[number, number]>();
   expect(tasks1Data).toEqual([1, 2]);
 
   //! Return response
   const tasks2Response = await root.tasks(callbacksReadonly, { isReturnOrThrow: false });
-  expectTypeOf(tasks2Response).toEqualTypeOf<readonly [TaskResponse<number>, TaskResponse<number>]>();
+  expectTypeOf(tasks2Response).toEqualTypeOf<[TaskResponse<number>, TaskResponse<number>]>();
   expect(tasks2Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks2Response[0], 1);
   expectTaskResponseFulfilled(tasks2Response[1], 2);
 
   //! Return task
   const tasks3 = root.tasks(callbacksReadonly, { immediately: false });
-  expectTypeOf(tasks3).toEqualTypeOf<Tasks<readonly [number, number]>>();
+  expectTypeOf(tasks3).toEqualTypeOf<Tasks<[number, number]>>();
   expect(tasks3).instanceOf(Tasks);
 
   const tasks3Data = await tasks3.wait();
-  expectTypeOf(tasks3Data).toEqualTypeOf<readonly [number, number]>();
+  expectTypeOf(tasks3Data).toEqualTypeOf<[number, number]>();
 
   const tasks3Response = await tasks3.wait({ isReturnOrThrow: false });
-  expectTypeOf(tasks3Response).toEqualTypeOf<readonly [TaskResponse<number>, TaskResponse<number>]>();
+  expectTypeOf(tasks3Response).toEqualTypeOf<[TaskResponse<number>, TaskResponse<number>]>();
   expect(tasks3Response).toHaveLength(2);
   expectTaskResponseFulfilled(tasks3Response[0], 1);
   expectTaskResponseFulfilled(tasks3Response[1], 2);
@@ -227,13 +229,13 @@ describeLogger('.tasks()', 'Error string', async root => {
 
 //! Wait
 describeLogger('.tasks().wait()', 'Wait pending, running tasks', async (root, lastFrame) => {
-  const tasksCallback1 = vi.fn();
-  const tasksCallback2 = vi.fn();
+  const tasksCallback1 = vi.fn(() => 1 as const);
+  const tasksCallback2 = vi.fn(() => 2 as const);
   const tasksCallback3 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 200)));
   const tasksCallback4 = vi.fn(() => new Promise(resolve => setTimeout(resolve, 200)));
 
   const tasks = root.tasks(
-    [tasksCallback1, tasksCallback2], //
+    [tasksCallback1, tasksCallback2] as const, //
     { immediately: false },
   );
   expect(tasks.isRunning).toStrictEqual(true);

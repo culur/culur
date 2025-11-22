@@ -7,10 +7,5 @@ export type {
   TaskResponse,
   TaskTitle,
 } from './task.d';
-export type {
-  TasksCallback,
-  TasksOptions,
-  TasksOptionsExtra,
-  TasksResponse,
-  TasksTitle,
-} from './tasks.d';
+export type { TasksItem } from './tasks-items.d';
+export type { TasksOptions, TasksResponse, TasksTitle } from './tasks.d';

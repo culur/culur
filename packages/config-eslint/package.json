@@ -58,14 +58,14 @@
   "dependencies": {
     "@antfu/eslint-config": "^6.2.0",
     "@culur/utils-packages": "workspace:*",
-    "@vitest/eslint-plugin": "^1.4.0"
+    "@vitest/eslint-plugin": "^1.4.3"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@eslint/eslintrc": "^3.3.1",
     "@types/eslint": "^9.6.1",
-    "@vue/compiler-sfc": "^3.5.22"
+    "@vue/compiler-sfc": "^3.5.24"
   },
   "peerDependencies": {
     "eslint": ">=9.20.0"

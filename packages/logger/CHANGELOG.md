@@ -1,5 +1,29 @@
 # @culur/logger
 
+## 1.7.0
+
+### Minor Changes
+
+- ✨ - Feat: Add `BaseRunnable.error` property ([`a66dfba`](https://github.com/culur/culur/commit/a66dfba0a878e77eabc5b8df962cfa3ebe1ebffd)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+  - Fix: Fix a bug in `Tasks` where the wrong error might be thrown.
+
+- ✨ - Fix: Change `Task` data type to better support tuple and list ([`23bb3a5`](https://github.com/culur/culur/commit/23bb3a5e4d4714de0d19186cae97165998ee3bb3)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+  - Feat: Change `TData` to `TItems` in `Task` and `Tasks`.
+  - Feat: Add `Tasks._pushTasks()` to replace direct `Tasks.#tasks.push()` calls and support external calls.
+
+- ✨ - Feat: Implement `TasksSimple`, a simplified version of `Tasks` ([`3b5fd17`](https://github.com/culur/culur/commit/3b5fd172a1d6c9ad86c32251fc1d29825172c16a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+  - `TasksSimple` only accepts `Task` children and always renders in a grid layout.
+  - Added `Tasks.tasksSimple()` method to create `TasksSimple` instances.
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`2f1db0b`](https://github.com/culur/culur/commit/2f1db0b4d956f15547dc9e76af20ad26032c2d91)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.42.0`
+    - `ink@^6.5.0`
+  - `devDependencies`:
+    - `@types/react@^19.2.6`
+
 ## 1.6.3
 
 ### Patch Changes

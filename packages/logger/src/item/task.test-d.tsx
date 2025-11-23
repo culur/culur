@@ -13,8 +13,8 @@ export function expectTaskResponseFulfilled<T>(taskResponse: TaskResponse<T>, da
   expect(taskResponse.endTime).toBeTypeOf('bigint');
 }
 
-//! Normal
-describeLogger('.task()', 'Normal', async (root, lastFrame) => {
+//! Tasks > Normal
+describeLogger('Tasks.task()', 'Normal', async (root, lastFrame) => {
   //! Return data
   const task1Data = await root.task(() => 1, { title: 'Return data' });
   expectTypeOf(task1Data).toEqualTypeOf<number>();
@@ -53,6 +53,50 @@ describeLogger('.task()', 'Normal', async (root, lastFrame) => {
       ├─ √ Return response                         0.00s
       ├─ √ Return task                             0.00s
       └─── => Count = 3
+    `);
+  }
+});
+
+//! TasksSimple > Normal
+describeLogger('TasksSimple.task()', 'Normal', async (root, lastFrame) => {
+  const tasksSimple = root.tasksSimple([], { immediately: false });
+  //! Return data
+  const task1Data = await tasksSimple.task(() => 1, { title: 'Return data' });
+  expectTypeOf(task1Data).toEqualTypeOf<number>();
+  expect(task1Data).toStrictEqual(1);
+
+  //! Return response
+  const task2Response = await tasksSimple.task(() => 2, { isReturnOrThrow: false, title: 'Return response' });
+  expectTypeOf(task2Response).toEqualTypeOf<TaskResponse<number>>();
+  expectTaskResponseFulfilled(task2Response, 2);
+
+  //! Return task
+  const task3Callback = vi.fn(() => 3);
+  const task3 = tasksSimple.task(task3Callback, { immediately: false, title: 'Return task' });
+  expectTypeOf(task3).toEqualTypeOf<Task<number>>();
+  expect(task3).instanceOf(Task);
+  expect(task3.error).toBeNull();
+
+  const task3Data = await task3.wait();
+  expectTypeOf(task3Data).toEqualTypeOf<number>();
+  expect(task3Callback).toBeCalledTimes(1);
+
+  const task3Response = await task3.wait({ isReturnOrThrow: false });
+  expectTypeOf(task3Response).toEqualTypeOf<TaskResponse<number>>();
+  expect(task3Callback).toBeCalledTimes(1); // Load previous data, don't call again
+  expectTaskResponseFulfilled(task3Response, 3);
+
+  const task3DataAgain = await task3.wait();
+  expectTypeOf(task3DataAgain).toEqualTypeOf<number>();
+  expect(task3Callback).toBeCalledTimes(1); // Load previous data, don't call again
+
+  await new Promise(resolve => setTimeout(resolve, 100));
+  if (!isCI()) {
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Normal
+      ├─ √ Tasks
+      │    ███
+      └─── => Count = 0
     `);
   }
 });

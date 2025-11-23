@@ -3,7 +3,7 @@ import type { AsyncResultIteratorPromise } from 'async';
 import type { BaseRunnable, IRootObject } from './base';
 import type { TaskGroup } from './tasks.group';
 import type { LineColProps, LineProps } from '~/components';
-import type { TaskCallback, TaskOptions, TaskResponse, TasksItem, TasksOptions, TasksResponse, TasksTitle } from '~/types';
+import type { TaskCallback, TaskOptions, TaskResponse, TasksItem, TasksOptions, TasksResponse, TasksSimpleOptions, TasksSimpleResponse, TasksTitle } from '~/types';
 import { mapLimit, mapSeries } from 'async';
 import chalk from 'chalk';
 import { isEqual } from 'es-toolkit';
@@ -17,6 +17,7 @@ import { formatData } from '~/utils';
 import { Base } from './base';
 import { Log } from './log';
 import { Task } from './task';
+import { TasksSimple } from './tasks-simple';
 import { getGroupName } from './tasks.group';
 
 export class Tasks<TItems extends any[]>
@@ -43,8 +44,8 @@ export class Tasks<TItems extends any[]>
   _pushTasks(...items: Base[]) {
     this.#tasks.push(...items);
   }
-  get #runnableTasks(): BaseRunnable[] {
-    return this.#tasks.filter(task => task instanceof Task || task instanceof Tasks);
+  get #runnableTasks(): (Task<any> | Tasks<any> | TasksSimple<any>)[] {
+    return this.#tasks.filter(task => task instanceof Task || task instanceof Tasks || task instanceof TasksSimple);
   }
 
   async onChange() {
@@ -311,6 +312,44 @@ export class Tasks<TItems extends any[]>
     } else {
       this.onChange();
       return tasks;
+    }
+  }
+
+  //! TasksSimple
+  tasksSimple<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options: TasksSimpleOptions<TasksItem<TCallbacks>> & { immediately: false }): TasksSimple<TasksItem<TCallbacks>>;
+  tasksSimple<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options: TasksSimpleOptions<TasksItem<TCallbacks>> & { immediately?: true; isReturnOrThrow: false }): Promise<TasksSimpleResponse<TasksItem<TCallbacks>>>;
+  tasksSimple<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options?: TasksSimpleOptions<TasksItem<TCallbacks>> & { immediately?: true; isReturnOrThrow?: true }): Promise<TasksItem<TCallbacks>>;
+
+  tasksSimple<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(
+    callbacks: TCallbacks, //
+    options: TasksSimpleOptions<TasksItem<TCallbacks>> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
+  ): TasksSimple<TasksItem<TCallbacks>> | Promise<TasksItem<TCallbacks>> | Promise<TasksSimpleResponse<TasksItem<TCallbacks>>> {
+    const immediately = options.immediately ?? true;
+    const isReturnOrThrow = options.isReturnOrThrow ?? true;
+    const isSealing = options.isSealing ?? true;
+
+    if (this.isSealed) throw new Error('Tasks is already sealed');
+
+    const tasksSimple = new TasksSimple<TasksItem<TCallbacks>>(this, options);
+    this._pushTasks(tasksSimple);
+
+    const tasksChildren = callbacks.map(callback => new Task(tasksSimple, callback));
+    tasksSimple._pushTasks(...tasksChildren);
+
+    if (immediately && isReturnOrThrow) {
+      return (async () => {
+        await this.onChange();
+        const a = await tasksSimple.wait({ isReturnOrThrow, isSealing });
+        return a;
+      })();
+    } else if (immediately && !isReturnOrThrow) {
+      return (async () => {
+        await this.onChange();
+        return await tasksSimple.wait({ isReturnOrThrow, isSealing });
+      })();
+    } else {
+      this.onChange();
+      return tasksSimple;
     }
   }
 

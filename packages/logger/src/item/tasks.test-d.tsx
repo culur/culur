@@ -344,6 +344,7 @@ describeLogger('.task()', 'Seal', async (root, lastFrame) => {
   expect(() => tasks.log('Error')).toThrowError('Tasks is already sealed');
   expect(() => tasks.task(() => 'Error')).toThrowError('Tasks is already sealed');
   expect(() => tasks.tasks([() => 'Error'])).toThrowError('Tasks is already sealed');
+  expect(() => tasks.tasksSimple([() => 'Error'])).toThrowError('Tasks is already sealed');
 });
 
 //! Title

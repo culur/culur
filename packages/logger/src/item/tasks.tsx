@@ -70,6 +70,16 @@ export class Tasks<TItems extends any[]>
       .map(task => task.response);
     return records;
   }
+  get error(): Error | null {
+    return [...this.response].reduce(
+      (acc, item) => {
+        if (acc) return acc;
+        if (item.status === Status.Rejected) return item.error;
+        return acc;
+      },
+      null as null | Error,
+    );
+  }
 
   get data(): TItems {
     const records = this.#tasks //
@@ -181,8 +191,8 @@ export class Tasks<TItems extends any[]>
     const runningPromise = new Promise((resolve, reject) => {
       const intervalId = setInterval(() => {
         if (isReturnOrThrow) {
-          const firstRejectedTask = (runningTasks as TaskResponse<any>[]) //
-            .find((task): task is Extract<typeof task, { status: Status.Rejected }> => task.status === Status.Rejected);
+          const firstRejectedTask = runningTasks //
+            .find(task => task.status === Status.Rejected);
           if (firstRejectedTask) {
             clearInterval(intervalId);
             return reject(firstRejectedTask.error);
@@ -205,7 +215,7 @@ export class Tasks<TItems extends any[]>
 
     if (isReturnOrThrow) {
       const firstRejectedTask = (this.response as TaskResponse<any>[]) //
-        .find((task): task is Extract<typeof task, { status: Status.Rejected }> => task.status === Status.Rejected);
+        .find((response): response is Extract<typeof response, { status: Status.Rejected }> => response.status === Status.Rejected);
       if (firstRejectedTask) {
         throw firstRejectedTask.error;
       }

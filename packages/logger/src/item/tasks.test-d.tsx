@@ -28,6 +28,7 @@ describeLogger('.tasks()', 'Normal', async (root, lastFrame) => {
   const tasks3 = root.tasks(callbacksNormal, { immediately: false, isShowTimer: true });
   expectTypeOf(tasks3).toEqualTypeOf<Tasks<number[]>>();
   expect(tasks3).instanceOf(Tasks);
+  expect(tasks3.error).toBeNull();
 
   const tasks3Data = await tasks3.wait();
   expectTypeOf(tasks3Data).toEqualTypeOf<number[]>();
@@ -225,6 +226,13 @@ describeLogger('.tasks()', 'Error object', async root => {
 describeLogger('.tasks()', 'Error string', async root => {
   await expect(() => root.tasks([throwString])) //
     .rejects.toThrowError(/^Task Error String$/);
+});
+
+describeLogger('.tasks()', 'Error get error', async root => {
+  const task = root.tasks([...callbacksNormal, throwError, ...callbacksNormal], { immediately: false });
+  expect(task.error).toBeNull();
+  await task.wait({ isReturnOrThrow: false });
+  expect(task.error).instanceOf(Error);
 });
 
 //! Wait

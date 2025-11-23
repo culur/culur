@@ -28,6 +28,10 @@ export class Task<TItem>
   private set response(response: TaskResponse<TItem>) {
     this.#response = response;
   }
+  get error(): Error | null {
+    if (this.response.status === Status.Rejected) return this.response.error;
+    return null;
+  }
   get data() {
     return this.#response.status === Status.Fulfilled ? this.#response.data : null;
   }

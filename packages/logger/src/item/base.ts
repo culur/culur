@@ -12,6 +12,7 @@ export interface BaseRunnable {
 
   wait: (options: { isReturnOrThrow?: true }) => Promise<unknown>;
   get response(): TaskResponse<unknown> | TaskResponse<unknown>[] | readonly TaskResponse<unknown>[];
+  get error(): Error | null;
 }
 
 export interface IRootObject {

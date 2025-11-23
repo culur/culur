@@ -1,5 +1,16 @@
 # @culur/changesets-github-info
 
+## 1.1.17
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#419](https://github.com/culur/culur/pull/419) [`6fc9cac`](https://github.com/culur/culur/commit/6fc9cac45e523ae270759b03b9e60d068d1a1ad8)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.42.0`
+  - `devDependencies`:
+    - `@graphql-codegen/cli@6.1.0`
+    - `@graphql-codegen/typescript-operations@5.0.5`
+
 ## 1.1.16
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @culur/generate-zod
 
+## 2.0.5
+
+### Patch Changes
+
+- 🩹 Fix logger tasks type definition to use array of functions ([`9b16ef5`](https://github.com/culur/culur/commit/9b16ef596bd035d2758d03f717303c5c37e19218)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`ec51414`](https://github.com/culur/culur/commit/ec51414057e732d46e3de287ed3777bec0b64115)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.42.0`
+  - `devDependencies`:
+    - `ink@^6.5.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.7.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 2.0.4
 
 ### Patch Changes

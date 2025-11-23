@@ -1,5 +1,15 @@
 # @culur/config-eslint
 
+## 1.7.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#420](https://github.com/culur/culur/pull/420) [`3abbc94`](https://github.com/culur/culur/commit/3abbc949b35492a014b4d9a5a7f98ec29e8f122f)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.4.3`
+  - `devDependencies`:
+    - `@vue/compiler-sfc@^3.5.24`
+
 ## 1.7.1
 
 ### Patch Changes

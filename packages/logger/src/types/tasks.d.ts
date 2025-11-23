@@ -1,24 +1,23 @@
-import type { TaskCallback, TaskResponse } from './task';
+import type { IsTuple } from '@culur/types';
+import type { TaskResponse } from './task';
 import type { LineColsProps } from '~/components';
 
-//! Data => Callback
-export type TasksCallback<TData extends readonly any[]> = {
-  [K in keyof TData]: TaskCallback<TData[K]>;
-};
-
 //! Data => Response
-export type TasksResponse<TData extends readonly any[]> = {
-  [K in keyof TData]: TaskResponse<TData[K]>;
-};
+export type TasksResponse<TItems extends readonly any[] | any[]> =
+  IsTuple<TItems> extends true
+    ? TItems extends readonly [infer Head, ...infer Rest]
+      ? [TaskResponse<Head>, ...TasksResponse<Rest>]
+      : []
+    : TaskResponse<TItems[number]>[];
 
 //! Data => Title
-export type TasksTitle<TData extends readonly any[]> =
+export type TasksTitle<TItems extends readonly any[] | any[]> =
   | LineColsProps //
-  | ((response: TasksResponse<TData>) => LineColsProps);
+  | ((response: TasksResponse<TItems>) => LineColsProps);
 
 //! Options
-export interface TasksOptions<TData extends readonly any[]> {
-  title?: TasksTitle<TData>;
+export interface TasksOptions<TItems extends readonly any[] | any[]> {
+  title?: TasksTitle<TItems>;
   isShowTimer?: boolean;
   isShowData?: boolean;
 
@@ -28,9 +27,6 @@ export interface TasksOptions<TData extends readonly any[]> {
   isShowTaskAsGrid?: boolean;
   gridWidth?: number;
   concurrency?: number;
-}
 
-export interface TasksOptionsExtra<TData extends readonly any[]>
-  extends TasksOptions<TData> {
   isSealing?: boolean;
 }

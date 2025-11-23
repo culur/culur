@@ -1,4 +1,4 @@
-import type { TaskOptions, TasksOptionsExtra } from '~/types';
+import type { TaskOptions, TasksOptions } from '~/types';
 
 export const TASK = {
   isShowData: false,
@@ -18,7 +18,7 @@ export const TASKS = {
 
   concurrency: 5,
   isSealing: true,
-} as const satisfies Omit<TasksOptionsExtra<unknown[]>, 'title'>;
+} as const satisfies Omit<TasksOptions<unknown[]>, 'title'>;
 
 export const DRAW = {
   iconWidth: 2,

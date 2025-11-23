@@ -8,15 +8,15 @@ import { Icon, Prefix, Status } from '~/types';
 import { formatData } from '~/utils';
 import { Base } from './base';
 
-export class Task<TData>
+export class Task<TItem>
   extends Base //
   implements BaseRunnable
 {
   static readonly #RESPONSE_PENDING = { status: Status.Pending } as const;
 
-  readonly #callback: TaskCallback<TData>;
-  #response: TaskResponse<TData> = Task.#RESPONSE_PENDING;
-  #title: TaskTitle<TData>;
+  readonly #callback: TaskCallback<TItem>;
+  #response: TaskResponse<TItem> = Task.#RESPONSE_PENDING;
+  #title: TaskTitle<TItem>;
   readonly #isShowErrorStack: boolean;
   readonly #isShowData: boolean;
   readonly #isShowError: boolean;
@@ -25,7 +25,7 @@ export class Task<TData>
   get response() {
     return this.#response;
   }
-  private set response(response: TaskResponse<TData>) {
+  private set response(response: TaskResponse<TItem>) {
     this.#response = response;
   }
   get data() {
@@ -48,15 +48,15 @@ export class Task<TData>
   get title() {
     return this.#title;
   }
-  set title(value: TaskTitle<TData>) {
+  set title(value: TaskTitle<TItem>) {
     this.#title = value;
     this.onChange();
   }
 
   constructor(
     parent: Base, //
-    callback: TaskCallback<TData>,
-    options: TaskOptions<TData> = {},
+    callback: TaskCallback<TItem>,
+    options: TaskOptions<TItem> = {},
   ) {
     super(parent);
     this.#callback = callback;
@@ -67,10 +67,10 @@ export class Task<TData>
   }
 
   //! Wait
-  async wait(): Promise<TData>;
-  async wait(options: { isReturnOrThrow: false }): Promise<TaskResponse<TData>>;
-  async wait(options: { isReturnOrThrow?: true }): Promise<TData>;
-  async wait(options: { isReturnOrThrow?: boolean } = {}): Promise<TData | TaskResponse<TData>> {
+  async wait(): Promise<TItem>;
+  async wait(options: { isReturnOrThrow: false }): Promise<TaskResponse<TItem>>;
+  async wait(options: { isReturnOrThrow?: true }): Promise<TItem>;
+  async wait(options: { isReturnOrThrow?: boolean } = {}): Promise<TItem | TaskResponse<TItem>> {
     const { isReturnOrThrow = true } = options;
 
     if (this.response.status === Status.Fulfilled) {

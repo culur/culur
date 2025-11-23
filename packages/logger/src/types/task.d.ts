@@ -3,18 +3,18 @@ import type { LineColsProps } from '~/components';
 import type { Status } from '~/types';
 
 //! Data => Callback
-export type TaskCallback<TData> = //
-  (this: Task<TData>) => TData | Promise<TData>;
+export type TaskCallback<TItem> = //
+  (this: Task<TItem>) => TItem | Promise<TItem>;
 
 //! Data => Response
-export type TaskResponse<TData> =
+export type TaskResponse<TItem> =
   | { status: Status.Pending }
   | { status: Status.Running; startTime: bigint }
   | {
       status: Status.Fulfilled;
       startTime: bigint;
       endTime: bigint;
-      data: TData;
+      data: TItem;
       dataCode: string;
     }
   | {
@@ -25,12 +25,12 @@ export type TaskResponse<TData> =
     };
 
 //! Data => Title
-export type TaskTitle<TData> =
+export type TaskTitle<TItem> =
   | LineColsProps //
-  | ((response: TaskResponse<TData>) => LineColsProps);
+  | ((response: TaskResponse<TItem>) => LineColsProps);
 
-export interface TaskOptions<TData> {
-  title?: TaskTitle<TData>;
+export interface TaskOptions<TItem> {
+  title?: TaskTitle<TItem>;
   isShowData?: boolean;
   isShowError?: boolean;
   isShowErrorStack?: boolean;

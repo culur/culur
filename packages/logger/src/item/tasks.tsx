@@ -3,7 +3,7 @@ import type { AsyncResultIteratorPromise } from 'async';
 import type { BaseRunnable, IRootObject } from './base';
 import type { TaskGroup } from './tasks.group';
 import type { LineColProps, LineProps } from '~/components';
-import type { TaskCallback, TaskOptions, TaskResponse, TasksCallback, TasksOptions, TasksOptionsExtra, TasksResponse, TasksTitle } from '~/types';
+import type { TaskCallback, TaskOptions, TaskResponse, TasksItem, TasksOptions, TasksResponse, TasksTitle } from '~/types';
 import { mapLimit, mapSeries } from 'async';
 import chalk from 'chalk';
 import { isEqual } from 'es-toolkit';
@@ -19,12 +19,12 @@ import { Log } from './log';
 import { Task } from './task';
 import { getGroupName } from './tasks.group';
 
-export class Tasks<TTasksData extends any[] | readonly any[]>
+export class Tasks<TItems extends any[]>
   extends Base //
   implements BaseRunnable
 {
   #tasks: Base[] = [];
-  #title: TasksTitle<TTasksData>;
+  #title: TasksTitle<TItems>;
   #childrenStatus: Status[] = [];
   #dataCode: string | null = null;
   readonly #isShowTimer: boolean;
@@ -40,6 +40,9 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
   isSealed: boolean = false;
 
+  _pushTasks(...items: Base[]) {
+    this.#tasks.push(...items);
+  }
   get #runnableTasks(): BaseRunnable[] {
     return this.#tasks.filter(task => task instanceof Task || task instanceof Tasks);
   }
@@ -61,18 +64,18 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   }
 
   //! Getter & setter
-  get response(): TasksResponse<TTasksData> {
+  get response(): TasksResponse<TItems> {
     const records = this.#tasks //
       .filter(task => task instanceof Task)
       .map(task => task.response);
-    return records as TasksResponse<TTasksData>;
+    return records;
   }
 
-  get data(): TTasksData {
+  get data(): TItems {
     const records = this.#tasks //
       .filter(task => task instanceof Task)
       .map(task => task.data);
-    return records as TTasksData;
+    return records as TItems;
   }
   get statuses() {
     return this.#runnableTasks.reduce(
@@ -122,14 +125,14 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   get title() {
     return this.#title;
   }
-  set title(value: TasksTitle<TTasksData>) {
+  set title(value: TasksTitle<TItems>) {
     this.#title = value;
     this.onChange();
   }
 
   constructor(
     parent: Base | IRootObject, //
-    options: TasksOptions<TTasksData> = {},
+    options: Omit<TasksOptions<TItems>, 'isSealing'> = {},
   ) {
     super(parent);
     this.#title = options?.title ?? 'Tasks';
@@ -148,12 +151,12 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
   //! ----- ----- ----- ----- ----- Run ----- ----- ----- ----- ----- !//
   //! Wait
-  async wait(options: { concurrency?: number; isReturnOrThrow: false; isSealing?: boolean }): Promise<TasksResponse<TTasksData>>;
-  async wait(options?: { concurrency?: number; isReturnOrThrow?: true; isSealing?: boolean }): Promise<TTasksData>;
+  async wait(options: { concurrency?: number; isReturnOrThrow: false; isSealing?: boolean }): Promise<TasksResponse<TItems>>;
+  async wait(options?: { concurrency?: number; isReturnOrThrow?: true; isSealing?: boolean }): Promise<TItems>;
 
   async wait(options: { concurrency?: number; isReturnOrThrow?: boolean; isSealing?: boolean } = {}): Promise<
-    | TasksResponse<TTasksData> //
-    | TTasksData
+    | TasksResponse<TItems> //
+    | TItems
   > {
     this.#concurrency = options.concurrency ?? this.#concurrency;
     const isReturnOrThrow = options.isReturnOrThrow ?? true;
@@ -216,7 +219,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   log(props: Arrayable<LineColProps['text'] | LineColProps>, icon = Icon.Info) {
     if (this.isSealed) throw new Error('Tasks is already sealed');
 
-    this.#tasks.push(new Log(this, props, icon));
+    this._pushTasks(new Log(this, props, icon));
     this.onChange();
     return this;
   }
@@ -226,7 +229,7 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
 
     const { level } = this;
     const code = await formatData({ width: this.root.props?.width, level, data });
-    this.#tasks.push(new Log(this, <BoxSyntaxJS code={code} />, icon));
+    this._pushTasks(new Log(this, <BoxSyntaxJS code={code} />, icon));
     this.onChange();
     return this;
   }
@@ -239,23 +242,24 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   task<TCData>(
     callback: TaskCallback<TCData>, //
     options: TaskOptions<TCData> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
-  ): Task<TCData> | Promise<TCData | TaskResponse<TCData>> {
+  ): Task<TCData> | Promise<TCData> | Promise<TaskResponse<TCData>> {
     const immediately = options.immediately ?? true;
     const isReturnOrThrow = options.isReturnOrThrow ?? true;
 
     if (this.isSealed) throw new Error('Tasks is already sealed');
 
     const task = new Task(this, callback, options);
-    this.#tasks.push(task);
+    this._pushTasks(task);
 
-    if (immediately) {
+    if (immediately && isReturnOrThrow) {
       return (async () => {
         await this.onChange();
-        if (isReturnOrThrow) {
-          return task.wait({ isReturnOrThrow });
-        } else {
-          return task.wait({ isReturnOrThrow });
-        }
+        return await task.wait({ isReturnOrThrow });
+      })();
+    } else if (immediately && !isReturnOrThrow) {
+      return (async () => {
+        await this.onChange();
+        return await task.wait({ isReturnOrThrow });
       })();
     } else {
       this.onChange();
@@ -264,34 +268,35 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   }
 
   //! Tasks
-  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options: TasksOptionsExtra<TCData> & { immediately: false }): Tasks<TCData>;
-  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options: TasksOptionsExtra<TCData> & { immediately?: true; isReturnOrThrow: false }): Promise<TasksResponse<TCData>>;
-  tasks<TCData extends any[] | readonly any[]>(callbacks: TasksCallback<TCData>, options?: TasksOptionsExtra<TCData> & { immediately?: true; isReturnOrThrow?: true }): Promise<TCData>;
+  tasks<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options: TasksOptions<TasksItem<TCallbacks>> & { immediately: false }): Tasks<TasksItem<TCallbacks>>;
+  tasks<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options: TasksOptions<TasksItem<TCallbacks>> & { immediately?: true; isReturnOrThrow: false }): Promise<TasksResponse<TasksItem<TCallbacks>>>;
+  tasks<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(callbacks: TCallbacks, options?: TasksOptions<TasksItem<TCallbacks>> & { immediately?: true; isReturnOrThrow?: true }): Promise<TasksItem<TCallbacks>>;
 
-  tasks<TCData extends any[]>(
-    callbacks: TasksCallback<TCData>,
-    options: TasksOptionsExtra<TCData> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
-  ): Tasks<TCData> | Promise<TCData | TasksResponse<TCData>> {
+  tasks<TCallbacks extends readonly TaskCallback<any>[] | TaskCallback<any>[]>(
+    callbacks: TCallbacks,
+    options: TasksOptions<TasksItem<TCallbacks>> & { immediately?: boolean; isReturnOrThrow?: boolean } = {},
+  ): Tasks<TasksItem<TCallbacks>> | Promise<TasksItem<TCallbacks>> | Promise<TasksResponse<TasksItem<TCallbacks>>> {
     const immediately = options.immediately ?? true;
     const isReturnOrThrow = options.isReturnOrThrow ?? true;
     const isSealing = options.isSealing ?? true;
 
     if (this.isSealed) throw new Error('Tasks is already sealed');
 
-    const tasks = new Tasks<TCData>(this, options);
-    this.#tasks.push(tasks);
+    const tasks = new Tasks<TasksItem<TCallbacks>>(this, options);
+    this._pushTasks(tasks);
 
     const tasksChildren = callbacks.map(callback => new Task(tasks, callback));
-    tasks.#tasks.push(...tasksChildren);
+    tasks._pushTasks(...tasksChildren);
 
-    if (immediately) {
+    if (immediately && isReturnOrThrow) {
       return (async () => {
         await this.onChange();
-        if (isReturnOrThrow) {
-          return await tasks.wait({ isReturnOrThrow, isSealing });
-        } else {
-          return await tasks.wait({ isReturnOrThrow, isSealing });
-        }
+        return await tasks.wait({ isReturnOrThrow, isSealing });
+      })();
+    } else if (immediately && !isReturnOrThrow) {
+      return (async () => {
+        await this.onChange();
+        return await tasks.wait({ isReturnOrThrow, isSealing });
       })();
     } else {
       this.onChange();
@@ -304,8 +309,8 @@ export class Tasks<TTasksData extends any[] | readonly any[]>
   /**
    * Convenience functions for @see {Tasks.tasks}
    */
-  group(title: TasksTitle<void[]>, options?: Omit<TasksOptionsExtra<void[]>, 'title'>) {
-    return this.tasks([], { immediately: false, title, ...options });
+  group(title: TasksTitle<void[]>, options?: Omit<TasksOptions<void[]>, 'title'>) {
+    return this.tasks<(() => void)[]>([], { immediately: false, title, ...options });
   }
 
   /**

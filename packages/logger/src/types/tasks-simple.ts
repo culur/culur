@@ -1,5 +1,6 @@
 import type { IsTuple } from '@culur/types';
 import type { TaskResponse } from './task';
+import type { LineColsProps } from '~/components';
 
 //! Data => Response
 export type TasksSimpleResponse<TItems extends readonly any[] | any[]> =

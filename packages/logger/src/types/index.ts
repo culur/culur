@@ -6,11 +6,11 @@ export type {
   TaskOptions,
   TaskResponse,
   TaskTitle,
-} from './task.d';
-export type { TasksItem } from './tasks-items.d';
+} from './task';
+export type { TasksOptions, TasksResponse, TasksTitle } from './tasks';
+export type { TasksItem } from './tasks-items';
 export type {
   TasksSimpleOptions,
   TasksSimpleResponse,
   TasksSimpleTitle,
-} from './tasks-simple.d';
-export type { TasksOptions, TasksResponse, TasksTitle } from './tasks.d';
+} from './tasks-simple';

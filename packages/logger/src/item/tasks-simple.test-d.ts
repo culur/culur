@@ -248,3 +248,17 @@ describeLogger('.tasksSimple({ title })', 'Custom title', async (root, lastFrame
     `);
   }
 });
+
+//! Show
+describeLogger('.tasksSimple()', 'Show data and error', async (root, lastFrame) => {
+  await root.tasksSimple([() => 1, () => 2], { isShowGridAfterFulfilled: false });
+
+  if (!isCI()) {
+    await new Promise(resolve => setTimeout(resolve, 100));
+    expect(lastFrame()).toStrictEqual(dedent`
+      ┌─── Show data and error
+      ├─ √ Tasks
+      └─── => Count = 0
+    `);
+  }
+});

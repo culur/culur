@@ -19,6 +19,7 @@ export type TasksSimpleTitle<TData extends readonly any[] | any[]> =
 export interface TasksSimpleOptions<TData extends readonly any[] | any[]> {
   title?: TasksSimpleTitle<TData>;
   isShowTimer?: boolean;
+  isShowGridAfterFulfilled?: boolean;
 
   gridWidth?: number;
   concurrency?: number;

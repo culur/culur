@@ -18,6 +18,7 @@ export class TasksSimple<TItems extends readonly any[] | any[]>
   #tasks: Task<any>[] = [];
   #title: TasksSimpleTitle<TItems[]>;
   readonly #isShowTimer: boolean;
+  readonly #isShowGridAfterFulfilled: boolean;
   readonly #gridWidth: number;
 
   #concurrency: number;
@@ -118,6 +119,7 @@ export class TasksSimple<TItems extends readonly any[] | any[]>
     this.#title = options?.title ?? 'Tasks';
 
     this.#isShowTimer = options.isShowTimer ?? TASKS.isShowTimer;
+    this.#isShowGridAfterFulfilled = options.isShowGridAfterFulfilled ?? true;
     this.#gridWidth = options.gridWidth ?? TASKS.gridWidth;
 
     this.#concurrency = options.concurrency ?? TASKS.concurrency;
@@ -242,6 +244,13 @@ export class TasksSimple<TItems extends readonly any[] | any[]>
   }
 
   get #middleLines(): LineProps[] {
+    if (
+      !this.#isShowGridAfterFulfilled && //
+      this.status === Status.Fulfilled
+    ) {
+      return [];
+    }
+
     const tasksStatus = this.#tasks
       .map(task => {
         return {

@@ -62,7 +62,7 @@
     "@culur/config-typescript": "workspace:*",
     "@eslint-react/eslint-plugin": "^2.3.9",
     "@eslint/config-inspector": "^1.4.2",
-    "@nx/shared-fs-cache": "^4.0.0",
+    "@nx/shared-fs-cache": "^5.0.0",
     "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "^4.0.13",
     "@vitest/ui": "^4.0.13",

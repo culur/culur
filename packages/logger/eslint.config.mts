@@ -8,4 +8,11 @@ export default defineConfig(
       'react-hooks-extra/no-direct-set-state-in-use-effect': 'off',
     },
   },
-);
+).overrideRules({
+  'vitest/no-standalone-expect': [
+    'error',
+    {
+      additionalTestBlockFunctions: ['describeLogger'],
+    },
+  ],
+});

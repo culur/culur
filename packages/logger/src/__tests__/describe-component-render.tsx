@@ -54,6 +54,7 @@ export function describeComponentRender<
     if ('expectFn' in testCase) {
       testCase.expectFn(frame);
     } else if ('text' in testCase) {
+      // eslint-disable-next-line test/no-conditional-expect
       expect(frame).toStrictEqual(getText(testCase));
     } else {
       throw new Error('Invalid test case');

@@ -19,7 +19,7 @@ export function describeLogger(name: string, ...args: DescribeLoggerParams) {
 }
 
 describeLogger.only = function (name: string, ...args: DescribeLoggerParams) {
-  // eslint-disable-next-line test/no-only-tests
+  // eslint-disable-next-line test/no-only-tests, test/no-focused-tests
   describe.only(name, () => {
     suiteFactory(...args);
   });

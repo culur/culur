@@ -45,7 +45,9 @@ export function describeLintAndFix<TTestCase extends LintAndFixCase>(
         console.log(result.code);
         /* eslint-enable no-console */
       }
+      // eslint-disable-next-line test/no-conditional-expect
       if ('fixedCode' in testCase) expect(result.code).toBe(testCase.fixedCode);
+      // eslint-disable-next-line test/no-conditional-expect
       if ('isError' in testCase) expect(result.errored).toBe(testCase.isError);
     });
   });

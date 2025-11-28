@@ -22,6 +22,7 @@ export default defineConfig(
       'apps/*/**', //
       'templates/*/**',
       'packages/logger/**',
+      'packages/config-stylelint/**',
     ],
   },
 ).override('culur/renovate-json/rules', {

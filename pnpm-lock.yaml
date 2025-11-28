@@ -435,7 +435,7 @@ importers:
         specifier: ^2.0.2
         version: 2.0.2(ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0)
       prettier:
-        specifier: ^3.6.2
+        specifier: ^3.7.1
         version: 3.7.1
       react:
         specifier: ^19.2.0

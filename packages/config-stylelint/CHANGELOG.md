@@ -1,5 +1,15 @@
 # @culur/config-stylelint
 
+## 1.6.4
+
+### Patch Changes
+
+- ⚙️ Test: add `eslint.config.mts`, update rule `vitest/no-standalone-expect` & disable some rules ([#423](https://github.com/culur/culur/pull/423) [`0646830`](https://github.com/culur/culur/commit/0646830a3f1fbed8ac773007f5407cee7d32366c)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update dependencies ([#424](https://github.com/culur/culur/pull/424) [`467d7b4`](https://github.com/culur/culur/commit/467d7b4007992768e3ff817634728e3d1a007e4f)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `stylelint-config-clean-order@^8.0.0`
+
 ## 1.6.3
 
 ### Patch Changes

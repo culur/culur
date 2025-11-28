@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-stylelint",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Culur's stylelint configuration",
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,29 @@
 # @culur/logger
 
+## 1.8.0
+
+### Minor Changes
+
+- ✨ Added a new option `isShowGridAfterFulfilled` to `TasksSimple` to control whether the grid is shown after the task is fulfilled. Defaults to `true` ([`a0b21f5`](https://github.com/culur/culur/commit/a0b21f53101874c1beee53ebbfb56de63c4c888f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🔨 Refactor type definitions and fix TasksItem recursive type ([`f9545e2`](https://github.com/culur/culur/commit/f9545e2b6234df21d8faffcb9a3bfd409899ee63)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Renamed internal type definition files from `.d.ts` to `.ts` and improved the `TasksItem` type to better handle recursive callbacks.
+
+- 📦 Update dependencies ([#426](https://github.com/culur/culur/pull/426) [`ead201a`](https://github.com/culur/culur/commit/ead201a3bf9dda9fc49bf684b4d35828aec05eeb)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `prettier@^3.7.1`
+
+- ⚙️ Update dependencies ([#418](https://github.com/culur/culur/pull/418) [`3eef31d`](https://github.com/culur/culur/commit/3eef31df1178d35bc82ba62c73a645e8de8122ec)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `ink@^6.5.1`
+  - `devDependencies`:
+    - `@types/react@^19.2.7`
+
+- ⚙️ Test: update rule `vitest/no-standalone-expect` ([#423](https://github.com/culur/culur/pull/423) [`cd64869`](https://github.com/culur/culur/commit/cd6486926e4fe37719af4c0fd13520780b31ab05)) ([@renovate](https://github.com/apps/renovate)).
+
 ## 1.7.0
 
 ### Minor Changes

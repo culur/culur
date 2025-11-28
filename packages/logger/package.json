@@ -1,6 +1,6 @@
 {
   "name": "@culur/logger",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "Culur's logger",
   "publishConfig": {
     "access": "public"

@@ -74,6 +74,7 @@ jobs:
     permissions:
       id-token: write # Required for OIDC
       contents: write # Required for write git tag
+      pull-requests: write # Required for create pull requests
     steps:
       #! Checkout
       - name: ⬇️ Checkout

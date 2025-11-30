@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-github-info",
-  "version": "1.1.17",
+  "version": "1.1.18",
   "description": "Get the GitHub username and PR number from a commit. Intended for use with changesets.",
   "publishConfig": {
     "access": "public"

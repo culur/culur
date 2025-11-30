@@ -1,5 +1,13 @@
 # @culur/logger
 
+## 1.8.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([#432](https://github.com/culur/culur/pull/432) [`9de5a39`](https://github.com/culur/culur/commit/9de5a39e5b78382d100f3d407fde01b54145fa1e)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `prettier@^3.7.3`
+
 ## 1.8.0
 
 ### Minor Changes

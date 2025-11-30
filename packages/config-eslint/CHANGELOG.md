@@ -1,5 +1,15 @@
 # @culur/config-eslint
 
+## 1.7.4
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#431](https://github.com/culur/culur/pull/431) [`5ee477c`](https://github.com/culur/culur/commit/5ee477c66c92290bb91f524e9eaa41b5e8ad1576)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@vitest/eslint-plugin@^1.5.1`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.3`
+
 ## 1.7.3
 
 ### Patch Changes

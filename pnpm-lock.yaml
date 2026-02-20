@@ -374,7 +374,7 @@ importers:
         specifier: '*'
         version: 1.7.1
       es-toolkit:
-        specifier: ^1.42.0
+        specifier: ^1.44.0
         version: 1.44.0
       ts-to-zod:
         specifier: ^5.1.0
@@ -396,14 +396,14 @@ importers:
         specifier: ^3.2.25
         version: 3.2.25
       ink:
-        specifier: ^6.5.1
-        version: 6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
+        specifier: ^6.8.0
+        version: 6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
       ink-testing-library:
         specifier: ^4.0.0
         version: 4.0.0(@types/react@19.2.7)
       zod:
-        specifier: ^4.1.13
-        version: 4.1.13
+        specifier: ^4.3.6
+        version: 4.3.6
       zx:
         specifier: ^8.8.5
         version: 8.8.5
@@ -427,13 +427,13 @@ importers:
         version: 6.1.0
       ink:
         specifier: ^6.5.1
-        version: 6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
+        version: 6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
       ink-spinner:
         specifier: ^5.0.0
-        version: 5.0.0(ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0)
+        version: 5.0.0(ink@6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0)
       ink-syntax-highlight:
         specifier: ^2.0.2
-        version: 2.0.2(ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0)
+        version: 2.0.2(ink@6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0)
       prettier:
         specifier: ^3.7.3
         version: 3.7.3
@@ -442,7 +442,7 @@ importers:
         version: 19.2.0
       string-width:
         specifier: ^8.1.0
-        version: 8.1.0
+        version: 8.2.0
     devDependencies:
       '@culur/config-eslint':
         specifier: workspace:*
@@ -529,8 +529,8 @@ packages:
   '@actions/io@3.0.2':
     resolution: {integrity: sha512-nRBchcMM+QK1pdjO7/idu86rbJI5YHUKCvKs0KxnSYbVe3F51UfGxuZX4Qy/fWlp6l7gWFwIkrOzN+oUK03kfw==}
 
-  '@alcalzone/ansi-tokenize@0.2.2':
-    resolution: {integrity: sha512-mkOh+Wwawzuf5wa30bvc4nA+Qb6DIrGWgBhRR/Pw4T9nsgYait8izvXkNyU78D6Wcu3Z+KUdwCmLCxlWjEotYA==}
+  '@alcalzone/ansi-tokenize@0.2.5':
+    resolution: {integrity: sha512-3NX/MpTdroi0aKz134A6RC2Gb2iXVECN4QaAXnvCIxxIm3C3AVB1mkUe8NaaiyvOpDfsrqWhYtj+Q6a62RrTsw==}
     engines: {node: '>=18'}
 
   '@antfu/eslint-config@6.2.0':
@@ -2504,8 +2504,8 @@ packages:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}
     engines: {node: '>=8'}
 
-  ansi-escapes@7.2.0:
-    resolution: {integrity: sha512-g6LhBsl+GBPRWGWsBtutpzBYuIIdBkLEvad5C/va/74Db018+5TZiyA26cZJAr3Rft5lprVqOIPxf5Vid6tqAw==}
+  ansi-escapes@7.3.0:
+    resolution: {integrity: sha512-BvU8nYgGQBxcmMuEeUEmNTvrMVjJNSH7RgW24vXexN4Ven6qCvy4TntnvlnwnMLTVlcRQQdbRY8NKnaIoeWDNg==}
     engines: {node: '>=18'}
 
   ansi-regex@3.0.1:
@@ -2532,8 +2532,8 @@ packages:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
 
-  ansi-styles@6.2.1:
-    resolution: {integrity: sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==}
+  ansi-styles@6.2.3:
+    resolution: {integrity: sha512-4Dj6M28JB+oAH8kFkTLUo+a2jwOFkuqb3yucU0CANcRRUbxS0cP0nZYCGjcc3BNXwRIsUVmDGgzawme7zvJHvg==}
     engines: {node: '>=12'}
 
   ansis@3.17.0:
@@ -3727,8 +3727,8 @@ packages:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
     engines: {node: 6.* || 8.* || >= 10.*}
 
-  get-east-asian-width@1.3.0:
-    resolution: {integrity: sha512-vpeMIQKxczTD/0s2CdEWHcb0eeJe6TFjxb+J5xgX7hScxqrGuyjmv4c1D4A/gelKfyox0gJJwIHF+fLjeaM8kQ==}
+  get-east-asian-width@1.5.0:
+    resolution: {integrity: sha512-CQ+bEO+Tva/qlmw24dCejulK5pMzVnUOFOijVogd3KQs07HnRIgp8TGipvCCRT06xeYEbpbgwaCxglFyiuIcmA==}
     engines: {node: '>=18'}
 
   get-intrinsic@1.3.0:
@@ -4076,13 +4076,13 @@ packages:
       '@types/react':
         optional: true
 
-  ink@6.5.1:
-    resolution: {integrity: sha512-wF3j/DmkM8q5E+OtfdQhCRw8/0ahkc8CUTgEddxZzpEWPslu7YPL3t64MWRoI9m6upVGpfAg4ms2BBvxCdKRLQ==}
+  ink@6.8.0:
+    resolution: {integrity: sha512-sbl1RdLOgkO9isK42WCZlJCFN9hb++sX9dsklOvfd1YQ3bQ2AiFu12Q6tFlr0HvEUvzraJntQCCpfEoUe9DSzA==}
     engines: {node: '>=20'}
     peerDependencies:
       '@types/react': '>=19.0.0'
       react: '>=19.0.0'
-      react-devtools-core: ^6.1.2
+      react-devtools-core: '>=6.1.2'
     peerDependenciesMeta:
       '@types/react':
         optional: true
@@ -4148,8 +4148,8 @@ packages:
     resolution: {integrity: sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg==}
     engines: {node: '>=8'}
 
-  is-fullwidth-code-point@5.0.0:
-    resolution: {integrity: sha512-OVa3u9kkBbw7b8Xw5F9P+D/T9X+Z4+JruYVNapTjPYZYUznQ5YfWeFkOj606XYYW8yugTfC8Pj0hYqvi4ryAhA==}
+  is-fullwidth-code-point@5.1.0:
+    resolution: {integrity: sha512-5XHYaSyiqADb4RnZ1Bdad6cPp8Toise4TzEjcOYDHZkTCbKgiUl7WTUCpNWHuxmDt91wnsZBc9xinNzopv3JMQ==}
     engines: {node: '>=18'}
 
   is-glob@4.0.3:
@@ -5588,6 +5588,10 @@ packages:
     resolution: {integrity: sha512-bSiSngZ/jWeX93BqeIAbImyTbEihizcwNjFoRUIY/T1wWQsfsm2Vw1agPKylXvQTU7iASGdHhyqRlqQzfz+Htg==}
     engines: {node: '>=18'}
 
+  slice-ansi@8.0.0:
+    resolution: {integrity: sha512-stxByr12oeeOyY2BlviTNQlYV5xOj47GirPr4yA1hE9JCtxfQN0+tVbkxwCtYDQWhEKWFHsEK48ORg5jrouCAg==}
+    engines: {node: '>=20'}
+
   snake-case@3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
 
@@ -5660,8 +5664,8 @@ packages:
     resolution: {integrity: sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==}
     engines: {node: '>=18'}
 
-  string-width@8.1.0:
-    resolution: {integrity: sha512-Kxl3KJGb/gxkaUMOjRsQ8IrXiGW75O4E3RPjFIINOVH8AMl2SQ/yWdTzWwF3FevIX9LcMAjJW+GRwAlAbTSXdg==}
+  string-width@8.2.0:
+    resolution: {integrity: sha512-6hJPQ8N0V0P3SNmP6h2J99RLuzrWz2gvT7VnK5tKvrNqJoyS9W4/Fb8mo31UiPvy00z7DQXkP2hnKBVav76thw==}
     engines: {node: '>=20'}
 
   string_decoder@1.3.0:
@@ -5675,8 +5679,8 @@ packages:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
 
-  strip-ansi@7.1.0:
-    resolution: {integrity: sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==}
+  strip-ansi@7.1.2:
+    resolution: {integrity: sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==}
     engines: {node: '>=12'}
 
   strip-bom@3.0.0:
@@ -5847,6 +5851,10 @@ packages:
   term-size@2.2.1:
     resolution: {integrity: sha512-wK0Ri4fOGjv/XPy8SBHZChl8CM7uMc5VML7SqiQ0zG7+J5Vr+RMQDoHa2CNT6KHUnTGIXH34UDMkPzAUyapBZg==}
     engines: {node: '>=8'}
+
+  terminal-size@4.0.1:
+    resolution: {integrity: sha512-avMLDQpUI9I5XFrklECw1ZEUPJhqzcwSWsyyI8blhRLT+8N1jLJWLWWYQpB2q2xthq8xDvjZPISVh53T/+CLYQ==}
+    engines: {node: '>=18'}
 
   text-camel-case@1.2.9:
     resolution: {integrity: sha512-wKYs9SgRxYizJE1mneR7BbLNlGw2IYzJAS8XwkWIry0CTbO1gvvPkFsx5Z1/hr+VqUaBqx9q3yKd30HpZLdMsQ==}
@@ -6301,9 +6309,9 @@ packages:
     resolution: {integrity: sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==}
     engines: {node: '>=8'}
 
-  widest-line@5.0.0:
-    resolution: {integrity: sha512-c9bZp7b5YtRj2wOe6dlj32MK+Bx/M/d+9VB2SHM1OtsUHR0aV0tdP6DWh/iMt0kWi1t5g1Iudu6hQRNd1A4PVA==}
-    engines: {node: '>=18'}
+  widest-line@6.0.0:
+    resolution: {integrity: sha512-U89AsyEeAsyoF0zVJBkG9zBgekjgjK7yk9sje3F4IQpXBJ10TF6ByLlIfjMhcmHMJgHZI4KHt4rdNfktzxIAMA==}
+    engines: {node: '>=20'}
 
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
@@ -6439,8 +6447,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.1.13:
-    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
+  zod@4.3.6:
+    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -6483,10 +6491,10 @@ snapshots:
 
   '@actions/io@3.0.2': {}
 
-  '@alcalzone/ansi-tokenize@0.2.2':
+  '@alcalzone/ansi-tokenize@0.2.5':
     dependencies:
-      ansi-styles: 6.2.1
-      is-fullwidth-code-point: 5.0.0
+      ansi-styles: 6.2.3
+      is-fullwidth-code-point: 5.1.0
 
   '@antfu/eslint-config@6.2.0(@eslint-react/eslint-plugin@2.3.9(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.25)(eslint-plugin-react-hooks@7.0.1(eslint@9.39.1(jiti@2.6.1)))(eslint-plugin-react-refresh@0.4.24(eslint@9.39.1(jiti@2.6.1)))(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)(vitest@4.0.18)':
     dependencies:
@@ -7421,7 +7429,7 @@ snapshots:
       eslint: 9.39.1(jiti@2.6.1)
       ts-pattern: 5.9.0
       typescript: 5.9.3
-      zod: 4.1.13
+      zod: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
@@ -8192,7 +8200,7 @@ snapshots:
     dependencies:
       string-width: 5.1.2
       string-width-cjs: string-width@4.2.3
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
       strip-ansi-cjs: strip-ansi@6.0.1
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
@@ -8972,7 +8980,7 @@ snapshots:
     dependencies:
       type-fest: 0.21.3
 
-  ansi-escapes@7.2.0:
+  ansi-escapes@7.3.0:
     dependencies:
       environment: 1.1.0
 
@@ -8992,7 +9000,7 @@ snapshots:
 
   ansi-styles@5.2.0: {}
 
-  ansi-styles@6.2.1: {}
+  ansi-styles@6.2.3: {}
 
   ansis@3.17.0: {}
 
@@ -9317,7 +9325,7 @@ snapshots:
   cli-truncate@5.1.1:
     dependencies:
       slice-ansi: 7.1.0
-      string-width: 8.1.0
+      string-width: 8.2.0
 
   cli-width@4.1.0: {}
 
@@ -9898,8 +9906,8 @@ snapshots:
       '@babel/parser': 7.28.5
       eslint: 9.39.1(jiti@2.6.1)
       hermes-parser: 0.25.1
-      zod: 4.1.13
-      zod-validation-error: 4.0.2(zod@4.1.13)
+      zod: 4.3.6
+      zod-validation-error: 4.0.2(zod@4.3.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -10347,7 +10355,7 @@ snapshots:
 
   get-caller-file@2.0.5: {}
 
-  get-east-asian-width@1.3.0: {}
+  get-east-asian-width@1.5.0: {}
 
   get-intrinsic@1.3.0:
     dependencies:
@@ -10685,27 +10693,27 @@ snapshots:
 
   ini@4.1.1: {}
 
-  ink-spinner@5.0.0(ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0):
+  ink-spinner@5.0.0(ink@6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0):
     dependencies:
       cli-spinners: 2.9.2
-      ink: 6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
+      ink: 6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
       react: 19.2.0
 
-  ink-syntax-highlight@2.0.2(ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0):
+  ink-syntax-highlight@2.0.2(ink@6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0))(react@19.2.0):
     dependencies:
       cli-highlight: 2.1.11
-      ink: 6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
+      ink: 6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0)
       react: 19.2.0
 
   ink-testing-library@4.0.0(@types/react@19.2.7):
     optionalDependencies:
       '@types/react': 19.2.7
 
-  ink@6.5.1(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0):
+  ink@6.8.0(@types/react@19.2.7)(react-devtools-core@6.1.5)(react@19.2.0):
     dependencies:
-      '@alcalzone/ansi-tokenize': 0.2.2
-      ansi-escapes: 7.2.0
-      ansi-styles: 6.2.1
+      '@alcalzone/ansi-tokenize': 0.2.5
+      ansi-escapes: 7.3.0
+      ansi-styles: 6.2.3
       auto-bind: 5.0.1
       chalk: 5.6.2
       cli-boxes: 3.0.0
@@ -10718,12 +10726,14 @@ snapshots:
       patch-console: 2.0.0
       react: 19.2.0
       react-reconciler: 0.33.0(react@19.2.0)
+      scheduler: 0.27.0
       signal-exit: 3.0.7
-      slice-ansi: 7.1.0
+      slice-ansi: 8.0.0
       stack-utils: 2.0.6
-      string-width: 8.1.0
-      type-fest: 4.41.0
-      widest-line: 5.0.0
+      string-width: 8.2.0
+      terminal-size: 4.0.1
+      type-fest: 5.4.4
+      widest-line: 6.0.0
       wrap-ansi: 9.0.0
       ws: 8.18.3
       yoga-layout: 3.2.1
@@ -10783,9 +10793,9 @@ snapshots:
 
   is-fullwidth-code-point@3.0.0: {}
 
-  is-fullwidth-code-point@5.0.0:
+  is-fullwidth-code-point@5.1.0:
     dependencies:
-      get-east-asian-width: 1.3.0
+      get-east-asian-width: 1.5.0
 
   is-glob@4.0.3:
     dependencies:
@@ -11070,10 +11080,10 @@ snapshots:
 
   log-update@6.1.0:
     dependencies:
-      ansi-escapes: 7.2.0
+      ansi-escapes: 7.3.0
       cli-cursor: 5.0.0
       slice-ansi: 7.1.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
       wrap-ansi: 9.0.0
 
   longest-streak@3.1.0: {}
@@ -12331,8 +12341,13 @@ snapshots:
 
   slice-ansi@7.1.0:
     dependencies:
-      ansi-styles: 6.2.1
-      is-fullwidth-code-point: 5.0.0
+      ansi-styles: 6.2.3
+      is-fullwidth-code-point: 5.1.0
+
+  slice-ansi@8.0.0:
+    dependencies:
+      ansi-styles: 6.2.3
+      is-fullwidth-code-point: 5.1.0
 
   snake-case@3.0.4:
     dependencies:
@@ -12397,18 +12412,18 @@ snapshots:
     dependencies:
       eastasianwidth: 0.2.0
       emoji-regex: 9.2.2
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   string-width@7.2.0:
     dependencies:
       emoji-regex: 10.4.0
-      get-east-asian-width: 1.3.0
-      strip-ansi: 7.1.0
+      get-east-asian-width: 1.5.0
+      strip-ansi: 7.1.2
 
-  string-width@8.1.0:
+  string-width@8.2.0:
     dependencies:
-      get-east-asian-width: 1.3.0
-      strip-ansi: 7.1.0
+      get-east-asian-width: 1.5.0
+      strip-ansi: 7.1.2
 
   string_decoder@1.3.0:
     dependencies:
@@ -12422,7 +12437,7 @@ snapshots:
     dependencies:
       ansi-regex: 5.0.1
 
-  strip-ansi@7.1.0:
+  strip-ansi@7.1.2:
     dependencies:
       ansi-regex: 6.1.0
 
@@ -12635,6 +12650,8 @@ snapshots:
 
   term-size@2.2.1: {}
 
+  terminal-size@4.0.1: {}
+
   text-camel-case@1.2.9:
     dependencies:
       text-pascal-case: 1.2.9
@@ -12807,7 +12824,7 @@ snapshots:
       tslib: 2.8.1
       tsutils: 3.21.0(typescript@5.9.3)
       typescript: 5.9.3
-      zod: 4.1.13
+      zod: 4.3.6
     transitivePeerDependencies:
       - supports-color
 
@@ -13083,9 +13100,9 @@ snapshots:
     dependencies:
       string-width: 4.2.3
 
-  widest-line@5.0.0:
+  widest-line@6.0.0:
     dependencies:
-      string-width: 7.2.0
+      string-width: 8.2.0
 
   word-wrap@1.2.5: {}
 
@@ -13105,15 +13122,15 @@ snapshots:
 
   wrap-ansi@8.1.0:
     dependencies:
-      ansi-styles: 6.2.1
+      ansi-styles: 6.2.3
       string-width: 5.1.2
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   wrap-ansi@9.0.0:
     dependencies:
-      ansi-styles: 6.2.1
+      ansi-styles: 6.2.3
       string-width: 7.2.0
-      strip-ansi: 7.1.0
+      strip-ansi: 7.1.2
 
   wrappy@1.0.2: {}
 
@@ -13207,11 +13224,11 @@ snapshots:
 
   yoga-layout@3.2.1: {}
 
-  zod-validation-error@4.0.2(zod@4.1.13):
+  zod-validation-error@4.0.2(zod@4.3.6):
     dependencies:
-      zod: 4.1.13
+      zod: 4.3.6
 
-  zod@4.1.13: {}
+  zod@4.3.6: {}
 
   zwitch@2.0.4: {}
 

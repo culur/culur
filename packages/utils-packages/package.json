@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "local-pkg": "^1.1.2",
-    "semver": "^7.7.3"
+    "semver": "^7.7.4"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

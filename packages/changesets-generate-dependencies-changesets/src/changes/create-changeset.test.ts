@@ -1,13 +1,11 @@
-import core from '@actions/core';
+import { debug } from '@actions/core';
 import dedent from 'dedent';
 import fs from 'fs-extra';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { createChangeset } from './create-changeset';
 
 vi.mock('@actions/core', () => ({
-  default: {
-    debug: vi.fn(),
-  },
+  debug: vi.fn(),
 }));
 
 describe('createChangeset', () => {
@@ -47,6 +45,6 @@ describe('createChangeset', () => {
       - \`dependencies\`:
         - \`bar@2.0.0\`
     `;
-    expect(core.debug).toBeCalledWith(`${debugMessage}\n`);
+    expect(debug).toBeCalledWith(`${debugMessage}\n`);
   });
 });

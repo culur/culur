@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import { getInput } from '@actions/core';
 import { vi } from 'vitest';
 
 export function mockInput(input: {
@@ -7,7 +7,7 @@ export function mockInput(input: {
   userName: string;
   userEmail: string;
 }) {
-  vi.spyOn(core, 'getInput').mockImplementation(name => {
+  vi.mocked(getInput).mockImplementation(name => {
     if (name === 'base-branch') return input.baseBranchPattern;
     if (name === 'head-branch') return input.headBranchPattern;
     if (name === 'user-name') return input.userName;

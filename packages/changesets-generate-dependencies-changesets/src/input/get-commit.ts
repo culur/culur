@@ -1,7 +1,7 @@
-import exec from '@actions/exec';
+import { getExecOutput } from '@actions/exec';
 
 export async function getCommit() {
-  const { stdout: commitHash } = await exec.getExecOutput(
+  const { stdout: commitHash } = await getExecOutput(
     'git rev-parse --short HEAD',
   );
 

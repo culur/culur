@@ -1,4 +1,4 @@
-import exec from '@actions/exec';
+import { exec } from '@actions/exec';
 import { createChangeset } from './changes/create-changeset';
 import { getDiffPackages } from './changes/get-diff-packages';
 import { configGit } from './input/config-git';
@@ -16,7 +16,7 @@ export async function main() {
   const diffPackageFiles = await getDiffPackages({ branches });
   await createChangeset({ diffPackageFiles, commit });
 
-  await exec.exec('git add .changeset/*.md');
-  await exec.exec('git commit -C HEAD --amend --no-edit');
-  await exec.exec('git push --force');
+  await exec('git add .changeset/*.md');
+  await exec('git commit -C HEAD --amend --no-edit');
+  await exec('git push --force');
 }

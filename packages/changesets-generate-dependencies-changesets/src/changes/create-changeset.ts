@@ -1,6 +1,6 @@
 import type { DiffPackages } from './get-diff-packages';
 import type { Commit } from '~/input/get-commit';
-import core from '@actions/core';
+import { debug } from '@actions/core';
 import { entries } from '@culur/types';
 import fs from 'fs-extra';
 
@@ -50,7 +50,7 @@ export async function createChangeset({
       body,
     ].join('\n');
 
-    core.debug(debugMessage);
+    debug(debugMessage);
 
     fs.writeFile(fileName, body);
   }

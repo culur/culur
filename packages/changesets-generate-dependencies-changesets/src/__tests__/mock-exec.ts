@@ -1,5 +1,10 @@
-import exec from '@actions/exec';
+import { exec, getExecOutput } from '@actions/exec';
 import { vi } from 'vitest';
+
+vi.mock('@actions/exec', () => ({
+  exec: vi.fn(),
+  getExecOutput: vi.fn(),
+}));
 
 export function mockExecOutput(options: {
   diffFiles?: {
@@ -15,7 +20,7 @@ export function mockExecOutput(options: {
     hash: string;
   };
 }) {
-  vi.spyOn(exec, 'getExecOutput').mockImplementation(async command => {
+  vi.mocked(getExecOutput).mockImplementation(async command => {
     if (
       options.diffFiles &&
       command ===
@@ -42,7 +47,7 @@ export function mockExecOutput(options: {
     throw new Error('Not implemented');
   });
 
-  vi.spyOn(exec, 'exec').mockImplementation(async () => 0);
+  vi.mocked(exec).mockImplementation(async () => 0);
 }
 
 export function mockChangedLines(

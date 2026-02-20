@@ -1,16 +1,19 @@
 import process from 'node:process';
-import core from '@actions/core';
-import exec from '@actions/exec';
+import { setFailed } from '@actions/core';
+import { exec } from '@actions/exec';
 import dedent from 'dedent';
 import fs from 'fs-extra';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { configGit } from './config-git';
 
 vi.mock('@actions/core', () => ({
-  default: {
-    setFailed: vi.fn(),
-    info: vi.fn(),
-  },
+  setFailed: vi.fn(),
+  info: vi.fn(),
+}));
+
+vi.mock('@actions/exec', () => ({
+  exec: vi.fn(),
+  getExecOutput: vi.fn(),
 }));
 
 describe('configGit', () => {
@@ -21,7 +24,7 @@ describe('configGit', () => {
     process.env.GITHUB_TOKEN = 'TOKEN';
     process.env.HOME = '~';
     const writeFile = vi.spyOn(fs, 'writeFile').mockImplementation(() => {});
-    vi.spyOn(exec, 'exec').mockImplementation(async () => 0);
+    vi.mocked(exec).mockImplementation(async () => 0);
 
     await configGit({
       input: {
@@ -55,7 +58,7 @@ describe('configGit', () => {
       },
     });
 
-    expect(core.setFailed) //
+    expect(setFailed) //
       .toBeCalledWith('Please add the GITHUB_TOKEN to the changesets action');
   });
 });

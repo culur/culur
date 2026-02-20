@@ -54,9 +54,9 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@actions/core": "^1.11.1",
-    "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.1",
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.0.0",
     "@culur/types": "workspace:*",
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.7.1",

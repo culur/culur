@@ -17,7 +17,11 @@ export function getDependenciesType(
   packageVersion: string,
 ) {
   for (const dependenciesType of dependenciesTypes) {
-    if (packageJson[dependenciesType]?.[packageName] === packageVersion) {
+    if (
+      packageJson[dependenciesType]?.[
+        packageName as keyof (typeof packageJson)[typeof dependenciesType]
+      ] === packageVersion
+    ) {
       return dependenciesType;
     }
   }

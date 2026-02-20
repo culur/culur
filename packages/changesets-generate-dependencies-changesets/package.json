@@ -59,9 +59,9 @@
     "@actions/github": "^6.0.1",
     "@culur/types": "workspace:*",
     "@octokit/webhooks-types": "^7.6.1",
-    "dedent": "^1.7.0",
-    "fs-extra": "^11.3.2",
-    "minimatch": "^10.1.1"
+    "dedent": "^1.7.1",
+    "fs-extra": "^11.3.3",
+    "minimatch": "^10.2.2"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

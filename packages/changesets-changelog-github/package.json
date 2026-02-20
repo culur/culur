@@ -57,13 +57,13 @@
   "dependencies": {
     "@changesets/types": "^6.1.0",
     "@culur/changesets-github-info": "workspace:*",
-    "dotenv": "^17.2.3"
+    "dotenv": "^17.3.1"
   },
   "devDependencies": {
     "@changesets/parse": "^0.4.2",
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/types": "workspace:*",
-    "dedent": "^1.7.0"
+    "dedent": "^1.7.1"
   }
 }

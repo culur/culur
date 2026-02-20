@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "@culur/types": "workspace:*",
-    "vite-tsconfig-paths": "5.1.4"
+    "vite-tsconfig-paths": "6.1.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",

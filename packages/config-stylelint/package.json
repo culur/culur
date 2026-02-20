@@ -83,21 +83,21 @@
   },
   "dependencies": {
     "@culur/utils-packages": "workspace:*",
-    "stylelint-config-clean-order": "^8.0.0",
+    "stylelint-config-clean-order": "^8.0.1",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-standard": "^40.0.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
-    "stylelint-order": "^7.0.0",
+    "stylelint-order": "^7.0.1",
     "stylelint-scss": "^7.0.0",
     "stylelint-selector-bem-pattern": "^4.0.1"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "dedent": "^1.7.0",
+    "dedent": "^1.7.1",
     "postcss": "^8.5.6",
-    "postcss-html": "^1.8.0",
+    "postcss-html": "^1.8.1",
     "postcss-sass": "^0.5.0",
     "postcss-scss": "^4.0.9"
   },

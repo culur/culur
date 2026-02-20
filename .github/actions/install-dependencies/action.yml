@@ -41,7 +41,7 @@ runs:
     #! Cache nx
     - name: 💾 Nx cache
       if: ${{ !inputs.skip-nx-cache }}
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ${{ env.NX_CACHE_DIR }}
         key: |

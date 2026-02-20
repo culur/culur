@@ -1,30 +1,29 @@
 import type { Branches } from '~/input/get-branches';
-import github from '@actions/github';
+import { context } from '@actions/github';
 
 export function defineMockGithubEvent() {
   // Shallow clone original @actions/github context
-  const originalContext = { ...github.context };
+  const originalContext = { ...context };
 
   function mockGithubEvent({
     baseBranch,
     headBranch,
     eventName,
   }: Branches & { eventName: string }) {
-    Object.defineProperty(github, 'context', {
-      value: {
-        eventName,
-        payload: {
-          pull_request: {
-            base: { ref: baseBranch },
-            head: { ref: headBranch },
-          },
+    Object.assign(context, {
+      eventName,
+      payload: {
+        pull_request: {
+          base: { ref: baseBranch },
+          head: { ref: headBranch },
         },
       },
     });
   }
 
   function restoreGithubEvent() {
-    Object.defineProperty(github, 'context', { value: originalContext });
+    for (const key of Object.keys(context)) delete (context as any)[key];
+    Object.assign(context, originalContext);
   }
 
   return { mockGithubEvent, restoreGithubEvent };

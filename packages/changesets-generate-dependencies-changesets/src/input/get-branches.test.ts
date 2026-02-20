@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import { info } from '@actions/core';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { defineMockGithubEvent } from '~/__tests__/mock-github-event';
 import { getBranches } from './get-branches';
@@ -6,9 +6,7 @@ import { getBranches } from './get-branches';
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 
 vi.mock('@actions/core', () => ({
-  default: {
-    info: vi.fn(),
-  },
+  info: vi.fn(),
 }));
 
 describe('getBranches', async () => {
@@ -53,7 +51,7 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(core.info).toBeCalledWith('Not pull request, skipping');
+    expect(info).toBeCalledWith('Not pull request, skipping');
   });
 
   it('invalid base branch', async () => {
@@ -73,8 +71,8 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(core.info).nthCalledWith(1, 'Base branch: "-"');
-    expect(core.info).nthCalledWith(2, 'Not valid base branch, skipping');
+    expect(info).nthCalledWith(1, 'Base branch: "-"');
+    expect(info).nthCalledWith(2, 'Not valid base branch, skipping');
   });
 
   it('invalid head branch', async () => {
@@ -94,8 +92,8 @@ describe('getBranches', async () => {
         },
       }),
     ).rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(core.info).nthCalledWith(1, 'Base branch: "dev"');
-    expect(core.info).nthCalledWith(2, 'Head branch: "feat/foo"');
-    expect(core.info).nthCalledWith(3, 'Not valid head branch, skipping');
+    expect(info).nthCalledWith(1, 'Base branch: "dev"');
+    expect(info).nthCalledWith(2, 'Head branch: "feat/foo"');
+    expect(info).nthCalledWith(3, 'Not valid head branch, skipping');
   });
 });

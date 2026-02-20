@@ -3,12 +3,10 @@ import { mockAll, restoreAll } from './__tests__/mock-all';
 import { main } from './main';
 
 vi.mock('@actions/core', () => ({
-  default: {
-    setFailed: vi.fn(),
-    info: vi.fn(),
-    debug: vi.fn(),
-    getInput: vi.fn(),
-  },
+  setFailed: vi.fn(),
+  info: vi.fn(),
+  debug: vi.fn(),
+  getInput: vi.fn(),
 }));
 
 describe('main', () => {

@@ -1,11 +1,11 @@
-import core from '@actions/core';
+import { getInput as coreGetInput } from '@actions/core';
 
 export function getInput() {
   return {
-    baseBranchPattern: core.getInput('base-branch', { required: true }),
-    headBranchPattern: core.getInput('head-branch', { required: true }),
-    userName: core.getInput('user-name', { required: true }),
-    userEmail: core.getInput('user-email', { required: true }),
+    baseBranchPattern: coreGetInput('base-branch', { required: true }),
+    headBranchPattern: coreGetInput('head-branch', { required: true }),
+    userName: coreGetInput('user-name', { required: true }),
+    userEmail: coreGetInput('user-email', { required: true }),
   };
 }
 

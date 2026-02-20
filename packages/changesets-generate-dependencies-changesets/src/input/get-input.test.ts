@@ -3,9 +3,7 @@ import { mockInput } from '~/__tests__/mock-input';
 import { getInput } from './get-input';
 
 vi.mock('@actions/core', () => ({
-  default: {
-    getInput: vi.fn(),
-  },
+  getInput: vi.fn(),
 }));
 
 describe('getInput', () => {

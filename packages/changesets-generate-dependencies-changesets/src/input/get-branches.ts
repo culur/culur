@@ -1,29 +1,29 @@
 import type { PullRequestEvent } from '@octokit/webhooks-types';
 import type { Input } from './get-input';
 import process from 'node:process';
-import core from '@actions/core';
-import github from '@actions/github';
+import { info } from '@actions/core';
+import { context } from '@actions/github';
 import { minimatch } from 'minimatch';
 
 export async function getBranches({ input }: { input: Input }) {
-  if (github.context.eventName !== 'pull_request') {
-    core.info('Not pull request, skipping');
+  if (context.eventName !== 'pull_request') {
+    info('Not pull request, skipping');
     process.exit(0);
   }
 
-  const event = github.context.payload as PullRequestEvent;
+  const event = context.payload as PullRequestEvent;
   const baseBranch = event.pull_request.base.ref;
   const headBranch = event.pull_request.head.ref;
 
-  core.info(`Base branch: "${baseBranch}"`);
+  info(`Base branch: "${baseBranch}"`);
   if (!minimatch(baseBranch, input.baseBranchPattern)) {
-    core.info('Not valid base branch, skipping');
+    info('Not valid base branch, skipping');
     process.exit(0);
   }
 
-  core.info(`Head branch: "${headBranch}"`);
+  info(`Head branch: "${headBranch}"`);
   if (!minimatch(headBranch, input.headBranchPattern)) {
-    core.info('Not valid head branch, skipping');
+    info('Not valid head branch, skipping');
     process.exit(0);
   }
 

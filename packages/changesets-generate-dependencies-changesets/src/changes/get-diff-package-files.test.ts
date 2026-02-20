@@ -1,13 +1,11 @@
-import core from '@actions/core';
+import { info } from '@actions/core';
 import dedent from 'dedent';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { mockDiffFiles } from '~/__tests__/mock-exec';
 import { getDiffPackageFiles } from './get-diff-package-files';
 
 vi.mock('@actions/core', () => ({
-  default: {
-    info: vi.fn(),
-  },
+  info: vi.fn(),
 }));
 
 describe('getDiffPackageFiles', () => {
@@ -49,7 +47,7 @@ describe('getDiffPackageFiles', () => {
 
     await expect(() => getDiffPackageFiles({ baseBranch, headBranch })) //
       .rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(core.info).toBeCalledWith('Changeset already exists, skipping');
+    expect(info).toBeCalledWith('Changeset already exists, skipping');
   });
 
   it('no package.json', async () => {
@@ -65,7 +63,7 @@ describe('getDiffPackageFiles', () => {
 
     await expect(() => getDiffPackageFiles({ baseBranch, headBranch })) //
       .rejects.toThrowError('process.exit unexpectedly called with "0"');
-    expect(core.info).toBeCalledWith(
+    expect(info).toBeCalledWith(
       'No package.json changes to published packages, skipping',
     );
   });

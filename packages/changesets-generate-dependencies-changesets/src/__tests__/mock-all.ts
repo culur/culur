@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 import { mockExecOutput } from './mock-exec';
 import { defineMockGithubEvent } from './mock-github-event';
 import { mockInput } from './mock-input';
-import { mockPackageFile } from './mock-package';
+import { mockDiffPackageFiles, mockPackageFile } from './mock-package';
 
 const { mockGithubEvent, restoreGithubEvent } = defineMockGithubEvent();
 
@@ -59,6 +59,7 @@ export function mockAll() {
       bar: '^2.0.0',
     },
   });
+  mockDiffPackageFiles(packageFile);
 
   vi.spyOn(fs, 'writeFile').mockImplementation(mockWriteFile);
 }

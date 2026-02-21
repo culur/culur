@@ -1,5 +1,26 @@
 # @culur/logger
 
+## 1.8.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`1cf4d73`](https://github.com/culur/culur/commit/1cf4d739b6fa3aba241d077d2912d56e61e180f0)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.1`
+    - `es-toolkit@^1.44.0`
+    - `ink@^6.8.0`
+    - `prettier@^3.8.1`
+    - `react@^19.2.4`
+    - `string-width@^8.2.0`
+  - `devDependencies`:
+    - `@types/react@^19.2.14`
+    - `prettier-plugin-embed@^0.5.1`
+
+- ⚙️ Update dependencies ([`829f135`](https://github.com/culur/culur/commit/829f1353dcf067a4e91c0c9f071b0c4ac3a2c902)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `react-devtools@^7.0.1`
+    - `react-devtools-core@^7.0.1`
+
 ## 1.8.1
 
 ### Patch Changes

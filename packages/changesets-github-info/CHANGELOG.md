@@ -1,5 +1,20 @@
 # @culur/changesets-github-info
 
+## 1.1.19
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`0bc008e`](https://github.com/culur/culur/commit/0bc008e04d4df06328ddf4e7b12b8e897956398a)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.1`
+    - `es-toolkit@^1.44.0`
+  - `devDependencies`:
+    - `@graphql-codegen/cli@6.1.1`
+    - `@graphql-codegen/typescript-operations@5.0.8`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.5`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.1.18
 
 ### Patch Changes

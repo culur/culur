@@ -1,5 +1,30 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.3.14
+
+### Patch Changes
+
+- 🩹 Fix type error in `getDependenciesType.ts` when accessing dependencies in `package.json` ([`bbb035a`](https://github.com/culur/culur/commit/bbb035a5fc799ccc1897a5f49f6c9ad8363d74b9)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🚨 Fix ESM compatibility and update test mocks for @actions/\* packages ([`e233241`](https://github.com/culur/culur/commit/e233241ee47b1c05c1d16bdd867756c081482bd5)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Changed @actions/\* imports to named imports and updated mock implementations to be compatible with the recently upgraded ESM versions of @actions/\* packages.
+
+- ⚙️ Update dependencies ([`0f6d083`](https://github.com/culur/culur/commit/0f6d08335cea2a29515b8b6d2d653e68d9de6858)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `@actions/core@^3.0.0`
+    - `@actions/exec@^3.0.0`
+    - `@actions/github@^9.0.0`
+
+- ⚙️ Update dependencies ([`0bc008e`](https://github.com/culur/culur/commit/0bc008e04d4df06328ddf4e7b12b8e897956398a)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.1`
+    - `fs-extra@^11.3.3`
+    - `minimatch@^10.2.2`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.5`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.13
 
 ### Patch Changes

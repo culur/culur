@@ -1,5 +1,16 @@
 # @culur/config-vite
 
+## 1.4.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([`098724f`](https://github.com/culur/culur/commit/098724f11193bd83383abfa5a824623096e40910)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `vite-tsconfig-paths@6.1.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.3.5`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.4.0
 
 ### Minor Changes

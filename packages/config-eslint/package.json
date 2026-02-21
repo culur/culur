@@ -56,16 +56,16 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@antfu/eslint-config": "^6.2.0",
+    "@antfu/eslint-config": "^7.4.3",
     "@culur/utils-packages": "workspace:*",
-    "@vitest/eslint-plugin": "^1.5.1"
+    "@vitest/eslint-plugin": "^1.6.9"
   },
   "devDependencies": {
     "@culur/config-tsup": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@eslint/eslintrc": "^3.3.3",
     "@types/eslint": "^9.6.1",
-    "@vue/compiler-sfc": "^3.5.25"
+    "@vue/compiler-sfc": "^3.5.28"
   },
   "peerDependencies": {
     "eslint": ">=9.20.0"

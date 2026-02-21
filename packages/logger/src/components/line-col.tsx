@@ -1,6 +1,5 @@
 import type { LineColProps } from './line-cols.types';
 import { Box, Text } from 'ink';
-import React from 'react';
 import stringWidth from 'string-width';
 
 const getWidth = (col: LineColProps) => {
@@ -24,7 +23,7 @@ export function LineCol({
 } & LineColProps) {
   const width = getWidth(props);
   return (
-    <React.Fragment>
+    <>
       {spaceBefore && <Box width={1} minWidth={1}></Box>}
       {width === undefined && typeof props.text === 'object' ? (
         props.text
@@ -36,6 +35,6 @@ export function LineCol({
           )}
         </Box>
       )}
-    </React.Fragment>
+    </>
   );
 }

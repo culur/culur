@@ -30,7 +30,6 @@ export function TextTimer({
 
   useEffect(() => {
     if (typeof startTime === 'bigint' && typeof endTime === 'bigint') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setDuration(getTime({ startTime, endTime }));
       return;
     }

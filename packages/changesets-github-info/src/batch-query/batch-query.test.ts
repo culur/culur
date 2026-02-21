@@ -23,7 +23,7 @@ describe('batchQuery', () => {
     process.env.GITHUB_TOKEN = 'TOKEN';
     vi.spyOn(octokitGraphql, 'graphql').mockImplementation(async () => null);
 
-    await expect(async () => await batchQuery([])).rejects.toThrowError(
+    await expect(batchQuery([])).rejects.toThrowError(
       'An error occurred when fetching data from GitHub',
     );
   });
@@ -57,14 +57,13 @@ describe('batchQuery', () => {
     });
 
     await expect(
-      async () =>
-        await batchQuery([
-          {
-            owner: 'culur',
-            name: 'culur',
-            pullRequestNumber: 0,
-          },
-        ]),
+      batchQuery([
+        {
+          owner: 'culur',
+          name: 'culur',
+          pullRequestNumber: 0,
+        },
+      ]),
     ).rejects.toThrowError(
       dedent`
         An error occurred when fetching data from GitHub:

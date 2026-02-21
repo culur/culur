@@ -1,5 +1,7 @@
 import type { RefObject } from 'react';
+import type { Mock } from 'vitest';
 import type { LinesRef } from './lines';
+import process from 'node:process';
 import dedent from 'dedent';
 import { render } from 'ink-testing-library';
 import { afterAll, assert, beforeAll, describe, expect, it, vi } from 'vitest';
@@ -94,15 +96,16 @@ describe('dynamic lines', () => {
   });
 });
 
-describe('dynamic lines input', async () => {
+describe('dynamic lines input', () => {
+  let exitSpy: Mock<(code?: number | string | null) => never>;
   beforeAll(() => {
-    vi.spyOn(process, 'exit').mockImplementation(_code => {
-      throw new Error('Custom exit');
+    exitSpy = vi.spyOn(process, 'exit').mockImplementation(() => {
+      return undefined as never;
     });
   });
 
   afterAll(() => {
-    vi.restoreAllMocks();
+    exitSpy.mockRestore();
   });
 
   it('render input', async () => {
@@ -120,7 +123,10 @@ describe('dynamic lines input', async () => {
     expect(lastFrame()).toStrictEqual('Press ESC again to exit.');
 
     await new Promise(resolve => setTimeout(resolve, 50));
-    expect(() => stdin.write('\x1B')).toThrowError('Custom exit');
+    stdin.write('\x1B');
+
+    await new Promise(resolve => setTimeout(resolve, 50));
+    expect(exitSpy).toHaveBeenCalledWith(0);
     unmount();
   });
 });

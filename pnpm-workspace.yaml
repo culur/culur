@@ -9,6 +9,7 @@ packages:
   - templates/*
 overrides:
   chokidar: ^5.0.0
+  semver: ^7.7.4
   sucrase: ^3.35.1
 onlyBuiltDependencies:
   - electron

@@ -8,6 +8,7 @@ packages:
   - scripts/*
   - templates/*
 overrides:
+  chokidar: ^5.0.0
   sucrase: ^3.35.1
 onlyBuiltDependencies:
   - electron

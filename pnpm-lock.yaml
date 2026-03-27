@@ -500,8 +500,8 @@ importers:
   packages/types:
     dependencies:
       type-fest:
-        specifier: ^5.4.4
-        version: 5.4.4
+        specifier: ^5.5.0
+        version: 5.5.0
     devDependencies:
       '@culur/config-tsdown':
         specifier: workspace:*
@@ -5931,8 +5931,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  type-fest@5.4.4:
-    resolution: {integrity: sha512-JnTrzGu+zPV3aXIUhnyWJj4z/wigMsdYajGLIYakqyOW1nPllzXEJee0QQbHj+CTIQtXGlAjuK0UY+2xTyjVAw==}
+  type-fest@5.5.0:
+    resolution: {integrity: sha512-PlBfpQwiUvGViBNX84Yxwjsdhd1TUlXr6zjX7eoirtCPIr08NAmxwa+fcYBTeRQxHo9YC9wwF3m9i700sHma8g==}
     engines: {node: '>=20'}
 
   typescript@5.9.3:
@@ -10161,7 +10161,7 @@ snapshots:
       stack-utils: 2.0.6
       string-width: 8.2.0
       terminal-size: 4.0.1
-      type-fest: 5.4.4
+      type-fest: 5.5.0
       widest-line: 6.0.0
       wrap-ansi: 9.0.0
       ws: 8.20.0
@@ -11427,7 +11427,7 @@ snapshots:
       micro-memoize: 5.1.1
       package-up: 5.0.0
       tiny-jsonc: 1.0.2
-      type-fest: 5.4.4
+      type-fest: 5.5.0
     transitivePeerDependencies:
       - babel-plugin-macros
 
@@ -12321,7 +12321,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  type-fest@5.4.4:
+  type-fest@5.5.0:
     dependencies:
       tagged-tag: 1.0.0
 

@@ -1,22 +1,15 @@
 import type { Packages } from '@culur/utils-packages';
 import type { Config, ConfigRuleSettings } from 'stylelint';
-import type {
-  ConfigRulePrimaryOption,
-  ConfigRuleSecondaryOptions,
-} from '~/utils';
+import type { Primary, Secondary } from '~/utils';
 import { describe, expect, it } from 'vitest';
 
 type Fn<
-  TRuleOrConfig extends
-    | ConfigRuleSettings<ConfigRulePrimaryOption, ConfigRuleSecondaryOptions>
-    | Config,
+  TRuleOrConfig extends ConfigRuleSettings<Primary, Secondary> | Config,
   TTestCase extends Partial<Packages>,
 > = (rule: TRuleOrConfig, testCase: TTestCase) => Promise<void> | void;
 
 function describeRuleOrConfigFactory<
-  TBaseRuleOrConfig extends
-    | ConfigRuleSettings<ConfigRulePrimaryOption, ConfigRuleSecondaryOptions>
-    | Config,
+  TBaseRuleOrConfig extends ConfigRuleSettings<Primary, Secondary> | Config,
 >(describeName: string) {
   return function describeRuleOrConfig<
     TRuleOrConfig extends TBaseRuleOrConfig,
@@ -60,7 +53,7 @@ function describeRuleOrConfigFactory<
 export const describeConfig = describeRuleOrConfigFactory<Config>('config');
 export const describeRule = describeRuleOrConfigFactory<
   ConfigRuleSettings<
-    ConfigRulePrimaryOption, //
-    ConfigRuleSecondaryOptions
+    Primary, //
+    Secondary
   >
 >('rule');

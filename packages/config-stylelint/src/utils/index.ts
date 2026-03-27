@@ -1,5 +1,2 @@
-export type {
-  ConfigRulePrimaryOption,
-  ConfigRuleSecondaryOptions,
-} from './utils';
+export type { Primary, Secondary } from './utils';
 export { defineRule, defineRules, isInRange, mergeConfigs } from './utils';

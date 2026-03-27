@@ -95,8 +95,8 @@
   "devDependencies": {
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "dedent": "^1.7.1",
-    "postcss": "^8.5.6",
+    "dedent": "^1.7.2",
+    "postcss": "^8.5.8",
     "postcss-html": "^1.8.1",
     "postcss-sass": "^0.5.0",
     "postcss-scss": "^4.0.9"

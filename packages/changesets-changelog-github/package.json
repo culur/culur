@@ -60,10 +60,10 @@
     "dotenv": "^17.3.1"
   },
   "devDependencies": {
-    "@changesets/parse": "^0.4.2",
+    "@changesets/parse": "^0.4.3",
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/types": "workspace:*",
-    "dedent": "^1.7.1"
+    "dedent": "^1.7.2"
   }
 }

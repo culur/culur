@@ -1,0 +1,7 @@
+{
+  "extends": "@culur/config-typescript",
+  "compilerOptions": {
+    "allowImportingTsExtensions": true,
+    "noEmit": true
+  }
+}

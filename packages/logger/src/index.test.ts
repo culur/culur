@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import LoggerIndex from '.';
+import { Logger as LoggerIndex } from '.';
 import { Logger } from './logger/logger';
 
 describe('index', () => {

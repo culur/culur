@@ -6,8 +6,9 @@ export {
   LineCols,
   TextTimer,
 } from './components';
-export { Base, BaseRunnable, IRootObject, Log, Task, Tasks } from './item';
-export { Logger as default } from './logger/logger';
+export { Base, Log, Task, Tasks } from './item';
+export type { BaseRunnable, IRootObject } from './item';
+export { Logger } from './logger/logger';
 export { Icon, Prefix, Status } from './types';
 export type {
   TaskCallback,

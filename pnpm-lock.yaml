@@ -271,9 +271,6 @@ importers:
       '@culur/utils-packages':
         specifier: workspace:*
         version: link:../utils-packages
-      stylelint:
-        specifier: '>=16.14.1'
-        version: 17.6.0(typescript@6.0.2)
       stylelint-config-clean-order:
         specifier: ^8.0.1
         version: 8.0.1(stylelint-order@8.1.1(stylelint@17.6.0(typescript@6.0.2)))(stylelint@17.6.0(typescript@6.0.2))
@@ -320,6 +317,9 @@ importers:
       postcss-scss:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.8)
+      stylelint:
+        specifier: ^17.6.0
+        version: 17.6.0(typescript@6.0.2)
 
   packages/config-tsdown:
     devDependencies:

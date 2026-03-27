@@ -1,5 +1,29 @@
 # @culur/logger
 
+## 1.9.0
+
+### Minor Changes
+
+- 🩹 Optimize export type ([`ca85fdb`](https://github.com/culur/culur/commit/ca85fdb4c313d176ba199a8e575fa6212cae3406)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Use `export type` for `BaseRunnable`, `IRootObject` to improve TypeScript type extraction and ensure it is treated as a type-only export.
+  Remove `export { Logger as default }`
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Use `type-fest` instead of `@culur/types` ([`8da36e6`](https://github.com/culur/culur/commit/8da36e6aec6ff5104e019bb6a0dfd604cc3a4061)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🎨 Format code ([`2e1b21c`](https://github.com/culur/culur/commit/2e1b21cffc3cec6b3896070af071519dc5a8ccfc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`22e7a33`](https://github.com/culur/culur/commit/22e7a33762ce9a2f1c3902d9820fcda052632d14)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.2`
+    - `es-toolkit@^1.45.1`
+
 ## 1.8.2
 
 ### Patch Changes

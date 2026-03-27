@@ -1,5 +1,34 @@
 # @culur/config-stylelint
 
+## 1.7.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Rename `ConfigRulePrimaryOption` and `ConfigRuleSecondaryOptions` to `Primary` and `Secondary` ([`cd6d18a`](https://github.com/culur/culur/commit/cd6d18a54a082ca44e90d557bf93f92bf1166bf4)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+  Inline `Primary` and `Secondary` type definitions from `stylelint` source code to avoid direct dependency imports.
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🎨 Format code ([`2e1b21c`](https://github.com/culur/culur/commit/2e1b21cffc3cec6b3896070af071519dc5a8ccfc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`9ad8540`](https://github.com/culur/culur/commit/9ad85406891191012385edf0f8e31ee653e9ecbe)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `stylelint-order@^8.1.1`
+
+- ⚙️ Update dependencies ([`5c2c972`](https://github.com/culur/culur/commit/5c2c9722dc9366e8d2208d01a6cc55f8772e0b16)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `dedent@^1.7.2`
+    - `postcss@^8.5.8`
+
+- ⚙️ Added `stylelint` to `devDependencies` and updated `peerDependencies` to support Stylelint 17 ([`ea635d6`](https://github.com/culur/culur/commit/ea635d60a6e2bdf0eee9651c462143edb05b35db)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.6.5
 
 ### Patch Changes

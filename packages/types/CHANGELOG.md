@@ -1,5 +1,21 @@
 # @culur/types
 
+## 1.4.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Rename `defineObject` to `defineObjectFactory` for improved clarity and consistency ([`2b355e9`](https://github.com/culur/culur/commit/2b355e9c34784d08e46941c64040281f0e138938)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Stop re-exporting `type-fest` types to reduce library overhead and avoid unnecessary redundancy ([`665b4bb`](https://github.com/culur/culur/commit/665b4bb21ac4872808beef976b1d4a638a53ae13)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 📦 Update dependencies ([`3563f26`](https://github.com/culur/culur/commit/3563f2650717df4ea77d56e71304aae700880c42)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `type-fest@^5.5.0`
+
 ## 1.3.5
 
 ### Patch Changes

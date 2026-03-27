@@ -1,5 +1,15 @@
 # @culur/config-prettier
 
+## 1.4.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Added `prettier` to `devDependencies` for internal formatting consistency ([`e2857e0`](https://github.com/culur/culur/commit/e2857e07ab98ce996111e23e6792d7f32f70d454)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.3.7
 
 ### Patch Changes

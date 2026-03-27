@@ -1,5 +1,21 @@
 # @culur/config-tsup
 
+## 1.3.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Add maintenance warning to README and update package keywords ([`01af977`](https://github.com/culur/culur/commit/01af9774543339bf1cf894815608bddac2e29188)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  This package is now in maintenance mode. We recommend migrating to tsdown and using @culur/config-tsdown for better performance and modern features.
+
+- ⚙️ Added `tsup` to `devDependencies` for improved development experience ([`a33a548`](https://github.com/culur/culur/commit/a33a548d149584b955e50c9c5b97871e687d0ad5)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🔨 Update internal references and configurations to align with the renaming of `defineObject` to `defineObjectFactory` ([`93080d5`](https://github.com/culur/culur/commit/93080d5424969774178f2035a3fc623b199ca64d)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.2.6
 
 ### Patch Changes

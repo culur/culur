@@ -1,5 +1,17 @@
 # @culur/utils-packages
 
+## 1.3.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🩹 Optimize export type ([`699268b`](https://github.com/culur/culur/commit/699268bafd67e0e683e1b340d618b1154c204c73)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Use `export type` for `Packages` to improve TypeScript type extraction and ensure it is treated as a type-only export.
+
 ## 1.2.9
 
 ### Patch Changes

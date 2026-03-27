@@ -1,5 +1,31 @@
 # @culur/generate-zod
 
+## 3.0.0
+
+### Minor Changes
+
+- 🩹 Optimize export type ([`ca85fdb`](https://github.com/culur/culur/commit/ca85fdb4c313d176ba199a8e575fa6212cae3406)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Use `export type` for `BaseRunnable`, `IRootObject` to improve TypeScript type extraction and ensure it is treated as a type-only export.
+  Remove `export { Logger as default }`
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add `typescript@^5.9.3` to `devDependencies` to ensure compatibility with `ts-to-zod` ([`f8e8022`](https://github.com/culur/culur/commit/f8e8022d0210bf1e565e02a89b1900a5dec66593)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🎨 Format code ([`2e1b21c`](https://github.com/culur/culur/commit/2e1b21cffc3cec6b3896070af071519dc5a8ccfc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`f5060bb`](https://github.com/culur/culur/commit/f5060bbb1a9f8f546d0bb26f2ee85c3b38dd4a39)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `es-toolkit@^1.45.1`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.9.0`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 2.0.7
 
 ### Patch Changes

@@ -1,5 +1,20 @@
 # @culur/config-vite
 
+## 1.5.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Removed the `vite-tsconfig-paths` dependency as Vite now supports native `tsconfig` path resolution via the `resolve.tsconfigPaths` option. The package has also been updated to require Vite 8 ([`85676eb`](https://github.com/culur/culur/commit/85676eb0f275e30d02ec51eeb8ebbae4cc7c2711)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.0`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.4.1
 
 ### Patch Changes

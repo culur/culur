@@ -1,5 +1,26 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.4.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 🎨 Format code ([`2e1b21c`](https://github.com/culur/culur/commit/2e1b21cffc3cec6b3896070af071519dc5a8ccfc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`d669947`](https://github.com/culur/culur/commit/d6699470f14b79cd543d091e53eb48cbfd1ce1dc)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `dedent@^1.7.2`
+    - `fs-extra@^11.3.4`
+    - `minimatch@^10.2.4`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.0`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.3.14
 
 ### Patch Changes

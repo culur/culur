@@ -1,6 +1,6 @@
 {
   "name": "@culur/config-tsdown",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Culur's tsdown configuration",
   "publishConfig": {
     "access": "public"

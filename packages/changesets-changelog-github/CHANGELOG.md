@@ -1,5 +1,25 @@
 # @culur/changesets-changelog-github
 
+## 1.2.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- 🎨 Format code ([`2e1b21c`](https://github.com/culur/culur/commit/2e1b21cffc3cec6b3896070af071519dc5a8ccfc)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`d669947`](https://github.com/culur/culur/commit/d6699470f14b79cd543d091e53eb48cbfd1ce1dc)) ([@renovate](https://github.com/apps/renovate)):
+  - `devDependencies`:
+    - `@changesets/parse@^0.4.3`
+    - `dedent@^1.7.2`
+
+- 🔨 Update internal references and configurations to align with the renaming of `defineObject` to `defineObjectFactory` ([`93080d5`](https://github.com/culur/culur/commit/93080d5424969774178f2035a3fc623b199ca64d)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.2.0`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.1.19
 
 ### Patch Changes

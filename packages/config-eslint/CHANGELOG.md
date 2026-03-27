@@ -1,5 +1,28 @@
 # @culur/config-eslint
 
+## 1.8.0
+
+### Minor Changes
+
+- ⚙️ Migrate build system from `tsup` to `tsdown` across all packages ([`83b3791`](https://github.com/culur/culur/commit/83b379149b9e9536f4cd161976762afb35b6b61a)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ✨ Remove `baseUrl` and add `paths` in `tsconfig.json` to maintain compatibility with TypeScript 6 ([`926521c`](https://github.com/culur/culur/commit/926521c4545630ed5adfee614740ac6b9fa708b0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ⚙️ Update dependencies ([`9925268`](https://github.com/culur/culur/commit/99252681d90ac780d87416a614d6f4e68e2b8a6b)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@antfu/eslint-config@^7.7.3`
+    - `@vitest/eslint-plugin@^1.6.13`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.5`
+    - `@vue/compiler-sfc@^3.5.31`
+
+- ⚙️ Added `eslint` to `devDependencies` and updated `peerDependencies` to support ESLint 10 ([`70f0dbf`](https://github.com/culur/culur/commit/70f0dbfb7237ac08e86880f1d8897cd9f0001f95)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.7.5
 
 ### Patch Changes

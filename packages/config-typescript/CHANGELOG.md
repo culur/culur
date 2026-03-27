@@ -1,5 +1,15 @@
 # @culur/config-typescript
 
+## 2.0.0
+
+### Major Changes
+
+- ✨ Remove `compilerOptions.paths` ([`888eccf`](https://github.com/culur/culur/commit/888eccf91c8877975f05ed42901ce420a6dbb9cb)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Added `typescript` to `devDependencies` and updated `peerDependencies` to support TypeScript 6 ([`d257509`](https://github.com/culur/culur/commit/d2575098eea17867649005a4d4811a1f509048e0)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
 ## 1.1.2
 
 ### Patch Changes

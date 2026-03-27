@@ -2,7 +2,7 @@ import type { TasksTitle } from '@culur/logger';
 import type { GenerateZodSchemaProps } from 'ts-to-zod';
 import type { CustomJSDocFormatTypes } from 'ts-to-zod/lib/config';
 import process from 'node:process';
-import Logger from '@culur/logger';
+import { Logger } from '@culur/logger';
 import { generateZodFile } from './generate-zod-file';
 
 export interface GenerateZodOptions {

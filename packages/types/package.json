@@ -52,11 +52,9 @@
   "engines": {
     "node": ">=20"
   },
-  "dependencies": {
-    "type-fest": "^5.5.0"
-  },
   "devDependencies": {
     "@culur/config-tsdown": "workspace:*",
-    "@culur/config-typescript": "workspace:*"
+    "@culur/config-typescript": "workspace:*",
+    "type-fest": "^5.5.0"
   }
 }

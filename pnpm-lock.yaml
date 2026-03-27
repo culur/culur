@@ -498,10 +498,6 @@ importers:
   packages/renovate: {}
 
   packages/types:
-    dependencies:
-      type-fest:
-        specifier: ^5.5.0
-        version: 5.5.0
     devDependencies:
       '@culur/config-tsdown':
         specifier: workspace:*
@@ -509,6 +505,9 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
+      type-fest:
+        specifier: ^5.5.0
+        version: 5.5.0
 
   packages/utils-packages:
     dependencies:

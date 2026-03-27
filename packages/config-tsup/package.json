@@ -19,7 +19,8 @@
   "keywords": [
     "culur",
     "config",
-    "typescript"
+    "typescript",
+    "tsup"
   ],
   "type": "module",
   "exports": {

@@ -5,6 +5,10 @@ import {
 } from '@culur/changesets-github-info';
 import { getEmoji } from './get-emoji';
 
+const prRegex = /^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im;
+const commitMessageRegex = /^\s*commit:\s*(\S+)/im;
+const authorRegex = /^\s*(?:author|user):\s*@?(\S+)/gim;
+
 export const getReleaseLine: GetReleaseLine = async (
   changeset,
   type,
@@ -22,17 +26,17 @@ export const getReleaseLine: GetReleaseLine = async (
   const usersFromSummary: string[] = [];
 
   const replacedChangelog = changeset.summary
-    .replace(/^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im, (_, pr) => {
+    .replace(prRegex, (_, pr) => {
       const num = Number(pr);
       /* v8 ignore else -- @preserve */
       if (!Number.isNaN(num)) pullRequestFromSummary = num;
       return '';
     })
-    .replace(/^\s*commit:\s*(\S+)/im, (_, commit) => {
+    .replace(commitMessageRegex, (_, commit) => {
       commitFromSummary = commit;
       return '';
     })
-    .replace(/^\s*(?:author|user):\s*@?(\S+)/gim, (_, user) => {
+    .replace(authorRegex, (_, user) => {
       usersFromSummary.push(user);
       return '';
     })

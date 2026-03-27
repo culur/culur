@@ -13,6 +13,8 @@ import { generateZodIsValidAgainstSchema } from './generate-zod-is-valid-against
 
 const execAsync = promisify(exec);
 
+const slashDollarSignRegex = /\\\$/g;
+
 export async function generateZodFile(
   tasks: Tasks<string[]>,
   options: {
@@ -133,7 +135,7 @@ export async function generateZodFile(
         { text: 'Run:', width: 7 },
         {
           text: command
-            .replace(/\\\$/g, '$')
+            .replace(slashDollarSignRegex, '$')
             .replace(absoluteOutputFile, '[file]'),
           width: loggerFileWidth,
           color: 'blue',

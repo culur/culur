@@ -17,6 +17,14 @@ export const emojiDict = {
 
 const messageRegex = /^(\w+)(?:\((.+)\))?: (.+)$/;
 
+const typeInitialRegex = /^feat|build$/;
+const contentInitialRegex = /^initial.*$/;
+
+const typePackageRegex = /^feat|fix|build|chore$/;
+const contentPackageRegex = /^packages?|.*deps(?:-dev)?$/;
+
+const contentDependencyRegex = /^update (?:dependency|dependencies).*$/;
+
 export const getEmoji = (message?: string) => {
   if (!message) return emojiDict.unknown;
 
@@ -29,18 +37,15 @@ export const getEmoji = (message?: string) => {
     3: content,
   } = result;
 
-  if (/^feat|build$/.test(type) && /^initial.*$/.test(content)) {
+  if (typeInitialRegex.test(type) && contentInitialRegex.test(content)) {
     return emojiDict.init;
   }
 
-  if (
-    /^feat|fix|build|chore$/.test(type) &&
-    /^packages?|.*deps(?:-dev)?$/.test(scope)
-  ) {
+  if (typePackageRegex.test(type) && contentPackageRegex.test(scope)) {
     return emojiDict.package;
   }
 
-  if (/^update (?:dependency|dependencies).*$/.test(content)) {
+  if (contentDependencyRegex.test(content)) {
     return emojiDict.package;
   }
 

@@ -1,6 +1,4 @@
 {
   "extends": "@culur/config-typescript",
-  "compilerOptions": {
-    "baseUrl": "."
-  }
+  "compilerOptions": {}
 }

@@ -106,9 +106,6 @@ importers:
       tsdown:
         specifier: ^0.21.6
         version: 0.21.6(typescript@5.9.3)
-      tsup:
-        specifier: ^8.5.1
-        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -134,9 +131,9 @@ importers:
       '@changesets/parse':
         specifier: ^0.4.2
         version: 0.4.2
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -174,9 +171,9 @@ importers:
         specifier: ^10.2.2
         version: 10.2.2
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -202,9 +199,9 @@ importers:
         specifier: ^1.44.0
         version: 1.44.0
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -236,9 +233,9 @@ importers:
         specifier: '>=9.20.0'
         version: 10.0.1(jiti@2.6.1)
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -258,9 +255,9 @@ importers:
         specifier: '>=3.5.0'
         version: 3.8.1
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -301,9 +298,9 @@ importers:
         specifier: ^4.0.1
         version: 4.0.1(stylelint@17.3.0(typescript@5.9.3))
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -339,6 +336,9 @@ importers:
         specifier: ^8.4.0
         version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)(yaml@2.8.2)
     devDependencies:
+      '@culur/config-tsdown':
+        specifier: workspace:*
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -373,9 +373,9 @@ importers:
         specifier: ^4.0.6
         version: 4.0.18(@types/node@24.10.13)(@vitest/ui@4.0.18)(jiti@2.6.1)(yaml@2.8.2)
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -401,9 +401,9 @@ importers:
         specifier: '>=5.7'
         version: 5.9.3
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -465,9 +465,9 @@ importers:
       '@culur/config-eslint':
         specifier: workspace:*
         version: link:../config-eslint
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -501,9 +501,9 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -517,9 +517,9 @@ importers:
         specifier: ^7.7.4
         version: 7.7.4
     devDependencies:
-      '@culur/config-tsup':
+      '@culur/config-tsdown':
         specifier: workspace:*
-        version: link:../config-tsup
+        version: link:../config-tsdown
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
@@ -3058,8 +3058,8 @@ packages:
     resolution: {integrity: sha512-nlOhI4+fdzoK5xmJ+NY+1gZK56bwEaWZr8fYuXohZ9Vkc1o3a4T/R3M+yE/w7x/ZVJ1zF8c+oaOvF0dztdUgmA==}
     engines: {node: '>=4'}
 
-  consola@3.4.1:
-    resolution: {integrity: sha512-zaUUWockhqxFf4bSXS+kTJwxWvAyMuKtShx0BWcGrMEUqbETcBCT91iQs9pECNx7yz8VH4VeWW/1KAbhE8kiww==}
+  consola@3.4.2:
+    resolution: {integrity: sha512-5IKcdX0nnYavi6G7TtOhwkYzyjfJlatbjMjuLSfE2kYT5pMDOilZ4OvMhi637CcDICTmz3wARPoyhqyX1Y+XvA==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
   constant-case@3.0.4:
@@ -5298,8 +5298,8 @@ packages:
     engines: {node: '>=12.0.0'}
     hasBin: true
 
-  pirates@4.0.6:
-    resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
+  pirates@4.0.7:
+    resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
 
   pkg-types@1.3.1:
@@ -9670,7 +9670,7 @@ snapshots:
       write-file-atomic: 2.4.3
       xdg-basedir: 3.0.0
 
-  consola@3.4.1: {}
+  consola@3.4.2: {}
 
   constant-case@3.0.4:
     dependencies:
@@ -12214,7 +12214,7 @@ snapshots:
 
   pinst@3.0.0: {}
 
-  pirates@4.0.6: {}
+  pirates@4.0.7: {}
 
   pkg-types@1.3.1:
     dependencies:
@@ -12888,7 +12888,7 @@ snapshots:
       commander: 4.1.1
       lines-and-columns: 1.2.4
       mz: 2.7.0
-      pirates: 4.0.6
+      pirates: 4.0.7
       tinyglobby: 0.2.15
       ts-interface-checker: 0.1.13
 
@@ -13185,7 +13185,7 @@ snapshots:
       bundle-require: 5.1.0(esbuild@0.27.0)
       cac: 6.7.14
       chokidar: 5.0.0
-      consola: 3.4.1
+      consola: 3.4.2
       debug: 4.4.3(supports-color@8.1.1)
       esbuild: 0.27.0
       fix-dts-default-cjs-exports: 1.0.1

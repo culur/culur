@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key-before-spread */
 import type { Key } from 'ink';
 import type { LineProps } from '~/components';
 import type { IRootObject } from '~/item';

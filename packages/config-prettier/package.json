@@ -25,8 +25,8 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.cts",
@@ -35,8 +35,8 @@
     },
     "./factory": {
       "import": {
-        "types": "./dist/factory.d.ts",
-        "default": "./dist/factory.js"
+        "types": "./dist/factory.d.mts",
+        "default": "./dist/factory.mjs"
       },
       "require": {
         "types": "./dist/factory.d.cts",
@@ -45,8 +45,8 @@
     },
     "./format": {
       "import": {
-        "types": "./dist/format.d.ts",
-        "default": "./dist/format.js"
+        "types": "./dist/format.d.mts",
+        "default": "./dist/format.mjs"
       },
       "require": {
         "types": "./dist/format.d.cts",
@@ -65,7 +65,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist coverage",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "tsc --noEmit && vitest run"
   },
   "volta": {
@@ -75,7 +75,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@culur/config-tsup": "workspace:*",
+    "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/utils-packages": "workspace:*"
   },

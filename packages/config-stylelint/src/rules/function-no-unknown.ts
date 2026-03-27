@@ -30,6 +30,7 @@ const getIgnoreFunctionsByTailwindVersion = (
   }
 };
 
+const sassFunctionRegex = /^(list|math|color)\..+/;
 const getIgnoreFunctions = (packages: Partial<Packages>) => [
   // https://tailwindcss.com
   ...getIgnoreFunctionsByTailwindVersion(packages.tailwind),
@@ -38,7 +39,7 @@ const getIgnoreFunctions = (packages: Partial<Packages>) => [
   // https://sass-lang.com/documentation/modules/math
   // https://sass-lang.com/documentation/modules/color
   ...(packages.sass //
-    ? [/^(list|math|color)\..+/]
+    ? [sassFunctionRegex]
     : []),
 
   // https://vuejs.org/api/sfc-css-features.html#v-bind-in-css

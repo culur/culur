@@ -13,6 +13,9 @@ function getPrintWidth(level: number, width: number | null | undefined) {
   return terminalWidth - levelIndent;
 }
 
+const dataEqualRegex = /^Data =/;
+const newLineRegex = /\n$/;
+
 export async function formatData({
   level,
   width,
@@ -36,6 +39,6 @@ export async function formatData({
   } catch {}
 
   return codeString //
-    .replace(/^Data =/, chalk.gray('Data ='))
-    .replace(/\n$/, '');
+    .replace(dataEqualRegex, chalk.gray('Data ='))
+    .replace(newLineRegex, '');
 }

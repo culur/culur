@@ -4,6 +4,9 @@ import { debug } from '@actions/core';
 import { entries } from '@culur/types';
 import fs from 'fs-extra';
 
+const atRegex = /^@/;
+const slashRegex = /\//;
+
 export async function createChangeset({
   diffPackageFiles,
   commit,
@@ -14,8 +17,8 @@ export async function createChangeset({
   for (const diffPackageFile of diffPackageFiles) {
     const packageName = diffPackageFile.json.name;
     const shortPackageName = diffPackageFile.json.name
-      ?.replace(/^@/, '')
-      .replace(/\//, '-');
+      ?.replace(atRegex, '')
+      .replace(slashRegex, '-');
     const fileName = `.changeset/renovate-${commit.hash}-${shortPackageName}.md`;
 
     const dependencies = entries(diffPackageFile.changedPackages)

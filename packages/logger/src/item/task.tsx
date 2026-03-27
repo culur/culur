@@ -8,6 +8,8 @@ import { Icon, Prefix, Status } from '~/types';
 import { formatData } from '~/utils';
 import { Base } from './base';
 
+const atErrorRegex = /^\s+at/gm;
+
 export class Task<TItem>
   extends Base //
   implements BaseRunnable
@@ -193,7 +195,7 @@ export class Task<TItem>
                 {
                   text:
                     this.#isShowErrorStack && result.error.stack //
-                      ? result.error.stack.replace(/^\s+at/gm, '  at')
+                      ? result.error.stack.replace(atErrorRegex, '  at')
                       : String(result.error),
                   color: 'red',
                 },

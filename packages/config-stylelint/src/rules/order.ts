@@ -33,6 +33,8 @@ interface SecondaryOptions {
 const definePrimaryOption = (...options: (PrimaryOption[number] | false | undefined)[]) =>
   options.filter((option): option is PrimaryOption[number] => !!option);
 
+const blockRuleRegex = /^&::[\w-]+/;
+
 export const orderRule = (packages: Partial<Packages>) =>
   defineRule<PrimaryOption, SecondaryOptions>([
     definePrimaryOption(
@@ -73,7 +75,7 @@ export const orderRule = (packages: Partial<Packages>) =>
       'declarations', //                                                                                    css:                display: block;
 
       //! block rules
-      { type: 'rule', selector: /^&::[\w-]+/ }, //                                                          css:                &::after {}
+      { type: 'rule', selector: blockRuleRegex }, //                                                          css:                &::after {}
       'rules', //                                                                                           css:                child-component {}
 
       //! blocks nested

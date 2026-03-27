@@ -6,6 +6,8 @@ import fs from 'fs-extra';
 import { getDependenciesType } from './get-dependencies-type';
 import { getDiffPackageFiles } from './get-diff-package-files';
 
+const packageVersionRegex = /^\+\s*"(.+)": "(.+)",?$/;
+
 export async function getDiffPackages({
   branches: { baseBranch, headBranch },
 }: {
@@ -33,7 +35,7 @@ export async function getDiffPackages({
     } = {};
 
     for (const changedLine of changedLines.stdout.split('\n')) {
-      const result = /^\+\s*"(.+)": "(.+)",?$/.exec(changedLine);
+      const result = packageVersionRegex.exec(changedLine);
       if (!result) continue;
 
       const [, packageName, packageVersion] = result;

@@ -1,14 +1,18 @@
+const doubleQuoteRegex = /"/g;
+const singleQuoteRegex = /'/g;
+const backtickRegex = /`/g;
+
 function stringifyString(str: string) {
   const hasSingleQuote = str.includes("'");
   const hasDoubleQuote = str.includes('"');
   const hasNewLine = str.includes('\n');
 
   if (!hasDoubleQuote && !hasNewLine) {
-    return `"${str.replace(/"/g, '\\"')}"`;
+    return `"${str.replace(doubleQuoteRegex, '\\"')}"`;
   } else if (!hasSingleQuote && !hasNewLine) {
-    return `'${str.replace(/'/g, "\\'")}'`;
+    return `'${str.replace(singleQuoteRegex, "\\'")}'`;
   } else {
-    return `\`${str.replace(/`/g, '\\`')}\``;
+    return `\`${str.replace(backtickRegex, '\\`')}\``;
   }
 }
 

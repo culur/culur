@@ -2,6 +2,8 @@ import assert from 'node:assert';
 import { batchQueryDataLoader } from './batch-query/batch-query';
 import { validRepoNameRegex } from './repo-name-regex';
 
+const botRegex = /\[bot\]$/;
+
 export async function getCommitInfo({
   repo,
   commitHash,
@@ -48,7 +50,7 @@ export async function getCommitInfo({
   const user = mergedPullRequest?.author ?? commitData.author?.user ?? null;
 
   if (user) {
-    const login = user.login.replace(/\[bot\]$/, '');
+    const login = user.login.replace(botRegex, '');
     if (user.login !== login) {
       user.login = login;
       user.url = `https://github.com/apps/${login}`;

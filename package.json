@@ -60,7 +60,7 @@
     "@culur/config-prettier": "workspace:*",
     "@culur/config-stylelint": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@eslint-react/eslint-plugin": "^2.13.0",
+    "@eslint-react/eslint-plugin": "^3.0.0",
     "@eslint/config-inspector": "^1.5.0",
     "@nx/shared-fs-cache": "^5.0.0",
     "@types/node": "^24.12.0",

@@ -42,8 +42,11 @@
   "engines": {
     "node": ">=20"
   },
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  },
   "peerDependencies": {
     "@types/node": "*",
-    "typescript": ">=5.7"
+    "typescript": "^5.9.3 || ^6.0.2"
   }
 }

@@ -22,13 +22,13 @@
     "eslint"
   ],
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.cts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
       },
       "require": {
         "types": "./dist/index.d.cts",
@@ -46,7 +46,7 @@
   ],
   "scripts": {
     "clean": "rimraf dist coverage",
-    "build": "tsup",
+    "build": "tsdown",
     "test": "tsc --noEmit && vitest run"
   },
   "volta": {
@@ -61,7 +61,7 @@
     "@vitest/eslint-plugin": "^1.6.9"
   },
   "devDependencies": {
-    "@culur/config-tsup": "workspace:*",
+    "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@eslint/eslintrc": "^3.3.3",
     "@types/eslint": "^9.6.1",

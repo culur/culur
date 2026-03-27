@@ -108,8 +108,8 @@ Some commonly used scripts in `package.json`.
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.cjs"
       },
       "require": {
         "types": "./dist/index.d.cts",

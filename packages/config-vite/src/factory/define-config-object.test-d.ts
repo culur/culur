@@ -18,15 +18,3 @@ describe('defineConfigSync', () => {
     expectTypeOf(config).toEqualTypeOf<ViteUserConfig>();
   });
 });
-
-describe('pluginTsconfigPaths', () => {
-  it('pluginTsconfigPaths = true', () => {
-    const config = defineConfigObject({ pluginTsconfigPaths: true });
-    expectTypeOf(config).toEqualTypeOf<ViteUserConfig>();
-  });
-
-  it('pluginTsconfigPaths = object', async () => {
-    const config = defineConfigObject({ pluginTsconfigPaths: {} });
-    expectTypeOf(config).toEqualTypeOf<ViteUserConfig>();
-  });
-});

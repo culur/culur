@@ -1,7 +1,6 @@
 import type { ViteUserConfig } from 'vitest/config';
 import type { UserConfigExtends } from '~/types';
 import { defineConfig } from 'vitest/config';
-import { defineConfigPlugins } from './options-plugins';
 import { defineConfigTest } from './options-vitest';
 
 export const defineConfigObject = <
@@ -12,18 +11,19 @@ export const defineConfigObject = <
   const defaultOptions: UserConfigExtends = { test: false };
   const options = options_ ?? (defaultOptions as TOptions);
 
-  const plugins = defineConfigPlugins(options);
   const test = defineConfigTest(options.test);
 
   const {
-    pluginTsconfigPaths: _pluginTsconfigPaths,
-    plugins: _plugins,
+    resolve: _resolve, //
     test: _test,
     ...restOptions
   } = options;
 
   const config: ViteUserConfig = {
-    plugins,
+    resolve: {
+      tsconfigPaths: true,
+      ...options.resolve,
+    },
     ...restOptions,
   };
   if (options.test) config.test = test;

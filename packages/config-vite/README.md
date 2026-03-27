@@ -14,7 +14,6 @@
 
 The library is a shareable vite/vitest configuration. It has some key features as follows:
 
-- Include `vite-tsconfig-paths` plugin by default.
 - Include `vitest` config by default (with `typecheck`, `coverage`).
 - Customizable for more complex applications.
 

@@ -10,6 +10,10 @@
 
 > Sharing [tsup](https://github.com/egoist/tsup) configurations.
 
+> [!WARNING]
+> This package is now in **maintain mode**. No new features will be added.
+> We recommend migrating to [tsdown](https://tsdown.dev/) and using [`@culur/config-tsdown`](../config-tsdown) for better performance and modern features.
+
 ## ✨ Features
 
 The library includes several tsup configurations for reuse.

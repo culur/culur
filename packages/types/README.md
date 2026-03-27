@@ -39,12 +39,14 @@ If you don't use any function in this lib, you can install it as devDependencies
 ## 📖 Usage
 
 ```ts
-import { defineObject } from '@culur/types';
+import { defineObjectFactory } from '@culur/types';
 
-const object = defineObject<{
+const defineObject = defineObjectFactory<{
   foo?: string | number;
   bar?: boolean;
-}>()({
+}>();
+
+const object = defineObject({
   foo: 'foo',
 });
 // => { foo: string }

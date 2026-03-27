@@ -1,9 +1,9 @@
 import { describe, expectTypeOf, it } from 'vitest';
-import { defineObject } from './define-object';
+import { defineObjectFactory } from './define-object-factory';
 
 describe('defineObject', () => {
   it('auto completion = default = false', () => {
-    const object = defineObject<{
+    const object = defineObjectFactory<{
       foo?: string | number;
       bar?: boolean;
     }>()({
@@ -16,7 +16,7 @@ describe('defineObject', () => {
   });
 
   it('auto completion = default = true', () => {
-    const object = defineObject<
+    const object = defineObjectFactory<
       {
         foo?: string | number;
         bar?: boolean;

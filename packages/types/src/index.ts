@@ -1,3 +1,3 @@
 export { entries, keys } from './array';
-export { defineObject } from './define-object';
+export { defineObjectFactory } from './define-object-factory';
 export type { PackageJsonExtends } from './package-json';

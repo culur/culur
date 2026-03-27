@@ -19,7 +19,7 @@ runs:
         echo "NX_CACHE_DIR=$(jq -r .cacheDirectory nx.json)" >> $GITHUB_ENV
 
     #! Pnpm
-    - uses: pnpm/action-setup@v4
+    - uses: pnpm/action-setup@v5
       name: 📦 Setup pnpm
       with:
         version: ${{ env.PNPM_VERSION }}
@@ -36,7 +36,7 @@ runs:
     #! Nx
     - name: 💾 Nx set SHAs
       if: ${{ !inputs.skip-nx-cache }}
-      uses: nrwl/nx-set-shas@v4
+      uses: nrwl/nx-set-shas@v5
 
     #! Cache nx
     - name: 💾 Nx cache

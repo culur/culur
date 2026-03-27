@@ -1,4 +1,4 @@
-import { defineObject } from '@culur/types';
+import { defineObjectFactory } from '@culur/types';
 
 export interface MockRecordBase {
   repo: string;
@@ -17,4 +17,4 @@ export type MockRecord = MockRecordBase &
   MockRecordCommit &
   MockRecordPullRequest;
 
-export const defineMockRecord = defineObject<MockRecord>();
+export const defineMockRecord = defineObjectFactory<MockRecord>();

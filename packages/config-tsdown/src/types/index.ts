@@ -1,6 +1,6 @@
 import type { UserConfig } from 'tsdown';
-import { defineObject } from '../../../types/src/define-object'; // external import
+import { defineObjectFactory } from '../../../types/src/define-object-factory'; // external import
 
-export const defineConfigPure = defineObject<UserConfig>();
+export const defineConfigPure = defineObjectFactory<UserConfig>();
 
-export const defineConfig = defineObject<UserConfig, true>();
+export const defineConfig = defineObjectFactory<UserConfig, true>();

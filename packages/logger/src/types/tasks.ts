@@ -1,4 +1,4 @@
-import type { IsTuple } from '@culur/types';
+import type { IsTuple } from 'type-fest';
 import type { TaskResponse } from './task';
 import type { LineColsProps } from '~/components';
 

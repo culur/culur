@@ -1,4 +1,4 @@
-import type { IsTuple } from '@culur/types';
+import type { IsTuple } from 'type-fest';
 import type { TaskCallback } from './task';
 
 //! Callback => Data

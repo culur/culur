@@ -463,6 +463,9 @@ importers:
       string-width:
         specifier: ^8.2.0
         version: 8.2.0
+      type-fest:
+        specifier: ^5.5.0
+        version: 5.5.0
     devDependencies:
       '@culur/config-eslint':
         specifier: workspace:*
@@ -473,9 +476,6 @@ importers:
       '@culur/config-typescript':
         specifier: workspace:*
         version: link:../config-typescript
-      '@culur/types':
-        specifier: workspace:*
-        version: link:../types
       '@types/async':
         specifier: ^3.2.25
         version: 3.2.25

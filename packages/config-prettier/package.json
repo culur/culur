@@ -78,7 +78,7 @@
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/utils-packages": "workspace:*",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.3"
   },
   "peerDependencies": {
     "prettier": ">=3.5.0"

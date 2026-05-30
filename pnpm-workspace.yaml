@@ -17,3 +17,7 @@ onlyBuiltDependencies:
   - electron
   - esbuild
   - nx
+allowBuilds:
+  electron: true
+  esbuild: true
+  nx: true

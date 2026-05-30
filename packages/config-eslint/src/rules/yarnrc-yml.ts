@@ -1,13 +1,6 @@
-import type { Rules, TypedFlatConfigItem } from '@antfu/eslint-config';
-import type { Linter } from 'eslint';
+import type { TypedFlatConfigItem } from '@antfu/eslint-config';
+import type { YamlSortKeysRecord } from './yaml-order';
 import { yamlOrder } from './yaml-order';
-
-type YamlSortKeys =
-  NonNullable<Rules['yaml/sort-keys']> extends Linter.RuleEntry<infer F>
-    ? F
-    : never;
-
-type YamlSortKeysRecord = YamlSortKeys[0];
 
 export const yarnrcYmlSortKeys = {
   packageExtensions: {

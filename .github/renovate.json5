@@ -24,4 +24,5 @@
   dependencyDashboardApproval: true,
   labels: ['dependencies'],
   postUpdateOptions: ['pnpmDedupe'],
+  minimumReleaseAge: '3 days',
 }

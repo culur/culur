@@ -14,6 +14,7 @@
         '/.*prettier.*/',
       ],
       matchFileNames: ['package.json'],
+      minimumReleaseAge: '3 days',
     },
   ],
 }

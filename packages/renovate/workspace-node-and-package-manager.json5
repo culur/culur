@@ -15,6 +15,7 @@
         '!kindest/node',
       ],
       matchDatasources: ['docker', 'node-version', 'npm'],
+      minimumReleaseAge: '3 days',
     },
     {
       description: 'Ignore nodejs',
@@ -22,6 +23,7 @@
       matchPackageNames: ['node'],
       matchManagers: ['npm'],
       matchDepTypes: ['engines'],
+      minimumReleaseAge: '3 days',
     },
   ],
 }

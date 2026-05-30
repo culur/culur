@@ -9,6 +9,7 @@
       semanticCommitScope: 'deps/{{arg0}}',
       addLabels: ['package', '{{arg0}}'],
       matchFileNames: ['{{arg1}}/**'],
+      minimumReleaseAge: '3 days',
     },
     {
       description: 'Ignore peerDependencies',
@@ -17,6 +18,7 @@
       matchManagers: ['npm'],
       matchDepTypes: ['peerDependencies'],
       matchFileNames: ['{{arg1}}/package.json'],
+      minimumReleaseAge: '3 days',
     },
   ],
 }

@@ -48,9 +48,6 @@ importers:
       '@eslint/config-inspector':
         specifier: ^1.5.0
         version: 1.5.0(eslint@10.2.1(jiti@2.6.1))
-      '@nx/shared-fs-cache':
-        specifier: ^5.0.2
-        version: 5.0.2(nx@22.6.5)
       '@types/node':
         specifier: ^24.12.2
         version: 24.12.2
@@ -1669,9 +1666,6 @@ packages:
   '@napi-rs/wasm-runtime@0.2.4':
     resolution: {integrity: sha512-9zESzOO5aDByvhIAsOy9TbpZ0Ur2AJbUI7UT73kcUTS2mxAMHOBaa1st/jAymNoCtvrit99kkzT1FZuXVcgfIQ==}
 
-  '@napi-rs/wasm-runtime@0.2.9':
-    resolution: {integrity: sha512-OKRBiajrrxB9ATokgEQoG87Z25c67pCpYcCwmXYX8PBftC9pBfN18gnm/fh1wurSLEKIAt+QRFLFCQISrb66Jg==}
-
   '@napi-rs/wasm-runtime@1.1.4':
     resolution: {integrity: sha512-3NQNNgA1YSlJb/kMH1ildASP9HW7/7kYnRI2szWJaofaS1hWmbGI4H+d3+22aGzXXN9IJ+n+GiFVcGipJP18ow==}
     peerDependencies:
@@ -1689,73 +1683,6 @@ packages:
   '@nodelib/fs.walk@1.2.8':
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
-
-  '@nx/devkit@22.0.3':
-    resolution: {integrity: sha512-98Iq6+FIrAEv7ZK3n86Nr8zUZ20394fpyJBBhvQJiywH+JRonk7JWY5tUaSuL8kfY8vM+WCnFoWHJ+2Hsgw9EA==}
-    peerDependencies:
-      nx: '>= 21 <= 23 || ^22.0.0-0'
-
-  '@nx/key-darwin-arm64@5.0.2':
-    resolution: {integrity: sha512-gIe8Cl0sE/BZQxvrmam7tZg3hKbBn7Skt25yRMzf6E8UajomG8IGefDv7wM8SVOTA8495viAnqbidM5iNzq4gQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@nx/key-darwin-x64@5.0.2':
-    resolution: {integrity: sha512-XcCT+GYIJPGxHQV90nd7aphuEbe2VLDP53aaXiy1r9RO7XE9AJ8yn4kn5RY81v+7nbBp0/UxM7N44Td2xOrtgw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [darwin]
-
-  '@nx/key-linux-arm-gnueabihf@5.0.2':
-    resolution: {integrity: sha512-XU3Q4Mv0nhjdQmAdbdoPRryWPghaLAo23jRB7Zp7IoqbS887gWwoJF2sz3tBZU9FSRvPvEeYBYlSJRH/9PBoLA==}
-    engines: {node: '>= 10'}
-    cpu: [arm]
-    os: [linux]
-
-  '@nx/key-linux-arm64-gnu@5.0.2':
-    resolution: {integrity: sha512-lCXDSPgMCx2qawxmHXP0BjRkGN9Tku8xUS3UsjiEDdQi+2uHgWS73lsyehYziwDKxqzxMXoPgZHpkU5VLQDFcA==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [glibc]
-
-  '@nx/key-linux-arm64-musl@5.0.2':
-    resolution: {integrity: sha512-7FOF1Cnb5KL/Vy8zlFwUYODqejMRQQ1Lwds40G2GEElei+HHwwJQxxSl1gnuUu6yuCKucPEFXj47Xr+4sBuTiQ==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [linux]
-    libc: [musl]
-
-  '@nx/key-linux-x64-gnu@5.0.2':
-    resolution: {integrity: sha512-t3IpOwrvHyOlOZI6cL5yLfGOe3BIU4De5Hg0leHXEvsC2ooECr9kOl8wGB+CuurI8SbjcwKSUSMcqJY4noRVHw==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    libc: [glibc]
-
-  '@nx/key-linux-x64-musl@5.0.2':
-    resolution: {integrity: sha512-0LFPyr9qSKGrGt2LXPdnCwCjZoTPnF+tN4DRnaD+TWx7gNjvbqbdUq97AbbhI8VFZCM00ipQVXo0MehefS+SEA==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [linux]
-    libc: [musl]
-
-  '@nx/key-win32-arm64-msvc@5.0.2':
-    resolution: {integrity: sha512-abrzvc5v30KqQAjcJy/1z60Uj8kgf4iIHnle1zdc6RM617CSLx4z6TAwU8YIYPLtR9l39cRMUmCd6EScGHIiZg==}
-    engines: {node: '>= 10'}
-    cpu: [arm64]
-    os: [win32]
-
-  '@nx/key-win32-x64-msvc@5.0.2':
-    resolution: {integrity: sha512-A/YmSPsbMIsM8pHtQIeebqMf31Jnri3OVNFlLe32jhLmv9i2Y3QDwYSAicLEjIu6R9WaU2lfJFg3gLCqf5fvgA==}
-    engines: {node: '>= 10'}
-    cpu: [x64]
-    os: [win32]
-
-  '@nx/key@5.0.2':
-    resolution: {integrity: sha512-wFLjrTapHdGhjEdK6jTG41khBwXPrwhR+OGWcB4u52DMD1JYV/ZHi3hMXvS6VFFwQJ6o2M76uYBWK9OSLZXcCQ==}
-    engines: {node: '>= 10'}
 
   '@nx/nx-darwin-arm64@22.6.5':
     resolution: {integrity: sha512-qT77Omkg5xQuL2+pDbneX2tI+XW5ZeayMylu7UUgK8OhTrAkJLKjpuYRH4xT5XBipxbDtlxmO3aLS3Ib1pKzJQ==}
@@ -1810,11 +1737,6 @@ packages:
     resolution: {integrity: sha512-i2QFBJIuaYg9BHxrrnBV4O7W9rVL2k0pSIdk/rRp3EYJEU93iUng+qbZiY9wh1xvmXuUCE2G7TRd+8/SG/RFKg==}
     cpu: [x64]
     os: [win32]
-
-  '@nx/shared-fs-cache@5.0.2':
-    resolution: {integrity: sha512-q6665rOfr1+etT31xZOmW6MpBnasiN4bEz441JSbgtfepfbhD2JESUIWMzJuR/SkGrGrlB1alkhekqScQ3kTbQ==}
-    peerDependencies:
-      nx: '>= 18 < 23'
 
   '@oclif/core@4.5.5':
     resolution: {integrity: sha512-iQzlaJQgPeUXrtrX71OzDwxPikQ7c2FhNd8U8rBB7BCtj2XYfmzBT/Hmbc+g9OKDIG/JkbJT0fXaWMMBrhi+1A==}
@@ -2650,14 +2572,6 @@ packages:
   auto-bind@5.0.1:
     resolution: {integrity: sha512-ooviqdwwgfIfNmDwo94wlshcdzfO64XV0Cg6oDsDYBJfITDz1EngD2z7DkbvCWn+XIMsIqW27sEVF6qcpJrRcg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
-
-  axios-retry@4.5.0:
-    resolution: {integrity: sha512-aR99oXhpEDGo0UuAlYcn2iGRds30k366Zfa05XWScR9QaQD4JYiP3/1Qt1u7YlefUOK+cn0CcwoL1oefavQUlQ==}
-    peerDependencies:
-      axios: 0.x || 1.x
-
-  axios@1.13.6:
-    resolution: {integrity: sha512-ChTCHMouEe2kn713WHbQGcuYrr6fXTBiu460OTwWrWob16g1bXn4vtz07Ope7ewMozJAnEquLk5lWQWtBig9DQ==}
 
   axios@1.15.0:
     resolution: {integrity: sha512-wWyJDlAatxk30ZJer+GeCWS209sA42X+N5jU2jy6oHTp7ufw8uzUTVFBX9+wTfAlhiJXGS0Bq7X6efruWjuK9Q==}
@@ -4262,10 +4176,6 @@ packages:
     resolution: {integrity: sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==}
     engines: {node: '>=0.10.0'}
 
-  is-retry-allowed@2.2.0:
-    resolution: {integrity: sha512-XVm7LOeLpTW4jV19QSH38vkswxoLud8sQ57YwJVTPWdiaI9I8keEhGFpBlslyVsgdQy4Opg8QOLb8YRgsyZiQg==}
-    engines: {node: '>=10'}
-
   is-stream@1.1.0:
     resolution: {integrity: sha512-uQPm8kcs47jx38atAcWTVxyltQYoPT68y9aWYdV6yWXSyW8mzSat0TL6CiWdZeCdF3KrAvpVtnHbTv4RN+rqdQ==}
     engines: {node: '>=0.10.0'}
@@ -4876,10 +4786,6 @@ packages:
     resolution: {integrity: sha512-lKwV/1brpG6mBUFHtb7NUmtABCb2WZZmm2wNiOA5hAb8VdCS4B3dtMWyvcoViccwAW/COERjXLt0zP1zXUN26g==}
     engines: {node: '>=10'}
 
-  minimatch@9.0.3:
-    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
-    engines: {node: '>=16 || 14 >=14.17'}
-
   minimatch@9.0.5:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
@@ -5015,10 +4921,6 @@ packages:
 
   ora@5.3.0:
     resolution: {integrity: sha512-zAKMgGXUim0Jyd6CXK9lraBnD3H5yPGBPPOkC23a2BG6hsm4Zu6OQSjQuEtV0BHDf4aKHcUFvJiGRrFuW3MG8g==}
-    engines: {node: '>=10'}
-
-  ora@5.4.1:
-    resolution: {integrity: sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==}
     engines: {node: '>=10'}
 
   outdent@0.5.0:
@@ -5364,9 +5266,6 @@ packages:
   progress@2.0.3:
     resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
     engines: {node: '>=0.4.0'}
-
-  proxy-from-env@1.1.0:
-    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
   proxy-from-env@2.1.0:
     resolution: {integrity: sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==}
@@ -8011,12 +7910,6 @@ snapshots:
       '@emnapi/runtime': 1.10.0
       '@tybys/wasm-util': 0.9.0
 
-  '@napi-rs/wasm-runtime@0.2.9':
-    dependencies:
-      '@emnapi/core': 1.10.0
-      '@emnapi/runtime': 1.10.0
-      '@tybys/wasm-util': 0.9.0
-
   '@napi-rs/wasm-runtime@1.1.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
       '@emnapi/core': 1.10.0
@@ -8042,65 +7935,6 @@ snapshots:
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
-
-  '@nx/devkit@22.0.3(nx@22.6.5)':
-    dependencies:
-      '@zkochan/js-yaml': 0.0.7
-      ejs: 3.1.10
-      enquirer: 2.3.6
-      minimatch: 9.0.3
-      nx: 22.6.5
-      semver: 7.7.4
-      tslib: 2.8.1
-      yargs-parser: 21.1.1
-
-  '@nx/key-darwin-arm64@5.0.2':
-    optional: true
-
-  '@nx/key-darwin-x64@5.0.2':
-    optional: true
-
-  '@nx/key-linux-arm-gnueabihf@5.0.2':
-    optional: true
-
-  '@nx/key-linux-arm64-gnu@5.0.2':
-    optional: true
-
-  '@nx/key-linux-arm64-musl@5.0.2':
-    optional: true
-
-  '@nx/key-linux-x64-gnu@5.0.2':
-    optional: true
-
-  '@nx/key-linux-x64-musl@5.0.2':
-    optional: true
-
-  '@nx/key-win32-arm64-msvc@5.0.2':
-    optional: true
-
-  '@nx/key-win32-x64-msvc@5.0.2':
-    optional: true
-
-  '@nx/key@5.0.2':
-    dependencies:
-      '@napi-rs/wasm-runtime': 0.2.9
-      axios: 1.13.6
-      axios-retry: 4.5.0(axios@1.13.6)
-      chalk: 4.1.2
-      enquirer: 2.4.1
-      ora: 5.4.1
-    optionalDependencies:
-      '@nx/key-darwin-arm64': 5.0.2
-      '@nx/key-darwin-x64': 5.0.2
-      '@nx/key-linux-arm-gnueabihf': 5.0.2
-      '@nx/key-linux-arm64-gnu': 5.0.2
-      '@nx/key-linux-arm64-musl': 5.0.2
-      '@nx/key-linux-x64-gnu': 5.0.2
-      '@nx/key-linux-x64-musl': 5.0.2
-      '@nx/key-win32-arm64-msvc': 5.0.2
-      '@nx/key-win32-x64-msvc': 5.0.2
-    transitivePeerDependencies:
-      - debug
 
   '@nx/nx-darwin-arm64@22.6.5':
     optional: true
@@ -8131,15 +7965,6 @@ snapshots:
 
   '@nx/nx-win32-x64-msvc@22.6.5':
     optional: true
-
-  '@nx/shared-fs-cache@5.0.2(nx@22.6.5)':
-    dependencies:
-      '@nx/devkit': 22.0.3(nx@22.6.5)
-      '@nx/key': 5.0.2
-      nx: 22.6.5
-      semver: 7.7.4
-    transitivePeerDependencies:
-      - debug
 
   '@oclif/core@4.5.5':
     dependencies:
@@ -8935,19 +8760,6 @@ snapshots:
   auto-bind@4.0.0: {}
 
   auto-bind@5.0.1: {}
-
-  axios-retry@4.5.0(axios@1.13.6):
-    dependencies:
-      axios: 1.13.6
-      is-retry-allowed: 2.2.0
-
-  axios@1.13.6:
-    dependencies:
-      follow-redirects: 1.15.11
-      form-data: 4.0.5
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
 
   axios@1.15.0:
     dependencies:
@@ -10662,8 +10474,6 @@ snapshots:
 
   is-retry-allowed@1.2.0: {}
 
-  is-retry-allowed@2.2.0: {}
-
   is-stream@1.1.0: {}
 
   is-stream@2.0.1: {}
@@ -11431,10 +11241,6 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
-  minimatch@9.0.3:
-    dependencies:
-      brace-expansion: 2.0.1
-
   minimatch@9.0.5:
     dependencies:
       brace-expansion: 2.0.1
@@ -11604,18 +11410,6 @@ snapshots:
       cli-cursor: 3.1.0
       cli-spinners: 2.9.2
       is-interactive: 1.0.0
-      log-symbols: 4.1.0
-      strip-ansi: 6.0.1
-      wcwidth: 1.0.1
-
-  ora@5.4.1:
-    dependencies:
-      bl: 4.1.0
-      chalk: 4.1.2
-      cli-cursor: 3.1.0
-      cli-spinners: 2.9.2
-      is-interactive: 1.0.0
-      is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
       strip-ansi: 6.0.1
       wcwidth: 1.0.1
@@ -11881,8 +11675,6 @@ snapshots:
       react-is: 18.3.1
 
   progress@2.0.3: {}
-
-  proxy-from-env@1.1.0: {}
 
   proxy-from-env@2.1.0: {}
 

@@ -24,5 +24,8 @@
   dependencyDashboardApproval: true,
   labels: ['dependencies'],
   postUpdateOptions: ['pnpmDedupe'],
+  toolSettings: {
+    nodeMaxMemory: 1024,
+  },
   minimumReleaseAge: '3 days',
 }

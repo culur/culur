@@ -13,3 +13,12 @@ export type YamlSortKeys =
     : never;
 
 export type YamlSortKeysRecord = YamlSortKeys[0];
+
+export type YamlSortSequenceValues =
+  NonNullable<Rules['yaml/sort-sequence-values']> extends Linter.RuleEntry<
+    infer F
+  >
+    ? F
+    : never;
+
+export type YamlSortSequenceValuesRecord = YamlSortSequenceValues[0];

@@ -16,7 +16,6 @@ runs:
       run: |
         echo "NODE_VERSION=$(jq -r .volta.node package.json)" >> $GITHUB_ENV
         echo "PNPM_VERSION=$(jq -r .volta.pnpm package.json)" >> $GITHUB_ENV
-        echo "NX_CACHE_DIR=$(jq -r .cacheDirectory nx.json)" >> $GITHUB_ENV
 
     #! Pnpm
     - uses: pnpm/action-setup@v6
@@ -32,25 +31,6 @@ runs:
         node-version: ${{ env.NODE_VERSION }}
         cache: pnpm
         registry-url: 'https://registry.npmjs.org'
-
-    #! Nx
-    - name: 💾 Nx set SHAs
-      if: ${{ !inputs.skip-nx-cache }}
-      uses: nrwl/nx-set-shas@v5
-
-    #! Cache nx
-    - name: 💾 Nx cache
-      if: ${{ !inputs.skip-nx-cache }}
-      uses: actions/cache@v5
-      with:
-        path: ${{ env.NX_CACHE_DIR }}
-        key: |
-          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-${{ env.NX_HEAD }}
-        restore-keys: |
-          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-${{ env.NX_BASE }}
-          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-${{ github.ref_name }}-
-          ${{ runner.os }}-nx-${{ hashFiles('pnpm-lock.yaml') }}-
-          ${{ runner.os }}-nx-
 
     #! Before install
     - name: 📜 Before install

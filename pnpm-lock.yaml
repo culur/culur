@@ -82,8 +82,8 @@ importers:
         specifier: ^0.22.1
         version: 0.22.1
       nx:
-        specifier: 22.7.4
-        version: 22.7.4
+        specifier: 22.7.5
+        version: 22.7.5
       pinst:
         specifier: ^3.0.0
         version: 3.0.0
@@ -206,10 +206,10 @@ importers:
         version: link:../config-typescript
       '@graphql-codegen/cli':
         specifier: 6.2.1
-        version: 6.2.1(@types/node@24.12.4)(crossws@0.3.5)(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)(typescript@6.0.3)
+        version: 6.2.1(@types/node@24.12.4)(crossws@0.3.5)(graphql@16.13.2)(typescript@6.0.3)
       '@graphql-codegen/typescript-operations':
         specifier: 5.0.9
-        version: 5.0.9(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)
+        version: 5.0.9(graphql@16.13.2)
       '@octokit/graphql-schema':
         specifier: ^15.26.1
         version: 15.26.1
@@ -1709,57 +1709,57 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nx/nx-darwin-arm64@22.7.4':
-    resolution: {integrity: sha512-qWf7AOVRpUp8Ixl6ueptZWPtgEzJcv89ifjRPqupMZgqJMpzwPk+AUjAxx6hFuLooevYRXp8V8dT5ExSclASCw==}
+  '@nx/nx-darwin-arm64@22.7.5':
+    resolution: {integrity: sha512-eoPtwx0qZqvRUD+VVOHm150AlSYwYoPxkDHBBGqKCn5nzPspb0lLWw8q83crM/L1M928YgK0WmGf3C++7eqsTA==}
     cpu: [arm64]
     os: [darwin]
 
-  '@nx/nx-darwin-x64@22.7.4':
-    resolution: {integrity: sha512-ouw1X1DAmLHlsm8LCJo8fRD30Mn8AcFk8LLIsSyBv2O3+kP+PDMeUEQI/kM9ADYvlq0oaabOeKc/wFhwAF/KgQ==}
+  '@nx/nx-darwin-x64@22.7.5':
+    resolution: {integrity: sha512-VLOn/ZoEn3HfjSj+yIHLCM56/el79r+9I28CkZNHaSXJQWZ3edSkcgcfYjVxCurpN2VEwDQHLBeFCH8M+lQ7wQ==}
     cpu: [x64]
     os: [darwin]
 
-  '@nx/nx-freebsd-x64@22.7.4':
-    resolution: {integrity: sha512-cRzKEyqh8U9YiaInjVqius9WHdnzz49O5u8K4kBmSG3KV+5iYKTfnG7cAK8n6V2Af84IUQQWLB7UmKqRZX4ChQ==}
+  '@nx/nx-freebsd-x64@22.7.5':
+    resolution: {integrity: sha512-LEVer/E2xfGvK9Go+imMQoEninOoq/38Z2bhV1SD3AThXrp1xaLFVkW5jQ6juebeVkAeztEoMLFlr576egS0vw==}
     cpu: [x64]
     os: [freebsd]
 
-  '@nx/nx-linux-arm-gnueabihf@22.7.4':
-    resolution: {integrity: sha512-STDSy2yuliAb/WJVXhTvTCpdvax+h6oFSkUN63pYtRuUVsUYnWqi9wj/qwSN6J+H0nX0AwC4uF6xdTfEf+MCbg==}
+  '@nx/nx-linux-arm-gnueabihf@22.7.5':
+    resolution: {integrity: sha512-NP27EFGpmFJM6RL1Ey/AFJ7gA2xuqtIHaw6jjSNGvfrnZRUNaway30GrVaGGeODf0DsvAty/unqoBMPy6kDHbw==}
     cpu: [arm]
     os: [linux]
 
-  '@nx/nx-linux-arm64-gnu@22.7.4':
-    resolution: {integrity: sha512-fvFk3yjIIo17iGdsJc3hZ3tpd7Dulmcn2dOu3NbtCFTnT10TnNrkCRSNLmc9+5UP0wGdtX4ex72h/ux4uiaUag==}
+  '@nx/nx-linux-arm64-gnu@22.7.5':
+    resolution: {integrity: sha512-QLnkJl3HkHsPfpLiNiAiMfpfAeFpic0U1diAxF8RqChOkCpQ7ulvyBVgE1UrQxvhd+gFQ3ed5RNDxtCRw8nTiw==}
     cpu: [arm64]
     os: [linux]
     libc: [glibc]
 
-  '@nx/nx-linux-arm64-musl@22.7.4':
-    resolution: {integrity: sha512-NzSVz2hj/e2ruY9vxMCUZ35ek6reL3HcvDZgVuR2ZiDpoOr7dde0MHjBjn9wIvXldtK6UdvDeBuSLiQ/pPYuiQ==}
+  '@nx/nx-linux-arm64-musl@22.7.5':
+    resolution: {integrity: sha512-cEP6KmwBgnb38+jTTaibWCjwXcHmigqhTfy0tN1be7WZr6bHxbqNLsXqKRN70PSNA3HouZcxw1cdRL8tqbPBBA==}
     cpu: [arm64]
     os: [linux]
     libc: [musl]
 
-  '@nx/nx-linux-x64-gnu@22.7.4':
-    resolution: {integrity: sha512-Y53jiik1iUaj3MGZpHpp1p9EwlsrOyGLioX6CD6ziuCpDP9C0M4taEDGeZHXv5NRSVYbOR3/HhwYcMwnb2urYA==}
+  '@nx/nx-linux-x64-gnu@22.7.5':
+    resolution: {integrity: sha512-tbaX1tZCSpGifDNBfDdEZAMxVF3Yg4bhFP/bm1needc0diqb+Zflc0u5tM5/6BWDMITQDwenJVsNiQ8ZdtJURA==}
     cpu: [x64]
     os: [linux]
     libc: [glibc]
 
-  '@nx/nx-linux-x64-musl@22.7.4':
-    resolution: {integrity: sha512-jbq9NDXbEdXCBulGh8T3sLR/uMnuxAvOeOHiJp+KDIGBxS5dCfdmvCzf54DgU1sOCNhly4pud8lcOVP/qFImFA==}
+  '@nx/nx-linux-x64-musl@22.7.5':
+    resolution: {integrity: sha512-H0M7csOZIgPT822LqjxSXzf4MXRND15vIkAQe3F3Jlr3Si8LC3tzbL52aVcRfgb8MF/xOB5U47mSwxWt1M2bPQ==}
     cpu: [x64]
     os: [linux]
     libc: [musl]
 
-  '@nx/nx-win32-arm64-msvc@22.7.4':
-    resolution: {integrity: sha512-s2TPwjJBxiBysI9hp6uwn5yx7PDVAMPvVZYSmsbxenHhERAUf33UTfnEiP5YGoPUZMbYB8CboFBVtGT4GwG+jw==}
+  '@nx/nx-win32-arm64-msvc@22.7.5':
+    resolution: {integrity: sha512-JTcZch9YAnDL1gbhqePz3DZ4x7iYemLn1yJzrjbbXAmXju2eiiJiZvJJHbV06+SP9HKXDT8RjTKuAWTdVxnHug==}
     cpu: [arm64]
     os: [win32]
 
-  '@nx/nx-win32-x64-msvc@22.7.4':
-    resolution: {integrity: sha512-0WyBsO/XuAdOrpbPCbQ7zG7aXb5gEyEz1UZhAtNt5brehngT2RjIl8IrLj5q2qVNyKaw2PZoFp8yEwCLszbZ+g==}
+  '@nx/nx-win32-x64-msvc@22.7.5':
+    resolution: {integrity: sha512-ngcMyHdBJ9FSz2nHdbZ7gtJlFq0O2b05sPAsVMkZ18CKzdaA1qrBDJfsMO49hPCny505eiT766+CkKdaCDl5kA==}
     cpu: [x64]
     os: [win32]
 
@@ -3949,12 +3949,6 @@ packages:
       cosmiconfig-toml-loader:
         optional: true
 
-  graphql-sock@1.0.1:
-    resolution: {integrity: sha512-gSA0CXdNMvNlpEnH2GY1//SUY7laDsAn51sDm4yh6TTH5UkfbNINydyUAoMHHkAaCaOLNXELQmu3GVcSOw4twg==}
-    hasBin: true
-    peerDependencies:
-      graphql: 15.x || 16.x || 17.x
-
   graphql-tag@2.12.6:
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
     engines: {node: '>=10'}
@@ -4984,8 +4978,8 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  nx@22.7.4:
-    resolution: {integrity: sha512-BgKh22x4esZg33DEpLlHaOo5uxYuLvbiICaniciRkW/e3YgFgAewipCB1nkrfDmEBdfm9irihr94gkPGWrobrA==}
+  nx@22.7.5:
+    resolution: {integrity: sha512-zoxsJabb33jl1QYnalDn0bicryrEBgSzdKp90d7VGGv/jDgzKrcLg/hw2ZxeYiOjWPIT/o8QNT9G9vTs4dv3AQ==}
     hasBin: true
     peerDependencies:
       '@swc-node/register': ^1.11.1
@@ -6052,8 +6046,8 @@ packages:
   title-case@3.0.3:
     resolution: {integrity: sha512-e1zGYRvbffpcHIrnuqT0Dh+gEJtDaxDSoG4JAIpq4oDFyooziLBIiYQv0GBT4FUAnUop5uZ1hiIAj7oAF6sOCA==}
 
-  tmp@0.2.4:
-    resolution: {integrity: sha512-UdiSoX6ypifLmrfQ/XfiawN6hkjSBpCjhKxxZcWlUUmoXLaCKQU0bx4HF/tdDK2uzRuchf1txGvrWBzYREssoQ==}
+  tmp@0.2.6:
+    resolution: {integrity: sha512-5sJPdPjfI5Kx+qbrDesxkglRBxW//g7hCsqspEjwkewGvBMGIKMOTKzLt1hFVJzyadba3lDUN20O9qhvbQUSTA==}
     engines: {node: '>=14.14'}
 
   to-regex-range@5.0.1:
@@ -7503,12 +7497,12 @@ snapshots:
       graphql: 16.13.2
       tslib: 2.6.3
 
-  '@graphql-codegen/cli@6.2.1(@types/node@24.12.4)(crossws@0.3.5)(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)(typescript@6.0.3)':
+  '@graphql-codegen/cli@6.2.1(@types/node@24.12.4)(crossws@0.3.5)(graphql@16.13.2)(typescript@6.0.3)':
     dependencies:
       '@babel/generator': 7.28.5
       '@babel/template': 7.27.2
       '@babel/types': 7.29.0
-      '@graphql-codegen/client-preset': 5.2.4(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)
+      '@graphql-codegen/client-preset': 5.2.4(graphql@16.13.2)
       '@graphql-codegen/core': 5.0.1(graphql@16.13.2)
       '@graphql-codegen/plugin-helpers': 6.2.0(graphql@16.13.2)
       '@graphql-tools/apollo-engine-loader': 8.0.28(graphql@16.13.2)
@@ -7553,7 +7547,7 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  '@graphql-codegen/client-preset@5.2.4(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)':
+  '@graphql-codegen/client-preset@5.2.4(graphql@16.13.2)':
     dependencies:
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/template': 7.27.2
@@ -7562,15 +7556,13 @@ snapshots:
       '@graphql-codegen/plugin-helpers': 6.2.0(graphql@16.13.2)
       '@graphql-codegen/typed-document-node': 6.1.7(graphql@16.13.2)
       '@graphql-codegen/typescript': 5.0.9(graphql@16.13.2)
-      '@graphql-codegen/typescript-operations': 5.0.9(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)
+      '@graphql-codegen/typescript-operations': 5.0.9(graphql@16.13.2)
       '@graphql-codegen/visitor-plugin-common': 6.2.4(graphql@16.13.2)
       '@graphql-tools/documents': 1.0.1(graphql@16.13.2)
       '@graphql-tools/utils': 11.0.0(graphql@16.13.2)
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.13.2)
       graphql: 16.13.2
       tslib: 2.6.3
-    optionalDependencies:
-      graphql-sock: 1.0.1(graphql@16.13.2)
 
   '@graphql-codegen/core@5.0.1(graphql@16.13.2)':
     dependencies:
@@ -7615,7 +7607,7 @@ snapshots:
       graphql: 16.13.2
       tslib: 2.6.3
 
-  '@graphql-codegen/typescript-operations@5.0.9(graphql-sock@1.0.1(graphql@16.13.2))(graphql@16.13.2)':
+  '@graphql-codegen/typescript-operations@5.0.9(graphql@16.13.2)':
     dependencies:
       '@graphql-codegen/plugin-helpers': 6.2.0(graphql@16.13.2)
       '@graphql-codegen/typescript': 5.0.9(graphql@16.13.2)
@@ -7623,8 +7615,6 @@ snapshots:
       auto-bind: 4.0.0
       graphql: 16.13.2
       tslib: 2.6.3
-    optionalDependencies:
-      graphql-sock: 1.0.1(graphql@16.13.2)
 
   '@graphql-codegen/typescript@5.0.9(graphql@16.13.2)':
     dependencies:
@@ -8112,34 +8102,34 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@nx/nx-darwin-arm64@22.7.4':
+  '@nx/nx-darwin-arm64@22.7.5':
     optional: true
 
-  '@nx/nx-darwin-x64@22.7.4':
+  '@nx/nx-darwin-x64@22.7.5':
     optional: true
 
-  '@nx/nx-freebsd-x64@22.7.4':
+  '@nx/nx-freebsd-x64@22.7.5':
     optional: true
 
-  '@nx/nx-linux-arm-gnueabihf@22.7.4':
+  '@nx/nx-linux-arm-gnueabihf@22.7.5':
     optional: true
 
-  '@nx/nx-linux-arm64-gnu@22.7.4':
+  '@nx/nx-linux-arm64-gnu@22.7.5':
     optional: true
 
-  '@nx/nx-linux-arm64-musl@22.7.4':
+  '@nx/nx-linux-arm64-musl@22.7.5':
     optional: true
 
-  '@nx/nx-linux-x64-gnu@22.7.4':
+  '@nx/nx-linux-x64-gnu@22.7.5':
     optional: true
 
-  '@nx/nx-linux-x64-musl@22.7.4':
+  '@nx/nx-linux-x64-musl@22.7.5':
     optional: true
 
-  '@nx/nx-win32-arm64-msvc@22.7.4':
+  '@nx/nx-win32-arm64-msvc@22.7.5':
     optional: true
 
-  '@nx/nx-win32-x64-msvc@22.7.4':
+  '@nx/nx-win32-x64-msvc@22.7.5':
     optional: true
 
   '@oclif/core@4.5.5':
@@ -10405,11 +10395,6 @@ snapshots:
       - uWebSockets.js
       - utf-8-validate
 
-  graphql-sock@1.0.1(graphql@16.13.2):
-    dependencies:
-      graphql: 16.13.2
-    optional: true
-
   graphql-tag@2.12.6(graphql@16.13.2):
     dependencies:
       graphql: 16.13.2
@@ -11522,7 +11507,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  nx@22.7.4:
+  nx@22.7.5:
     dependencies:
       '@emnapi/core': 1.4.5
       '@emnapi/runtime': 1.4.5
@@ -11622,7 +11607,7 @@ snapshots:
       strip-bom: 3.0.0
       supports-color: 7.2.0
       tar-stream: 2.2.0
-      tmp: 0.2.4
+      tmp: 0.2.6
       tree-kill: 1.2.2
       tsconfig-paths: 4.2.0
       tslib: 2.8.1
@@ -11635,16 +11620,16 @@ snapshots:
       yargs: 17.7.2
       yargs-parser: 21.1.1
     optionalDependencies:
-      '@nx/nx-darwin-arm64': 22.7.4
-      '@nx/nx-darwin-x64': 22.7.4
-      '@nx/nx-freebsd-x64': 22.7.4
-      '@nx/nx-linux-arm-gnueabihf': 22.7.4
-      '@nx/nx-linux-arm64-gnu': 22.7.4
-      '@nx/nx-linux-arm64-musl': 22.7.4
-      '@nx/nx-linux-x64-gnu': 22.7.4
-      '@nx/nx-linux-x64-musl': 22.7.4
-      '@nx/nx-win32-arm64-msvc': 22.7.4
-      '@nx/nx-win32-x64-msvc': 22.7.4
+      '@nx/nx-darwin-arm64': 22.7.5
+      '@nx/nx-darwin-x64': 22.7.5
+      '@nx/nx-freebsd-x64': 22.7.5
+      '@nx/nx-linux-arm-gnueabihf': 22.7.5
+      '@nx/nx-linux-arm64-gnu': 22.7.5
+      '@nx/nx-linux-arm64-musl': 22.7.5
+      '@nx/nx-linux-x64-gnu': 22.7.5
+      '@nx/nx-linux-x64-musl': 22.7.5
+      '@nx/nx-win32-arm64-msvc': 22.7.5
+      '@nx/nx-win32-x64-msvc': 22.7.5
     transitivePeerDependencies:
       - debug
 
@@ -12741,7 +12726,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  tmp@0.2.4: {}
+  tmp@0.2.6: {}
 
   to-regex-range@5.0.1:
     dependencies:

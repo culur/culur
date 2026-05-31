@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key-before-spread */
 import type { Key } from 'ink';
 import type { LineProps } from '~/components';
 import type { IRootObject } from '~/item';
@@ -45,10 +44,10 @@ export const Lines = ({
   return (
     <>
       <Static items={lines.staticLines}>
-        {line => <Line {...props} {...line} key={line.key} />}
+        {({ key, ...line }) => <Line key={key} {...props} {...line} />}
       </Static>
-      {lines.dynamicLines.map(line => (
-        <Line {...props} {...line} key={line.key} isStatic={false} />
+      {lines.dynamicLines.map(({ key, ...line }) => (
+        <Line key={key} {...props} {...line} isStatic={false} />
       ))}
       {previousInput && previousInput.key.escape && (
         <Text color="yellow">Press ESC again to exit.</Text>

@@ -1,7 +1,11 @@
 import type { TypedFlatConfigItem } from '@antfu/eslint-config';
+import pluginUnicorn from 'eslint-plugin-unicorn';
 
 export const filenameRules: TypedFlatConfigItem = {
   name: 'culur/filename/rules',
+  plugins: {
+    unicorn: pluginUnicorn,
+  },
   files: [
     '**/*.?(c|m){js,ts}?(x)',
     '**/*.vue',

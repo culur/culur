@@ -40,12 +40,6 @@ jobs:
       - name: 🐛 Test
         run: pnpm test
 
-      #! Clear old nx cache
-      - name: 💾 Clear old nx cache
-        uses: ./.github/actions/clear-old-nx-cache
-        with:
-          size-in-mb: 50
-
       #! Publish pre-release
       - name: 🚀 Publish pre-release
         continue-on-error: true

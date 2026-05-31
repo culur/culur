@@ -20,11 +20,11 @@ export const renovateJsonRules: TypedFlatConfigItem = {
     'jsonc/sort-keys': [
       'error',
       {
-        pathPattern: '^$',
+        pathPattern: /^$/.source,
         order: rootOrder,
       },
       {
-        pathPattern: '^packageRules\\[\\d+\\]$',
+        pathPattern: /^packageRules\[\d+\]$/.source,
         order: packageRuleOrder,
       },
     ],

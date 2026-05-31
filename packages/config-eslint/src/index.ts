@@ -2,7 +2,12 @@ import antfu from '@antfu/eslint-config';
 import { defineHasPackages } from '@culur/utils-packages';
 import { importsRules, sortPackageJson, vueRules } from './overrides';
 import { testRules } from './overrides/test-rules';
-import { filenameRules, renovateJsonRules, yarnrcYmlRules } from './rules';
+import {
+  filenameRules,
+  pnpmWorkspaceYamlRules,
+  renovateJsonRules,
+  yarnrcYmlRules,
+} from './rules';
 import { defineOverride } from './types';
 
 export default function defineConfig(
@@ -19,6 +24,7 @@ export default function defineConfig(
     },
     filenameRules,
     yarnrcYmlRules,
+    pnpmWorkspaceYamlRules,
     renovateJsonRules,
     ...userConfigs,
   );

@@ -62,7 +62,7 @@ export function DrawPattern({
           {...props}
         >
           <Box>
-            <Text color={color} children={corner} />
+            <Text color={color}>{corner}</Text>
             <Box
               {...boxProps} //
               flexGrow={1}

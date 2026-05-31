@@ -48,7 +48,6 @@ function suiteFactory(
 
       return {
         ...components,
-        // eslint-disable-next-line react/component-hook-factories
         TextTimer: () => <Text>0.00s</Text>,
       };
     });

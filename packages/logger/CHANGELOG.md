@@ -1,5 +1,19 @@
 # @culur/logger
 
+## 1.9.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#520](https://github.com/culur/culur/pull/520) [`5b2b119`](https://github.com/culur/culur/commit/5b2b11952c8d5245642d80349a326b0be77b3c64)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `es-toolkit@^1.47.0`
+    - `prettier@^3.8.3`
+    - `react@^19.2.6`
+    - `string-width@^8.2.1`
+    - `type-fest@^5.6.0`
+  - `devDependencies`:
+    - `@types/react@^19.2.15`
+
 ## 1.9.0
 
 ### Minor Changes

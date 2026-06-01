@@ -1,5 +1,16 @@
 # @culur/changesets-changelog-github
 
+## 1.2.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`25f332f`](https://github.com/culur/culur/commit/25f332f29952c26f6338b683f26146de63fe4c2e)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `dotenv@^17.4.2`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/changesets-github-info@1.2.1`](https://github.com/culur/culur/tree/main/packages/changesets-github-info#readme)
+
 ## 1.2.0
 
 ### Minor Changes

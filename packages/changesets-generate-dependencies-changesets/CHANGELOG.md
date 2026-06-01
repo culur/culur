@@ -1,5 +1,19 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.4.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`25f332f`](https://github.com/culur/culur/commit/25f332f29952c26f6338b683f26146de63fe4c2e)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `@actions/core@^3.0.1`
+    - `@actions/github@^9.1.1`
+    - `fs-extra@^11.3.5`
+    - `minimatch@^10.2.5`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.1`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.4.0
 
 ### Minor Changes

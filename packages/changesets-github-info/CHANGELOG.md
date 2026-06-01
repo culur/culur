@@ -1,5 +1,23 @@
 # @culur/changesets-github-info
 
+## 1.2.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`25f332f`](https://github.com/culur/culur/commit/25f332f29952c26f6338b683f26146de63fe4c2e)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `dependencies`:
+    - `es-toolkit@^1.47.0`
+  - `devDependencies`:
+    - `graphql@^16.14.0`
+
+- ⚙️ Update dependencies ([`0bf81c2`](https://github.com/culur/culur/commit/0bf81c2126ef2f3db96972323e297aeff346b2a1)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `devDependencies`:
+    - `@graphql-codegen/cli@7.1.0`
+    - `@graphql-codegen/typescript-operations@6.0.3`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.1`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.2.0
 
 ### Minor Changes

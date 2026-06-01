@@ -1,5 +1,19 @@
 # @culur/config-vite
 
+## 1.5.1
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#518](https://github.com/culur/culur/pull/518) [`a5389a9`](https://github.com/culur/culur/commit/a5389a92ff358cc092b5b68a1f5ab6aba1b12321)) ([@phamhongphuc](https://github.com/phamhongphuc)):
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^4.1.7`
+    - `@vitest/ui@^4.1.7`
+    - `vite@^8.0.14`
+    - `vitest@^4.1.7`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.1`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.5.0
 
 ### Minor Changes

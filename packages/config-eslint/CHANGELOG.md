@@ -1,5 +1,22 @@
 # @culur/config-eslint
 
+## 1.8.1
+
+### Patch Changes
+
+- ✨ Add `culur/pnpm-workspace-yaml/rules` to ESLint configuration ([`83b5890`](https://github.com/culur/culur/commit/83b589084a3b9280e83913d9c32377fd45df5428)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ Add "eslint-plugin-unicorn" to the "culur/filename/rules" configuration ([`9f88745`](https://github.com/culur/culur/commit/9f887458c8a2e76c66f93f65c4e6f095a5aa919f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update dependencies ([`aa7d3e1`](https://github.com/culur/culur/commit/aa7d3e1425f16b991ba18cdfcc06f4a795d3623a)) ([@renovate](https://github.com/apps/renovate)):
+  - `dependencies`:
+    - `@antfu/eslint-config@^9.0.0`
+
+- 🔨 Use RegExp source properties for path patterns in renovate JSON rules to avoid escape sequence issues ([`7410d17`](https://github.com/culur/culur/commit/7410d175fb6237bd7c3953bb183b59f2a6fc764f)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.0`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.8.0
 
 ### Minor Changes

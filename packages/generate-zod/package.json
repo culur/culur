@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "async": "^3.2.6",
-    "es-toolkit": "^1.45.1",
+    "es-toolkit": "^1.47.0",
     "ts-to-zod": "^5.1.0"
   },
   "devDependencies": {
@@ -80,7 +80,7 @@
     "ink": "^6.8.0",
     "ink-testing-library": "^4.0.0",
     "typescript": "^5.9.3",
-    "zod": "^4.3.6",
+    "zod": "^4.4.3",
     "zx": "^8.8.5"
   },
   "peerDependencies": {

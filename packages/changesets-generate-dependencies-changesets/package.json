@@ -54,14 +54,14 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@actions/core": "^3.0.0",
+    "@actions/core": "^3.0.1",
     "@actions/exec": "^3.0.0",
-    "@actions/github": "^9.0.0",
+    "@actions/github": "^9.1.1",
     "@culur/types": "workspace:*",
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.7.2",
-    "fs-extra": "^11.3.4",
-    "minimatch": "^10.2.4"
+    "fs-extra": "^11.3.5",
+    "minimatch": "^10.2.5"
   },
   "devDependencies": {
     "@culur/config-tsdown": "workspace:*",

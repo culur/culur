@@ -290,8 +290,8 @@ importers:
         specifier: ^8.1.1
         version: 8.1.1(stylelint@17.12.0(typescript@6.0.2))
       stylelint-scss:
-        specifier: ^7.0.0
-        version: 7.0.0(stylelint@17.12.0(typescript@6.0.2))
+        specifier: ^7.1.1
+        version: 7.1.1(stylelint@17.12.0(typescript@6.0.2))
       stylelint-selector-bem-pattern:
         specifier: ^5.0.0
         version: 5.0.0(stylelint@17.12.0(typescript@6.0.2))
@@ -306,7 +306,7 @@ importers:
         specifier: ^1.7.2
         version: 1.7.2
       postcss:
-        specifier: ^8.5.8
+        specifier: ^8.5.15
         version: 8.5.15
       postcss-html:
         specifier: ^1.8.1
@@ -318,7 +318,7 @@ importers:
         specifier: ^4.0.9
         version: 4.0.9(postcss@8.5.15)
       stylelint:
-        specifier: ^17.6.0
+        specifier: ^17.12.0
         version: 17.12.0(typescript@6.0.2)
 
   packages/config-tsdown:
@@ -5800,6 +5800,12 @@ packages:
 
   stylelint-scss@7.0.0:
     resolution: {integrity: sha512-H88kCC+6Vtzj76NsC8rv6x/LW8slBzIbyeSjsKVlS+4qaEJoDrcJR4L+8JdrR2ORdTscrBzYWiiT2jq6leYR1Q==}
+    engines: {node: '>=20.19.0'}
+    peerDependencies:
+      stylelint: ^16.8.2 || ^17.0.0
+
+  stylelint-scss@7.1.1:
+    resolution: {integrity: sha512-pLPXJZ7RtAFNLXe8gqarf3B56ScVTd1vPiL9IFgcJkIZsYPzAgLJPh2h9NHrp3BFeKrtAkIgwQ08QSmhvlv1gA==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.8.2 || ^17.0.0
@@ -12270,6 +12276,21 @@ snapshots:
       is-plain-object: 5.0.0
       known-css-properties: 0.37.0
       mdn-data: 2.27.1
+      postcss-media-query-parser: 0.2.3
+      postcss-resolve-nested-selector: 0.1.6
+      postcss-selector-parser: 7.1.1
+      postcss-value-parser: 4.2.0
+      stylelint: 17.12.0(typescript@6.0.2)
+
+  stylelint-scss@7.1.1(stylelint@17.12.0(typescript@6.0.2)):
+    dependencies:
+      '@csstools/css-calc': 3.2.1(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
+      '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
+      '@csstools/css-syntax-patches-for-csstree': 1.1.4(css-tree@3.2.1)
+      '@csstools/css-tokenizer': 4.0.0
+      css-tree: 3.2.1
+      is-plain-object: 5.0.0
+      known-css-properties: 0.37.0
       postcss-media-query-parser: 0.2.3
       postcss-resolve-nested-selector: 0.1.6
       postcss-selector-parser: 7.1.1

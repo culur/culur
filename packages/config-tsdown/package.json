@@ -56,9 +56,10 @@
   },
   "devDependencies": {
     "@culur/config-typescript": "workspace:*",
-    "tsdown": "^0.21.6"
+    "tsdown": "^0.22.1",
+    "unrun": "^0.3.0"
   },
   "peerDependencies": {
-    "tsdown": "^0.21.6"
+    "tsdown": "^0.22.1"
   }
 }

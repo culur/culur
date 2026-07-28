@@ -22,6 +22,7 @@ export const filenameRules: TypedFlatConfigItem = {
           '^CHANGELOG\\.md',
           '^CONTRIBUTING\\.md',
           '^README\\.md',
+          '^__tests__',
         ],
       },
     ],

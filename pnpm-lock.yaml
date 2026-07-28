@@ -412,10 +412,10 @@ importers:
         version: 3.2.25
       ink:
         specifier: ^6.8.0
-        version: 6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6)
+        version: 6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8)
       ink-testing-library:
         specifier: ^4.0.0
-        version: 4.0.0(@types/react@19.2.15)
+        version: 4.0.0(@types/react@19.2.17)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -438,31 +438,31 @@ importers:
         specifier: ^1.7.2
         version: 1.7.2
       es-toolkit:
-        specifier: ^1.47.0
+        specifier: ^1.50.0
         version: 1.50.0
       figures:
         specifier: ^6.1.0
         version: 6.1.0
       ink:
         specifier: ^6.8.0
-        version: 6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6)
+        version: 6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8)
       ink-spinner:
         specifier: ^5.0.0
-        version: 5.0.0(ink@6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6))(react@19.2.6)
+        version: 5.0.0(ink@6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8))(react@19.2.8)
       ink-syntax-highlight:
         specifier: ^2.0.2
-        version: 2.0.2(ink@6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6))(react@19.2.6)
+        version: 2.0.2(ink@6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8))(react@19.2.8)
       prettier:
-        specifier: ^3.8.3
+        specifier: ^3.9.6
         version: 3.9.6
       react:
-        specifier: ^19.2.6
-        version: 19.2.6
+        specifier: ^19.2.8
+        version: 19.2.8
       string-width:
-        specifier: ^8.2.1
-        version: 8.2.1
+        specifier: ^8.2.2
+        version: 8.2.2
       type-fest:
-        specifier: ^5.6.0
+        specifier: ^5.8.0
         version: 5.8.0
     devDependencies:
       '@culur/config-eslint':
@@ -478,11 +478,11 @@ importers:
         specifier: ^3.2.25
         version: 3.2.25
       '@types/react':
-        specifier: ^19.2.15
-        version: 19.2.15
+        specifier: ^19.2.17
+        version: 19.2.17
       ink-testing-library:
         specifier: ^4.0.0
-        version: 4.0.0(@types/react@19.2.15)
+        version: 4.0.0(@types/react@19.2.17)
       prettier-plugin-embed:
         specifier: ^0.5.1
         version: 0.5.1
@@ -2236,8 +2236,8 @@ packages:
   '@types/node@24.13.3':
     resolution: {integrity: sha512-Dh8vAsV36ig5wa9OX4pXvMc9D3Veibfw2wix0CUwYODLD8nkj9UsLjASr49nPg+2eKzxhBV+v7L8pXvT4e639Q==}
 
-  '@types/react@19.2.15':
-    resolution: {integrity: sha512-eRwcGNHve+E8qtEQSSRl6urh+rFop4v8gm6O8rGv25CodbvFdLjA1vVQ1KkiFE0w0UPOnb8tDiFKL5lp0rtY5Q==}
+  '@types/react@19.2.17':
+    resolution: {integrity: sha512-MXfmqaVPEVgkBT/aY0aGCkRWWtByiYQXo3xdQ8r5RzuFrPiRn8Gar2tQdXSUQ2GKV3bkXckek89V8wQBY2Q/Aw==}
 
   '@types/responselike@1.0.3':
     resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
@@ -5444,8 +5444,8 @@ packages:
     peerDependencies:
       react: ^19.2.0
 
-  react@19.2.6:
-    resolution: {integrity: sha512-sfWGGfavi0xr8Pg0sVsyHMAOziVYKgPLNrS7ig+ivMNb3wbCBw3KxtflsGBAwD3gYQlE/AEZsTLgToRrSCjb0Q==}
+  react@19.2.8:
+    resolution: {integrity: sha512-PWaYA1L/q9u2u7xYQi+Y3L3Yfnie7XyLeaJICV1MGD6LprsBxcAqGjYyr0eY3p+QdsA+x/Irkt4Qif8D63+Sbw==}
     engines: {node: '>=0.10.0'}
 
   read-yaml-file@1.1.0:
@@ -5750,6 +5750,10 @@ packages:
 
   string-width@8.2.1:
     resolution: {integrity: sha512-IIaP0g3iy9Cyy18w3M9YcaDudujEAVHKt3a3QJg1+sr/oX96TbaGUubG0hJyCjCBThFH+tFpcIyoUHUn1ogaLA==}
+    engines: {node: '>=20'}
+
+  string-width@8.2.2:
+    resolution: {integrity: sha512-GaPUh5gfdrYzqeVNZvUfT23vYYxXzKYidUcnMtJg/3rxRV63EFZy3k6xfKlmfeJD0176lnUV/Usr3XcwSvFzpg==}
     engines: {node: '>=20'}
 
   string_decoder@1.3.0:
@@ -8467,7 +8471,7 @@ snapshots:
     dependencies:
       undici-types: 7.18.2
 
-  '@types/react@19.2.15':
+  '@types/react@19.2.17':
     dependencies:
       csstype: 3.2.3
 
@@ -9224,7 +9228,7 @@ snapshots:
   cli-truncate@5.2.0:
     dependencies:
       slice-ansi: 8.0.0
-      string-width: 8.2.1
+      string-width: 8.2.2
 
   cli-width@4.1.0: {}
 
@@ -10537,23 +10541,23 @@ snapshots:
 
   ini@6.0.0: {}
 
-  ink-spinner@5.0.0(ink@6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6))(react@19.2.6):
+  ink-spinner@5.0.0(ink@6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8))(react@19.2.8):
     dependencies:
       cli-spinners: 2.9.2
-      ink: 6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6)
-      react: 19.2.6
+      ink: 6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8)
+      react: 19.2.8
 
-  ink-syntax-highlight@2.0.2(ink@6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6))(react@19.2.6):
+  ink-syntax-highlight@2.0.2(ink@6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8))(react@19.2.8):
     dependencies:
       cli-highlight: 2.1.11
-      ink: 6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6)
-      react: 19.2.6
+      ink: 6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8)
+      react: 19.2.8
 
-  ink-testing-library@4.0.0(@types/react@19.2.15):
+  ink-testing-library@4.0.0(@types/react@19.2.17):
     optionalDependencies:
-      '@types/react': 19.2.15
+      '@types/react': 19.2.17
 
-  ink@6.8.0(@types/react@19.2.15)(react-devtools-core@7.0.1)(react@19.2.6):
+  ink@6.8.0(@types/react@19.2.17)(react-devtools-core@7.0.1)(react@19.2.8):
     dependencies:
       '@alcalzone/ansi-tokenize': 0.2.5
       ansi-escapes: 7.3.0
@@ -10568,13 +10572,13 @@ snapshots:
       indent-string: 5.0.0
       is-in-ci: 2.0.0
       patch-console: 2.0.0
-      react: 19.2.6
-      react-reconciler: 0.33.0(react@19.2.6)
+      react: 19.2.8
+      react-reconciler: 0.33.0(react@19.2.8)
       scheduler: 0.27.0
       signal-exit: 3.0.7
       slice-ansi: 8.0.0
       stack-utils: 2.0.6
-      string-width: 8.2.1
+      string-width: 8.2.2
       terminal-size: 4.0.1
       type-fest: 5.8.0
       widest-line: 6.0.0
@@ -10582,7 +10586,7 @@ snapshots:
       ws: 8.21.0
       yoga-layout: 3.2.1
     optionalDependencies:
-      '@types/react': 19.2.15
+      '@types/react': 19.2.17
       react-devtools-core: 7.0.1
     transitivePeerDependencies:
       - bufferutil
@@ -11969,12 +11973,12 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  react-reconciler@0.33.0(react@19.2.6):
+  react-reconciler@0.33.0(react@19.2.8):
     dependencies:
-      react: 19.2.6
+      react: 19.2.8
       scheduler: 0.27.0
 
-  react@19.2.6: {}
+  react@19.2.8: {}
 
   read-yaml-file@1.1.0:
     dependencies:
@@ -12302,6 +12306,11 @@ snapshots:
       get-east-asian-width: 1.5.0
       strip-ansi: 7.1.2
 
+  string-width@8.2.2:
+    dependencies:
+      get-east-asian-width: 1.5.0
+      strip-ansi: 7.1.2
+
   string_decoder@1.3.0:
     dependencies:
       safe-buffer: 5.2.1
@@ -12441,7 +12450,7 @@ snapshots:
       postcss-safe-parser: 7.0.1(postcss@8.5.23)
       postcss-selector-parser: 7.1.4
       postcss-value-parser: 4.2.0
-      string-width: 8.2.1
+      string-width: 8.2.2
       supports-hyperlinks: 4.5.0
       svg-tags: 1.0.0
       table: 6.9.0
@@ -12970,7 +12979,7 @@ snapshots:
 
   widest-line@6.0.0:
     dependencies:
-      string-width: 8.2.1
+      string-width: 8.2.2
 
   word-wrap@1.2.5: {}
 
@@ -12979,7 +12988,7 @@ snapshots:
   wrap-ansi@10.0.0:
     dependencies:
       ansi-styles: 6.2.3
-      string-width: 8.2.1
+      string-width: 8.2.2
       strip-ansi: 7.1.2
 
   wrap-ansi@7.0.0:

@@ -3,7 +3,8 @@ import type { LineColsProps } from '~/components';
 import type { Status } from '~/types';
 
 //! Data => Callback
-export type TaskCallback<TItem> = //
+export type TaskCallback<TItem> =
+  //
   (this: Task<TItem>) => TItem | Promise<TItem>;
 
 //! Data => Response

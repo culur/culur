@@ -15,9 +15,7 @@ export function defineConfig<TUserConfig extends UserConfigExtends>(
   config: (
     env: ConfigEnv,
   ) =>
-    | UserConfigExtends
-    | TUserConfig
-    | Promise<UserConfigExtends | TUserConfig>, // for auto-completion
+    UserConfigExtends | TUserConfig | Promise<UserConfigExtends | TUserConfig>, // for auto-completion
 ): (env: ConfigEnv) => Promise<ViteUserConfig>;
 
 export function defineConfig<TUserConfig extends UserConfigExtends>(

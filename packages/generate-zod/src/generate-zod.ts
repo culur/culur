@@ -23,8 +23,7 @@ export async function generateZod(
       customImport?: string;
       inputFiles: {
         [filename: string]: (
-          | string
-          | [declarationName: string, declarationOutputName: string]
+          string | [declarationName: string, declarationOutputName: string]
         )[];
       };
       validateTypes?: string[];

@@ -6,10 +6,7 @@ type StringOrRegex = string | RegExp;
 type OneOrMany<S> = S | S[];
 
 export type Primary =
-  | number
-  | true
-  | OneOrMany<StringOrRegex>
-  | Record<string, any>;
+  number | true | OneOrMany<StringOrRegex> | Record<string, any>;
 export type Secondary = Record<string, any>;
 
 export const defineRule = <

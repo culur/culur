@@ -28,7 +28,6 @@ export const defineOverride = (config: OverrideConfig) =>
   ];
 
 export type RuleEntry<T extends keyof Rules> = Rules[T] extends
-  | Linter.RuleEntry<infer F>
-  | undefined
+  Linter.RuleEntry<infer F> | undefined
   ? F
   : never;

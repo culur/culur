@@ -4,8 +4,7 @@ import type {
 } from '~/types/schema.operations.generated';
 
 export type GithubInfoRequest = { owner: string; name: string } & (
-  | { commitHash: string }
-  | { pullRequestNumber: number }
+  { commitHash: string } | { pullRequestNumber: number }
 );
 
 export interface GithubInfoRequestByRepo {

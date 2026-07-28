@@ -463,7 +463,7 @@ importers:
         version: 8.2.1
       type-fest:
         specifier: ^5.6.0
-        version: 5.7.0
+        version: 5.8.0
     devDependencies:
       '@culur/config-eslint':
         specifier: workspace:*
@@ -504,8 +504,8 @@ importers:
         specifier: workspace:*
         version: link:../config-typescript
       type-fest:
-        specifier: ^5.6.0
-        version: 5.7.0
+        specifier: ^5.8.0
+        version: 5.8.0
 
   packages/utils-packages:
     dependencies:
@@ -6175,8 +6175,8 @@ packages:
     resolution: {integrity: sha512-t0rzBq87m3fVcduHDUFhKmyyX+9eo6WQjZvf51Ea/M0Q7+T374Jp1aUiyUl0GKxp8M/OETVHSDvmkyPgvX+X2w==}
     engines: {node: '>=10'}
 
-  type-fest@5.7.0:
-    resolution: {integrity: sha512-1URUxUqfHFM1c+zfSPsa3gnkO7Aq21qyH75SIduNYz4SzY964rn1X2vCMQaHSHhktiw+0kPa2iyb6PUpXqB6Vg==}
+  type-fest@5.8.0:
+    resolution: {integrity: sha512-YGYEVz3Fm5iy/AybuA0oyNFq7H4CgQNfRp/qfe8nurE1kuCeNm3/vfm9X4Mtl+qLyaKJUh5xrFZwogr41SMjYA==}
     engines: {node: '>=20'}
 
   typescript@5.9.3:
@@ -10576,7 +10576,7 @@ snapshots:
       stack-utils: 2.0.6
       string-width: 8.2.1
       terminal-size: 4.0.1
-      type-fest: 5.7.0
+      type-fest: 5.8.0
       widest-line: 6.0.0
       wrap-ansi: 9.0.0
       ws: 8.21.0
@@ -11902,7 +11902,7 @@ snapshots:
       micro-memoize: 5.1.1
       package-up: 5.0.0
       tiny-jsonc: 1.0.2
-      type-fest: 5.7.0
+      type-fest: 5.8.0
     transitivePeerDependencies:
       - babel-plugin-macros
 
@@ -12776,7 +12776,7 @@ snapshots:
 
   type-fest@0.21.3: {}
 
-  type-fest@5.7.0:
+  type-fest@5.8.0:
     dependencies:
       tagged-tag: 1.0.0
 

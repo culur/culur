@@ -30,7 +30,6 @@ runs:
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: pnpm
-        registry-url: 'https://registry.npmjs.org'
 
     #! Before install
     - name: 📜 Before install

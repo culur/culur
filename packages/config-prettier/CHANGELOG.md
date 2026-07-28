@@ -1,5 +1,16 @@
 # @culur/config-prettier
 
+## 1.4.2
+
+### Patch Changes
+
+- 📦 Update dependencies ([#525](https://github.com/culur/culur/pull/525) [`1910743`](https://github.com/culur/culur/commit/1910743139dd06465e47bb2d9057dc0b35cf4259)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `prettier@^3.9.6`
+
+- 📦 Format code ([#525](https://github.com/culur/culur/pull/525) [`509e8ce`](https://github.com/culur/culur/commit/509e8ce660d7a765ce9cd0c32aad71b1c1a5fe8e)) ([@renovate](https://github.com/apps/renovate)).
+
 ## 1.4.1
 
 ### Patch Changes

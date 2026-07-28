@@ -1,5 +1,15 @@
 # @culur/config-tsdown
 
+## 1.1.2
+
+### Patch Changes
+
+- 📦 Update dependencies ([#532](https://github.com/culur/culur/pull/532) [`02dfa5d`](https://github.com/culur/culur/commit/02dfa5d7e3984058c500c9a0b6c7ac9c1dd713ab)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `tsdown@^0.22.14`
+    - `unrun@^0.3.1`
+
 ## 1.1.1
 
 ### Patch Changes

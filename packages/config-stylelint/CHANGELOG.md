@@ -1,5 +1,22 @@
 # @culur/config-stylelint
 
+## 1.7.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([`fec7e09`](https://github.com/culur/culur/commit/fec7e098fcd063b1d4d2d81d36d9a2acc0cb5073)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-scss@^7.2.0`
+  - `devDependencies`:
+    - `postcss@^8.5.23`
+    - `stylelint@^17.14.1`
+
+- 📦 Format code ([#525](https://github.com/culur/culur/pull/525) [`509e8ce`](https://github.com/culur/culur/commit/509e8ce660d7a765ce9cd0c32aad71b1c1a5fe8e)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.7.1
 
 ### Patch Changes

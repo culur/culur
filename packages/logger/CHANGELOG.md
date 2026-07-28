@@ -1,5 +1,11 @@
 # @culur/logger
 
+## 1.9.2
+
+### Patch Changes
+
+- 📦 Format code ([#525](https://github.com/culur/culur/pull/525) [`509e8ce`](https://github.com/culur/culur/commit/509e8ce660d7a765ce9cd0c32aad71b1c1a5fe8e)) ([@renovate](https://github.com/apps/renovate)).
+
 ## 1.9.1
 
 ### Patch Changes

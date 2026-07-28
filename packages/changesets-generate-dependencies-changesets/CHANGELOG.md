@@ -1,5 +1,17 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.4.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#533](https://github.com/culur/culur/pull/533) [`4fafbd7`](https://github.com/culur/culur/commit/4fafbd7ee23b5e0448ec0bcd2669634f86ca547a)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `fs-extra@^11.4.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.2`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.4.1
 
 ### Patch Changes

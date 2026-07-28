@@ -1,6 +1,6 @@
 {
   "name": "@culur/changesets-generate-dependencies-changesets",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Generate dependencies changesets",
   "private": true,
   "publishConfig": {

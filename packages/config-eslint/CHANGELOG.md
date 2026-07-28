@@ -1,5 +1,30 @@
 # @culur/config-eslint
 
+## 1.9.0
+
+### Minor Changes
+
+- ✨ Add `^__tests__` to filename rule exclusions to accommodate directory name checks in updated `eslint-plugin-unicorn` ([`68f6bff`](https://github.com/culur/culur/commit/68f6bffa393456565f4cbe78b5fa254e36bf0640)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+- ✨ `eslint-plugin-unicorn` is imported automatically from `@antfu/eslint-config`, so explicit dependency declaration and configuration in the project are no longer needed ([`8f891e6`](https://github.com/culur/culur/commit/8f891e6d9f9f7b5ba0dbecc80812a2b7fdf9c172)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#534](https://github.com/culur/culur/pull/534) [`1cf4c89`](https://github.com/culur/culur/commit/1cf4c89817a6309751a0961192c700a66f62f704)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^9.2.0`
+    - `@vitest/eslint-plugin@^1.6.24`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.6`
+    - `@vue/compiler-sfc@^3.5.40`
+    - `eslint@^10.8.0`
+
+- 📦 Format code ([#525](https://github.com/culur/culur/pull/525) [`509e8ce`](https://github.com/culur/culur/commit/509e8ce660d7a765ce9cd0c32aad71b1c1a5fe8e)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.1`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.8.1
 
 ### Patch Changes

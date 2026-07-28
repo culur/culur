@@ -1,5 +1,19 @@
 # @culur/generate-zod
 
+## 3.0.2
+
+### Patch Changes
+
+- 📦 Update dependencies ([`194854b`](https://github.com/culur/culur/commit/194854bff77909ff9002e04528b965a16f6d6b92)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `es-toolkit@^1.50.0`
+
+- 📦 Format code ([#525](https://github.com/culur/culur/pull/525) [`509e8ce`](https://github.com/culur/culur/commit/509e8ce660d7a765ce9cd0c32aad71b1c1a5fe8e)) ([@renovate](https://github.com/apps/renovate)).
+
+- 📦 Update workspace dependencies:
+  - [`@culur/logger@1.9.2`](https://github.com/culur/culur/tree/main/packages/logger#readme)
+
 ## 3.0.1
 
 ### Patch Changes

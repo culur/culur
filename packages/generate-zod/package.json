@@ -69,7 +69,7 @@
   },
   "dependencies": {
     "async": "^3.2.6",
-    "es-toolkit": "^1.47.0",
+    "es-toolkit": "^1.50.0",
     "ts-to-zod": "^5.1.0"
   },
   "devDependencies": {

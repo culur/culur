@@ -389,7 +389,7 @@ importers:
         specifier: '*'
         version: 1.7.2
       es-toolkit:
-        specifier: ^1.47.0
+        specifier: ^1.50.0
         version: 1.50.0
       ts-to-zod:
         specifier: ^5.1.0

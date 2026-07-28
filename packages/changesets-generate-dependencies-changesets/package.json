@@ -60,7 +60,7 @@
     "@culur/types": "workspace:*",
     "@octokit/webhooks-types": "^7.6.1",
     "dedent": "^1.7.2",
-    "fs-extra": "^11.3.5",
+    "fs-extra": "^11.4.0",
     "minimatch": "^10.2.5"
   },
   "devDependencies": {

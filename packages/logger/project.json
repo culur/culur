@@ -1,4 +1,119 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "logger"
+  "name": "logger",
+  "projectType": "library",
+  "root": "packages/logger",
+  "sourceRoot": "packages/logger/src",
+  "targets": {
+    //? 💻 ----- ----- ----- DEV ----- ----- ----- 💻 ?//
+    "dev": {
+      "command": "tsx ./scripts/dev"
+    },
+    "dev-2": {
+      "command": "tsx ./scripts/dev-2"
+    },
+    "dev:watch": {
+      "command": "tsx watch ./scripts/dev"
+    },
+    "dev-tools": {
+      "command": "react-devtools"
+    },
+
+    //? 🏗️ ----- ----- ----- BUILD ----- ----- ----- 🏗️ ?//
+    "build": {
+      "command": "tsdown",
+      "dependsOn": ["gen", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tsdown.config.ts",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/*.test.ts"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- CLEAN ----- ----- ----- 🧹 ?//
+    "clean": {
+      "command": "rimraf dist coverage"
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test:tsc": {
+      "command": "tsc --noEmit",
+      "dependsOn": ["build", "^build"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/tsconfig.json"
+      ],
+      "cache": true
+    },
+    "test:vitest": {
+      "command": "vitest run",
+      "dependsOn": [
+        "build",
+        "^build",
+        { "projects": "config-vite", "target": "build" }
+      ],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["test:tsc", "test:vitest"]
+    },
+
+    //? 🧹 ----- ----- ----- LINT ----- ----- ----- 🧹 ?//
+    "lint:es": {
+      "command": "eslint",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }],
+      "inputs": [
+        "{workspaceRoot}/eslint.config.mts",
+        "{projectRoot}/eslint.config.mts",
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/**/*.tsx",
+        "{projectRoot}/**/*.md",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
+    "lint:prettier": {
+      "command": "prettier . --check",
+      "dependsOn": [{ "projects": "config-prettier", "target": "build" }],
+      "inputs": [
+        "{projectRoot}/.prettierignore",
+        "{projectRoot}/.prettierrc.mjs",
+        "{projectRoot}/**/*",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*",
+        "{workspaceRoot}/pnpm-lock.yaml"
+      ],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- FIX ----- ----- ----- 🧹 ?//
+    "fix:es": {
+      "command": "eslint --fix",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }]
+    },
+    "fix:prettier": {
+      "command": "prettier . --write",
+      "dependsOn": [{ "projects": "config-prettier", "target": "build" }]
+    }
+  }
 }

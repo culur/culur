@@ -23,7 +23,9 @@
 
   //! file associations
   "files.associations": {
-    ".prettierignore.project": "ignore"
+    ".prettierignore.project": "ignore",
+    "**/project.json": "jsonc",
+    "**/nx.json": "jsonc"
   },
   "vsicons.associations.files": [
     {

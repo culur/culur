@@ -1,4 +1,62 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "config-vite"
+  "name": "config-vite",
+  "projectType": "library",
+  "root": "packages/config-vite",
+  "sourceRoot": "packages/config-vite/src",
+  "targets": {
+    //? 🏗️ ----- ----- ----- BUILD ----- ----- ----- 🏗️ ?//
+    "build": {
+      "command": "tsdown",
+      "dependsOn": ["gen", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tsdown.config.ts",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/*.test.ts"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- CLEAN ----- ----- ----- 🧹 ?//
+    "clean": {
+      "command": "rimraf dist coverage"
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test:tsc": {
+      "command": "tsc --noEmit",
+      "dependsOn": ["build", "^build"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/tsconfig.json"
+      ],
+      "cache": true
+    },
+    "test:vitest": {
+      "command": "vitest run",
+      "dependsOn": ["build", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["test:tsc", "test:vitest"]
+    }
+  }
 }

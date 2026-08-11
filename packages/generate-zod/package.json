@@ -53,14 +53,6 @@
     "dist",
     "src"
   ],
-  "scripts": {
-    "clean": "nx run-many -t clean:build clean:zod -p generate-zod",
-    "clean:build": "rimraf --glob src/__tests__/samples/*.{snapshot,zod}.ts",
-    "clean:zod": "rimraf --glob src/__tests__/samples/*.{snapshot,zod}.ts",
-    "dev": "tsx ./scripts/dev",
-    "build": "tsdown",
-    "test": "tsc --noEmit && vitest run"
-  },
   "volta": {
     "extends": "../../package.json"
   },

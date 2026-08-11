@@ -1,4 +1,75 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "generate-zod"
+  "name": "generate-zod",
+  "projectType": "library",
+  "root": "packages/generate-zod",
+  "sourceRoot": "packages/generate-zod/src",
+  "targets": {
+    //? 💻 ----- ----- ----- DEV ----- ----- ----- 💻 ?//
+    "dev": {
+      "command": "tsx ./scripts/dev"
+    },
+
+    //? 🏗️ ----- ----- ----- BUILD ----- ----- ----- 🏗️ ?//
+    "build": {
+      "command": "tsdown",
+      "dependsOn": ["gen", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tsdown.config.ts",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/*.test.ts"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- CLEAN ----- ----- ----- 🧹 ?//
+    "clean": {
+      "command": "rimraf --glob dist coverage"
+    },
+    "clean:test": {
+      "command": "rimraf --glob src/__tests__/samples/*.zod.ts src/__tests__/samples/*.snapshot.ts"
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test:vitest": {
+      "command": "vitest run",
+      "dependsOn": [
+        "build",
+        "^build",
+        { "projects": "config-vite", "target": "build" },
+        { "projects": "config-prettier", "target": "build" }
+      ],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "test:tsc": {
+      "command": "tsc --noEmit",
+      "dependsOn": ["test:vitest"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/tsconfig.json"
+      ],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["test:vitest", "test:tsc"]
+    }
+  }
 }

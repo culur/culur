@@ -63,11 +63,6 @@
     "dist",
     "src"
   ],
-  "scripts": {
-    "clean": "rimraf dist coverage",
-    "build": "tsdown",
-    "test": "tsc --noEmit && vitest run"
-  },
   "volta": {
     "extends": "../../package.json"
   },

@@ -2,48 +2,99 @@
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "name": "monorepo",
   "targets": {
+    //? 💻 ----- ----- ----- DEV ----- ----- ----- 💻 ?//
+    "dev:logger": { "dependsOn": [{ "projects": "logger", "target": "dev" }] },
+    "dev:zod": {
+      "dependsOn": [{ "projects": "generate-zod", "target": "dev" }]
+    },
+
+    //? 🏗️ ----- ----- ----- GEN, BUILD, CLEAN ----- ----- ----- 🏗️ ?//
+    "gen": { "dependsOn": [{ "projects": "*", "target": "gen" }] },
+    "build": { "dependsOn": [{ "projects": "*", "target": "build" }] },
+    "clean": { "dependsOn": [{ "projects": "*", "target": "clean" }] },
+
+    //? 🧹 ----- ----- ----- LINT ----- ----- ----- 🧹 ?//
     "lint:md": {
+      "command": "markdownlint-cli2 .",
       "inputs": [
-        "{workspaceRoot}/.markdownlint-cli2.yaml",
+        "{workspaceRoot}/**/.markdownlint-cli2.yaml",
         "{workspaceRoot}/**/*.md",
-        "!{workspaceRoot}/apps/**/*",
-        "!{workspaceRoot}/packages/**/*",
-        "!{workspaceRoot}/scripts/**/*",
-        "!{workspaceRoot}/templates/**/*"
-      ]
+        "!{workspaceRoot}/packages/**/*"
+      ],
+      "cache": true
     },
     "lint:es": {
+      "command": "eslint",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }],
       "inputs": [
-        "{workspaceRoot}/eslint.config.mjs",
-        "{workspaceRoot}/**/*",
-        "!{workspaceRoot}/apps/**/*",
-        "!{workspaceRoot}/packages/**/*",
-        "!{workspaceRoot}/scripts/**/*",
-        "!{workspaceRoot}/templates/**/*"
-      ]
+        "{workspaceRoot}/eslint.config.mts",
+        "{workspaceRoot}/package.json",
+        "{workspaceRoot}/**/*.ts",
+        "{workspaceRoot}/**/*.mts",
+        "{workspaceRoot}/**/*.json",
+        "!{workspaceRoot}/packages/**/*"
+      ],
+      "cache": true
     },
     "lint:css": {
+      "command": "stylelint '**/*.{vue,css,scss}' --allow-empty-input",
       "inputs": [
         "{workspaceRoot}/.stylelintignore",
-        "{workspaceRoot}/.stylelintrc.mjs",
+        "{workspaceRoot}/.stylelintrc",
         "{workspaceRoot}/**/*.(vue|css|scss)",
-        "!{workspaceRoot}/apps/**/*",
-        "!{workspaceRoot}/packages/**/*",
-        "!{workspaceRoot}/scripts/**/*",
-        "!{workspaceRoot}/templates/**/*"
-      ]
+        "!{workspaceRoot}/packages/**/*"
+      ],
+      "cache": true
     },
     "lint:prettier": {
+      "command": "prettier . --check",
+      "dependsOn": [{ "projects": "config-prettier", "target": "build" }],
       "inputs": [
-        "{workspaceRoot}/.prettierignore",
-        "{workspaceRoot}/.prettierignore.project",
-        "{workspaceRoot}/.prettierrc.mjs",
-        "{workspaceRoot}/**/*",
-        "!{workspaceRoot}/apps/**/*",
-        "!{workspaceRoot}/packages/**/*",
-        "!{workspaceRoot}/scripts/**/*",
-        "!{workspaceRoot}/templates/**/*"
-      ]
+        "{projectRoot}/.prettierignore",
+        "{projectRoot}/.prettierrc.mjs",
+        "{projectRoot}/**/*",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*",
+        "{workspaceRoot}/pnpm-lock.yaml",
+
+        "!{workspaceRoot}/packages/logger/**/*",
+        "!{workspaceRoot}/packages/prettier-plugin-tailwindcss-group/**/*"
+      ],
+      "cache": true
+    },
+    "lint:all": {
+      "dependsOn": [{ "projects": "*", "target": "lint:*" }],
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": ["lint:all"]
+    },
+
+    //? 🧹 ----- ----- ----- FIX ----- ----- ----- 🧹 ?//
+    "fix:md": {
+      "command": "markdownlint-cli2 . --fix"
+    },
+    "fix:es": {
+      "command": "eslint --fix",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }]
+    },
+    "fix:css": {
+      "command": "stylelint '**/*.{vue,css,scss}' --allow-empty-input --fix"
+    },
+    "fix:prettier": {
+      "command": "prettier . --write",
+      "dependsOn": [{ "projects": "config-prettier", "target": "build" }]
+    },
+    "fix:all": {
+      "dependsOn": [{ "projects": "*", "target": "fix:*" }]
+    },
+    "fix": {
+      "dependsOn": ["fix:all"]
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test": {
+      "dependsOn": [{ "projects": "*", "target": "test*" }]
     }
   }
 }

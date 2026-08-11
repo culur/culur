@@ -1,18 +1,84 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "name": "changesets-github-info",
+  "projectType": "library",
+  "root": "packages/changesets-github-info",
+  "sourceRoot": "packages/changesets-github-info/src",
   "targets": {
+    //? ⚙️ ----- ----- ----- GEN ----- ----- ----- ⚙️ ?//
     "gen": {
-      "dependsOn": ["config-prettier:build", "config-eslint:build"],
-      "executor": "nx:run-script",
-      "options": { "script": "gen" },
+      "command": "graphql-codegen --config codegen.ts",
+      "dependsOn": [
+        { "projects": "config-eslint", "target": "build" },
+        { "projects": "config-prettier", "target": "build" }
+      ],
       "outputs": ["{projectRoot}/src/types/schema.operations.generated.ts"],
       "inputs": [
         "{projectRoot}/src/batch-query/batch-query.fragments.ts",
         "{projectRoot}/codegen.ts",
-        { "externalDependencies": ["@octokit/graphql-schema"] }
+        {
+          "externalDependencies": ["@octokit/graphql-schema"]
+        }
       ],
       "cache": true
+    },
+
+    //? 🏗️ ----- ----- ----- BUILD ----- ----- ----- 🏗️ ?//
+    "build": {
+      "command": "tsdown",
+      "dependsOn": ["gen", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tsdown.config.ts",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/*.test.ts"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- CLEAN ----- ----- ----- 🧹 ?//
+    "clean": {
+      "command": "rimraf dist coverage types/schema.operations.generated.ts"
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test:tsc": {
+      "command": "tsc --noEmit",
+      "dependsOn": ["build", "^build"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/tsconfig.json"
+      ],
+      "cache": true
+    },
+    "test:vitest": {
+      "command": "vitest run",
+      "dependsOn": [
+        "build",
+        "^build",
+        { "projects": "config-vite", "target": "build" }
+      ],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["test:tsc", "test:vitest"]
     }
   }
 }

@@ -63,18 +63,6 @@
     "dist",
     "src"
   ],
-  "scripts": {
-    "clean": "rimraf dist coverage",
-    "build": "tsdown",
-    "test": "tsc --noEmit && vitest run",
-    "🧹 ----- LINT ----- 🧹": "",
-    "es-config": "eslint-config-inspector",
-    "lint": "nx run-many -t lint:es -p config-stylelint",
-    "lint:es": "eslint",
-    "🧹 ----- FIX ----- 🧹": "",
-    "fix": "nx run-many -t fix:es -p config-stylelint --parallel 1",
-    "fix:es": "eslint --fix"
-  },
   "volta": {
     "extends": "../../package.json"
   },

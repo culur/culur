@@ -1,4 +1,87 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "config-stylelint"
+  "name": "config-stylelint",
+  "projectType": "library",
+  "root": "packages/config-stylelint",
+  "sourceRoot": "packages/config-stylelint/src",
+  "targets": {
+    //? 🏗️ ----- ----- ----- BUILD ----- ----- ----- 🏗️ ?//
+    "build": {
+      "command": "tsdown",
+      "dependsOn": ["gen", "^build"],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/tsdown.config.ts",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/**/*.md",
+        "!{projectRoot}/**/*.test.ts"
+      ],
+      "outputs": ["{projectRoot}/dist"],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- CLEAN ----- ----- ----- 🧹 ?//
+    "clean": {
+      "command": "rimraf dist coverage"
+    },
+
+    //? 🧪 ----- ----- ----- TEST ----- ----- ----- 🧪 ?//
+    "test:tsc": {
+      "command": "tsc --noEmit",
+      "dependsOn": ["build", "^build"],
+      "inputs": [
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/tsconfig.json"
+      ],
+      "cache": true
+    },
+    "test:vitest": {
+      "command": "vitest run",
+      "dependsOn": [
+        "build",
+        "^build",
+        { "projects": "config-vite", "target": "build" }
+      ],
+      "inputs": [
+        "{workspaceRoot}/.gitignore",
+        "{projectRoot}/src/**/*",
+        "{projectRoot}/scripts/**/*",
+        "{projectRoot}/*.{ts,mts,cts,tsx}",
+        "{projectRoot}/package.json",
+        "{projectRoot}/tsconfig.json",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "outputs": ["{projectRoot}/coverage"],
+      "cache": true
+    },
+    "test": {
+      "dependsOn": ["test:tsc", "test:vitest"]
+    },
+
+    //? 🧹 ----- ----- ----- LINT ----- ----- ----- 🧹 ?//
+    "lint:es": {
+      "command": "eslint",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }],
+      "inputs": [
+        "{workspaceRoot}/eslint.config.mts",
+        "{projectRoot}/eslint.config.mts",
+        "{projectRoot}/**/*.ts",
+        "{projectRoot}/**/*.md",
+        "!{projectRoot}/coverage/**/*",
+        "!{projectRoot}/dist/**/*"
+      ],
+      "cache": true
+    },
+
+    //? 🧹 ----- ----- ----- FIX ----- ----- ----- 🧹 ?//
+    "fix:es": {
+      "command": "eslint --fix",
+      "dependsOn": [{ "projects": "config-eslint", "target": "build" }]
+    }
+  }
 }

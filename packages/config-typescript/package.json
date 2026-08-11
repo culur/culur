@@ -36,6 +36,7 @@
     "README.md",
     "tsconfig*.json"
   ],
+  "scripts": {},
   "volta": {
     "extends": "../../package.json"
   },

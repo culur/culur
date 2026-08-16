@@ -97,3 +97,6 @@ jobs:
           publish: pnpm changeset:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Only add NPM_TOKEN to GitHub repository secrets when releasing a new package for the first time.
+          # When NPM_TOKEN secret is absent, CI will automatically use OIDC Tokenless (Trusted Publishing).
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

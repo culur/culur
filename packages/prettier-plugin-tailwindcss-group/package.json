@@ -1,0 +1,66 @@
+{
+  "name": "@culur/prettier-plugin-tailwindcss-group",
+  "version": "1.0.0",
+  "description": "Prettier plugin to automatically format and wrap long className attributes",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/culur/culur.git",
+    "directory": "packages/prettier-plugin-tailwindcss-group"
+  },
+  "bugs": {
+    "url": "https://github.com/culur/culur/issues"
+  },
+  "homepage": "https://github.com/culur/culur/tree/main/packages/prettier-plugin-tailwindcss-group#readme",
+  "author": "culur <culur.net@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "culur",
+    "prettier",
+    "prettier-plugin",
+    "classnames"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "!**/*.test.*",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "dist",
+    "src"
+  ],
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@babel/parser": "^8.0.4",
+    "@culur/config-eslint": "workspace:*",
+    "@culur/config-prettier": "workspace:*",
+    "@culur/config-tsdown": "workspace:*",
+    "@culur/config-typescript": "workspace:*",
+    "@culur/config-vite": "workspace:*",
+    "@types/estree-jsx": "^1.0.5",
+    "@types/react": "^19.2.18",
+    "dedent": "^1.7.2",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "remark": "^15.0.1",
+    "remark-parse": "^11.0.0",
+    "tailwind-merge": "^3.6.0"
+  },
+  "peerDependencies": {
+    "prettier": ">=3.0.0",
+    "prettier-plugin-tailwindcss": ">=0.6.0"
+  }
+}

@@ -80,6 +80,7 @@
     "pinst": "^3.0.0",
     "prettier": "^3.9.6",
     "prettier-plugin-embed": "^0.5.1",
+    "prettier-plugin-multiline-arrays": "^4.1.11",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "rimraf": "^6.1.3",
     "stylelint": "^17.14.1",

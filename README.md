@@ -48,7 +48,15 @@ Standardize your development environment with these readily-usable configuration
 | [`config-typescript`](packages/config-typescript/README.md) | Sharing [tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html). | [![NPM Version](https://img.shields.io/npm/v/@culur/config-typescript?logo=npm)](https://www.npmjs.com/package/@culur/config-typescript) [![NPM Download](https://img.shields.io/npm/dm/@culur/config-typescript?logo=npm)](https://www.npmjs.com/package/@culur/config-typescript) |
 | [`config-vite`](packages/config-vite/README.md)             | Sharing [Vite](https://vitejs.dev/)/[Vitest](https://vitest.dev/) configurations.         | [![NPM Version](https://img.shields.io/npm/v/@culur/config-vite?logo=npm)](https://www.npmjs.com/package/@culur/config-vite) [![NPM Download](https://img.shields.io/npm/dm/@culur/config-vite?logo=npm)](https://www.npmjs.com/package/@culur/config-vite)                         |
 
-### 🛠️ 2. Utilities and libraries
+### 🔌 2. Plugins
+
+Plugins to extend existing developer tools and formatters.
+
+| Package                                                                                     | Description                                                                 | NPM                                                                                                                                                                                                                                                                                                                                                 |
+| :------------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`prettier-plugin-tailwindcss-group`](packages/prettier-plugin-tailwindcss-group/README.md) | Prettier plugin to automatically format and wrap long className attributes. | [![NPM Version](https://img.shields.io/npm/v/@culur/prettier-plugin-tailwindcss-group?logo=npm)](https://www.npmjs.com/package/@culur/prettier-plugin-tailwindcss-group) [![NPM Download](https://img.shields.io/npm/dm/@culur/prettier-plugin-tailwindcss-group?logo=npm)](https://www.npmjs.com/package/@culur/prettier-plugin-tailwindcss-group) |
+
+### 🛠️ 3. Utilities and libraries
 
 A collection of bespoke utility functions and focused libraries, crafted to solve specific development challenges or enhance common workflows.
 
@@ -59,7 +67,7 @@ A collection of bespoke utility functions and focused libraries, crafted to solv
 | [`types`](packages/types/README.md)                   | Provides shared TypeScript types.       | [![NPM Version](https://img.shields.io/npm/v/@culur/types?logo=npm)](https://www.npmjs.com/package/@culur/types) [![NPM Download](https://img.shields.io/npm/dm/@culur/types?logo=npm)](https://www.npmjs.com/package/@culur/types)                                     |
 | [`utils-packages`](packages/utils-packages/README.md) | Check if packages are installed or not. | [![NPM Version](https://img.shields.io/npm/v/@culur/utils-packages?logo=npm)](https://www.npmjs.com/package/@culur/utils-packages) [![NPM Download](https://img.shields.io/npm/dm/@culur/utils-packages?logo=npm)](https://www.npmjs.com/package/@culur/utils-packages) |
 
-### 📝 3. Utilities for customize changesets
+### 📝 4. Utilities for customize changesets
 
 This suite of packages is dedicated to customizing and enhancing the Changesets workflow, particularly for generating rich changelogs and integrating seamlessly with GitHub.
 

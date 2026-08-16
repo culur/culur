@@ -1,0 +1,11 @@
+{
+  "extends": "@culur/config-typescript",
+  "compilerOptions": {
+    "target": "ESNext",
+    "jsx": "react-jsx",
+    "paths": {
+      "tailwind-merge-ts": ["./node_modules/tailwind-merge/src/index.ts"],
+      "tailwind-merge-ts/*": ["./node_modules/tailwind-merge/src/*"]
+    }
+  }
+}

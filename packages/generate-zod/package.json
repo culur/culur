@@ -79,6 +79,7 @@
     "@culur/logger": ">=1.9.2",
     "@types/node": "*",
     "dedent": "*",
-    "typescript": ">=5.7"
+    "typescript": ">=5.7",
+    "zod": "^4.0.0"
   }
 }

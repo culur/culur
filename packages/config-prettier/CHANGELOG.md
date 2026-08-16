@@ -1,5 +1,13 @@
 # @culur/config-prettier
 
+## 1.5.0
+
+### Minor Changes
+
+- ✨ Update default `.prettierignore` structure and pattern groupings ([`7cfdd05`](https://github.com/culur/culur/commit/7cfdd051980eda6f38ead29609b6f93efb85b777)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Reorganize ignore rules into structured sections including Global (Linux, macOS, Windows), Languages (Go, TypeSpec, Scripts, Stylesheets, Generated Types), and Custom categories (General and Languages) with clearer documentation and maintainable pattern definitions.
+
 ## 1.4.2
 
 ### Patch Changes

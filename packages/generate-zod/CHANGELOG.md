@@ -1,5 +1,13 @@
 # @culur/generate-zod
 
+## 3.0.3
+
+### Patch Changes
+
+- 🩹 Add `zod` to `peerDependencies` ([`f849184`](https://github.com/culur/culur/commit/f84918459becf485ae7dc6c8579157f9a7271243)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Specify `zod: ^4.0.0` under `peerDependencies` to treat `zod` as an external dependency during type bundling and prevent bundling CJS declaration files.
+
 ## 3.0.2
 
 ### Patch Changes

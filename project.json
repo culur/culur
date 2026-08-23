@@ -16,16 +16,19 @@
     //? 🧹 ----- ----- ----- LINT ----- ----- ----- 🧹 ?//
     "lint:md": {
       "command": "markdownlint-cli2 .",
+      "dependsOn": [{ "projects": "*", "target": "lint:md" }],
       "inputs": [
         "{workspaceRoot}/**/.markdownlint-cli2.yaml",
-        "{workspaceRoot}/**/*.md",
-        "!{workspaceRoot}/packages/**/*"
+        "{projectRoot}/**/*.md"
       ],
       "cache": true
     },
     "lint:es": {
       "command": "eslint",
-      "dependsOn": [{ "projects": "config-eslint", "target": "build" }],
+      "dependsOn": [
+        { "projects": "config-eslint", "target": "build" },
+        { "projects": "*", "target": "lint:es" }
+      ],
       "inputs": [
         "{workspaceRoot}/eslint.config.mts",
         "{workspaceRoot}/package.json",
@@ -38,23 +41,27 @@
     },
     "lint:css": {
       "command": "stylelint '**/*.{vue,css,scss}' --allow-empty-input",
+      "dependsOn": [
+        { "projects": "config-stylelint", "target": "build" },
+        { "projects": "*", "target": "lint:css" }
+      ],
       "inputs": [
         "{workspaceRoot}/.stylelintignore",
         "{workspaceRoot}/.stylelintrc",
-        "{workspaceRoot}/**/*.(vue|css|scss)",
-        "!{workspaceRoot}/packages/**/*"
+        "{workspaceRoot}/**/*.(vue|css|scss)"
       ],
       "cache": true
     },
     "lint:prettier": {
       "command": "prettier . --check",
-      "dependsOn": [{ "projects": "config-prettier", "target": "build" }],
+      "dependsOn": [
+        { "projects": "config-prettier", "target": "build" },
+        { "projects": "*", "target": "lint:prettier" }
+      ],
       "inputs": [
         "{projectRoot}/.prettierignore",
         "{projectRoot}/.prettierrc.mjs",
         "{projectRoot}/**/*",
-        "!{projectRoot}/coverage/**/*",
-        "!{projectRoot}/dist/**/*",
         "{workspaceRoot}/pnpm-lock.yaml",
 
         "!{workspaceRoot}/packages/logger/**/*",
@@ -72,18 +79,31 @@
 
     //? 🧹 ----- ----- ----- FIX ----- ----- ----- 🧹 ?//
     "fix:md": {
-      "command": "markdownlint-cli2 . --fix"
+      "command": "markdownlint-cli2 . --fix",
+      "dependsOn": [
+        { "projects": "*", "target": "fix:md" } //
+      ]
     },
     "fix:es": {
       "command": "eslint --fix",
-      "dependsOn": [{ "projects": "config-eslint", "target": "build" }]
+      "dependsOn": [
+        { "projects": "config-eslint", "target": "build" },
+        { "projects": "*", "target": "fix:prettier" }
+      ]
     },
     "fix:css": {
-      "command": "stylelint '**/*.{vue,css,scss}' --allow-empty-input --fix"
+      "command": "stylelint '**/*.{vue,css,scss}' --allow-empty-input --fix",
+      "dependsOn": [
+        { "projects": "config-stylelint", "target": "build" },
+        { "projects": "*", "target": "fix:css" }
+      ]
     },
     "fix:prettier": {
       "command": "prettier . --write",
-      "dependsOn": [{ "projects": "config-prettier", "target": "build" }]
+      "dependsOn": [
+        { "projects": "config-prettier", "target": "build" },
+        { "projects": "*", "target": "fix:prettier" }
+      ]
     },
     "fix:all": {
       "dependsOn": [{ "projects": "*", "target": "fix:*" }]

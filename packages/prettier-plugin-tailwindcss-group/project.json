@@ -71,8 +71,6 @@
         "{projectRoot}/.prettierignore",
         "{projectRoot}/.prettierrc.mjs",
         "{projectRoot}/**/*",
-        "!{projectRoot}/coverage/**/*",
-        "!{projectRoot}/dist/**/*",
         "{workspaceRoot}/pnpm-lock.yaml"
       ],
       "cache": true

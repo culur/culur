@@ -510,7 +510,7 @@ importers:
         version: 24.13.3
     devDependencies:
       typescript:
-        specifier: ^6.0.2
+        specifier: ^6.0.3
         version: 6.0.3
 
   packages/config-vite:

@@ -45,14 +45,14 @@
     "postpack": "pinst --enable"
   },
   "volta": {
-    "node": "24.18.0",
-    "pnpm": "12.15.0"
+    "node": "24.22.2",
+    "pnpm": "12.16.1"
   },
   "engines": {
     "node": ">=20",
-    "pnpm": "12.15.0"
+    "pnpm": "12.16.1"
   },
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.16.1",
   "devDependencies": {
     "@changesets/cli": "^2.31.1",
     "@commitlint/cli": "^21.2.1",
@@ -65,7 +65,7 @@
     "@culur/config-typescript": "workspace:*",
     "@eslint-react/eslint-plugin": "^5.18.0",
     "@eslint/config-inspector": "^3.1.0",
-    "@types/node": "^24.13.3",
+    "@types/node": "^24.19.2",
     "@vitest/coverage-v8": "^4.1.10",
     "@vitest/ui": "^4.1.10",
     "dotenv": "^17.4.2",

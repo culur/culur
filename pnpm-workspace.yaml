@@ -5,8 +5,8 @@ packages:
   - templates/*
 
 overrides:
-  '@graphql-tools/executor-graphql-ws': ^3.1.5
-  '@graphql-tools/executor-http': ^3.3.0
+  '@graphql-tools/executor-graphql-ws': ^3.2.0
+  '@graphql-tools/executor-http': ^3.5.0
   chokidar: ^5.0.0
   semver: ^7.8.5
   sucrase: ^3.35.1

@@ -421,7 +421,7 @@ importers:
         specifier: workspace:*
         version: link:../utils-packages
       prettier:
-        specifier: ^3.9.6
+        specifier: ^3.9.10
         version: 3.9.10
 
   packages/config-stylelint:

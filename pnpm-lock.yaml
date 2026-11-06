@@ -249,7 +249,7 @@ importers:
         specifier: ^3.9.10
         version: 3.9.10
       prettier-plugin-embed:
-        specifier: ^0.8.1
+        specifier: ^0.8.2
         version: 0.8.2
       prettier-plugin-multiline-arrays:
         specifier: ^4.1.11

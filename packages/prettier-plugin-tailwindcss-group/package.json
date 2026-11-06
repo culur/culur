@@ -44,7 +44,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@babel/parser": "^8.0.10",
+    "@babel/parser": "^8.1.0",
     "@culur/config-eslint": "workspace:*",
     "@culur/config-prettier": "workspace:*",
     "@culur/config-tsdown": "workspace:*",

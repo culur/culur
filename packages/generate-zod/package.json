@@ -61,18 +61,18 @@
   },
   "dependencies": {
     "async": "^3.2.6",
-    "es-toolkit": "^1.50.0",
+    "es-toolkit": "^1.53.1",
     "ts-to-zod": "^5.1.0"
   },
   "devDependencies": {
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/logger": "workspace:*",
-    "@types/async": "^3.2.25",
+    "@types/async": "^3.2.26",
     "ink": "^6.8.0",
     "ink-testing-library": "^4.0.0",
     "typescript": "^5.9.3",
-    "zod": "^4.4.3",
+    "zod": "^4.6.7",
     "zx": "^8.8.5"
   },
   "peerDependencies": {

@@ -12,6 +12,7 @@ overrides:
   sucrase: ^3.35.1
 
 minimumReleaseAge: 0
+minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
 
 allowBuilds:

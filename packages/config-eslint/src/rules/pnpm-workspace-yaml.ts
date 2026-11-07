@@ -24,6 +24,7 @@ export const pnpmWorkspaceSortKeys = {
       'minimumReleaseAgeExclude',
       'minimumReleaseAgeIgnoreMissingTime',
       'minimumReleaseAgeStrict',
+      'minimumReleaseAgeExcludePrune',
       'trustPolicy',
       'trustPolicyExclude',
       'trustPolicyIgnoreAfter',

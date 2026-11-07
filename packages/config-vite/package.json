@@ -54,10 +54,10 @@
   "devDependencies": {
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
-    "@vitest/coverage-v8": "^4.1.10",
-    "@vitest/ui": "^4.1.10",
-    "vite": "^8.1.5",
-    "vitest": "^4.1.10"
+    "@vitest/coverage-v8": "^4.1.12",
+    "@vitest/ui": "^4.1.12",
+    "vite": "^8.3.5",
+    "vitest": "^4.1.12"
   },
   "peerDependencies": {
     "@vitest/coverage-v8": "^4.1.2",

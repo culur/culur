@@ -38,7 +38,7 @@ The configuration will check if the following packages are installed and their v
     - [`stylelint-scss`](https://github.com/kristerkari/stylelint-scss) - A collection of SCSS specific linting rules for stylelint.
     - [`stylelint-selector-bem-pattern`](https://github.com/simonsmith/stylelint-selector-bem-pattern) - Stylelint plugin that incorporates postcss-bem-linter
 - And it also has custom rules for `Tailwind`, `SCSS` and `Vue`.
-- This config bundles the above packages, you don't need to install them yourself.
+- This config bundles the above packages, you don't need to install them yourself, except the SCSS packages (`stylelint-config-standard-scss`, `stylelint-scss`), which are optional peer dependencies.
 
 ## 💿 Installation
 
@@ -58,6 +58,11 @@ yarn add @culur/config-stylelint --dev
 Other packages:
 
 - Use need to install `stylelint` package in devDependencies.
+- For SCSS projects, also install `stylelint-config-standard-scss` and `stylelint-scss` in devDependencies:
+
+```bash
+pnpm install stylelint-config-standard-scss stylelint-scss --dev
+```
 
 ## 📖 Usage
 

@@ -4,6 +4,6 @@ export default defineConfig({
   ...esm_cjs,
   entry: ['src/index.ts'],
   deps: {
-    onlyBundle: ['type-fest'],
+    onlyBundle: ['type-fest', 'tagged-tag'],
   },
 });

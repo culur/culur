@@ -45,7 +45,7 @@
     "postpack": "pinst --enable"
   },
   "volta": {
-    "node": "24.22.2",
+    "node": "26.13.0",
     "pnpm": "12.17.0"
   },
   "engines": {
@@ -65,7 +65,7 @@
     "@culur/config-typescript": "workspace:*",
     "@eslint-react/eslint-plugin": "^5.28.8",
     "@eslint/config-inspector": "^3.5.0",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@vitest/coverage-v8": "^4.1.10",
     "@vitest/ui": "^4.1.10",
     "dotenv": "^17.4.2",

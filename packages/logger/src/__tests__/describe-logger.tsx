@@ -1,7 +1,32 @@
 import type { Tasks } from '~/item';
 import { render } from 'ink-testing-library';
-import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { Logger } from '~/logger/logger';
+
+vi.mock('ink', async () => {
+  const ink: typeof import('ink') = await vi.importActual('ink');
+  return { ...ink, render };
+});
+
+vi.mock('ink-spinner', async () => {
+  const { Text }: typeof import('ink') = await vi.importActual('ink');
+  return {
+    default: () => <Text>⠋ </Text>,
+  };
+});
+
+vi.mock('~/components', async () => {
+  const { Text }: typeof import('ink') = await vi.importActual('ink');
+  const components: typeof import('~/components') =
+    await vi.importActual('~/components');
+
+  return {
+    ...components,
+    TextTimer: () => <Text>0.00s</Text>,
+  };
+});
+
+vi.unmock('~/components/text-timer');
 
 type DescribeLoggerParams = [
   rootName: string,
@@ -28,35 +53,6 @@ describeLogger.only = function (name: string, ...args: DescribeLoggerParams) {
 function suiteFactory(
   ...[rootName, callback, { width = 50 } = {}]: DescribeLoggerParams
 ) {
-  beforeAll(() => {
-    vi.mock('ink', async () => {
-      const ink: typeof import('ink') = await vi.importActual('ink');
-      return { ...ink, render };
-    });
-
-    vi.mock('ink-spinner', async () => {
-      const { Text }: typeof import('ink') = await vi.importActual('ink');
-      return {
-        default: () => <Text>⠋ </Text>,
-      };
-    });
-
-    vi.mock('~/components', async () => {
-      const { Text }: typeof import('ink') = await vi.importActual('ink');
-      const components: typeof import('~/components') =
-        await vi.importActual('~/components');
-
-      return {
-        ...components,
-        TextTimer: () => <Text>0.00s</Text>,
-      };
-    });
-  });
-
-  afterAll(() => {
-    vi.unmock('~/components/text-timer');
-  });
-
   it(rootName, async () => {
     const logger = new Logger(rootName, { width });
     const { root } = logger;

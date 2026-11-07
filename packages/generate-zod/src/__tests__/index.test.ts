@@ -1,19 +1,17 @@
 import path from 'node:path';
 import { render } from 'ink-testing-library';
-import { beforeAll, describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { fs } from 'zx';
 import { generateZod, ts } from '..';
 
 const cwd = path.resolve(import.meta.dirname, 'samples');
 
-describe('generate zod', async () => {
-  beforeAll(() => {
-    vi.mock('ink', async () => {
-      const ink: typeof import('ink') = await vi.importActual('ink');
-      return { ...ink, render };
-    });
-  });
+vi.mock('ink', async () => {
+  const ink: typeof import('ink') = await vi.importActual('ink');
+  return { ...ink, render };
+});
 
+describe('generate zod', async () => {
   it('generate product', async () => {
     await generateZod(
       {

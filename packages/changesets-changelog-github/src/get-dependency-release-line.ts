@@ -6,16 +6,20 @@ export const getDependencyReleaseLine: GetDependencyReleaseLine = async (
   dependenciesUpdated,
   options,
 ) => {
-  if (!options || !options.repo) {
+  const repo = options?.repo;
+  if (typeof repo !== 'string' || !repo) {
     throw new Error(
       'Please provide a repo to this changelog generator like this:\n"changelog": ["@culur/changesets-changelog-github", { "repo": "org/repo" }]',
     );
   }
-  if (dependenciesUpdated.length === 0) return '';
+  const updatedDependencies = dependenciesUpdated.filter(
+    ({ newVersion }) => newVersion !== undefined,
+  );
+  if (updatedDependencies.length === 0) return '';
 
   const changesetLink = `- ${emojiDict.package} Update workspace dependencies:`;
 
-  const updatedDependenciesList = dependenciesUpdated.map(
+  const updatedDependenciesList = updatedDependencies.map(
     ({ packageJson, name, newVersion }) => {
       const homepage =
         'homepage' in packageJson && typeof packageJson.homepage === 'string'

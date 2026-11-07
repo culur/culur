@@ -8,6 +8,7 @@ overrides:
   '@graphql-tools/executor-graphql-ws': ^3.2.0
   '@graphql-tools/executor-http': ^3.6.0
   chokidar: ^6.0.0
+  graphql-ws: ^6.4.1
   semver: ^7.8.6
   sucrase: ^3.35.1
 

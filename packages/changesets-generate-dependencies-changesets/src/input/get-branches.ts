@@ -1,9 +1,12 @@
-import type { PullRequestEvent } from '@octokit/webhooks-types';
+import type { components } from '@octokit/openapi-webhooks-types';
 import type { Input } from './get-input';
 import process from 'node:process';
 import { info } from '@actions/core';
 import { context } from '@actions/github';
 import { minimatch } from 'minimatch';
+
+type PullRequestEvent =
+  components['schemas']['webhook-pull-request-synchronize'];
 
 export async function getBranches({ input }: { input: Input }) {
   if (context.eventName !== 'pull_request') {

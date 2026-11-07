@@ -6,6 +6,8 @@ const config: CodegenConfig = {
   overwrite: true,
   schema: 'node_modules/@octokit/graphql-schema/schema.graphql',
   documents: ['src/batch-query/batch-query.fragments.ts'],
+  // graphql 17 rejects @octokit/graphql-schema (deprecated implementation fields)
+  config: { skipDocumentsValidation: { skipValidationAgainstSchema: true } },
   generates: {
     [graphqlFile]: {
       plugins: ['typescript-operations'],

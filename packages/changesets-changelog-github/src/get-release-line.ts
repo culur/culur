@@ -9,12 +9,17 @@ const prRegex = /^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im;
 const commitMessageRegex = /^\s*commit:\s*(\S+)/im;
 const authorRegex = /^\s*(?:author|user):\s*@?(\S+)/gim;
 
+function isRepo(value: unknown): value is `${string}/${string}` {
+  return typeof value === 'string' && value.includes('/');
+}
+
 export const getReleaseLine: GetReleaseLine = async (
   changeset,
   type,
   options,
 ) => {
-  if (!options || !options.repo) {
+  const repo = options?.repo;
+  if (!isRepo(repo)) {
     throw new Error(
       'Please provide a repo to this changelog generator like this:\n"changelog": ["@culur/changesets-changelog-github", { "repo": "org/repo" }]',
     );
@@ -49,19 +54,19 @@ export const getReleaseLine: GetReleaseLine = async (
   const links = await (async () => {
     const pullRequestFromSummaryInfo = pullRequestFromSummary
       ? await getPullRequestInfo({
-          repo: options.repo,
+          repo,
           pullRequestNumber: pullRequestFromSummary,
         })
       : null;
     const commitFromChangesetInfo = commitFromChangeset
       ? await getCommitInfo({
-          repo: options.repo,
+          repo,
           commitHash: commitFromChangeset,
         })
       : null;
     const commitFromSummaryInfo = commitFromSummary
       ? await getCommitInfo({
-          repo: options.repo,
+          repo,
           commitHash: commitFromSummary,
         })
       : null;

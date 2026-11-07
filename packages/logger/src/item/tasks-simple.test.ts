@@ -2,7 +2,7 @@ import type { TaskResponse, TasksSimpleResponse } from '~/types';
 import dedent from 'dedent';
 import { expect, expectTypeOf, vi } from 'vitest';
 import { describeLogger, isCI, throwError, throwErrorDelay, throwString } from '~/__tests__';
-import { expectTaskResponseFulfilled } from './task.test-d';
+import { expectTaskResponseFulfilled } from './task.test';
 import { TasksSimple } from './tasks-simple';
 
 const callbacksNormal = [() => 1, async () => 2];

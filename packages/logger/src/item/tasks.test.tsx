@@ -3,7 +3,7 @@ import dedent from 'dedent';
 import { range } from 'es-toolkit';
 import { expect, expectTypeOf, vi } from 'vitest';
 import { describeLogger, isCI, throwError, throwErrorDelay, throwString } from '~/__tests__';
-import { expectTaskResponseFulfilled } from './task.test-d';
+import { expectTaskResponseFulfilled } from './task.test';
 import { Tasks } from './tasks';
 
 const callbacksNormal = [() => 1, async () => 2];

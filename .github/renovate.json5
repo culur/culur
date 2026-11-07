@@ -29,6 +29,16 @@
     'renovate[bot]@users.noreply.github.com', // legacy committer, keep until old branches are recreated
   ],
   postUpdateOptions: ['pnpmDedupe'],
+  packageRules: [
+    {
+      description: 'Upgrade TypeScript once for the whole monorepo, outside the package groups',
+      groupName: 'TypeScript',
+      groupSlug: 'typescript',
+      semanticCommitScope: 'deps/typescript',
+      addLabels: ['typescript'],
+      matchPackageNames: ['typescript'],
+    },
+  ],
   toolSettings: {
     nodeMaxMemory: 1280,
   },

@@ -50,12 +50,12 @@
     "node": ">=20"
   },
   "dependencies": {
-    "@changesets/types": "^6.1.0",
+    "@changesets/types": "^7.0.0",
     "@culur/changesets-github-info": "workspace:*",
-    "dotenv": "^17.4.2"
+    "dotenv": "^18.0.9"
   },
   "devDependencies": {
-    "@changesets/parse": "^0.4.3",
+    "@changesets/parse": "^1.0.0",
     "@culur/config-tsdown": "workspace:*",
     "@culur/config-typescript": "workspace:*",
     "@culur/types": "workspace:*",

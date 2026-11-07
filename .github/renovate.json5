@@ -23,6 +23,11 @@
   configMigration: true,
   dependencyDashboardApproval: true,
   labels: ['dependencies'],
+  // Commits amended by the changesets workflow must not mark Renovate branches as modified
+  gitIgnoredAuthors: [
+    '41898282+github-actions[bot]@users.noreply.github.com',
+    'renovate[bot]@users.noreply.github.com', // legacy committer, keep until old branches are recreated
+  ],
   postUpdateOptions: ['pnpmDedupe'],
   toolSettings: {
     nodeMaxMemory: 1280,

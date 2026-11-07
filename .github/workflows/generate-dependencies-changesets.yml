@@ -36,7 +36,8 @@ jobs:
         with:
           base-branch: dev
           head-branch: renovate/**
-          user-name: renovate[bot]
-          user-email: renovate[bot]@users.noreply.github.com
+          # Must be listed in `gitIgnoredAuthors` of .github/renovate.json5
+          user-name: github-actions[bot]
+          user-email: 41898282+github-actions[bot]@users.noreply.github.com
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

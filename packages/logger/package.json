@@ -45,7 +45,7 @@
     "extends": "../../package.json"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "async": "^3.2.6",

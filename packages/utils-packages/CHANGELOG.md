@@ -1,5 +1,21 @@
 # @culur/utils-packages
 
+## 1.3.2
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#588](https://github.com/culur/culur/pull/588) [`2a73b03`](https://github.com/culur/culur/commit/2a73b0379aacc0221d6e987343ec60e29ce89cb3)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `dependencies`:
+    - `semver@^7.8.6`
+  - `devDependencies`:
+    - `@types/semver@^7.8.0`
+
+- 📦 Update dependencies ([#580](https://github.com/culur/culur/pull/580) [`452d4c6`](https://github.com/culur/culur/commit/452d4c66dcc7737ac7a9ee549dfa7d46b1313ce7)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `local-pkg@^2.0.0`
+
 ## 1.3.1
 
 ### Patch Changes

@@ -1,5 +1,40 @@
 # @culur/config-stylelint
 
+## 2.0.0
+
+### Major Changes
+
+- 🔨 Move `stylelint-config-standard-scss`, `stylelint-scss` and `stylelint-config-standard-vue` from `dependencies` to optional `peerDependencies` ([#584](https://github.com/culur/culur/pull/584) [`8223f16`](https://github.com/culur/culur/commit/8223f16442a41ae0ae70bf66495b4a74b703ddb2)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  Projects that do not use SCSS or Vue no longer install these packages, and future `stylelint` majors are no longer blocked by them. SCSS and Vue projects must install them explicitly:
+
+  ```bash
+  # SCSS
+  pnpm install stylelint-config-standard-scss stylelint-scss --dev
+
+  # Vue
+  pnpm install stylelint-config-standard-vue --dev
+  ```
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#553](https://github.com/culur/culur/pull/553) [`9dba20d`](https://github.com/culur/culur/commit/9dba20d615db10d5e299c9265afd7e0566594436)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-order@^8.1.2`
+    - `stylelint-scss@^7.4.0`
+  - `devDependencies`:
+    - `postcss@^8.5.32`
+    - `stylelint@^17.16.0`
+
+- 📦 Update dependencies ([#561](https://github.com/culur/culur/pull/561) [`28ce795`](https://github.com/culur/culur/commit/28ce795df6665c31ba80b73a676761295aff9551)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `stylelint-order@^8.1.3`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.2`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.7.2
 
 ### Patch Changes

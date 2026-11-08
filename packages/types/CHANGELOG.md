@@ -1,5 +1,14 @@
 # @culur/types
 
+## 1.4.3
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#588](https://github.com/culur/culur/pull/588) [`a9694cc`](https://github.com/culur/culur/commit/a9694cc56c4b5def16f28e265c678b7a64e07fb8)) ([@github-actions](https://github.com/apps/github-actions)):
+
+  - `devDependencies`:
+    - `type-fest@^5.10.0`
+
 ## 1.4.2
 
 ### Patch Changes

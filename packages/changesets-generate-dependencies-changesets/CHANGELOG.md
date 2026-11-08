@@ -1,5 +1,24 @@
 # @culur/changesets-generate-dependencies-changesets
 
+## 1.4.3
+
+### Patch Changes
+
+- ⚙️ Upgrade to Changesets v3 and GraphQL 17 ([#583](https://github.com/culur/culur/pull/583) [`8c01426`](https://github.com/culur/culur/commit/8c0142667e4bdcc10635585d0a638fb32caf814c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  - `@culur/changesets-changelog-github`: require Node.js `>=22.11` (`@changesets/types` v7 is ESM-only), validate the `repo` option as `owner/repo`, and skip dependencies without a `newVersion`.
+  - `@culur/changesets-generate-dependencies-changesets`: replace deprecated `@octokit/webhooks-types` with `@octokit/openapi-webhooks-types`.
+  - `@culur/changesets-github-info`: regenerate operation types with `@graphql-codegen/cli` v8 and `graphql` v17.
+
+- ⚙️ Update dependencies ([#574](https://github.com/culur/culur/pull/574) [`f4f1bd0`](https://github.com/culur/culur/commit/f4f1bd0b1835e0c9ef26b3603d63792da7349aaf)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `fs-extra@^11.4.1`
+    - `minimatch@^10.2.6`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.3`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.4.2
 
 ### Patch Changes

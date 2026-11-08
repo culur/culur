@@ -1,5 +1,31 @@
 # @culur/config-eslint
 
+## 1.9.1
+
+### Patch Changes
+
+- ⚙️ Add `minimumReleaseAgeExcludePrune` to the `pnpm-workspace.yaml` key order ([#588](https://github.com/culur/culur/pull/588) [`2a71678`](https://github.com/culur/culur/commit/2a71678e594fe1839cfda14054e3bc05a967eb68)) ([@github-actions](https://github.com/apps/github-actions)).
+
+  `@antfu/eslint-config` v9.5 enforces `minimumReleaseAgeExcludePrune: true` via `pnpm/yaml-enforce-settings`, so the key is now sorted right after `minimumReleaseAgeStrict` by `yaml/sort-keys`.
+
+- 📦 Update dependencies ([#555](https://github.com/culur/culur/pull/555) [`c8bda8b`](https://github.com/culur/culur/commit/c8bda8b390389766ed262d8cc95338553e6f722e)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^10.0.0`
+
+- ⚙️ Update dependencies ([#554](https://github.com/culur/culur/pull/554) [`ba02254`](https://github.com/culur/culur/commit/ba0225468990f31a61c899fe9b98c2ee1c276805)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@antfu/eslint-config@^9.5.1`
+    - `@vitest/eslint-plugin@^1.6.28`
+  - `devDependencies`:
+    - `@eslint/eslintrc@^3.3.7`
+    - `@vue/compiler-sfc@^3.5.44`
+    - `eslint@^10.14.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/utils-packages@1.3.2`](https://github.com/culur/culur/tree/main/packages/utils-packages#readme)
+
 ## 1.9.0
 
 ### Minor Changes

@@ -1,5 +1,27 @@
 # @culur/config-vite
 
+## 1.5.3
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#550](https://github.com/culur/culur/pull/550) [`857604f`](https://github.com/culur/culur/commit/857604fb48b18e80edbdd6a342095502493c6667)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^4.1.12`
+    - `@vitest/ui@^4.1.12`
+    - `vite@^8.3.5`
+    - `vitest@^4.1.12`
+
+- ⚙️ Update dependencies ([#562](https://github.com/culur/culur/pull/562) [`c1acad2`](https://github.com/culur/culur/commit/c1acad2abf0e0a46e7dc1ce7867fdb5d2e811774)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `@vitest/coverage-v8@^5.1.0`
+    - `@vitest/ui@^5.1.0`
+    - `vitest@^5.1.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.3`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.5.2
 
 ### Patch Changes

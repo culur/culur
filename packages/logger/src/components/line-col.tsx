@@ -28,7 +28,11 @@ export function LineCol({
       {width === undefined && typeof props.text === 'object' ? (
         props.text
       ) : (
-        <Box minWidth={width} width={width}>
+        <Box
+          // ink 8 only accepts a number for `minWidth`, `width` still takes a percentage
+          minWidth={typeof width === 'number' ? width : undefined}
+          width={width}
+        >
           {typeof props.text === 'object' && props.text}
           {typeof props.text === 'string' && (
             <Text {...props}>{props.text}</Text>

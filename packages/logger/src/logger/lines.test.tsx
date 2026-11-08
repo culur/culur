@@ -3,8 +3,8 @@ import type { Mock } from 'vitest';
 import type { LinesRef } from './lines';
 import process from 'node:process';
 import dedent from 'dedent';
-import { render } from 'ink-testing-library';
 import { afterAll, assert, beforeAll, describe, expect, it, vi } from 'vitest';
+import { render } from '~/__tests__/render';
 import { Prefix } from '~/types';
 import { Lines } from './lines';
 
@@ -81,7 +81,7 @@ describe('dynamic lines', () => {
       ],
     });
 
-    // default width in `ink-testing-library` is 100
+    // default width of the test `render` stdout is 100
     const expectedFrame = dedent`
       ┌─── l1 l2                                                                                     r1 r2
       ├─ l1 l2                                                                                       r1 r2

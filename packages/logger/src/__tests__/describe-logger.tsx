@@ -1,10 +1,12 @@
+import type { render } from './render';
 import type { Tasks } from '~/item';
-import { render } from 'ink-testing-library';
 import { describe, expect, it, vi } from 'vitest';
 import { Logger } from '~/logger/logger';
 
 vi.mock('ink', async () => {
   const ink: typeof import('ink') = await vi.importActual('ink');
+  // Dynamic import: a static one may not be initialized yet when this hoisted factory runs
+  const { render } = await import('./render');
   return { ...ink, render };
 });
 
@@ -65,6 +67,6 @@ function suiteFactory(
       .resolves //
       .toEqual(undefined);
 
-    logger.unmount();
+    await logger.unmount();
   });
 }

@@ -1,8 +1,8 @@
 import type { BoxProps } from 'ink';
 import type { ReactElement } from 'react';
 import { Box, Text } from 'ink';
-import { render } from 'ink-testing-library';
 import { describe, expect, it } from 'vitest';
+import { render } from './render';
 
 export type BaseTestCase =
   | { text: string } //

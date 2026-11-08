@@ -25,7 +25,7 @@
     "🦋 ----- CHANGESET ----- 🦋": "",
     "changeset": "changeset",
     "changeset:publish": "changeset publish",
-    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile",
+    "changeset:version": "changeset version && pnpm install --no-frozen-lockfile && pnpm fix:prettier",
     "🧹 ----- LINT ----- 🧹": "",
     "es-config": "eslint-config-inspector",
     "lint": "nx run-many -t lint:all -p monorepo",

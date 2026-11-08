@@ -56,10 +56,61 @@ jobs:
           files: ${{ steps.coverage-files.outputs.files }}
           disable_search: true
 
+  #! ----- ----- ----- Release preflight ----- ----- ----- !#
+  # Dry-run what the release job does, so missing permissions or broken release files fail early:
+  # - `changeset version` + lint: the release pull request must pass CI
+  # - `npm pack --dry-run`: every package can be packed
+  # - trusted publishing token exchange: every public package can be published from this workflow
+  release-preflight:
+    name: Release preflight
+    if: "${{ github.event_name == 'pull_request' || github.ref == 'refs/heads/release' || (github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore: version packages')) }}"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # Required for the trusted publishing check
+    steps:
+      #! Checkout
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      #! Install dependencies
+      - name: ⬇️ Install dependencies
+        uses: ./.github/actions/install-dependencies
+
+      #! Build
+      - name: 🛠️ Build
+        run: pnpm build
+
+      #! Version packages (dry-run)
+      - name: 🦋 Version packages (dry-run)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "$(find .changeset -maxdepth 1 -name '*.md' ! -name 'README.md')" ]; then
+            pnpm changeset:version
+          else
+            echo "No changesets, skip changeset version"
+          fi
+
+      #! Lint versioned files
+      - name: 🧹 Lint versioned files
+        run: pnpm lint
+
+      #! Pack (dry-run)
+      - name: 📦 Pack packages (dry-run)
+        run: pnpm -r --filter "@culur/*" --filter "!@culur/monorepo" exec npm pack --dry-run
+
+      #! Trusted publishing
+      - name: 🔐 Check npm trusted publishing
+        if: github.event_name == 'push'
+        run: pnpm tsx .github/scripts/check-npm-trusted-publishing.ts
+
   #! ----- ----- ----- Prepare release ----- ----- ----- !#
   release:
     name: Create pull request or publish to npm
-    needs: build
+    needs: [build, release-preflight]
     if: "${{ github.ref == 'refs/heads/release' || (github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'chore: version packages')) }}"
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}

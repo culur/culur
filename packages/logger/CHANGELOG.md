@@ -1,5 +1,38 @@
 # @culur/logger
 
+## 2.0.0
+
+### Major Changes
+
+- ⚙️ Upgrade to `ink` v8 and `chalk` v6, which require Node.js `>=22` ([#568](https://github.com/culur/culur/pull/568) [`2d736e3`](https://github.com/culur/culur/commit/2d736e319bfe2d4d0cfab0ce3bbbf9e2089cd9e1)) ([@renovate](https://github.com/apps/renovate)).
+  
+  - Raise `engines.node` to `>=22`.
+  - `LineCol` only passes `minWidth` to `Box` when the column width is a number, since `ink` v8 no longer accepts a percentage `minWidth`.
+
+### Patch Changes
+
+- ⚙️ Update dependencies ([#573](https://github.com/culur/culur/pull/573) [`e23930c`](https://github.com/culur/culur/commit/e23930cfd9ce77315c33e74568f97ec0ab9dfa60)) ([@renovate](https://github.com/apps/renovate)):
+  
+  - `dependencies`:
+    - `es-toolkit@^1.53.1`
+    - `prettier@^3.9.10`
+    - `react@^19.3.1`
+    - `string-width@^8.3.0`
+    - `type-fest@^5.10.0`
+  - `devDependencies`:
+    - `@types/async@^3.2.26`
+    - `@types/react@^19.3.0`
+    - `prettier-plugin-embed@^0.8.2`
+
+- ⚙️ Update dependencies ([#568](https://github.com/culur/culur/pull/568) [`a4d052b`](https://github.com/culur/culur/commit/a4d052b4b4665f1388db353ec9c1a0ee513fbd88)) ([@renovate](https://github.com/apps/renovate)):
+  
+  - `dependencies`:
+    - `chalk@^6.0.1`
+    - `ink@^8.0.0`
+  - `devDependencies`:
+    - `react-devtools@^8.0.0`
+    - `react-devtools-core@^8.0.0`
+
 ## 1.9.2
 
 ### Patch Changes

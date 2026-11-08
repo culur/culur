@@ -1,5 +1,32 @@
 # @culur/changesets-github-info
 
+## 1.2.3
+
+### Patch Changes
+
+- ⚙️ Upgrade to Changesets v3 and GraphQL 17 ([#583](https://github.com/culur/culur/pull/583) [`8c01426`](https://github.com/culur/culur/commit/8c0142667e4bdcc10635585d0a638fb32caf814c)) ([@phamhongphuc](https://github.com/phamhongphuc)).
+
+  - `@culur/changesets-changelog-github`: require Node.js `>=22.11` (`@changesets/types` v7 is ESM-only), validate the `repo` option as `owner/repo`, and skip dependencies without a `newVersion`.
+  - `@culur/changesets-generate-dependencies-changesets`: replace deprecated `@octokit/webhooks-types` with `@octokit/openapi-webhooks-types`.
+  - `@culur/changesets-github-info`: regenerate operation types with `@graphql-codegen/cli` v8 and `graphql` v17.
+
+- 📦 Update dependencies ([#586](https://github.com/culur/culur/pull/586) [`9c506a3`](https://github.com/culur/culur/commit/9c506a3c6d179331a01d3e04f380b62fb1ffcad3)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `devDependencies`:
+    - `graphql@^17.1.0`
+
+- ⚙️ Update dependencies ([#574](https://github.com/culur/culur/pull/574) [`f4f1bd0`](https://github.com/culur/culur/commit/f4f1bd0b1835e0c9ef26b3603d63792da7349aaf)) ([@renovate](https://github.com/apps/renovate)):
+
+  - `dependencies`:
+    - `@octokit/graphql@^9.0.5`
+    - `es-toolkit@^1.53.1`
+  - `devDependencies`:
+    - `@graphql-codegen/cli@7.4.6`
+    - `@graphql-codegen/typescript-operations@6.2.0`
+
+- 📦 Update workspace dependencies:
+  - [`@culur/types@1.4.3`](https://github.com/culur/culur/tree/main/packages/types#readme)
+
 ## 1.2.2
 
 ### Patch Changes

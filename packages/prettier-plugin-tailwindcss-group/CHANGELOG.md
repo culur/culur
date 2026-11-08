@@ -1,5 +1,25 @@
 # @culur/prettier-plugin-tailwindcss-group
 
+## 1.1.1
+
+### Patch Changes
+
+- 📦 Update dependencies ([#551](https://github.com/culur/culur/pull/551) [`890a021`](https://github.com/culur/culur/commit/890a0219e7ece2f3ebd1fe5207a811932fb92e5e)) ([@renovate](https://github.com/apps/renovate)):
+  
+  - `devDependencies`:
+    - `@babel/parser@^8.0.10`
+    - `@types/react@^19.3.0`
+    - `prettier@^3.9.10`
+    - `tailwind-merge@^3.7.0`
+  - `peerDependencies`:
+    - `prettier@>=3.9.10`
+    - `prettier-plugin-tailwindcss@>=0.8.1`
+
+- 📦 Update dependencies ([#557](https://github.com/culur/culur/pull/557) [`47325d2`](https://github.com/culur/culur/commit/47325d27134c6c61e4ad46316a3dc55853e91936)) ([@renovate](https://github.com/apps/renovate)):
+  
+  - `devDependencies`:
+    - `@babel/parser@^8.1.0`
+
 ## 1.1.0
 
 ### Minor Changes
